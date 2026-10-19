@@ -134,7 +134,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('defendant_name', '피고 (성명/상호)', 'Defendant name', 'text', { half: true, placeholderDoc: '김철수' }),
       F('defendant_address', '피고 주소', 'Defendant address', 'text', { half: true, placeholderDoc: '서울특별시 중구 세종대로 110' }),
       F('amount', '청구 금액 (원)', 'Claim amount (KRW)', 'number', { half: true, placeholderRu: '5000000' }),
-      F('facts', '청구원인 (사실관계)', 'Facts and reasons', 'textarea', { required: true, placeholderRu: '写明经过和证据（如차용증、转账记录）', placeholderDoc: '2026년 5월 10일 피고는 원고로부터 금 5,000,000원을 차용하고 차용증을 작성하였으나, 변제기일인 2026년 10월 10일까지 변제하지 않았다. 증거로 차용증 및 계좌이체 내역을 제출한다.' }),
+      F('facts', '청구원인 (사실관계)', 'Facts and reasons', 'textarea', { required: true, placeholderRu: 'опишите обстоятельства и укажите доказательства (차용증, банковские переводы)', placeholderDoc: '2026년 5월 10일 피고는 원고로부터 금 5,000,000원을 차용하고 차용증을 작성하였으나, 변제기일인 2026년 10월 10일까지 변제하지 않았다. 증거로 차용증 및 계좌이체 내역을 제출한다.' }),
     ],
     body: [
       { type: 'lines', align: 'right', items: ['{{court_name}} 귀중', '', '원고: {{plaintiff_name}}', '주소: {{plaintiff_address}}', '', '피고: {{defendant_name}}', '주소: {{defendant_address}}'] },
@@ -237,7 +237,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('patient_phone', '연락처', 'Phone', 'text', { half: true, placeholderDoc: '010-0000-0000' }),
       F('incident_date', '진료일', 'Date of visit', 'date', { half: true }),
       F('department', '진료과·의사', 'Department / doctor', 'text', { half: true, placeholderDoc: '내과 김OO 의사' }),
-      F('situation', '불만 내용', 'Complaint details', 'textarea', { placeholderRu: '描述情况：哪些诊疗行为您认为不当', placeholderDoc: '진료 시 문진이 충분하지 않았고, 필요한 검사를 시행하지 않아 진단이 지연되었다고 판단합니다.' }),
+      F('situation', '불만 내용', 'Complaint details', 'textarea', { placeholderRu: 'опишите ситуацию: какие действия врача вы считаете неправильными', placeholderDoc: '진료 시 문진이 충분하지 않았고, 필요한 검사를 시행하지 않아 진단이 지연되었다고 판단합니다.' }),
       F('demand', '요청 사항', 'Requested action', 'select', { options: ['경위에 대한 서면 설명', '진료기록 열람', '관련 직원 조사 및 조치', '재발 방지 대책 제시'] }),
     ],
     body: [
@@ -262,7 +262,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('landlord_address', '주소', 'Address', 'text', { placeholderDoc: '서울특별시 광진구 능동로 120' }),
       F('tenant_name', '임차인 성명', 'Tenant full name', 'text', { half: true, placeholderDoc: '이민수' }),
       F('tenant_address', '임대 주택 주소', 'Rental property', 'text', { half: true, placeholderDoc: '서울시 광진구 OO로 12, 203호' }),
-      F('issue', '하자 내용', 'Issue description', 'textarea', { placeholderRu: '描述问题：位置、何时发现、影响', placeholderDoc: '2026년 10월 5일부터 보일러 고장으로 온수와 난방이 되지 않아 생활에 큰 지장이 있습니다.' }),
+      F('issue', '하자 내용', 'Issue description', 'textarea', { placeholderRu: 'опишите проблему: где, когда обнаружена, как влияет на проживание', placeholderDoc: '2026년 10월 5일부터 보일러 고장으로 온수와 난방이 되지 않아 생활에 큰 지장이 있습니다.' }),
       F('deadline', '수리 기한 (일)', 'Deadline (days)', 'number', { half: true, placeholderRu: '7' }),
     ],
     body: [

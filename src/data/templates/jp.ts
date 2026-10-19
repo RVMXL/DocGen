@@ -122,7 +122,7 @@ export const TEMPLATES_JP: TplDef[] = [
   {
     slug: 'jp-lawsuit-sojo', kind: 'STANDARD', categorySlug: 'court-lawsuits',
     titleRu: '訴状（民事・基本形）', titleEn: 'Civil complaint (訴状, base form)',
-    descRu: '向地方法院/简易法院提起民事诉讼的訴状基本形：当事人、請求の趣旨、請求の原因。按民事訴訟法第133条要求记载。金銭消費貸借等案件引用民法相关条款。',
+    descRu: 'Базовая форма искового заявления (訴状): стороны, требования, основания — по ст. 133 ГПК Японии; по займам — ссылка на ст. 587 ГК Японии.',
     descEn: 'Base 訴状 for the Japanese courts: parties, claims (請求の趣旨), causes (請求の原因), per the Code of Civil Procedure art. 133.',
     refRu: 'ст. 133 Кодекса гражданского судопроизводства Японии (民事訴訟法); 民法',
     refEn: 'Article 133 of the Japanese Code of Civil Procedure; Civil Code',
@@ -133,7 +133,7 @@ export const TEMPLATES_JP: TplDef[] = [
       F('defendant_name', '被告（氏名/会社名）', 'Defendant name', 'text', { half: true, placeholderDoc: '田中 一郎' }),
       F('defendant_address', '被告住所', 'Defendant address', 'text', { half: true, placeholderDoc: '東京都渋谷区神南1-1-1' }),
       F('amount', '請求額（円）', 'Claim amount (JPY)', 'number', { half: true, placeholderRu: '500000' }),
-      F('facts', '請求の原因（事実経過）', 'Facts and reasons', 'textarea', { required: true, placeholderRu: '写明时间经过和证据（如借用书、转账记录）', placeholderDoc: '2026年5月10日、被告は原告から金500,000円を借用し、借用書を作成した。返済期日は2026年10月10日であったが、未だ弁済されていない。証拠方法として借用書及び銀行送金記録を提出する。' }),
+      F('facts', '請求の原因（事実経過）', 'Facts and reasons', 'textarea', { required: true, placeholderRu: 'опишите обстоятельства и укажите доказательства (借用書, банковские переводы)', placeholderDoc: '2026年5月10日、被告は原告から金500,000円を借用し、借用書を作成した。返済期日は2026年10月10日であったが、未だ弁済されていない。証拠方法として借用書及び銀行送金記録を提出する。' }),
     ],
     body: [
       { type: 'lines', align: 'right', items: ['{{court_name}} 御中', '', '原告：{{plaintiff_name}}', '住所：{{plaintiff_address}}', '', '被告：{{defendant_name}}', '住所：{{defendant_address}}'] },
@@ -152,7 +152,7 @@ export const TEMPLATES_JP: TplDef[] = [
   {
     slug: 'jp-uni-shakuyo', kind: 'STANDARD', categorySlug: 'uni-money',
     titleRu: '借用書（金銭消費貸借）', titleEn: 'Loan note (借用書)',
-    descRu: '个人之间金钱借贷的借用書：写明金额、返还期限、利息约定。按民法第587条成立金銭消費貸借契约。',
+    descRu: 'Расписка о заёме между физическими лицами (借用書): сумма, срок, проценты. Договор заёма — ст. 587 ГК Японии.',
     descEn: 'Loan note between individuals: amount, repayment date, interest. A loan contract arises under the Civil Code art. 587.',
     refRu: 'ст. 587 Гражданского кодекса Японии (民法)',
     refEn: 'Article 587 of the Japanese Civil Code',
@@ -176,7 +176,7 @@ export const TEMPLATES_JP: TplDef[] = [
   {
     slug: 'jp-uni-inin', kind: 'STANDARD', categorySlug: 'uni-common',
     titleRu: '委任状', titleEn: 'Power of attorney (委任状)',
-    descRu: '委任状：代わりに書類を受け取ったり手続きを行ったりするための一般的な委任。不動産登記や金融機関の手続きでは金融機関・法務局所定の様式や公证が必要になる場合があります。',
+    descRu: 'Доверенность (委任状) для бытовых действий. Для регистрации недвижимости и банковских операций — формы учреждения или нотариальное заверение.',
     descEn: 'General power of attorney. For real-estate registration and banking, institution-specific forms or notarization may be required.',
     refRu: 'общая практика委托契約（民法第643条以下）',
     refEn: 'Common practice; mandate contracts under the Japanese Civil Code',
@@ -236,7 +236,7 @@ export const TEMPLATES_JP: TplDef[] = [
       F('patient_phone', '連絡先', 'Phone', 'text', { half: true, placeholderDoc: '090-0000-0000' }),
       F('incident_date', '受診日', 'Date of visit', 'date', { half: true }),
       F('department', '診療科・担当医', 'Department / doctor', 'text', { half: true, placeholderDoc: '内科・田中医師' }),
-      F('situation', '苦情の内容', 'Complaint details', 'textarea', { placeholderRu: '发生了什么，哪些诊疗行为您认为不当', placeholderDoc: '受診時に問診が不十分で、必要な検査が行われなかったと考えています。その結果、診断が遅れました。' }),
+      F('situation', '苦情の内容', 'Complaint details', 'textarea', { placeholderRu: 'опишите ситуацию: какие действия врача вы считаете неправильными', placeholderDoc: '受診時に問診が不十分で、必要な検査が行われなかったと考えています。その結果、診断が遅れました。' }),
       F('demand', '求める対応', 'Requested action', 'select', { options: ['経緯についての書面による説明', '診療記録の開示', '担当者への調査・対応', '再発防止策の提示'] }),
     ],
     body: [
@@ -261,7 +261,7 @@ export const TEMPLATES_JP: TplDef[] = [
       F('landlord_address', '宛先住所', 'Address', 'text', { placeholderDoc: '東京都豊島区東池袋3-3-3' }),
       F('tenant_name', '賃借人の氏名', 'Tenant full name', 'text', { half: true, placeholderDoc: '佐藤 健' }),
       F('tenant_address', '賃貸物件の住所', 'Rental property', 'text', { half: true, placeholderDoc: 'サンプルアパート203号室' }),
-      F('issue', '不具合の内容', 'Issue description', 'textarea', { placeholderRu: '描述问题：位置、何时发现、影响', placeholderDoc: '2026年10月5日頃より浴室の給湯ができず、生活に支障が出ています。' }),
+      F('issue', '不具合の内容', 'Issue description', 'textarea', { placeholderRu: 'опишите проблему: где, когда обнаружена, как влияет на проживание', placeholderDoc: '2026年10月5日頃より浴室の給湯ができず、生活に支障が出ています。' }),
       F('deadline', '対応期限（日数）', 'Deadline (days)', 'number', { half: true, placeholderRu: '14' }),
     ],
     body: [
@@ -269,7 +269,7 @@ export const TEMPLATES_JP: TplDef[] = [
       { type: 'title', text: '修繕請求書' },
       { type: 'paragraph', text: '賃貸物件に以下の不具合が発生しています：{{issue}}。', justify: true },
       { type: 'paragraph', text: '民法第606条に基づく賃貸人の修繕義務に照らし、本状到着後{{deadline}}日以内に修繕を実施されるよう請求します。立ち入り日時のご連絡をお願いいたします。', justify: true },
-      { type: 'paragraph', text: '期限内に対応がない場合、賃料の減額や必要修繕費の垫付・償還など、法律上の手段を検討いたします。', justify: true },
+      { type: 'paragraph', text: '期限内に対応がない場合、賃料の減額や必要修繕費の立て替え・償還など、法律上の手段を検討いたします。', justify: true },
       { type: 'attachment', items: ['不具合箇所の写真（あれば）。'], label: '同封書類：' },
       stdSign('{{tenant_name}}'),
     ],
