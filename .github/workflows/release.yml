@@ -49,7 +49,7 @@ jobs:
       - name: Целостность каталога
         run: bun tools/check-data.ts
 
-      - name: Статическая сборка (output: export)
+      - name: "Статическая сборка (output: export)"
         run: bunx next build
 
       - name: Кэш статики для остальных джоб

@@ -24,7 +24,7 @@ jobs:
       - name: Целостность каталога (22 страны, уникальные slug, плейсхолдеры)
         run: bun tools/check-data.ts
 
-      - name: Статическая сборка (output: export)
+      - name: "Статическая сборка (output: export)"
         run: bunx next build
 
       - name: Проверка результата
