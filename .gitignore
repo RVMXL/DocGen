@@ -1,0 +1,86 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+dev.log
+server.log
+dev.out.log
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# ── локальное окружение разработки (не часть приложения) ──
+/db
+/download
+/upload
+/upload-backup-raw
+/zadanie_extracted
+/worklog.md
+/Caddyfile
+/.zscripts
+/examples
+/mini-services
+/tests
+/scripts
+/skills
+local-*
+.claude
+.z-ai-config
+prompt
+test
+
+# ── подпись Android: ключи НИКОГДА не попадают в git (только Secrets CI) ──
+*.jks
+*.keystore
+keystore.properties
+/android/keystore.properties
+/upload-keystore*
+
+# ── сборка Electron / release-артефакты ──
+/release-dist
+/release-server
+/desktop/app
+/desktop/resources/db
+/desktop/node_modules
+/desktop/package-lock.json
+
+# ── Capacitor: генерируемые при sync файлы ──
+/android/app/src/main/assets/public/
+# сгенерированный из корневого capacitor.config.ts
+/android/app/src/main/assets/capacitor.config.json

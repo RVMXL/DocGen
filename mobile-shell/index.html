@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DocGen</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    background: #f4f6fb;
+    color: #17203a;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #10162b; color: #e8ecf7; }
+    .card { background: #1a2140 !important; box-shadow: 0 12px 40px rgba(0,0,0,.5) !important; }
+    input { background: #10162b !important; border-color: #2c3563 !important; color: #e8ecf7 !important; }
+    .hint { color: #9aa5c6 !important; }
+  }
+  .wrap { width: 100%; max-width: 420px; }
+  .card {
+    background: #fff; border-radius: 20px; padding: 28px 24px;
+    box-shadow: 0 12px 40px rgba(23,32,58,.10); text-align: center;
+  }
+  .logo { width: 88px; height: 88px; margin: 0 auto 14px; display: block; }
+  h1 { font-size: 24px; letter-spacing: .3px; margin-bottom: 6px; }
+  .sub { font-size: 14px; margin-bottom: 22px; line-height: 1.45; }
+  .hint { color: #66719a; }
+  label { display: block; text-align: left; font-size: 13px; font-weight: 600; margin: 0 2px 6px; }
+  input {
+    width: 100%; padding: 13px 14px; font-size: 16px; border-radius: 12px;
+    border: 1.5px solid #d7dded; background: #fff; color: inherit; outline: none;
+  }
+  input:focus { border-color: #3b5bdb; }
+  button {
+    width: 100%; margin-top: 14px; padding: 14px; font-size: 16px; font-weight: 700;
+    border: 0; border-radius: 12px; background: #3b5bdb; color: #fff; cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }
+  .err { color: #d6455b; font-size: 13px; text-align: left; margin-top: 8px; min-height: 16px; }
+  .note { font-size: 12.5px; line-height: 1.5; margin-top: 18px; }
+  .link { background: none; border: 0; color: #3b5bdb; font-size: 13px; margin-top: 12px; width: auto; padding: 4px 8px; text-decoration: underline; }
+  .spinner {
+    width: 34px; height: 34px; margin: 6px auto 14px; border-radius: 50%;
+    border: 3px solid rgba(59,91,219,.25); border-top-color: #3b5bdb;
+    animation: spin .9s linear infinite; display: none;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <svg class="logo" id="logo" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"></svg>
+    <h1>DocGen</h1>
+    <div id="screen-form" hidden>
+      <p class="sub" id="t-sub"></p>
+      <label for="url" id="t-label"></label>
+      <input id="url" type="url" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="https://docgen.example.com">
+      <div class="err" id="err"></div>
+      <button id="go" type="button"></button>
+      <p class="note hint" id="t-note"></p>
+    </div>
+    <div id="screen-connecting" hidden>
+      <div class="spinner"></div>
+      <p class="sub hint" id="t-conn"></p>
+      <button class="link" type="button" id="cancel"></button>
+    </div>
+  </div>
+</div>
+<script>
+  var T = {
+    ru: {
+      sub: 'Это клиент к вашему серверу DocGen.<br>Укажите адрес сервера — документы генерируются на нём.',
+      label: 'Адрес сервера', go: 'Открыть', conn: 'Подключение…',
+      cancel: 'Изменить адрес сервера',
+      errProto: 'Адрес должен начинаться с https:// или http://',
+      errEmpty: 'Введите адрес сервера',
+      note: 'Примеры: <b>https://docgen.mycompany.ru</b> или <b>http://192.168.1.10:3000</b> (сервер в вашей Wi‑Fi сети).<br>Адрес сохранится на телефоне.'
+    },
+    en: {
+      sub: 'This app is a client for your DocGen server.<br>Enter the server address — documents are generated there.',
+      label: 'Server address', go: 'Open', conn: 'Connecting…',
+      cancel: 'Change server address',
+      errProto: 'Address must start with https:// or http://',
+      errEmpty: 'Enter the server address',
+      note: 'Examples: <b>https://docgen.mycompany.com</b> or <b>http://192.168.1.10:3000</b> (server on your Wi‑Fi network).<br>The address will be saved on this phone.'
+    }
+  };
+  var lang = (navigator.language || 'ru').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+  var t = T[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('t-sub').innerHTML = t.sub;
+  document.getElementById('t-label').textContent = t.label;
+  document.getElementById('t-note').innerHTML = t.note;
+  document.getElementById('t-conn').textContent = t.conn;
+  document.getElementById('go').textContent = t.go;
+  document.getElementById('cancel').textContent = t.cancel;
+
+  var KEY = 'docgen.server';
+  var form = document.getElementById('screen-form');
+  var conn = document.getElementById('screen-connecting');
+  var input = document.getElementById('url');
+  var err = document.getElementById('err');
+
+  function normalize(v) {
+    v = (v || '').trim();
+    if (!v) return '';
+    if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
+    return v.replace(/\/+$/, '');
+  }
+  function showForm() { form.hidden = false; conn.hidden = true; }
+
+  // Эмблема: документ с жёлтой печатью-плашкой
+  (function drawLogo() {
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var g = document.getElementById('logo');
+    function el(name, attrs, parent) {
+      var e = document.createElementNS(svgNS, name);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      (parent || g).appendChild(e); return e;
+    }
+    el('rect', { x: 4, y: 1.5, width: 22, height: 27, rx: 3, fill: '#3b5bdb' });
+    el('rect', { x: 7, y: 6, width: 16, height: 2.2, rx: 1.1, fill: '#fff', opacity: .95 });
+    el('rect', { x: 7, y: 11, width: 16, height: 2.2, rx: 1.1, fill: '#fff', opacity: .95 });
+    el('rect', { x: 7, y: 16, width: 10, height: 2.2, rx: 1.1, fill: '#fff', opacity: .95 });
+    el('rect', { x: 7, y: 21.5, width: 16, height: 4.5, rx: 2.25, fill: '#ffd43b' });
+  })();
+
+  var saved = localStorage.getItem(KEY);
+  var forceSetup = location.hash === '#setup';
+  if (saved && !forceSetup) {
+    // автоподключение к сохранённому серверу
+    form.hidden = true; conn.hidden = false;
+    location.replace(normalize(saved));
+    // если редирект не сработал за 6с — показать форму
+    setTimeout(showForm, 6000);
+  } else {
+    showForm();
+    if (saved) input.value = saved;
+  }
+
+  document.getElementById('go').addEventListener('click', function () {
+    var v = normalize(input.value);
+    err.textContent = '';
+    if (!v) { err.textContent = t.errEmpty; return; }
+    if (!/^https?:\/\//i.test(v)) { err.textContent = t.errProto; return; }
+    localStorage.setItem(KEY, v);
+    location.replace(v);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('go').click();
+  });
+  document.getElementById('cancel').addEventListener('click', function () {
+    showForm(); if (saved) input.value = saved;
+  });
+</script>
+</body>
+</html>

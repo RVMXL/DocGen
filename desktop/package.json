@@ -1,0 +1,14 @@
+{
+  "name": "docgen",
+  "productName": "DocGen",
+  "version": "0.1.0",
+  "description": "DocGen — генератор официальных документов (Россия и СНГ)",
+  "main": "main.cjs",
+  "author": "RVMXL",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

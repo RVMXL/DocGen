@@ -1,0 +1,289 @@
+# DocGen release: тег v* → сборка ВСЕХ платформ и единый GitHub Release.
+# Артефакты: сервер-архив (сайт), Windows/Linux/macOS (Electron),
+# подписанный Android APK (ключ из Secrets, SHA-пин, сверка сертификата).
+# workflow_dispatch — сборка артефактов без публикации релиза.
+
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  # SEC: actions запинены по SHA (мутабельные теги — supply-chain риск)
+  CHECKOUT: d23441a48e516b6c34aea4fa41551a30e30af803 # actions/checkout v6
+  SETUP_BUN: 0c5077e51419868618aeaa5fe8019c62421857d6 # oven-sh/setup-bun v2
+  SETUP_JAVA: b6effb05e454b25005698d916606bdc6ffcbf961 # actions/setup-java v5
+  UPLOAD: 330a01c490aca151604b8cf639adc76d48f6c5d4 # actions/upload-artifact v5
+
+jobs:
+  # ── общая web-сборка: зависимости, БД с каталогом, next build ──────────────
+  build-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@${{ env.CHECKOUT }}
+
+      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+
+      - name: Зависимости
+        run: bun install --frozen-lockfile
+
+      - name: "Гейт: версия в package.json = тегу"
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          case "$TAG" in v[0-9]*.[0-9]*.[0-9]*) ;; *) echo "✗ тег '$TAG' не vX.Y.Z"; exit 1 ;; esac
+          VER="${TAG#v}"
+          echo "VER=$VER" >> "$GITHUB_ENV"
+          PKGVER=$(node -p "require('./package.json').version")
+          test "$PKGVER" = "$VER" || { echo "✗ версия package.json ($PKGVER) != тегу ($VER) — бампни версию и переметь тег"; exit 1; }
+
+      - name: БД с каталогом (prisma db push + seed)
+        env:
+          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+        run: |
+          bunx prisma db push --skip-generate
+          bun prisma/seed.ts
+
+      - name: next build (standalone)
+        env:
+          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+        run: bunx next build
+
+      - name: Кэш БД и standalone для остальных джоб
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e268c # v4
+        with:
+          path: |
+            .next/standalone
+            .next/static
+            db/custom.db
+          key: docgen-web-${{ github.sha }}
+
+  # ── сервер-архив (сайт для развёртывания) ───────────────────────────────────
+  server-package:
+    needs: build-web
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@${{ env.CHECKOUT }}
+      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - run: bun install --frozen-lockfile
+
+      - name: Восстановить web-сборку
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e268c # v4
+        with:
+          path: |
+            .next/standalone
+            .next/static
+            db/custom.db
+          key: docgen-web-${{ github.sha }}
+
+      - name: Сборка пакета
+        run: node tools/prepare-server.mjs
+
+      - name: zip + tar.gz
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VER="${TAG#v}"
+          cd release-server
+          zip -qr "DocGen-${VER}-server.zip" DocGen-server
+          tar -czf "DocGen-${VER}-server.tar.gz" DocGen-server
+          sha256sum DocGen-${VER}-server.* > SHA256SUMS-server.txt
+          cat SHA256SUMS-server.txt
+
+      - name: Артефакт
+        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        with:
+          name: server-package
+          path: |
+            release-server/DocGen-*-server.zip
+            release-server/DocGen-*-server.tar.gz
+          if-no-files-found: error
+
+  # ── десктоп: Electron (Windows / Linux / macOS) ────────────────────────────
+  desktop:
+    needs: build-web
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+          - os: ubuntu-latest
+            platform: linux
+          - os: mac-latest
+            platform: mac
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@${{ env.CHECKOUT }}
+      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - run: bun install --frozen-lockfile
+
+      - name: БД с каталогом (для payload)
+        env:
+          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+        run: |
+          bunx prisma db push --skip-generate
+          bun prisma/seed.ts
+
+      - name: next build (standalone)
+        env:
+          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+        run: bunx next build
+
+      - name: Payload Electron-приложения
+        run: node tools/prepare-desktop.mjs
+
+      - name: electron-builder
+        working-directory: desktop
+        run: |
+          npm install --no-fund --no-audit
+          npx electron-builder --${{ matrix.platform }} --publish never
+
+      - name: Артефакт
+        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        with:
+          name: desktop-${{ matrix.platform }}
+          path: release-dist/*
+          if-no-files-found: error
+
+  # ── Android: подписанный APK (ключ из Secrets, SHA-пин) ────────────────────
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@${{ env.CHECKOUT }}
+      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - uses: actions/setup-java@${{ env.SETUP_JAVA }}
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Зависимости
+        run: bun install --frozen-lockfile
+
+      # ── КЛЮЧ ПОДПИСИ: только из Secrets, SHA-пин. Ключ НИКОГДА не генерируем
+      # заново: новый ключ = невозможно обновиться поверх установленного APK.
+      - name: Ключ подписи из Secrets + сверка SHA-256 пина
+        env:
+          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
+          KS_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_SHA256: ef6493931e2e8b2adc1300aed68d95a6c2ed2dcc81a4c1d57c4e5fcd0beca1f5
+        run: |
+          set -euo pipefail
+          if [ -z "$KS_B64" ] || [ -z "$KS_PASS" ] || [ -z "$KS_ALIAS" ] || [ -z "$KEY_PASS" ]; then
+            echo "✗ секреты подписи не заданы: KEYSTORE_BASE64 / KEYSTORE_PASSWORD / KEY_ALIAS / KEY_PASSWORD"
+            exit 1
+          fi
+          echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/docgen-upload.jks"
+          ACTUAL=$(sha256sum "$RUNNER_TEMP/docgen-upload.jks" | cut -d' ' -f1)
+          echo "SHA-256 ключа из секрета: $ACTUAL"
+          if [ "$ACTUAL" != "$KEYSTORE_SHA256" ]; then
+            echo "✗ SHA-256 ключа НЕ совпал с мастер-пином: секрет подменён или испорчен. Сборка остановлена."
+            exit 1
+          fi
+          {
+            echo "storeFile=$RUNNER_TEMP/docgen-upload.jks"
+            echo "storePassword=$KS_PASS"
+            echo "keyAlias=$KS_ALIAS"
+            echo "keyPassword=$KEY_PASS"
+          } > android/keystore.properties
+
+      - name: "Версия APK = тегу (versionName), versionCode = числу коммитов"
+        run: |
+          set -euo pipefail
+          VER="${GITHUB_REF_NAME#v}"
+          CODE=$(git rev-list --count HEAD)
+          sed -i "s/versionCode [0-9]*/versionCode $CODE/" android/app/build.gradle
+          sed -i "s/versionName \".*\"/versionName \"$VER\"/" android/app/build.gradle
+          echo "versionCode=$CODE, versionName=$VER"
+
+      - name: capacitor sync (webDir → android assets)
+        run: bunx cap sync android
+
+      - name: Сборка подписанного APK
+        working-directory: android
+        run: ./gradlew --no-daemon assembleRelease
+
+      - name: "Проверка подписи: сертификат должен совпадать со стабильным"
+        run: |
+          set -euo pipefail
+          APK=android/app/build/outputs/apk/release/app-release.apk
+          test -f "$APK" || { echo "✗ APK не собран"; exit 1; }
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -1)
+          "$APKSIGNER" verify --print-certs "$APK" | tee /tmp/certs.txt
+          CERT_SHA=$(sed -n 's/^.*certificate SHA-256 digest: //p' /tmp/certs.txt | head -1)
+          echo "Сертификат подписи (SHA-256): $CERT_SHA"
+          EXPECTED="9fb027a8a4eeda2813af6a74261bb087c09bc73bb0af2bc050c15fedb61b1f46"
+          if [ "$(echo "$CERT_SHA" | tr 'A-F' 'a-f')" != "$EXPECTED" ]; then
+            echo "✗ сертификат APK ($CERT_SHA) не совпал с заявленным в README ($EXPECTED)"
+            exit 1
+          fi
+
+      - name: Переименовать артефакт
+        run: |
+          VER="${GITHUB_REF_NAME#v}"
+          cp android/app/build/outputs/apk/release/app-release.apk "DocGen-${VER}-android.apk"
+          sha256sum "DocGen-${VER}-android.apk"
+
+      - name: Артефакт
+        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        with:
+          name: android-apk
+          path: DocGen-*-android.apk
+          if-no-files-found: error
+
+  # ── публикация единого релиза ───────────────────────────────────────────────
+  release:
+    needs: [server-package, desktop, android]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Скачать все артефакты
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: SHA256SUMS
+        working-directory: dist
+        run: |
+          sha256sum DocGen-* > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Создать релиз
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          name: "DocGen ${{ github.ref_name }}"
+          body: |
+            Единый выпуск для всех платформ: сервер-архив (сайт), Windows, Linux, macOS, Android.
+
+            **Сервер-архив** — DocGen для развёртывания на своём сервере (Node.js 20+; внутри архива README-DEPLOY.txt с systemd и Docker).
+            **Десктоп** — самодостаточные приложения со встроенным сервером (Node.js и браузер не нужны).
+            **Android** — клиент к вашему серверу DocGen: адрес сервера вводится при первом запуске.
+
+            Контрольные суммы SHA-256 — в файле `SHA256SUMS.txt` в составе релиза.
+            Android подписан стабильным ключом: SHA-256 сертификата — в README (раздел «Android»).
+
+            iOS-сборки нет: публикация требует аккаунта Apple Developer Program и подписи Apple (см. README → «Скачать»).
+          generate_release_notes: true
+          files: |
+            dist/**

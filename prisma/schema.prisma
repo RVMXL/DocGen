@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ===================== Onboarding: справочники =====================
+
+// Язык интерфейса. MVP: полная локализация ru + en; остальные — очередь (бэклог ТЗ)
+model Language {
+  id         String  @id @default(cuid())
+  code       String  @unique // ru, en, kk, uz, be ...
+  nativeName String // «Русский», English
+  available  Boolean @default(false)
+  order      Int     @default(100)
+}
+
+// Страна/локация. MVP: Россия + СНГ (available); остальной мир — бэклог ТЗ
+model Country {
+  id          String     @id @default(cuid())
+  code        String     @unique // RU, KZ, BY ...
+  nameRu      String
+  nameEn      String
+  flag        String // флаг-эмодзи
+  region      String // CIS | BACKLOG
+  docLang     String     @default("ru") // государственный язык: шаблоны страны и язык итогового документа
+  currencyRu  String // валюта для подсказок в претензиях
+  currencyEn  String
+  available   Boolean    @default(false)
+  order       Int        @default(100)
+  templates   Template[]
+}
+
+// ===================== Дерево категорий =====================
+// Большие группы -> Подгруппы -> (шаблоны). Самоссылающееся дерево.
+
+model Category {
+  id        String     @id @default(cuid())
+  slug      String     @unique
+  titleRu   String
+  titleEn   String
+  icon      String? // имя lucide-иконки (для больших групп)
+  order     Int        @default(100)
+  parentId  String?
+  parent    Category?  @relation("CategoryTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children  Category[] @relation("CategoryTree")
+  templates Template[]
+}
+
+// ===================== Шаблон документа =====================
+// kind: "STANDARD" | "HANDWRITTEN_REQUIRED" | "GOV_PORTAL_ONLY"
+// (SQLite в Prisma не поддерживает enum — валидация на уровне TS)
+
+model Template {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  kind          String   @default("STANDARD")
+  lang          String   @default("ru") // язык ТЕЛА документа (гос. язык страны); интерфейс — отдельно
+  titleRu       String
+  titleEn       String
+  descRu        String
+  descEn        String
+  refRu         String? // правовое основание (статья закона/кодекса)
+  refEn         String?
+  warningRu     String? // текст красного предупреждения «от руки» (по ТЗ)
+  warningEn     String?
+  portalUrl     String? // ссылка на гос-портал (для инфо-карточек)
+  portalName    String?
+  portalDescRu  String?
+  portalDescEn  String?
+  fieldsJson    String   @default("[]") // FieldDef[] — поля интерактивной формы
+  bodyJson      String   @default("[]") // DocBlock[] — структура документа с {{placeholder}}
+  categoryId    String
+  category      Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  countryCode   String
+  country       Country  @relation(fields: [countryCode], references: [code])
+  createdAt     DateTime @default(now())
+
+  @@index([categoryId])
+  @@index([countryCode])
+}
