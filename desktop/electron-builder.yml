@@ -6,24 +6,14 @@ directories:
   output: ../release-dist
   buildResources: build
 
-# payload: main-процесс + встроенный Next.js standalone (app/) — собирается
-# на каждом раннере нативно, поэтому Prisma-движки совпадают с платформой
-# ВАЖНО: app/package.json (от Next standalone, без main) исключён — иначе он
-# затирает корневой package.json с main: main.cjs
+# payload: main-процесс + статический сайт (app/, из tools/prepare-desktop.mjs).
+# Приложение автономно — сервера, БД и node_modules в payload не нужны.
 files:
   - main.cjs
-  - preload.cjs
   - package.json
   - app/**/*
-  - "!app/package.json"
-  - "!app/node_modules/.package-lock.json"
 
-asar: false
-
-extraResources:
-  - from: resources/db
-    to: db-template
-    filter: ["**/*"]
+asar: true
 
 win:
   icon: build/icon.png

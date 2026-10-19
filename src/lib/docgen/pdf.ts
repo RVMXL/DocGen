@@ -53,12 +53,23 @@ async function loadFonts(pdfDoc: PDFDocument, docLang: DocLang): Promise<Fonts> 
 }
 
 /**
- * BiDi-обработка строки иврита (pdf-lib не выполняет BiDi-алгоритм).
- * Логический порядок → визуальный: строка разворачивается, латиница/цифры восстанавливаются.
+ * Подготовка строки иврита к отрисовке (pdf-lib + fontkit).
+ *
+ * Эмпирика (проверено рендерами MuPDF/Poppler): fontkit при обнаружении
+ * RTL-символов в строке разворачивает её ПОСИМВОЛЬНО ЦЕЛИКОМ (наивный BiDi
+ * без сохранения LTR-последовательностей). Поэтому:
+ *   1) логический порядок → визуальный (упрощённый UBA: полный разворот строки
+ *      с восстановлением латиницы/цифр);
+ *   2) компенсация наивного BiDi fontkit — ещё один полный разворот.
+ * Итог: drawText получает fullreverse(visual), fontkit разворачивает обратно,
+ * и на странице оказывается корректный визуальный порядок.
+ * Строки без иврита не трогаем — fontkit их не изменяет.
  */
 function rtlShape(line: string): string {
+  if (!/[\u0590-\u05FF]/.test(line)) return line;
   const rev = Array.from(line).reverse().join('');
-  return rev.replace(/[A-Za-z0-9@#$%&/\\:;.,+\-–—()"'ʼ`*+=№€₪]{1,}/g, (seg) => Array.from(seg).reverse().join(''));
+  const visual = rev.replace(/[A-Za-z0-9@#$%&/\\:;.,+\-–—()"'ʼ`*+=№€₪]{1,}/g, (seg) => Array.from(seg).reverse().join(''));
+  return Array.from(visual).reverse().join('');
 }
 
 /** Разбивка строки на слова с учётом ширины */
