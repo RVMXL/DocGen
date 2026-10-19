@@ -8,11 +8,15 @@ directories:
 
 # payload: main-процесс + встроенный Next.js standalone (app/) — собирается
 # на каждом раннере нативно, поэтому Prisma-движки совпадают с платформой
+# ВАЖНО: app/package.json (от Next standalone, без main) исключён — иначе он
+# затирает корневой package.json с main: main.cjs
 files:
   - main.cjs
   - preload.cjs
   - package.json
   - app/**/*
+  - "!app/package.json"
+  - "!app/node_modules/.package-lock.json"
 
 asar: false
 
