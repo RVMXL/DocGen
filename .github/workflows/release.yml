@@ -152,7 +152,15 @@ jobs:
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: desktop-${{ matrix.platform }}
-          path: release-dist/*
+          path: |
+            release-dist/*.exe
+            release-dist/*.AppImage
+            release-dist/*.deb
+            release-dist/*.dmg
+            release-dist/*.tar.gz
+            release-dist/*.zip
+            release-dist/*.snap
+            release-dist/*.pacman
           if-no-files-found: error
 
   # ── Android: подписанный APK (ключ из Secrets, SHA-пин) ────────────────────
