@@ -1,7 +1,13 @@
 # DocGen release: тег v* → сборка ВСЕХ платформ и единый GitHub Release.
-# Артефакты: сервер-архив (сайт), Windows/Linux/macOS (Electron),
-# подписанный Android APK (ключ из Secrets, SHA-пин, сверка сертификата).
-# workflow_dispatch — сборка артефактов без публикации релиза.
+#
+# Приложение САМОДОСТАТОЧНОЕ (документы генерируются на устройстве, сервера нет):
+#   - web-package:  статический сайт (out/) в zip — развернуть на любом хостинге;
+#   - desktop:      Windows/Linux (matrix) — Electron со статикой внутри;
+#   - desktop-mac:  macOS — ОТДЕЛЬНАЯ джоба: mac-раннеры приватного репозитория
+#                   часто в очереди, релиз из-за них НЕ блокируется;
+#   - android:      подписанный APK (ключ из Secrets, SHA-пин, сверка сертификата).
+#
+# iOS-сборки нет: публикация требует Apple Developer Program и подписи Apple (README → «Скачать»).
 
 name: release
 
@@ -18,7 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ── общая web-сборка: зависимости, БД с каталогом, next build ──────────────
+  # ── общая статическая сборка ────────────────────────────────────────────────
   build-web:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -31,79 +37,62 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: "Гейт: версия в package.json = тегу"
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
           set -euo pipefail
           TAG="${GITHUB_REF_NAME}"
           case "$TAG" in v[0-9]*.[0-9]*.[0-9]*) ;; *) echo "✗ тег '$TAG' не vX.Y.Z"; exit 1 ;; esac
           VER="${TAG#v}"
-          echo "VER=$VER" >> "$GITHUB_ENV"
           PKGVER=$(node -p "require('./package.json').version")
           test "$PKGVER" = "$VER" || { echo "✗ версия package.json ($PKGVER) != тегу ($VER) — бампни версию и переметь тег"; exit 1; }
 
-      - name: БД с каталогом (prisma db push + seed)
-        env:
-          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
-        run: |
-          bunx prisma generate
-          bunx prisma db push --skip-generate
-          bun prisma/seed.ts
+      - name: Целостность каталога
+        run: bun tools/check-data.ts
 
-      - name: next build (standalone)
-        env:
-          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+      - name: Статическая сборка (output: export)
         run: bunx next build
 
-      - name: Кэш БД и standalone для остальных джоб
+      - name: Кэш статики для остальных джоб
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
-          path: |
-            .next/standalone
-            .next/static
-            db/custom.db
-          key: docgen-web-${{ github.sha }}
+          path: out
+          key: docgen-static-${{ github.sha }}
 
-  # ── сервер-архив (сайт для развёртывания) ───────────────────────────────────
-  server-package:
+  # ── web: zip для развёртывания на любом статическом хостинге ───────────────
+  web-package:
     needs: build-web
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
-      - run: bun install --frozen-lockfile
-
-      - name: Восстановить web-сборку
+      - name: Восстановить статическую сборку
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
-          path: |
-            .next/standalone
-            .next/static
-            db/custom.db
-          key: docgen-web-${{ github.sha }}
-
-      - name: Сборка пакета
-        run: node tools/prepare-server.mjs
+          path: out
+          key: docgen-static-${{ github.sha }}
 
       - name: zip + tar.gz
         run: |
+          set -euo pipefail
           TAG="${GITHUB_REF_NAME}"
           VER="${TAG#v}"
-          cd release-server
-          zip -qr "DocGen-${VER}-server.zip" DocGen-server
-          tar -czf "DocGen-${VER}-server.tar.gz" DocGen-server
-          sha256sum DocGen-${VER}-server.* > SHA256SUMS-server.txt
-          cat SHA256SUMS-server.txt
+          cd out
+          zip -qr "../DocGen-${VER}-web.zip" .
+          tar -czf "../DocGen-${VER}-web.tar.gz" .
+          cd ..
+          sha256sum DocGen-${VER}-web.* > SHA256SUMS-web.txt
+          cat SHA256SUMS-web.txt
 
       - name: Артефакт
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
-          name: server-package
+          name: web-package
           path: |
-            release-server/DocGen-*-server.zip
-            release-server/DocGen-*-server.tar.gz
+            DocGen-*-web.zip
+            DocGen-*-web.tar.gz
+            SHA256SUMS-web.txt
           if-no-files-found: error
 
-  # ── десктоп: Electron (Windows / Linux / macOS) ────────────────────────────
+  # ── десктоп: Electron (Windows / Linux) ────────────────────────────────────
   desktop:
     needs: build-web
     strategy:
@@ -114,8 +103,6 @@ jobs:
             platform: win
           - os: ubuntu-latest
             platform: linux
-          - os: mac-latest
-            platform: mac
     runs-on: ${{ matrix.os }}
     timeout-minutes: 45
     defaults:
@@ -126,17 +113,7 @@ jobs:
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
       - run: bun install --frozen-lockfile
 
-      - name: БД с каталогом (для payload)
-        env:
-          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
-        run: |
-          bunx prisma generate
-          bunx prisma db push --skip-generate
-          bun prisma/seed.ts
-
-      - name: next build (standalone)
-        env:
-          DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
+      - name: Статическая сборка
         run: bunx next build
 
       - name: Payload Electron-приложения
@@ -156,11 +133,36 @@ jobs:
             release-dist/*.exe
             release-dist/*.AppImage
             release-dist/*.deb
+          if-no-files-found: error
+
+  # ── десктоп macOS: отдельная джоба, НЕ блокирует публикацию релиза ─────────
+  desktop-mac:
+    needs: build-web
+    runs-on: mac-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - run: bun install --frozen-lockfile
+
+      - name: Статическая сборка
+        run: bunx next build
+
+      - name: Payload Electron-приложения
+        run: node tools/prepare-desktop.mjs
+
+      - name: electron-builder
+        working-directory: desktop
+        run: |
+          npm install --no-fund --no-audit
+          npx electron-builder --mac --publish never
+
+      - name: Артефакт
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: desktop-mac
+          path: |
             release-dist/*.dmg
-            release-dist/*.tar.gz
-            release-dist/*.zip
-            release-dist/*.snap
-            release-dist/*.pacman
           if-no-files-found: error
 
   # ── Android: подписанный APK (ключ из Secrets, SHA-пин) ────────────────────
@@ -216,7 +218,10 @@ jobs:
           sed -i "s/versionName \".*\"/versionName \"$VER\"/" android/app/build.gradle
           echo "versionCode=$CODE, versionName=$VER"
 
-      - name: capacitor sync (webDir → android assets)
+      - name: Статическая сборка
+        run: bunx next build
+
+      - name: capacitor sync (out/ → android assets, приложение офлайн)
         run: bunx cap sync android
 
       - name: Сборка подписанного APK
@@ -251,9 +256,9 @@ jobs:
           path: DocGen-*-android.apk
           if-no-files-found: error
 
-  # ── публикация единого релиза ───────────────────────────────────────────────
+  # ── публикация единого релиза (БЕЗ ожидания macOS) ─────────────────────────
   release:
-    needs: [server-package, desktop, android]
+    needs: [web-package, desktop, android]
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -277,16 +282,47 @@ jobs:
         with:
           name: "DocGen ${{ github.ref_name }}"
           body: |
-            Единый выпуск для всех платформ: сервер-архив (сайт), Windows, Linux, macOS, Android.
+            Самодостаточные сборки для всех платформ: интернет и сервер НЕ нужны,
+            документы генерируются прямо на устройстве.
 
-            **Сервер-архив** — DocGen для развёртывания на своём сервере (Node.js 20+; внутри архива README-DEPLOY.txt с systemd и Docker).
-            **Десктоп** — самодостаточные приложения со встроенным сервером (Node.js и браузер не нужны).
-            **Android** — клиент к вашему серверу DocGen: адрес сервера вводится при первом запуске.
+            **Windows / Linux / macOS** — настольные приложения (Electron).
+            **Android** — приложение (APK), работает полностью офлайн.
+            **Web** — статический сайт: распакуйте и разверните на любом хостинге
+            (nginx, Apache, GitHub Pages — см. README → «Развёртывание web-версии»).
 
             Контрольные суммы SHA-256 — в файле `SHA256SUMS.txt` в составе релиза.
             Android подписан стабильным ключом: SHA-256 сертификата — в README (раздел «Android»).
+
+            Сборка macOS может быть добавлена в релиз отдельной джобой чуть позже —
+            mac-раннеры для приватных репозиториев нередко стоят в очереди GitHub.
 
             iOS-сборки нет: публикация требует аккаунта Apple Developer Program и подписи Apple (см. README → «Скачать»).
           generate_release_notes: true
           files: |
             dist/**
+
+  # ── macOS: добавить артефакты в уже опубликованный релиз ───────────────────
+  mac-upload:
+    needs: [release, desktop-mac]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Скачать mac-артефакт
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
+        with:
+          path: mac
+          name: desktop-mac
+
+      - name: Загрузить в релиз
+        run: |
+          set -euo pipefail
+          cd mac
+          sha256sum *.dmg > SHA256SUMS-mac.txt
+          cat SHA256SUMS-mac.txt
+          gh release upload "${GITHUB_REF_NAME}" --clobber *.dmg SHA256SUMS-mac.txt
+          echo "✓ macOS-сборка добавлена в релиз ${GITHUB_REF_NAME}"
