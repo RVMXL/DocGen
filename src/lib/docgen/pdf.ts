@@ -1,14 +1,12 @@
-// Генератор .pdf: A4, серифный шрифт 14pt (метрический аналог Times New Roman,
-// полная кириллица; для армянского — FreeSerif), поля как в .docx, абзацы по ширине,
-// автоперенос страниц. Шрифт выбирается по языку ДОКУМЕНТА.
+// Генератор .pdf — работает ЦЕЛИКОМ НА КЛИЕНТЕ (без сервера):
+// web, Android (Capacitor), десктоп (Electron) — документ собирается на устройстве.
+// A4, серифный шрифт 14pt, поля 20/20/30/15 мм, абзацы по ширине, автоперенос страниц.
+// Шрифт выбирается по языку ДОКУМЕНТА (гос. язык страны), загружается из /fonts.
 import { PDFDocument, rgb, PDFFont, PDFPage } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
-import * as fs from 'fs';
-import * as path from 'path';
 import type { DocBlock } from '../types';
-import type { DocLang } from './interpolate';
+import { isRTL, type DocLang } from './interpolate';
 
-const FONT_DIR = path.join(process.cwd(), 'public', 'fonts');
 const A4 = { w: 595.28, h: 841.89 };
 const M = { top: 56.7, bottom: 56.7, left: 85.05, right: 42.52 }; // 20/20/30/15 мм
 const SIZE = 14;
@@ -17,25 +15,50 @@ const INDENT = 35.4; // 1.25 см
 
 interface Fonts { regular: PDFFont; bold: PDFFont }
 
-// Liberation Serif покрывает кириллицу (вкл. казахскую/таджикскую), но НЕ армянский —
-// для hy используем FreeSerif (полное покрытие армянского, серифный аналог Times).
+// Liberation Serif — кириллица (вкл. казахскую/таджикскую), латиница;
+// FreeSerif — армянский (hy) и иврит (he);
+// DocGenZh/Ja/Ko — подмножества Noto Serif для CJK (китайский, японский, корейский).
 const FONT_FILES: Partial<Record<DocLang, { regular: string; bold: string }>> = {
   hy: { regular: 'FreeSerif-Regular.ttf', bold: 'FreeSerif-Bold.ttf' },
+  he: { regular: 'FreeSerif-Regular.ttf', bold: 'FreeSerif-Bold.ttf' },
+  zh: { regular: 'DocGenZh-Regular.ttf', bold: 'DocGenZh-Bold.ttf' },
+  ja: { regular: 'DocGenJa-Regular.ttf', bold: 'DocGenJa-Bold.ttf' },
+  ko: { regular: 'DocGenKo-Regular.ttf', bold: 'DocGenKo-Bold.ttf' },
 };
 const DEFAULT_FONTS = { regular: 'LiberationSerif-Regular.ttf', bold: 'LiberationSerif-Bold.ttf' };
 
 const cache = new Map<DocLang, Fonts>();
+
+/** URL шрифта: учитывает базовый путь сборки (хостинг в подкаталоге, Electron app://) */
+function fontUrl(file: string): string {
+  const base = typeof document !== 'undefined' && document.baseURI ? document.baseURI : '/';
+  return new URL('fonts/' + file, base).href;
+}
 
 async function loadFonts(pdfDoc: PDFDocument, docLang: DocLang): Promise<Fonts> {
   const hit = cache.get(docLang);
   if (hit) return hit;
   pdfDoc.registerFontkit(fontkit);
   const files = FONT_FILES[docLang] ?? DEFAULT_FONTS;
-  const regular = await pdfDoc.embedFont(fs.readFileSync(path.join(FONT_DIR, files.regular)));
-  const bold = await pdfDoc.embedFont(fs.readFileSync(path.join(FONT_DIR, files.bold)));
-  const fonts = { regular, bold };
+  const [regular, bold] = await Promise.all([
+    fetch(fontUrl(files.regular)).then((r) => r.arrayBuffer()),
+    fetch(fontUrl(files.bold)).then((r) => r.arrayBuffer()),
+  ]);
+  const fonts = {
+    regular: await pdfDoc.embedFont(regular, { subset: true }),
+    bold: await pdfDoc.embedFont(bold, { subset: true }),
+  };
   cache.set(docLang, fonts);
   return fonts;
+}
+
+/**
+ * BiDi-обработка строки иврита (pdf-lib не выполняет BiDi-алгоритм).
+ * Логический порядок → визуальный: строка разворачивается, латиница/цифры восстанавливаются.
+ */
+function rtlShape(line: string): string {
+  const rev = Array.from(line).reverse().join('');
+  return rev.replace(/[A-Za-z0-9@#$%&/\\:;.,+\-–—()"'ʼ`*+=№€₪]{1,}/g, (seg) => Array.from(seg).reverse().join(''));
 }
 
 /** Разбивка строки на слова с учётом ширины */
@@ -80,6 +103,7 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru'): Pro
   const pdfDoc = await PDFDocument.create();
   const fonts = await loadFonts(pdfDoc, docLang);
   pdfDoc.setTitle('Document');
+  const rtl = isRTL(docLang);
 
   let page = pdfDoc.addPage([A4.w, A4.h]);
   let y = A4.h - M.top;
@@ -92,15 +116,23 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru'): Pro
     }
   };
 
+  // для RTL: строка предварительно переводится в визуальный порядок, поэтому
+  // отрисовка остаётся слева направо; выравнивание инвертируется
   const drawLine = (text: string, f: PDFFont, x: number, width: number, mode: 'left' | 'center' | 'right' | 'just') => {
-    const lines = wrapWords(text, f, SIZE, width);
+    const raw = rtl ? rtlShape(text) : text;
+    const lines = wrapWords(raw, f, SIZE, width);
     for (const ln of lines) {
       ensureSpace(LINE_H);
+      let m = mode;
+      if (rtl) {
+        if (m === 'left') m = 'right';
+        else if (m === 'right') m = 'left';
+      }
       const lw = f.widthOfTextAtSize(ln, SIZE);
       let lx = x;
-      if (mode === 'center') lx = x + (width - lw) / 2;
-      else if (mode === 'right') lx = x + width - lw;
-      if (mode === 'just') drawJustified(page, ln, f, SIZE, x, y - SIZE, width);
+      if (m === 'center') lx = x + (width - lw) / 2;
+      else if (m === 'right') lx = x + width - lw;
+      if (m === 'just') drawJustified(page, ln, f, SIZE, x, y - SIZE, width);
       else page.drawText(ln, { x: lx, y: y - SIZE, size: SIZE, font: f, color: rgb(0.1, 0.1, 0.1) });
       y -= LINE_H;
     }
@@ -151,11 +183,14 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru'): Pro
       case 'signature': {
         ensureSpace(LINE_H * 2.5);
         y -= 18;
-        const left = b.leftText ?? '';
-        const right = b.rightText ?? '';
-        page.drawText(left, { x: M.left, y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
-        const rw = fonts.regular.widthOfTextAtSize(right, SIZE);
-        page.drawText(right, { x: A4.w - M.right - Math.min(rw, contentWidth * 0.55), y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+        let left = b.leftText ?? '';
+        let right = b.rightText ?? '';
+        if (rtl) { [left, right] = [right, left]; }
+        const ls = rtl ? rtlShape(left) : left;
+        const rs = rtl ? rtlShape(right) : right;
+        page.drawText(ls, { x: M.left, y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+        const rw = fonts.regular.widthOfTextAtSize(rs, SIZE);
+        page.drawText(rs, { x: A4.w - M.right - Math.min(rw, contentWidth * 0.55), y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
         y -= LINE_H;
         break;
       }

@@ -1,6 +1,8 @@
 'use client';
-// ДокГен — SPA по ТЗ: Onboarding → Каталог → Форма → Предпросмотр/экспорт
-import { useCallback, useEffect, useState } from 'react';
+// ДокГен — SPA по ТЗ: Onboarding → Каталог → Форма → Предпросмотр/экспорт.
+// Приложение САМОДОСТАТОЧНОЕ: каталог — статические данные, документы
+// генерируются прямо на устройстве (.docx/.pdf) — сервер не нужен.
+import { useEffect, useMemo, useState } from 'react';
 import { Onboarding } from '@/components/onboarding';
 import { Catalog } from '@/components/catalog';
 import { TemplateForm } from '@/components/template-form';
@@ -10,7 +12,8 @@ import { Button } from '@/components/ui/button';
 import { Globe, Loader2 } from 'lucide-react';
 import { useApp } from '@/lib/store';
 import { UI } from '@/lib/i18n';
-import type { CatalogResponse, TemplateDTO } from '@/lib/types';
+import { buildCatalog } from '@/data/catalog';
+import type { TemplateDTO } from '@/lib/types';
 
 type View =
   | { name: 'catalog' }
@@ -24,30 +27,16 @@ export default function Home() {
   const { lang, country, onboarded, setOnboarded } = useApp();
   const [hydrated, setHydrated] = useState(false);
   const [view, setView] = useState<View>({ name: 'catalog' });
-  const [catalog, setCatalog] = useState<CatalogResponse | null>(null);
-  const [loading, setLoading] = useState(false);
   const locale = lang === 'en' ? 'en' : 'ru';
   const t = UI[locale];
 
   useEffect(() => setHydrated(true), []);
 
-  const loadCatalog = useCallback(async (countryCode: string) => {
-    if (!countryCode) return;
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/catalog?country=${countryCode}`);
-      if (!res.ok) throw new Error('failed');
-      setCatalog(await res.json());
-    } catch {
-      setCatalog(null);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (hydrated && onboarded && country) loadCatalog(country);
-  }, [hydrated, onboarded, country, loadCatalog]);
+  // Каталог — статические данные, собирается мгновенно, без сети
+  const catalog = useMemo(
+    () => (hydrated && onboarded && country ? buildCatalog(country) : null),
+    [hydrated, onboarded, country]
+  );
 
   if (!hydrated) {
     return (
@@ -95,14 +84,10 @@ export default function Home() {
       </header>
 
       <main className="flex-1 pt-2">
-        {loading && !catalog ? (
-          <div className="flex items-center justify-center py-24">
-            <Loader2 className="w-6 h-6 animate-spin text-teal-600" aria-label="Loading" />
-          </div>
-        ) : !catalog ? (
+        {!catalog ? (
           <div className="max-w-xl mx-auto px-4 py-16 text-center text-muted-foreground">
-            <p>Не удалось загрузить каталог. Проверьте соединение и попробуйте снова.</p>
-            <Button className="mt-4" onClick={() => loadCatalog(country)}>Повторить</Button>
+            <p>{t.catalogEmpty}</p>
+            <Button className="mt-4" onClick={() => setOnboarded(false)}>{t.changeCountry}</Button>
           </div>
         ) : view.name === 'catalog' ? (
           <Catalog

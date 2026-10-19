@@ -1,5 +1,6 @@
 'use client';
-// Предпросмотр документа + экспорт .docx/.pdf + прямая печать (ТЗ: форматы и печать)
+// Предпросмотр документа + экспорт .docx/.pdf + прямая печать (ТЗ: форматы и печать).
+// Файлы формируются ПРЯМО НА УСТРОЙСТВЕ (docx/pdf-lib в браузере) — без сервера.
 // Даты и подстановки — на языке ДОКУМЕНТА (template.lang), интерфейс — отдельно.
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +9,7 @@ import { ArrowLeft, Download, FileText, Printer, Loader2, Languages } from 'luci
 import { toast } from 'sonner';
 import type { DocBlock, FieldDef, TemplateDTO } from '@/lib/types';
 import { fmtDateISO, fmtToday, cleanupPunct, type DocLang } from '@/lib/docgen/interpolate';
+import { downloadGenerated } from '@/lib/generate';
 import { UI } from '@/lib/i18n';
 import { docLangNative, docLangDiffers } from '@/lib/doclangs';
 
@@ -103,23 +105,7 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
   const download = async (format: 'docx' | 'pdf') => {
     setBusy(format);
     try {
-      const res = await fetch('/api/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ templateId: template.id, locale: lang, format, data }),
-      });
-      if (!res.ok) throw new Error('failed');
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      const stamp = new Date().toISOString().slice(0, 10);
-      const base = (lang === 'en' ? template.titleEn : template.titleRu).replace(/[^\p{L}\p{N} ]/gu, '').replace(/\s+/g, '_').slice(0, 60);
-      a.download = `${base}_${stamp}.${format}`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
+      await downloadGenerated(template, lang, data, format);
       toast.success(format === 'docx' ? 'DOCX' : 'PDF');
     } catch {
       toast.error(t.downloadError);

@@ -50,6 +50,7 @@ export const UI = {
     noTemplates: 'В этой категории пока нет шаблонов',
     backToCatalog: 'К каталогу',
     backToForm: 'К форме',
+    catalogEmpty: 'Каталог для этой страны не найден. Выберите другую страну.',
   },
   en: {
     appName: 'DocGen',
@@ -99,6 +100,7 @@ export const UI = {
     noTemplates: 'No templates in this category yet',
     backToCatalog: 'To catalog',
     backToForm: 'To form',
+    catalogEmpty: 'No catalog found for this country. Please choose another country.',
   },
 } as const;
 

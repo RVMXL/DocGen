@@ -5,11 +5,32 @@ import type { DocBlock, FieldDef } from '../types';
 /** Языки интерфейса (локализация UI) */
 export type Locale = 'ru' | 'en';
 
-/** Языки тела документа = государственные языки поддерживаемых стран */
-export type DocLang = 'ru' | 'uk' | 'be' | 'kk' | 'uz' | 'kg' | 'tg' | 'hy' | 'az' | 'ro' | 'en';
+/**
+ * Языки тела документа = государственные языки поддерживаемых стран.
+ * ru/uk/be/kk/uz/kg/tg/hy/az/ro — Россия и СНГ;
+ * de/fr/pl — Европа; en — США и Австралия; zh/ja/ko — Китай/Япония/Корея;
+ * tr — Турция; he — Израиль; pt — Бразилия; es — Аргентина.
+ */
+export type DocLang =
+  | 'ru' | 'uk' | 'be' | 'kk' | 'uz' | 'kg' | 'tg' | 'hy' | 'az' | 'ro'
+  | 'de' | 'fr' | 'pl' | 'en' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es';
 
-/** Месяцы в родительном падеже для дат в делопроизводстве */
-const MONTHS_GEN: Record<string, string[]> = {
+export const DOC_LANG_LIST: DocLang[] = [
+  'ru', 'uk', 'be', 'kk', 'uz', 'kg', 'tg', 'hy', 'az', 'ro',
+  'de', 'fr', 'pl', 'en', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es',
+];
+
+export function toDocLang(v: string): DocLang {
+  return (DOC_LANG_LIST as string[]).includes(v) ? (v as DocLang) : 'ru';
+}
+
+/** Языки с письмом справа налево (требуют BiDi-обработки в PDF) */
+export function isRTL(lang: DocLang): boolean {
+  return lang === 'he';
+}
+
+/** Языки, где длинные даты в родительном падеже / согласовании */
+const MONTHS_GEN: Partial<Record<DocLang, string[]>> = {
   ru: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
     'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
   uk: ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня',
@@ -18,20 +39,43 @@ const MONTHS_GEN: Record<string, string[]> = {
     'ліпеня', 'жніўня', 'верасня', 'кастрычніка', 'лістапада', 'снежня'],
   ro: ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie',
     'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie'],
+  de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+    'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+  fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+    'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+  pl: ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
+    'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia'],
+  pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+    'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+  es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+  tr: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
 };
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
 
-/** Формат длинной даты: ru/uk/be — «02 ноября 2026 г.», ro — «02 noiembrie 2026», остальные — цифровой */
+/** Формат длинной даты по стандартам делопроизводства языка документа */
 function longDate(y: string, mm: string, dd: string, lang: DocLang): string {
   const idx = parseInt(mm, 10) - 1;
-  if (lang === 'ru') return `${dd} ${MONTHS_GEN.ru[idx]} ${y} г.`;
-  if (lang === 'uk') return `${dd} ${MONTHS_GEN.uk[idx]} ${y} р.`;
-  if (lang === 'be') return `${dd} ${MONTHS_GEN.be[idx]} ${y} г.`;
-  if (lang === 'ro') return `${dd} ${MONTHS_GEN.ro[idx]} ${y}`;
-  if (lang === 'en') return `${MONTHS_EN[idx]} ${String(parseInt(dd, 10))}, ${y}`;
-  // kk, uz, kg, tg, hy, az — в делопроизводстве этих стран распространён цифровой формат
-  return `${dd}.${mm}.${y}`;
+  const d = String(parseInt(dd, 10)); // без ведущего нуля для словесных форм
+  switch (lang) {
+    case 'ru': return `${dd} ${MONTHS_GEN.ru![idx]} ${y} г.`;
+    case 'uk': return `${dd} ${MONTHS_GEN.uk![idx]} ${y} р.`;
+    case 'be': return `${dd} ${MONTHS_GEN.be![idx]} ${y} г.`;
+    case 'ro': return `${dd} ${MONTHS_GEN.ro![idx]} ${y}`;
+    case 'de': return `${d}. ${MONTHS_GEN.de![idx]} ${y}`;
+    case 'fr': return `${d} ${MONTHS_GEN.fr![idx]} ${y}`;
+    case 'pl': return `${d} ${MONTHS_GEN.pl![idx]} ${y} r.`;
+    case 'pt': return `${d} de ${MONTHS_GEN.pt![idx]} de ${y}`;
+    case 'es': return `${d} de ${MONTHS_GEN.es![idx]} de ${y}`;
+    case 'tr': return `${d} ${MONTHS_GEN.tr![idx]} ${y}`;
+    case 'en': return `${MONTHS_EN[idx]} ${d}, ${y}`;
+    case 'zh': case 'ja': return `${y}年${parseInt(mm, 10)}月${d}日`;
+    case 'ko': return `${y}년 ${parseInt(mm, 10)}월 ${d}일`;
+    // kk, uz, kg, tg, hy, az, he — в делопроизводстве распространён цифровой формат
+    default: return `${dd}.${mm}.${y}`;
+  }
 }
 
 /** ISO-дата из <input type=date> → официальная форма делопроизводства языка документа */
@@ -55,19 +99,32 @@ export function formatFieldValues(fields: FieldDef[], data: Record<string, strin
 export function fmtToday(docLang: DocLang): string {
   const d = new Date();
   const dd = String(d.getDate()).padStart(2, '0');
+  const dNum = String(d.getDate());
   const mm = String(d.getMonth() + 1).padStart(2, '0');
   const y = String(d.getFullYear());
-  if (docLang === 'ru' || docLang === 'be') return `«${dd}» ${MONTHS_GEN[docLang][d.getMonth()]} ${y} г.`;
-  if (docLang === 'uk') return `«${dd}» ${MONTHS_GEN.uk[d.getMonth()]} ${y} р.`;
-  if (docLang === 'ro') return `${dd} ${MONTHS_GEN.ro[d.getMonth()]} ${y}`;
-  if (docLang === 'en') return `${MONTHS_EN[d.getMonth()]} ${dd}, ${y}`;
-  return `${dd}.${mm}.${y}`;
+  const m = d.getMonth();
+  switch (docLang) {
+    case 'ru': case 'be': return `«${dd}» ${MONTHS_GEN[docLang]![m]} ${y} г.`;
+    case 'uk': return `«${dd}» ${MONTHS_GEN.uk![m]} ${y} р.`;
+    case 'ro': return `${dd} ${MONTHS_GEN.ro![m]} ${y}`;
+    case 'de': return `${dNum}. ${MONTHS_GEN.de![m]} ${y}`;
+    case 'fr': return `${dNum} ${MONTHS_GEN.fr![m]} ${y}`;
+    case 'pl': return `${dNum} ${MONTHS_GEN.pl![m]} ${y} r.`;
+    case 'pt': return `${dNum} de ${MONTHS_GEN.pt![m]} de ${y}`;
+    case 'es': return `${dNum} de ${MONTHS_GEN.es![m]} de ${y}`;
+    case 'tr': return `${dNum} ${MONTHS_GEN.tr![m]} ${y}`;
+    case 'en': return `${MONTHS_EN[m]} ${dNum}, ${y}`;
+    case 'zh': case 'ja': return `${y}年${m + 1}月${dNum}日`;
+    case 'ko': return `${y}년 ${m + 1}월 ${dNum}일`;
+    default: return `${dd}.${mm}.${y}`;
+  }
 }
 
 /** Устранение двойных пунктуационных знаков после подстановки («г..» → «г.», «р..» → «р.») */
 export function cleanupPunct(text: string): string {
   return text
     .replace(/([гр])\.\./g, '$1.') // рус./укр. сокращения года
+    .replace(/([rgjr])\.\./g, '$1.') // de/fr/pl сокращения года
     .replace(/\s+,/g, ',')
     .replace(/\s{2,}/g, ' ');
 }

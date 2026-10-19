@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
 
+// Приложение самодостаточное: статический экспорт без сервера.
+// `next build` собирает сайт в out/ — он же используется в Android (Capacitor)
+// и десктопе (Electron): документ генерируется прямо на устройстве.
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
+  output: "export",
+  images: { unoptimized: true },
   typescript: {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
-  // pdf-lib + fontkit нельзя пропускать через webpack-трансформацию:
-  // бандлинг ломает cmap/embedding шрифтов → в PDF вместо кириллицы рендерятся
-  // неверные глифы. Оставляем их внешними серверными пакетами (require из node_modules).
-  serverExternalPackages: ["pdf-lib", "@pdf-lib/fontkit"],
 };
 
 export default nextConfig;

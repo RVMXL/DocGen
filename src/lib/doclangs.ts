@@ -17,7 +17,17 @@ export const DOC_LANGS: Record<string, DocLangInfo> = {
   hy: { native: 'Հայերեն', ru: 'армянском', en: 'Armenian' },
   az: { native: 'Azərbaycan dili', ru: 'азербайджанском', en: 'Azerbaijani' },
   ro: { native: 'Română', ru: 'румынском', en: 'Romanian' },
+  de: { native: 'Deutsch', ru: 'немецком', en: 'German' },
+  fr: { native: 'Français', ru: 'французском', en: 'French' },
+  pl: { native: 'Polski', ru: 'польском', en: 'Polish' },
   en: { native: 'English', ru: 'английском', en: 'English' },
+  zh: { native: '中文', ru: 'китайском', en: 'Chinese' },
+  ja: { native: '日本語', ru: 'японском', en: 'Japanese' },
+  ko: { native: '한국어', ru: 'корейском', en: 'Korean' },
+  tr: { native: 'Türkçe', ru: 'турецком', en: 'Turkish' },
+  he: { native: 'עברית', ru: 'иврите', en: 'Hebrew' },
+  pt: { native: 'Português', ru: 'португальском', en: 'Portuguese' },
+  es: { native: 'Español', ru: 'испанском', en: 'Spanish' },
 };
 
 /** Самоназвание языка документа (или код как fallback) */
