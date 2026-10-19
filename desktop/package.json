@@ -5,6 +5,7 @@
   "description": "DocGen — генератор официальных документов (Россия и СНГ)",
   "main": "main.cjs",
   "author": "RVMXL",
+  "homepage": "https://github.com/RVMXL/DocGen",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
