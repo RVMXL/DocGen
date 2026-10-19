@@ -117,17 +117,14 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru'): Pro
   };
 
   // для RTL: строка предварительно переводится в визуальный порядок, поэтому
-  // отрисовка остаётся слева направо; выравнивание инвертируется
+  // отрисовка остаётся слева направо; выравнивание соответствует указанному,
+  // а выключка по ширине заменяется правым выравниванием (стандарт иврита)
   const drawLine = (text: string, f: PDFFont, x: number, width: number, mode: 'left' | 'center' | 'right' | 'just') => {
     const raw = rtl ? rtlShape(text) : text;
     const lines = wrapWords(raw, f, SIZE, width);
     for (const ln of lines) {
       ensureSpace(LINE_H);
-      let m = mode;
-      if (rtl) {
-        if (m === 'left') m = 'right';
-        else if (m === 'right') m = 'left';
-      }
+      const m: 'left' | 'center' | 'right' | 'just' = rtl && mode === 'just' ? 'right' : mode;
       const lw = f.widthOfTextAtSize(ln, SIZE);
       let lx = x;
       if (m === 'center') lx = x + (width - lw) / 2;
