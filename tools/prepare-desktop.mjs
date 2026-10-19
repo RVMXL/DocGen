@@ -23,6 +23,18 @@ if (!fs.existsSync(D('.next/standalone/server.js'))) {
 console.log('→ копирование .next/standalone → desktop/app');
 fs.cpSync(D('.next/standalone'), D('desktop/app'), { recursive: true });
 
+// ВАЖНО: манифест standalone (package.json, без "main") и .package-lock.json
+// нельзя оставлять в payload — electron-builder читает package.json из корня
+// resources/app, и посторонний манифест ломает поиск entry-файла (index.js not found),
+// а также провоцирует попытку пересчёта production-зависимостей.
+for (const junk of ['package.json', 'node_modules/.package-lock.json']) {
+  const p = D('desktop/app/' + junk);
+  if (fs.existsSync(p)) {
+    fs.rmSync(p);
+    console.log('→ удалён desktop/app/' + junk);
+  }
+}
+
 console.log('→ .next/static → desktop/app/.next/static');
 fs.cpSync(D('.next/static'), D('desktop/app/.next/static'), { recursive: true });
 
