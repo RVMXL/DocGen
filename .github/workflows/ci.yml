@@ -22,7 +22,7 @@ jobs:
       - name: Схема БД
         env:
           DATABASE_URL: "file:${{ github.workspace }}/db/custom.db"
-        run: bunx prisma db push --skip-generate
+        run: bunx prisma generate && bunx prisma db push --skip-generate
 
       - name: Каталог шаблонов (seed)
         env:
