@@ -197,11 +197,11 @@ jobs:
             echo "keyPassword=$KEY_PASS"
           } > android/keystore.properties
 
-      - name: "Версия APK = тегу (versionName), versionCode = числу коммитов"
+      - name: "Версия APK = тегу (versionName), versionCode = номеру прогона (монотонно)"
         run: |
           set -euo pipefail
           VER="${GITHUB_REF_NAME#v}"
-          CODE=$(git rev-list --count HEAD)
+          CODE="${GITHUB_RUN_NUMBER}"
           sed -i "s/versionCode [0-9]*/versionCode $CODE/" android/app/build.gradle
           sed -i "s/versionName \".*\"/versionName \"$VER\"/" android/app/build.gradle
           echo "versionCode=$CODE, versionName=$VER"
