@@ -17,22 +17,15 @@ concurrency:
   group: release-${{ github.ref_name }}
   cancel-in-progress: false
 
-env:
-  # SEC: actions запинены по SHA (мутабельные теги — supply-chain риск)
-  CHECKOUT: d23441a48e516b6c34aea4fa41551a30e30af803 # actions/checkout v6
-  SETUP_BUN: 0c5077e51419868618aeaa5fe8019c62421857d6 # oven-sh/setup-bun v2
-  SETUP_JAVA: b6effb05e454b25005698d916606bdc6ffcbf961 # actions/setup-java v5
-  UPLOAD: 330a01c490aca151604b8cf639adc76d48f6c5d4 # actions/upload-artifact v5
-
 jobs:
   # ── общая web-сборка: зависимости, БД с каталогом, next build ──────────────
   build-web:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@${{ env.CHECKOUT }}
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
 
       - name: Зависимости
         run: bun install --frozen-lockfile
@@ -74,8 +67,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@${{ env.CHECKOUT }}
-      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
       - run: bun install --frozen-lockfile
 
       - name: Восстановить web-сборку
@@ -101,7 +94,7 @@ jobs:
           cat SHA256SUMS-server.txt
 
       - name: Артефакт
-        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: server-package
           path: |
@@ -128,8 +121,8 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@${{ env.CHECKOUT }}
-      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
       - run: bun install --frozen-lockfile
 
       - name: БД с каталогом (для payload)
@@ -154,7 +147,7 @@ jobs:
           npx electron-builder --${{ matrix.platform }} --publish never
 
       - name: Артефакт
-        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: desktop-${{ matrix.platform }}
           path: release-dist/*
@@ -165,9 +158,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@${{ env.CHECKOUT }}
-      - uses: oven-sh/setup-bun@${{ env.SETUP_BUN }}
-      - uses: actions/setup-java@${{ env.SETUP_JAVA }}
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
           distribution: temurin
           java-version: "21"
@@ -242,7 +235,7 @@ jobs:
           sha256sum "DocGen-${VER}-android.apk"
 
       - name: Артефакт
-        uses: actions/upload-artifact@${{ env.UPLOAD }}
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: android-apk
           path: DocGen-*-android.apk
