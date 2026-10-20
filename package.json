@@ -1,14 +1,14 @@
 {
   "name": "docgen",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
-  "description": "DocGen — самодостаточное приложение для генерации официальных документов по шаблонам (22 страны, экспорт .docx/.pdf, работает полностью офлайн)",
+  "description": "DocGen — приложение для генерации официальных документов по шаблонам (22 страны, экспорт .docx/.pdf, работает полностью офлайн)",
   "homepage": "https://github.com/RVMXL/DocGen",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
     "lint": "eslint .",
-    "data:check": "node tools/check-data.mjs",
+    "data:check": "bun tools/check-data.ts",
     "cap:sync": "next build && cap sync android"
   },
   "dependencies": {
