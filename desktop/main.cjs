@@ -7,6 +7,7 @@
 const { app, BrowserWindow, Menu, shell, session, protocol, net, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const { pathToFileURL } = require('url');
 
 let mainWindow = null;
 
@@ -23,15 +24,17 @@ function registerAppProtocol() {
     // app://bundle/index.html → APP_DIR/index.html
     let rel = decodeURIComponent(url.pathname).replace(/^\/+/, '');
     if (rel === '') rel = 'index.html';
-    const file = path.normalize(path.join(APP_DIR, rel));
+    let file = path.normalize(path.join(APP_DIR, rel));
     if (!file.startsWith(APP_DIR)) {
       return new Response('Forbidden', { status: 403 });
     }
     if (!fs.existsSync(file)) {
-      // SPA: неизвестные пути — на index.html
-      return net.fetch('app://bundle/index.html');
+      // SPA: неизвестные пути — на index.html. Отдаём С ДИСКА: net.fetch('app://…')
+      // внутри обработчика app:// вызывает сам себя рекурсивно (страница никогда
+      // не грузится, окно не появляется — баг «Windows-версия не запускается»).
+      file = path.join(APP_DIR, 'index.html');
     }
-    return net.fetch('app://bundle/' + rel.split(path.sep).join('/'));
+    return net.fetch(pathToFileURL(file).toString());
   });
 }
 
@@ -55,7 +58,11 @@ function createWindow() {
   });
 
   mainWindow.once('ready-to-show', () => mainWindow.show());
-  mainWindow.loadURL('app://bundle/index.html');
+  // без catch отказ загрузки = невидимый процесс без окна («не запускается»)
+  mainWindow.loadURL('app://bundle/index.html').catch((err) => {
+    dialog.showErrorBox('DocGen', 'Не удалось загрузить интерфейс приложения: ' + (err?.message ?? err));
+    app.quit();
+  });
 
   // ссылки на госпорталы и т.п. — во внешний браузер
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
