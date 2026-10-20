@@ -21,7 +21,8 @@ const workFields = (extra: TplDef['fields'] = []): TplDef['fields'] => [
 export const TEMPLATES_DE: TplDef[] = [
   {
     slug: 'de-work-urlaubsantrag', kind: 'STANDARD', categorySlug: 'work-vacations',
-    titleRu: 'Заявление на ежегодный оплачиваемый отпуск', titleEn: 'Annual leave application (Urlaubsantrag)',
+    titleRu: 'Заявление на ежегодный оплачиваемый отпуск',
+    titleDoc: 'Antrag auf bezahlten Jahresurlaub', titleEn: 'Annual leave application (Urlaubsantrag)',
     descRu: 'Заявление работодателю о предоставлении оплачиваемого отпуска. По Bundesurlaubsgesetz минимальный отпуск — 24 рабочих дня (при 6-дневной неделе), т.е. 4 недели; заявление подаётся заранее.',
     descEn: 'Leave application. Under the Bundesurlaubsgesetz the minimum is 24 working days (4 weeks); apply in advance.',
     refRu: '§§ 3, 7 Bundesurlaubsgesetz (BUrlG)',
@@ -43,7 +44,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-work-unbezahlter-urlaub', kind: 'STANDARD', categorySlug: 'work-vacations',
-    titleRu: 'Заявление на неоплачиваемый отпуск (Freistellung)', titleEn: 'Unpaid leave application (Freistellung)',
+    titleRu: 'Заявление на неоплачиваемый отпуск (Freistellung)',
+    titleDoc: 'Antrag auf unbezahlten Urlaub (Freistellung)', titleEn: 'Unpaid leave application (Freistellung)',
     descRu: 'Заявление о неоплачиваемом освобождении от работы (unbezahlte Freistellung) по личным причинам. Предоставляется по соглашению с работодателем; о продолжении выплаты зарплаты см. § 616 BGB.',
     descEn: 'Application for unpaid leave (Freistellung) for personal reasons, by agreement with the employer; continued pay may be governed by § 616 BGB.',
     refRu: '§ 616 Гражданского уложения ФРГ (BGB); соглашение с работодателем',
@@ -66,7 +68,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-work-kuendigung', kind: 'STANDARD', categorySlug: 'work-dismissal',
-    titleRu: 'Заявление об увольнении (Kündigung)', titleEn: 'Resignation letter (Kündigung)',
+    titleRu: 'Заявление об увольнении (Kündigung)',
+    titleDoc: 'Eigenkündigung (Kündigungsschreiben)', titleEn: 'Resignation letter (Kündigung)',
     descRu: 'Заявление о расторжении трудового договора работником. Обязательна ПИСЬМЕННАЯ форма с собственноручной подписью (§ 623 BGB); общий срок предупреждения — 4 недели к 15-му числу или к концу месяца (§ 622 BGB), если договором не установлено иное.',
     descEn: 'Resignation notice. WRITTEN form with wet signature is mandatory (§ 623 BGB); general notice period is 4 weeks to the 15th or end of month (§ 622 BGB).',
     refRu: '§§ 622, 623 Гражданского уложения ФРГ (BGB)',
@@ -89,7 +92,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-work-arbeitszeugnis', kind: 'STANDARD', categorySlug: 'work-docs',
-    titleRu: 'Запрос рабочего свидетельства (Arbeitszeugnis)', titleEn: 'Employment reference request (Arbeitszeugnis)',
+    titleRu: 'Запрос рабочего свидетельства (Arbeitszeugnis)',
+    titleDoc: 'Antrag auf Arbeitszeugnis', titleEn: 'Employment reference request (Arbeitszeugnis)',
     descRu: 'Запрос квалифицированного рабочего свидетельства (qualifiziertes Arbeitszeugnis) или простого (einfaches Arbeitszeugnis). Работодатель обязан выдать свидетельство по окончании трудовых отношений (§ 109 GewO).',
     descEn: 'Request for a qualified or simple employment reference. The employer must issue it upon termination (§ 109 GewO).',
     refRu: '§ 109 Промыслового уложения ФРГ (GewO)',
@@ -110,7 +114,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-claim-maengelruege', kind: 'STANDARD', categorySlug: 'court-claims',
-    titleRu: 'Претензия продавцу (Mängelrüge)', titleEn: 'Notice of defects to seller (Mängelrüge)',
+    titleRu: 'Претензия продавцу (Mängelrüge)',
+    titleDoc: 'Mängelrüge an den Verkäufer', titleEn: 'Notice of defects to seller (Mängelrüge)',
     descRu: 'Претензия продавцу о недостатках товара: право на последующее исполнение (Nacherfüllung), снижение цены, расторжение или возмещение расходов. Гарантийные права потребителя действуют 2 года с передачи товара.',
     descEn: 'Notice of defects to a seller: right to cure, price reduction, rescission or reimbursement. Consumer warranty rights last 2 years from delivery.',
     refRu: '§§ 437, 439 Гражданского уложения ФРГ (BGB); europäische Verbraucherrechte-Richtlinie',
@@ -140,7 +145,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-claim-widerruf', kind: 'STANDARD', categorySlug: 'court-claims',
-    titleRu: 'Заявление об отмене (Widerruf) — 14 дней', titleEn: 'Withdrawal notice (Widerruf) — 14 days',
+    titleRu: 'Заявление об отмене (Widerruf) — 14 дней',
+    titleDoc: 'Widerrufserklärung (14 Tage)', titleEn: 'Withdrawal notice (Widerruf) — 14 days',
     descRu: 'Заявление об использовании права отмены (Widerruf) при дистанционных и офлайн-покупках: 14 дней без объяснения причин; для дистанционных сделок срок — 14 дней с получения товара.',
     descEn: 'Withdrawal (Widerruf) notice for distance and off-premises purchases: 14 days without giving a reason.',
     refRu: '§§ 355, 356 Гражданского уложения ФРГ (BGB)',
@@ -162,7 +168,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-claim-mahnung', kind: 'STANDARD', categorySlug: 'court-claims',
-    titleRu: 'Напоминание об оплате (Mahnung)', titleEn: 'Payment reminder (Mahnung)',
+    titleRu: 'Напоминание об оплате (Mahnung)',
+    titleDoc: 'Zahlungserinnerung (Mahnung)', titleEn: 'Payment reminder (Mahnung)',
     descRu: 'Письменное напоминание должнику об оплате с установлением срока. После истечения срока должник находится в просрочке (Verzug, § 286 BGB) — начисляются проценты и возможно обращение в суд.',
     descEn: 'Written payment reminder setting a deadline. After the deadline the debtor is in default (Verzug, § 286 BGB).',
     refRu: '§ 286 Гражданского уложения ФРГ (BGB)',
@@ -187,7 +194,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-uni-schuldschein', kind: 'STANDARD', categorySlug: 'uni-money',
-    titleRu: 'Расписка о займе (Schuldschein)', titleEn: 'Loan note (Schuldschein)',
+    titleRu: 'Расписка о займе (Schuldschein)',
+    titleDoc: 'Schuldschein (Darlehen unter Privatpersonen)', titleEn: 'Loan note (Schuldschein)',
     descRu: 'Простая расписка о займе между частными лицами. Договор займа свыше 500 евро требует письменной формы (§ 126 BGB); расписка подтверждает получение суммы.',
     descEn: 'Simple loan note between individuals. Loan contracts above 500 EUR require written form (§ 126 BGB).',
     refRu: '§§ 488, 126 Гражданского уложения ФРГ (BGB)',
@@ -212,7 +220,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-uni-vollmacht', kind: 'STANDARD', categorySlug: 'uni-common',
-    titleRu: 'Доверенность (Vollmacht)', titleEn: 'Power of attorney (Vollmacht)',
+    titleRu: 'Доверенность (Vollmacht)',
+    titleDoc: 'Vollmacht', titleEn: 'Power of attorney (Vollmacht)',
     descRu: 'Общая доверенность на бытовые действия: получение документов, писем, посылок. Для сделок с недвижимостью и операций, требующих нотариальной формы, нужна нотариально заверенная Vollmacht.',
     descEn: 'General power of attorney for everyday matters. A notarized Vollmacht is required for real estate and notarially form-bound transactions.',
     refRu: '§§ 164–172 Гражданского уложения ФРГ (BGB)',
@@ -234,7 +243,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-edu-entschuldigung', kind: 'STANDARD', categorySlug: 'edu-docs',
-    titleRu: 'Извинение в школу (Entschuldigung)', titleEn: 'School absence note (Entschuldigung)',
+    titleRu: 'Извинение в школу (Entschuldigung)',
+    titleDoc: 'Entschuldigung für das Fehlen in der Schule', titleEn: 'School absence note (Entschuldigung)',
     descRu: 'Извинение родителя о пропуске занятий ребёнком. Школьные правила (Schulordnung) земли обычно требуют письменного извещения в течение 2–3 дней.',
     descEn: 'Parent’s note explaining a child’s school absence. State school rules usually require a written notice within 2-3 days.',
     refRu: 'правила посещаемости школ земель ФРГ',
@@ -258,7 +268,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-med-beschwerde', kind: 'STANDARD', categorySlug: 'med-appeals',
-    titleRu: 'Жалоба на медицинское обслуживание', titleEn: 'Healthcare complaint (Beschwerde)',
+    titleRu: 'Жалоба на медицинское обслуживание',
+    titleDoc: 'Beschwerde über die medizinische Versorgung', titleEn: 'Healthcare complaint (Beschwerde)',
     descRu: 'Жалоба на медицинское обслуживание руководству клиники/практики. Права пациентов закреплены в §§ 630a ff BGB; далее — complaint management клиники, страховая или пациентская инстанция земли.',
     descEn: 'Complaint about healthcare services addressed to the clinic management. Patient rights are codified in §§ 630a ff BGB.',
     refRu: '§§ 630a и сл. Гражданского уложения ФРГ (Patientenrechtegesetz)',
@@ -285,7 +296,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-util-maengelanzeige', kind: 'STANDARD', categorySlug: 'util-management',
-    titleRu: 'Уведомление арендодателю о недостатках (Mängelanzeige)', titleEn: 'Defect notice to landlord (Mängelanzeige)',
+    titleRu: 'Уведомление арендодателю о недостатках (Mängelanzeige)',
+    titleDoc: 'Mängelanzeige an den Vermieter', titleEn: 'Defect notice to landlord (Mängelanzeige)',
     descRu: 'Уведомление арендодателя о дефекте жилья с требованием устранить. При неустранении возможны снижение аренды (Mietminderung) и самостоятельное устранение с возмещением (§ 536a BGB).',
     descEn: 'Defect notice to the landlord. If not cured, rent reduction (Mietminderung) and self-help with reimbursement (§ 536a BGB) may apply.',
     refRu: '§§ 536a, 535 Гражданского уложения ФРГ (BGB)',
@@ -322,7 +334,8 @@ export const TEMPLATES_DE: TplDef[] = [
 
   {
     slug: 'de-gov-widerspruch', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Widerspruch против решения ведомства', titleEn: 'Objection to an administrative decision (Widerspruch)',
+    titleRu: 'Widerspruch против решения ведомства',
+    titleDoc: 'Widerspruch gegen einen Bescheid', titleEn: 'Objection to an administrative decision (Widerspruch)',
     descRu: 'Возражение (Widerspruch) против административного акта: срок — 1 месяц с момента вручения (§ 70 VwGO); изложение решения, grounds и запрос отмены.',
     descEn: 'Objection to an administrative act within one month of service (§ 70 VwGO).',
     refRu: '§ 70 VwGO; § 357 AO (для налоговых актов — Einspruch)',
@@ -348,7 +361,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-lawsuit-klage-ag', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: 'Иск в Amtsgericht (Klage, базовая форма)', titleEn: 'Civil complaint to the local court (Klage)',
+    titleRu: 'Иск в Amtsgericht (Klage, базовая форма)',
+    titleDoc: 'Klageschrift (Amtsgericht)', titleEn: 'Civil complaint to the local court (Klage)',
     descRu: 'Основание иска в Amtsgericht (до 5 000 € или по предмету): Klage с Klagegründen и Beweismitteln; процессуально подаётся через адвоката или лично.',
     descEn: 'Basis statement of claim for the Amtsgericht (up to EUR 5,000 or by subject matter).',
     refRu: '§ 253 ZPO; ГПК Германии (ZPO)',
@@ -374,7 +388,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-med-kostenuebernahme', kind: 'STANDARD', categorySlug: 'med-services',
-    titleRu: 'Заявление о покрытии лечения Krankenkasse (Kostenübernahme)', titleEn: 'Application to the health insurer for treatment coverage',
+    titleRu: 'Заявление о покрытии лечения Krankenkasse (Kostenübernahme)',
+    titleDoc: 'Antrag auf Kostenübernahme (Krankenkasse)', titleEn: 'Application to the health insurer for treatment coverage',
     descRu: 'Заявление в больничную кассу (Krankenkasse) о покрытии дорогостоящего/нового лечения: обоснование мед. необходимости; при отказе — Widerspruch (§ 13 SGB V; § 104 SGB V для G-BA).',
     descEn: 'Application to the statutory health insurer to cover a costly or novel treatment (§ 13 SGB V); rejection can be challenged.',
     refRu: '§ 13 SGB V; § 2 Abs. 1a SGB V (Wahlleistung — частично)',
@@ -399,7 +414,8 @@ export const TEMPLATES_DE: TplDef[] = [
   },
   {
     slug: 'de-tax-einspruch', kind: 'STANDARD', categorySlug: 'tax-docs',
-    titleRu: 'Einspruch против налогового решения (§ 357 AO)', titleEn: 'Objection against a tax assessment (Einspruch)',
+    titleRu: 'Einspruch против налогового решения (§ 357 AO)',
+    titleDoc: 'Einspruch gegen den Steuerbescheid', titleEn: 'Objection against a tax assessment (Einspruch)',
     descRu: 'Возражение против налогового решения: месячный срок (§ 348 AO), обоснование, документы.',
     descEn: 'Objection against a tax assessment within one month (§ 348 AO), with grounds and documents.',
     refRu: '§ 348, 357 AO (Abgabenordnung)',

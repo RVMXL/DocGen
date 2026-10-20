@@ -299,7 +299,8 @@ export const TEMPLATES_BR: TplDef[] = [
 
   {
     slug: 'br-gov-ouvidoria', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Reclamação à ouvidoria (жалоба в госорган)', titleEn: 'Complaint to a government ombudsman',
+    titleRu: 'Reclamação à ouvidoria (жалоба в госорган)',
+    titleDoc: 'Reclamação à ouvidoria', titleEn: 'Complaint to a government ombudsman',
     descRu: 'Reclamação a um órgão público (ouvidoria): descrição do problema, serviços afetados e providências; resposta no prazo da Lei de Acesso à Informação (30 dias).',
     descEn: 'Complaint to a public agency ombudsman; response within 30 days (Access to Information Law).',
     refRu: 'Lei nº 12.527/2011 (LAI); Lei nº 13.460/2017 (participação dos usuários)',
@@ -323,7 +324,8 @@ export const TEMPLATES_BR: TplDef[] = [
   },
   {
     slug: 'br-family-alimentos', kind: 'STANDARD', categorySlug: 'court-family',
-    titleRu: 'Ação de alimentos (алименты)', titleEn: 'Child support action (alimentos)',
+    titleRu: 'Ação de alimentos (алименты)',
+    titleDoc: 'Ação de alimentos', titleEn: 'Child support action (alimentos)',
     descRu: 'Ação de alimentos: pedido de pensão alimentícia (Lei 5.478/1968; CPC arts. 528 e segs.; percentuais sobre os rendimentos do devedor).',
     descEn: 'Child support action under Brazilian Law 5.478/1968 and CPC arts. 528 et seq.',
     refRu: 'Lei nº 5.478/1968; CPC, arts. 528-533; Código Civil, art. 1.694',
@@ -349,7 +351,8 @@ export const TEMPLATES_BR: TplDef[] = [
   },
   {
     slug: 'br-med-prontuario', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: 'Solicitação de prontuário médico', titleEn: 'Medical records request (prontuário)',
+    titleRu: 'Solicitação de prontuário médico',
+    titleDoc: 'Solicitação de prontuário médico', titleEn: 'Medical records request (prontuário)',
     descRu: 'Pedido de acesso/cópia do prontuário (Resolução CFM 1.821/2007; LGPD): entrega no prazo de 24 horas após a solicitação.',
     descEn: 'Request for access to the medical chart (CFM Resolution 1.821/2007; LGPD); delivery within 24 hours.',
     refRu: 'Resolução CFM nº 1.821/2007; Lei nº 13.787/2018; LGPD (Lei 13.709/2018)',

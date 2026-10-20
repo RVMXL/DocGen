@@ -287,7 +287,8 @@ export const TEMPLATES_TR: TplDef[] = [
 
   {
     slug: 'tr-gov-cimer', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Idari başvuru (жалоба в госорган через CİMER)', titleEn: 'Application to a public authority (CİMER)',
+    titleRu: 'Idari başvuru (жалоба в госорган через CİMER)',
+    titleDoc: 'Kamu kurumuna başvuru (CİMER)', titleEn: 'Application to a public authority (CİMER)',
     descRu: 'Письменное обращение в государственный орган (формат для CİMER/напрямую): описание нарушения, требования; ответ — в течение 30 дней (4982 s.k. m. 13).',
     descEn: 'Written application to a public authority under the Turkish Right to Information / petitions law; response within 30 days.',
     refRu: '4982 sayılı Bilgi Edinme Hakkı Kanunu m. 13; İdari Usul Hakkında Kanun',
@@ -312,7 +313,8 @@ export const TEMPLATES_TR: TplDef[] = [
   },
   {
     slug: 'tr-med-kayit-isteme', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: 'Tıbbi kayıt isteme (запрос медзаписей)', titleEn: 'Medical records request',
+    titleRu: 'Tıbbi kayıt isteme (запрос медзаписей)',
+    titleDoc: 'Tıbbi kayıt talebi', titleEn: 'Medical records request',
     descRu: 'Запрос копий медзаписей и результатов (663 sayılı KHK, Hasta Hakları Yönetmeliği m. 19-20): клиника обязана выдать копии.',
     descEn: 'Request for copies of medical records under the Turkish Patient Rights Regulation (Arts. 19-20).',
     refRu: 'Hasta Hakları Yönetmeliği m. 19-20; Kişisel Verilerin Korunması Kanunu',
@@ -336,7 +338,8 @@ export const TEMPLATES_TR: TplDef[] = [
   },
   {
     slug: 'tr-bank-sikayet', kind: 'STANDARD', categorySlug: 'bank-docs',
-    titleRu: 'Bank şikâyeti (жалоба банку)', titleEn: 'Bank complaint letter',
+    titleRu: 'Bank şikâyeti (жалоба банку)',
+    titleDoc: 'Banka şikâyet dilekçesi', titleEn: 'Bank complaint letter',
     descRu: 'Жалоба банку на спорную операцию: ответ — 10 рабочих дней (Bankacılık Düzenleme... m. 51); при отказе — BDDK/банковский арбитр.',
     descEn: 'Bank complaint about a disputed transaction; response within 10 business days (Law 5411 Art. 51); escalation to BDDK/Financial Ombudsman.',
     refRu: '5411 sayılı Bankacılık Kanunu m. 51; BDDK Tebliği',

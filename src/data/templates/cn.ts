@@ -305,7 +305,8 @@ export const TEMPLATES_CN: TplDef[] = [
 
   {
     slug: 'cn-gov-xinfang', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: '投诉信 к госоргану (信访/12345)', titleEn: 'Complaint letter to a government agency',
+    titleRu: '投诉信 к госоргану (信访/12345)',
+    titleDoc: '投诉信（信访/12345）', titleEn: 'Complaint letter to a government agency',
     descRu: 'Письменная жалоба госоргану/через платформу 12345: описание проблемы, нарушенных прав, требований; ответ обязаны дать в установленный срок (Шифан — Regulations on letters and visits).',
     descEn: 'Written complaint to a government agency (letters-and-visits / 12345 platform) with facts and demands.',
     refRu: '«信访工作条例» (2022); Правила работы платформы 12345',
@@ -330,7 +331,8 @@ export const TEMPLATES_CN: TplDef[] = [
   },
   {
     slug: 'cn-lawsuit-zhifuling', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: '支付令申请书 (заявление о приказе)', titleEn: 'Application for payment order (zhifu ling)',
+    titleRu: '支付令申请书 (заявление о приказе)',
+    titleDoc: '支付令申请书', titleEn: 'Application for payment order (zhifu ling)',
     descRu: 'Заявление в суд о выдаче платежного приказа (支付令) по денежному требованию — быстрее иска (民诉法 第221条).',
     descEn: 'Application for a payment order for a monetary claim — faster than an ordinary lawsuit (Art. 221 of the PRC Civil Procedure Law).',
     refRu: '《中华人民共和国民事诉讼法》第221-222条',
@@ -355,7 +357,8 @@ export const TEMPLATES_CN: TplDef[] = [
   },
   {
     slug: 'cn-med-bingli-copy', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: '申请复印病历 (запрос копий медзаписей)', titleEn: 'Request to copy medical records',
+    titleRu: '申请复印病历 (запрос копий медзаписей)',
+    titleDoc: '病历复印申请书', titleEn: 'Request to copy medical records',
     descRu: 'Запрос копий медицинских записей (病历): право пациента/агента на копии по «医疗机构病历管理规定»; клиника выдаёт заверенные копии.',
     descEn: 'Request for certified copies of medical records under the PRC medical records administration rules.',
     refRu: '《医疗机构病历管理规定》(2013); 《基本医疗卫生与健康促进法》第54条',
@@ -381,7 +384,8 @@ export const TEMPLATES_CN: TplDef[] = [
   },
   {
     slug: 'cn-bank-diaoshua', kind: 'STANDARD', categorySlug: 'bank-docs',
-    titleRu: '银行卡盗刷异议/退单申请', titleEn: 'Unauthorized card transaction dispute',
+    titleRu: '银行卡盗刷异议/退单申请',
+    titleDoc: '银行卡盗刷异议申请书', titleEn: 'Unauthorized card transaction dispute',
     descRu: 'Письмо банку об оспаривании несанкционированной операции по карте (盗刷): заморозка, заявление о возврате, жалоба в народный банк при отказе.',
     descEn: 'Letter to the bank disputing an unauthorized card transaction, requesting investigation and refund.',
     refRu: '《银行卡业务管理办法》；中国银联争议处理规则',

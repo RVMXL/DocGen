@@ -287,7 +287,8 @@ export const TEMPLATES_IL: TplDef[] = [
 
   {
     slug: 'il-gov-pniya-memshal', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'פנייה לרשות (обращение в госорган)', titleEn: 'Petition to a government authority',
+    titleRu: 'פנייה לרשות (обращение в госорган)',
+    titleDoc: 'פנייה רשמית לרשות', titleEn: 'Petition to a government authority',
     descRu: 'Письменная пения (обращение) в госорган: описание проблемы, требования; срок ответа — 45 дней (חוק הגנת הפרטיות? — нет: חוק חופש המידע / סדרי עדיפויות; standard practice).',
     descEn: 'Written petition to a government authority; standard response within 45 days under Israeli administrative practice.',
     refRu: 'חוק חופש המידע, התשנ״ח-1998; נוהג מנהלי',
@@ -313,7 +314,8 @@ export const TEMPLATES_IL: TplDef[] = [
   },
   {
     slug: 'il-lawsuit-tik-katana', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: 'תביעה כספית קטנה (small claims)', titleEn: 'Small claims statement (tik katana)',
+    titleRu: 'תביעה כספית קטנה (small claims)',
+    titleDoc: 'כתב תביעה - תביעה קטנה', titleEn: 'Small claims statement (tik katana)',
     descRu: 'כתב תביעה לבית משפט לתביעות קטנות עד 33,700 ₪ (חוק המקרקעין? — חוק בתי המשפט [נוסח ממוזג], סעיף 65): פירוט העילה, הסכום והראיות.',
     descEn: 'Statement of claim for the small claims court (up to NIS 33,700) — Courts Consolidated Law, § 65.',
     refRu: 'חוק בתי המשפט [נוסח ממוזג], התשמ״ד-1984, סעיף 65; תקנות התביעות הקטנות',
@@ -339,7 +341,8 @@ export const TEMPLATES_IL: TplDef[] = [
   },
   {
     slug: 'il-med-rikuz-taar', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: 'בקשה לעיון ברשומה רפואית', titleEn: 'Medical records access request',
+    titleRu: 'בקשה לעיון ברשומה רפואית',
+    titleDoc: 'בקשה לעיון ברשומה רפואית', titleEn: 'Medical records access request',
     descRu: 'בקשה לעיון ולקבלת העתק של רשומה רפואית (חוק זכויות החולה, תשנ״ו-1996, סעיף 20; חוק חופש המידע).',
     descEn: 'Request for access to and copies of medical records (Patients Rights Law 5756-1996, § 20).',
     refRu: 'חוק זכויות החולה, תשנ״ו-1996, סעיף 20',

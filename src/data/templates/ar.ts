@@ -323,7 +323,8 @@ export const TEMPLATES_AR: TplDef[] = [
 
   {
     slug: 'ar-gov-reclamo-estatal', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Reclamo ante organismo público', titleEn: 'Claim before a public agency',
+    titleRu: 'Reclamo ante organismo público',
+    titleDoc: 'Reclamo administrativo', titleEn: 'Claim before a public agency',
     descRu: 'Reclamo ante un organismo estatal: descripción, antecedentes, peticiones; respuesta en 30 días (práctica administrativa; Ley 27.275 — acceso a la información pública).',
     descEn: 'Claim before a public agency under the Argentine administrative practice and access-to-information law 27.275.',
     refRu: 'Ley 27.275 (derecho de acceso a la información pública); Ley 19.549',
@@ -349,7 +350,8 @@ export const TEMPLATES_AR: TplDef[] = [
   },
   {
     slug: 'ar-med-historia-clinica', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: 'Solicitud de historia clínica', titleEn: 'Medical history request',
+    titleRu: 'Solicitud de historia clínica',
+    titleDoc: 'Solicitud de historia clínica', titleEn: 'Medical history request',
     descRu: 'Solicitud de acceso/copia de la historia clínica (Ley 26.529, art. 8; acceso del paciente o su representante).',
     descEn: 'Request for access to and copies of the medical history (Law 26.529, Art. 8).',
     refRu: 'Ley 26.529 (derechos del paciente), art. 8; Ley 26.657 donde aplique',

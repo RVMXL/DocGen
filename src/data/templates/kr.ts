@@ -300,7 +300,8 @@ export const TEMPLATES_KR: TplDef[] = [
 
   {
     slug: 'kr-gov-haengsim', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: '행정심판 (административное обжалование)', titleEn: 'Administrative appeal (haengsim simpan)',
+    titleRu: '행정심판 (административное обжалование)',
+    titleDoc: '행정심판 청구서', titleEn: 'Administrative appeal (haengsim simpan)',
     descRu: '행정심판: обжалование административного решения в административную комиссию в течение 90 дней (행정심판법 제26조).',
     descEn: 'Administrative appeal within 90 days under the Korean Administrative Appeals Act (Art. 26).',
     refRu: '행정심판법 제26조 (기간), 제19조 (적법요건)',
@@ -325,7 +326,8 @@ export const TEMPLATES_KR: TplDef[] = [
   },
   {
     slug: 'kr-lawsuit-jigeum', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: '지급명령 신청 (приказное производство)', titleEn: 'Payment order application (jigeum myeongnyeong)',
+    titleRu: '지급명령 신청 (приказное производство)',
+    titleDoc: '지급명령 신청서', titleEn: 'Payment order application (jigeum myeongnyeong)',
     descRu: '지급명령: ускоренное приказное производство по денежным требованиям (민사소송법 제462조); подача в суд по месту ответчика.',
     descEn: 'Payment order procedure for monetary claims (Art. 462 of the Korean Civil Procedure Act).',
     refRu: '민사소송법 제462조 (지급명령)',

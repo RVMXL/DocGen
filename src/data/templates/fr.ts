@@ -22,7 +22,8 @@ const workFields = (extra: TplDef['fields'] = []): TplDef['fields'] => [
 export const TEMPLATES_FR: TplDef[] = [
   {
     slug: 'fr-work-conges', kind: 'STANDARD', categorySlug: 'work-vacations',
-    titleRu: 'Заявление на оплачиваемый отпуск (congés payés)', titleEn: 'Paid leave application (congés payés)',
+    titleRu: 'Заявление на оплачиваемый отпуск (congés payés)',
+    titleDoc: 'Demande de congés payés annuels', titleEn: 'Paid leave application (congés payés)',
     descRu: 'Заявление работодателю о предоставлении оплачиваемого отпуска. По Code du travail — 2,5 рабочих дня за месяц работы (5 недель в год); заявление подаётся заранее в порядке, установленном в компании.',
     descEn: 'Paid leave application. The French Labour Code grants 2.5 working days per month (5 weeks per year); apply in advance per company procedure.',
     refRu: 'ст. L.3141-1 и сл. Трудового кодекса Франции (Code du travail)',
@@ -44,7 +45,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-work-conge-sans-solde', kind: 'STANDARD', categorySlug: 'work-vacations',
-    titleRu: 'Заявление на неоплачиваемый отпуск (congé sans solde)', titleEn: 'Unpaid leave application (congé sans solde)',
+    titleRu: 'Заявление на неоплачиваемый отпуск (congé sans solde)',
+    titleDoc: 'Demande de congé sans solde', titleEn: 'Unpaid leave application (congé sans solde)',
     descRu: 'Заявление о неоплачиваемом отпуске по личным причинам. Предоставляется по соглашению с работодателем — закон не обязывает его предоставлять.',
     descEn: 'Unpaid leave application for personal reasons, by agreement with the employer (not an automatic right).',
     refRu: 'Трудовой кодекс Франции; соглашение с работодателем',
@@ -67,7 +69,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-work-demission', kind: 'STANDARD', categorySlug: 'work-dismissal',
-    titleRu: 'Заявление об уходе (démission)', titleEn: 'Resignation letter (démission)',
+    titleRu: 'Заявление об уходе (démission)',
+    titleDoc: 'Lettre de démission', titleEn: 'Resignation letter (démission)',
     descRu: 'Заявление об увольнении по собственному желанию. Подаётся письменно (рекомендуется заказным письмом с уведомлением — LRAR); соблюдается предусмотрительный срок (préavis) по коллективному договору/договору.',
     descEn: 'Resignation letter. File in writing (registered letter with acknowledgment recommended); observe the préavis per collective agreement/contract.',
     refRu: 'ст. L.1237-1 Трудового кодекса Франции; длительность préavis — по колл. договору',
@@ -88,7 +91,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-work-attestations', kind: 'STANDARD', categorySlug: 'work-docs',
-    titleRu: 'Запрос справок от работодателя', titleEn: 'Employer certificates request',
+    titleRu: 'Запрос справок от работодателя',
+    titleDoc: 'Demande d’attestations à l’employeur', titleEn: 'Employer certificates request',
     descRu: 'Запрос документов от работодателя: сертификат о работе (certificat de travail), attestation France Travail, справка о зарплате для банка/визы.',
     descEn: 'Request for employer documents: certificat de travail, France Travail attestation, salary certificate.',
     refRu: 'ст. L.1234-19 (certificat de travail), L.5411-5 Трудового кодекса Франции',
@@ -109,7 +113,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-claim-reclamation-produit', kind: 'STANDARD', categorySlug: 'court-claims',
-    titleRu: 'Претензия продавцу (réclamation)', titleEn: 'Claim to seller (réclamation)',
+    titleRu: 'Претензия продавцу (réclamation)',
+    titleDoc: 'Réclamation au vendeur (produit défectueux)', titleEn: 'Claim to seller (réclamation)',
     descRu: 'Претензия продавцу о недостатках товара. Гарантия юридического соответствия (garantie légale de conformité) — 2 года с передачи товара; при серьёзном дефекте — замена или возврат денег.',
     descEn: 'Claim to a seller over a defective product. The legal conformity guarantee lasts 2 years from delivery.',
     refRu: 'ст. L.216-1, L.217-3 и сл. Кодекса потребления Франции',
@@ -139,7 +144,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-claim-mise-en-demeure', kind: 'STANDARD', categorySlug: 'court-claims',
-    titleRu: 'Требование об исполнении (mise en demeure)', titleEn: 'Formal notice (mise en demeure)',
+    titleRu: 'Требование об исполнении (mise en demeure)',
+    titleDoc: 'Mise en demeure de payer', titleEn: 'Formal notice (mise en demeure)',
     descRu: 'Официальное требование исполнить обязательство (оплатить долг, вернуть вещь) с установлением срока. После mise en demeure начисляются проценты и проценты за просрочку; письмо рекомендуется отправлять LRAR.',
     descEn: 'Formal notice to perform an obligation (pay a debt, return property) with a deadline; send by registered mail (LRAR).',
     refRu: 'ст. 1344 Гражданского кодекса Франции (mise en demeure)',
@@ -164,7 +170,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-uni-reconnaissance-dette', kind: 'HANDWRITTEN_REQUIRED', categorySlug: 'uni-money',
-    titleRu: 'Долговая расписка (reconnaissance de dette)', titleEn: 'Acknowledgment of debt (reconnaissance de dette)',
+    titleRu: 'Долговая расписка (reconnaissance de dette)',
+    titleDoc: 'Reconnaissance de dette', titleEn: 'Acknowledgment of debt (reconnaissance de dette)',
     descRu: 'Долговая расписка на сумму свыше 1500 евро оформляется письменно; с 2020 года используется официальный бланк Cerfa n° 15399. Бланк заполняется от руки и подаётся в налоговую службу (один экземпляр).',
     descEn: 'Debts above 1,500 EUR require a written acknowledgment; since 2020 the official Cerfa n° 15399 form is used, filled in by hand and filed with the tax office.',
     refRu: 'ст. 1359 Гражданского кодекса Франции; артикул 242 бис Налогового кодекса (бланк Cerfa n° 15399)',
@@ -180,7 +187,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-uni-procuration', kind: 'STANDARD', categorySlug: 'uni-common',
-    titleRu: 'Доверенность (procuration)', titleEn: 'Power of attorney (procuration)',
+    titleRu: 'Доверенность (procuration)',
+    titleDoc: 'Procuration', titleEn: 'Power of attorney (procuration)',
     descRu: 'Доверенность на бытовые действия: получение документов, представление интересов. Для сделок с недвижимостью и операций у нотариуса — только доверенность, удостоверенная нотариусом.',
     descEn: 'Power of attorney for everyday matters. For real estate and notarial transactions a notarized procuration is required.',
     refRu: 'ст. 1984 Гражданского кодекса Франции (mandat)',
@@ -202,7 +210,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-edu-absence', kind: 'STANDARD', categorySlug: 'edu-docs',
-    titleRu: 'Уведомление школы об отсутствии ребёнка', titleEn: 'School absence notice for a child',
+    titleRu: 'Уведомление школы об отсутствии ребёнка',
+    titleDoc: 'Justificatif d’absence scolaire', titleEn: 'School absence notice for a child',
     descRu: 'Уведомление школы об отсутствии ребёнка. Родители обязаны известить заведение в течение 2 дней (ст. L.131-8 Code de l’éducation).',
     descEn: 'School absence notice. Parents must notify the school within 2 days (art. L.131-8 of the Education Code).',
     refRu: 'ст. L.131-8 Кодекса образования Франции',
@@ -226,7 +235,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-med-reclamation', kind: 'STANDARD', categorySlug: 'med-appeals',
-    titleRu: 'Жалоба на медицинское обслуживание', titleEn: 'Healthcare complaint (réclamation)',
+    titleRu: 'Жалоба на медицинское обслуживание',
+    titleDoc: 'Réclamation sur la prise en charge médicale', titleEn: 'Healthcare complaint (réclamation)',
     descRu: 'Жалоба на медицинское обслуживание руководству учреждения; далее — комиссия по отношениям с пользователями (CDU) каждого учреждения и медицинский защитник (médiateur).',
     descEn: 'Healthcare complaint addressed to the institution; next step is the commission des usagers (CDU) and the médiateur médical.',
     refRu: 'ст. L.1112-3 и сл. Кодекса здравоохранения Франции',
@@ -252,7 +262,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-util-travaux-bailleur', kind: 'STANDARD', categorySlug: 'util-management',
-    titleRu: 'Требование арендодателю о ремонте', titleEn: 'Repair request to landlord',
+    titleRu: 'Требование арендодателю о ремонте',
+    titleDoc: 'Demande de travaux au bailleur', titleEn: 'Repair request to landlord',
     descRu: 'Требование арендодателю устранить недостатки жилья (жильё должно быть приличным — décent). При неустранении — снижение аренды, привлечение комиссии департамента (CDAD) или суд.',
     descEn: 'Repair demand to the landlord (housing must be decent). If not fixed: rent reduction, departmental conciliation commission (CDAD) or court.',
     refRu: 'ст. 1719, 1721 Гражданского кодекса Франции; Code de la construction et de l’habitation',
@@ -290,7 +301,8 @@ export const TEMPLATES_FR: TplDef[] = [
 
   {
     slug: 'fr-gov-recours-gracieux', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Recours gracieux (возражение администрации)', titleEn: 'Recours gracieux (informal administrative appeal)',
+    titleRu: 'Recours gracieux (возражение администрации)',
+    titleDoc: 'Recours gracieux (administration)', titleEn: 'Recours gracieux (informal administrative appeal)',
     descRu: 'Вежливое возражение администрации на решение (без суда): изложение решения, grounds, запрос пересмотра; предпосылка для recours contentieux (двухмесячный срок, CJA).',
     descEn: 'Informal appeal to the administration against a decision; precondition before a court challenge (2-month delay, CJA).',
     refRu: 'Code de justice administrative, ст. R.421-1 и след.',
@@ -316,7 +328,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-lawsuit-juge-proximite', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: 'Иск судье близости / tribunal de proximité', titleEn: 'Claim to the juge de proximité / tribunal de proximité',
+    titleRu: 'Иск судье близости / tribunal de proximité',
+    titleDoc: 'Demande devant le juge de proximité', titleEn: 'Claim to the juge de proximité / tribunal de proximité',
     descRu: 'Основа иска на сумму до 5 000 € (juge de proximité / tribunal de proximité): факты, сумма, доказательства; подача через форму Cerfa.',
     descEn: 'Basis statement for claims up to EUR 5,000 (juge de proximité): facts, amount, evidence.',
     refRu: 'Code de procédure civile, ст. 824-834 (compétence du juge de proximité)',
@@ -342,7 +355,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-med-alsd-cpam', kind: 'STANDARD', categorySlug: 'med-services',
-    titleRu: 'Запрос CPAM о 100% покрытии (ALD) / prise en charge', titleEn: 'Request to CPAM for 100% coverage (ALD)',
+    titleRu: 'Запрос CPAM о 100% покрытии (ALD) / prise en charge',
+    titleDoc: 'Demande de prise en charge à 100% (ALD)', titleEn: 'Request to CPAM for 100% coverage (ALD)',
     descRu: 'Заявление в кассу медстрахования (CPAM) о признании долгосрочного заболевания (ALD) для 100% покрытия лечения: приложение медицинской справки (ст. L.324-1 CSS).',
     descEn: 'Application to the health insurance fund (CPAM) for recognition of a long-term condition (ALD) granting 100% coverage.',
     refRu: 'Code de la sécurité sociale, ст. L.324-1, D.322-4; протокол ALD',
@@ -367,7 +381,8 @@ export const TEMPLATES_FR: TplDef[] = [
   },
   {
     slug: 'fr-tax-reclamation', kind: 'STANDARD', categorySlug: 'tax-docs',
-    titleRu: 'Réclamation (возражение по налогу)', titleEn: 'Tax réclamation letter',
+    titleRu: 'Réclamation (возражение по налогу)',
+    titleDoc: 'Réclamation fiscale', titleEn: 'Tax réclamation letter',
     descRu: 'Возражение на налоговое решение (réclamation): срок до 31 декабря 2-го года после уплаты; основание и документы (CGI, ст. R.196-1 LPF).',
     descEn: 'Objection to a tax assessment (réclamation), generally until 31 December of the second year (Livre des procédures fiscales).',
     refRu: 'Livre des procédures fiscales, ст. R.196-1; CGI',

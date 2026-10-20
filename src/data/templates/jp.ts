@@ -299,7 +299,8 @@ export const TEMPLATES_JP: TplDef[] = [
 
   {
     slug: 'jp-gov-fukuzen', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: '行政不服申立て (objection to administration)', titleEn: 'Administrative appeal (fukuzen moshitate)',
+    titleRu: '行政不服申立て (objection to administration)',
+    titleDoc: '行政不服申立書', titleEn: 'Administrative appeal (fukuzen moshitate)',
     descRu: '行政不服申立て: objection to an administrative disposition within 3 months (行政不服審査法); скопирайте реквизиты处分 и grounds.',
     descEn: 'Administrative appeal against a disposition within three months (Administrative Appeal Act).',
     refRu: '行政不服審査法 (平成26年法律第160号) 第11条',
@@ -324,7 +325,8 @@ export const TEMPLATES_JP: TplDef[] = [
   },
   {
     slug: 'jp-lawsuit-shiharaimei', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: '支払督促申立て (payment order)', titleEn: 'Application for payment order (shiharai tokusoku)',
+    titleRu: '支払督促申立て (payment order)',
+    titleDoc: '支払督促申立書', titleEn: 'Application for payment order (shiharai tokusoku)',
     descRu: '支払督促 (payment order) — быстрая процедура взыскания денежного долга (民訴法 第382条); подача в简易法院 по сумме долга.',
     descEn: 'Payment order procedure for monetary claims (Art. 382 of the Japanese Civil Procedure Code), filed with the summary court.',
     refRu: '民事訴訟法 第382条以下',
@@ -348,7 +350,8 @@ export const TEMPLATES_JP: TplDef[] = [
   },
   {
     slug: 'jp-med-ryojyo-kaiji', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: '診療情報開示請求 (запрос медзаписей)', titleEn: 'Request to disclose medical records',
+    titleRu: '診療情報開示請求 (запрос медзаписей)',
+    titleDoc: '診療情報開示請求書', titleEn: 'Request to disclose medical records',
     descRu: '診療情報開示請求書: право пациента (или наследника) на свои записи (医療法 第7条の2, 病院は要請に応じ開示); с обоснованием и сроком ответа.',
     descEn: 'Request for disclosure of medical records under Art. 7-2 of the Medical Service Act.',
     refRu: '医療法 第7条の2（診療に関する情報の開示）',

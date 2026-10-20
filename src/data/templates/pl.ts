@@ -310,7 +310,8 @@ export const TEMPLATES_PL: TplDef[] = [
 
   {
     slug: 'pl-gov-odwolanie-decyzja', kind: 'STANDARD', categorySlug: 'court-gov',
-    titleRu: 'Odwołanie od decyzji urzędu (KPA)', titleEn: 'Objection to an administrative decision (KPA)',
+    titleRu: 'Odwołanie od decyzji urzędu (KPA)',
+    titleDoc: 'Odwołanie od decyzji administracyjnej', titleEn: 'Objection to an administrative decision (KPA)',
     descRu: 'Odwołanie od decyzji administracyjnej w terminie 14 dni (art. 129 KPA): oznaczenie decyzji, zarzuty, wniosek o zmianę lub uchylenie.',
     descEn: 'Objection to an administrative decision within 14 days (Art. 129 of the Polish Code of Administrative Procedure).',
     refRu: 'art. 129 Kodeksu postępowania administracyjnego',
@@ -336,7 +337,8 @@ export const TEMPLATES_PL: TplDef[] = [
   },
   {
     slug: 'pl-lawsuit-pozew-zaplate', kind: 'STANDARD', categorySlug: 'court-lawsuits',
-    titleRu: 'Pozew o zapłatę (базовый)', titleEn: 'Payment claim lawsuit (basic pozew)',
+    titleRu: 'Pozew o zapłatę (базовый)',
+    titleDoc: 'Pozew o zapłatę', titleEn: 'Payment claim lawsuit (basic pozew)',
     descRu: 'Позов о взыскании долга до 20 000 zł (rejonowy): pozew z oznaczeniem stron, żądania, faktów i dowodów (art. 187 KPC).',
     descEn: 'Payment lawsuit up to PLN 20,000 before the district court (Art. 187 of the Polish Civil Procedure Code).',
     refRu: 'art. 187 Kodeksu postępowania cywilnego; właściwość — art. 17-21 KPC',
@@ -363,7 +365,8 @@ export const TEMPLATES_PL: TplDef[] = [
   },
   {
     slug: 'pl-med-dokumentacja', kind: 'STANDARD', categorySlug: 'med-records',
-    titleRu: 'Wniosek o dokumentację medyczną', titleEn: 'Request for medical records',
+    titleRu: 'Wniosek o dokumentację medyczną',
+    titleDoc: 'Wniosek o dokumentację medyczną', titleEn: 'Request for medical records',
     descRu: 'Wniosek o dostęp do dokumentacji medycznej i jej kopie (ustawa o prawach pacjenta, art. 23-30; pierwsza kopia bezpłatna).',
     descEn: 'Request for access to medical records and copies (Polish Patients Rights Act, Arts. 23-30; first copy free).',
     refRu: 'art. 23-30 ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta',
@@ -388,7 +391,8 @@ export const TEMPLATES_PL: TplDef[] = [
   },
   {
     slug: 'pl-bank-reklamacja', kind: 'STANDARD', categorySlug: 'bank-docs',
-    titleRu: 'Reklamacja do banku', titleEn: 'Complaint to the bank',
+    titleRu: 'Reklamacja do banku',
+    titleDoc: 'Reklamacja do banku', titleEn: 'Complaint to the bank',
     descRu: 'Reklamacja bankowa na operację/błąd: odpowiedź banku — 30 dni (ustawa o rozpatrywaniu reklamacji); dalej — Rzecznik Finansowy.',
     descEn: 'Bank complaint about a transaction/error; the bank must respond within 30 days (Polish complaints act); escalation to the Financial Ombudsman.',
     refRu: 'ustawa z 5.08.2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego',
