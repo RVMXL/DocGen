@@ -9,6 +9,7 @@ import { CATEGORY_TREE } from '../src/data/categories';
 
 const subgroups = new Set(CATEGORY_TREE.flatMap((g) => g.children.map((s) => s.slug)));
 const countryCodes = new Set(COUNTRIES.map((c) => c.code));
+const docLangOf = new Map(COUNTRIES.map((c) => [c.code, c.docLang] as const));
 const tpl = allTemplates();
 const errors: string[] = [];
 const seen = new Set<string>();
@@ -21,6 +22,11 @@ for (const t of tpl) {
   if (seen.has(t.slug)) errors.push(`${t.slug}: дубликат slug`);
   seen.add(t.slug);
   perCountry.set(cc, (perCountry.get(cc) ?? 0) + 1);
+  // язык документа ≠ ru/en → обязателен заголовок на языке документа (для интерфейсов этих языков)
+  const dl = docLangOf.get(cc);
+  if (t.kind !== 'GOV_PORTAL_ONLY' && dl && dl !== 'ru' && dl !== 'en' && !t.titleDoc) {
+    errors.push(`${t.slug}: нет titleDoc (язык документа ${dl})`);
+  }
   if (!['STANDARD', 'HANDWRITTEN_REQUIRED', 'GOV_PORTAL_ONLY'].includes(t.kind)) {
     errors.push(`${t.slug}: некорректный kind ${t.kind}`);
   }

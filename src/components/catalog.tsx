@@ -1,32 +1,50 @@
 'use client';
 // Каталог: большие группы → подгруппы → документы. Поиск по всем шаблонам.
-import { useMemo, useState } from 'react';
+// Язык интерфейса — любой из 21 локали; названия групп — titleI18n, шаблонов — titleDoc.
+import { useEffect, useMemo, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import {
   Briefcase, Scale, HeartPulse, GraduationCap, Mail, Building2, Files, FileText,
-  Search, ArrowLeft, ChevronRight, PenLine, Globe, FileSignature, Languages,
+  HeartHandshake, Landmark, Search, ArrowLeft, ChevronRight, PenLine, Globe,
+  FileSignature, Languages,
 } from 'lucide-react';
 import type { CatalogResponse, GroupDTO, TemplateDTO } from '@/lib/types';
-import { UI } from '@/lib/i18n';
+import { UI, uiFor, catTitle, tplTitle, type Locale } from '@/lib/i18n';
 import { docLangNative } from '@/lib/doclangs';
+import { registerBackHandler } from '@/lib/native';
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  Briefcase, Scale, HeartPulse, GraduationCap, Mail, Building2, Files, FileText,
+  Briefcase, Scale, HeartPulse, GraduationCap, Mail, Building2, Files, HeartHandshake, Landmark,
 };
 
 interface Props {
   catalog: CatalogResponse;
-  lang: 'ru' | 'en';
+  lang: Locale;
   onOpenTemplate: (tpl: TemplateDTO) => void;
   onBack: () => void;
 }
 
 export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
-  const t = UI[lang];
+  const t = uiFor(lang);
   const [activeGroup, setActiveGroup] = useState<GroupDTO | null>(null);
   const [query, setQuery] = useState('');
+
+  // системный «Назад» внутри каталога: из группы → к списку, сброс поиска
+  useEffect(() => {
+    return registerBackHandler(() => {
+      if (activeGroup) {
+        setActiveGroup(null);
+        return true;
+      }
+      if (query) {
+        setQuery('');
+        return true;
+      }
+      return false;
+    });
+  }, [activeGroup, query]);
 
   const searchResults = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -35,9 +53,10 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
     for (const g of catalog.groups) {
       for (const sg of g.subgroups) {
         for (const tpl of sg.templates) {
-          const title = lang === 'en' ? tpl.titleEn : tpl.titleRu;
-          if (title.toLowerCase().includes(q) || (lang === 'en' ? tpl.descEn : tpl.descRu).toLowerCase().includes(q)) {
-            out.push({ tpl, groupTitle: lang === 'en' ? g.titleEn : g.titleRu });
+          const title = tplTitle(tpl, lang);
+          const desc = lang === 'ru' ? tpl.descRu : lang === 'en' ? tpl.descEn : (tpl.descDoc ?? tpl.descEn);
+          if (title.toLowerCase().includes(q) || desc.toLowerCase().includes(q)) {
+            out.push({ tpl, groupTitle: catTitle(g, lang) });
           }
         }
       }
@@ -64,14 +83,14 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
           <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-teal-600 text-white shrink-0">
             <Icon className="w-5 h-5" aria-hidden />
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold">{lang === 'en' ? activeGroup.titleEn : activeGroup.titleRu}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">{catTitle(activeGroup, lang)}</h2>
         </div>
 
         <div className="space-y-5 pb-8">
           {activeGroup.subgroups.map((sg) => (
-            <section key={sg.id} aria-label={lang === 'en' ? sg.titleEn : sg.titleRu}>
+            <section key={sg.id} aria-label={catTitle(sg, lang)}>
               <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                {lang === 'en' ? sg.titleEn : sg.titleRu}
+                {catTitle(sg, lang)}
               </h3>
               <div className="rounded-xl border bg-card divide-y overflow-hidden">
                 {sg.templates.length === 0 && (
@@ -96,7 +115,7 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
       </p>
 
       <div className="relative mb-5">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground aria-hidden" aria-hidden />
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -128,14 +147,14 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
                       </span>
                       <ChevronRight className="w-4 h-4 text-muted-foreground mt-2" aria-hidden />
                     </div>
-                    <CardTitle className="text-base mt-2">{lang === 'en' ? g.titleEn : g.titleRu}</CardTitle>
+                    <CardTitle className="text-base mt-2">{catTitle(g, lang)}</CardTitle>
                     <CardDescription className="text-xs">{count} {t.documentsCount}</CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="flex flex-wrap gap-1.5">
                       {g.subgroups.slice(0, 3).map((sg) => (
                         <Badge key={sg.id} variant="secondary" className="text-[10px] font-normal">
-                          {lang === 'en' ? sg.titleEn : sg.titleRu}
+                          {catTitle(sg, lang)}
                         </Badge>
                       ))}
                     </div>
@@ -150,11 +169,11 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
   );
 }
 
-function TemplateRow({ tpl, lang, onOpen, subtitle }: { tpl: TemplateDTO; lang: 'ru' | 'en'; onOpen: () => void; subtitle?: string }) {
-  const t = UI[lang];
+function TemplateRow({ tpl, lang, onOpen, subtitle }: { tpl: TemplateDTO; lang: Locale; onOpen: () => void; subtitle?: string }) {
+  const t = uiFor(lang);
   const isHand = tpl.kind === 'HANDWRITTEN_REQUIRED';
   const isPortal = tpl.kind === 'GOV_PORTAL_ONLY';
-  const title = lang === 'en' ? tpl.titleEn : tpl.titleRu;
+  const title = tplTitle(tpl, lang);
   // Чип языка документа: если тело документа не на языке интерфейса — предупреждаём заранее
   const showLangChip = Boolean(tpl.lang) && tpl.lang !== lang && !isPortal;
   return (
@@ -176,8 +195,8 @@ function TemplateRow({ tpl, lang, onOpen, subtitle }: { tpl: TemplateDTO; lang: 
             <Languages className="w-3 h-3 shrink-0" aria-hidden /> {t.docLangChip} {docLangNative(tpl.lang)}
           </span>
         )}
-        {isHand && <span className="block text-[11px] text-red-600 font-medium mt-0.5">заполняется от руки</span>}
-        {isPortal && <span className="block text-[11px] text-sky-700 font-medium mt-0.5">решается через гос-портал</span>}
+        {isHand && <span className="block text-[11px] text-red-600 font-medium mt-0.5">{t.handChip}</span>}
+        {isPortal && <span className="block text-[11px] text-sky-700 font-medium mt-0.5">{t.portalChip}</span>}
       </span>
       <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
     </button>

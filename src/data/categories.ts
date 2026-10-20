@@ -16,6 +16,22 @@ export const CATEGORY_TREE: GroupDef[] = [
     children: [
       { slug: 'court-claims', titleRu: 'Претензии', titleEn: 'Pre-court claims' },
       { slug: 'court-lawsuits', titleRu: 'Исковые заявления', titleEn: 'Lawsuits' },
+      { slug: 'court-gov', titleRu: 'Жалобы в госорганы', titleEn: 'Complaints to authorities' },
+      { slug: 'court-family', titleRu: 'Семейные и наследственные дела', titleEn: 'Family & inheritance' },
+    ],
+  },
+  {
+    slug: 'finance', titleRu: 'Налоги и банки', titleEn: 'Taxes & banking', icon: 'Landmark',
+    children: [
+      { slug: 'tax-docs', titleRu: 'Налоговые заявления', titleEn: 'Tax documents' },
+      { slug: 'bank-docs', titleRu: 'Банки и кредиты', titleEn: 'Banks & loans' },
+    ],
+  },
+  {
+    slug: 'social', titleRu: 'Соцзащита и пенсии', titleEn: 'Social security & pensions', icon: 'HeartHandshake',
+    children: [
+      { slug: 'soc-benefits', titleRu: 'Пособия и выплаты', titleEn: 'Benefits & payments' },
+      { slug: 'soc-pension', titleRu: 'Пенсии', titleEn: 'Pensions' },
     ],
   },
   {
@@ -23,6 +39,7 @@ export const CATEGORY_TREE: GroupDef[] = [
     children: [
       { slug: 'med-appeals', titleRu: 'Обращения и жалобы', titleEn: 'Appeals & complaints' },
       { slug: 'med-records', titleRu: 'Медицинские документы', titleEn: 'Medical records' },
+      { slug: 'med-services', titleRu: 'Платные услуги и доступ к помощи', titleEn: 'Paid services & access to care' },
       { slug: 'med-online', titleRu: 'Онлайн-сервисы', titleEn: 'Online services' },
     ],
   },

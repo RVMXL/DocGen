@@ -3,12 +3,14 @@
 import { interpolateBlocks, formatFieldValues, toDocLang } from './docgen/interpolate';
 import { buildDocx } from './docgen/docx';
 import { buildPdf } from './docgen/pdf';
+import { saveFile } from './native';
+import type { Locale } from './i18n';
 import type { TemplateDTO } from './types';
 
 export type GenFormat = 'docx' | 'pdf';
 
-/** Имя файла по заголовку шаблона + дата */
-export function fileName(template: TemplateDTO, locale: 'ru' | 'en', format: GenFormat): string {
+/** Имя файла по заголовку шаблона + дата (для ru — русский, иначе латиница titleEn) */
+export function fileName(template: TemplateDTO, locale: Locale, format: GenFormat): string {
   const stamp = new Date().toISOString().slice(0, 10);
   const base = (locale === 'ru' ? template.titleRu : template.titleEn)
     .replace(/[^\p{L}\p{N} ]/gu, '')
@@ -33,23 +35,17 @@ export async function generateFile(
   const docLang = toDocLang(template.lang);
   const filled = renderBlocks(template, data);
   if (format === 'docx') return buildDocx(filled, docLang);
-  return new Blob([await buildPdf(filled, docLang)], { type: 'application/pdf' });
+  const bytes = await buildPdf(filled, docLang);
+  return new Blob([bytes as unknown as BlobPart], { type: 'application/pdf' });
 }
 
-/** Сформировать и сохранить файл (загрузка браузера / Electron / WebView) */
+/** Сформировать и сохранить файл: WebView (Share-меню), браузер/Electron (<a download>) */
 export async function downloadGenerated(
   template: TemplateDTO,
-  locale: 'ru' | 'en',
+  locale: Locale,
   data: Record<string, string>,
   format: GenFormat
 ): Promise<void> {
   const blob = await generateFile(template, data, format);
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = fileName(template, locale, format);
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
+  await saveFile(blob, fileName(template, locale, format));
 }

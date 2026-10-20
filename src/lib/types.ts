@@ -50,8 +50,10 @@ export interface TemplateDTO {
   lang: string; // язык тела документа (гос. язык страны) — НЕ зависит от языка интерфейса
   titleRu: string;
   titleEn: string;
+  titleDoc: string | null; // заголовок на языке документа (для UI ≠ ru/en)
   descRu: string;
   descEn: string;
+  descDoc: string | null;
   refRu: string | null;
   refEn: string | null;
   warningRu: string | null;
@@ -69,6 +71,7 @@ export interface SubgroupDTO {
   slug: string;
   titleRu: string;
   titleEn: string;
+  titleI18n?: Partial<Record<string, string>>; // названия на других языках интерфейса
   templates: TemplateDTO[];
 }
 
@@ -77,12 +80,13 @@ export interface GroupDTO {
   slug: string;
   titleRu: string;
   titleEn: string;
+  titleI18n?: Partial<Record<string, string>>;
   icon: string;
   subgroups: SubgroupDTO[];
 }
 
 export interface CatalogResponse {
-  country: { code: string; nameRu: string; nameEn: string; flag: string; docLang: string; currencyRu: string; currencyEn: string };
+  country: { code: string; nameRu: string; nameEn: string; nameI18n?: Partial<Record<string, string>>; flag: string; docLang: string; currencyRu: string; currencyEn: string };
   groups: GroupDTO[];
 }
 

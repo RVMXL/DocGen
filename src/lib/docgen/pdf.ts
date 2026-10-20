@@ -31,7 +31,8 @@ const cache = new Map<DocLang, Fonts>();
 
 /** URL шрифта: учитывает базовый путь сборки (хостинг в подкаталоге, Electron app://) */
 function fontUrl(file: string): string {
-  const base = typeof document !== 'undefined' && document.baseURI ? document.baseURI : '/';
+  const loc = globalThis as { document?: { baseURI?: string }; location?: { href: string } };
+  const base = loc.document?.baseURI || loc.location?.href || 'http://localhost/';
   return new URL('fonts/' + file, base).href;
 }
 

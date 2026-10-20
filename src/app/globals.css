@@ -151,3 +151,16 @@
     display: none !important;
   }
 }
+
+/* ===== Safe-area: контент не залезает под системные бары =====
+   Android 15 (targetSdk 35) принудительно рисует приложение под статус-баром;
+   iOS (будущее) и notch-устройства тоже отдают инсерты. Отступы работают только
+   когда WebView в edge-to-edge (иначе env() = 0 — двойного отступа не будет). */
+html {
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+html {
+  padding-bottom: env(safe-area-inset-bottom);
+}

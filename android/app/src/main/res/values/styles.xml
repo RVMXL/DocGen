@@ -13,6 +13,14 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:background">@null</item>
+        <!-- Android 15 (API 35) включил принудительный edge-to-edge: приложение рисовалось
+             ПОД статус-баром. Опция возвращает системные отступы; на Android < 15 игнорируется. -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <!-- Статус-бар в цвет бренда DocGen, иконки светлые -->
+        <item name="android:statusBarColor">@color/docgen_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Клавиатура не перекрывает поля формы -->
+        <item name="android:windowSoftInputMode">adjustResize</item>
     </style>
 
 

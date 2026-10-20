@@ -2,6 +2,8 @@
 // ДокГен — SPA по ТЗ: Onboarding → Каталог → Форма → Предпросмотр/экспорт.
 // Приложение САМОДОСТАТОЧНОЕ: каталог — статические данные, документы
 // генерируются прямо на устройстве (.docx/.pdf) — сервер не нужен.
+// Аппаратная кнопка «Назад» (Android) делает шаг назад по стеку экранов,
+// а не сворачивает приложение (см. src/lib/native.ts).
 import { useEffect, useMemo, useState } from 'react';
 import { Onboarding } from '@/components/onboarding';
 import { Catalog } from '@/components/catalog';
@@ -11,7 +13,8 @@ import { HandwrittenScreen, GovPortalScreen } from '@/components/special-screens
 import { Button } from '@/components/ui/button';
 import { Globe, Loader2 } from 'lucide-react';
 import { useApp } from '@/lib/store';
-import { UI } from '@/lib/i18n';
+import { UI, uiFor, countryName, dirFor, type Locale } from '@/lib/i18n';
+import { initBackButton, registerBackHandler } from '@/lib/native';
 import { buildCatalog } from '@/data/catalog';
 import type { TemplateDTO } from '@/lib/types';
 
@@ -26,11 +29,53 @@ type View =
 export default function Home() {
   const { lang, country, onboarded, setOnboarded } = useApp();
   const [hydrated, setHydrated] = useState(false);
-  const [view, setView] = useState<View>({ name: 'catalog' });
-  const locale = lang === 'en' ? 'en' : 'ru';
-  const t = UI[locale];
+  // стек экранов: системный «Назад» снимает верхний слой
+  const [stack, setStack] = useState<View[]>([{ name: 'catalog' }]);
+  const locale = (lang as Locale) in UI ? (lang as Locale) : 'en';
+  const t = uiFor(locale);
 
   useEffect(() => setHydrated(true), []);
+
+  // язык/направление на <html> (для RTL — иврит)
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.documentElement.dir = dirFor(locale);
+  }, [locale]);
+
+  // системная кнопка «Назад»: шаг назад в интерфейсе, на корне — системное поведение
+  useEffect(() => {
+    let dispose = () => {};
+    let cancelled = false;
+    void initBackButton(() => {
+      // ничего не обработано: сворачиваем приложение как обычно (moveTaskToBack)
+      import('@capacitor/app').then(({ App }) => {
+        try {
+          App.minimizeApp();
+        } catch {
+          /* iOS нет — нет и минимизации */
+        }
+      }).catch(() => {});
+    }).then((off) => {
+      if (cancelled) off();
+      else dispose = off;
+    });
+    return () => {
+      cancelled = true;
+      dispose();
+    };
+  }, []);
+
+  // глубина стека: верхний слой снимается обработчиком ниже (базовый «catalog» остаётся)
+  useEffect(() => {
+    if (stack.length <= 1) return;
+    return registerBackHandler(() => {
+      setStack((s) => (s.length > 1 ? s.slice(0, -1) : s));
+      return true;
+    });
+  }, [stack.length]);
+
+  const pushView = (v: View) => setStack((s) => [...s, v]);
+  const resetToCatalog = () => setStack([{ name: 'catalog' }]);
 
   // Каталог — статические данные, собирается мгновенно, без сети
   const catalog = useMemo(
@@ -47,11 +92,12 @@ export default function Home() {
   }
 
   if (!onboarded || !country) {
-    return <Onboarding onDone={() => setView({ name: 'catalog' })} />;
+    return <Onboarding onDone={resetToCatalog} />;
   }
 
-  const countryName = catalog ? (locale === 'en' ? catalog.country.nameEn : catalog.country.nameRu) : '';
+  const countryNameStr = catalog ? countryName(catalog.country, locale) : '';
   const flag = catalog?.country.flag ?? '';
+  const view = stack[stack.length - 1];
 
   return (
     <div className="min-h-[100dvh] flex flex-col">
@@ -59,7 +105,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between gap-2">
           <button
             type="button"
-            onClick={() => { setView({ name: 'catalog' }); }}
+            onClick={resetToCatalog}
             className="flex items-center gap-2 font-bold text-base outline-none focus-visible:ring-2 focus-visible:ring-teal-600 rounded-lg px-1"
             aria-label={t.appName}
           >
@@ -69,7 +115,7 @@ export default function Home() {
             {t.appName}
           </button>
           <div className="flex items-center gap-1.5">
-            <span className="text-sm text-muted-foreground hidden sm:inline">{flag} {countryName}</span>
+            <span className="text-sm text-muted-foreground hidden sm:inline">{flag} {countryNameStr}</span>
             <Button
               variant="ghost"
               size="sm"
@@ -95,37 +141,43 @@ export default function Home() {
             lang={locale}
             onOpenTemplate={(tpl) => {
               if (tpl.kind === 'GOV_PORTAL_ONLY') {
-                setView({ name: 'govportal', tpl });
+                pushView({ name: 'govportal', tpl });
               } else if (tpl.kind === 'HANDWRITTEN_REQUIRED') {
-                setView({ name: 'handwritten', tpl });
+                pushView({ name: 'handwritten', tpl });
               } else {
-                setView({ name: 'form', tpl });
+                pushView({ name: 'form', tpl });
               }
             }}
-            onBack={() => setView({ name: 'catalog' })}
+            onBack={resetToCatalog}
           />
         ) : view.name === 'govportal' ? (
-          <GovPortalScreen template={view.tpl} lang={locale} onBack={() => setView({ name: 'catalog' })} />
+          <GovPortalScreen template={view.tpl} lang={locale} onBack={() => setStack((s) => s.slice(0, -1))} />
         ) : view.name === 'handwritten' ? (
           <HandwrittenScreen
             template={view.tpl}
             lang={locale}
-            onBack={() => setView({ name: 'catalog' })}
-            onFillSample={() => setView({ name: 'sample-form', tpl: view.tpl })}
+            onBack={() => setStack((s) => s.slice(0, -1))}
+            onFillSample={() => pushView({ name: 'sample-form', tpl: view.tpl })}
           />
         ) : view.name === 'form' || view.name === 'sample-form' ? (
           <TemplateForm
             template={view.tpl}
             lang={locale}
-            onBack={() => setView({ name: 'catalog' })}
-            onNext={(data) => setView({ name: 'preview', tpl: view.tpl, data })}
+            onBack={() => setStack((s) => s.slice(0, -1))}
+            onNext={(data) => pushView({ name: 'preview', tpl: view.tpl, data })}
           />
         ) : (
           <DocPreview
             template={view.tpl}
             lang={locale}
             data={view.data}
-            onBack={() => setView(view.name === 'preview' ? { name: 'form', tpl: view.tpl } : { name: 'catalog' })}
+            onBack={() =>
+              setStack((s) =>
+                s.length > 1 && (s[s.length - 2]?.name === 'form' || s[s.length - 2]?.name === 'sample-form')
+                  ? s.slice(0, -1)
+                  : [{ name: 'catalog' }]
+              )
+            }
           />
         )}
       </main>

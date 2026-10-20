@@ -1,8 +1,8 @@
 'use client';
 // Предпросмотр документа + экспорт .docx/.pdf + прямая печать (ТЗ: форматы и печать).
 // Файлы формируются ПРЯМО НА УСТРОЙСТВЕ (docx/pdf-lib в браузере) — без сервера.
-// Даты и подстановки — на языке ДОКУМЕНТА (template.lang), интерфейс — отдельно.
-import { useMemo, useState } from 'react';
+// На Android сохранение идёт через системное меню «Поделиться» (см. lib/native.ts).
+import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Download, FileText, Printer, Loader2, Languages } from 'lucide-react';
@@ -10,12 +10,13 @@ import { toast } from 'sonner';
 import type { DocBlock, FieldDef, TemplateDTO } from '@/lib/types';
 import { fmtDateISO, fmtToday, cleanupPunct, type DocLang } from '@/lib/docgen/interpolate';
 import { downloadGenerated } from '@/lib/generate';
-import { UI } from '@/lib/i18n';
+import { uiFor, tplTitle, type Locale } from '@/lib/i18n';
 import { docLangNative, docLangDiffers } from '@/lib/doclangs';
+import { registerBackHandler, isNative } from '@/lib/native';
 
 interface Props {
   template: TemplateDTO;
-  lang: 'ru' | 'en';
+  lang: Locale;
   data: Record<string, string>;
   onBack: () => void;
 }
@@ -71,9 +72,12 @@ function RenderBlock({ block }: { block: DocBlock }) {
 }
 
 export function DocPreview({ template, lang, data, onBack }: Props) {
-  const t = UI[lang];
+  const t = uiFor(lang);
   const [busy, setBusy] = useState<'docx' | 'pdf' | null>(null);
   const docLang = (template.lang ?? 'ru') as DocLang;
+
+  // системный «Назад» на предпросмотре = возврат к форме
+  useEffect(() => registerBackHandler(() => { onBack(); return true; }), [onBack]);
 
   const blocks = useMemo<DocBlock[]>(() => {
     const raw = JSON.parse(JSON.stringify(template.body ?? [])) as DocBlock[];
@@ -106,7 +110,7 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
     setBusy(format);
     try {
       await downloadGenerated(template, lang, data, format);
-      toast.success(format === 'docx' ? 'DOCX' : 'PDF');
+      toast.success(isNative() ? t.savedToShare : format.toUpperCase());
     } catch {
       toast.error(t.downloadError);
     } finally {
@@ -158,6 +162,7 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
         className="doc-paper bg-white border shadow-sm rounded-lg mx-auto p-6 sm:p-12 text-[13.5px] leading-relaxed"
         style={{ fontFamily: "'Liberation Serif', 'Times New Roman', serif", maxWidth: '210mm' }}
         aria-label={t.previewTitle}
+        dir={docLang === 'he' ? 'rtl' : 'ltr'}
       >
         {blocks.map((b, i) => <RenderBlock key={i} block={b} />)}
       </div>

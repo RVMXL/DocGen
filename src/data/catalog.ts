@@ -73,6 +73,7 @@ export function buildCatalog(countryCode: string): CatalogResponse | null {
         slug: sg.slug,
         titleRu: sg.titleRu,
         titleEn: sg.titleEn,
+        titleI18n: sg.titleI18n,
         templates: tpls.map((t): TemplateDTO => ({
           id: t.slug,
           slug: t.slug,
@@ -80,8 +81,10 @@ export function buildCatalog(countryCode: string): CatalogResponse | null {
           lang: country.docLang,
           titleRu: t.titleRu,
           titleEn: t.titleEn,
+          titleDoc: t.titleDoc ?? null,
           descRu: t.descRu,
           descEn: t.descEn,
+          descDoc: t.descDoc ?? null,
           refRu: t.refRu ?? null,
           refEn: t.refEn ?? null,
           warningRu: t.warningRu ?? null,
@@ -96,13 +99,13 @@ export function buildCatalog(countryCode: string): CatalogResponse | null {
       });
     }
     if (subgroups.length > 0) {
-      groups.push({ id: g.slug, slug: g.slug, titleRu: g.titleRu, titleEn: g.titleEn, icon: g.icon, subgroups });
+      groups.push({ id: g.slug, slug: g.slug, titleRu: g.titleRu, titleEn: g.titleEn, titleI18n: g.titleI18n, icon: g.icon, subgroups });
     }
   }
 
   return {
     country: {
-      code: country.code, nameRu: country.nameRu, nameEn: country.nameEn,
+      code: country.code, nameRu: country.nameRu, nameEn: country.nameEn, nameI18n: country.nameI18n,
       flag: country.flag, docLang: country.docLang,
       currencyRu: country.currencyRu, currencyEn: country.currencyEn,
     },

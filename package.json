@@ -1,6 +1,6 @@
 {
   "name": "docgen",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "DocGen — самодостаточное приложение для генерации официальных документов по шаблонам (22 страны, экспорт .docx/.pdf, работает полностью офлайн)",
   "homepage": "https://github.com/RVMXL/DocGen",
@@ -13,7 +13,11 @@
   },
   "dependencies": {
     "@capacitor/android": "^7",
+    "@capacitor/app": "^8.1.2",
     "@capacitor/core": "^7",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/toast": "^8.0.1",
     "@pdf-lib/fontkit": "^1.1.1",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.5",

@@ -10,8 +10,12 @@ export interface TplDef {
   categorySlug: string; // slug подгруппы из categories.ts
   titleRu: string;
   titleEn: string;
+  /** Заголовок на языке ДОКУМЕНТА (гос. язык страны). Для ru-шаблонов = titleRu */
+  titleDoc?: string;
   descRu: string;
   descEn: string;
+  /** Описание на языке документа (опционально) */
+  descDoc?: string;
   refRu?: string; // правовое основание (для интерфейса, ru)
   refEn?: string;
   warningRu?: string;
@@ -32,6 +36,7 @@ export interface CountryDef {
   code: string; // RU, KZ…
   nameRu: string;
   nameEn: string;
+  nameI18n?: Partial<Record<string, string>>; // название страны на других языках интерфейса
   flag: string;
   region: Region;
   docLang: string; // код государственного языка (kk, az, de…)
@@ -47,6 +52,7 @@ export interface SubgroupDef {
   slug: string;
   titleRu: string;
   titleEn: string;
+  titleI18n?: Partial<Record<string, string>>;
 }
 
 /** Большая группа каталога (уровень 1) */
@@ -54,6 +60,7 @@ export interface GroupDef {
   slug: string;
   titleRu: string;
   titleEn: string;
+  titleI18n?: Partial<Record<string, string>>; // названия на других языках интерфейса (≠ ru/en)
   icon: string;
   children: SubgroupDef[];
 }

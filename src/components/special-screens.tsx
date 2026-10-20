@@ -1,21 +1,27 @@
 'use client';
-// Спец-экраны: документ «от руки» (красное предупреждение по ТЗ) и инфо-карточка гос-портала
+// Спец-экраны: документ «от руки» (красное предупреждение по ТЗ) и инфо-карточка гос-портала.
+// Язык интерфейса — любая локаль из 21; чек-листы — на языке интерфейса (ru/en, fallback).
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { ArrowLeft, AlertTriangle, ExternalLink, Globe, CheckCircle2 } from 'lucide-react';
 import type { TemplateDTO } from '@/lib/types';
-import { UI } from '@/lib/i18n';
+import { uiFor, tplTitle, tplDesc, type Locale } from '@/lib/i18n';
+import { registerBackHandler } from '@/lib/native';
 
 // ================= Документ строго от руки =================
 export function HandwrittenScreen({ template, lang, onBack, onFillSample }: {
-  template: TemplateDTO; lang: 'ru' | 'en';
+  template: TemplateDTO; lang: Locale;
   onBack: () => void; onFillSample: () => void;
 }) {
-  const t = UI[lang];
-  const warning = (lang === 'en' ? template.warningEn : template.warningRu) ?? t.warningHandwritten;
-  const checklist = (lang === 'en' ? template.portalDescEn : template.portalDescRu) ?? '';
-  const hasForm = template.fields.length > 0;
+  const t = uiFor(lang);
+  const warning = (lang === 'ru' ? template.warningRu : template.warningEn) ?? t.warningHandwritten;
+  const checklist = (lang === 'ru' ? template.portalDescRu : template.portalDescEn) ?? '';
+  const hasFields = template.fields.length > 0;
+
+  // системный «Назад» = возврат к каталогу
+  useEffect(() => registerBackHandler(() => { onBack(); return true; }), [onBack]);
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 pb-10">
@@ -27,8 +33,8 @@ export function HandwrittenScreen({ template, lang, onBack, onFillSample }: {
         <ArrowLeft className="w-4 h-4" aria-hidden /> {t.backToCatalog}
       </button>
 
-      <h2 className="text-xl sm:text-2xl font-bold mt-2">{lang === 'en' ? template.titleEn : template.titleRu}</h2>
-      <p className="text-muted-foreground text-sm mt-1">{lang === 'en' ? template.descEn : template.descRu}</p>
+      <h2 className="text-xl sm:text-2xl font-bold mt-2">{tplTitle(template, lang)}</h2>
+      <p className="text-muted-foreground text-sm mt-1">{tplDesc(template, lang)}</p>
 
       {/* Яркое предупреждение красным (требование ТЗ) */}
       <Alert className="mt-5 border-red-600 bg-red-50 text-red-800 [&>svg]:text-red-600" role="alert">
@@ -55,7 +61,7 @@ export function HandwrittenScreen({ template, lang, onBack, onFillSample }: {
         </Card>
       )}
 
-      {hasForm && (
+      {hasFields && (
         <Card className="mt-4 border-amber-300 bg-amber-50/50">
           <CardContent className="p-4 sm:p-5">
             <h3 className="font-semibold text-amber-900">{t.referenceSample}</h3>
@@ -72,10 +78,12 @@ export function HandwrittenScreen({ template, lang, onBack, onFillSample }: {
 
 // ================= Инфо-карточка гос-портала =================
 export function GovPortalScreen({ template, lang, onBack }: {
-  template: TemplateDTO; lang: 'ru' | 'en'; onBack: () => void;
+  template: TemplateDTO; lang: Locale; onBack: () => void;
 }) {
-  const t = UI[lang];
-  const checklist = (lang === 'en' ? template.portalDescEn : template.portalDescRu) ?? '';
+  const t = uiFor(lang);
+  const checklist = (lang === 'ru' ? template.portalDescRu : template.portalDescEn) ?? '';
+
+  useEffect(() => registerBackHandler(() => { onBack(); return true; }), [onBack]);
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4 pb-10">
@@ -91,9 +99,9 @@ export function GovPortalScreen({ template, lang, onBack }: {
         <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-sky-100 text-sky-700 shrink-0 mt-0.5">
           <Globe className="w-5 h-5" aria-hidden />
         </span>
-        <h2 className="text-xl sm:text-2xl font-bold">{lang === 'en' ? template.titleEn : template.titleRu}</h2>
+        <h2 className="text-xl sm:text-2xl font-bold">{tplTitle(template, lang)}</h2>
       </div>
-      <p className="text-muted-foreground text-sm mt-3">{lang === 'en' ? template.descEn : template.descRu}</p>
+      <p className="text-muted-foreground text-sm mt-3">{tplDesc(template, lang)}</p>
 
       <Card className="mt-5 border-sky-300 bg-sky-50/60">
         <CardContent className="p-4 sm:p-5">

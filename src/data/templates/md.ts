@@ -23,6 +23,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-work-vacation', kind: 'STANDARD', categorySlug: 'work-vacations',
     titleRu: 'Заявление на ежегодный оплачиваемый отпуск', titleEn: 'Annual paid leave application',
+    titleDoc: 'Cerere pentru concediul de odihnă anual plătit',
     descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. Продолжительность базового отпуска в Молдове — 28 календарных дней за рабочий год (art. 112 Codul muncii).',
     descEn: 'Application for annual paid leave. Base leave duration in Moldova is 28 calendar days per working year (art. 112 of the Labour Code).',
     refRu: 'ст. 112 Трудового кодекса Республики Молдова (Legea nr. 154/2003)',
@@ -43,6 +44,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-work-unpaid', kind: 'STANDARD', categorySlug: 'work-vacations',
     titleRu: 'Заявление на отпуск без сохранения зарплаты', titleEn: 'Unpaid leave application',
+    titleDoc: 'Cerere pentru concediul fără plată',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
     refRu: 'Трудовой кодекс Республики Молдова',
@@ -66,6 +68,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-work-dismissal', kind: 'STANDARD', categorySlug: 'work-dismissal',
     titleRu: 'Заявление об увольнении по собственному желанию', titleEn: 'Voluntary resignation application',
+    titleDoc: 'Cerere privind demisia (denunțarea contractului individual de muncă)',
     descRu: 'Заявление о прекращении индивидуального трудового договора по инициативе работника (demisie). Работник предупреждает работодателя за 14 календарных дней (art. 85 Codul muncii); в течение 7 дней заявление можно отозвать.',
     descEn: 'Voluntary resignation application. 14 calendar days notice (art. 85 of the Labour Code); the notice can be withdrawn within 7 days.',
     refRu: 'ст. 85 Трудового кодекса Республики Молдова',
@@ -86,6 +89,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-work-docs', kind: 'STANDARD', categorySlug: 'work-docs',
     titleRu: 'Заявление о выдаче документов, связанных с работой', titleEn: 'Workplace documents request',
+    titleDoc: 'Cerere privind eliberarea documentelor legate de munca prestată',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, записи о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
     refRu: 'Трудовой кодекс Республики Молдова',
@@ -105,6 +109,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-claim-goods', kind: 'STANDARD', categorySlug: 'court-claims',
     titleRu: 'Претензия продавцу о возврате товара', titleEn: 'Claim to seller: defective goods',
+    titleDoc: 'Reclamație privind returnarea produsului de calitate necorespunzătoare',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в леях. При отказе — суд или ANPC (Agenția Națională pentru Protecția Consumatorilor).',
     descEn: 'Pre-court claim to a seller over defective goods under Moldovan consumer protection law.',
     refRu: 'Закон Республики Молдова «О защите прав потребителей» (Legea nr. 105/2003)',
@@ -137,6 +142,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-lawsuit-debt', kind: 'STANDARD', categorySlug: 'court-lawsuits',
     titleRu: 'Исковое заявление о взыскании долга по расписке', titleEn: 'Lawsuit: debt recovery by IOU',
+    titleDoc: 'Acțiune în instanță privind recuperarea datoriei conform chitanței',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд (judecătoria) по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the court (judecătoria) of the defendant’s residence.',
     refRu: 'Гражданский кодекс РМ; Гражданский процессуальный кодекс РМ (Codul de procedură civilă)',
@@ -171,6 +177,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-uni-receipt', kind: 'STANDARD', categorySlug: 'uni-money',
     titleRu: 'Расписка о получении денежных средств в заём', titleEn: 'IOU / loan receipt',
+    titleDoc: 'Chitanță de împrumut între persoane fizice',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
     refRu: 'Гражданский кодекс Республики Молдова',
@@ -195,6 +202,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-uni-power', kind: 'STANDARD', categorySlug: 'uni-common',
     titleRu: 'Доверенность (общая гражданская)', titleEn: 'General civil power of attorney',
+    titleDoc: 'Procură (generală civilă)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок с недвижимостью — только нотариальная доверенность (autentificată notarial).',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions.',
     refRu: 'Гражданский кодекс Республики Молдова (procura)',
@@ -218,6 +226,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-edu-absence', kind: 'STANDARD', categorySlug: 'edu-docs',
     titleRu: 'Заявление в школу об отсутствии ребёнка', titleEn: 'School absence notice for a child',
+    titleDoc: 'Cerere către școală privind absența copilului de la lecții',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
     refRu: 'законодательство Республики Молдова в сфере образования',
@@ -243,6 +252,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-med-complaint', kind: 'STANDARD', categorySlug: 'med-appeals',
     titleRu: 'Жалоба на качество медицинской помощи', titleEn: 'Medical care quality complaint',
+    titleDoc: 'Plângere privind calitatea asistenței medicale',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения РМ; жалобы также принимает офис уполномоченного по правам пациентов.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
     refRu: 'законодательство Республики Молдова в сфере здравоохранения',
@@ -271,6 +281,7 @@ export const TEMPLATES_MD: TplDef[] = [
   {
     slug: 'md-gov-portal', kind: 'GOV_PORTAL_ONLY', categorySlug: 'post-online',
     titleRu: 'Государственные услуги онлайн — Молдова', titleEn: 'Government e-services — Moldova',
+    titleDoc: 'Servicii publice online — Republica Moldova',
     descRu: 'В Молдове государственные услуги описаны и частично предоставляются на единой платформе servicii.gov.md: справки, заявления, записи.',
     descEn: 'State services in Moldova are described and partly provided at servicii.gov.md.',
     portalUrl: 'https://servicii.gov.md',
