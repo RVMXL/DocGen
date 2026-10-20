@@ -3,6 +3,10 @@
 // Fair Work Act 2009 (s. 87–90 NES — annual leave 4 weeks; s. 96 — personal/carer’s
 // leave; s. 535 — records), Australian Consumer Law (Sch. 2 CCA — guarantees
 // ss. 54–59), Privacy Act 1988 (APP 12), residential tenancies (state law).
+// Волна 2 (медицина/образование/жильё): Residential Tenancies Act 2010 (NSW)
+// ss. 84–85 и Residential Tenancies Act 1997 (Vic) s. 319 (notice to vacate),
+// National Disability Insurance Scheme Act 2013 (Cth) ss. 22–25 (NDIS access),
+// Medicare/Services Australia (онлайн).
 import type { TplDef } from '../types';
 import { F, courtHdr, hdr, stdSign } from './helpers';
 
@@ -493,5 +497,94 @@ export const TEMPLATES_AU: TplDef[] = [
       { type: 'attachment', items: ['Bond lodgement number / receipt;', 'Entry and exit condition reports;', 'Photos of the premises at the end of the tenancy;', 'Copies of correspondence with the landlord/agent.'], label: 'Enclosures:' },
       stdSign('{{plaintiff_name}}'),
     ],
+  },
+
+  // --- Волна 2: медицина / образование / жильё ---
+  {
+    slug: 'au-edu-enrolment', kind: 'STANDARD', categorySlug: 'edu-docs',
+    titleRu: 'Заявление о зачислении ребёнка в школу', titleEn: 'School enrolment application',
+    descRu: 'Письмо директору школы с заявлением о зачислении ребёнка (переезд, смена школы, начало учёбы). Обычно прилагаются: свидетельство о рождении, подтверждение адреса (proof of residential address), справка о прививках (AIR immunisation statement). Правила приёма и школьные зоны зависят от штата/территории.',
+    descEn: 'Letter to the school principal applying to enrol a child (moving house, school change, start of school). Common enclosures: birth certificate, proof of residential address, Australian Immunisation Register statement. Enrolment rules and catchment areas vary by state/territory.',
+    refRu: 'Education Act соответствующего штата; политика приёма департамента образования',
+    refEn: 'State Education Act; Department of Education enrolment policy',
+    fields: [
+      F('school_name', 'Название школы', 'School name', 'text', { half: true, placeholderDoc: 'Example Public School' }),
+      F('principal_name', 'Директору (имя)', 'Principal name', 'text', { half: true, placeholderDoc: 'Ms Jane Smith, Principal' }),
+      F('parent_name', 'Ваше имя', 'Parent / guardian full name', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('child_name', 'Имя ребёнка и класс', 'Child name & year level', 'text', { half: true, placeholderDoc: 'Emma Morgan, starting Year 3' }),
+      F('start_date', 'Дата начала', 'Requested start date', 'date', { half: true }),
+      F('notes', 'Дополнительная информация', 'Additional information', 'textarea', { required: false, placeholderRu: 'живём в зоне школы, есть брат/сестра, языковая поддержка и т.п.', placeholderDoc: 'we live within the school catchment area; my other child currently attends Year 5 at this school' }),
+    ],
+    body: [
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{principal_name}}', '{{school_name}}'] },
+      { type: 'paragraph', text: 'Dear {{principal_name}},', noIndent: true },
+      { type: 'paragraph', text: 'I am writing to apply for the enrolment of my child, {{child_name}}, at {{school_name}}, with attendance commencing from {{start_date}}.', justify: true },
+      { type: 'paragraph', text: 'Additional information: {{notes}}', justify: true },
+      { type: 'paragraph', text: 'Certified copies of the required documents (birth certificate, proof of residential address and the child’s Australian Immunisation Register statement) are attached. I am happy to attend an enrolment interview or provide further information if required.', justify: true },
+      { type: 'signature', leftText: 'Kind regards,', rightText: '_______________ / {{parent_name}} /' },
+    ],
+  },
+  {
+    slug: 'au-util-vacate', kind: 'STANDARD', categorySlug: 'util-management',
+    titleRu: 'Уведомление о выезде из аренды (Notice of Intention to Vacate)', titleEn: 'Notice of intention to vacate',
+    descRu: 'Письменное уведомление арендодателю/агенту о расторжении аренды и дате выезда. Минимальные сроки зависят от штата и типа договора: NSW — 21 день для периодической аренды или не менее 14 дней до конца фиксированного срока; VIC — 28 дней. Проверьте требуемую форму в вашем штате и сохраните подтверждение отправки.',
+    descEn: 'Written notice to the landlord/agent ending the tenancy. Minimum notice varies by state and agreement type: NSW — 21 days for a periodic agreement or at least 14 days before the end of a fixed term; VIC — 28 days. Check the required form in your state and keep proof of delivery.',
+    refRu: 'Residential Tenancies Act 2010 (NSW), ss. 84–85; Residential Tenancies Act 1997 (VIC), s. 319; законы штата об аренде',
+    refEn: 'Residential Tenancies Act 2010 (NSW) ss. 84-85; Residential Tenancies Act 1997 (Vic) s. 319; state tenancy legislation',
+    fields: [
+      F('landlord_name', 'Арендодателю / агенту', 'Landlord / agent', 'text', { placeholderDoc: 'Example Property Management' }),
+      F('landlord_address', 'Адрес', 'Address', 'text', { placeholderDoc: '321 Birch Rd, Sydney NSW 2000' }),
+      F('tenant_name', 'Ваше имя', 'Tenant full name', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('tenant_address', 'Адрес аренды', 'Rental address', 'text', { half: true, placeholderDoc: 'Unit 4, 123 Main St, Sydney NSW 2000' }),
+      F('vacate_date', 'Дата выезда', 'Intended day of vacation', 'date', { half: true }),
+      F('forwarding_address', 'Новый адрес (для залога и почты)', 'Forwarding address', 'text', { half: true, placeholderDoc: 'Unit 9, 88 George St, Sydney NSW 2000' }),
+      F('reason', 'Причина', 'Reason', 'select', { options: ['end of the fixed-term agreement', 'relocation for work', 'personal reasons', 'no specific reason (periodic agreement)'] }),
+    ],
+    body: [
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{landlord_name}}', '{{landlord_address}}'] },
+      { type: 'title', text: 'NOTICE OF INTENTION TO VACATE' },
+      { type: 'paragraph', text: 'I, {{tenant_name}}, tenant of {{tenant_address}}, give notice of my intention to vacate the premises. My intended day of vacation is {{vacate_date}}. Reason: {{reason}}.', justify: true },
+      { type: 'paragraph', text: 'My forwarding address for mail, the bond refund and the final inspection is: {{forwarding_address}}. Please contact me to arrange the exit inspection and the return of the rental bond.', justify: true },
+      { type: 'paragraph', text: 'This notice is given under the residential tenancies legislation applicable to this tenancy. Minimum notice periods vary by state or territory (for example, 21 days for a periodic agreement in NSW and 28 days in Victoria; at least 14 days before the end of a fixed term in NSW).', justify: true },
+      { type: 'signature', leftText: 'Yours faithfully,', rightText: '_______________ / {{tenant_name}} /' },
+    ],
+  },
+  {
+    slug: 'au-med-ndis-access', kind: 'STANDARD', categorySlug: 'med-services',
+    titleRu: 'Запрос доступа к NDIS / пересмотр плана', titleEn: 'NDIS access / plan reassessment request',
+    descRu: 'Письмо в Национальное агентство страхования инвалидности (NDIA): запрос на участие в схеме NDIS для себя или ребёнка, либо пересмотр плана, если вы уже участник. Запрос может подать сам человек или его представитель (родитель/номинированный представитель); прилагаются доказательства диагноза и влияния состояния на повседневную жизнь.',
+    descEn: 'Letter to the National Disability Insurance Agency (NDIA): request access to the NDIS for yourself or your child, or a plan reassessment if you are already a participant. The request may be lodged by the person or their nominee; evidence of diagnosis and functional impact is attached.',
+    refRu: 'National Disability Insurance Scheme Act 2013 (Cth), ss. 22–25 (access)',
+    refEn: 'National Disability Insurance Scheme Act 2013 (Cth) ss. 22-25 (access)',
+    fields: [
+      F('ndia_office', 'Куда (NDIA)', 'NDIA office', 'text', { placeholderDoc: 'National Disability Insurance Agency, GPO Box 700, Canberra ACT 2601' }),
+      F('applicant_name', 'Имя заявителя/участника', 'Participant / applicant name', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('applicant_dob', 'Дата рождения', 'Date of birth', 'date', { half: true }),
+      F('ndis_number', 'NDIS number (если есть)', 'NDIS number (if allocated)', 'text', { half: true, required: false, placeholderDoc: '43 012 345 678' }),
+      F('request_type', 'Тип запроса', 'Request type', 'select', { options: ['request for access to the NDIS (new participant)', 'request for a plan reassessment (existing participant)'] }),
+      F('details', 'Диагноз, влияние на жизнь, нужная поддержка', 'Diagnosis, functional impact, supports sought', 'textarea', { placeholderRu: 'опишите диагноз/состояние, как оно влияет на повседневную жизнь и какая поддержка нужна', placeholderDoc: 'diagnosed with autism spectrum disorder; needs support with communication, speech pathology twice a week and assistive technology; reports from the treating paediatrician and physiotherapist attached' }),
+    ],
+    body: [
+      hdr(['{{ndia_office}}'], ['From: {{applicant_name}}']),
+      { type: 'title', text: 'REQUEST FOR ACCESS TO THE NDIS / PLAN REASSESSMENT' },
+      { type: 'paragraph', text: 'Participant / applicant: {{applicant_name}} (date of birth: {{applicant_dob}}). NDIS number (if already allocated): {{ndis_number}}.', justify: true },
+      { type: 'paragraph', text: 'Subject of this request: {{request_type}}.', justify: true },
+      { type: 'paragraph', text: 'Details: {{details}}', justify: true },
+      { type: 'paragraph', text: 'This request is made under the National Disability Insurance Scheme Act 2013 (Cth). An access request may be made by the person with disability, or by a parent, guardian or authorised nominee on their behalf (ss. 22–25). Please confirm receipt, advise if further evidence is required and provide a written decision as soon as practicable.', justify: true },
+      { type: 'attachment', items: ['Reports from treating practitioners about diagnosis and functional impact;', 'Identity documents (if required);', 'School / therapist reports (if applicable).'], label: 'Enclosures:' },
+      stdSign('{{applicant_name}}'),
+    ],
+  },
+  {
+    slug: 'au-gov-medicare', kind: 'GOV_PORTAL_ONLY', categorySlug: 'med-online',
+    titleRu: 'Medicare онлайн (Services Australia)', titleEn: 'Medicare online (Services Australia)',
+    descRu: 'Сервисы Medicare через myGov: подача заявлений на выплаты (claims), справки о выплатах (statements), замена/заказ карты Medicare, запись в сервис-центр. Отдельно — регистрация в Medicare (enrolment) для новых резидентов.',
+    descEn: 'Medicare services via myGov: lodge claims, view statements, replace or order a Medicare card, book a service centre appointment. Medicare enrolment for new residents is separate.',
+    portalUrl: 'https://www.servicesaustralia.gov.au/medicare',
+    portalName: 'Services Australia — Medicare',
+    portalDescRu: 'Официальный раздел Medicare: онлайн-claims через myGov, карты Medicare, заявления о регистрации (Medicare enrolment), контактные номера.',
+    portalDescEn: 'Official Medicare section: online claims via myGov, Medicare cards, enrolment applications, contact numbers.',
+    fields: [],
+    body: [],
   },
 ];

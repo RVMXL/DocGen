@@ -2,6 +2,9 @@
 // Основано на федеральном законодательстве США и общепринятых правовых стандартах:
 // FMLA (29 U.S.C. § 2601), HIPAA (45 C.F.R. § 164.524), Magnuson-Moss Warranty Act
 // (15 U.S.C. § 2301), практика demand letter перед small claims.
+// Волна 2 (медицина/образование/жильё): ERISA appeals (29 C.F.R. § 2560.503-1),
+// ACA appeals (45 C.F.R. § 147.136), FERPA (20 U.S.C. § 1232g), Fair Housing Act
+// (42 U.S.C. § 3604(f)), Medical Practice Act штата.
 import type { TplDef } from '../types';
 import { F, courtHdr, hdr, stdSign } from './helpers';
 
@@ -458,6 +461,117 @@ export const TEMPLATES_US: TplDef[] = [
       { type: 'paragraph', text: 'Wherefore, I request that judgment be entered against the defendant for ${{amount}}, together with court costs and interest as allowed by law.', justify: true },
       { type: 'attachment', items: ['Photos of the damage;', 'Repair estimates or invoices;', 'Incident or police report (if any);', 'Copy of the demand letter.'], label: 'Attachments:' },
       stdSign('{{plaintiff_name}}'),
+    ],
+  },
+
+  // --- Волна 2: медицина / образование / жильё ---
+  {
+    slug: 'us-med-insurance-appeal', kind: 'STANDARD', categorySlug: 'med-appeals',
+    titleRu: 'Апелляция на отказ страховщика (health insurance denial)', titleEn: 'Appeal of health insurance claim denial',
+    descRu: 'Внутренняя апелляция в страховую компанию на отказ в оплате услуги, лекарства или в предварительном разрешении (prior authorization). На внутреннюю апелляцию обычно 180 дней с момента отказа; после окончательного отказа доступна независимая внешняя экспертиза (external review). Для планов от работодателя действуют процедуры ERISA, правила также зависят от штата.',
+    descEn: 'Internal appeal to your health insurer against a denial of payment, coverage or prior authorization. You generally have 180 days from the denial; after a final denial, independent external review is available. Employer-sponsored plans follow ERISA procedures; state rules also apply.',
+    refRu: 'ERISA, 29 C.F.R. § 2560.503-1; ACA internal appeals/external review, 45 C.F.R. § 147.136',
+    refEn: 'ERISA, 29 C.F.R. § 2560.503-1; ACA internal appeals & external review, 45 C.F.R. § 147.136',
+    fields: [
+      F('insurer_name', 'Страховая компания', 'Insurer name', 'text', { half: true, placeholderDoc: 'BlueShield Health Plans' }),
+      F('appeals_address', 'Адрес департамента апелляций', 'Appeals department address', 'text', { half: true, placeholderDoc: 'P.O. Box 91001, Los Angeles, CA 90009' }),
+      F('member_name', 'Ваше имя (застрахованный)', 'Member full name', 'text', { half: true, placeholderDoc: 'Jane Doe' }),
+      F('member_id', 'Номер полиса (Member ID)', 'Member ID', 'text', { half: true, placeholderDoc: 'XZY-445-8821' }),
+      F('denial_date', 'Дата отказа', 'Date of denial', 'date', { half: true }),
+      F('denial_reference', 'Номер отказа/claim', 'Denial / claim reference', 'text', { half: true, placeholderDoc: 'Claim #C-2026-077314' }),
+      F('denial_summary', 'Что отказано и какая причина указана', 'What was denied and stated reason', 'textarea', { placeholderRu: 'что именно отказано и какая причина указана в письме об отказе', placeholderDoc: 'denial of an MRI of the lumbar spine and of physical therapy sessions; the stated reason is “not medically necessary”' }),
+      F('appeal_arguments', 'Основания апелляции', 'Basis for appeal', 'textarea', { placeholderRu: 'почему вы не согласны: медицинская необходимость, заключение врача, ошибка, покрытые аналоги', placeholderDoc: 'my treating physician has documented the failure of conservative therapy; the plan covers comparable imaging for the same diagnosis; the denial appears to be a coding error' }),
+      F('outcome', 'Что просите', 'Outcome sought', 'select', { options: ['overturn the denial and pay the claim', 'approve the requested prior authorization', 'cover the prescribed medication', 'other (explained above)'] }),
+    ],
+    body: [
+      hdr(['{{insurer_name}}', 'Attn: Appeals & Grievances Department', '{{appeals_address}}'], ['From: {{member_name}}', 'Member ID: {{member_id}}']),
+      { type: 'title', text: 'APPEAL OF CLAIM DENIAL' },
+      { type: 'paragraph', text: 'I appeal the denial dated {{denial_date}} (reference: {{denial_reference}}). What was denied: {{denial_summary}}.', justify: true },
+      { type: 'paragraph', text: 'Basis for appeal: {{appeal_arguments}}', justify: true },
+      { type: 'paragraph', text: 'Outcome requested: {{outcome}}. I request a full and fair review of this claim, including review by a qualified health care professional with appropriate expertise. Please provide me, free of charge, copies of all documents, records and plan provisions relied upon in making the denial, as required by 29 C.F.R. § 2560.503-1(g) (employer-sponsored plans) and applicable state and ACA requirements (45 C.F.R. § 147.136).', justify: true },
+      { type: 'paragraph', text: 'If the denial is upheld in whole or in part, please provide a written final decision stating the specific reasons and the availability of an independent external review. This appeal is filed within the permitted period (generally 180 days from receipt of the denial).', justify: true },
+      { type: 'attachment', items: ['Copy of the denial letter (Explanation of Benefits);', 'Letter of medical necessity / records from the treating provider;', 'Copy of my insurance card.'], label: 'Enclosures:' },
+      stdSign('{{member_name}}'),
+    ],
+  },
+  {
+    slug: 'us-edu-ferpa-records', kind: 'STANDARD', categorySlug: 'edu-docs',
+    titleRu: 'Запрос школьных записей ребёнка (FERPA)', titleEn: 'Education records request (FERPA)',
+    descRu: 'Запрос на ознакомление и получение копий образовательных записей ребёнка (оценки, посещаемость, дисциплина, IEP/504, тесты). Право принадлежит родителям или совершеннолетнему студенту; школа обязана ответить в срок не более 45 дней; плата за копии должна быть разумной. Правила округов различаются.',
+    descEn: 'Request to inspect and copy a student’s education records (grades, attendance, discipline, IEP/504, tests). Parents or eligible students hold the right; the school must respond within 45 days; copying fees must be reasonable. District practices vary.',
+    refRu: 'FERPA, 20 U.S.C. § 1232g; 34 C.F.R. §§ 99.10, 99.20–99.22',
+    refEn: 'FERPA, 20 U.S.C. § 1232g; 34 C.F.R. §§ 99.10, 99.20-99.22',
+    fields: [
+      F('school_name', 'Школа / округ', 'School / district', 'text', { half: true, placeholderDoc: 'Lincoln High School, Springfield School District' }),
+      F('records_office', 'Кому (приёмная / хранитель записей)', 'Attention (records custodian)', 'text', { half: true, placeholderDoc: 'Office of the Registrar / Records Custodian' }),
+      F('parent_name', 'Ваше имя', 'Parent full name', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('student_name', 'Имя ученика и класс', 'Student name & grade', 'text', { half: true, placeholderDoc: 'Emma Morgan, 8th grade' }),
+      F('records_scope', 'Какие записи', 'Records requested', 'textarea', { placeholderRu: 'какие записи нужны: за какой период, какие категории документов', placeholderDoc: 'grades and report cards, attendance records, discipline records, the current IEP and standardized test results for the 2025-2026 school year' }),
+      F('delivery', 'Способ получения', 'Delivery method', 'select', { options: ['mail a paper copy to my address on file', 'send an electronic copy to my email on file', 'I will inspect in person and pick up copies'] }),
+    ],
+    body: [
+      hdr(['{{school_name}}', '{{records_office}}'], ['From: {{parent_name}}', 'Student: {{student_name}}']),
+      { type: 'title', text: 'REQUEST FOR EDUCATION RECORDS' },
+      { type: 'paragraph', text: 'I request access to, and copies of, the education records of {{student_name}} as follows: {{records_scope}}. Preferred delivery: {{delivery}}.', justify: true },
+      { type: 'paragraph', text: 'Under the Family Educational Rights and Privacy Act (20 U.S.C. § 1232g; 34 C.F.R. § 99.10), the school must comply with this request within a reasonable period of time, not exceeding 45 days, and may charge only a reasonable fee for copies.', justify: true },
+      { type: 'paragraph', text: 'If any records are withheld in whole or in part, please identify the specific records and the legal basis, and inform me of my right to request amendment of the records and to a hearing (34 C.F.R. §§ 99.20–99.22).', justify: true },
+      { type: 'attachment', items: ['Copy of a government-issued photo ID.', 'Proof of parental custody or legal guardianship (if applicable).'], label: 'Enclosures:' },
+      stdSign('{{parent_name}}'),
+    ],
+  },
+  {
+    slug: 'us-housing-accommodation', kind: 'STANDARD', categorySlug: 'util-management',
+    titleRu: 'Запрос разумного приспособления жилья (Fair Housing Act)', titleEn: 'Reasonable accommodation request (Fair Housing Act)',
+    descRu: 'Письменный запрос арендодателю о разумном приспособлении правил или услуг для лица с инвалидностью: сервисное животное при запрете животных, резервное парковочное место, поручни, другой этаж. Отказ возможен только при существенной финансовой/административной нагрузке или фундаментальном изменении условий; для жилья с федеральным участием действует также Section 504.',
+    descEn: 'Written request to the landlord for a reasonable accommodation of rules or services for a person with a disability (assistance animal, reserved parking, grab bars, another floor). A denial is lawful only if it imposes an undue burden or fundamentally alters the housing; Section 504 additionally covers federally assisted housing.',
+    refRu: 'Fair Housing Act, 42 U.S.C. § 3604(f)(3)(B); Joint Statement HUD & DOJ (2004)',
+    refEn: 'Fair Housing Act, 42 U.S.C. § 3604(f)(3)(B); HUD & DOJ Joint Statement (2004)',
+    fields: [
+      F('landlord_name', 'Арендодателю (имя/компания)', 'Landlord name', 'text', { half: true, placeholderDoc: 'Maple Properties LLC' }),
+      F('landlord_address', 'Адрес арендодателя', 'Landlord address', 'text', { half: true, placeholderDoc: '321 Birch Rd, Austin, TX 78703' }),
+      F('tenant_name', 'Ваше имя', 'Tenant full name', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('tenant_address', 'Адрес арендуемого жилья', 'Rental property address', 'text', { half: true, placeholderDoc: 'Apt 4B, 123 Main St, Austin, TX 78702' }),
+      F('request', 'Что запрашиваете', 'Accommodation requested', 'textarea', { placeholderRu: 'что именно просите изменить в правилах или услугах', placeholderDoc: 'a waiver of the building’s no-pet policy so that I may keep my assistance dog' }),
+      F('need_explanation', 'Связь с инвалидностью', 'Disability-related need', 'textarea', { placeholderRu: 'как приспособление связано с инвалидностью и помогает пользоваться жильём', placeholderDoc: 'the assistance dog helps manage my PTSD symptoms and allows me to live independently; my treating provider supports this request' }),
+    ],
+    body: [
+      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['From: {{tenant_name}}', 'Tenant of {{tenant_address}}']),
+      { type: 'title', text: 'REASONABLE ACCOMMODATION REQUEST' },
+      { type: 'paragraph', text: 'I request the following reasonable accommodation in rules, policies, practices or services: {{request}}.', justify: true },
+      { type: 'paragraph', text: 'The accommodation is necessary because of a disability: {{need_explanation}}. Verification from my treating professional is attached or available upon request.', justify: true },
+      { type: 'paragraph', text: 'Under the Fair Housing Act (42 U.S.C. § 3604(f)(3)(B)) and the HUD/DOJ Joint Statement on Reasonable Accommodations, a housing provider must make reasonable accommodations when necessary to afford a person with a disability equal opportunity to use and enjoy a dwelling. A denial is lawful only where it imposes an undue financial and administrative burden or fundamentally alters the operation of the housing.', justify: true },
+      { type: 'paragraph', text: 'Please respond in writing within 10 business days. If the request is denied, please state the specific grounds for the denial and any alternatives considered.', justify: true },
+      { type: 'attachment', items: ['Letter from a treating professional confirming the disability-related need (if available).'], label: 'Enclosures:' },
+      stdSign('{{tenant_name}}'),
+    ],
+  },
+  {
+    slug: 'us-med-board-complaint', kind: 'STANDARD', categorySlug: 'med-appeals',
+    titleRu: 'Жалоба в совет по медицине штата (Medical Board)', titleEn: 'Complaint to the State Medical Board',
+    descRu: 'Жалоба в лицензирующий орган штата на врача или другого лицензированного медработника: халатность, неверный диагноз, назначения без осмотра, грубость. Совет проводит расследование и может применить дисциплинарные меры; компенсацию он не присуждает — для возмещения ущерба подаётся отдельный иск. Название и порядок зависят от штата (Board of Medicine, Medical Board, Department of Health).',
+    descEn: 'Complaint to the state licensing board about a physician or licensed health professional: negligence, misdiagnosis, prescribing without examination, misconduct. The board investigates and may take disciplinary action but does not award compensation — file a separate claim for damages. Names and procedures vary by state.',
+    refRu: 'Medical Practice Act соответствующего штата; Federation of State Medical Boards',
+    refEn: 'State Medical Practice Act; Federation of State Medical Boards',
+    fields: [
+      F('board_name', 'Куда (совет штата)', 'Board name', 'text', { placeholderDoc: 'State Medical Board of Ohio — Enforcement Department' }),
+      F('board_address', 'Адрес', 'Address', 'text', { half: true, placeholderDoc: '30 E. Broad St., Columbus, OH 43215' }),
+      F('complainant_name', 'Ваше имя', 'Your full name', 'text', { half: true, placeholderDoc: 'Jane Doe' }),
+      F('complainant_contacts', 'Телефон / email', 'Phone / email', 'text', { half: true, placeholderDoc: 'jane@example.com, +1 555 000 0000' }),
+      F('patient_name', 'Имя пациента (если не вы)', 'Patient name (if not you)', 'text', { half: true, required: false, placeholderDoc: 'self' }),
+      F('practitioner_name', 'Врач / клиника', 'Practitioner / clinic', 'text', { half: true, placeholderDoc: 'Dr John Smith, City Family Practice' }),
+      F('dates', 'Даты обращений', 'Dates of care', 'text', { half: true, placeholderDoc: 'March-May 2026' }),
+      F('complaint_text', 'Суть жалобы (факты, хронология)', 'Complaint details', 'textarea', { placeholderRu: 'опишите факты: что произошло, в какие даты, какие последствия, какие документы есть', placeholderDoc: 'the physician dismissed my symptoms, prescribed antibiotics without an examination and refused to discuss alternatives; my condition worsened and required emergency care on 05/10/2026' }),
+      F('outcome', 'Что просите', 'Outcome sought', 'textarea', { placeholderDoc: 'investigate the practitioner’s conduct and take appropriate disciplinary action' }),
+    ],
+    body: [
+      hdr(['{{board_name}}', '{{board_address}}'], ['From: {{complainant_name}}', '{{complainant_contacts}}']),
+      { type: 'title', text: 'COMPLAINT ABOUT A LICENSED PRACTITIONER' },
+      { type: 'paragraph', text: 'Practitioner: {{practitioner_name}}. Dates of care: {{dates}}. Patient: {{patient_name}}.', justify: true },
+      { type: 'paragraph', text: 'Details of the complaint: {{complaint_text}}', justify: true },
+      { type: 'paragraph', text: 'Outcome sought: {{outcome}}', justify: true },
+      { type: 'paragraph', text: 'Supporting documents are attached. I authorize the Board to disclose my identity to the practitioner for the purposes of the investigation. I understand that the Board cannot order payment of damages; this complaint does not replace any separate legal claim.', justify: true },
+      { type: 'attachment', items: ['Copies of medical records, prescriptions and correspondence (if available).'], label: 'Enclosures:' },
+      stdSign('{{complainant_name}}'),
     ],
   },
 ];

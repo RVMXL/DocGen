@@ -2,7 +2,10 @@
 // Основано на законодательстве Аргентины:
 // Ley de Contrato de Trabajo 20.744 (art. 150–157 — vacaciones; art. 240–242 —
 // renuncia con preaviso; art. 80 — certificados), Ley 24.240 de Defensa del
-// Consumidor (art. 11, 18–20), práctica de Carta Documento (Correo Argentino).
+// Consumidor (art. 11, 18–20, art. 25 — servicios de salud), práctica de Carta Documento
+// (Correo Argentino); Ley 23.660 y PMO (Decreto 1993/2011) — obras sociales;
+// Ley 26.529 — derechos del paciente; Ley 26.206 — educación nacional;
+// CCyC arts. 1199/1205 — locación (conservación y mejoras necesarias).
 import type { TplDef } from '../types';
 import { F, hdr, courtHdr, stdSign } from './helpers';
 
@@ -273,6 +276,60 @@ export const TEMPLATES_AR: TplDef[] = [
     ],
   },
   {
+    slug: 'ar-edu-inscripcion', kind: 'STANDARD', categorySlug: 'edu-docs',
+    titleRu: 'Заявление о зачислении в школу / переводе (pase)',
+    titleDoc: 'Solicitud de inscripción y pase escolar', titleEn: 'School enrollment and transfer (pase) application',
+    descRu: 'Заявление на зачисление ребёнка в школу или перевод (pase). Начальное и среднее образование обязательно (Ley 26.206, art. 16); школа обязана принять документы, выдать constancia и указать недостающее для legajo.',
+    descEn: 'Application to enroll a child in a school or to transfer (pase). Primary and secondary education is compulsory (Law 26.206, art. 16); the school must accept the documents and issue a receipt.',
+    refRu: 'ст. 16 Ley de Educación Nacional 26.206 (obligatoriedad); normativa del Consejo Federal de Educación; reglamento institucional',
+    refEn: 'Art. 16 of the National Education Law 26.206 (compulsory education); Council of Federal Education rules; school regulations',
+    fields: [
+      F('school_name', 'Escuela (destino)', 'School', 'text', { half: true, placeholderDoc: 'Escuela de Educación Primaria N° 12' }),
+      F('student_name', 'Nombre del alumno', 'Student name', 'text', { half: true, placeholderDoc: 'Ana Gómez' }),
+      F('student_dni', 'DNI del alumno', 'Student DNI', 'text', { half: true, placeholderDoc: '56.789.012' }),
+      F('student_grade', 'Grado/año a ingresar', 'Grade to enroll', 'text', { half: true, placeholderDoc: '5° grado / 2° año' }),
+      F('parent_name', 'Padre/madre/tutor', 'Parent / guardian', 'text', { half: true, placeholderDoc: 'Martín Gómez' }),
+      F('parent_dni', 'DNI del solicitante', 'Applicant DNI', 'text', { half: true, placeholderDoc: '34.567.890' }),
+      F('date_start', 'Fecha prevista de incorporación', 'Expected start date', 'date', { half: true }),
+      F('notes', 'Pase y observaciones', 'Transfer & notes', 'textarea', { required: false, placeholderRu: 'если это перевод: исходная школа и причина; иначе — прочее', placeholderDoc: 'pase desde la Escuela Primaria N° 8 por traslado familiar a la zona.' }),
+    ],
+    body: [
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'A la Dirección', '{{school_name}}'] },
+      { type: 'title', text: 'SOLICITUD DE INSCRIPCIÓN Y PASE' },
+      { type: 'paragraph', text: 'Me dirijo a ustedes a fin de solicitar la inscripción de mi hijo/a {{student_name}} (DNI: {{student_dni}}) en {{student_grade}}, con incorporación prevista a partir del {{date_start}}.', justify: true },
+      { type: 'paragraph', text: 'Observaciones: {{notes}}', noIndent: true },
+      { type: 'paragraph', text: 'Recuerdo que la educación primaria y secundaria son obligatorias conforme al art. 16 de la Ley de Educación Nacional N° 26.206. Solicito se me entregue constancia de la presente presentación y se indique la documentación pendiente para completar el legajo del alumno.', justify: true },
+      { type: 'attachment', items: ['Fotocopia del DNI del alumno;', 'Certificado de vacunación (cartilla);', 'Certificado de alumno regular o de pase de la escuela de origen (si corresponde).'], label: 'Se adjunta:' },
+      { type: 'signature', leftText: 'Sin otro particular, saludo atentamente.', rightText: '_______________ / {{parent_name}} /' },
+    ],
+  },
+  {
+    slug: 'ar-edu-certificado', kind: 'STANDARD', categorySlug: 'edu-docs',
+    titleRu: 'Запрос сертификата ученика (alumno regular)',
+    titleDoc: 'Solicitud de certificado de alumno regular', titleEn: 'Request for a certificate of regular enrollment',
+    descRu: 'Запрос в школу о выдаче certificado de alumno regular / constancia de inscripción / certificado analítico — нужен для оформления в obra social, пособий, перевода и других trámites.',
+    descEn: 'Request to the school for a certificate of regular enrollment / registration / partial transcript — needed for health insurance, family benefits, transfers and other procedures.',
+    refRu: 'Ley de Educación Nacional 26.206; reglamento institucional',
+    refEn: 'National Education Law 26.206; school regulations',
+    fields: [
+      F('school_name', 'Escuela', 'School', 'text', { half: true, placeholderDoc: 'Escuela de Educación Secundaria N° 5' }),
+      F('student_name', 'Nombre del alumno', 'Student name', 'text', { half: true, placeholderDoc: 'Ana Gómez' }),
+      F('student_dni', 'DNI del alumno', 'Student DNI', 'text', { half: true, placeholderDoc: '56.789.012' }),
+      F('grade_course', 'Grado/año y división', 'Grade & class', 'text', { half: true, placeholderDoc: '3° año, división “B”' }),
+      F('parent_name', 'Solicitante (padre/tutor o alumno)', 'Applicant', 'text', { half: true, placeholderDoc: 'Martín Gómez' }),
+      F('doc_type', 'Documento solicitado', 'Document requested', 'select', { options: ['certificado de alumno regular', 'constancia de inscripción', 'certificado analítico parcial'] }),
+      F('purpose', 'Destino del certificado', 'Purpose', 'textarea', { required: false, placeholderRu: 'для чего нужен документ', placeholderDoc: 'alta del hijo en la obra social y trámite de asignación familiar' }),
+    ],
+    body: [
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'A la Dirección', '{{school_name}}'] },
+      { type: 'title', text: 'SOLICITUD DE CERTIFICADO' },
+      { type: 'paragraph', text: 'Me dirijo a ustedes a fin de solicitar la emisión de: {{doc_type}}, correspondiente al alumno/a {{student_name}} (DNI: {{student_dni}}), que cursa estudios en {{grade_course}}.', justify: true },
+      { type: 'paragraph', text: 'El certificado será utilizado para: {{purpose}}', noIndent: true },
+      { type: 'paragraph', text: 'Agradeceré la emisión del certificado a la mayor brevedad y, de corresponder, su envío por correo electrónico institucional. Se adjunta fotocopia del DNI del alumno.', justify: true },
+      { type: 'signature', leftText: 'Sin otro particular, saludo atentamente.', rightText: '_______________ / {{parent_name}} /' },
+    ],
+  },
+  {
     slug: 'ar-util-consorcio', kind: 'STANDARD', categorySlug: 'util-management',
     titleRu: 'Нота управляющему кондоминиума',
     titleDoc: 'Nota al administrador del consorcio', titleEn: 'Note to the building administrator',
@@ -294,6 +351,37 @@ export const TEMPLATES_AR: TplDef[] = [
       { type: 'paragraph', text: 'Comunico el siguiente problema: {{issue}}. Urgencia: {{urgency}}.', justify: true },
       { type: 'paragraph', text: 'Solicito que se programen las reparaciones necesarias y se informe la fecha de realización, conforme a las obligaciones de conservación de las partes comunes.', justify: true },
       { type: 'signature', leftText: 'Sin otro particular, saludo atentamente.', rightText: 'Consorcista: _______________ / {{applicant_name}} /' },
+    ],
+  },
+  {
+    slug: 'ar-util-reparaciones', kind: 'STANDARD', categorySlug: 'util-management',
+    titleRu: 'Требование арендодателю о ремонте (reparaciones)',
+    titleDoc: 'Pedido de reparaciones al locador', titleEn: 'Repair demand to the landlord',
+    descRu: 'Требование к арендодателю (locador) отремонтировать жильё. По CCyC (art. 1199) арендодатель обязан поддерживать вещь в надлежащем состоянии и ремонтировать за свой счёт; при срочной опасности арендатор может сделать ремонт с правом возмещения (art. 1205).',
+    descEn: 'Demand to the landlord (locador) to repair the dwelling. Under CCyC art. 1199 the landlord must conserve the property and repair at his own expense; urgent repairs may be made by the tenant with reimbursement (art. 1205).',
+    warningRu: 'Рекомендуется отправить carta documento (Correo Argentino) — создаёт доказательство уведомления; сохраните копию и авизо',
+    warningEn: 'Send as carta documento (Correo Argentino) to prove notice; keep the copy and the receipt',
+    refRu: 'ст. 1199, 1205 Código Civil y Comercial de la Nación',
+    refEn: 'Arts. 1199, 1205 of the Argentine Civil and Commercial Code',
+    fields: [
+      F('landlord_name', 'Nombre del locador', 'Landlord name', 'text', { half: true, placeholderDoc: 'Laura Pérez' }),
+      F('landlord_address', 'Dirección del locador', 'Landlord address', 'text', { half: true, placeholderDoc: 'Av. Ejemplo 123, CABA' }),
+      F('applicant_name', 'Su nombre (locatario)', 'Your name (tenant)', 'text', { half: true, placeholderDoc: 'Martín Gómez' }),
+      F('property_address', 'Inmueble alquilado', 'Rented property', 'text', { half: true, placeholderDoc: 'Av. Ejemplo 45, piso 2, dto. “A”, CABA' }),
+      F('lease_date', 'Fecha del contrato de locación', 'Lease date', 'date', { half: true }),
+      F('date_notice', 'Fecha de detección del problema', 'Date the issue was noticed', 'date', { half: true }),
+      F('issue', 'Descripción del problema', 'Issue description', 'textarea', { required: true, placeholderRu: 'что сломалось, когда обнаружено, чем мешает жить', placeholderDoc: 'pérdida de agua en la cañería del baño que humedece la pared y afecta la instalación eléctrica, impidiendo el uso normal de la unidad.' }),
+      F('deadline', 'Plazo (días)', 'Deadline (days)', 'number', { half: true, placeholderRu: '10' }),
+    ],
+    body: [
+      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['Locatario: {{applicant_name}}', 'Inmueble: {{property_address}}']),
+      { type: 'title', text: 'PEDIDO DE REPARACIONES' },
+      { type: 'paragraph', text: 'En mi carácter de locatario del inmueble ubicado en {{property_address}}, según contrato de locación del {{lease_date}}, comunico que el {{date_notice}} detecté el siguiente problema: {{issue}}', justify: true },
+      { type: 'paragraph', text: 'Conforme al art. 1199 del Código Civil y Comercial, el locador debe conservar la cosa en condiciones aptas para el uso y goce convenido, realizando a su costa las reparaciones necesarias.', justify: true },
+      { type: 'paragraph', text: 'Por lo expuesto, intimo a Vd. a realizar las reparaciones dentro del plazo de {{deadline}} días de recibida la presente.', justify: true },
+      { type: 'paragraph', text: 'De no ser atendido en dicho plazo, efectuaré las reparaciones urgentes a su costa con derecho a reembolso (art. 1205 CCyC) y/o accionaré judicialmente por incumplimiento.', justify: true },
+      { type: 'attachment', items: ['Fotografías del daño;', 'Presupuesto de reparación.'], label: 'Adjunto:' },
+      stdSign('{{applicant_name}}'),
     ],
   },
   {
@@ -373,6 +461,47 @@ export const TEMPLATES_AR: TplDef[] = [
       { type: 'paragraph', text: 'Formato: {{format}}. Se adjunta copia del DNI.', justify: true },
       stdSign('{{patient_name}}'),
     ],
+  },
+  {
+    slug: 'ar-med-obrasocial-reclamo', kind: 'STANDARD', categorySlug: 'med-appeals',
+    titleRu: 'Претензия в obra social — отказ в покрытии лечения',
+    titleDoc: 'Reclamo ante la obra social por negativa de cobertura', titleEn: 'Claim to the obra social over denied medical coverage',
+    descRu: 'Претензия в obra social (или prepaga) при отказе, задержке или частичном покрытии лечения. PMO гарантирует обязательный минимум prestaciones; далее — reclamo в Superintendencia de Servicios de Salud и acción de amparo.',
+    descEn: 'Claim to an obra social (or prepaga) over denial, delay or partial coverage of treatment. The PMO guarantees a mandatory minimum of benefits; next: the Superintendencia de Servicios de Salud and amparo action.',
+    refRu: 'Ley 23.660 (art. 10); PMO — Decreto 1993/2011; Ley 22.431 (текст по Ley 26.378) — discapacidad; Ley 24.240, art. 25; Ley 16.986 (amparo)',
+    refEn: 'Law 23.660 (art. 10); PMO — Decree 1993/2011; Law 22.431 (as amended by Law 26.378) — disability; Law 24.240, art. 25; Law 16.986 (amparo)',
+    fields: [
+      F('os_name', 'Obra social / prepaga', 'Insurer', 'text', { half: true, placeholderDoc: 'Obra Social del Personal' }),
+      F('os_address', 'Dirección / sucursal', 'Address', 'text', { half: true, placeholderDoc: 'Av. Ejemplo 123, CABA' }),
+      F('patient_name', 'Nombre del afiliado', 'Member name', 'text', { half: true, placeholderDoc: 'Carlos Gómez' }),
+      F('patient_dni', 'DNI', 'DNI', 'text', { half: true, placeholderDoc: '34.567.890' }),
+      F('os_number', 'N° de afiliado (credencial)', 'Member ID', 'text', { half: true, placeholderDoc: 'N° 12345678/00' }),
+      F('date_negativa', 'Fecha de la negativa', 'Date of denial', 'date', { half: true }),
+      F('negativa_tipo', 'Tipo de negativa', 'Denial type', 'select', { options: ['negativa expresa', 'falta de respuesta', 'cobertura parcial'] }),
+      F('prestacion', 'Prestación / medicación solicitada', 'Requested treatment', 'textarea', { required: true, placeholderRu: 'опишите назначенное лечение: медикаменты, практики, internación', placeholderDoc: 'medicación mensual indicada por el médico tratante (receta adjunta) e internación domiciliaria.' }),
+    ],
+    body: [
+      hdr(['{{os_name}}', '{{os_address}}'], ['Afiliado: {{patient_name}}', 'DNI: {{patient_dni}}', 'Credencial: {{os_number}}']),
+      { type: 'title', text: 'RECLAMO POR NEGATIVA DE COBERTURA MÉDICA' },
+      { type: 'paragraph', text: 'Conforme a la prescripción del médico tratante, solicito la cobertura integral de la siguiente prestación: {{prestacion}}', justify: true },
+      { type: 'paragraph', text: 'Con fecha {{date_negativa}} registré {{negativa_tipo}} de la obra social respecto de la prestación solicitada, pese a que la misma está incluida en el Programa Médico Obligatorio (PMO), previsto por el art. 10 de la Ley 23.660 y reglamentado por el Decreto 1993/2011.', justify: true },
+      { type: 'paragraph', text: 'Recuerdo que la relación entre el afiliado y la obra social es una relación de consumo (art. 25 de la Ley 24.240) y que, en el caso de personas con discapacidad, la cobertura integral de las prestaciones de salud y rehabilitación está garantizada por la Ley 22.431 (texto según Ley 26.378).', justify: true },
+      { type: 'paragraph', text: 'En consecuencia, intimo a Vd. a otorgar la cobertura integral de la prestación en un plazo de cinco (5) días hábiles, bajo apercibimiento de presentar reclamo ante la Superintendencia de Servicios de Salud y de iniciar acción de amparo de salud (Ley 16.986), con más los daños y perjuicios correspondientes.', justify: true },
+      { type: 'attachment', items: ['Copia del DNI y de la credencial de afiliado;', 'Prescripción médica y recetas;', 'Constancia de la negativa o del pedido sin respuesta.'], label: 'Adjunto:' },
+      stdSign('{{patient_name}}'),
+    ],
+  },
+  {
+    slug: 'ar-gov-sss-reclamo', kind: 'GOV_PORTAL_ONLY', categorySlug: 'med-online',
+    titleRu: 'Superintendencia de Servicios de Salud — жалобы онлайн', titleEn: 'Superintendencia de Servicios de Salud — online complaints',
+    descRu: 'Официальный орган контроля за obra sociales и prepagas: reclamo afiliado онлайн, включая фиксацию negativa expresa для amparo.',
+    descEn: 'The supervisory body for obras sociales and prepagas: online affiliate complaints, including recording the “negativa expresa” needed for amparo.',
+    portalUrl: 'https://www.argentina.gob.ar/salud/superintendencia',
+    portalName: 'Superintendencia de Servicios de Salud (argentina.gob.ar)',
+    portalDescRu: 'Порядок: подготовьте credencial, DNI, рецепт и constancia de negativa → подайте reclamo онлайн → сохраните номер дела; SSS требует от obra social ответ и решение.',
+    portalDescEn: 'Flow: prepare your member card, DNI, prescription and proof of denial → file the claim → keep the case number; the SSS intervenes with the insurer.',
+    fields: [],
+    body: [],
   },
   {
     slug: 'ar-court-danos', kind: 'STANDARD', categorySlug: 'court-lawsuits',

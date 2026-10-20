@@ -2,7 +2,8 @@
 // Основано на законодательстве Турции:
 // İş Kanunu № 4857 (md. 53 — yıllık izin 14–26 gün; md. 17 — bildirim süreleri;
 // md. 28 — çalışma belgesi), Tüketicinin Korunması Hakkında Kanun № 6502
-// (cayma hakkı 14 gün), HMK md. 118–119 (dava dilekçesi), Türk Borçlar Kanunu.
+// (cayma hakkı 14 gün), HMK md. 118–119 (dava dilekçesi), Türk Borçlar Kanunu
+// m. 344 (kira artışı), Hasta Hakları Yönetmeliği; MHRS / e-Devlet (GOV_PORTAL_ONLY).
 import type { TplDef } from '../types';
 import { F, hdr, courtHdr, stdSign } from './helpers';
 
@@ -330,7 +331,7 @@ export const TEMPLATES_TR: TplDef[] = [
     ],
     body: [
       { type: 'lines', align: 'right', items: ['{{hospital_name}}', '{{hospital_address}}', '', 'Hasta: {{patient_name}}', 'T.C. No: {{tc_no}}'] },
-      { type: 'title', text: 'TIIBBI KAYIT TALEBİ' },
+      { type: 'title', text: 'TIBBİ KAYIT TALEBİ' },
       { type: 'paragraph', text: 'Hasta Hakları Yönetmeliğinin 19 ve 20. maddeleri uyarınca {{period}} dönemindeki kayıtların bana verilmesini talep ediyorum: {{records}}', justify: true },
       { type: 'paragraph', text: 'Teslim şekli: {{format}}. Kimlik fotokopisi ektedir.', justify: true },
       stdSign('{{patient_name}}'),
@@ -431,6 +432,88 @@ export const TEMPLATES_TR: TplDef[] = [
       ] },
       { type: 'attachment', items: ['Fatura ve garanti belgesinin sureti;', 'Arabuluculuk faaliyeti sonunda anlaşamamaya dair belge;', 'Dilekçe sureti (davalı sayısı kadar);', 'Harç ve gider avansının ödendiğine dair dekont.'], label: 'Ekler:' },
       stdSign('Davacı: _______________ / {{plaintiff_name}} /'),
+    ],
+  },
+  {
+    slug: 'tr-med-mhrs', kind: 'GOV_PORTAL_ONLY', categorySlug: 'med-online',
+    titleRu: 'MHRS — запись к врачу онлайн', titleEn: 'MHRS — doctor appointment system',
+    descRu: 'Запись на приём в государственные и университетские больницы через MHRS — центральную систему записи Минздрава Турции: сайт, мобильное приложение или телефон ALO 182.',
+    descEn: 'Appointments at public and university hospitals via MHRS, the Ministry of Health central appointment system: website, mobile app or the ALO 182 phone line.',
+    portalUrl: 'https://www.mhrs.gov.tr',
+    portalName: 'MHRS (mhrs.gov.tr)',
+    portalDescRu: 'Выбор больницы, отделения и врача, запись, перенос и отмена приёма. Вход — через e-Devlet или номер телефона; также доступно в приложении e-Nabız и по номеру 182.',
+    portalDescEn: 'Choose a hospital, department and doctor; book, reschedule or cancel. Login via e-Devlet or phone number; also available in the e-Nabız app and via ALO 182.',
+    fields: [],
+    body: [],
+  },
+  {
+    slug: 'tr-edu-ogrenci-belgesi', kind: 'STANDARD', categorySlug: 'edu-docs',
+    titleRu: 'Справка об обучении (öğrenci belgesi) — запрос в школу/вуз',
+    titleDoc: 'Öğrenci Belgesi Talep Dilekçesi', titleEn: 'Student certificate request (öğrenci belgesi)',
+    descRu: 'Заявление в школу или вуз о выдаче öğrenci belgesi (справки об обучении) — нужна для вида на жительство (ikamet izni), скидок, банковских и семейных процедур. Выдаётся дирекцией школы или студенческим офисом.',
+    descEn: 'Request to a school or university for a student certificate (öğrenci belgesi), e.g. for a residence permit (ikamet izni), discounts or banking. Issued by the school directorate or the student affairs office.',
+    refRu: '1739 sayılı Millî Eğitim Temel Kanunu; порядок учебного заведения',
+    refEn: 'Basic Law of National Education No. 1739; institution rules',
+    fields: [
+      F('school_name', 'Okul/üniversite adı', 'School name', 'text', { placeholderDoc: 'Örnek Anadolu Lisesi' }),
+      F('office_name', 'Sunulacak birim', 'Submit to', 'text', { half: true, placeholderDoc: 'Öğrenci İşleri Müdürlüğü’ne' }),
+      F('student_name', 'Öğrenci adı soyadı', 'Student full name', 'text', { half: true, placeholderDoc: 'Elif Yılmaz' }),
+      F('student_no', 'Okul/öğrenci numarası', 'Student ID', 'text', { half: true, placeholderDoc: '1234' }),
+      F('class_dept', 'Sınıf/bölüm', 'Class / department', 'text', { half: true, placeholderDoc: '11-C sınıfı' }),
+      F('relation', 'Başvuranın öğrenciyle ilgisi', 'Applicant relationship', 'select', { half: true, options: ['kendisi (öğrenci)', 'veli', 'yasal temsilci'] }),
+      F('copies', 'Belge adedi', 'Number of copies', 'number', { half: true, placeholderRu: '2' }),
+      F('purpose', 'Talep amacı', 'Purpose', 'select', { options: ['ikamet izni başvurusu', 'indirimlerden yararlanma', 'banka işlemleri', 'aile ikamet işlemleri', 'diğer kurumlara sunum'] }),
+      F('applicant_name', 'Adınız Soyadınız', 'Your full name', 'text', { half: true, placeholderDoc: 'Ahmet Yılmaz' }),
+    ],
+    body: [
+      hdr(['{{school_name}}', '{{office_name}}'], ['İlgili öğrenci: {{student_name}}', 'Okul no: {{student_no}}']),
+      { type: 'title', text: 'Öğrenci Belgesi Talep Dilekçesi' },
+      { type: 'paragraph', text: 'Öğrenci {{student_name}} (okul numarası: {{student_no}}, {{class_dept}}) kurumunuzda öğrenimine devam etmektedir.', justify: true },
+      { type: 'paragraph', text: 'Yukarıda bilgileri yer alan öğrencinin öğrenim durumunu gösteren Öğrenci Belgesi’nden {{copies}} adet verilmesini talep ediyorum. Talep amacı: {{purpose}}.', justify: true },
+      { type: 'paragraph', text: 'Başvuran {{applicant_name}}, öğrenciyle ilişkisi: {{relation}}. Kimlik fotokopisi ektedir. Gereğini saygılarımla arz ederim.', justify: true },
+      { type: 'attachment', items: ['Başvuranın kimlik fotokopisi;', 'veli/yasal temsilci başvurusunda ilişkiyi gösteren belge (gerekliyse).'], label: 'Ekler:' },
+      stdSign('{{applicant_name}}'),
+    ],
+  },
+  {
+    slug: 'tr-util-abonelik', kind: 'GOV_PORTAL_ONLY', categorySlug: 'util-online',
+    titleRu: 'Электричество/вода/газ — подключение и услуги ЖКХ (e-Devlet)', titleEn: 'Electricity/water/gas subscription & utility services (e-Devlet)',
+    descRu: 'Заявки на подключение (abonelik başvurusu), передача показаний счётчиков, проверка задолженности и смена поставщика для электроэнергии, природного газа и воды — через e-Devlet и порталы поставщиков (İSKİ, ASKİ, энергокомпании).',
+    descEn: 'Utility connection applications (abonelik başvurusu), meter reading, arrears checks and supplier switching for electricity, natural gas and water — via e-Devlet and provider portals (İSKİ, ASKİ, energy retailers).',
+    portalUrl: 'https://www.turkiye.gov.tr',
+    portalName: 'e-Devlet Kapısı (turkiye.gov.tr)',
+    portalDescRu: 'Ищите услуги «elektrik abonelik başvurusu», «doğalgaz abonelik», «su abonelik», «sayaç okuma». Нужен вход в e-Devlet; часть услуг — на сайтах и в приложениях поставщиков.',
+    portalDescEn: 'Search for “elektrik abonelik başvurusu”, “doğalgaz abonelik”, “su abonelik”, “sayaç okuma”. e-Devlet login required; some services sit on the provider websites.',
+    fields: [],
+    body: [],
+  },
+  {
+    slug: 'tr-util-kira-artisi', kind: 'STANDARD', categorySlug: 'util-management',
+    titleRu: 'Возражение на повышение аренды (kira artışına itiraz)',
+    titleDoc: 'Kira Artışına İtiraz ve Anlaşma Teklifi', titleEn: 'Objection to a rent increase (kira artışına itiraz)',
+    descRu: 'Письменное возражение на предложенное арендодателем повышение аренды: если стороны не договорились, повышение в новом периоде не может превышать среднего роста ИПЦ за 12 месяцев (TBK md. 344). Содержит встречное предложение.',
+    descEn: 'Written objection to a proposed rent increase: unless the parties agree otherwise, the renewal-period increase cannot exceed the 12-month average CPI rate (Turkish Code of Obligations art. 344). Includes a counter-proposal.',
+    refRu: 'ст. 344 Обязательственного кодекса Турции (Türk Borçlar Kanunu)',
+    refEn: 'Article 344 of the Turkish Code of Obligations',
+    fields: [
+      F('landlord_name', 'Kiraya veren (adı/unvanı)', 'Landlord name', 'text', { placeholderDoc: 'Örnek Gayrimenkul Ltd. Şti.' }),
+      F('landlord_address', 'Adres', 'Address', 'text', { placeholderDoc: 'Örnek Cad. No:9 Ankara' }),
+      F('tenant_name', 'Adınız Soyadınız', 'Your full name', 'text', { half: true, placeholderDoc: 'Ahmet Yılmaz' }),
+      F('tenant_address', 'Kiralık taşınmaz', 'Rental property', 'text', { half: true, placeholderDoc: 'Örnek Mah. 4. Sok. No:12 D:5 İstanbul' }),
+      F('rent_current', 'Mevcut kira bedeli (TL)', 'Current rent (TRY)', 'number', { half: true, placeholderRu: '15000' }),
+      F('rent_proposed', 'Önerilen kira bedeli (TL)', 'Proposed rent (TRY)', 'number', { half: true, placeholderRu: '20250' }),
+      F('notice_info', 'Artış bildirimi (tarih/tutar)', 'Increase notice', 'text', { half: true, placeholderDoc: '12.11.2026 tarihli bildirim: 32.000 TL' }),
+      F('counter', 'Gerekçe ve karşı teklif', 'Grounds & counter-offer', 'textarea', { placeholderRu: 'обоснуйте: рост ИПЦ, рыночные ставки, состояние жилья', placeholderDoc: '12 aylık ortalama TÜFE artışı %35 iken talep edilen artış %113’tür. Taşınmazın durumu ve bölgedeki emsal kiralar da göz önünde bulundurulmalıdır.' }),
+    ],
+    body: [
+      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['Kiracı: {{tenant_name}}', 'Kiralık taşınmaz: {{tenant_address}}']),
+      { type: 'title', text: 'Kira Artışına İtiraz ve Anlaşma Teklifi' },
+      { type: 'paragraph', text: 'Kiralanan taşınmazı aylık {{rent_current}} TL karşılığında kiralamaktayım. {{notice_info}} şeklinde kira artışı bildiriminiz tarafıma tebliğ edilmiştir.', justify: true },
+      { type: 'paragraph', text: '6098 sayılı Türk Borçlar Kanunu’nun 344 üncü maddesine göre, yenilenen dönem için taraflarca anlaşma sağlanamazsa kira bedelindeki artış, bir önceki kira yılına ilişkin kira bedeli ile 12 aylık ortalama Tüketici Fiyat Endeksindeki artış oranını aşamaz. Bildirilen artış bu sınırı aşmaktadır.', justify: true },
+      { type: 'paragraph', text: 'Gerekçe ve karşı teklif: {{counter}}', justify: true },
+      { type: 'paragraph', text: 'Bu itibarla yeni dönemde kira bedelinin {{rent_proposed}} TL olarak belirlenmesini, süresi dolmadan yazılı yanıt verilmesini saygılarımla arz ederim. Anlaşma olmaması hâlinde yasal haklarım saklıdır.', justify: true },
+      { type: 'attachment', items: ['Kira sözleşmesinin sureti;', 'artış bildirimi (SMS/e-posta/ihtarname) örneği;', 'TÜFE verisi ve bölgedeki emsal kira bilgileri.'], label: 'Ekler:' },
+      stdSign('{{tenant_name}}'),
     ],
   },
 ];
