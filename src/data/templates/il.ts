@@ -4,7 +4,7 @@
 // חוק הודעה לעובד ולמעביד, תשס"ב-2001 (הודעה מוקדמת),
 // חוק הגנת הצרכן, תשמ"א-1981 (ביטול עסקה מרחוק — 14 יום).
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, hdr, courtHdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{org_name}}', 'לכבוד: {{head_name}}', '', 'מאת: {{applicant_name}}', '{{applicant_position}}'] },
@@ -362,6 +362,79 @@ export const TEMPLATES_IL: TplDef[] = [
       { type: 'paragraph', text: 'בהתאם לסעיף 20 לחוק זכויות החולה, אני מבקשת עיון ברשומה הרפואית שנוצרה בתקופה {{period}} וקבלת העתקים של: {{records}}', justify: true },
       { type: 'paragraph', text: 'אופן המסירה המבוקש: {{format}}.', justify: true },
       stdSign('{{patient_name}}'),
+    ],
+  },
+  {
+    slug: 'il-court-tvia-kesefit', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о взыскании долга (כתב תביעה כספית)',
+    titleDoc: 'כתב תביעה כספית', titleEn: 'Civil money claim (debt recovery)',
+    descRu: 'Исковое заявление о взыскании денежного долга в суд общей юрисдикции (בית משפט השלום) по общему порядку — когда малый суд (תביעות קטנות) не подходит: сумма выше порога или нужен полный процесс с доказательствами. Форма — по כלל 5 חסה"א.',
+    descEn: 'Statement of claim for money owed, filed in the Magistrate’s Court under the ordinary track (when small claims is not suitable). Form per Civil Procedure Regulations Rule 5.',
+    refRu: 'כלל 5 חסה"א תשמ"ד-1984; חוק החוזים (תרופות בשל הפרת חוזה), תשל"א-1970; פקודת הריבית וההצמדה',
+    refEn: 'Rule 5 of the Civil Procedure Regulations, 5744-1984; Contracts (Remedies) Law, 5731-1970; Interest and Linkage Basic Law',
+    fields: [
+      F('court_name', 'בית המשפט', 'Court', 'text', { placeholderDoc: 'בית משפט השלום בתל אביב-יפו' }),
+      F('plaintiff_name', 'שם התובע/ת', 'Plaintiff name', 'text', { half: true, placeholderDoc: 'ישראל כהן' }),
+      F('plaintiff_id', 'תעודת זהות התובע/ת', 'Plaintiff ID', 'text', { half: true, placeholderDoc: 'מספר זהות 000000018' }),
+      F('plaintiff_address', 'כתובת התובע/ת (למשלוח מסמכים)', 'Plaintiff address', 'text', { placeholderDoc: 'רחוב הרצל 12, תל אביב-יפו' }),
+      F('defendant_name', 'שם הנתבע/ת', 'Defendant name', 'text', { half: true, placeholderDoc: 'דנה לוי' }),
+      F('defendant_address', 'כתובת הנתבע/ת', 'Defendant address', 'text', { half: true, placeholderDoc: 'רחוב אלנבי 100, תל אביב-יפו' }),
+      F('amount', 'סכום התביעה (₪)', 'Claim amount (ILS)', 'number', { half: true, placeholderRu: '42000' }),
+      F('basis', 'עובדות (התחייבות, תאריכים, מה לא שולם)', 'Facts and basis', 'textarea', { placeholderRu: 'опишите: договор/заём/услуга, даты, сумма, что не оплачено', placeholderDoc: 'ב-01.06.2026 הלוותי לנתבע 42,000 ש"ח לפי הסכם בכתב; מועד הפירעון היה 01.10.2026, והסכום לא שולם עד היום, כפי שעולה מהאסמכתאות המצורפות.' }),
+      F('evidence', 'ראיות', 'Evidence', 'textarea', { placeholderDoc: 'הסכם בכתב, קבלות, אישורי העברה בנקאית, תכתובות' }),
+    ],
+    body: [
+      courtHdr(['נתבע/ת: {{defendant_name}}', 'כתובת: {{defendant_address}}']),
+      { type: 'title', text: 'כתב תביעה כספית' },
+      { type: 'paragraph', text: 'התובע/ת {{plaintiff_name}} (תעודת זהות: {{plaintiff_id}}), כתובת למשלוח מסמכים — {{plaintiff_address}}, תובע/ת את הנתבע/ת {{defendant_name}} סכום של {{amount}} ש"ח, כדלקמן:', justify: true },
+      { type: 'paragraph', text: 'עובדות: {{basis}}', justify: true },
+      { type: 'paragraph', text: 'עילות: התחייבות שהופרה. על פי חוק החוזים (תרופות בשל הפרת חוזה), תשל"א-1970, זכאי/ת התובע/ת לתרופת הפיצויים בגין ההפרה; הפיצויים יהיו בצירוף ריבית והצמדה בהתאם לפקודת הריבית וההצמדה, תשמ"א-1981, מיום הפרת ההתחייבות ועד יום התשלום המלא.', justify: true },
+      { type: 'list', numbered: true, items: [
+        'לחייב את הנתבע/ת בתשלום לתובע/ת סכום של {{amount}} ש"ח, בצירוף ריבית והצמדה מיום פירעון ההתחייבות ועד התשלום המלא;',
+        'לחייב את הנתבע/ת בהוצאות משפט ושכר טירחה כחוק.',
+      ] },
+      { type: 'paragraph', text: 'ראיות: {{evidence}}.', justify: true },
+      { type: 'paragraph', text: 'אני מודיע/ה בזאת כי כתב תביעה זה מוגש על ידי התובע/ת עצמו/עצמה (ללא עורך דין), ומקום קבלת מסמכים ובקשות הוא הכתובת למעלה.', justify: true },
+      { type: 'attachment', items: ['העתק כתב התביעה להמצאה לנתבע/ת;', 'העתקי אסמכתאות (הסכם, קבלות, דפי חשבון).'], label: 'נספחים:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'il-court-nezek-rechush', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о возмещении ущерба имуществу (נזק לרכוש)',
+    titleDoc: 'כתב תביעה לפיצוי בגין נזק לרכוש', titleEn: 'Claim for compensation of property damage',
+    descRu: 'Исковое заявление о возмещении ущерба имуществу (залив от соседей, повреждение машины, поломка по вине ответчика и т.п.) — по правилам о неосторожности (רשלנות) из פקודת הנזיקין; проценты и индексация — по פקודת הריבית וההצמדה.',
+    descEn: 'Claim for property damage compensation (water leak, damaged vehicle, negligent damage) based on the negligence provisions of the Civil Torts Ordinance; interest and indexation per the Interest and Linkage Law.',
+    refRu: 'סעיפים 1, 35 פקודת הנזיקין [נוסח חדש], תשכ"ח-1968; פקודת הריבית וההצמדה, תשמ"א-1981',
+    refEn: 'Sections 1, 35 of the Civil Wrongs Ordinance [New Version], 5728-1968; Interest and Linkage Basic Law, 5741-1981',
+    fields: [
+      F('court_name', 'בית המשפט', 'Court', 'text', { placeholderDoc: 'בית משפט השלום בחיפה' }),
+      F('plaintiff_name', 'שם התובע/ת', 'Plaintiff name', 'text', { half: true, placeholderDoc: 'ישראל כהן' }),
+      F('plaintiff_id', 'תעודת זהות התובע/ת', 'Plaintiff ID', 'text', { half: true, placeholderDoc: 'מספר זהות 000000018' }),
+      F('plaintiff_address', 'כתובת התובע/ת (למשלוח מסמכים)', 'Plaintiff address', 'text', { placeholderDoc: 'רחוב הרצל 12, תל אביב-יפו' }),
+      F('defendant_name', 'שם הנתבע/ת', 'Defendant name', 'text', { half: true, placeholderDoc: 'שכני דירה 5 / חברה בע"מ' }),
+      F('defendant_address', 'כתובת הנתבע/ת', 'Defendant address', 'text', { half: true, placeholderDoc: 'רחוב אלנבי 100, תל אביב-יפו' }),
+      F('date_incident', 'תאריך האירוע', 'Date of incident', 'date', { half: true }),
+      F('damage_source', 'מקור הנזק', 'Source of damage', 'text', { placeholderDoc: 'דליפת מים מדירת השכנים שמעל' }),
+      F('damage_desc', 'תיאור הנזק', 'Damage description', 'textarea', { placeholderRu: 'опишите ущерб: что повреждено, кто признал вину/обращения', placeholderDoc: 'ניזקו קיר הסלון, ריהוט והרצפה, וניזקו גם מצרכי מזון. יודע הנתבע על הדליפה והיא אף תוקנה, אך הנזק שנגרם לי לא שולם.' }),
+      F('amount', 'סכום הפיצוי הנתבע (₪)', 'Compensation sought (ILS)', 'number', { half: true, placeholderRu: '12000' }),
+      F('evidence', 'ראיות', 'Evidence', 'textarea', { placeholderDoc: 'תמונות הנזק, אמדן וחשבוניות לתיקון, דו"ח אינסטלטור, תכתובות' }),
+    ],
+    body: [
+      courtHdr(['נתבע/ת: {{defendant_name}}', 'כתובת: {{defendant_address}}']),
+      { type: 'title', text: 'כתב תביעה לפיצוי בגין נזק לרכוש' },
+      { type: 'paragraph', text: 'בתאריך {{date_incident}} נגרם לרכושי נזק בשל: {{damage_source}}. התובע/ת {{plaintiff_name}} (תעודת זהות: {{plaintiff_id}}), כתובת למשלוח מסמכים — {{plaintiff_address}}.', justify: true },
+      { type: 'paragraph', text: 'תיאור הנזק: {{damage_desc}}. שווי הנזק, על פי אמדן וחשבוניות המצורפות, עומד על סך {{amount}} ש"ח.', justify: true },
+      { type: 'paragraph', text: 'עילה: הנתבע/ת התרשל/ה ולא נקט/ה בזהירות הנדרשת בנסיבות העניין, ומהתרשלות זו נגרם לי נזק רכוש, כפי שנקבע בסעיפים 1 ו-35 לפקודת הנזיקין [נוסח חדש], תשכ"ח-1968. פניתי לנתבע/ת לפני הגשת התביעה בבקשה להסדיר את הנזק, אך הדבר לא צלח.', justify: true },
+      { type: 'list', numbered: true, items: [
+        'לחייב את הנתבע/ת בפיצויים בסך {{amount}} ש"ח בגין נזק לרכוש;',
+        'בצירוף ריבית והצמדה מיום האירוע ועד התשלום המלא (פקודת הריבית וההצמדה, תשמ"א-1981);',
+        'לחייב את הנתבע/ת בהוצאות משפט.',
+      ] },
+      { type: 'paragraph', text: 'ראיות: {{evidence}}.', justify: true },
+      { type: 'paragraph', text: 'אני מודיע/ה בזאת כי כתב תביעה זה מוגש על ידי התובע/ת עצמו/עצמה (ללא עורך דין), ומקום קבלת מסמכים ובקשות הוא הכתובת למעלה.', justify: true },
+      { type: 'attachment', items: ['תמונות הנזק;', 'אמדן וחשבוניות לתיקון;', 'העתקי התכתבות עם הנתבע/ת ועם חברת הביטוח.'], label: 'נספחים:' },
+      stdSign('{{plaintiff_name}}'),
     ],
   },
 ];

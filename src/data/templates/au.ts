@@ -4,7 +4,7 @@
 // leave; s. 535 — records), Australian Consumer Law (Sch. 2 CCA — guarantees
 // ss. 54–59), Privacy Act 1988 (APP 12), residential tenancies (state law).
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, courtHdr, hdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{org_name}}', 'Attention: {{manager_name}}', '', 'From: {{applicant_name}}', '{{applicant_position}}'] },
@@ -400,6 +400,98 @@ export const TEMPLATES_AU: TplDef[] = [
       { type: 'paragraph', text: 'I request access to the following documents under the Freedom of Information Act 1982: {{documents_wanted}}', justify: true },
       { type: 'paragraph', text: 'Preferred format: {{format}}. If the request is unclear, please contact me before refusing it. I am happy to pay reasonable charges; please advise before incurring them.', justify: true },
       stdSign('{{requester_name}}'),
+    ],
+  },
+
+  {
+    slug: 'au-court-statement-of-claim', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Statement of Claim — иск о взыскании долга', titleEn: 'Statement of Claim (debt / money owed)',
+    descRu: 'Исковое заявление о взыскании долга или денег по договору в Local Court / Magistrates Court (в NSW Small Claims Division принимает иски до $20 000, используется форма UCPR Form 3A). Формы различаются по штатам; перед подачей направьте letter of demand. Общая форма — сверьтесь с требованиями вашего суда.',
+    descEn: 'Statement of claim for debt or money owed in the Local Court / Magistrates Court (in NSW the Small Claims Division handles claims up to $20,000 using UCPR Form 3A). Forms vary by state; send a letter of demand first. Generic template — check your court’s requirements.',
+    refRu: 'Uniform Civil Procedure Rules 2005 (NSW), Form 3A; Local Court Act 2007 (NSW) s. 29 (Small Claims Division — до $20 000)',
+    refEn: 'Uniform Civil Procedure Rules 2005 (NSW), Form 3A; Local Court Act 2007 (NSW) s. 29 (Small Claims Division)',
+    fields: [
+      F('court_name', 'Суд (штат, реестр)', 'Court (state, registry)', 'text', { placeholderDoc: 'Local Court of New South Wales, Sydney Registry' }),
+      F('plaintiff_name', 'Истец (вы)', 'Plaintiff (you)', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('plaintiff_address', 'Адрес истца', 'Plaintiff address', 'text', { half: true, placeholderDoc: '12 Elm St, Sydney NSW 2000' }),
+      F('defendant_name', 'Ответчик', 'Defendant', 'text', { half: true, placeholderDoc: 'Smith Services Pty Ltd' }),
+      F('defendant_address', 'Адрес ответчика', 'Defendant address', 'text', { half: true, placeholderDoc: '456 Oak Ave, Sydney NSW 2000' }),
+      F('debt_basis', 'Основание долга', 'Basis of the debt', 'textarea', { placeholderRu: 'опишите: договор/услуга/счёт, даты, что не оплачено', placeholderDoc: 'on 05/12/2026 I provided repair services under invoice #221 for $2,500, payable by 06/12/2026; the invoice remains unpaid' }),
+      F('amount', 'Сумма долга (AUD)', 'Amount owed (AUD)', 'number', { half: true, placeholderRu: '2500' }),
+      F('date_due', 'Дата платежа по договору', 'Payment due date', 'date', { half: true }),
+    ],
+    body: [
+      courtHdr(['Defendant: {{defendant_name}}', '{{defendant_address}}']),
+      { type: 'title', text: 'STATEMENT OF CLAIM' },
+      { type: 'paragraph', text: 'The plaintiff, {{plaintiff_name}} of {{plaintiff_address}}, claims from the defendant, {{defendant_name}} of {{defendant_address}}, the sum of {{amount}} AUD.', justify: true },
+      { type: 'paragraph', text: 'Particulars: {{debt_basis}}', justify: true },
+      { type: 'paragraph', text: 'The amount became payable on {{date_due}} and remains unpaid despite a letter of demand. The plaintiff also claims interest and costs as allowed by the rules of the court.', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Payment of {{amount}} AUD;',
+        'Interest and court costs as allowed by the applicable rules;',
+        'Any other relief the court considers appropriate.',
+      ] },
+      { type: 'attachment', items: ['Copy of the contract / invoice;', 'Copies of the letter of demand and any response;', 'Records of payments made.'], label: 'Enclosures:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'au-court-acl-consumer-guarantee', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Заявление в трибунал по потребительским гарантиям (ACL)', titleEn: 'Tribunal application — consumer guarantee failure (ACL)',
+    descRu: 'Заявление в гражданский трибунал штата (VCAT/NCAT/QCAT и др.) о нарушении потребительских гарантий Australian Consumer Law: товар ненадлежащего качества (s 54), услуги без должной тщательности и умения (s 60); условие об исключении гарантий ничтожно (s 64). Лимиты и формы различаются по штатам (NCAT — до $40 000; VCAT — до $10 000; QCAT — до $25 000).',
+    descEn: 'Application to a state civil tribunal (VCAT/NCAT/QCAT etc.) over a failure of the Australian Consumer Law consumer guarantees: goods of unacceptable quality (s 54), services without due care and skill (s 60); terms excluding guarantees are void (s 64). Limits and forms vary by state (NCAT: up to $40,000; VCAT: $10,000; QCAT: $25,000).',
+    refRu: 'Australian Consumer Law (Sch. 2, Competition and Consumer Act 2010 (Cth)), ss. 54, 60, 64; правила трибунала штата',
+    refEn: 'Australian Consumer Law (Sch. 2, Competition and Consumer Act 2010 (Cth)), ss. 54, 60, 64; state tribunal rules',
+    fields: [
+      F('court_name', 'Трибунал', 'Tribunal', 'text', { placeholderDoc: 'Victorian Civil and Administrative Tribunal (VCAT) - Civil Claims List' }),
+      F('plaintiff_name', 'Заявитель (вы)', 'Applicant (you)', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('plaintiff_address', 'Адрес заявителя', 'Applicant address', 'text', { half: true, placeholderDoc: '12 Elm St, Melbourne VIC 3000' }),
+      F('defendant_name', 'Ответчик (поставщик)', 'Respondent (supplier)', 'text', { half: true, placeholderDoc: 'Example Retail Pty Ltd' }),
+      F('defendant_address', 'Адрес ответчика', 'Respondent address', 'text', { half: true, placeholderDoc: '34 Oak Ave, Melbourne VIC 3000' }),
+      F('product_info', 'Товар/услуга', 'Goods / services', 'text', { placeholderDoc: 'Example Headphones X2 (order #A-12345)' }),
+      F('price', 'Стоимость (AUD)', 'Price paid (AUD)', 'number', { half: true, placeholderRu: '299' }),
+      F('date_buy', 'Дата покупки', 'Purchase date', 'date', { half: true }),
+      F('problem', 'В чём выражается нарушение гарантии', 'How the guarantee failed', 'textarea', { placeholderRu: 'опишите: что случилось, что гарантией не обеспечено, что уже предпринято', placeholderDoc: 'the headphones stopped charging after two weeks of normal use - not of acceptable quality; the supplier refused a refund and offered only a paid repair' }),
+      F('remedy', 'Что просите', 'Relief sought', 'textarea', { placeholderRu: 'выбранное средство защиты: возврат денег, замена, ремонт, снижение цены', placeholderDoc: 'a full refund of $299, or a replacement if the tribunal prefers' }),
+    ],
+    body: [
+      courtHdr(['Respondent: {{defendant_name}}', '{{defendant_address}}']),
+      { type: 'title', text: 'TRIBUNAL APPLICATION - FAILURE OF CONSUMER GUARANTEES (ACL)' },
+      { type: 'paragraph', text: 'I, {{plaintiff_name}}, apply to the tribunal for orders against {{defendant_name}} in relation to the following purchase: {{product_info}}, price {{price}} AUD, purchased on {{date_buy}}.', justify: true },
+      { type: 'paragraph', text: 'The problem: {{problem}}', justify: true },
+      { type: 'paragraph', text: 'The goods were not of acceptable quality and/or the services were not carried out with due care and skill, contrary to the consumer guarantees in sections 54 and 60 of the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010). I made a written claim to the supplier, which failed to provide an adequate remedy. A term that excludes or restricts a consumer guarantee is void under section 64.', justify: true },
+      { type: 'paragraph', text: 'Relief sought: {{remedy}}.', justify: true },
+      { type: 'attachment', items: ['Proof of purchase (receipt / tax invoice);', 'Photos or videos of the defect;', 'Copies of the claim and responses from the supplier.'], label: 'Enclosures:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'au-court-bond-refund', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Заявление в трибунал о возврате арендного залога (bond)', titleEn: 'Tribunal application for return of rental bond',
+    descRu: 'Заявление в трибунал штата (NCAT — Tenancy Division; VCAT; QCAT) о возврате арендного залога, удержанного арендодателем. Сначала подайте заявку на возврат залога в орган штата (Rental Bond Board / RTBA / RTA); при споре — трибунал. Формы различаются по штатам — сверьтесь с трибуналом вашего штата.',
+    descEn: 'Application to a state tribunal (NCAT Tenancy Division; VCAT; QCAT) for return of a rental bond withheld by the landlord. First lodge a bond claim with the state bond authority; if disputed, apply to the tribunal. Forms vary by state — check your state tribunal.',
+    refRu: 'Residential Tenancies Act 2010 (NSW) — залог, ss. 155–175; Residential Tenancies Act 1997 (Vic); RTRA Act 2008 (Qld)',
+    refEn: 'Residential Tenancies Act 2010 (NSW) (bond, ss. 155-175); Residential Tenancies Act 1997 (Vic); RTRA Act 2008 (Qld)',
+    fields: [
+      F('court_name', 'Трибунал', 'Tribunal', 'text', { placeholderDoc: 'NSW Civil and Administrative Tribunal (NCAT) - Tenancy Division' }),
+      F('plaintiff_name', 'Заявитель (арендатор)', 'Applicant (tenant)', 'text', { half: true, placeholderDoc: 'Alex Morgan' }),
+      F('plaintiff_address', 'Адрес заявителя', 'Applicant address', 'text', { half: true, placeholderDoc: 'Unit 4, 123 Main St, Sydney NSW 2000' }),
+      F('defendant_name', 'Ответчик (арендодатель/агент)', 'Respondent (landlord / agent)', 'text', { half: true, placeholderDoc: 'Example Property Management' }),
+      F('defendant_address', 'Адрес ответчика', 'Respondent address', 'text', { half: true, placeholderDoc: '321 Birch Rd, Sydney NSW 2000' }),
+      F('rental_address', 'Адрес аренды', 'Rental address', 'text', { placeholderDoc: 'Unit 4, 123 Main St, Sydney NSW 2000' }),
+      F('bond_amount', 'Сумма залога (AUD)', 'Bond amount (AUD)', 'number', { half: true, placeholderRu: '2400' }),
+      F('date_vacated', 'Дата выезда', 'Date vacated', 'date', { half: true }),
+      F('withheld', 'Удержания/спорные требования', 'Withholding / disputed claims', 'textarea', { placeholderRu: 'что удерживает арендодатель и почему вы не согласны', placeholderDoc: 'the agent claims $800 for repainting and cleaning beyond fair wear and tear and has not released the remaining bond' }),
+    ],
+    body: [
+      courtHdr(['Landlord / Agent (Respondent): {{defendant_name}}', '{{defendant_address}}']),
+      { type: 'title', text: 'APPLICATION FOR RETURN OF RENTAL BOND' },
+      { type: 'paragraph', text: 'I, {{plaintiff_name}}, rented the premises at {{rental_address}} from {{defendant_name}} and paid a rental bond of {{bond_amount}} AUD, which was lodged with the state rental bond authority.', justify: true },
+      { type: 'paragraph', text: 'I vacated the premises on {{date_vacated}}, returned all keys, paid all rent, and left the premises in good condition, fair wear and tear excepted.', justify: true },
+      { type: 'paragraph', text: 'The landlord/agent has claimed or withheld the following: {{withheld}}. Despite my written request, the bond (or the balance of it) has not been released to me.', justify: true },
+      { type: 'paragraph', text: 'I ask the tribunal to order payment of {{bond_amount}} AUD (or the unclaimed balance) to me and to make any other orders it considers appropriate.', justify: true },
+      { type: 'attachment', items: ['Bond lodgement number / receipt;', 'Entry and exit condition reports;', 'Photos of the premises at the end of the tenancy;', 'Copies of correspondence with the landlord/agent.'], label: 'Enclosures:' },
+      stdSign('{{plaintiff_name}}'),
     ],
   },
 ];

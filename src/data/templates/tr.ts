@@ -4,7 +4,7 @@
 // md. 28 — çalışma belgesi), Tüketicinin Korunması Hakkında Kanun № 6502
 // (cayma hakkı 14 gün), HMK md. 118–119 (dava dilekçesi), Türk Borçlar Kanunu.
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, hdr, courtHdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{org_name}}', '{{head_name}}', '', 'Konu: İzin Talebi', '', '{{applicant_name}}', '{{applicant_position}}'] },
@@ -359,6 +359,78 @@ export const TEMPLATES_TR: TplDef[] = [
       { type: 'paragraph', text: 'Talep: {{demand}} 5411 sayılı Kanunun 51. maddesi uyarınca 10 iş günü içinde gerekçeli yanıtınızı bekliyorum. Aksi hâlde BDDK ve Bankacılar Tahkim Komisyonuna başvuracağım.', justify: true },
       { type: 'attachment', items: ['Hesap özeti;', 'İşlem belgeleri.'], label: 'Ekler:' },
       stdSign('{{customer_name}}'),
+    ],
+  },
+  {
+    slug: 'tr-court-kira-tahliye', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о взыскании арендной платы и выселении (kira tahsil ve tahliye)',
+    titleDoc: 'Kira Bedelinin Tahsili ve Tahliye Davası Dilekçesi', titleEn: 'Rent arrears recovery and eviction lawsuit',
+    descRu: 'Иск к арендатору: взыскание просроченной арендной платы с процентами и выселение из помещения. Споры из аренды рассматривает Sulh Hukuk Mahkemesi (HMK md. 4); после письменного уведомления (ihtarname) и 30-дневной просрочки — TBK md. 316.',
+    descEn: 'Lawsuit against the tenant: recovery of unpaid rent with interest and eviction. Tenancy disputes are heard by the Sulh Hukuk Mahkemesi (HMK art. 4); after a written demand and 30-day default — TBK art. 316.',
+    refRu: 'ст. 315–316 Türk Borçlar Kanunu; ст. 4, 119 HMK (6100)',
+    refEn: 'Arts. 315-316 Turkish Code of Obligations; arts. 4, 119 of the CPC (HMK)',
+    fields: [
+      F('court_name', 'Mahkeme', 'Court', 'text', { placeholderDoc: 'İstanbul (Anadolu) 15. Sulh Hukuk Mahkemesi' }),
+      F('plaintiff_name', 'Davacı (kiraya veren)', 'Plaintiff (landlord)', 'text', { half: true, placeholderDoc: 'Ayşe Yılmaz' }),
+      F('plaintiff_address', 'Davacı adresi', 'Plaintiff address', 'text', { half: true, placeholderDoc: 'Örnek Sok. No:12 D:3 İstanbul' }),
+      F('defendant_name', 'Davalı (kiracı)', 'Defendant (tenant)', 'text', { half: true, placeholderDoc: 'Ali Demir' }),
+      F('defendant_address', 'Davalı adresi', 'Defendant address', 'text', { half: true, placeholderDoc: 'Örnek Mah. 4. Sok. No:12 D:5 İstanbul' }),
+      F('property_address', 'Kiralanan taşınmaz', 'Rented property', 'text', { placeholderDoc: 'Örnek Mah. 4. Sok. No:12 D:5 İstanbul (kiralanan konut)' }),
+      F('rent', 'Aylık kira bedeli (TL)', 'Monthly rent (TRY)', 'number', { half: true, placeholderRu: '15000' }),
+      F('debt', 'Tahsil istenen tutar (TL)', 'Amount sought (TRY)', 'number', { half: true, placeholderRu: '45000' }),
+      F('period', 'Tahsil istenen dönemler', 'Unpaid periods', 'text', { half: true, placeholderDoc: 'Eylül, Ekim, Kasım 2026' }),
+      F('notice_date', 'İhtarname tarihi', 'Demand notice date', 'date', { half: true, hintRu: 'письменное требование об оплате; в Турции обычно направляется нотариусом (ihtarname)' }),
+      F('facts', 'Olaylar', 'Statement of facts', 'textarea', { placeholderRu: 'опишите факты: договор, даты, просрочка, уведомление', placeholderDoc: 'Davalı ile 01.09.2025 tarihinde aylık 15.000 TL karşılığında kira sözleşmesi yapıldı. Davalı Eylül–Kasım 2026 kira bedellerini ödemedi; 01.12.2026 tarihli ihtarnameye rağmen borç hâlâ ödenmemiştir.' }),
+    ],
+    body: [
+      courtHdr(['Davalı: {{defendant_name}}', 'Adres: {{defendant_address}}']),
+      { type: 'title', text: 'KİRA BEDELİNİN TAHSİLİ VE TAHLİYE DAVASI DİLEKÇESİ' },
+      { type: 'paragraph', text: 'Konu: kiralanan taşınmazın ({{property_address}}) tahliyesi ile tahsil istenen kira bedellerinin faiziyle birlikte davalıdan tahsilidir.', justify: true },
+      { type: 'paragraph', text: 'Olaylar: {{facts}}', justify: true },
+      { type: 'paragraph', text: 'Hukuki gerekçe: kira ilişkileri 6098 sayılı Türk Borçlar Kanunu ile düzenlenmiştir. Davalı, {{notice_date}} tarihli yazılı ihtara rağmen ödenmeyen kira bedelleri için 30 günlük sürede temerrüde düştüğünden (TBK md. 316), taşınmazın tahliyesini ve kira alacağının tahsilini talep ederim. Deliller: kira sözleşmesi, ihtarname ve tebligat şerhi, tapu kaydı, tanıklar.', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Dava değeri: {{debt}} TL (tahsil istenen dönemler: {{period}}); aylık kira bedeli: {{rent}} TL.',
+        'Sonuç ve istem: davanın kabulü ile kira bedellerinin faiziyle tahsili ve taşınmazın tahliye edilerek boş teslimi.',
+        'Yargılama giderleri ile vekâlet ücretinin davalıya yükletilmesi.',
+      ] },
+      { type: 'attachment', items: ['Kira sözleşmesinin sureti;', 'İhtarname örneği ve tebligat şerhi;', 'Dilekçe sureti (davalı sayısı kadar);', 'Harç ve gider avansının ödendiğine dair dekont.'], label: 'Ekler:' },
+      stdSign('Davacı: _______________ / {{plaintiff_name}} /'),
+    ],
+  },
+  {
+    slug: 'tr-court-tuketici', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление в суд по правам потребителей (ayıplı mal)',
+    titleDoc: 'Tüketici Mahkemesine Dava Dilekçesi (Ayıplı Mal)', titleEn: 'Consumer court lawsuit (defective goods)',
+    descRu: 'Иск в Tüketici Mahkemesi по товару с недостатками (ayıplı mal): по выбору потребителя — отмена договора с возвратом денег, снижение цены, бесплатный ремонт или замена (6502 TKHK md. 11). Условие подачи — протокол медиации (arabuluculuk, md. 73/A).',
+    descEn: 'Lawsuit before the Consumer Court over defective goods: rescission with refund, price reduction, free repair or replacement at the consumer’s choice (Law 6502 art. 11); a mediation (arabuluculuk) no-agreement record is a condition for filing (art. 73/A).',
+    refRu: 'ст. 11, 68, 73/A Закона Турции № 6502 «О защите прав потребителей»; ст. 119 HMK',
+    refEn: 'Arts. 11, 68, 73/A of the Turkish Consumer Protection Law No. 6502; art. 119 HMK',
+    fields: [
+      F('court_name', 'Mahkeme', 'Court', 'text', { placeholderDoc: 'İstanbul Tüketici Mahkemesi' }),
+      F('plaintiff_name', 'Davacı (tüketici)', 'Plaintiff (consumer)', 'text', { half: true, placeholderDoc: 'Ahmet Yılmaz' }),
+      F('plaintiff_address', 'Davacı adresi', 'Plaintiff address', 'text', { half: true, placeholderDoc: 'Örnek Sok. No:12 D:3 İstanbul' }),
+      F('defendant_name', 'Davalı (satıcı)', 'Defendant (seller)', 'text', { half: true, placeholderDoc: 'Örnek Elektronik Ltd. Şti.' }),
+      F('defendant_address', 'Davalı adresi', 'Defendant address', 'text', { half: true, placeholderDoc: 'Örnek Cad. No:9 İstanbul' }),
+      F('product', 'Ürün ve sipariş bilgisi', 'Product and order info', 'text', { placeholderDoc: 'Örnek Televizyon (sipariş no: 12345)' }),
+      F('price', 'Ödenen bedel (TL)', 'Price paid (TRY)', 'number', { half: true, placeholderRu: '25000' }),
+      F('date_buy', 'Satın alma tarihi', 'Purchase date', 'date', { half: true }),
+      F('defect', 'Ayıp ve yapılan başvurular', 'Defect and steps taken', 'textarea', { placeholderRu: 'опишите недостаток и обращения к продавцу', placeholderDoc: 'Ürün ilk kullanımda arıza verdi; satıcıya iki kez başvuruldu, onarım ve iade talepleri reddedildi.' }),
+      F('demand', 'Seçilen talep', 'Chosen remedy', 'select', { options: ['sözleşmeden dönme ve ödenen bedelin iadesi', 'satış bedelinden ayıp oranında indirim', 'ayıpsız misliyle değiştirme', 'ücretsiz onarım'] }),
+      F('mediation', 'Arabuluculuk dosyası', 'Mediation record', 'text', { half: true, placeholderDoc: 'İstanbul Tüketici Arabuluculuk Merkezi, dosya no: 2026/123' }),
+    ],
+    body: [
+      courtHdr(['Davalı: {{defendant_name}}', 'Adres: {{defendant_address}}']),
+      { type: 'title', text: 'TÜKETİCİ MAHKEMESİNE DAVA DİLEKÇESİ (AYIPLI MAL)' },
+      { type: 'paragraph', text: '{{date_buy}} tarihinde davalıdan {{price}} TL karşılığında {{product}} satın aldım. Üründe şu ayıp bulunmaktadır: {{defect}}.', justify: true },
+      { type: 'paragraph', text: '6502 sayılı Tüketicinin Korunması Hakkında Kanun’un 11 inci maddesi uyarınca seçimlik haklarımı kullanarak talebim: {{demand}}. Uyuşmazlık, Tüketici Hakem Heyeti parasal sınırının üzerinde bulunduğundan davayı tüketici mahkemesinde açıyorum.', justify: true },
+      { type: 'paragraph', text: 'Kanunun 73/A ve devamı maddeleri uyarınca arabuluculuk faaliyeti sonuçsuz kalmıştır: {{mediation}}. Arabuluculuk faaliyeti sonunda anlaşamamaya dair belge ektedir (dava şartı).', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Dava değeri: {{price}} TL.',
+        'Deliller: fatura/e-arşiv fatura, garanti belgesi, ürün fotoğrafları, yazışmalar, tanıklar.',
+        'Sonuç ve istem: talebin kabulü ile {{demand}}; yargılama giderlerinin davalıya yükletilmesi.',
+      ] },
+      { type: 'attachment', items: ['Fatura ve garanti belgesinin sureti;', 'Arabuluculuk faaliyeti sonunda anlaşamamaya dair belge;', 'Dilekçe sureti (davalı sayısı kadar);', 'Harç ve gider avansının ödendiğine dair dekont.'], label: 'Ekler:' },
+      stdSign('Davacı: _______________ / {{plaintiff_name}} /'),
     ],
   },
 ];

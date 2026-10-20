@@ -3,8 +3,10 @@
 // Трудовой кодекс РУз от 13.10.2023 № LRU-818 (ст. 217 — ежегодный основной
 // минимальный отпуск 21 календарный день), ГК РУз (займ, доверенность),
 // Закон РУз № ЗРУ-473 «О защите прав потребителей».
+// Исковые шаблоны (T-c1): Оила кодекси (развод с детьми), Закон «О защите прав
+// потребителей», ГК РУз (ст. 982 — деликт), Фуқаролик процессуал кодекси РУз.
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, hdr, courtHdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{head_position}}', '{{org_name}}', '{{head_name}}', '', '{{applicant_position}}', '{{applicant_name}}'] },
@@ -486,6 +488,117 @@ export const TEMPLATES_UZ: TplDef[] = [
       ] },
       { type: 'attachment', items: ['Yo\u2018qlikni tasdiqlovchi hujjatlar nusxalari;'] },
       stdSign('{{applicant_name}}'),
+    ],
+  },
+
+  // ---- T-c1 (UZ-2026): исковые заявления в суд ----
+  {
+    slug: 'uz-court-divorce', kind: 'STANDARD', categorySlug: 'court-family',
+    titleRu: 'Исковое заявление о расторжении брака при наличии общих несовершеннолетних детей',
+    titleDoc: 'Ortaq voyaga yetmagan farzandlar bo‘lganda nikohni bekor qilish to‘g‘risida da‘vo arizasi', titleEn: 'Lawsuit: divorce with common minor children',
+    descRu: 'При наличии общих несовершеннолетних детей брак расторгается только через суд. Суд вправе отложить разбирательство для примирения супругов; одновременно можно определить, с кем останутся дети, и взыскать алименты.',
+    descEn: 'With common minor children, divorce is granted only by a court, which may set a reconciliation period; custody and child support can be requested in the same claim.',
+    descDoc: 'Ortaq voyaga yetmagan farzandlar bo‘lganda nikohni bekor qilish to‘g‘risida sudga da‘vo arizasi.',
+    refRu: 'Семейный кодекс РУз (расторжение брака в судебном порядке); Гражданский процессуальный кодекс РУз',
+    refEn: 'Family Code of Uzbekistan (judicial divorce); Civil Procedure Code of Uzbekistan',
+    fields: [
+      F('court_name', 'Наименование суда', 'Court name', 'text', { placeholderDoc: 'Toshkent shahar Yunusobod tumani sudii' }),
+      F('plaintiff_name', 'Истец — ваши ФИО', 'Plaintiff full name', 'text', { half: true, placeholderDoc: 'Rahimova Nilufar Alisher qizi' }),
+      F('plaintiff_address', 'Адрес истца', 'Plaintiff address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Amir Temur shoh ko‘chasi, 15-uy, 42-xonadon' }),
+      F('defendant_name', 'Ответчик — ФИО супруга', 'Spouse full name', 'text', { half: true, placeholderDoc: 'Rahimov Bekzod Sardor o‘g‘li' }),
+      F('defendant_address', 'Адрес ответчика', 'Defendant address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Bobur ko‘chasi, 8-uy' }),
+      F('marriage_date', 'Дата заключения брака', 'Marriage date', 'date', { half: true }),
+      F('zags', 'Орган регистрации брака', 'Registry office', 'text', { half: true, placeholderDoc: 'Toshkent shahar FHDYO bo‘limi, akt yozuvi № 1234' }),
+      F('children_info', 'Общие несовершеннолетние дети', 'Common minor children', 'textarea', { placeholderDoc: 'Rahimov Jasur Bekzod o‘g‘li, 20.03.2019-yilda tug‘ilgan' }),
+      F('reason', 'Причины распада семьи', 'Reasons of breakdown', 'textarea', { placeholderDoc: 'sevgi so‘ndi, birga yashash imkoni yo‘q' }),
+    ],
+    body: [
+      courtHdr(['Javobgar: {{defendant_name}}', 'Manzil: {{defendant_address}}']),
+      { type: 'title', text: 'DA‘VO ARIZASI' },
+      { type: 'subtitle', text: 'nikohni bekor qilish to‘g‘risida' },
+      { type: 'paragraph', text: '{{marriage_date}} sanada men va javobgar {{defendant_name}} nikohga kirdik, nikoh {{zags}}da ro‘yxatga olindi.', justify: true },
+      { type: 'paragraph', text: 'Bizning ortaq voyaga yetmagan farzandlarimiz bor: {{children_info}}. Hozirda oilani saqlab qolish imkoni yo‘q: {{reason}}. Yarashtirish imkoniyati tugagan.', justify: true },
+      { type: 'paragraph', text: 'O‘zbekiston Respublikasi Oila kodeksiga muvofiq ortaq voyaga yetmagan farzandlar bo‘lganda nikoh sud tartibida bekor qilinadi. Sudidan so‘rayman:', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Men va javobgar {{defendant_name}} o‘rtasidagi nikohni bekor qilishni;',
+        'Farzandlar mening qaramog‘imga qolishini ko‘rsatishni;',
+        'Davlat yig‘imi to‘lov xarajatlarini javobgardan undirishni.',
+      ] },
+      { type: 'attachment', items: ['Nikoh to‘g‘risidagi guvohnomaning nusxasi;', 'Farzandlarning tug‘ilganlik guvohnomalari nusxalari;', 'Davlat yig‘imi to‘langanligi to‘g‘risidagi hujjat;', 'Da‘vo arizasi nusxalari javobgarlar soniga mos.'], label: 'Ilova:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'uz-court-consumer', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о защите прав потребителя (возврат денег за некачественный товар)',
+    titleDoc: 'Iste’molchi huquqlarini himoya qilish to‘g‘risida da‘vo arizasi', titleEn: 'Lawsuit: consumer protection (refund for defective goods)',
+    descRu: 'Иск к продавцу, который после досудебной претензии отказался добровольно вернуть деньги за товар ненадлежащего качества. Претензия продавцу — досудебный этап; суммы — в сумах.',
+    descEn: 'Lawsuit against a seller that refused to refund for defective goods after a pre-court claim (Consumer Protection Law of Uzbekistan).',
+    descDoc: 'Iste’molchi huquqlarini himoya qilish to‘g‘risida sudga da‘vo arizasi.',
+    refRu: 'Закон РУз «О защите прав потребителей»; Гражданский кодекс РУз; Гражданский процессуальный кодекс РУз',
+    refEn: 'Consumer Protection Law of Uzbekistan; Civil Code; Civil Procedure Code',
+    fields: [
+      F('court_name', 'Наименование суда', 'Court name', 'text', { placeholderDoc: 'Toshkent shahar Yunusobod tumani sudii', hintRu: 'по месту жительства истца или месту нахождения продавца' }),
+      F('plaintiff_name', 'Истец — ваши ФИО', 'Plaintiff full name', 'text', { half: true, placeholderDoc: 'Sardor Qodirov' }),
+      F('plaintiff_address', 'Адрес истца', 'Plaintiff address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Navoiy ko‘chasi, 2-uy, 3-xonadon' }),
+      F('defendant_name', 'Ответчик — продавец (наименование/ФИО)', 'Defendant — seller name', 'text', { half: true, placeholderDoc: '«Bozor Savdo» MCHJ' }),
+      F('defendant_address', 'Адрес ответчика', 'Defendant address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Amir Temur ko‘chasi, 1-uy' }),
+      F('product_name', 'Товар', 'Product', 'text', { half: true, placeholderDoc: 'Samsung Galaxy A54 smartfoni' }),
+      F('price', 'Стоимость (сум)', 'Price (UZS)', 'number', { half: true, placeholderRu: '5000000' }),
+      F('date_buy', 'Дата покупки', 'Purchase date', 'date', { half: true }),
+      F('date_claim', 'Дата претензии продавцу', 'Date of pre-court claim', 'date', { half: true, hintRu: 'если претензия направлялась' }),
+      F('defect', 'Обнаруженный недостаток', 'Defect found', 'textarea', { placeholderRu: 'через две недели перестал работать динамик', placeholderDoc: 'ikki haftadan keyin dinamik ishlamay qoldi' }),
+    ],
+    body: [
+      courtHdr(['Javobgar: {{defendant_name}}', 'Manzil: {{defendant_address}}']),
+      { type: 'title', text: 'DA‘VO ARIZASI' },
+      { type: 'subtitle', text: 'iste’molchi huquqlarini himoya qilish to‘g‘risida' },
+      { type: 'paragraph', text: '{{date_buy}} sanada men javobgardan «{{product_name}}» tovarini {{price}} so‘mga sotib oldim. Foydalanish jarayonida tovarda nuqson aniqlandi: {{defect}}.', justify: true },
+      { type: 'paragraph', text: '{{date_claim}} sanada javobgarga to‘langan summani qaytarish to‘g‘risida shikoyat yubordim, biroq talabim qondirilmadi.', justify: true },
+      { type: 'paragraph', text: 'O‘zbekiston Respublikasining «Iste’molchilar huquqlarini himoya qilish to‘g‘risida»gi Qonuniga muvofiq sifatsiz tovar uchun iste’molchi to‘langan summani qaytarishni talab qilishga haqli. Sudidan so‘rayman:', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Javobgar {{defendant_name}} dan to‘langan {{price}} so‘mni qaytarib berishni;',
+        'Iste’molchi huquqlari buzilgani uchun ma’naviy zararni qoplab berishni;',
+        'Davlat yig‘imi to‘lov xarajatlarini javobgardan undirishni.',
+      ] },
+      { type: 'attachment', items: ['Kassa cheki / sotib olish hujjati nusxasi;', 'Shikoyatning javobgaga yuborilgan nusxasi (mavjud bo‘lsa);', 'Da‘vo arizasining javobgar uchun nusxalari;', 'Davlat yig‘imi to‘langanligi to‘g‘risidagi hujjat.'], label: 'Ilova:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'uz-court-flood', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о возмещении ущерба, причинённого заливом квартиры',
+    titleDoc: 'Xonadon suv bosishidan yetkazilgan zararni qoplash to‘g‘risida da‘vo arizasi', titleEn: 'Lawsuit: compensation for water damage to the apartment',
+    descRu: 'Иск к соседу или управляющей организации о возмещении ущерба от залива квартиры; размер ущерба подтверждается актом обследования и (или) оценкой.',
+    descEn: 'Lawsuit against a neighbour or management company for water damage to the apartment; the amount is proven by an inspection act and/or a valuation report.',
+    descDoc: 'Xonadon suv bosishidan yetkazilgan zararni qoplash to‘g‘risida sudga da‘vo arizasi.',
+    refRu: 'ст. 982 Гражданского кодекса РУз; Гражданский процессуальный кодекс РУз',
+    refEn: 'Article 982 of the Civil Code of Uzbekistan; Civil Procedure Code of Uzbekistan',
+    fields: [
+      F('court_name', 'Наименование суда', 'Court name', 'text', { placeholderDoc: 'Toshkent shahar Yunusobod tumani sudii', hintRu: 'по месту жительства ответчика' }),
+      F('plaintiff_name', 'Истец — ваши ФИО', 'Plaintiff full name', 'text', { half: true, placeholderDoc: 'Yuldasheva Feruza Baxodir qizi' }),
+      F('plaintiff_address', 'Адрес истца (залитая квартира)', 'Plaintiff address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Mirzo Ulug‘bek tumani, 12-mavze, 4-uy' }),
+      F('defendant_name', 'Ответчик — ФИО виновника залива', 'Defendant full name', 'text', { half: true, placeholderDoc: 'Ergashev Sanjar Ulug‘bek o‘g‘li' }),
+      F('defendant_address', 'Адрес ответчика', 'Defendant address', 'text', { half: true, placeholderDoc: 'Toshkent sh., Mirzo Ulug‘bek tumani, 12-mavze, 4-uy, 2-qavat' }),
+      F('incident_date', 'Дата залива', 'Date of flooding', 'date', { half: true }),
+      F('amount', 'Сумма ущерба (сум)', 'Damage amount (UZS)', 'number', { half: true, placeholderRu: '12500000' }),
+      F('damage_desc', 'Что повреждено', 'What was damaged', 'textarea', { placeholderDoc: 'laminat pol, potolok, devor bo‘yog‘i, kiyim shkafi' }),
+      F('estimate_doc', 'Акт обследования / отчёт об оценке', 'Inspection act / valuation report', 'text', { placeholderDoc: '25.04.2026 sanada tuzilgan tekshiruv dalolatnomasi va baholash hisoboti' }),
+    ],
+    body: [
+      courtHdr(['Javobgar: {{defendant_name}}', 'Manzil: {{defendant_address}}']),
+      { type: 'title', text: 'DA‘VO ARIZASI' },
+      { type: 'subtitle', text: 'suv bosishidan yetkazilgan zararni qoplash to‘g‘risida' },
+      { type: 'paragraph', text: 'Men {{plaintiff_address}} manzilidagi xonadon egasiman. {{incident_date}} sanada javobgar aybi tufayli yuqoridagi xonadondan suv oqib, mening xonadonim ta’miri va mulkiga zarar yetdi: {{damage_desc}}.', justify: true },
+      { type: 'paragraph', text: 'Zarar hujjatlar bilan tasdiqlangan: {{estimate_doc}}. Zarar miqdori {{amount}} so‘mni tashkil etadi.', justify: true },
+      { type: 'paragraph', text: 'O‘zbekiston Respublikasi Fuqarolik kodeksining 982-moddasiga muvofiq fuqaroning mulkiga yetkazilgan zarar uni yetkazgan shaxs tomonidan to‘liq qoplanishi shart. Sudidan so‘rayman:', justify: true },
+      { type: 'list', numbered: true, items: [
+        'Javobgar {{defendant_name}} dan {{amount}} so‘m zararni qoplashni;',
+        'Zararni baholash xarajatlarini qoplashni;',
+        'Davlat yig‘imi to‘lov xarajatlarini javobgardan undirishni.',
+      ] },
+      { type: 'attachment', items: ['Tekshiruv dalolatnomasi / baholash hisoboti nusxasi;', 'Zararni tasdiqlovchi suratlar;', 'Xonadon egaligi huquqini tasdiqlovchi hujjat nusxasi;', 'Da‘vo arizasining javobgar uchun nusxalari;', 'Davlat yig‘imi to‘langanligi to‘g‘risidagi hujjat.'], label: 'Ilova:' },
+      stdSign('{{plaintiff_name}}'),
     ],
   },
 ];

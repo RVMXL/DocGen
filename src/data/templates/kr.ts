@@ -1,9 +1,10 @@
 // Шаблоны для Южной Кореи (язык документов — корейский).
 // Основано на законодательстве Республики Корея:
 // 근로기준법 제60조 (연차유급휴가), 민사소송법 제249조 (소장), 민법 제597조
-// (소비대차), 소비자기본법 제17조 (분쟁해결기준), 주택임대차보호법.
+// (소비대차), 민법 제397조 (지연이자), 민법 제389조 (채무불이행),
+// 소비자기본법 제17조 (분쟁해결기준), 주택임대차보호법 제6조 (보증금 반환 청구).
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, hdr, stdSign, courtHdr } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{org_name}} 귀중', '수신: {{head_name}}', '', '작성자: {{applicant_position}} {{applicant_name}}'] },
@@ -347,6 +348,109 @@ export const TEMPLATES_KR: TplDef[] = [
       { type: 'paragraph', text: '청구원인: {{facts}}', justify: true },
       { type: 'paragraph', text: '신청인은 채무자에게 금 {{amount}} 원 및 지연손해금의 지급을 구합니다. 민사소송법 제462조에 따라 지급명령을 신청합니다.', justify: true },
       { type: 'attachment', items: ['차용증 사본;', '이체확인증 사본.'], label: '첨부서류:' },
+      stdSign('{{creditor_name}}'),
+    ],
+  },
+  {
+    slug: 'kr-court-geumjeon', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о возврате суммы займа（소장·금전대여금 반환 청구）',
+    titleDoc: '소장（금전대여금 반환 청구）', titleEn: 'Civil complaint — loan repayment (금전대여금 반환 청구)',
+    descRu: '소장 о возврате займа: 청구취지 и 청구원인 по ст. 249 ГПК РК (민사소송법); основание — ст. 597 ГК РК (소비대차), просрочные проценты — ст. 397 ГК РК (законная ставка 5% годовых).',
+    descEn: '소장 for repayment of a loan: claims (청구취지) and causes (청구원인) per the Civil Procedure Act art. 249; basis — Civil Act art. 597 (loan), delay interest at the statutory 5% p.a. per Civil Act art. 397.',
+    refRu: 'ст. 249 Кодекса гражданского судопроизводства РК (민사소송법)；ст. 597, 397 Гражданского кодекса РК (민법)',
+    refEn: 'Korean Civil Procedure Act art. 249; Civil Act arts. 597, 397',
+    fields: [
+      F('court_name', '관할 법원', 'Court name', 'text', { placeholderDoc: '서울중앙지방법원' }),
+      F('plaintiff_name', '원고 (성명)', 'Plaintiff full name', 'text', { half: true, placeholderDoc: '이민수' }),
+      F('plaintiff_address', '원고 주소', 'Plaintiff address', 'text', { half: true, placeholderDoc: '서울특별시 마포구 월드컵로 240' }),
+      F('defendant_name', '피고 (성명/상호)', 'Defendant name', 'text', { half: true, placeholderDoc: '김철수' }),
+      F('defendant_address', '피고 주소', 'Defendant address', 'text', { half: true, placeholderDoc: '서울특별시 중구 세종대로 110' }),
+      F('amount', '대여금액 (원)', 'Loan amount (KRW)', 'number', { half: true, placeholderRu: '5000000' }),
+      F('date_loan', '금전 수령일', 'Loan date', 'date', { half: true }),
+      F('date_due', '변제기일', 'Repayment due date', 'date', { half: true }),
+      F('evidence', '증거방법', 'Evidence', 'text', { half: true, placeholderDoc: '차용증, 계좌이체 내역' }),
+      F('facts', '청구원인 (사실관계)', 'Cause of claim', 'textarea', { required: true, placeholderRu: 'опишите заём: дата, сумма, способ передачи, срок, факт невыплаты и доказательства', placeholderDoc: '2026년 5월 10일 피고는 원고로부터 금 5,000,000원을 차용하고 차용증을 작성하였다. 원고는 같은 날 계좌이체로 금원을 전달하였다. 변제기일은 2026년 10월 10일이었으나 피고는 아직 변제하지 않고 있다. 증거방법: 차용증, 계좌이체 내역.' }),
+    ],
+    body: [
+      courtHdr(['피고: {{defendant_name}}', '주소: {{defendant_address}}']),
+      { type: 'title', text: '소　장' },
+      { type: 'paragraph', text: '【청구취지】', noIndent: true },
+      { type: 'list', numbered: true, items: [
+        '피고는 원고에게 금 {{amount}}원 및 이에 대한 {{date_due}}로부터 다 갚는 날까지 연 5%의 비율로 계산한 금원을 지급하라.',
+        '소송비용은 피고가 부담한다.',
+      ] },
+      { type: 'paragraph', text: '【청구원인】', noIndent: true },
+      { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '원고와 피고 사이에는 위와 같이 민법 제597조의 금전소비대차가 성립하였다. 변제기일이 지났음에도 피고가 원리금을 변제하지 않으므로, 민법 제397조에 따라 연 5퍼센트의 지연이자가 발생한다. 민사소송법 제249조에 따라 위와 같이 소장을 제출한다.', justify: true },
+      { type: 'attachment', items: ['증거서류(차용증, 계좌이체 내역 등) 사본;', '소장부본 1통(피고분).'], label: '첨부서류:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'kr-court-bojeunggeum', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о возврате арендного депозита（소장·임대보증금 반환 청구）',
+    titleDoc: '소장（임대보증금 반환 청구）', titleEn: 'Civil complaint — lease deposit return (임대보증금 반환 청구)',
+    descRu: '소장 о возврате 보증금 (депозита) после окончания срока аренды жилья: право требования — ст. 6 Закона РК о защите арендаторов жилья (주택임대차보호법), обязанность вернуть жилое помещение — ст. 615 ГК РК; просрочные проценты — ст. 397 ГК РК.',
+    descEn: '소장 demanding the lease deposit (보증금) back after the housing lease term: claim per the Housing Lease Protection Act art. 6; duty to hand back the premises — Civil Act art. 615; delay interest — Civil Act art. 397.',
+    refRu: 'ст. 249 Кодекса гражданского судопроизводства РК (민사소송법)；ст. 6 Закона РК о защите арендаторов жилья (주택임대차보호법)；ст. 397, 615 Гражданского кодекса РК (민법)',
+    refEn: 'Korean Civil Procedure Act art. 249; Housing Lease Protection Act art. 6; Civil Act arts. 397, 615',
+    fields: [
+      F('court_name', '관할 법원', 'Court name', 'text', { placeholderDoc: '서울중앙지방법원' }),
+      F('plaintiff_name', '원고 (임차인)', 'Plaintiff (tenant)', 'text', { half: true, placeholderDoc: '이민수' }),
+      F('plaintiff_address', '원고 주소', 'Plaintiff address', 'text', { half: true, placeholderDoc: '서울특별시 마포구 월드컵로 240' }),
+      F('defendant_name', '피고 (임대인)', 'Defendant (landlord)', 'text', { half: true, placeholderDoc: '박정호' }),
+      F('defendant_address', '피고 주소', 'Defendant address', 'text', { half: true, placeholderDoc: '서울특별시 광진구 능동로 118' }),
+      F('property_address', '임대 주택 주소', 'Rental property address', 'text', { placeholderDoc: '서울특별시 광진구 능동로 120, 302호' }),
+      F('deposit', '보증금액 (원)', 'Deposit amount (KRW)', 'number', { half: true, placeholderRu: '20000000' }),
+      F('date_lease_end', '임대차 종료일', 'Lease end date', 'date', { half: true }),
+      F('facts', '청구원인 (사실관계)', 'Cause of claim', 'textarea', { required: true, placeholderRu: 'опишите договор, уплату депозита, выселение и отказ вернуть депозит', placeholderDoc: '원고는 피고와 주택임대차계약을 체결하고 보증금 금 20,000,000원을 지급하였다. 원고는 임대차기간이 끝난 2026년 9월 30일에 임대 주택을 원상태로 정리하여 피고에게 인도하고 퇴거하였다. 그러나 피고는 지금까지 보증금을 반환하지 않고 있다.' }),
+    ],
+    body: [
+      courtHdr(['피고: {{defendant_name}}', '주소: {{defendant_address}}']),
+      { type: 'title', text: '소　장' },
+      { type: 'paragraph', text: '【청구취지】', noIndent: true },
+      { type: 'list', numbered: true, items: [
+        '피고는 원고에게 금 {{deposit}}원 및 이에 대한 {{date_lease_end}}로부터 다 갚는 날까지 연 5%의 비율로 계산한 금원을 지급하라.',
+        '소송비용은 피고가 부담한다.',
+      ] },
+      { type: 'paragraph', text: '【청구원인】', noIndent: true },
+      { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '주택임대차보호법 제6조 제1항에 따라 임대차기간이 끝난 경우 임차인은 임대인에게 보증금의 반환을 청구할 수 있다. 원고는 임대 주택을 원상태로 반환하였으므로 피고는 보증금 전액을 반환하여야 하며, 지연이자는 민법 제397조의 법정이율(연 5%)에 따른다.', justify: true },
+      { type: 'attachment', items: ['주택임대차계약서 사본;', '보증금 이체확인증 사본;', '퇴거 및 주택 인도 증빙 사진;', '소장부본 1통(피고분).'], label: '첨부서류:' },
+      stdSign('{{plaintiff_name}}'),
+    ],
+  },
+  {
+    slug: 'kr-claim-naeyong', kind: 'STANDARD', categorySlug: 'court-claims',
+    titleRu: '내용증명 — требование о возврате долга (채무 상환 독촉)',
+    titleDoc: '내용증명（채무 상환 독촉）', titleEn: 'Certified letter (내용증명) — debt repayment demand',
+    descRu: '내용증명 (письмо с удостоверением содержания, отправляется заказной почтой через почту Кореи) с требованием вернуть долг: фиксирует содержание и факт отправки; применяется до 지급명령 или иска. Основание — ст. 597, 389, 397 ГК РК.',
+    descEn: '내용증명 (content-certified mail via Korea Post) demanding repayment of a debt: proves the contents and the fact of sending; used before a payment order or lawsuit. Basis — Civil Act arts. 597, 389, 397.',
+    refRu: 'ст. 597, 389, 397 Гражданского кодекса РК (민법)；правила 내용증명 почтовой службы Кореи',
+    refEn: 'Korean Civil Act arts. 597, 389, 397; Korea Post 내용증명 rules',
+    fields: [
+      F('debtor_name', '수신인 (채무자)', 'Recipient (debtor)', 'text', { placeholderDoc: '박서준' }),
+      F('debtor_address', '수신인 주소', 'Recipient address', 'text', { placeholderDoc: '서울특별시 서초구 서초대로 45' }),
+      F('creditor_name', '발송인 (채권자)', 'Sender (creditor)', 'text', { half: true, placeholderDoc: '김민준' }),
+      F('creditor_address', '발송인 주소', 'Sender address', 'text', { half: true, placeholderDoc: '서울특별시 강남구 테헤란로 123, 101호' }),
+      F('amount', '채무 금액 (원)', 'Debt amount (KRW)', 'number', { half: true, placeholderRu: '3500000' }),
+      F('date_loan', '거래(차용)일', 'Loan date', 'date', { half: true }),
+      F('date_due', '상환 기한', 'Repayment deadline', 'date', { half: true }),
+      F('deadline', '회신 기한 (일)', 'Response deadline (days)', 'number', { half: true, placeholderRu: '14' }),
+      F('facts', '거래 경위', 'Transaction details', 'textarea', { placeholderRu: 'опишите сделку: договор, сумма, срок, что уже сделано', placeholderDoc: '2026년 1월 12일 차용증에 따라 귀하에게 금 3,500,000원을 빌려주었고, 상환기한은 2026년 4월 12일이었다. 그러나 귀하는 아직 한 번도 상환하지 않았다.' }),
+    ],
+    body: [
+      hdr(['{{debtor_name}}', '{{debtor_address}} 귀하'], ['발송인: {{creditor_name}}', '주소: {{creditor_address}}']),
+      { type: 'title', text: '내용증명' },
+      { type: 'subtitle', text: '제목: 채무 금 {{amount}}원 상환 독촉' },
+      { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '상환기한인 {{date_due}}이 지났음에도 귀하는 지금까지 상환하지 않았다. 민법 제597조의 소비대차 및 제389조의 채무불이행에 따라 본인은 귀하에게 위 채무의 상환을 독촉한다.', justify: true },
+      { type: 'paragraph', text: '본 내용증명은 발송인이 우체국 취급자에게 제출한 내용과 수신인에게 전달된 내용이 동일함을 증명하는 서식으로, 발송 사실과 내용을 공적으로 증명하는 증거가 된다.', noIndent: true },
+      { type: 'list', numbered: true, items: [
+        '위 채무 금 {{amount}}원을 본 내용증명 수령일로부터 {{deadline}}일 이내에 발송인이 지정한 계좌로 송금하여 주시기 바랍니다.',
+        '기한 내에 상환하지 않을 경우 지연손해금(민법 제397조, 연 5%)을 추가로 청구하고, 지급명령 및 소송 등 법적 절차를 진행할 예정입니다.',
+      ] },
+      { type: 'attachment', items: ['차용증 사본;', '이체확인증 사본.'], label: '동봉 서류:' },
       stdSign('{{creditor_name}}'),
     ],
   },

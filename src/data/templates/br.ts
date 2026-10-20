@@ -4,7 +4,7 @@
 // aviso prévio), CDC (Lei 8.078/1990, art. 18–20 — vícios; art. 49 — arrependimento
 // 7 dias), Lei 9.099/1995 (Juizado Especial Cível), Código Civil art. 1.347 (síndico).
 import type { TplDef } from '../types';
-import { F, hdr, stdSign } from './helpers';
+import { F, hdr, courtHdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
   { type: 'lines', align: 'right', items: ['{{org_name}}', 'A/C: {{head_name}}', '', '{{applicant_name}}', '{{applicant_position}}', '{{date_today}}'] },
@@ -373,6 +373,83 @@ export const TEMPLATES_BR: TplDef[] = [
       { type: 'list', items: ['{{documents}}'] },
       { type: 'paragraph', text: 'Formato desejado: {{format}}. O prazo legal de entrega é de até 24 horas após a solicitação.', justify: true },
       stdSign('{{patient_name}}'),
+    ],
+  },
+  {
+    slug: 'br-court-cobranca', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Исковое заявление о взыскании долга (ação de cobrança)',
+    titleDoc: 'Petição inicial de ação de cobrança', titleEn: 'Debt collection lawsuit (ação de cobrança)',
+    descRu: 'Петиция в суд первой инстанции о взыскании денежного долга по обычному порядку (когда Juizado Especial Cível не подходит — сумма выше порога или сложные доказательства). Форма — ст. 319 ГПК Бразилии; ответственность должника — ст. 389, 394, 397 Código Civil.',
+    descEn: 'First-instance petition for debt collection under the ordinary procedure (when the Juizado Especial Cível is not suitable). Form per CPC art. 319; debtor’s liability — Civil Code arts. 389, 394, 397.',
+    warningRu: 'В обычном процессе ведение дела требует адвоката (CPC art. 103); в Juizado Especial Cível адвокат обязателен при сумме свыше 20 минимальных зарплат',
+    warningEn: 'The ordinary procedure requires a lawyer (CPC art. 103); in the JEC a lawyer is mandatory above 20 minimum wages',
+    refRu: 'ст. 319 ГПК Бразилии (CPC/2015); ст. 389, 394, 397 Código Civil',
+    refEn: 'Art. 319 of the Brazilian CPC/2015; arts. 389, 394, 397 of the Civil Code',
+    fields: [
+      F('court_name', 'Juízo (vara)', 'Court', 'text', { placeholderDoc: 'Juízo da 1ª Vara Cível da Comarca de São Paulo - SP' }),
+      F('plaintiff_name', 'Autor (seu nome)', 'Plaintiff full name', 'text', { half: true, placeholderDoc: 'João Silva' }),
+      F('plaintiff_cpf', 'CPF do autor', 'Plaintiff CPF', 'text', { half: true, placeholderDoc: 'CPF 000.000.000-00' }),
+      F('plaintiff_address', 'Endereço do autor', 'Plaintiff address', 'text', { placeholderDoc: 'Rua das Flores, 45 — São Paulo/SP' }),
+      F('defendant_name', 'Réu (nome/razão social)', 'Defendant name', 'text', { half: true, placeholderDoc: 'Empresa Exemplo Ltda.' }),
+      F('defendant_address', 'Endereço do réu', 'Defendant address', 'text', { half: true, placeholderDoc: 'Rua Exemplo, 123 — São Paulo/SP' }),
+      F('amount', 'Valor do débito (R$)', 'Debt amount (BRL)', 'number', { half: true, placeholderRu: '8000' }),
+      F('basis', 'Dos fatos', 'Statement of facts', 'textarea', { placeholderRu: 'опишите: договор/услуга/заём, даты, сумма, что не оплачено', placeholderDoc: 'prestei serviços ao réu conforme contrato de 10/05/2026; a fatura nº 123 de R$ 8.000,00 venceu em 10/10/2026 e permanece impaga, apesar das tratativas extrajudiciais (notificação anexa).' }),
+      F('evidence', 'Provas', 'Evidence', 'textarea', { placeholderDoc: 'contrato, fatura, notificação extrajudicial, mensagens de WhatsApp' }),
+    ],
+    body: [
+      courtHdr(['Réu: {{defendant_name}}', 'Endereço: {{defendant_address}}']),
+      { type: 'title', text: 'AÇÃO DE COBRANÇA' },
+      { type: 'paragraph', text: '{{plaintiff_name}}, inscrito(a) no CPF sob o nº {{plaintiff_cpf}}, residente e domiciliado(a) em {{plaintiff_address}}, vem, respeitosamente, à presença de Vossa Excelência, com fundamento no art. 319 do CPC e nos arts. 389, 394 e 397 do Código Civil, propor a presente AÇÃO DE COBRANÇA em face de {{defendant_name}}, pelos fatos e fundamentos a seguir expostos.', noIndent: true, justify: true },
+      { type: 'paragraph', text: 'DOS FATOS: {{basis}}', justify: true },
+      { type: 'paragraph', text: 'DO DIREITO: o não pagamento de obrigação certa, líquida e vencida configura mora ex re (arts. 394 e 397 do Código Civil). Nos termos do art. 389 do Código Civil, o inadimplemento obriga o devedor a ressarcir as perdas e danos, acrescidos de juros e correção monetária.', justify: true },
+      { type: 'paragraph', text: 'Dá-se à causa o valor de R$ {{amount}}. O autor opta pela realização de audiência de conciliação ou de mediação (art. 319, VII, do CPC).', justify: true },
+      { type: 'list', numbered: true, items: [
+        'a condenação do réu ao pagamento de R$ {{amount}}, com correção monetária e juros de mora contados do vencimento da obrigação;',
+        'a citação do réu para responder à presente ação, sob pena de revelia;',
+        'a produção de provas: {{evidence}};',
+        'a condenação do réu ao pagamento das custas processuais e honorários advocatícios (art. 85 do CPC).',
+      ] },
+      { type: 'attachment', items: ['Cópia do documento de identidade e CPF do autor;', 'Documentos comprobatórios do débito;', 'Cópia da petição inicial para o réu;', 'Procuração, quando houver.'], label: 'Anexos:' },
+      stdSign('Autor: _______________ / {{plaintiff_name}} /'),
+    ],
+  },
+  {
+    slug: 'br-court-danos', kind: 'STANDARD', categorySlug: 'court-lawsuits',
+    titleRu: 'Иск о возмещении материального ущерба (danos materiais)',
+    titleDoc: 'Petição inicial de ação de indenização por danos materiais', titleEn: 'Lawsuit for material damages compensation',
+    descRu: 'Иск о возмещении материального ущерба имуществу (залив от соседа, поломка по вине ответчика, ущерб от товара/услуги). Основание — ст. 186, 927, 944 Código Civil; для отношений потребителя — также ст. 18 CDC (Lei 8.078/90). Форма — ст. 319 ГПК.',
+    descEn: 'Lawsuit for compensation of material damage to property (water leak, negligent damage, faulty goods/services). Basis — Civil Code arts. 186, 927, 944; for consumer relations also CDC art. 18. Form per CPC art. 319.',
+    warningRu: 'В обычном процессе ведение дела требует адвоката (CPC art. 103)',
+    warningEn: 'The ordinary procedure requires a lawyer (CPC art. 103)',
+    refRu: 'ст. 186, 927, 944 Código Civil; ст. 18 CDC (Lei 8.078/90); ст. 319 ГПК Бразилии',
+    refEn: 'Arts. 186, 927, 944 of the Civil Code; art. 18 of the CDC (Law 8.078/90); art. 319 CPC',
+    fields: [
+      F('court_name', 'Juízo (vara)', 'Court', 'text', { placeholderDoc: 'Juízo da 2ª Vara Cível da Comarca de Belo Horizonte - MG' }),
+      F('plaintiff_name', 'Autor (seu nome)', 'Plaintiff full name', 'text', { half: true, placeholderDoc: 'Maria Souza' }),
+      F('plaintiff_cpf', 'CPF do autor', 'Plaintiff CPF', 'text', { half: true, placeholderDoc: 'CPF 000.000.000-00' }),
+      F('plaintiff_address', 'Endereço do autor', 'Plaintiff address', 'text', { placeholderDoc: 'Rua das Palmeiras, 77 — Belo Horizonte/MG' }),
+      F('defendant_name', 'Réu (nome/razão social)', 'Defendant name', 'text', { half: true, placeholderDoc: 'Pedro Alves (proprietário do imóvel vizinho)' }),
+      F('defendant_address', 'Endereço do réu', 'Defendant address', 'text', { half: true, placeholderDoc: 'Rua das Palmeiras, 79 — Belo Horizonte/MG' }),
+      F('incident_date', 'Data do dano', 'Date of damage', 'date', { half: true }),
+      F('damage_desc', 'Descrição do dano', 'Damage description', 'textarea', { placeholderRu: 'опишите событие и ущерб: что произошло, что повреждено', placeholderDoc: 'houve vazamento de água na unidade do réu e a infiltração danificou a parede, o piso e o sofá do meu apartamento; o réu foi notificado e não providenciou reparo nem indenização.' }),
+      F('amount', 'Valor dos danos (R$)', 'Damage amount (BRL)', 'number', { half: true, placeholderRu: '6000' }),
+      F('evidence', 'Provas', 'Evidence', 'textarea', { placeholderDoc: 'fotos do dano, orçamentos, laudo técnico, boletim de ocorrência' }),
+    ],
+    body: [
+      courtHdr(['Réu: {{defendant_name}}', 'Endereço: {{defendant_address}}']),
+      { type: 'title', text: 'AÇÃO DE INDENIZAÇÃO POR DANOS MATERIAIS' },
+      { type: 'paragraph', text: '{{plaintiff_name}}, inscrito(a) no CPF sob o nº {{plaintiff_cpf}}, residente e domiciliado(a) em {{plaintiff_address}}, vem, respeitosamente, à presença de Vossa Excelência, com fundamento no art. 319 do CPC e nos arts. 186, 927 e 944 do Código Civil, propor a presente AÇÃO DE INDENIZAÇÃO POR DANOS MATERIAIS em face de {{defendant_name}}.', noIndent: true, justify: true },
+      { type: 'paragraph', text: 'DOS FATOS: em {{incident_date}}, {{damage_desc}}', justify: true },
+      { type: 'paragraph', text: 'DO DIREITO: a prática de ato ilícito gera o dever de indenizar (arts. 186 e 927 do Código Civil), e a indenização mede-se pela extensão do dano (art. 944). Em relação de consumo, aplica-se ainda o art. 18 do CDC (Lei nº 8.078/90).', justify: true },
+      { type: 'paragraph', text: 'Dá-se à causa o valor de R$ {{amount}}. O autor opta pela realização de audiência de conciliação ou de mediação (art. 319, VII, do CPC).', justify: true },
+      { type: 'list', numbered: true, items: [
+        'a condenação do réu ao pagamento de indenização por danos materiais de R$ {{amount}}, com correção monetária e juros;',
+        'a citação do réu para responder à presente ação, sob pena de revelia;',
+        'a produção de provas: {{evidence}};',
+        'a condenação do réu ao pagamento das custas processuais e honorários advocatícios (art. 85 do CPC).',
+      ] },
+      { type: 'attachment', items: ['Cópia do documento de identidade e CPF do autor;', 'Fotos do dano e orçamentos/laudo técnico;', 'Cópia da petição inicial para o réu;', 'Procuração, quando houver.'], label: 'Anexos:' },
+      stdSign('Autor: _______________ / {{plaintiff_name}} /'),
     ],
   },
 ];
