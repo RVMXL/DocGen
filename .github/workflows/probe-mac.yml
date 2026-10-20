@@ -1,0 +1,16 @@
+# Диагностика доступности mac-раннеров (workflow_dispatch).
+# Если эта джоба стартует — mac-раннеры доступны публичному репо.
+name: probe-mac
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mac:
+    runs-on: mac-latest
+    timeout-minutes: 5
+    steps:
+      - name: Раннер жив
+        run: |
+          sw_vers
+          uname -m
