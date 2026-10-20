@@ -5,6 +5,9 @@ name: probe-mac
 on:
   workflow_dispatch:
 
+# Минимальные права: диагностика не трогает ни код, ни релизы.
+permissions: {}
+
 jobs:
   mac:
     runs-on: mac-latest
