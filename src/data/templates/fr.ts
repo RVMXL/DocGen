@@ -6,7 +6,9 @@
 // art. 1984 — mandat), Code de la santé publique (art. L.1111-7 — dossier médical,
 // art. L.3111-2 — vaccinations obligatoires), Code de l’éducation (art. L.212-1,
 // L.131-5 — inscription scolaire), loi n° 89-462 (art. 23, 7-1 — charges locatives),
-// décret n° 87-713, Cerfa 15399 (reconnaissance de dette), Cerfa 12480 (médecin traitant).
+// décret n° 87-713, Cerfa 15399 (reconnaissance de dette), Cerfa 12480 (médecin traitant);
+// LPF art. L. 277 (sursis de paiement), Code monétaire et financier art. L. 133-19/L. 316-1
+// (litige bancaire), Code de la sécurité sociale art. L. 351-1 + Cerfa 14079 (liquidation retraite).
 import type { TplDef } from '../types';
 import { F, hdr, courtHdr, stdSign } from './helpers';
 
@@ -408,6 +410,62 @@ export const TEMPLATES_FR: TplDef[] = [
       stdSign('{{taxpayer_name}}'),
     ],
   },
+  {
+    slug: 'fr-tax-sursis', kind: 'STANDARD', categorySlug: 'tax-docs',
+    titleRu: 'Ходатайство о приостановлении уплаты оспариваемого налога (sursis de paiement)',
+    titleDoc: 'Demande de sursis de paiement', titleEn: 'Request for stay of payment (sursis de paiement)',
+    descRu: 'Ходатайство о sursis de paiement — приостановлении взыскания оспариваемой суммы на время рассмотрения réclamation: по ст. L. 277 LPF налогоплательщик, выполнивший декларационные обязанности, по общему правилу освобождён от уплаты оспариваемой суммы; при угрозе взыскания могут потребовать гарантию.',
+    descEn: 'Request for a stay of payment (sursis de paiement) while the réclamation is examined: under art. L. 277 LPF a taxpayer who has met the filing obligations is, as a rule, dispensed from paying the contested amount; a guarantee may be requested if recovery is threatened.',
+    refRu: 'ст. L. 277 Книги налоговых процедур Франции (Livre des procédures fiscales)',
+    refEn: 'Article L. 277 of the French Livre des procédures fiscales',
+    fields: [
+      F('service_name', 'Налоговая служба (SIP)', 'Tax office (SIP)', 'text', { half: true, placeholderDoc: 'Service des impôts des particuliers de Lyon Est' }),
+      F('service_address', 'Адрес', 'Address', 'text', { half: true, placeholderDoc: '5 rue de l’Exemple, 69003 Lyon' }),
+      F('taxpayer_name', 'Ваши ФИО', 'Taxpayer name', 'text', { half: true, placeholderDoc: 'Marie Dupont' }),
+      F('fiscal_ref', 'Реквизиты налога', 'Tax reference', 'text', { half: true, placeholderDoc: 'avis d’imposition sur les revenus 2025, réf. 2027-AX123' }),
+      F('disputed_amount', 'Оспариваемая сумма (€)', 'Contested amount (EUR)', 'number', { half: true, placeholderRu: '780' }),
+      F('reclamation_date', 'Дата подачи réclamation', 'Date the réclamation was filed', 'date', { half: true, hintRu: 'réclamation можно подать тем же письмом — см. шаблон «Réclamation»' }),
+    ],
+    body: [
+      hdr(['{{service_name}}', '{{service_address}}'], ['{{taxpayer_name}}']),
+      { type: 'title', text: 'DEMANDE DE SURSIS DE PAIEMENT' },
+      { type: 'subtitle', text: 'concernant {{fiscal_ref}}' },
+      { type: 'paragraph', text: 'Le {{reclamation_date}}, j’ai déposé une réclamation portant sur la somme de {{disputed_amount}} € mentionnée sur l’avis susvisé.', justify: true },
+      { type: 'paragraph', text: 'En application de l’article L. 277 du Livre des procédures fiscales, je suis dispensé de payer l’imposition contestée pendant l’instruction de la réclamation (sursis de paiement). J’ai satisfait à l’ensemble de mes obligations déclaratives.', justify: true },
+      { type: 'paragraph', text: 'Je vous demande de me confirmer par écrit la mise en sursis du recouvrement de la somme contestée et de suspendre toute mesure d’exécution (relance, saisie, opposition administrative). Si vous estimez nécessaire d’exiger une garantie, je vous prie de m’en préciser les modalités.', justify: true },
+      { type: 'attachment', items: ['Copie de la réclamation ;', 'Copie de l’avis d’imposition contesté.'], label: 'Pièces jointes :' },
+      stdSign('{{taxpayer_name}}'),
+    ],
+  },
+  {
+    slug: 'fr-bank-cb-litige', kind: 'STANDARD', categorySlug: 'bank-docs',
+    titleRu: 'Претензия банку по спорной операции (litige bancaire)',
+    titleDoc: 'Réclamation bancaire — opération contestée', titleEn: 'Bank complaint — disputed card transaction',
+    descRu: 'Претензия в банк по спорной операции (несанкционированное списание, двойное списание, списание после отмены): по ст. L. 133-19 CMF банк возмещает неавторизованную операцию. Ответ банка — до 2 месяцев; далее — банковский медиатор (ст. L. 316-1 CMF), для карт CB — Médiateur de la fédération bancaire française.',
+    descEn: 'Complaint to the bank about a disputed transaction (unauthorised, duplicated, charged after cancellation): under art. L. 133-19 CMF the bank must refund an unauthorised transaction. The bank has up to 2 months to answer; then the banking ombudsman (art. L. 316-1 CMF) — for CB cards, the Médiateur de la fédération bancaire française.',
+    refRu: 'ст. L. 133-19, L. 316-1 Кодекса денежного обращения и финансов Франции (Code monétaire et financier)',
+    refEn: 'Articles L. 133-19, L. 316-1 of the French Code monétaire et financier',
+    fields: [
+      F('bank_name', 'Банк', 'Bank', 'text', { half: true, placeholderDoc: 'Banque Exemple' }),
+      F('bank_address', 'Адрес отделения', 'Branch address', 'text', { half: true, placeholderDoc: '1 rue de l’Exemple, 69002 Lyon' }),
+      F('client_name', 'Ваше имя', 'Client name', 'text', { half: true, placeholderDoc: 'Marie Dupont' }),
+      F('client_address', 'Ваш адрес', 'Your address', 'text', { half: true, placeholderDoc: '12 rue des Exemples, 75001 Paris' }),
+      F('account_ref', 'Реквизиты счёта/карты', 'Account/card reference', 'text', { half: true, placeholderDoc: 'compte n° 12345678901, carte CB ****1234' }),
+      F('operation_ref', 'Спорная операция', 'Disputed transaction', 'text', { half: true, placeholderDoc: 'Achat du 12/10/2026 — 250,00 € chez COMMERCE EXEMPLE' }),
+      F('incident', 'Суть спора', 'What happened', 'textarea', { placeholderRu: 'опишите: операция не авторизована вами / списана дважды / списана после отмены заказа и т.п.', placeholderDoc: 'Je n’ai pas effectué cette opération ; ma carte n’a jamais quitté ma possession.' }),
+      F('demand', 'Что просите', 'Requested remedy', 'select', { options: ['le remboursement de l’opération non autorisée', 'l’annulation de l’opération en double et la restitution des sommes', 'la restitution des frais et la régularisation du compte'] }),
+    ],
+    body: [
+      hdr(['{{bank_name}}', '{{bank_address}}'], ['{{client_name}}', '{{client_address}}']),
+      { type: 'title', text: 'RÉCLAMATION — OPÉRATION CONTESTÉE' },
+      { type: 'paragraph', text: 'Je conteste l’opération suivante portée à mon compte : {{operation_ref}} (références : {{account_ref}}).', justify: true },
+      { type: 'paragraph', text: 'Faits : {{incident}}', justify: true },
+      { type: 'paragraph', text: 'Conformément à l’article L. 133-19 du Code monétaire et financier, je vous demande : {{demand}}. Je vous remercie de bloquer toute nouvelle opération contestée et de me répondre par écrit.', justify: true },
+      { type: 'paragraph', text: 'À défaut de réponse satisfaisante dans un délai de deux mois, je saisirai le médiateur bancaire (article L. 316-1 du Code monétaire et financier).', justify: true },
+      { type: 'attachment', items: ['Copie du relevé de compte ;', 'Copies des échanges avec la banque ;', 'Le cas échéant, déclaration de vol/perte ou dépôt de plainte.'], label: 'Pièces jointes :' },
+      stdSign('{{client_name}}'),
+    ],
+  },
 
   {
     slug: 'fr-court-assignation-dette', kind: 'STANDARD', categorySlug: 'court-lawsuits',
@@ -616,5 +674,44 @@ export const TEMPLATES_FR: TplDef[] = [
     portalDescEn: 'Your ameli account, “Mon médecin traitant” section: declare or change your doctor online; form Cerfa 12480*03 can be mailed to your CPAM. Without a declared médecin traitant, GP reimbursement drops to 30% of the tariff.',
     fields: [],
     body: [],
+  },
+  {
+    slug: 'fr-soc-rsa-caf', kind: 'GOV_PORTAL_ONLY', categorySlug: 'soc-benefits',
+    titleRu: 'RSA и prime d’activité онлайн (CAF)', titleEn: 'RSA & prime d’activité online (CAF)',
+    descRu: 'Заявления на RSA (базовый доход) и prime d’activité (премия за активность) подаются онлайн в личном кабинете CAF («Mon compte» → «Mes démarches en ligne»); при первом обращении за RSA заполняется анкета с документами о доходах, адресе и составе семьи. Для занятых в сельском хозяйстве — MSA (msa.fr).',
+    descEn: 'RSA (minimum income) and prime d’activité (in-work benefit) applications are filed online in your CAF account (Mon compte → Mes démarches en ligne); a first RSA claim requires a form with income, address and household documents. Agricultural workers apply via the MSA (msa.fr).',
+    portalUrl: 'https://www.caf.fr',
+    portalName: 'caf.fr — Caisse d’allocations familiales',
+    portalDescRu: 'Mon compte → Mes démarches en ligne: RSA (18+, доход ниже порога, проживание во Франции более 3 месяцев) и prime d’activité (квартальная декларация доходов). Документы: доходы за 12 месяцев, адрес, состав семьи, IBAN.',
+    portalDescEn: 'Mon compte → Mes démarches en ligne: RSA (18+, income below the threshold, residence in France for more than 3 months) and prime d’activité (quarterly income declaration). Documents: 12 months of income, address, household composition, IBAN.',
+    fields: [],
+    body: [],
+  },
+  {
+    slug: 'fr-soc-retraite', kind: 'STANDARD', categorySlug: 'soc-pension',
+    titleRu: 'Заявление о назначении пенсии (liquidation de la retraite)',
+    titleDoc: 'Demande de liquidation de la retraite', titleEn: 'Pension liquidation request (retraite)',
+    descRu: 'Заявление в Carsat (Assurance retraite) о liquidation — назначении и выплате пенсии по старости: подаётся с бланком «Demande de retraite personnelle» (Cerfa n° 14079), обычно за 4–6 месяцев до желаемой даты. При правах в нескольких режимах (AGIRC-ARRCO) проще единое онлайн-заявление на info-retraite.fr.',
+    descEn: 'Request to the Carsat (Assurance retraite) for the liquidation — award and payment of the old-age pension, filed with the “Demande de retraite personnelle” form (Cerfa n° 14079), usually 4–6 months before the intended date. With rights in several schemes (AGIRC-ARRCO), the single online request at info-retraite.fr is simpler.',
+    refRu: 'ст. L. 351-1 Кодекса социального страхования Франции; бланк Cerfa n° 14079',
+    refEn: 'Article L. 351-1 of the French Social Security Code; form Cerfa n° 14079',
+    fields: [
+      F('carsat_name', 'Carsat', 'Carsat', 'text', { half: true, placeholderDoc: 'Carsat Sud-Est — service retraite' }),
+      F('carsat_address', 'Адрес', 'Address', 'text', { half: true, placeholderDoc: 'Place de la Bourse, 69438 Lyon Cedex 03' }),
+      F('insured_name', 'Ваши ФИО', 'Your full name', 'text', { half: true, placeholderDoc: 'Marie Dupont' }),
+      F('secu_number', 'Номер Sécurité sociale', 'Social security number', 'text', { half: true, placeholderDoc: '2 85 02 75 116 012 34' }),
+      F('birth_date', 'Дата рождения', 'Date of birth', 'date', { half: true }),
+      F('liquidation_date', 'Желаемая дата назначения', 'Requested effective date', 'date', { half: true, hintRu: 'подают обычно за 4–6 месяцев; пенсия не может начаться раньше законного возраста' }),
+      F('situation', 'Стаж и режимы', 'Career and schemes', 'textarea', { placeholderRu: 'работа по найму, последние работодатели, права в AGIRC-ARRCO и др.', placeholderDoc: 'Carrière salariée de 1988 à 2027 ; derniers employeurs : Société Exemple SAS ; droits complémentaires AGIRC-ARRCO.' }),
+    ],
+    body: [
+      hdr(['{{carsat_name}}', '{{carsat_address}}'], ['{{insured_name}}', 'N° de sécurité sociale : {{secu_number}}']),
+      { type: 'title', text: 'DEMANDE DE LIQUIDATION DE LA RETRAITE' },
+      { type: 'paragraph', text: 'Je sollicite la liquidation de ma pension de vieillesse du régime général à compter du {{liquidation_date}}. Je suis né(e) le {{birth_date}}. {{situation}}', justify: true },
+      { type: 'paragraph', text: 'Le formulaire « Demande de retraite personnelle » (Cerfa n° 14079) dûment rempli est joint à ce courrier, avec les pièces justificatives demandées.', justify: true },
+      { type: 'paragraph', text: 'Je vous prie de me confirmer la date d’effet, le montant de la pension et, le cas échéant, les justificatifs complémentaires. Pour mes droits complémentaires, je vous remercie d’assurer la transmission via la demande unique (AGIRC-ARRCO).', justify: true },
+      { type: 'attachment', items: ['Formulaire Cerfa n° 14079 rempli et signé ;', 'Copie d’une pièce d’identité ;', 'Relevé de carrière / attestation de fin de carrière ;', 'Relevé d’identité bancaire (IBAN).'], label: 'Pièces jointes :' },
+      stdSign('{{insured_name}}'),
+    ],
   },
 ];
