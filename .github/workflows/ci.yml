@@ -1,5 +1,15 @@
-# DocGen CI: статическая сборка + проверка целостности каталога шаблонов.
+# DocGen CI: тесты + статическая сборка + smoke-запуск десктопа + проверка ссылок.
+#
 # Приложение автономное (output: export) — сервер и БД не нужны.
+# Что проверяем и почему (каждый гейт — реакция на реальный инцидент):
+#   unit:           каталог (763 шаблона, 22 страны), генерация docx/pdf, «слепые зоны»
+#                   сборки — релиз v0.3.0 не запускался на Windows, версии root/desktop
+#                   разъехались, триггер CI был «branches: ain]»;
+#   desktop-smoke:  сборка payload + запуск Electron с --smoke на Linux и Windows —
+#                   ловит «не запускается» (пустой payload, рекурсия протокола,
+#                   отказ loadURL) ДО выкладывания релиза;
+#   links:          внешние ссылки каталога (порталы) — битая pochta.ru доехала до релиза;
+#                   падаем только на 404/410, WAF-ответы не блокируют (иначе флейки).
 
 name: ci
 
@@ -8,13 +18,15 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 1" # ссылки раз в неделю по понедельникам (UTS 04:00)
 
 # Минимальные права: workflow только читает код и ничего не публикует.
 permissions:
   contents: read
 
 jobs:
-  build:
+  unit:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -25,8 +37,17 @@ jobs:
       - name: Зависимости
         run: bun install --frozen-lockfile
 
+      - name: Синтаксис desktop/tools (node --check)
+        run: |
+          node --check desktop/main.cjs
+          node --check tools/prepare-desktop.mjs
+          echo "✓ синтаксис ок"
+
       - name: Целостность каталога (22 страны, уникальные slug, плейсхолдеры)
         run: bun tools/check-data.ts
+
+      - name: Юнит-тесты (bun test: каталог, генерация docx/pdf, слепые зоны сборки)
+        run: bun test tests/
 
       - name: "Статическая сборка (output: export)"
         run: bunx next build
@@ -36,3 +57,71 @@ jobs:
           test -f out/index.html || { echo "✗ нет out/index.html"; exit 1; }
           test -f out/fonts/LiberationSerif-Regular.ttf || { echo "✗ нет шрифтов"; exit 1; }
           echo "✓ out/ готов"
+
+  # ── smoke-запуск десктопа: собираем payload и ЛЕНИВО открываем окно ─────────
+  # matrix по ОС: главный инцидент был именно на Windows (v0.3.0: окно не появлялось).
+  desktop-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+          - os: windows-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+
+      - name: Зависимости
+        run: bun install --frozen-lockfile
+
+      - name: Статическая сборка
+        run: bunx next build
+
+      - name: Payload Electron-приложения
+        run: node tools/prepare-desktop.mjs
+
+      - name: Установка electron (только prod/dev-зависимости desktop/)
+        working-directory: desktop
+        run: npm install --no-fund --no-audit
+
+      # --smoke: создать окно → дождаться did-finish-load → SMOKE:OK/SMOKE:FAIL → exit(0/1).
+      # --no-sandbox обязателен в CI-контейнерах Linux.
+      - name: Smoke-запуск Electron (Linux)
+        if: runner.os == 'Linux'
+        working-directory: desktop
+        run: |
+          command -v xvfb-run >/dev/null || sudo apt-get update && sudo apt-get install -y xvfb
+          xvfb-run -a npx electron . --smoke --no-sandbox --disable-gpu 2>&1 | tee smoke.log
+          grep -q "SMOKE:OK" smoke.log || { echo "✗ smoke не прошёл: SMOKE:OK не найден"; exit 1; }
+
+      - name: Smoke-запуск Electron (Windows)
+        if: runner.os == 'Windows'
+        working-directory: desktop
+        shell: pwsh
+        run: |
+          npx electron . --smoke --no-sandbox --disable-gpu 2>&1 | Tee-Object -FilePath smoke.log
+          if (-not (Select-String -Path smoke.log -Pattern "SMOKE:OK" -Quiet)) {
+            Write-Host "✗ smoke не прошёл: SMOKE:OK не найден"
+            exit 1
+          }
+
+  # ── внешние ссылки каталога: падаем только на битых (404/410) ───────────────
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+
+      - name: Зависимости
+        run: bun install --frozen-lockfile
+
+      - name: Проверка ссылок каталога (порталы в шаблонах и странах)
+        run: bun tools/check-links.ts

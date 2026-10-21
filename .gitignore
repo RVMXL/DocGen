@@ -56,7 +56,7 @@ dev.out.log
 /.zscripts
 /examples
 /mini-services
-/tests
+/tests/*.sh
 /scripts
 /skills
 local-*
