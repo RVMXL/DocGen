@@ -11,6 +11,12 @@ const { pathToFileURL } = require('url');
 
 let mainWindow = null;
 
+// CI/автотесты: node desktop/main.cjs --smoke — создать окно, дождаться загрузки
+// интерфейса, напечатать SMOKE:OK/SMOKE:FAIL и выйти. Ловит «не запускается»
+// (пустой payload, рекурсия протокола, отказ loadURL) ДО выкладывания релиза.
+const SMOKE = process.argv.includes('--smoke');
+let lastSaveDir = null; // последняя папка, выбранная в диалоге сохранения
+
 const APP_DIR = path.join(__dirname, 'app'); // статический сайт: index.html, _next/, fonts/…
 
 // ── протокол app:// — нужен, чтобы fetch('/fonts/…') работал внутри окна ─────
@@ -57,12 +63,35 @@ function createWindow() {
     },
   });
 
-  mainWindow.once('ready-to-show', () => mainWindow.show());
+  mainWindow.once('ready-to-show', () => {
+    if (SMOKE) console.log('SMOKE:ready-to-show');
+    mainWindow.show();
+  });
   // без catch отказ загрузки = невидимый процесс без окна («не запускается»)
   mainWindow.loadURL('app://bundle/index.html').catch((err) => {
+    if (SMOKE) {
+      console.error('SMOKE:FAIL loadURL: ' + (err?.message ?? err));
+      app.exit(1);
+      return;
+    }
     dialog.showErrorBox('DocGen', 'Не удалось загрузить интерфейс приложения: ' + (err?.message ?? err));
     app.quit();
   });
+  if (SMOKE) {
+    mainWindow.webContents.on('did-finish-load', () => {
+      // страница ДОГРУЗИЛАСЬ: главный экран отрисован, протокол и payload живы
+      console.log('SMOKE:OK did-finish-load url=' + mainWindow.webContents.getURL());
+      setTimeout(() => app.exit(0), 300); // дать рендереру отработать первый кадр
+    });
+    mainWindow.webContents.on('did-fail-load', (_ev, code, desc, url) => {
+      console.error('SMOKE:FAIL did-fail-load ' + code + ' ' + desc + ' ' + url);
+      app.exit(1);
+    });
+    setTimeout(() => {
+      console.error('SMOKE:FAIL timeout: did-finish-load не наступил за 20 с');
+      app.exit(1);
+    }, 20000);
+  }
 
   // ссылки на госпорталы и т.п. — во внешний браузер
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
@@ -78,9 +107,33 @@ function createWindow() {
     }
   });
 
-  // .docx/.pdf, запрошенные напрямую, сохраняем в «Загрузки»
+  // .docx/.pdf: показываем диалог «Куда сохранить» (иначе файл молча летит в «Загрузки»
+  // и пользователь думает, что ничего не произошло). blob:URL качается через ту же сессию.
   session.defaultSession.on('will-download', (event, item) => {
-    item.setSavePath(path.join(app.getPath('downloads'), item.getFilename()));
+    if (SMOKE) {
+      event.preventDefault();
+      console.log('SMOKE:download ' + item.getFilename());
+      return;
+    }
+    event.preventDefault();
+    const name = item.getFilename();
+    const ext = path.extname(name).toLowerCase();
+    const filters = ext === '.pdf'
+      ? [{ name: 'PDF-документ', extensions: ['pdf'] }]
+      : [{ name: 'Документ Word', extensions: ['docx'] }];
+    // по умолчанию — последняя выбранная папка, иначе «Документы»
+    const baseDir = lastSaveDir && fs.existsSync(lastSaveDir)
+      ? lastSaveDir
+      : app.getPath('documents');
+    dialog.showSaveDialog(mainWindow, {
+      title: 'Сохранить документ',
+      defaultPath: path.join(baseDir, name),
+      filters,
+    }).then(({ canceled, filePath }) => {
+      if (canceled || !filePath) return; // отмена — ничего не скачиваем
+      lastSaveDir = path.dirname(filePath);
+      item.setSavePath(filePath);
+    });
   });
 
   mainWindow.on('closed', () => { mainWindow = null; });
@@ -116,6 +169,11 @@ if (!gotLock) {
     setupMenu();
     registerAppProtocol();
     if (!fs.existsSync(path.join(APP_DIR, 'index.html'))) {
+      if (SMOKE) {
+        console.error('SMOKE:FAIL payload: нет app/index.html (сборка повреждена)');
+        app.exit(1);
+        return;
+      }
       dialog.showErrorBox('DocGen', 'Файлы приложения не найдены (app/index.html). Сборка повреждена.');
       app.quit();
       return;
