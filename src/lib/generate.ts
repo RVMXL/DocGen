@@ -3,6 +3,7 @@
 import { interpolateBlocks, formatFieldValues, toDocLang } from './docgen/interpolate';
 import { buildDocx } from './docgen/docx';
 import { buildPdf } from './docgen/pdf';
+import { standardOf } from '../data/standards';
 import { saveFile } from './native';
 import type { Locale } from './i18n';
 import type { TemplateDTO } from './types';
@@ -26,6 +27,11 @@ export function renderBlocks(template: TemplateDTO, data: Record<string, string>
   return interpolateBlocks(template.body, normalized, docLang);
 }
 
+/** Национальный стандарт оформления по стране шаблона (префикс slug = код страны) */
+export function standardOfTemplate(template: TemplateDTO) {
+  return standardOf(template.slug.slice(0, 2).toUpperCase());
+}
+
 /** Сформировать файл документа в памяти устройства */
 export async function generateFile(
   template: TemplateDTO,
@@ -34,8 +40,9 @@ export async function generateFile(
 ): Promise<Blob> {
   const docLang = toDocLang(template.lang);
   const filled = renderBlocks(template, data);
-  if (format === 'docx') return buildDocx(filled, docLang);
-  const bytes = await buildPdf(filled, docLang);
+  const std = standardOfTemplate(template);
+  if (format === 'docx') return buildDocx(filled, docLang, std);
+  const bytes = await buildPdf(filled, docLang, std);
   return new Blob([bytes as unknown as BlobPart], { type: 'application/pdf' });
 }
 

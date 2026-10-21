@@ -6,6 +6,7 @@
 import { allTemplates, countryOfSlug } from '../src/data/catalog';
 import { COUNTRIES } from '../src/data/countries';
 import { CATEGORY_TREE } from '../src/data/categories';
+import { STANDARDS, standardOf } from '../src/data/standards';
 
 const subgroups = new Set(CATEGORY_TREE.flatMap((g) => g.children.map((s) => s.slug)));
 const countryCodes = new Set(COUNTRIES.map((c) => c.code));
@@ -60,6 +61,23 @@ for (const t of tpl) {
 // в каждой стране должен быть каталог с шаблонами
 const missing = COUNTRIES.filter((c) => !perCountry.has(c.code));
 if (missing.length) errors.push(`страны без шаблонов: ${missing.map((c) => c.code).join(', ')}`);
+
+// национальные стандарты оформления: у каждой страны есть запись с разумными значениями
+const inRange = (v: number, lo: number, hi: number) => v >= lo && v <= hi;
+for (const c of COUNTRIES) {
+  const s = STANDARDS[c.code];
+  if (!s) { errors.push(`${c.code}: нет записи в src/data/standards.ts`); continue; }
+  if (!s.nameRu || !s.nameEn || !s.descRu || !s.descEn) errors.push(`${c.code}: неполное описание стандарта (нужны name/desc ru+en)`);
+  const m = s.marginsMm;
+  if (!inRange(m.top, 10, 45) || !inRange(m.bottom, 10, 45) || !inRange(m.left, 15, 45) || !inRange(m.right, 8, 45)) {
+    errors.push(`${c.code}: подозрительные поля страницы ${JSON.stringify(m)}`);
+  }
+  if (!inRange(s.fontPt, 10, 16)) errors.push(`${c.code}: кегль вне 10–16 pt (${s.fontPt})`);
+  if (!inRange(s.indentFirstLineMm, 0, 30)) errors.push(`${c.code}: красная строка вне 0–30 мм (${s.indentFirstLineMm})`);
+  if (s.refUrl && !/^https:\/\//.test(s.refUrl)) errors.push(`${c.code}: refUrl должен быть https`);
+}
+// fallback стандартOf не должен падать и должен выдавать разумные поля
+if (standardOf('ZZ').marginsMm.top <= 0) errors.push('standardOf(ZZ): fallback сломан');
 
 console.log(`Стран: ${COUNTRIES.length}, шаблонов: ${tpl.length}`);
 for (const c of COUNTRIES) {

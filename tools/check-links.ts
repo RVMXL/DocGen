@@ -13,6 +13,7 @@
 // Запуск: bun tools/check-links.ts [--json]
 import { allTemplates } from '../src/data/catalog';
 import { COUNTRIES } from '../src/data/countries';
+import { STANDARDS } from '../src/data/standards';
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 const TIMEOUT_MS = 15000;
@@ -20,7 +21,7 @@ const RETRIES = 2;
 
 interface UrlRef { url: string; where: string }
 
-/** Собрать все URL каталога: portalUrl шаблонов + порталы стран */
+/** Собрать все URL каталога: portalUrl шаблонов + порталы стран + источники стандартов */
 function collectUrls(): UrlRef[] {
   const refs = new Map<string, UrlRef[]>();
   const add = (url: string, where: string) => {
@@ -34,6 +35,9 @@ function collectUrls(): UrlRef[] {
   }
   for (const c of COUNTRIES) {
     for (const p of c.portals ?? []) add(p.url, `country ${c.code}`);
+  }
+  for (const [cc, s] of Object.entries(STANDARDS)) {
+    if (s.refUrl) add(s.refUrl, `standard ${cc}`);
   }
   const out: UrlRef[] = [];
   for (const [key, list] of refs) out.push({ url: key, where: list.map((r) => r.where).join(', ') });

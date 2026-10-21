@@ -1,17 +1,17 @@
 // Генератор .pdf — работает ЦЕЛИКОМ НА КЛИЕНТЕ (без сервера):
 // web, Android (Capacitor), десктоп (Electron) — документ собирается на устройстве.
-// A4, серифный шрифт 14pt, поля 20/20/30/15 мм, абзацы по ширине, автоперенос страниц.
+// A4; поля и кегль — по национальному стандарту страны (src/data/standards.ts):
+// Россия — ГОСТ Р 7.0.97-2016 (20/20/30/10 мм, 14pt), Германия — DIN 5008,
+// Китай — GB/T 9704-2012 и т.д.; абзацы по ширине, автоперенос страниц.
 // Шрифт выбирается по языку ДОКУМЕНТА (гос. язык страны), загружается из /fonts.
 import { PDFDocument, rgb, PDFFont, PDFPage } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
 import type { DocBlock } from '../types';
 import { isRTL, type DocLang } from './interpolate';
+import type { DocStandard } from '../../data/standards';
 
 const A4 = { w: 595.28, h: 841.89 };
-const M = { top: 56.7, bottom: 56.7, left: 85.05, right: 42.52 }; // 20/20/30/15 мм
-const SIZE = 14;
-const LINE_H = SIZE * 1.5;
-const INDENT = 35.4; // 1.25 см
+const PT_PER_MM = 72 / 25.4; // pdf-lib работает в пунктах
 
 interface Fonts { regular: PDFFont; bold: PDFFont }
 
@@ -111,7 +111,22 @@ function drawJustified(page: PDFPage, line: string, font: PDFFont, size: number,
   }
 }
 
-export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru'): Promise<Uint8Array> {
+export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?: DocStandard): Promise<Uint8Array> {
+  const s = std ?? {
+    code: 'default', nameRu: '', nameEn: '', descRu: '', descEn: '',
+    marginsMm: { top: 20, bottom: 20, left: 30, right: 15 },
+    fontPt: 14, indentFirstLineMm: 12.5,
+  };
+  const M = {
+    top: s.marginsMm.top * PT_PER_MM,
+    bottom: s.marginsMm.bottom * PT_PER_MM,
+    left: s.marginsMm.left * PT_PER_MM,
+    right: s.marginsMm.right * PT_PER_MM,
+  };
+  const SIZE = s.fontPt;
+  const LINE_H = SIZE * 1.5;
+  const INDENT = s.indentFirstLineMm * PT_PER_MM; // красная строка стандарта (0 — блок-стиль)
+
   const pdfDoc = await PDFDocument.create();
   const fonts = await loadFonts(pdfDoc, docLang);
   pdfDoc.setTitle('Document');

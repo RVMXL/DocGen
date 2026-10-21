@@ -10,10 +10,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { ArrowLeft, AlertTriangle, Info, ShieldCheck, Languages } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Info, ShieldCheck, Languages, Ruler } from 'lucide-react';
 import type { TemplateDTO } from '@/lib/types';
 import { uiFor, tplTitle, tplDesc, fieldLabel, fieldHint, type Locale } from '@/lib/i18n';
 import { docLangNative } from '@/lib/doclangs';
+import { standardOfTemplate } from '@/lib/generate';
 import { registerBackHandler } from '@/lib/native';
 
 interface Props {
@@ -71,6 +72,17 @@ export function TemplateForm({ template, lang, onBack, onNext }: Props) {
           <span><b>{t.legalBasis}:</b> {lang === 'ru' ? template.refRu : template.refEn}</span>
         </p>
       )}
+      {(() => {
+        const std = standardOfTemplate(template);
+        const name = lang === 'ru' ? std.nameRu : std.nameEn;
+        const desc = lang === 'ru' ? std.descRu : std.descEn;
+        return (
+          <p className="mt-2 inline-flex items-start gap-1.5 text-xs text-muted-foreground bg-muted rounded-lg px-3 py-2" title={desc}>
+            <Ruler className="w-3.5 h-3.5 mt-0.5 shrink-0 text-indigo-700" aria-hidden />
+            <span><b>{t.docStandard}:</b> {name}</span>
+          </p>
+        );
+      })()}
 
       <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mt-6 mb-3">{t.formTitle}</h3>
 
