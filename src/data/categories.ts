@@ -6,7 +6,10 @@ export const CATEGORY_TREE: GroupDef[] = [
   {
     slug: 'work', titleRu: 'Работа и трудовые отношения', titleEn: 'Work & employment', icon: 'Briefcase',
     children: [
+      { slug: 'work-hiring', titleRu: 'Приём и перевод', titleEn: 'Hiring & transfer' },
+      { slug: 'work-time', titleRu: 'Рабочее время и режим', titleEn: 'Working time & schedule' },
       { slug: 'work-vacations', titleRu: 'Отпуска', titleEn: 'Vacations' },
+      { slug: 'work-family', titleRu: 'Семья и дети: гарантии', titleEn: 'Family & childcare guarantees' },
       { slug: 'work-dismissal', titleRu: 'Увольнение', titleEn: 'Dismissal' },
       { slug: 'work-docs', titleRu: 'Документы с места работы', titleEn: 'Workplace documents' },
     ],

@@ -5,6 +5,11 @@ import type { CatalogResponse, GroupDTO, SubgroupDTO, TemplateDTO } from '../lib
 import type { TplDef } from './types';
 
 import { TEMPLATES_RU } from './templates/ru';
+import { TEMPLATES_RU_WORK_CORE } from './templates/ru-work';
+import { TEMPLATES_RU_WORK_A } from './templates/ru-work-a';
+import { TEMPLATES_RU_WORK_B } from './templates/ru-work-b';
+import { TEMPLATES_RU_WORK_C } from './templates/ru-work-c';
+import { TEMPLATES_RU_WORK_D } from './templates/ru-work-d';
 import { TEMPLATES_KZ } from './templates/kz';
 import { TEMPLATES_BY } from './templates/by';
 import { TEMPLATES_UA } from './templates/ua';
@@ -28,7 +33,9 @@ import { TEMPLATES_BR } from './templates/br';
 import { TEMPLATES_AR } from './templates/ar';
 
 const ALL: TplDef[] = [
-  ...TEMPLATES_RU, ...TEMPLATES_KZ, ...TEMPLATES_BY, ...TEMPLATES_UA, ...TEMPLATES_UZ,
+  ...TEMPLATES_RU, ...TEMPLATES_RU_WORK_CORE, ...TEMPLATES_RU_WORK_A, ...TEMPLATES_RU_WORK_B,
+  ...TEMPLATES_RU_WORK_C, ...TEMPLATES_RU_WORK_D,
+  ...TEMPLATES_KZ, ...TEMPLATES_BY, ...TEMPLATES_UA, ...TEMPLATES_UZ,
   ...TEMPLATES_KG, ...TEMPLATES_TJ, ...TEMPLATES_AM, ...TEMPLATES_AZ, ...TEMPLATES_MD,
   ...TEMPLATES_US, ...TEMPLATES_DE, ...TEMPLATES_FR, ...TEMPLATES_PL,
   ...TEMPLATES_CN, ...TEMPLATES_JP, ...TEMPLATES_KR, ...TEMPLATES_AU,

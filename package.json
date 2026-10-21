@@ -8,6 +8,7 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "lint": "eslint .",
+    "test": "bun test",
     "data:check": "bun tools/check-data.ts",
     "cap:sync": "next build && cap sync android"
   },

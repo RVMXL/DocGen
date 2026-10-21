@@ -149,7 +149,7 @@ export async function buildDocx(blocks: DocBlock[], docLang: DocLang = 'ru'): Pr
             top: convertMillimetersToTwip(20),
             bottom: convertMillimetersToTwip(20),
             left: convertMillimetersToTwip(30),
-            right: convertMillimetersToTwip(15),
+            right: convertMillimetersToTwip(10),
           },
         },
       },
