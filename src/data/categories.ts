@@ -62,6 +62,8 @@ export const CATEGORY_TREE: GroupDef[] = [
     slug: 'utilities', titleRu: 'ЖКХ и жильё', titleEn: 'Housing & utilities', icon: 'Building2',
     children: [
       { slug: 'util-management', titleRu: 'Заявления управляющей организации и арендодателю', titleEn: 'To management company & landlord' },
+      { slug: 'util-neighbors', titleRu: 'Соседи и конфликтные ситуации', titleEn: 'Neighbors & disputes' },
+      { slug: 'util-household', titleRu: 'Повседневные жилищные заявления', titleEn: 'Everyday housing requests' },
       { slug: 'util-online', titleRu: 'Онлайн-сервисы', titleEn: 'Online services' },
     ],
   },
