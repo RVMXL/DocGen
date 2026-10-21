@@ -46,7 +46,7 @@ jobs:
       - name: Целостность каталога (22 страны, уникальные slug, плейсхолдеры)
         run: bun tools/check-data.ts
 
-      - name: Юнит-тесты (bun test: каталог, генерация docx/pdf, слепые зоны сборки)
+      - name: "Юнит-тесты (bun test: каталог, генерация docx/pdf, слепые зоны сборки)"
         run: bun test tests/
 
       - name: "Статическая сборка (output: export)"
