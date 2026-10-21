@@ -1,13 +1,13 @@
-// Локализация интерфейса — ЯЗЫКИ ВСЕХ СТРАН ПРИЛОЖЕНИЯ (21 язык).
+// Локализация интерфейса — ЯЗЫКИ ВСЕХ СТРАН ПРИЛОЖЕНИЯ (22 языка).
 // Язык интерфейса влияет ТОЛЬКО на оформление приложения;
 // язык документов = государственный язык выбранной страны (template.lang).
 export type Locale =
   | 'ru' | 'en' | 'uk' | 'be' | 'kk' | 'uz' | 'kg' | 'tg' | 'hy' | 'az' | 'ro'
-  | 'de' | 'fr' | 'pl' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es';
+  | 'de' | 'fr' | 'pl' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es' | 'it';
 
 export const LOCALES: Locale[] = [
   'ru', 'en', 'uk', 'be', 'kk', 'uz', 'kg', 'tg', 'hy', 'az', 'ro',
-  'de', 'fr', 'pl', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es',
+  'de', 'fr', 'pl', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es', 'it',
 ];
 
 /** RTL-языки интерфейса */
@@ -1198,9 +1198,65 @@ const es: UIText = {
   savedToShare: 'Archivo listo — elige dónde guardarlo',
 };
 
+const it: UIText = {
+  appName: 'DocGen',
+  appTagline: 'Documenti ufficiali da modelli',
+  onboardingTitle: 'Benvenuto',
+  onboardingSub: 'Scegli la lingua dell\'interfaccia e il paese. L\'interfaccia verrà mostrata nella lingua scelta, mentre i modelli disponibili e la lingua dei documenti (la lingua ufficiale del paese) dipendono dal paese.',
+  chooseLanguage: 'Scegli la lingua dell\'interfaccia',
+  chooseCountry: 'Scegli il paese',
+  comingSoon: 'presto',
+  start: 'Inizia',
+  back: 'Indietro',
+  next: 'Avanti',
+  step: 'Passo',
+  of: 'di',
+  catalogTitle: 'Catalogo dei documenti',
+  catalogSub: 'Scegli una categoria — all\'interno trovi sottogruppi e modelli pronti',
+  documentsCount: 'documenti',
+  searchPlaceholder: 'Cerca documento...',
+  searchNothing: 'Nessun risultato. Prova un\'altra ricerca.',
+  allGroups: 'Tutte le categorie',
+  fillForm: 'Compila il modulo',
+  formTitle: 'Modulo interattivo',
+  formSub: 'Compila i campi — i dati verranno inseriti nel documento',
+  required: 'obbligatorio',
+  generate: 'Genera documento',
+  requiredError: 'Compila i campi obbligatori',
+  previewTitle: 'Anteprima',
+  downloadDocx: 'Scarica .docx',
+  downloadPdf: 'Scarica .pdf',
+  print: 'Stampa',
+  editData: 'Modifica dati',
+  downloading: 'Generazione del file...',
+  downloadError: 'Impossibile generare il documento. Riprova.',
+  legalBasis: 'Fondamento giuridico',
+  docStandard: 'Formato del documento',
+  warningHandwritten: 'Attenzione: per legge questo documento va compilato a mano',
+  handwrittenExplain: 'L\'app indicherà quali dati preparare. Il modulo ufficiale si compila con la penna.',
+  govCardTitle: 'Si risolve online tramite il portale dello Stato',
+  govCardExplain: 'Secondo la legge di questo paese la domanda si presenta a distanza — il modello non serve.',
+  openPortal: 'Vai al portale',
+  whatPrepare: 'Cosa preparare',
+  changeCountry: 'Cambia paese',
+  referenceSample: 'Campione per verificare i dati',
+  referenceExplain: 'L\'app genererà un campione stampato per verificare i dati prima di scrivere a mano.',
+  generateSample: 'Genera campione',
+  footerNote: 'I modelli seguono le norme ufficiali di documentazione. Verifica l\'attualità dei dati.',
+  docLangNotice: 'Il documento viene generato nella lingua ufficiale del paese — {lang}. La lingua dell\'interfaccia influisce solo sull\'aspetto dell\'app; i valori di esempio del modulo sono anch\'essi nella lingua del documento.',
+  docLangChip: 'documento:',
+  noTemplates: 'Ancora non ci sono modelli in questa categoria',
+  backToCatalog: 'Al catalogo',
+  backToForm: 'Al modulo',
+  catalogEmpty: 'Nessun catalogo per questo paese. Scegli un altro paese.',
+  handChip: 'si compila a mano',
+  portalChip: 'si risolve tramite il portale dello Stato',
+  savedToShare: 'File pronto — scegli dove salvarlo',
+};
+
 export const UI: Record<Locale, UIText> = {
   ru, en, uk, be, kk, uz, kg, tg, hy, az, ro,
-  de, fr, pl, zh, ja, ko, tr, he, pt, es,
+  de, fr, pl, zh, ja, ko, tr, he, pt, es, it,
 };
 
 /** Тексты интерфейса для локали (fallback: en) */

@@ -51,6 +51,37 @@ describe('национальные стандарты оформления', () 
     expect(STANDARDS.KR.marginsMm).toEqual({ top: 30, bottom: 15, left: 20, right: 15 });
   });
 
+  it('Великобритания — 1 дюйм, 12 pt, блок-стиль; refUrl — GOV.UK Style Guide', () => {
+    expect(STANDARDS.GB.marginsMm).toEqual({ top: 25.4, bottom: 25.4, left: 25.4, right: 25.4 });
+    expect(STANDARDS.GB.indentFirstLineMm).toBe(0);
+    expect(STANDARDS.GB.refUrl).toContain('gov.uk');
+  });
+
+  it('Италия — конвенция: 25 мм, 12 pt, блок-стиль', () => {
+    expect(STANDARDS.IT.marginsMm).toEqual({ top: 25, bottom: 25, left: 25, right: 25 });
+    expect(STANDARDS.IT.indentFirstLineMm).toBe(0);
+  });
+
+  it('Индия — Manual of Office Procedure: левое 30, правое 15, блок-стиль', () => {
+    expect(STANDARDS.IN.marginsMm).toEqual({ top: 20, bottom: 20, left: 30, right: 15 });
+    expect(STANDARDS.IN.indentFirstLineMm).toBe(0);
+  });
+
+  it('Швейцария и Австрия — практика DIN 5008: 16,9/16,9/24,9/20', () => {
+    expect(STANDARDS.CH.marginsMm).toEqual(STANDARDS.AT.marginsMm);
+    expect(STANDARDS.CH.marginsMm).toEqual({ top: 16.9, bottom: 16.9, left: 24.9, right: 20 });
+  });
+
+  it('Канада — 1 дюйм, 12 pt, блок-стиль (The Canadian Style)', () => {
+    expect(STANDARDS.CA.marginsMm).toEqual({ top: 25.4, bottom: 25.4, left: 25.4, right: 25.4 });
+    expect(STANDARDS.CA.indentFirstLineMm).toBe(0);
+  });
+
+  it('Мексика — конвенция с сангрией: 1 дюйм, 12 pt, красная строка 1,25 см', () => {
+    expect(STANDARDS.MX.marginsMm).toEqual({ top: 25.4, bottom: 25.4, left: 25.4, right: 25.4 });
+    expect(STANDARDS.MX.indentFirstLineMm).toBe(12.5);
+  });
+
   it('у каждого стандарта есть названия и описания ru+en и разумные значения', () => {
     for (const [cc, s] of Object.entries(STANDARDS)) {
       expect(s.nameRu.length).toBeGreaterThan(0);

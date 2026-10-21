@@ -17,6 +17,32 @@ Linux / macOS / Android / web) одним выпуском. macOS-артефак
 
 ### Добавлено
 
+- **Волна 5: 8 стран с развитой бюрократией** — каталог вырос с 22 до 30
+  стран и с 798 до 1054 шаблонов (по 32 на новую страну): **Великобритания**
+  (GOV.UK; Employment Rights Act 1996, Working Time Regulations 1998,
+  Consumer Rights Act 2015, CPR — letter before claim/small claims,
+  TMA 1970), **Канада** (canada.ca; Canada Labour Code, Income Tax Act
+  s.165 Notice of Objection, EI/CPP пересмотры, PIPEDA), **Индия**
+  (india.gov.in; Consumer Protection Act 2019, RTI Act 2005, NI Act s.138,
+  BNSS 2023 — FIR и алименты, EPF/EPS, RBI Customer Protection),
+  **Испания** (administracion.gob.es; Estatuto de los Trabajadores,
+  Ley 39/2015, Ley 3/2014, LGSS, LAU, Ley 41/2002), **Мексика**
+  (gob.mx/PROFECO; LFT, CFF — devolución/recurso de revocación, LFPC,
+  CONDUSEF, LFPDPPP), **Италия** (italia.gov.it/SPID; Codice Civile,
+  Codice del Consumo, L. 241/1990, TUB, Assegno Unico, autocertificazione
+  DPR 445/2000), **Швейцария** (ch.ch; OR, SchKG — Rechtsvorschlag 10
+  дней, revDSG 2023, AHV/IV/KVG), **Австрия** (oesterreich.gv.at; AngG,
+  UrlG, KSchG, BAO §§ 212/251, MRG, ASVG, AlVG).
+- **Итальянский язык** интерфейса и документов (22-й язык): UI-словарь,
+  длинные даты («15 marzo 2026», 1-е число — с ординалом «1º gennaio»).
+- **Национальные стандарты оформления** для 8 новых стран: практика
+  GOV.UK Style Guide (Великобритания, refUrl на style-guide), The Canadian
+  Style (Канада), Manual of Office Procedure DoPT (Индия — левое поле
+  30 мм под подшивку), практика DIN 5008 (Швейцария и Австрия), конвенции
+  с блок-стилем (Испания, Италия) и с красной строкой (Мексика).
+- Официальные порталы в карточках стран: GOV.UK, canada.ca, india.gov.in +
+  myGov, administracion.gob.es + Sede electrónica, gob.mx + PROFECO,
+  italia.gov.it + SPID, ch.ch, oesterreich.gv.at.
 - **Национальные стандарты оформления документов** для всех 22 стран: реестр
   `src/data/standards.ts` — ГОСТ Р 7.0.97-2016 (Россия), ДСТУ 4163:2020
   (Украина, правило «3-2-2-1»), Инструкция по делопроизводству (Беларусь),

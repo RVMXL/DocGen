@@ -134,6 +134,59 @@ export const COUNTRIES: CountryDef[] = [
     ],
   },
 
+  // ── Волна 5: страны развитой бюрократии (Европа) ──────────────────────────
+  {
+    code: 'GB', nameRu: 'Великобритания', nameEn: 'United Kingdom', flag: '🇬🇧', region: 'europe', docLang: 'en',
+    currencyRu: 'фунт стерлингов', currencyIn: 'фунтах стерлингов', currencyEn: 'pound sterling',
+    portals: [
+      { nameRu: 'GOV.UK — официальный портал правительства', nameEn: 'GOV.UK — official government portal', url: 'https://www.gov.uk',
+        descRu: 'Единый портал: налоги (HMRC), пенсии, DVLA, суды и трибуналы, жалобы. Большинство обращений в ведомства подаётся онлайн или письменно по правилам GOV.UK.',
+        descEn: 'The unified portal: taxes (HMRC), pensions, DVLA, courts and tribunals, complaints.' },
+    ],
+  },
+  {
+    code: 'IT', nameRu: 'Италия', nameEn: 'Italy', flag: '🇮🇹', region: 'europe', docLang: 'it',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'italia.gov.it — национальный портал гражданина', nameEn: 'italia.gov.it — national citizen portal', url: 'https://italia.gov.it',
+        descRu: 'Национальный портал услуг: анаграфика, здравоохранение (SSN), налоги (Agenzia delle Entrate), коммунальные вопросы через Comune.',
+        descEn: 'The national services portal: civil registry, healthcare (SSN), taxes, municipal services.' },
+      { nameRu: 'SPID — цифровая идентификация', nameEn: 'SPID — digital identity', url: 'https://www.spid.gov.it',
+        descRu: 'Цифровая идентификация SPID (или CIE): вход на все государственные порталы Италии — ANPR, INPS, Agenzia delle Entrate.',
+        descEn: 'SPID (or CIE) digital identity: single sign-on for all Italian government portals.' },
+    ],
+  },
+  {
+    code: 'ES', nameRu: 'Испания', nameEn: 'Spain', flag: '🇪🇸', region: 'europe', docLang: 'es',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'administracion.gob.es — точка общего доступа', nameEn: 'administracion.gob.es — general access point', url: 'https://www.administracion.gob.es',
+        descRu: 'PAGe — единая точка доступа к электронной администрации: registro electrónico, cita previa, recursos (обжалования).',
+        descEn: 'PAGe — the single access point to e-government: electronic registry, appointments, appeals.' },
+      { nameRu: 'Sede electrónica — электронная канцелярия', nameEn: 'Sede electrónica — e-office', url: 'https://sede.administracionespublicas.gob.es',
+        descRu: 'Электронная канцелярия: подача заявлений с DNI electrónico/Cl@ve, запись, уведомления.',
+        descEn: 'The e-office: filings with DNI electrónico/Cl@ve, appointments, notifications.' },
+    ],
+  },
+  {
+    code: 'CH', nameRu: 'Швейцария', nameEn: 'Switzerland', flag: '🇨🇭', region: 'europe', docLang: 'de',
+    currencyRu: 'швейцарский франк', currencyIn: 'швейцарских франках', currencyEn: 'Swiss franc',
+    portals: [
+      { nameRu: 'ch.ch — портал государства для граждан', nameEn: 'ch.ch — public administration portal', url: 'https://www.ch.ch',
+        descRu: 'Официальный портал Конфедерации, кантонов и общин: цифровые услуги, заявления, записи (в немецкой части — по практике DIN 5008).',
+        descEn: 'The official portal of the Confederation, cantons and communes: e-services, applications.' },
+    ],
+  },
+  {
+    code: 'AT', nameRu: 'Австрия', nameEn: 'Austria', flag: '🇦🇹', region: 'europe', docLang: 'de',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'oesterreich.gv.at — портал госуслуг Австрии', nameEn: 'oesterreich.gv.at — Austrian services portal', url: 'https://www.oesterreich.gv.at',
+        descRu: 'Единый портал: Anmeldung, налоги (FinanzOnline), пенсии (PVA), обращения в ведомства — онлайн через ID Austria.',
+        descEn: 'The unified portal: registration, taxes (FinanzOnline), pensions, filings via ID Austria.' },
+    ],
+  },
+
   // ── Бэклог ТЗ: Азия ────────────────────────────────────────────────────────
   {
     code: 'CN', nameRu: 'Китай', nameEn: 'China', flag: '🇨🇳', region: 'asia', docLang: 'zh',
@@ -195,6 +248,18 @@ export const COUNTRIES: CountryDef[] = [
         descEn: 'Ministry of Health: complaints about medical organizations via the public complaints department.' },
     ],
   },
+  {
+    code: 'IN', nameRu: 'Индия', nameEn: 'India', flag: '🇮🇳', region: 'asia', docLang: 'en',
+    currencyRu: 'рупия', currencyIn: 'рупиях', currencyEn: 'Indian rupee',
+    portals: [
+      { nameRu: 'india.gov.in — национальный портал Индии', nameEn: 'india.gov.in — National Portal of India', url: 'https://www.india.gov.in',
+        descRu: 'Национальный портал: услуги Союза и штатов, Aadhaar, PAN, налоги, суды. Деловая переписка — по Manual of Office Procedure (DoPT), язык — английский.',
+        descEn: 'The National Portal: Union and state services, Aadhaar, PAN, taxes, courts. Correspondence follows the Manual of Office Procedure (DoPT), in English.' },
+      { nameRu: 'myGov.in — платформа гражданского участия', nameEn: 'myGov.in — citizen participation platform', url: 'https://www.mygov.in',
+        descRu: 'Правительственная платформа: обращения, консультации, кампании; интегрирована с UMANG (мобильные госуслуги).',
+        descEn: 'The government platform: appeals, consultations, campaigns; integrated with UMANG.' },
+    ],
+  },
 
   // ── Бэклог ТЗ: Америка ─────────────────────────────────────────────────────
   {
@@ -231,6 +296,27 @@ export const COUNTRIES: CountryDef[] = [
       { nameRu: 'Defensa de las y los Consumidores', nameEn: 'Consumer Defense', url: 'https://www.argentina.gob.ar/economia/comercio/defensadelconsumidor',
         descRu: 'Официальный раздел защиты потребителей: жалобы, порядок досудебного урегулирования (Reclamo ante Defensa del Consumidor).',
         descEn: 'The official consumer-defense section: complaints and pre-court settlement procedure.' },
+    ],
+  },
+  {
+    code: 'CA', nameRu: 'Канада', nameEn: 'Canada', flag: '🇨🇦', region: 'americas', docLang: 'en',
+    currencyRu: 'канадский доллар', currencyIn: 'канадских долларах', currencyEn: 'Canadian dollar',
+    portals: [
+      { nameRu: 'canada.ca — портал правительства Канады', nameEn: 'canada.ca — Government of Canada portal', url: 'https://www.canada.ca',
+        descRu: 'Единый портал: CRA (налоги), Service Canada (EI, паспорт, OAS), иммиграция (IRCC), потребительские жалобы. Документы — по The Canadian Style (Translation Bureau).',
+        descEn: 'The unified portal: CRA (taxes), Service Canada (EI, passport, OAS), immigration, consumer complaints.' },
+    ],
+  },
+  {
+    code: 'MX', nameRu: 'Мексика', nameEn: 'Mexico', flag: '🇲🇽', region: 'americas', docLang: 'es',
+    currencyRu: 'мексиканское песо', currencyIn: 'мексиканских песо', currencyEn: 'Mexican peso',
+    portals: [
+      { nameRu: 'gob.mx — портал правительства Мексики', nameEn: 'gob.mx — Government of Mexico portal', url: 'https://www.gob.mx',
+        descRu: 'Единый портал: SAT (налоги), IMSS/ISSSTE (соцстрах), PROFECO (защита потребителей), заявления в ведомства.',
+        descEn: 'The unified portal: SAT (taxes), IMSS/ISSSTE (social security), PROFECO (consumer protection).' },
+      { nameRu: 'PROFECO — Procuraduría Federal del Consumidor', nameEn: 'PROFECO — Federal Consumer Protection Agency', url: 'https://www.profeco.gob.mx',
+        descRu: 'Федеральная прокуратура потребителей: conciliación, жалобы на продавцов, телефоны доверия.',
+        descEn: 'The federal consumer agency: conciliation, complaints against sellers.' },
     ],
   },
 

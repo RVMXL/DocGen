@@ -31,6 +31,14 @@ import { TEMPLATES_TR } from './templates/tr';
 import { TEMPLATES_IL } from './templates/il';
 import { TEMPLATES_BR } from './templates/br';
 import { TEMPLATES_AR } from './templates/ar';
+import { TEMPLATES_GB } from './templates/gb';
+import { TEMPLATES_IT } from './templates/it';
+import { TEMPLATES_ES } from './templates/es';
+import { TEMPLATES_CH } from './templates/ch';
+import { TEMPLATES_AT } from './templates/at';
+import { TEMPLATES_IN } from './templates/in';
+import { TEMPLATES_CA } from './templates/ca';
+import { TEMPLATES_MX } from './templates/mx';
 
 const ALL: TplDef[] = [
   ...TEMPLATES_RU, ...TEMPLATES_RU_WORK_CORE, ...TEMPLATES_RU_WORK_A, ...TEMPLATES_RU_WORK_B,
@@ -40,6 +48,8 @@ const ALL: TplDef[] = [
   ...TEMPLATES_US, ...TEMPLATES_DE, ...TEMPLATES_FR, ...TEMPLATES_PL,
   ...TEMPLATES_CN, ...TEMPLATES_JP, ...TEMPLATES_KR, ...TEMPLATES_AU,
   ...TEMPLATES_TR, ...TEMPLATES_IL, ...TEMPLATES_BR, ...TEMPLATES_AR,
+  ...TEMPLATES_GB, ...TEMPLATES_IT, ...TEMPLATES_ES, ...TEMPLATES_CH, ...TEMPLATES_AT,
+  ...TEMPLATES_IN, ...TEMPLATES_CA, ...TEMPLATES_MX,
 ];
 
 const bySlug = new Map(ALL.map((t) => [t.slug, t]));

@@ -9,8 +9,9 @@
  */
 import { describe, test, expect, beforeAll, afterAll } from 'bun:test';
 import { fileName, generateFile, renderBlocks } from '../src/lib/generate';
-import { interpolateText, interpolateBlocks, toDocLang, cleanupPunct } from '../src/lib/docgen/interpolate';
+import { interpolateText, interpolateBlocks, toDocLang, fmtDateISO, fmtToday, cleanupPunct } from '../src/lib/docgen/interpolate';
 import { TEMPLATES_RU } from '../src/data/templates/ru';
+import { TEMPLATES_IT } from '../src/data/templates/it';
 import type { DocBlock } from '../src/lib/types';
 
 describe('toDocLang / cleanupPunct', () => {
@@ -18,11 +19,31 @@ describe('toDocLang / cleanupPunct', () => {
     expect(toDocLang('ru')).toBe('ru');
     expect(toDocLang('kk')).toBe('kk');
     expect(toDocLang('he')).toBe('he');
+    expect(toDocLang('it')).toBe('it');
     expect(toDocLang('xx-unknown')).toBe('ru');
   });
 
   test('cleanupPunct: пробел перед запятой убирается, двойные пробелы схлопываются', () => {
     expect(cleanupPunct('слово , ещё  раз')).toBe('слово, ещё раз');
+  });
+});
+
+describe('Итальянские даты (docLang it — волна 5)', () => {
+  test('длинная дата: месяц словами, 1-е число — с ординалом «º»', () => {
+    expect(fmtDateISO('2026-03-15', 'it')).toBe('15 marzo 2026');
+    expect(fmtDateISO('2026-01-01', 'it')).toBe('1º gennaio 2026');
+    expect(fmtToday('it')).toMatch(/^(\d{1,2}º?|1º) [a-z]+ \d{4}$/);
+  });
+
+  test('итальянские шаблоны: titleDoc и descDoc на итальянском, уникальные slug', () => {
+    expect(TEMPLATES_IT.length).toBeGreaterThanOrEqual(30);
+    const slugs = new Set(TEMPLATES_IT.map((t) => t.slug));
+    expect(slugs.size).toBe(TEMPLATES_IT.length);
+    for (const t of TEMPLATES_IT) {
+      expect(t.slug.startsWith('it-')).toBe(true);
+      expect(t.titleDoc).toBeTruthy();
+      expect(t.descDoc).toBeTruthy();
+    }
   });
 });
 

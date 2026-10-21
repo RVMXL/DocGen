@@ -8,16 +8,17 @@ export type Locale = 'ru' | 'en';
 /**
  * Языки тела документа = государственные языки поддерживаемых стран.
  * ru/uk/be/kk/uz/kg/tg/hy/az/ro — Россия и СНГ;
- * de/fr/pl — Европа; en — США и Австралия; zh/ja/ko — Китай/Япония/Корея;
- * tr — Турция; he — Израиль; pt — Бразилия; es — Аргентина.
+ * de/fr/pl/it — Европа; en — США, Великобритания, Канада, Индия, Австралия;
+ * zh/ja/ko — Китай/Япония/Корея; tr — Турция; he — Израиль;
+ * pt — Бразилия; es — Испания, Аргентина, Мексика.
  */
 export type DocLang =
   | 'ru' | 'uk' | 'be' | 'kk' | 'uz' | 'kg' | 'tg' | 'hy' | 'az' | 'ro'
-  | 'de' | 'fr' | 'pl' | 'en' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es';
+  | 'de' | 'fr' | 'pl' | 'en' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es' | 'it';
 
 export const DOC_LANG_LIST: DocLang[] = [
   'ru', 'uk', 'be', 'kk', 'uz', 'kg', 'tg', 'hy', 'az', 'ro',
-  'de', 'fr', 'pl', 'en', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es',
+  'de', 'fr', 'pl', 'en', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es', 'it',
 ];
 
 export function toDocLang(v: string): DocLang {
@@ -51,6 +52,8 @@ const MONTHS_GEN: Partial<Record<DocLang, string[]>> = {
     'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
   tr: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+  it: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
+    'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
 };
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -70,6 +73,7 @@ function longDate(y: string, mm: string, dd: string, lang: DocLang): string {
     case 'pt': return `${d} de ${MONTHS_GEN.pt![idx]} de ${y}`;
     case 'es': return `${d} de ${MONTHS_GEN.es![idx]} de ${y}`;
     case 'tr': return `${d} ${MONTHS_GEN.tr![idx]} ${y}`;
+    case 'it': return `${d === '1' ? '1º' : d} ${MONTHS_GEN.it![idx]} ${y}`;
     case 'en': return `${MONTHS_EN[idx]} ${d}, ${y}`;
     case 'zh': case 'ja': return `${y}年${parseInt(mm, 10)}月${d}日`;
     case 'ko': return `${y}년 ${parseInt(mm, 10)}월 ${d}일`;
@@ -113,6 +117,7 @@ export function fmtToday(docLang: DocLang): string {
     case 'pt': return `${dNum} de ${MONTHS_GEN.pt![m]} de ${y}`;
     case 'es': return `${dNum} de ${MONTHS_GEN.es![m]} de ${y}`;
     case 'tr': return `${dNum} ${MONTHS_GEN.tr![m]} ${y}`;
+    case 'it': return `${dNum === '1' ? '1º' : dNum} ${MONTHS_GEN.it![m]} ${y}`;
     case 'en': return `${MONTHS_EN[m]} ${dNum}, ${y}`;
     case 'zh': case 'ja': return `${y}年${m + 1}月${dNum}日`;
     case 'ko': return `${y}년 ${m + 1}월 ${dNum}일`;

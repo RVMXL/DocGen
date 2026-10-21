@@ -28,6 +28,7 @@ export const DOC_LANGS: Record<string, DocLangInfo> = {
   he: { native: 'עברית', ru: 'иврите', en: 'Hebrew' },
   pt: { native: 'Português', ru: 'португальском', en: 'Portuguese' },
   es: { native: 'Español', ru: 'испанском', en: 'Spanish' },
+  it: { native: 'Italiano', ru: 'итальянском', en: 'Italian' },
 };
 
 /** Самоназвание языка документа (или код как fallback) */
