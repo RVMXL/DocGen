@@ -7,6 +7,11 @@
 #                   публикация релиза из-за них НЕ блокируется;
 #   - android:      подписанный APK (ключ из Secrets, SHA-пин, сверка сертификата).
 #
+# Примечания к релизу = секция версии из CHANGELOG.md: тег v0.6.0 → «## [0.6.0]».
+# Гейт проверяет наличие секции ДО сборок; затем секция склеивается с описанием
+# артефактов и публикуется как тело релиза (generate_release_notes добавит
+# «Full Changelog» в конец автоматически).
+#
 # iOS-сборки нет: публикация требует Apple Developer Program и подписи Apple (README → «Скачать»).
 
 name: release
@@ -45,6 +50,16 @@ jobs:
           VER="${TAG#v}"
           PKGVER=$(node -p "require('./package.json').version")
           test "$PKGVER" = "$VER" || { echo "✗ версия package.json ($PKGVER) != тегу ($VER) — бампни версию и переметь тег"; exit 1; }
+
+      - name: "Гейт: CHANGELOG.md содержит секцию версии"
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          set -euo pipefail
+          VER="${GITHUB_REF_NAME#v}"
+          grep -Eq "^## \[$VER\]" CHANGELOG.md || {
+            echo "✗ в CHANGELOG.md нет секции '## [$VER]' — примечания релиза берутся из неё (см. политику в шапке CHANGELOG.md)"; exit 1;
+          }
+          echo "✓ секция [$VER] найдена"
 
       - name: Целостность каталога
         run: bun tools/check-data.ts
@@ -265,6 +280,47 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Извлечь секцию версии из CHANGELOG.md
+        env:
+          VER: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          VER="${VER#v}"
+          python3 - <<'PY' > release-notes.md
+          import os, re, pathlib, sys
+
+          ver = os.environ["VER"]
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          m = re.search(rf"(?ms)^## \[{re.escape(ver)}\][^\n]*\n(.*?)(?=^## \[|\Z)", text)
+          if not m:
+              sys.exit(f"✗ в CHANGELOG.md нет секции [{ver}]")
+          section = m.group(1).strip("\n")
+
+          blurb = """
+          Самодостаточные сборки для всех платформ: интернет и сервер НЕ нужны,
+          документы генерируются прямо на устройстве.
+
+          **Windows / Linux / macOS** — настольные приложения (Electron).
+          **Android** — приложение (APK), работает полностью офлайн.
+          **Web** — статический сайт: распакуйте и разверните на любом хостинге
+          (nginx, Apache, GitHub Pages — см. README → «Развёртывание web-версии»).
+
+          Контрольные суммы SHA-256 — в файле `SHA256SUMS.txt` в составе релиза.
+          Android подписан стабильным ключом: SHA-256 сертификата — в README (раздел «Android»).
+
+          Сборка macOS добавляется в релиз отдельной джобой чуть позже —
+          mac-раннеры нередко стоят в очереди GitHub.
+
+          iOS-сборки нет: публикация требует аккаунта Apple Developer Program и подписи Apple (см. README → «Скачать»).
+          """
+
+          body = section + "\n\n---\n\n" + blurb.strip("\n") + "\n"
+          pathlib.Path("release-notes.md").write_text(body, encoding="utf-8")
+          print(f"✓ release-notes.md: секция [{ver}] + описание артефактов")
+          PY
+
       - name: Скачать все артефакты
         uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6
         with:
@@ -282,22 +338,7 @@ jobs:
         with:
           name: "DocGen ${{ github.ref_name }}"
           prerelease: true
-          body: |
-            Самодостаточные сборки для всех платформ: интернет и сервер НЕ нужны,
-            документы генерируются прямо на устройстве.
-
-            **Windows / Linux / macOS** — настольные приложения (Electron).
-            **Android** — приложение (APK), работает полностью офлайн.
-            **Web** — статический сайт: распакуйте и разверните на любом хостинге
-            (nginx, Apache, GitHub Pages — см. README → «Развёртывание web-версии»).
-
-            Контрольные суммы SHA-256 — в файле `SHA256SUMS.txt` в составе релиза.
-            Android подписан стабильным ключом: SHA-256 сертификата — в README (раздел «Android»).
-
-            Сборка macOS может быть добавлена в релиз отдельной джобой чуть позже —
-            mac-раннеры нередко стоят в очереди GitHub.
-
-            iOS-сборки нет: публикация требует аккаунта Apple Developer Program и подписи Apple (см. README → «Скачать»).
+          body_path: release-notes.md
           generate_release_notes: true
           files: |
             dist/**
