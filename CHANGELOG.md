@@ -13,10 +13,68 @@ Linux / macOS / Android / web) одним выпуском. macOS-артефак
 История изменений по версиям дублируется в примечаниях к релизам; полный diff —
 по ссылкам «Full Changelog» на странице релиза.
 
-## [Unreleased]
+## [0.6.0] — 2026-10-22
 
 ### Добавлено
 
+- **Волна 6: 8 стран развитой бюрократии** — каталог вырос с 30 до 38 стран
+  и с 1054 до 1294 шаблонов (по 30 на новую страну): **Нидерланды**
+  (Rijksoverheid/MijnOverheid; BW 7 — Burgerlijk Wetboek: BW 7:634 (4×
+  недельная норма отпускных), BW 7:629 (зарплата при болезни), WAZO,
+  Wet flexibel werken, BW 6:82 ingebrekestelling, Wkkgz, WGBO, Awb 6:7
+  — bezwaarschrift 6 недель, Kifid, SVB/AOW), **Бельгия** (belgium.be;
+  Loi du 3 juillet 1978, Code du travail, Livre VI/VII Code de droit
+  économique, sommation interpellative — Code judiciaire art. 1144, RGPD/
+  Loi 30 juillet 2018 (APD), Loi du 22 août 2002 (права пациента), Loi
+  du 20 février 1991 (bail résidentiel), CPAS — Loi du 12 avril 1965,
+  Service fédéral des Pensions; шаблоны на французском — одном из трёх
+  официальных языков), **Португалия** (gov.pt/ePortugal; Código do
+  Trabalho — art. 238 (22 dias úteis), art. 366 (préaviso 30 dias),
+  Lei 84/2012 (licença parental), Lei 24/96 + DL 67/2003, Código Civil
+  (constituição em mora, mútuo, vizinhança), CPA (DL 4/2020), CNPD,
+  LGT — reclamação graciosa, DL 84/2021 (SysReclama/Banco de Portugal),
+  NRAU (Lei 6/2006), DL 9/2007 (ruído)), **Швеция** (Skatteverket/
+  Försäkringskassan; Semesterlagen 1977:480 (25 dagar), LAS 1982:80
+  (uppsägningstid 1 månad), Föräldraledighetslagen 1995:584, sjuklönelagen,
+  Konsumentköplagen 2022:260, Kronofogden — betalningsföreläggande, IMY
+  (GDPR), JO, ARN, Skatteförfarandelagen 2011:1244, Patientlagen 2014:821,
+  Patientdatalagen 2008:355, Skollagen 2010:800), **Норвегия** (Altinn/NAV;
+  ferieloven (25 arbeidsdager), arbeidsmiljøloven § 15-3, folketrygdloven
+  (sykepenger, foreldrepenger, alderspensjon), forbrukerkjøpsloven,
+  husleieloven, forliksrådet, skattebetalingsloven, pasient- og
+  brukerrettighetsloven, opplæringsloven, gjeldsbrevlova), **Дания**
+  (borger.dk/skat.dk; ferieloven (5 ugers), funktionærloven, barselsloven
+  2021, købeloven, lejeloven, Datatilsynet, Folketingets Ombudsmand,
+  Ankestyrelsen (frist 4 uger), Skattekontrolloven, Sundhedsloven
+  (patientklagenævn), Folkeskoleloven), **Финляндия** (Suomi.fi/Kela;
+  vuosilomalaki 162/2005 (24 arkipäivää), työsopimuslaki 55/2001
+  (irtisanomisaika), perhevapaalaki, kuluttajansuojalaki 38/1978,
+  asuinhunoneiston vuokrauslaki 481/1995, velkakirjalaki 622/1947,
+  tietosuojalaki, verotusmenettelylaki 1558/1995, sosiaaliturvan
+  muutoksenhaku (Kela → lautakunta), potilaslaki 785/1992, potilastietolaki
+  22/2019, perusopetuslaki 628/1998, yliopistolaki 558/2009), **Греция**
+  (gov.gr/AADE; π.δ. 741/2016 (κανονική άδεια — 20 εργάσιμες), ν. 3899/2010
+  (προειδοποίηση απόλυσης), ΑΚ (καταγγελία, ζημίες, μίσθωση, δάνειο,
+  εξουσιοδότηση), ΚΠολΔ, ν. 2251/1994 (ΓΓΚ), ν. 4624/2019 (Αρχή
+  Προστασίας Δεδομένων), ν. 3094/2003 (Συνήγορος του Πολίτη), ΚΦΔ
+  ν. 4174/2013 (ενδικοφανής προσφυγή), ΕΦΚА ν. 4389/2016, ν. 4670/2020,
+  ν. 4213/2013 (υγεία), ν. 4186/2013, ν. 4957/2022, ΕΕΤТ).
+- **6 новых языков** интерфейса и документов (28-й язык — нидерландский,
+  шведский, норвежский букмол, датский, финский, греческий): UI-словари
+  всех 28 локалей, длинные даты («1 januari 2026», «15 mars 2026»,
+  «1. januar 2026», «1. marts 2026», «1. tammikuuta 2026» — партитив,
+  «1 Ιανουαρίου 2026» — родительный падеж).
+- **Национальные стандарты оформления** для 8 новых стран: практика
+  NEN 4005 (Нидерланды), трёхъязычные конвенции (Бельгия), практика
+  Código do Procedimento Administrativo (Португалия), Myndigheternas
+  skrivregler/Språkrådet (Швеция), рекомендации Språkrådet (Норвегия),
+  Dansk Sprognævn (Дания), Kirjesuositukset/Kotimaisten kielten keskus
+  (Финляндия), практика госорганов Греции — поля 25 мм, 12 pt, блок-стиль.
+- Официальные порталы в карточках стран: Rijksoverheid + MijnOverheid
+  (DigiD), belgium.be + SocialSecurity (itsme), gov.pt + ePortugal
+  (Chave Móvel Digital), Skatteverket + Försäkringskassan (BankID),
+  Altinn + NAV (MinID), borger.dk + skat.dk (MitID), Suomi.fi + Kela
+  (онлайн-банкинг), gov.gr + AADE (Taxisnet).
 - **Волна 5: 8 стран с развитой бюрократией** — каталог вырос с 22 до 30
   стран и с 798 до 1054 шаблонов (по 32 на новую страну): **Великобритания**
   (GOV.UK; Employment Rights Act 1996, Working Time Regulations 1998,
@@ -74,6 +132,7 @@ Linux / macOS / Android / web) одним выпуском. macOS-артефак
 
 - PDF для России: правое поле 15 мм → 10 мм — унификация с docx по
   ГОСТ Р 7.0.97-2016 (расхождение существовало с v0.5.1).
+- README/package.json: «22 страны» → «38 стран»; описание шаблонной базы расширено законами новых стран.
 
 ## [0.5.1] — 2026-10-21
 

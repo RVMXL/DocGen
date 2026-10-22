@@ -1,8 +1,8 @@
 {
   "name": "docgen",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
-  "description": "DocGen — приложение для генерации официальных документов по шаблонам (22 страны, экспорт .docx/.pdf, работает полностью офлайн)",
+  "description": "DocGen — приложение для генерации официальных документов по шаблонам (38 стран, экспорт .docx/.pdf, работает полностью офлайн)",
   "homepage": "https://github.com/RVMXL/DocGen",
   "scripts": {
     "dev": "next dev -p 3000",
