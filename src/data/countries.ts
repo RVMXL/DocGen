@@ -186,6 +186,102 @@ export const COUNTRIES: CountryDef[] = [
         descEn: 'The unified portal: registration, taxes (FinanzOnline), pensions, filings via ID Austria.' },
     ],
   },
+  {
+    code: 'NL', nameRu: 'Нидерланды', nameEn: 'Netherlands', flag: '🇳🇱', region: 'europe', docLang: 'nl',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'Rijksoverheid — портал правительства Нидерландов', nameEn: 'Rijksoverheid — Dutch government portal', url: 'https://www.rijksoverheid.nl',
+        descRu: 'Официальный портал правительства: правила по работе, отпуску, увольнению, налогам (Belastingdienst), DigiD для входа в госуслуги.',
+        descEn: 'The official government portal: employment, leave, dismissal, taxes (Belastingdienst), DigiD for government sign-in.' },
+      { nameRu: 'MijnOverheid — личный кабинет гражданина', nameEn: 'MijnOverheid — personal government mailbox', url: 'https://mijnoverheid.nl',
+        descRu: 'Личный кабинет: сообщения ведомств, налоговые решения, пенсии, DigiD-вход. Часть обращений по закону подаётся только онлайн.',
+        descEn: 'Personal government mailbox: agency messages, tax decisions, pensions; some filings are mandatory online.' },
+    ],
+  },
+  {
+    code: 'BE', nameRu: 'Бельгия', nameEn: 'Belgium', flag: '🇧🇪', region: 'europe', docLang: 'fr',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'belgium.be — официальный федеральный портал', nameEn: 'belgium.be — official federal portal', url: 'https://www.belgium.be',
+        descRu: 'Федеральный портал услуг: коммунальные вопросы (commune/gemeente), регистрация, документы. Шаблоны страны — на французском (один из трёх официальных языков); во Фландрии документы часто требуют нидерландский.',
+        descEn: 'The federal services portal: commune services, registration, documents. The country’s templates are in French (one of three official languages); in Flanders documents often require Dutch.' },
+      { nameRu: 'SocialSecurity — портал соцзащиты Бельгии', nameEn: 'SocialSecurity — Belgian social security portal', url: 'https://www.socialsecurity.belgium.be',
+        descRu: 'Портал бельгийской соцзащиты: отпуска, пособия (FPS), пенсионные взносы — вход через itsme.',
+        descEn: 'The Belgian social security portal: leave, benefits, pension contributions — sign-in via itsme.' },
+    ],
+  },
+  {
+    code: 'PT', nameRu: 'Португалия', nameEn: 'Portugal', flag: '🇵🇹', region: 'europe', docLang: 'pt',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'gov.pt — официальный портал правительства', nameEn: 'gov.pt — official government portal', url: 'https://www.gov.pt',
+        descRu: 'Единый портал: госуслуги, налоги (Autoridade Tributária), Segurança Social, IRN (гражданские записи).',
+        descEn: 'The unified portal: state services, taxes (Autoridade Tributária), social security, civil registry (IRN).' },
+      { nameRu: 'ePortugal — портал госуслуг', nameEn: 'ePortugal — e-services portal', url: 'https://eportugal.gov.pt',
+        descRu: 'Портал электронных услуг: заявления, справки, записи — вход через Chave Móvel Digital.',
+        descEn: 'The e-services portal: applications, certificates, appointments — sign-in via Chave Móvel Digital.' },
+    ],
+  },
+  {
+    code: 'SE', nameRu: 'Швеция', nameEn: 'Sweden', flag: '🇸🇪', region: 'europe', docLang: 'sv',
+    currencyRu: 'шведская крона', currencyIn: 'шведских кронах', currencyEn: 'Swedish krona',
+    portals: [
+      { nameRu: 'Skatteverket — налоговое агентство', nameEn: 'Skatteverket — Swedish Tax Agency', url: 'https://www.skatteverket.se',
+        descRu: 'Налоги, персональный номер, смена адреса, декларации — большинство услуг онлайн через BankID.',
+        descEn: 'Taxes, personal identity number, address changes, declarations — most services online via BankID.' },
+      { nameRu: 'Försäkringskassan — агентство соцстрахования', nameEn: 'Försäkringskassan — social insurance agency', url: 'https://www.forsakringskassan.se',
+        descRu: 'Пособия, декретные (föräldrapenning), больничные (sjukpenning), жилищные надбавки — заявки онлайн через BankID.',
+        descEn: 'Benefits, parental benefit, sickness benefit, housing allowance — applications online via BankID.' },
+    ],
+  },
+  {
+    code: 'NO', nameRu: 'Норвегия', nameEn: 'Norway', flag: '🇳🇴', region: 'europe', docLang: 'no',
+    currencyRu: 'норвежская крона', currencyIn: 'норвежских кронах', currencyEn: 'Norwegian krone',
+    portals: [
+      { nameRu: 'Altinn — национальный портал госуслуг', nameEn: 'Altinn — national e-services portal', url: 'https://altinn.no',
+        descRu: 'Единый портал для обращений в ведомства: налоги, NAV, Statistisk sentralbyrå — вход через BankID / MinID.',
+        descEn: 'The unified portal for filings to agencies: taxes, NAV, Statistics Norway — sign-in via BankID / MinID.' },
+      { nameRu: 'NAV — управление труда и соцзащиты', nameEn: 'NAV — Labour and Welfare Administration', url: 'https://www.nav.no',
+        descRu: 'Пособия, больничные, декретные (foreldrepenger), пенсии, регистрация безработицы (meldekort).',
+        descEn: 'Benefits, sick pay, parental benefit, pensions, unemployment registration (meldekort).' },
+    ],
+  },
+  {
+    code: 'DK', nameRu: 'Дания', nameEn: 'Denmark', flag: '🇩🇰', region: 'europe', docLang: 'da',
+    currencyRu: 'датская крона', currencyIn: 'датских кронах', currencyEn: 'Danish krone',
+    portals: [
+      { nameRu: 'borger.dk — портал для граждан', nameEn: 'borger.dk — citizen portal', url: 'https://www.borger.dk',
+        descRu: 'Госуслуги для граждан: документы, адрес, пособия, пенсии — вход через MitID, часть сообщений ведомств — только в Digital Post.',
+        descEn: 'Citizen services: documents, address, benefits, pensions — sign-in via MitID; official mail is delivered in Digital Post.' },
+      { nameRu: 'skat.dk — налоговое управление', nameEn: 'skat.dk — Danish tax authority', url: 'https://skat.dk',
+        descRu: 'Налоги (Skattestyrelsen): годовой отчёт, предварительная оценка, вычеты — онлайн через MitID.',
+        descEn: 'Taxes (Skattestyrelsen): annual statement, preliminary assessment, deductions — online via MitID.' },
+    ],
+  },
+  {
+    code: 'FI', nameRu: 'Финляндия', nameEn: 'Finland', flag: '🇫🇮', region: 'europe', docLang: 'fi',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'Suomi.fi — национальный портал услуг', nameEn: 'Suomi.fi — national services portal', url: 'https://suomi.fi',
+        descRu: 'Единый портал: госуслуги всех ведомств, электронные сообщения (Suomi.fi Viestit), полномочия (valtuudet) — вход через онлайн-банкинг.',
+        descEn: 'The unified portal: services of all agencies, official messages, mandates — sign-in via online banking.' },
+      { nameRu: 'Kela — управление соцстрахования', nameEn: 'Kela — Social Insurance Institution', url: 'https://kela.fi',
+        descRu: 'Пособия, декретные (äitiysraha), жилищная надбавка, карта Kela — заявки через Oma Kela.',
+        descEn: 'Benefits, maternity allowance, housing allowance, Kela card — applications via Oma Kela.' },
+    ],
+  },
+  {
+    code: 'GR', nameRu: 'Греция', nameEn: 'Greece', flag: '🇬🇷', region: 'europe', docLang: 'el',
+    currencyRu: 'евро', currencyIn: 'евро', currencyEn: 'euro',
+    portals: [
+      { nameRu: 'gov.gr — единый портал госуслуг', nameEn: 'gov.gr — unified e-services portal', url: 'https://www.gov.gr',
+        descRu: 'Единый портал всех госуслуг: налоги (AADE), EFKA, документы, записи — вход через Taxisnet.',
+        descEn: 'The unified portal of state services: taxes (AADE), social security (EFKA), documents, appointments — sign-in via Taxisnet.' },
+      { nameRu: 'AADE — независимое управление по налогам', nameEn: 'AADE — Independent Authority for Public Revenue', url: 'https://www.aade.gr',
+        descRu: 'Налоги, декларации (myAADE), обжалование налоговых актов — онлайн через Taxisnet.',
+        descEn: 'Taxes, declarations (myAADE), appeals against tax acts — online via Taxisnet.' },
+    ],
+  },
 
   // ── Бэклог ТЗ: Азия ────────────────────────────────────────────────────────
   {

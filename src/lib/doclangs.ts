@@ -29,6 +29,12 @@ export const DOC_LANGS: Record<string, DocLangInfo> = {
   pt: { native: 'Português', ru: 'португальском', en: 'Portuguese' },
   es: { native: 'Español', ru: 'испанском', en: 'Spanish' },
   it: { native: 'Italiano', ru: 'итальянском', en: 'Italian' },
+  nl: { native: 'Nederlands', ru: 'нидерландском', en: 'Dutch' },
+  sv: { native: 'Svenska', ru: 'шведском', en: 'Swedish' },
+  no: { native: 'Norsk bokmål', ru: 'норвежском', en: 'Norwegian' },
+  da: { native: 'Dansk', ru: 'датском', en: 'Danish' },
+  fi: { native: 'Suomi', ru: 'финском', en: 'Finnish' },
+  el: { native: 'Ελληνικά', ru: 'греческом', en: 'Greek' },
 };
 
 /** Самоназвание языка документа (или код как fallback) */

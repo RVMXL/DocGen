@@ -8,17 +8,20 @@ export type Locale = 'ru' | 'en';
 /**
  * Языки тела документа = государственные языки поддерживаемых стран.
  * ru/uk/be/kk/uz/kg/tg/hy/az/ro — Россия и СНГ;
- * de/fr/pl/it — Европа; en — США, Великобритания, Канада, Индия, Австралия;
+ * de/fr/pl/it/nl/sv/no/da/fi/el — Европа;
+ * en — США, Великобритания, Канада, Индия, Австралия;
  * zh/ja/ko — Китай/Япония/Корея; tr — Турция; he — Израиль;
- * pt — Бразилия; es — Испания, Аргентина, Мексика.
+ * pt — Бразилия, Португалия; es — Испания, Аргентина, Мексика.
  */
 export type DocLang =
   | 'ru' | 'uk' | 'be' | 'kk' | 'uz' | 'kg' | 'tg' | 'hy' | 'az' | 'ro'
-  | 'de' | 'fr' | 'pl' | 'en' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es' | 'it';
+  | 'de' | 'fr' | 'pl' | 'en' | 'zh' | 'ja' | 'ko' | 'tr' | 'he' | 'pt' | 'es' | 'it'
+  | 'nl' | 'sv' | 'no' | 'da' | 'fi' | 'el';
 
 export const DOC_LANG_LIST: DocLang[] = [
   'ru', 'uk', 'be', 'kk', 'uz', 'kg', 'tg', 'hy', 'az', 'ro',
   'de', 'fr', 'pl', 'en', 'zh', 'ja', 'ko', 'tr', 'he', 'pt', 'es', 'it',
+  'nl', 'sv', 'no', 'da', 'fi', 'el',
 ];
 
 export function toDocLang(v: string): DocLang {
@@ -54,6 +57,21 @@ const MONTHS_GEN: Partial<Record<DocLang, string[]>> = {
     'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
   it: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
     'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
+  // nl — существительное без предлога после числа; датская/норвежская конвенция — точка после числа
+  nl: ['januari', 'februari', 'maart', 'april', 'mei', 'juni',
+    'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+  sv: ['januari', 'februari', 'mars', 'april', 'maj', 'juni',
+    'juli', 'augusti', 'september', 'oktober', 'november', 'december'],
+  no: ['januar', 'februar', 'mars', 'april', 'mai', 'juni',
+    'juli', 'august', 'september', 'oktober', 'november', 'desember'],
+  da: ['januar', 'februar', 'marts', 'april', 'maj', 'juni',
+    'juli', 'august', 'september', 'oktober', 'november', 'december'],
+  // fi — партитив: «1. tammikuuta 2026»
+  fi: ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta',
+    'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'],
+  // el — родительный падеж: «1 Ιανουαρίου 2026»
+  el: ['Ιανουαρίου', 'Φεβρουαρίου', 'Μαρτίου', 'Απριλίου', 'Μαΐου', 'Ιουνίου',
+    'Ιουλίου', 'Αυγούστου', 'Σεπτεμβρίου', 'Οκτωβρίου', 'Νοεμβρίου', 'Δεκεμβρίου'],
 };
 const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -74,6 +92,12 @@ function longDate(y: string, mm: string, dd: string, lang: DocLang): string {
     case 'es': return `${d} de ${MONTHS_GEN.es![idx]} de ${y}`;
     case 'tr': return `${d} ${MONTHS_GEN.tr![idx]} ${y}`;
     case 'it': return `${d === '1' ? '1º' : d} ${MONTHS_GEN.it![idx]} ${y}`;
+    case 'nl': return `${d} ${MONTHS_GEN.nl![idx]} ${y}`;
+    case 'sv': return `${d} ${MONTHS_GEN.sv![idx]} ${y}`;
+    case 'no': return `${d}. ${MONTHS_GEN.no![idx]} ${y}`;
+    case 'da': return `${d}. ${MONTHS_GEN.da![idx]} ${y}`;
+    case 'fi': return `${d}. ${MONTHS_GEN.fi![idx]} ${y}`;
+    case 'el': return `${d} ${MONTHS_GEN.el![idx]} ${y}`;
     case 'en': return `${MONTHS_EN[idx]} ${d}, ${y}`;
     case 'zh': case 'ja': return `${y}年${parseInt(mm, 10)}月${d}日`;
     case 'ko': return `${y}년 ${parseInt(mm, 10)}월 ${d}일`;
@@ -118,6 +142,12 @@ export function fmtToday(docLang: DocLang): string {
     case 'es': return `${dNum} de ${MONTHS_GEN.es![m]} de ${y}`;
     case 'tr': return `${dNum} ${MONTHS_GEN.tr![m]} ${y}`;
     case 'it': return `${dNum === '1' ? '1º' : dNum} ${MONTHS_GEN.it![m]} ${y}`;
+    case 'nl': return `${dNum} ${MONTHS_GEN.nl![m]} ${y}`;
+    case 'sv': return `${dNum} ${MONTHS_GEN.sv![m]} ${y}`;
+    case 'no': return `${dNum}. ${MONTHS_GEN.no![m]} ${y}`;
+    case 'da': return `${dNum}. ${MONTHS_GEN.da![m]} ${y}`;
+    case 'fi': return `${dNum}. ${MONTHS_GEN.fi![m]} ${y}`;
+    case 'el': return `${dNum} ${MONTHS_GEN.el![m]} ${y}`;
     case 'en': return `${MONTHS_EN[m]} ${dNum}, ${y}`;
     case 'zh': case 'ja': return `${y}年${m + 1}月${dNum}日`;
     case 'ko': return `${y}년 ${m + 1}월 ${dNum}일`;
