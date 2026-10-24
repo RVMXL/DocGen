@@ -92,3 +92,12 @@ Desktop: `bun run build && node tools/prepare-desktop.mjs && cd desktop && npx e
 ## Права
 
 All rights reserved. This code is for viewing purposes only. You are not allowed to use, copy, distribute, or modify this code.
+
+## Лицензия
+
+Код репозитория — проприетарный (см. [LICENSE](LICENSE)): готовые сборки из
+Releases разрешено свободно использовать по назначению, исходный код —
+только для ознакомления и аудита. Авторы и лицензии сторонних компонентов —
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); тексты лицензий шрифтов
+распространяются вместе с приложением (`public/fonts/`: OFL-1.1, GPLv3 +
+шрифтовое исключение).

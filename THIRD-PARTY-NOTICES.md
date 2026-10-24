@@ -28,8 +28,8 @@ DocGen использует сторонние компоненты с откр�
 | Компонент | Автор / правообладатель | Версия | Лицензия |
 |---|---|---|---|
 | [Tailwind CSS](https://tailwindcss.com) | Tailwind Labs, Inc. | 4.x | MIT |
-| [shadcn/ui](https://ui.shadcn.com) — компоненты `button`, `card`, `input`, `label`, `select`, `textarea`, `alert`, `badge`, `toast` | shadcn и участники | — | MIT |
-| [Radix UI Primitives](https://www.radix-ui.com) (`react-select`, `react-label`, `react-slot`, `react-toast`) | WorkOS / Radix UI и участники | 1.x–2.x | MIT |
+| [shadcn/ui](https://ui.shadcn.com) — компоненты `button`, `card`, `input`, `label`, `select`, `textarea`, `alert`, `badge` | shadcn и участники | — | MIT |
+| [Radix UI Primitives](https://www.radix-ui.com) (`react-select`, `react-label`, `react-slot`) | WorkOS / Radix UI и участники | 1.x–2.x | MIT |
 | [lucide-react](https://lucide.dev) | Lucide Contributors (иконки; ответвление Feather Icons) | 0.525.0 | ISC |
 | [zustand](https://github.com/pmndrs/zustand) | Poimandres и участники | 5.0.10 | MIT |
 | [sonner](https://sonner.emilkowal.ski) | Emil Kowalski | 2.0.7 | MIT |
@@ -42,7 +42,7 @@ DocGen использует сторонние компоненты с откр�
 
 | Компонент | Автор / правообладатель | Версия | Лицензия |
 |---|---|---|---|
-| [Capacitor](https://capacitorjs.com) (`core`, `android`, `cli`) | Ionic / Drifty Co. и участники | 7.6.x | MIT |
+| [Capacitor](https://capacitorjs.com) (`core`, `android`, `app`, `filesystem`, `share`, `cli`) | Ionic / Drifty Co. и участники | 7.6.x | MIT |
 | [Electron](https://www.electronjs.org) | OpenJS Foundation и участники | 38.x | MIT |
 | [electron-builder](https://www.electron.build) | Stéphane Goetz и участники | 26.x | MIT |
 
