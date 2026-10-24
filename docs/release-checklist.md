@@ -9,7 +9,7 @@
 - [ ] Гейт локально: `bun test` · `bun tools/check-data.ts` ·
       `bunx tsc --noEmit` · `bunx next build` — зелёные.
 - [ ] Эмпирическая проверка PDF: сэмплы zh/ru через `pdftoppm`/`pdftotext`
-      (скрипт `scripts/emit-pdf-samples.ts` — локально, в git не входит).
+      (скрипт `tools/emit-pdf-samples.ts` — в репозитории).
 
 ## 2. CHANGELOG и версии
 

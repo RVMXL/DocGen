@@ -62,15 +62,9 @@ const ALL: TplDef[] = [
   ...TEMPLATES_NO, ...TEMPLATES_DK, ...TEMPLATES_FI, ...TEMPLATES_GR,
 ];
 
-const bySlug = new Map(ALL.map((t) => [t.slug, t]));
-
 /** Все шаблоны (для проверок) */
 export function allTemplates(): TplDef[] {
   return ALL;
-}
-
-export function templateBySlug(slug: string): TplDef | undefined {
-  return bySlug.get(slug);
 }
 
 /** Код страны по slug шаблона: 'ru-work-vacation' → 'RU' */

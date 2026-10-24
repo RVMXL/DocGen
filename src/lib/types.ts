@@ -89,8 +89,3 @@ export interface CatalogResponse {
   country: { code: string; nameRu: string; nameEn: string; nameI18n?: Partial<Record<string, string>>; flag: string; docLang: string; currencyRu: string; currencyEn: string };
   groups: GroupDTO[];
 }
-
-/** Валидация kind (SQLite без enum) */
-export function isTemplateKind(v: string): v is TemplateKind {
-  return v === 'STANDARD' || v === 'HANDWRITTEN_REQUIRED' || v === 'GOV_PORTAL_ONLY';
-}
