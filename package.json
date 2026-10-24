@@ -14,9 +14,9 @@
     "cap:sync": "next build && cap sync android"
   },
   "dependencies": {
-    "@capacitor/android": "^7",
+    "@capacitor/android": "^8",
     "@capacitor/app": "^8.1.2",
-    "@capacitor/core": "^7",
+    "@capacitor/core": "^8",
     "@capacitor/filesystem": "^8.1.5",
     "@capacitor/share": "^8.0.3",
     "@pdf-lib/fontkit": "^1.1.1",
@@ -36,7 +36,7 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7",
+    "@capacitor/cli": "^8",
     "@tailwindcss/postcss": "^4",
     "@types/bun": "^1.4.4",
     "@types/react": "^19",
