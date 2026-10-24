@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "ДокГен — официальные документы по шаблонам",
@@ -27,7 +27,9 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground min-h-screen flex flex-col">
         {children}
-        <Toaster />
+        {/* ENG-2 (аудит): контейнер sonner — без него toast.success/error из
+            doc-preview не отображались никогда; тосты видны и в WebView Android */}
+        <Toaster position="top-center" richColors visibleToasts={2} />
       </body>
     </html>
   );
