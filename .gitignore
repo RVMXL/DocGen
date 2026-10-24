@@ -88,3 +88,4 @@ tool-results
 
 # python-байткод
 __pycache__/
+out-pdf-samples/

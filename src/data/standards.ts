@@ -53,6 +53,13 @@ export interface DocStandard {
   fontPt: number;
   /** Отступ первой строки абзаца, мм (0 — блок-стиль без красной строки) */
   indentFirstLineMm: number;
+  /**
+   * Нумерация страниц (ENG-6, аудит): 'top' — посредине верхнего поля со второй
+   * страницы (традиция ГОСТ Р 7.0.97-2016 п. 6.6), 'bottom' — нижнее поле по
+   * центру (западная практика); по умолчанию 'bottom'. Одностраничные документы
+   * не нумеруются ни по одному стандарту.
+   */
+  pageNumber?: 'top' | 'bottom' | 'none';
   /** Официальный источник (проверяется tools/check-links.ts) */
   refUrl?: string;
 }
@@ -72,6 +79,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
     // refUrl намеренно нет: агрегаторы текста ГОСТ (docs.cntd.ru, protect.gost.ru)
     // блокируют автоматические запросы и живость ссылки нельзя гарантировать.
   },
@@ -84,6 +92,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   BY: {
     code: 'Инструкция по делопроизводству (РБ)',
@@ -94,6 +103,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   KZ: {
     code: 'Records management rules (GOST tradition)',
@@ -104,6 +114,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   UZ: {
     code: 'Records management rules (GOST tradition)',
@@ -114,6 +125,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   KG: {
     code: 'Records management rules (GOST tradition)',
@@ -124,6 +136,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   TJ: {
     code: 'Records management rules (GOST tradition)',
@@ -134,6 +147,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   AM: {
     code: 'Records management rules (GOST tradition)',
@@ -144,6 +158,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   AZ: {
     code: 'Records management rules (GOST tradition)',
@@ -154,6 +169,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   MD: {
     code: 'Records management rules (GOST tradition)',
@@ -164,6 +180,7 @@ export const STANDARDS: Record<string, DocStandard> = {
     marginsMm: { top: 20, bottom: 20, left: 30, right: 10 },
     fontPt: 14,
     indentFirstLineMm: 12.5,
+    pageNumber: 'top',
   },
   US: {
     code: 'US business letter / Bluebook',

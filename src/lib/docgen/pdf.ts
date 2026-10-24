@@ -32,6 +32,15 @@ const DEFAULT_FONTS = { regular: 'LiberationSerif-Regular.ttf', bold: 'Liberatio
 // получал ссылки на ресурсы чужого контекста и собирался битым.
 const fontBytesCache = new Map<DocLang, { regular: Uint8Array; bold: Uint8Array }>();
 
+// ENG-25 (P1, обнаружено в волне 2 при эмпирической сверке pdftoppm):
+// runtime-субсеттинг pdf-lib/fontkit ломает рендер CJK-шрифтов — большинство
+// знаков превращается в пустые глифы (проверено на DocGenZh/Ja/Ko: с subset:true
+// из абзаца остаются единичные иероглифы, с subset:false текст полный).
+// Для пред-суженных Noto-подмножеств субсетирование в рантайме всё равно почти
+// ничего не экономит — встраиваем шрифт целиком (PDF ≈ 1–1,5 МБ вместо 30 КБ).
+// Liberation/FreeSerif субсетируются штатно и их не трогаем.
+const CJK_NO_RUNTIME_SUBSET: ReadonlySet<DocLang> = new Set(['zh', 'ja', 'ko']);
+
 /** URL шрифта: учитывает базовый путь сборки (хостинг в подкаталоге, Electron app://) */
 function fontUrl(file: string): string {
   const loc = globalThis as { document?: { baseURI?: string }; location?: { href: string } };
@@ -52,9 +61,10 @@ async function loadFonts(pdfDoc: PDFDocument, docLang: DocLang): Promise<Fonts> 
     fontBytesCache.set(docLang, bytes);
   }
   // embedFont вызывается для каждого нового PDFDocument (кэшировать объекты нельзя)
+  const subset = !CJK_NO_RUNTIME_SUBSET.has(docLang);
   const fonts: Fonts = {
-    regular: await pdfDoc.embedFont(bytes.regular, { subset: true }),
-    bold: await pdfDoc.embedFont(bytes.bold, { subset: true }),
+    regular: await pdfDoc.embedFont(bytes.regular, { subset }),
+    bold: await pdfDoc.embedFont(bytes.bold, { subset }),
   };
   return fonts;
 }
@@ -117,6 +127,65 @@ function drawJustified(page: PDFPage, line: string, font: PDFFont, size: number,
   }
 }
 
+// ─── CJK-типографика (ENG-4, аудит: волна 2) ─────────────────────────────────
+// В zh/ja/ko текст почти без пробелов: разбиение по словам (wrapWords) превращает
+// предложение в одно «длинное слово» и режет его посимвольно по границе — перенос
+// попадает на знак препинания или открывающую скобку. Стандарты набора (kinsoku):
+// закрывающая пунктуация не переносится в начало строки, открывающая — не остаётся
+// в конце. Выключка по ширине — межзнаковая (растягивание промежутков между иероглифами).
+const NO_LINE_START = new Set(Array.from('、。，．！？：；）】〕〉》」』…ー〜”’％‰°,.;:!?)]}%'));
+const NO_LINE_END = new Set(Array.from('（【〔〈《「『“‘([{'));
+
+/** Посимвольный перенос CJK-строки с правилами кансоку (экспорт — для юнит-теста) */
+export function wrapCJK(text: string, font: PDFFont, size: number, maxWidth: number): string[] {
+  const chars = Array.from(text);
+  const lines: string[] = [];
+  let cur = '';
+  for (const ch of chars) {
+    if (ch === ' ') {
+      if (cur) { lines.push(cur); cur = ''; }
+      continue;
+    }
+    if (cur && font.widthOfTextAtSize(cur + ch, size) > maxWidth) {
+      if (NO_LINE_START.has(ch)) {
+        // кансоку: знак не может начать строку — оставляем на текущей (лёгкий перелив)
+        cur += ch;
+        lines.push(cur);
+        cur = '';
+        continue;
+      }
+      if (NO_LINE_END.has(Array.from(cur).pop() ?? '')) {
+        // кансоку: открывающая скобка не может остаться в конце — уносим вниз
+        const carry = Array.from(cur).pop() as string;
+        cur = cur.slice(0, cur.length - carry.length);
+        lines.push(cur);
+        cur = carry + ch;
+      } else {
+        lines.push(cur);
+        cur = ch;
+      }
+    } else cur += ch;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+/** Межзнаковая выключка CJK-строки по ширине */
+function drawJustifiedCJK(page: PDFPage, line: string, font: PDFFont, size: number, x: number, y: number, width: number) {
+  const chars = Array.from(line);
+  if (chars.length < 2) {
+    page.drawText(line, { x, y, size, font, color: rgb(0.1, 0.1, 0.1) });
+    return;
+  }
+  const natural = font.widthOfTextAtSize(line, size);
+  const extra = (width - natural) / (chars.length - 1);
+  let cx = x;
+  for (const ch of chars) {
+    page.drawText(ch, { x: cx, y, size, font, color: rgb(0.1, 0.1, 0.1) });
+    cx += font.widthOfTextAtSize(ch, size) + extra;
+  }
+}
+
 export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?: DocStandard): Promise<Uint8Array> {
   const s = std ?? {
     code: 'default', nameRu: '', nameEn: '', descRu: '', descEn: '',
@@ -137,6 +206,8 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?
   const fonts = await loadFonts(pdfDoc, docLang);
   pdfDoc.setTitle('Document');
   const rtl = isRTL(docLang);
+  // ENG-4: CJK-языки набираются посимвольным переносом с кансоку
+  const cjk = docLang === 'zh' || docLang === 'ja' || docLang === 'ko';
 
   let page = pdfDoc.addPage([A4.w, A4.h]);
   let y = A4.h - M.top;
@@ -154,18 +225,25 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?
   // а выключка по ширине заменяется правым выравниванием (стандарт иврита)
   const drawLine = (text: string, f: PDFFont, x: number, width: number, mode: 'left' | 'center' | 'right' | 'just') => {
     const raw = rtl ? rtlShape(text) : text;
-    const lines = wrapWords(raw, f, SIZE, width);
-    for (const ln of lines) {
+    const lines = cjk ? wrapCJK(raw, f, SIZE, width) : wrapWords(raw, f, SIZE, width);
+    lines.forEach((ln, idx) => {
       ensureSpace(LINE_H);
-      const m: 'left' | 'center' | 'right' | 'just' = rtl && mode === 'just' ? 'right' : mode;
+      // ENG-3 (аудит): последняя строка выключенного абзаца не растягивается —
+      // она выравнивается по левому краю (для RTL — по правому)
+      const isLast = idx === lines.length - 1;
+      const m: 'left' | 'center' | 'right' | 'just' =
+        mode === 'just' && isLast ? (rtl ? 'right' : 'left')
+        : rtl && mode === 'just' ? 'right' : mode;
       const lw = f.widthOfTextAtSize(ln, SIZE);
       let lx = x;
       if (m === 'center') lx = x + (width - lw) / 2;
       else if (m === 'right') lx = x + width - lw;
-      if (m === 'just') drawJustified(page, ln, f, SIZE, x, y - SIZE, width);
-      else page.drawText(ln, { x: lx, y: y - SIZE, size: SIZE, font: f, color: rgb(0.1, 0.1, 0.1) });
+      if (m === 'just') {
+        if (cjk) drawJustifiedCJK(page, ln, f, SIZE, x, y - SIZE, width);
+        else drawJustified(page, ln, f, SIZE, x, y - SIZE, width);
+      } else page.drawText(ln, { x: lx, y: y - SIZE, size: SIZE, font: f, color: rgb(0.1, 0.1, 0.1) });
       y -= LINE_H;
-    }
+    });
   };
 
   for (const b of blocks) {
@@ -218,12 +296,46 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?
         if (rtl) { [left, right] = [right, left]; }
         const ls = rtl ? rtlShape(left) : left;
         const rs = rtl ? rtlShape(right) : right;
-        page.drawText(ls, { x: M.left, y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
-        const rw = fonts.regular.widthOfTextAtSize(rs, SIZE);
-        page.drawText(rs, { x: A4.w - M.right - Math.min(rw, contentWidth * 0.55), y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
-        y -= LINE_H;
+        const lsW = fonts.regular.widthOfTextAtSize(ls, SIZE);
+        const rsW = fonts.regular.widthOfTextAtSize(rs, SIZE);
+        // ENG-5 (аудит): левая часть подписи не была ограничена — при длинных
+        // должности/ФИО наложения двух частей друг на друга. Если в одну строку
+        // не помещается (с зазором ≥ 6 pt), правая часть переносится ниже и
+        // выравнивается по правому краю.
+        const GAP = 6;
+        if (ls && rs && lsW + GAP + rsW > contentWidth) {
+          page.drawText(ls, { x: M.left, y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+          ensureSpace(LINE_H);
+          page.drawText(rs, { x: A4.w - M.right - Math.min(rsW, contentWidth), y: y - LINE_H - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+          y -= LINE_H * 2;
+        } else {
+          page.drawText(ls, { x: M.left, y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+          page.drawText(rs, { x: A4.w - M.right - Math.min(rsW, contentWidth * 0.55), y: y - SIZE, size: SIZE, font: fonts.regular, color: rgb(0.1, 0.1, 0.1) });
+          y -= LINE_H;
+        }
         break;
       }
+    }
+  }
+
+  // ─── Нумерация страниц (ENG-6, аудит) ──────────────────────────────────────────
+  // ГОСТ Р 7.0.97-2016 п. 6.6: номер — посредине верхнего поля, со второй страницы
+  // (стандарты 'top'); западная практика — нижнее поле по центру ('bottom', умолчание).
+  // Одностраничные документы не нумеруются ни по одному стандарту.
+  const pageNumMode = s.pageNumber ?? 'bottom';
+  if (pageNumMode !== 'none' && pdfDoc.getPageCount() > 1) {
+    const pages = pdfDoc.getPages();
+    const numSize = Math.max(10, SIZE - 2);
+    for (let i = 1; i < pages.length; i++) {
+      const label = String(i + 1);
+      const lw = fonts.regular.widthOfTextAtSize(label, numSize);
+      pages[i].drawText(label, {
+        x: (A4.w - lw) / 2,
+        y: pageNumMode === 'top' ? A4.h - 10 * PT_PER_MM : 10 * PT_PER_MM,
+        size: numSize,
+        font: fonts.regular,
+        color: rgb(0.1, 0.1, 0.1),
+      });
     }
   }
 
