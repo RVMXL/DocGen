@@ -56,6 +56,33 @@ export const TEMPLATES_IT: TplDef[] = [
     ],
   },
   {
+    slug: 'it-work-certificato', kind: 'STANDARD', categorySlug: 'work-docs',
+    titleRu: 'Запрос справки с места работы (certificato di lavoro)',
+    titleDoc: 'Richiesta di certificato di lavoro', titleEn: 'Certificate of employment request (certificato di lavoro)',
+    descRu: 'Запрос работодателю о выдаче certificato di lavoro — справки о периоде работы и выполнявшихся обязанностях. По ст. 2124 Гражданского кодекса Италии при прекращении договора работодатель обязан выдать сертификат; справка нужна новому работодателю, банку, консульству.',
+    descEn: 'Request to the employer for a certificato di lavoro stating the employment period and the duties performed. Upon termination the employer must issue it (Art. 2124 of the Italian Civil Code); it is needed by a new employer, a bank or a consulate.',
+    descDoc: 'Richiesta al datore di lavoro del certificato attestante la durata del rapporto di lavoro e le mansioni svolte; ai sensi dell’art. 2124 c.c. il certificato va rilasciato alla cessazione del contratto, qualunque ne sia la causa.',
+    refRu: 'Ст. 2124 Гражданского кодекса Италии (certificato di lavoro)',
+    refEn: 'Article 2124 of the Italian Civil Code (certificato di lavoro)',
+    fields: [
+      ...workFields([
+        F('date_from', 'Период работы с', 'Employment from', 'date', { half: true }),
+        F('date_to', 'Период работы по', 'Employment until', 'date', { half: true }),
+        F('mansioni', 'Должность / обязанности', 'Position / duties', 'text', { placeholderDoc: 'assistente amministrativo — contabilità clienti e fornitori' }),
+        F('lang_cert', 'Язык справки', 'Certificate language', 'select', { options: ['in italiano', 'in italiano e in inglese'] }),
+      ]),
+    ],
+    body: [
+      ...workHdr(),
+      { type: 'title', text: 'Richiesta di certificato di lavoro' },
+      { type: 'subtitle', text: 'Oggetto: richiesta di rilascio del certificato di lavoro (art. 2124 c.c.)' },
+      { type: 'paragraph', text: 'Spettabile Direzione,', noIndent: true },
+      { type: 'paragraph', text: 'Con la presente richiedo il rilascio del certificato di lavoro attestante la durata del mio rapporto di lavoro dal {{date_from}} al {{date_to}} e le mansioni svolte ({{mansioni}}). Il documento è richiesto {{lang_cert}}.', justify: true },
+      { type: 'paragraph', text: 'Ai sensi dell’art. 2124 del Codice Civile, alla cessazione del contratto, qualunque ne sia la causa, il datore di lavoro deve rilasciare un certificato attestante la durata del rapporto di lavoro e le mansioni svolte dal prestatore. Prego di voler consegnarmi il documento in forma cartacea sottoscritta o via PEC all’indirizzo da me comunicato, in tempi brevi.', justify: true },
+      { type: 'signature', leftText: 'Distinti saluti.', rightText: '_______________ / {{applicant_name}} /' },
+    ],
+  },
+  {
     slug: 'it-permesso-104', kind: 'STANDARD', categorySlug: 'work-vacations',
     titleRu: 'Заявление на оплачиваемый отпуск по уходу (Legge 104, ст. 33)',
     titleDoc: 'Richiesta di permesso ex art. 33, c. 3, Legge 104/1992', titleEn: 'Paid leave request under Law 104/1992 (Art. 33)',
