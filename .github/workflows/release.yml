@@ -98,7 +98,7 @@ jobs:
           cat SHA256SUMS-web.txt
 
       - name: Артефакт
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: web-package
           path: |
@@ -141,7 +141,7 @@ jobs:
           npx electron-builder --${{ matrix.platform }} --publish never
 
       - name: Артефакт
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: desktop-${{ matrix.platform }}
           path: |
@@ -173,7 +173,7 @@ jobs:
           npx electron-builder --mac --publish never
 
       - name: Артефакт
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: desktop-mac
           path: |
@@ -265,7 +265,7 @@ jobs:
           sha256sum "DocGen-${VER}-android.apk"
 
       - name: Артефакт
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: android-apk
           path: DocGen-*-android.apk
