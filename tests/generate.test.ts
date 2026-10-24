@@ -12,7 +12,11 @@ import { fileName, generateFile, renderBlocks } from '../src/lib/generate';
 import { interpolateText, interpolateBlocks, toDocLang, fmtDateISO, fmtToday, cleanupPunct } from '../src/lib/docgen/interpolate';
 import { TEMPLATES_RU } from '../src/data/templates/ru';
 import { TEMPLATES_IT } from '../src/data/templates/it';
-import type { DocBlock } from '../src/lib/types';
+import type { DocBlock, TemplateDTO } from '../src/lib/types';
+import type { TplDef } from '../src/data/types';
+
+/** TplDef (исходник каталога) → TemplateDTO (то, что получает генератор): id/lang добавляются */
+const dto = (t: TplDef, lang = 'ru'): TemplateDTO => ({ ...t, id: t.slug, lang } as TemplateDTO);
 
 describe('toDocLang / cleanupPunct', () => {
   test('известные языки маппятся, неизвестные — fallback ru', () => {
@@ -72,7 +76,7 @@ describe('Интерполяция плейсхолдеров', () => {
 });
 
 describe('fileName', () => {
-  const tpl = TEMPLATES_RU[0];
+  const tpl = dto(TEMPLATES_RU[0]);
 
   test('имя = заголовок + дата + расширение, спец-символы вычищены', () => {
     const name = fileName(tpl, 'ru', 'docx');
@@ -97,7 +101,7 @@ describe('fileName', () => {
 
 describe('renderBlocks на реальном шаблоне каталога', () => {
   test('все {{placeholder}} реального шаблона заменяются при полном заполнении', () => {
-    const tpl = TEMPLATES_RU[0];
+    const tpl = dto(TEMPLATES_RU[0]);
     const data: Record<string, string> = {};
     for (const f of tpl.fields) {
       data[f.id] = f.type === 'date' ? '2025-05-01' : f.options ? f.options[0] : 'тестовое значение';
@@ -110,7 +114,7 @@ describe('renderBlocks на реальном шаблоне каталога', (
 });
 
 // ── сборка файлов: docx (zip) и pdf ─────────────────────────────────────────
-let server: { stop(): void; port: number } | null = null;
+let server: { stop(closeActiveConnections?: boolean): void; port: number } | null = null;
 
 beforeAll(async () => {
   // мини-сервер шрифтов: buildPdf делает fetch('fonts/…') от location.href
@@ -118,14 +122,15 @@ beforeAll(async () => {
   const FONTS_DIR = path.join(import.meta.dir, '..', 'public', 'fonts');
   const srv = Bun.serve({
     port: 0, // свободный порт
-    fetch(req) {
+    async fetch(req) {
       const url = new URL(req.url);
       const file = path.join(FONTS_DIR, path.basename(url.pathname));
       const f = Bun.file(file);
-      return new Response(f.exists ? f : new Response(null, { status: 404 }));
+      if (await f.exists) return new Response(f);
+      return new Response(null, { status: 404 });
     },
   });
-  server = srv;
+  server = srv as unknown as { stop(closeActiveConnections?: boolean): void; port: number };
   (globalThis as { location?: { href: string } }).location = { href: `http://127.0.0.1:${srv.port}/` };
 });
 
@@ -133,7 +138,7 @@ afterAll(() => server?.stop(true));
 
 describe('Генерация файлов (buildDocx / buildPdf)', () => {
   test('buildDocx: валидный zip (PK-подпись) и непустой', async () => {
-    const tpl = TEMPLATES_RU[0];
+    const tpl = dto(TEMPLATES_RU[0]);
     const data: Record<string, string> = {};
     for (const f of tpl.fields) data[f.id] = f.type === 'date' ? '2025-05-01' : 'значение';
     const blob = await generateFile(tpl, data, 'docx');
@@ -144,7 +149,7 @@ describe('Генерация файлов (buildDocx / buildPdf)', () => {
   });
 
   test('buildPdf: валидный заголовок %PDF', async () => {
-    const tpl = TEMPLATES_RU[0];
+    const tpl = dto(TEMPLATES_RU[0]);
     const data: Record<string, string> = {};
     for (const f of tpl.fields) data[f.id] = f.type === 'date' ? '2025-05-01' : 'значение';
     const bytes = await generateFile(tpl, data, 'pdf');

@@ -54,11 +54,12 @@ function alignOf(a: DocAlign): (typeof AlignmentType)[keyof typeof AlignmentType
   return AlignmentType.LEFT;
 }
 
-function runs(text: string, bold: boolean, font: string, size: number): TextRun[] {
-  return [new TextRun({ text, bold, font, size })];
+function runs(text: string, bold: boolean, font: string): TextRun[] {
+  // кегль не задаётся явно — наследуется из дефолтного стиля документа (run.size)
+  return [new TextRun({ text, bold, font })];
 }
 
-function signatureBlock(leftText: string, rightText: string, font: string, size: number): Table {
+function signatureBlock(leftText: string, rightText: string, font: string): Table {
   const noBorder = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' };
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
@@ -67,11 +68,11 @@ function signatureBlock(leftText: string, rightText: string, font: string, size:
       children: [
         new TableCell({
           width: { size: 45, type: WidthType.PERCENTAGE },
-          children: [new Paragraph({ spacing: { before: 360, line: LINE }, children: runs(leftText, false, font, size) })],
+          children: [new Paragraph({ spacing: { before: 360, line: LINE }, children: runs(leftText, false, font) })],
         }),
         new TableCell({
           width: { size: 55, type: WidthType.PERCENTAGE },
-          children: [new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { before: 360, line: LINE }, children: runs(rightText, false, font, size) })],
+          children: [new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { before: 360, line: LINE }, children: runs(rightText, false, font) })],
         }),
       ],
     })],
@@ -151,7 +152,8 @@ export async function buildDocx(blocks: DocBlock[], docLang: DocLang = 'ru', std
         });
         break;
       case 'signature':
-        children.push(signatureBlock(b.leftText ?? '{{date_today}}', b.rightText ?? 'Подпись: _______________', font));
+        // rightText обязателен (тип DocBlock), leftText опционален
+        children.push(signatureBlock(b.leftText ?? '', b.rightText, font));
         break;
     }
   }

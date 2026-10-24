@@ -1,0 +1,19 @@
+# SEC-2 (аудит, волна 2): автоматический мониторинг уязвимостей и устареваний
+# зависимостей. Weekly-расписание; для npm — только прод- и дев-зависимости,
+# для GitHub Actions — версии экшенов. PR создаётся при наличии обновления.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "ci"

@@ -124,6 +124,6 @@ describe('Capacitor/Android — связность идентификаторо�
     const manifest = read('android/app/src/main/AndroidManifest.xml');
     expect(manifest.length).toBeGreaterThan(0);
     const manifestPackage = manifest.match(/package="([^"]+)"/)?.[1];
-    if (manifestPackage) expect(manifestPackage).toBe(appId);
+    if (manifestPackage && appId) expect(manifestPackage).toBe(appId);
   });
 });

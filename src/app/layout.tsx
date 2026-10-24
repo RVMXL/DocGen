@@ -25,6 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        {/* SEC-1 (аудит, волна 2): defense-in-depth для статического экспорта.
+            Разрешены только собственные ресурсы + инлайн (статический Next инлайнит
+            flight-данные и критический CSS); object/base-uri/form-action закрыты.
+            scheme-специфика WebView (capacitor://, app:// Electron) не ломается:
+            'self' совпадает с origin страницы. frame-ancestors в meta не работает
+            по спецификации CSP — щёлкается только HTTP-заголовком на хостинге. */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'"
+        />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body className="antialiased bg-background text-foreground min-h-screen flex flex-col">
         {children}
         {/* ENG-2 (аудит): контейнер sonner — без него toast.success/error из

@@ -14,18 +14,19 @@ import { PDFDocument, PDFDict, PDFName } from 'pdf-lib';
 import { buildPdf } from '../src/lib/docgen/pdf';
 import type { DocBlock } from '../src/lib/types';
 
-let server: { stop(): void } | null = null;
+let server: { stop(closeActiveConnections?: boolean): void } | null = null;
 
 beforeAll(async () => {
   const path = await import('node:path');
   const FONTS_DIR = path.join(import.meta.dir, '..', 'public', 'fonts');
   const srv = Bun.serve({
     port: 0,
-    fetch(req) {
+    async fetch(req) {
       const url = new URL(req.url);
       const file = path.join(FONTS_DIR, path.basename(url.pathname));
       const f = Bun.file(file);
-      return new Response(f.exists ? f : new Response(null, { status: 404 }));
+      if (await f.exists) return new Response(f);
+      return new Response(null, { status: 404 });
     },
   });
   server = srv;

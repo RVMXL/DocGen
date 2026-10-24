@@ -6,9 +6,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // SEC-4 (аудит, волна 2): type-check при сборке больше не отключается —
+  // регрессия типов падает в CI (tsc --noEmit по проекту чистый).
   reactStrictMode: false,
 };
 
