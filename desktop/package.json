@@ -1,7 +1,7 @@
 {
   "name": "docgen",
   "productName": "DocGen",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "DocGen — генератор официальных документов (Россия и СНГ)",
   "main": "main.cjs",
   "author": "RVMXL",
