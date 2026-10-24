@@ -74,7 +74,12 @@ export function Onboarding({ onDone }: { onDone: () => void }) {
   const available = COUNTRIES.filter((c) => buildCatalog(c.code) !== null);
   const q = query.trim().toLowerCase();
   const filtered = q.length > 0
-    ? available.filter((c) => c.nameRu.toLowerCase().includes(q) || c.nameEn.toLowerCase().includes(q))
+    ? available.filter((c) =>
+        c.nameRu.toLowerCase().includes(q) ||
+        c.nameEn.toLowerCase().includes(q) ||
+        countryName(c, locale).toLowerCase().includes(q) || // название на языке интерфейса
+        Object.values(c.nameI18n ?? {}).some((v) => (v ?? '').toLowerCase().includes(q)) // и на остальных 26
+      )
     : available;
 
   // ПРИ ВЫБОРЕ СТРАНЫ прокручиваем к кнопке «Начать» (требование пользователя)

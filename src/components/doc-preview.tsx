@@ -53,7 +53,7 @@ function RenderBlock({ block }: { block: DocBlock }) {
     case 'attachment':
       return (
         <div className="my-4">
-          <p>{block.label ?? 'Приложение:'}</p>
+          <p>{block.label}</p>
           {block.items.map((item, i) => (
             <p key={i} className="leading-relaxed pl-10">{i + 1}. {item}</p>
           ))}
@@ -100,7 +100,7 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
         case 'list': return { ...b, items: b.items.map(fill) };
         case 'attachment': return { ...b, items: b.items.map(fill) };
         case 'signature':
-          return { ...b, leftText: fill(b.leftText ?? '{{date_today}}'), rightText: fill(b.rightText ?? '________________') };
+          return { ...b, leftText: fill(b.leftText ?? '{{date_today}}'), rightText: fill(b.rightText) };
         default: return b;
       }
     });
@@ -121,6 +121,8 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
   const print = () => {
     window.print();
   };
+
+  const native = isNative(); // в WebView нет системного диалога печати
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4 pb-10">
@@ -151,9 +153,11 @@ export function DocPreview({ template, lang, data, onBack }: Props) {
             {busy === 'pdf' ? <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden /> : <FileText className="w-4 h-4 mr-2" aria-hidden />}
             {busy === 'pdf' ? t.downloading : t.downloadPdf}
           </Button>
-          <Button onClick={print} variant="outline" className="min-h-[44px] flex-1 sm:flex-none">
-            <Printer className="w-4 h-4 mr-2" aria-hidden /> {t.print}
-          </Button>
+          {!native && (
+            <Button onClick={print} variant="outline" className="min-h-[44px] flex-1 sm:flex-none">
+              <Printer className="w-4 h-4 mr-2" aria-hidden /> {t.print}
+            </Button>
+          )}
         </CardContent>
       </Card>
 

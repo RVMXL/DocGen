@@ -20,13 +20,14 @@ import { registerBackHandler } from '@/lib/native';
 interface Props {
   template: TemplateDTO;
   lang: Locale;
+  initialData?: Record<string, string>; // возврат из предпросмотра — введённое не теряется
   onBack: () => void;
   onNext: (data: Record<string, string>) => void;
 }
 
-export function TemplateForm({ template, lang, onBack, onNext }: Props) {
+export function TemplateForm({ template, lang, initialData, onBack, onNext }: Props) {
   const t = uiFor(lang);
-  const [data, setData] = useState<Record<string, string>>({});
+  const [data, setData] = useState<Record<string, string>>(initialData ?? {});
   const [showErrors, setShowErrors] = useState(false);
 
   // системный «Назад» на форме = возврат к каталогу
@@ -40,9 +41,22 @@ export function TemplateForm({ template, lang, onBack, onNext }: Props) {
   const submit = () => {
     if (missing.length > 0) {
       setShowErrors(true);
+      // фокус на первое незаполненное поле — пользователь видит, что именно упущено
+      document.getElementById(missing[0])?.focus();
       return;
     }
     onNext(data);
+  };
+
+  // Enter в однострочном поле = «Сгенерировать» (в textarea — перенос строки)
+  const onFieldKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== 'Enter') return;
+    const el = e.target as HTMLElement;
+    if (el.tagName === 'TEXTAREA') return;
+    if (el.tagName === 'INPUT') {
+      e.preventDefault();
+      submit();
+    }
   };
 
   const label = (f: (typeof template.fields)[number]) => fieldLabel(f, lang);
@@ -88,7 +102,7 @@ export function TemplateForm({ template, lang, onBack, onNext }: Props) {
 
       <Card>
         <CardContent className="p-4 sm:p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" onKeyDown={onFieldKeyDown}>
             {template.fields.map((f) => {
               const lbl = label(f);
               // Значение попадает в документ → образец на языке документа (приоритет)

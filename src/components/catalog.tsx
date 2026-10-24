@@ -1,7 +1,7 @@
 'use client';
 // Каталог: большие группы → подгруппы → документы. Поиск по всем шаблонам.
 // Язык интерфейса — любой из 21 локали; названия групп — titleI18n, шаблонов — titleDoc.
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -11,7 +11,7 @@ import {
   FileSignature, Languages,
 } from 'lucide-react';
 import type { CatalogResponse, GroupDTO, TemplateDTO } from '@/lib/types';
-import { UI, uiFor, catTitle, tplTitle, type Locale } from '@/lib/i18n';
+import { UI, uiFor, catTitle, tplTitle, countryName, type Locale } from '@/lib/i18n';
 import { docLangNative } from '@/lib/doclangs';
 import { registerBackHandler } from '@/lib/native';
 
@@ -30,12 +30,24 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
   const t = uiFor(lang);
   const [activeGroup, setActiveGroup] = useState<GroupDTO | null>(null);
   const [query, setQuery] = useState('');
+  const listScrollY = useRef(0); // позиция списка каталога при входе в группу
+
+  const openGroup = (g: GroupDTO) => {
+    listScrollY.current = window.scrollY;
+    setActiveGroup(g);
+    window.scrollTo({ top: 0 });
+  };
+  const closeGroup = () => {
+    setActiveGroup(null);
+    // возвращаем пользователя к той же карточке списка (ENG-15)
+    requestAnimationFrame(() => window.scrollTo({ top: listScrollY.current }));
+  };
 
   // системный «Назад» внутри каталога: из группы → к списку, сброс поиска
   useEffect(() => {
     return registerBackHandler(() => {
       if (activeGroup) {
-        setActiveGroup(null);
+        closeGroup();
         return true;
       }
       if (query) {
@@ -74,7 +86,7 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
       <div className="w-full max-w-3xl mx-auto px-4">
         <button
           type="button"
-          onClick={() => setActiveGroup(null)}
+          onClick={closeGroup}
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mt-4 min-h-[44px]"
         >
           <ArrowLeft className="w-4 h-4" aria-hidden /> {t.allGroups}
@@ -111,12 +123,13 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
     <div className="w-full max-w-3xl mx-auto px-4">
       <h2 className="text-xl sm:text-2xl font-bold mt-4">{t.catalogTitle}</h2>
       <p className="text-muted-foreground text-sm mt-1 mb-4">
-        {t.catalogSub} · {catalog.country.flag} {lang === 'en' ? catalog.country.nameEn : catalog.country.nameRu} · {totalDocs} {t.documentsCount}
+        {t.catalogSub} · {catalog.country.flag} {countryName(catalog.country, lang)} · {totalDocs} {t.documentsCount}
       </p>
 
       <div className="relative mb-5">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground aria-hidden" aria-hidden />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" aria-hidden />
         <Input
+          type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t.searchPlaceholder}
@@ -138,7 +151,7 @@ export function Catalog({ catalog, lang, onOpenTemplate, onBack }: Props) {
             const Icon = ICONS[g.icon] ?? FileText;
             const count = g.subgroups.reduce((a, s) => a + s.templates.length, 0);
             return (
-              <button key={g.id} type="button" onClick={() => setActiveGroup(g)} className="text-left outline-none focus-visible:ring-2 focus-visible:ring-teal-600 rounded-xl">
+              <button key={g.id} type="button" onClick={() => openGroup(g)} className="text-left outline-none focus-visible:ring-2 focus-visible:ring-teal-600 rounded-xl">
                 <Card className="h-full transition-all hover:border-teal-600/50 hover:shadow-md hover:bg-teal-50/30">
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between">

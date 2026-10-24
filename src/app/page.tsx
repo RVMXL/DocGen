@@ -20,11 +20,11 @@ import type { TemplateDTO } from '@/lib/types';
 
 type View =
   | { name: 'catalog' }
-  | { name: 'form'; tpl: TemplateDTO }
+  | { name: 'form'; tpl: TemplateDTO; data?: Record<string, string> }
   | { name: 'preview'; tpl: TemplateDTO; data: Record<string, string> }
   | { name: 'handwritten'; tpl: TemplateDTO }
   | { name: 'govportal'; tpl: TemplateDTO }
-  | { name: 'sample-form'; tpl: TemplateDTO };
+  | { name: 'sample-form'; tpl: TemplateDTO; data?: Record<string, string> };
 
 export default function Home() {
   const { lang, country, onboarded, setOnboarded } = useApp();
@@ -163,8 +163,13 @@ export default function Home() {
           <TemplateForm
             template={view.tpl}
             lang={locale}
+            initialData={view.data}
             onBack={() => setStack((s) => s.slice(0, -1))}
-            onNext={(data) => pushView({ name: 'preview', tpl: view.tpl, data })}
+            onNext={(data) => {
+              // данные формы живут в стеке: «Назад» из предпросмотра не теряет ввод (ENG-14)
+              setStack((s) => s.map((v) => (v === view && (v.name === 'form' || v.name === 'sample-form') ? { ...v, data } : v)));
+              pushView({ name: 'preview', tpl: view.tpl, data });
+            }}
           />
         ) : (
           <DocPreview
