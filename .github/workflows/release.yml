@@ -288,7 +288,7 @@ jobs:
         run: |
           set -euo pipefail
           VER="${VER#v}"
-          python3 - <<'PY' > release-notes.md
+          python3 - <<'PY'
           import os, re, pathlib, sys
 
           ver = os.environ["VER"]
