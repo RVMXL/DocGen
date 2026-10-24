@@ -309,8 +309,8 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '行政不服申立書', titleEn: 'Administrative appeal (fukuzen moshitate)',
     descRu: '行政不服申立て: objection to an administrative disposition within 3 months (行政不服審査法); скопирайте реквизиты处分 и grounds.',
     descEn: 'Administrative appeal against a disposition within three months (Administrative Appeal Act).',
-    refRu: '行政不服審査法 (平成26年法律第160号) 第11条',
-    refEn: 'Administrative Appeal Act (Act No. 160 of 2014), Art. 11',
+    refRu: '行政不服審査法 (平成26年法律第68号) 第2条・第18条',
+    refEn: 'Administrative Appeal Act (Act No. 68 of 2014), Arts. 2 and 18',
     fields: [
       F('agency_name', '処分した行政庁', 'Agency', 'text', { half: true, placeholderDoc: '東京都福祉保健局' }),
       F('agency_address', '宛先', 'Address', 'text', { half: true, placeholderDoc: '〒163-8001 東京都新宿区西新宿2-8-1' }),
@@ -323,7 +323,7 @@ export const TEMPLATES_JP: TplDef[] = [
     body: [
       { type: 'lines', align: 'right', items: ['{{agency_name}} 御中', '{{agency_address}}', '', '申立人: {{applicant_name}}', '{{applicant_address}}'] },
       { type: 'title', text: '行政不服申立書' },
-      { type: 'paragraph', text: '上記の処分（{{disposition}}）に対し、行政不服審査法第11条に基づき不服申立てを行います。', justify: true },
+      { type: 'paragraph', text: '上記の処分（{{disposition}}）に対し、行政不服審査法第18条に基づき不服申立てを行います。', justify: true },
       { type: 'paragraph', text: '理由: {{grounds}}', justify: true },
       { type: 'paragraph', text: '求める内容: {{relief}}。証拠書類を添付します。', justify: true },
       stdSign('{{applicant_name}}'),

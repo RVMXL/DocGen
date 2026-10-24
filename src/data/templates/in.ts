@@ -7,7 +7,7 @@
 // Negotiable Instruments Act, 1881, ss. 4, 138, 142; Consumer Protection Act, 2019, ss. 35, 39;
 // Right to Information Act, 2005, ss. 6, 19; Income-tax Act, 1961, ss. 154, 203, 237; циркуляр RBI
 // о защите клиентов (Fair Practices Code — Customer Protection, 2017); Electricity (Rights of
-// Consumers) Rules, 2020 (CGRF); India Post Office Act, 1898; Noise Pollution (Regulation and
+// Consumers) Rules, 2020 (CGRF); India Post Office Act, 2023; Noise Pollution (Regulation and
 // Control) Rules, 2000; Aadhaar Act, 2016; Indian Medical Council (Professional Conduct, Etiquette
 // and Ethics) Regulations, 2002 (выдача медзаписей). Новые уголовные кодексы 2023–2024: Bharatiya
 // Nagarik Suraksha Sanhita, 2023 (BNSS) ss. 173 (FIR/e-жалоба) и 144 (содержание жены/детей/родителей);
@@ -787,10 +787,10 @@ export const TEMPLATES_IN: TplDef[] = [
   {
     slug: 'in-post-lost-article', kind: 'STANDARD', categorySlug: 'post-claims',
     titleRu: 'Претензия India Post за утрату / повреждение', titleEn: 'India Post claim for a lost / damaged article',
-    descRu: 'Претензия в почтовое отделение об утрате, недоставке или повреждении отправления (Speed Post / Registered / Insured): номер, дата, содержимое и ценность; возмещение по India Post Office Act, 1898 и почтовым правилам.',
-    descEn: 'Claim to the post office for loss, non-delivery or damage of an article (Speed Post / Registered / Insured): number, booking date, contents and value; compensation under the India Post Office Act, 1898 and postal rules.',
-    refRu: 'India Post Office Act, 1898 и почтовые правила (возмещение за утрату / повреждение отправлений)',
-    refEn: 'India Post Office Act, 1898 and postal rules (indemnity for lost or damaged articles)',
+    descRu: 'Претензия в почтовое отделение об утрате, недоставке или повреждении отправления (Speed Post / Registered / Insured): номер, дата, содержимое и ценность; возмещение по India Post Office Act, 2023 и почтовым правилам.',
+    descEn: 'Claim to the post office for loss, non-delivery or damage of an article (Speed Post / Registered / Insured): number, booking date, contents and value; compensation under the India Post Office Act, 2023 and postal rules.',
+    refRu: 'India Post Office Act, 2023 и почтовые правила (возмещение за утрату / повреждение отправлений)',
+    refEn: 'India Post Office Act, 2023 and postal rules (indemnity for lost or damaged articles)',
     fields: [
       F('office_name', 'Почтовое отделение', 'Post office', 'text', { half: true, placeholderDoc: 'Andheri West Head Post Office, Mumbai 400053' }),
       F('claimant_name', 'Ваше имя', 'Your full name', 'text', { half: true, placeholderDoc: 'Pooja Iyer' }),
@@ -808,7 +808,7 @@ export const TEMPLATES_IN: TplDef[] = [
       { type: 'paragraph', text: 'Sir/Madam,', noIndent: true },
       { type: 'paragraph', text: 'I, {{claimant_name}} of {{claimant_address}}, booked the following article at your office: {{article_type}}, article no. {{article_no}}, booked on {{booking_date}}, addressed to {{destination}}. Contents and value: {{contents_value}}.', justify: true },
       { type: 'paragraph', text: '{{problem}}', justify: true },
-      { type: 'paragraph', text: 'I request that a thorough enquiry be caused into the disappearance / damage of the article and that compensation be paid to me in accordance with the India Post Office Act, 1898 and the postal rules applicable to the class of the article (registration / insurance value).', justify: true },
+      { type: 'paragraph', text: 'I request that a thorough enquiry be caused into the disappearance / damage of the article and that compensation be paid to me in accordance with the India Post Office Act, 2023 and the postal rules applicable to the class of the article (registration / insurance value).', justify: true },
       { type: 'paragraph', text: 'The booking receipt and the tracking extracts are enclosed. Kindly acknowledge this claim and inform me of the enquiry reference and the expected time of disposal.', justify: true },
       { type: 'attachment', items: ['Original booking receipt;', 'Tracking status printout;', 'Proof of the value of the contents (invoice / photographs), if any.'], label: 'Enclosures:' },
       stdSign('{{claimant_name}}'),

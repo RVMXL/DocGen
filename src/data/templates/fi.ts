@@ -10,7 +10,7 @@
 // myöntää Kela. Kuluttajansuojalaki (38/1978): 5 luku — tavaran virhe ja oikaisu;
 // 6 luku 16 § — 14 päivän peräyttämisoikeus etämyynnissä. Laki asuinhuoneiston
 // vuokrauksesta (481/1995): 5 luku 23 § — vuokranantajan kunnossapitovelvollisuus.
-// Velkakirjalaki (622/1947) — velkakirja; korkolaki (633/1969) — viivästyskorko.
+// Velkakirjalaki (622/1947) — velkakirja; korkolaki (633/1982) — viivästyskorko.
 // Oikeudenkäymiskaari (4/1734): 10 luku 1 § — riita-asian vireillepano hakemuksella;
 // 12 luku 3 § — asiamiehen käyttö tuomioistuimessa. Laki kuluttajariidoista (8/2007)
 // — Kuluttajariitalautakunta. Tietosuojalaki (1050/2018) ja EU:n tietosuoja-asetus
@@ -359,11 +359,11 @@ export const TEMPLATES_FI: TplDef[] = [
     slug: 'fi-court-maksuvaatimus', kind: 'STANDARD', categorySlug: 'court-claims',
     titleRu: 'Требование о возврате долга (по расписке)',
     titleDoc: 'Maksuvaatimus velalliselle', titleEn: 'Payment demand to the debtor',
-    descRu: 'Письменное требование к заёмщику возврата долга по velkakirja. По Velkakirjalaki (622/1947) расписка служит доказательством долга; за просрочку начисляется пеня по Korkolaki (633/1969). При отказе — обращение в käräjäoikeus.',
-    descEn: 'Written demand to the borrower to repay a debt evidenced by an IOU (velkakirja). Under the Promissory Notes Act (622/1947) the note evidences the debt; default interest accrues under the Interest Act (633/1969).',
+    descRu: 'Письменное требование к заёмщику возврата долга по velkakirja. По Velkakirjalaki (622/1947) расписка служит доказательством долга; за просрочку начисляется пеня по Korkolaki (633/1982). При отказе — обращение в käräjäoikeus.',
+    descEn: 'Written demand to the borrower to repay a debt evidenced by an IOU (velkakirja). Under the Promissory Notes Act (622/1947) the note evidences the debt; default interest accrues under the Interest Act (633/1982).',
     descDoc: 'Maksuvaatimus velalliselle: velkapääoman ja viivästyskorun suorittaminen 14 päivän määräaikana.',
-    refRu: 'Velkakirjalaki (622/1947) — расписка; Korkolaki (633/1969) — пеня за просрочку',
-    refEn: 'Promissory Notes Act (622/1947) — IOU; Interest Act (633/1969) — default interest',
+    refRu: 'Velkakirjalaki (622/1947) — расписка; Korkolaki (633/1982) — пеня за просрочку',
+    refEn: 'Promissory Notes Act (622/1947) — IOU; Interest Act (633/1982) — default interest',
     fields: [
       // org_name удалён (TPL-1): адресат уже назван в шапке как {{debtor_name}}
       F('applicant_name', 'Ваше имя', 'Your full name', 'text', { half: true, placeholderDoc: 'Aino Korhonen' }),
@@ -385,7 +385,7 @@ export const TEMPLATES_FI: TplDef[] = [
       { type: 'title', text: 'Maksuvaatimus' },
       greet('Hyvä {{debtor_name}},'),
       { type: 'paragraph', text: 'Olen myöntänyt teille {{loan_date}} {{loan_amount}} suuruisen lainan velkakirjalain (622/1947) mukaisella velkakirjalla. Lainan eräpäivä {{due_date}} on ohitettu, eikä velkaa ole suoritettu.', justify: true },
-      { type: 'paragraph', text: 'Vaadin, että maksette velkapääoman {{loan_amount}} sekä korkolain (633/1969) mukaisen viivästyskoron ajalta eräpäivästä maksupäivään. Pyydän maksua neljäntoista (14) päivän kuluessa tämän kirjeen päiväyksestä.', justify: true },
+      { type: 'paragraph', text: 'Vaadin, että maksette velkapääoman {{loan_amount}} sekä korkolain (633/1982) mukaisen viivästyskoron ajalta eräpäivästä maksupäivään. Pyydän maksua neljäntoista (14) päivän kuluessa tämän kirjeen päiväyksestä.', justify: true },
       { type: 'paragraph', text: 'Mikäli maksua ei suoriteta määräaikana, panen asian käräjäoikeuden ratkaistavaksi ja perin saatavani lisänä asian käsittelystä aiheutuneet kulut.', justify: true },
       sign('{{applicant_name}}'),
     ],

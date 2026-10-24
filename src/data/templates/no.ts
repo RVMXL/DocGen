@@ -13,7 +13,7 @@
 // prisavslag og erstatning. Husleieloven (1999-03-26 nr 17): § 1-13 — utleiers
 // vedlikeholdsplikt. Gjeldsbrevlova (1939-06-16 nr 4) og avtaleloven (1918-05-31 nr 4;
 // §§ 17 ff. — fullmakt) — lån og betalingsoppfordring.
-// Tvisteloven (2005-06-17 nr 90) kap. 31 — forliksrådsbehandling; forvaltningsloven
+// Tvisteloven (2005-06-17 nr 90) kap. 3 — forliksrådsbehandling; forvaltningsloven
 // (1967-02-10) §§ 28–32 — klage på vedtak (frist tre uker); skattebetalingsloven
 // (2005-12-16 nr 97) § 8-3 — klage på skattefastsettelsen. Personopplysningsloven
 // (2018-06-15 nr 38) og personvernforordningen (GDPR) art. 77 — klage til Datatilsynet.
@@ -403,8 +403,8 @@ export const TEMPLATES_NO: TplDef[] = [
     descRu: 'Требование вернуть просроченный частный заём: сумма, дата займа, срок оплаты; упоминание forliksråd (tvisteloven) и gjeldsbrev/utleggstrekk (gjeldsbrevlova) при неоплате.',
     descEn: 'Demand for repayment of an overdue private loan: amount, loan date and payment deadline, with reference to the conciliation board and to enforcement if payment is not made.',
     descDoc: 'Betalingsoppfordring til debitor om å betale forfallent lån, med frist og varsel om forliksråd.',
-    refRu: 'Gjeldsbrevlova (1939-06-16 nr 4); tvisteloven (2005-06-17 nr 90) kap. 31',
-    refEn: 'Promissory Notes Act (1939 no. 4); Dispute Act (2005 no. 90) ch. 31',
+    refRu: 'Gjeldsbrevlova (1939-06-16 nr 4); tvisteloven (2005-06-17 nr 90) kap. 3',
+    refEn: 'Promissory Notes Act (1939 no. 4); Dispute Act (2005 no. 90) ch. 3',
     fields: [
       ...personBase([
         F('skyldner_navn', 'Имя должника', 'Debtor name', 'text', { half: true, placeholderDoc: 'Ola Skyldner' }),
@@ -431,11 +431,11 @@ export const TEMPLATES_NO: TplDef[] = [
     slug: 'no-court-forliksradet', kind: 'STANDARD', categorySlug: 'court-lawsuits',
     titleRu: 'Иск в посреднический совет (forliksrådet)',
     titleDoc: 'Krav til forliksrådet', titleEn: 'Claim to the conciliation board',
-    descRu: 'Исковое требование в forliksråd по гл. 31 tvisteloven: стороны, сумма, суть спора, требование о проведении медиации и компенсации издержек.',
-    descEn: 'Claim filed with the Norwegian conciliation board under chapter 31 of the Dispute Act: parties, amount, basis of the claim and request for mediation and costs.',
-    descDoc: 'Krav til forliksrådet om mekling etter tvisteloven kapittel 31, med beskrivelse av grunnlaget for kravet.',
-    refRu: 'Tvisteloven (2005-06-17 nr 90) kap. 31 — forliksrådsbehandling',
-    refEn: 'Dispute Act (2005 no. 90) ch. 31 — conciliation board proceedings',
+    descRu: 'Исковое требование в forliksråd по гл. 3 tvisteloven: стороны, сумма, суть спора, требование о проведении медиации и компенсации издержек.',
+    descEn: 'Claim filed with the Norwegian conciliation board under chapter 3 of the Dispute Act: parties, amount, basis of the claim and request for mediation and costs.',
+    descDoc: 'Krav til forliksrådet om mekling etter tvisteloven kapittel 3, med beskrivelse av grunnlaget for kravet.',
+    refRu: 'Tvisteloven (2005-06-17 nr 90) kap. 3 — forliksrådsbehandling',
+    refEn: 'Dispute Act (2005 no. 90) ch. 3 — conciliation board proceedings',
     fields: [
       ...personBase([
         F('forliksrad', 'Посреднический совет', 'Conciliation board', 'text', { half: true, placeholderDoc: 'Oslo forliksråd' }),
@@ -448,7 +448,7 @@ export const TEMPLATES_NO: TplDef[] = [
     body: [
       personHdr('{{forliksrad}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: krav mot {{motpart_navn}}'),
-      { type: 'paragraph', text: 'Jeg har hermed lagt fram krav mot {{motpart_navn}} (adresse: {{motpart_adresse}}) for forliksrådsbehandling etter tvisteloven kapittel 31. Kravet lyder på {{krav_belop}} og gjelder {{krav_bakgrunn}}.', justify: true },
+      { type: 'paragraph', text: 'Jeg har hermed lagt fram krav mot {{motpart_navn}} (adresse: {{motpart_adresse}}) for forliksrådsbehandling etter tvisteloven kapittel 3. Kravet lyder på {{krav_belop}} og gjelder {{krav_bakgrunn}}.', justify: true },
       { type: 'paragraph', text: 'Jeg har tidligere forsøkt å få kravet dekket gjennom henvendelser til motparten uten resultat, og partene har ikke inngått minnelig oppgjør. Jeg ber derfor om at forliksrådet iverksetter mekling.', justify: true },
       { type: 'list', items: ['Kravet tilskrives renter etter forsinkelsesrenteloven', 'Omkostninger til forliksrådsbehandlingen legges på motparten'] },
       mvh(),

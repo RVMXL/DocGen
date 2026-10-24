@@ -3,10 +3,10 @@
 // Código do Trabalho (Lei 7/2009, de 12 de fevereiro): art. 238 — férias (22 dias úteis por ano);
 // art. 249 — faltas justificadas (doença; comunicação e justificação, Decreto Regulamentar 9/98);
 // art. 218 — faltas para assistência inadiável à família (até 15 dias por ano);
-// art. 204 — horário individual de trabalho; art. 296 — certificado de trabalho;
+// art. 204 — horário individual de trabalho; art. 345 — certificado de trabalho;
 // art. 366 — resolução do contrato pelo trabalhador (pré-aviso de 30 dias, contratos ≥ 2 anos,
 // ou 15 dias); arts. 389 e seguintes — impugnação judicial do despedimento (prazo de 60 dias).
-// Lei 84/2012, de 26 de dezembro — licença parental; DL 261/93 — licença sem retribuição
+// CT (Lei 7/2009) arts. 33.º–47.º — licença parental; DL 261/93 — licença sem retribuição
 // (assistência a filhos e netos). Lei 24/96 — defesa do consumidor; DL 67/2003 — garantia
 // de conformidade (2 anos). Código Civil: arts. 804-805 (constituição em mora), 808
 // (interpelação), 1026 e ss. (mútuo), 510 (reconhecimento de dívida), 1445 (vizinhança),
@@ -177,10 +177,10 @@ export const TEMPLATES_PT: TplDef[] = [
     slug: 'pt-work-licenca-parental', kind: 'STANDARD', categorySlug: 'work-family',
     titleRu: 'Уведомление о родительском отпуске (licença parental)',
     titleDoc: 'Comunicação de licença parental inicial', titleEn: 'Initial parental leave notice',
-    descRu: 'Уведомление работодателя о начале родительского отпуска (licença parental inicial) по Lei 84/2012: 120, 150 или 180 дней; пособие оформляется в Segurança Social.',
-    descEn: 'Notice to the employer of initial parental leave under Lei 84/2012: 120, 150 or 180 days; the corresponding benefit is claimed from Social Security.',
-    refRu: 'Lei 84/2012, de 26 de dezembro — licença parental inicial (120/150/180 dias)',
-    refEn: 'Lei 84/2012, of 26 December — initial parental leave (120/150/180 days)',
+    descRu: 'Уведомление работодателя о начале родительского отпуска (licença parental inicial) по Código do Trabalho (Lei 7/2009), art. 33.º–47.º: 120, 150 или 180 дней; пособие оформляется в Segurança Social.',
+    descEn: 'Notice to the employer of initial parental leave under the Labour Code (Lei 7/2009), arts. 33–47: 120, 150 or 180 days; the corresponding benefit is claimed from Social Security.',
+    refRu: 'Código do Trabalho (Lei 7/2009), art. 33.º–47.º — licença parental inicial (120/150/180 dias)',
+    refEn: 'Labour Code (Lei 7/2009), arts. 33–47 — initial parental leave (120/150/180 days)',
     fields: [
       ...workFields([
         F('nome_filho', 'Имя ребёнка', 'Child’s name', 'text', { half: true, placeholderDoc: 'Miguel Ferreira Silva' }),
@@ -193,7 +193,7 @@ export const TEMPLATES_PT: TplDef[] = [
       { type: 'title', text: 'COMUNICAÇÃO DE LICENÇA PARENTAL INICIAL' },
       greet(),
       p('Assunto: Comunicação de licença parental inicial.'),
-      p('Nos termos da Lei n.º 84/2012, de 26 de dezembro, comunico que pretendo gozar a licença parental inicial no regime de {{regime}}, com início em {{date_from}}, para prestar assistência ao meu filho {{nome_filho}}.'),
+      p('Nos termos do Código do Trabalho (Lei n.º 7/2009, de 12 de fevereiro), artigos 33.º a 47.º, comunico que pretendo gozar a licença parental inicial no regime de {{regime}}, com início em {{date_from}}, para prestar assistência ao meu filho {{nome_filho}}.'),
       p('O subsídio correspondente será requerido à Segurança Social. Permaneço à disposição para organizar a cobertura das minhas funções durante o período da licença.'),
       att(['Certidão de nascimento do filho.'], 'Anexo:'),
       sign('{{applicant_name}}'),
@@ -278,10 +278,10 @@ export const TEMPLATES_PT: TplDef[] = [
     slug: 'pt-work-certificado-trabalho', kind: 'STANDARD', categorySlug: 'work-docs',
     titleRu: 'Запрос справки с работы (certificado de trabalho)',
     titleDoc: 'Pedido de certificado de trabalho', titleEn: 'Certificate of employment request',
-    descRu: 'Запрос справки о работе: даты приёма и прекращения договора, должности, место работы и характер выполняемых задач; по желанию — размер последней зарплаты (ст. 296.º CT).',
-    descEn: 'Request for a certificate of employment stating admission and termination dates, positions held, workplace and tasks performed; optionally the last monthly pay (art. 296 of the Labour Code).',
-    refRu: 'ст. 296.º Código do Trabalho (Lei 7/2009) — certificado de trabalho',
-    refEn: 'Article 296 of the Labour Code (Lei 7/2009) — certificate of employment',
+    descRu: 'Запрос справки о работе: даты приёма и прекращения договора, должности, место работы и характер выполняемых задач; по желанию — размер последней зарплаты (ст. 345.º CT).',
+    descEn: 'Request for a certificate of employment stating admission and termination dates, positions held, workplace and tasks performed; optionally the last monthly pay (art. 345 of the Labour Code).',
+    refRu: 'ст. 345.º Código do Trabalho (Lei 7/2009) — certificado de trabalho',
+    refEn: 'Article 345 of the Labour Code (Lei 7/2009) — certificate of employment',
     fields: [
       ...workFields([
         F('pedido_remuneracao', 'Что указать в справке', 'Certificate content', 'select', { options: ['constem apenas as datas de admissão e de cessação, os cargos exercidos e as funções desempenhadas', 'conste igualmente a última retribuição mensal'] }),
@@ -292,7 +292,7 @@ export const TEMPLATES_PT: TplDef[] = [
       { type: 'title', text: 'PEDIDO DE CERTIFICADO DE TRABALHO' },
       greet(),
       p('Assunto: Pedido de certificado de trabalho.'),
-      p('Ao abrigo do artigo 296.º do Código do Trabalho, venho requerer a emissão do certificado de trabalho, do qual deverão constar as datas de admissão e de cessação do contrato, os cargos exercidos, a indicação do posto de trabalho e a natureza das tarefas desempenhadas.'),
+      p('Ao abrigo do artigo 345.º do Código do Trabalho, venho requerer a emissão do certificado de trabalho, do qual deverão constar as datas de admissão e de cessação do contrato, os cargos exercidos, a indicação do posto de trabalho e a natureza das tarefas desempenhadas.'),
       p('Requeiro que: {{pedido_remuneracao}}. Agradeço a entrega do documento em suporte de papel e digital, no prazo mais curto possível.'),
       sign('{{applicant_name}}'),
     ],

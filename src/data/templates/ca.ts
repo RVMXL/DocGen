@@ -8,7 +8,7 @@
 // Security Tribunal, 30 дней); Canada Pension Plan, ss. 65–66 (reconsideration,
 // 90 дней); Employment Insurance Regulations (ROE — 5 календарных дней);
 // Income Tax Act — s. 165 (Notice of Objection, 90 дней), ss. 152(1.1), 152(4)
-// (T1 adjustment), s. 220(3) (Taxpayer Relief); PIPEDA (S.C. 2000, c. 5) — s. 8
+// (T1 adjustment), s. 220(3.1) (Taxpayer Relief); PIPEDA (S.C. 2000, c. 5) — s. 8
 // (доступ к персональным данным, 30 дней), s. 11 (жалоба в OPC);
 // Financial Consumer Agency of Canada Act; Bank Act (S.C. 1991, c. 46);
 // Canada Post Corporation Act (претензии по почте).
@@ -441,10 +441,10 @@ export const TEMPLATES_CA: TplDef[] = [
   {
     slug: 'ca-tax-relief-request', kind: 'STANDARD', categorySlug: 'tax-docs',
     titleRu: 'Запрос об отмене штрафов и процентов (Taxpayer Relief)', titleEn: 'Taxpayer relief request (penalties / interest)',
-    descRu: 'Запрос об отмене или уменьшении штрафов и процентов (Taxpayer Relief): болезнь, стихийное бедствие, задержка с документами по вине CRA, ошибка CRA. Дискреция CRA по s. 220(3) ITA.',
-    descEn: 'Request to cancel or waive penalties and interest (taxpayer relief): illness, disaster, CRA-caused delays, CRA error. Discretionary relief under section 220(3) of the Income Tax Act.',
-    refRu: 'Income Tax Act, s. 220(3) (Taxpayer Relief Provisions); Taxpayer Bill of Rights (административная политика CRA)',
-    refEn: 'Income Tax Act, s. 220(3) (taxpayer relief provisions); Taxpayer Bill of Rights (CRA administrative policy)',
+    descRu: 'Запрос об отмене или уменьшении штрафов и процентов (Taxpayer Relief): болезнь, стихийное бедствие, задержка с документами по вине CRA, ошибка CRA. Дискреция CRA по s. 220(3.1) ITA.',
+    descEn: 'Request to cancel or waive penalties and interest (taxpayer relief): illness, disaster, CRA-caused delays, CRA error. Discretionary relief under section 220(3.1) of the Income Tax Act.',
+    refRu: 'Income Tax Act, s. 220(3.1) (Taxpayer Relief Provisions); Taxpayer Bill of Rights (административная политика CRA)',
+    refEn: 'Income Tax Act, s. 220(3.1) (taxpayer relief provisions); Taxpayer Bill of Rights (CRA administrative policy)',
     warningRu: 'Срок! Запрос об отмене или уменьшении штрафов должен быть получен CRA, как правило, в течение 10 лет после окончания календарного года, к которому относится штраф; для процентов отдельного срока нет.',
     warningEn: 'Deadline! Requests to cancel or waive penalties must generally be received by the CRA within ten years after the end of the calendar year to which the penalty relates; interest relief is not subject to the ten-year limit.',
     fields: [
@@ -459,8 +459,8 @@ export const TEMPLATES_CA: TplDef[] = [
     ],
     body: [
       { type: 'lines', align: 'right', items: ['{{date_today}}', '', '{{tax_centre}}', '', 'From: {{taxpayer_name}}', 'SIN/BN: {{sin}}', 'Tax year/period: {{tax_year}}'] },
-      { type: 'title', text: 'REQUEST FOR TAXPAYER RELIEF — INCOME TAX ACT, SECTION 220(3)' },
-      { type: 'paragraph', text: 'Under the taxpayer relief provisions (section 220(3) of the Income Tax Act), I request that you {{relief_type}} totalling approximately CAD {{amount}} for the {{tax_year}} tax year/period.', justify: true },
+      { type: 'title', text: 'REQUEST FOR TAXPAYER RELIEF — INCOME TAX ACT, SECTION 220(3.1)' },
+      { type: 'paragraph', text: 'Under the taxpayer relief provisions (section 220(3.1) of the Income Tax Act), I request that you {{relief_type}} totalling approximately CAD {{amount}} for the {{tax_year}} tax year/period.', justify: true },
       { type: 'paragraph', text: 'Circumstances beyond my control prevented compliance: {{circumstances}}', justify: true },
       { type: 'paragraph', text: 'Supporting documents: {{docs}}. I have otherwise complied with my tax obligations, and I ask that the decision be made on the facts described above. Please send me the decision in writing; if relief is refused in whole or in part, please advise me of the available review options.', justify: true },
       { type: 'attachment', items: ['Documents supporting the circumstances described;', 'Copies of the relevant notices of assessment.'], label: 'Enclosures:' },

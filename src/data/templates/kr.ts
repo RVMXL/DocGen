@@ -2,7 +2,7 @@
 // Основано на законодательстве Республики Корея:
 // 근로기준법 제60조 (연차유급휴가), 민사소송법 제249조 (소장), 민법 제597조
 // (소비대차), 민법 제397조 (지연이자), 민법 제389조 (채무불이행),
-// 소비자기본법 제17조 (분쟁해결기준), 주택임대차보호법 제6조 (보증금 반환 청구).
+// 소비자기본법 제16조 (분쟁해결기준), 주택임대차보호법 제6조 (보증금 반환 청구).
 // 의료법 제23조 (진단서·의무기록 교부), 국민건강보험법 제87조 (요양급여 이의신청),
 // 초·중등교육법 제39조 (학적 등의 관리), 주택임대차보호법 제6조의3 (임대료 증액 제한).
 // Волна 3 (3-j): 국세기본법 제45조의2 (경정청구, 홈택스 — GOV_PORTAL_ONLY),
@@ -105,7 +105,7 @@ export const TEMPLATES_KR: TplDef[] = [
     slug: 'kr-claim-consumer', kind: 'STANDARD', categorySlug: 'court-claims',
     titleRu: 'Претензия продавцу (소비자 피해 보상 청구)',
     titleDoc: '소비자 피해 보상 청구서', titleEn: 'Consumer claim letter',
-    descRu: 'Претензия продавцу по ущербу потребителя. Критерии разрешения споров установлены 소비자분쟁해결기준 (소비자기본법 제17조). Ведомые комиссии — 한국소비자원.',
+    descRu: 'Претензия продавцу по ущербу потребителя. Критерии разрешения споров установлены 소비자분쟁해결기준 (소비자기본법 제16조). Ведомые комиссии — 한국소비자원.',
     descEn: 'Claim to a seller. The dispute resolution standards are set by the Consumer Dispute Resolution Standards (Framework Act on Consumers art. 17); Korea Consumer Agency assists.',
     refRu: 'ст. 17 Закона об основах защиты потребителей РК (소비자기본법)',
     refEn: 'Article 17 of the Korean Framework Act on Consumers',
@@ -127,7 +127,7 @@ export const TEMPLATES_KR: TplDef[] = [
       { type: 'title', text: '소비자 피해 보상 청구서' },
       { type: 'paragraph', text: '{{date_buy}} 귀사에서 {{product_name}}을(를) {{price}}원에 구매하였습니다. 구매 증빙: {{proof}}.', justify: true },
       { type: 'paragraph', text: '문제의 내용: {{defect}}.', justify: true },
-      { type: 'paragraph', text: '소비자기본법 제17조 및 소비자분쟁해결기준에 따라 {{demand}}을(를) 청구합니다. 본 청구서 접수일로부터 14일 이내 서면으로 회신해 주시기 바랍니다.', justify: true },
+      { type: 'paragraph', text: '소비자기본법 제16조 및 소비자분쟁해결기준에 따라 {{demand}}을(를) 청구합니다. 본 청구서 접수일로부터 14일 이내 서면으로 회신해 주시기 바랍니다.', justify: true },
       { type: 'paragraph', text: '합의가 이루어지지 않을 경우 한국소비자원 분쟁조정 및 민·형사적 조치를 검토할 예정입니다.', justify: true },
       { type: 'attachment', items: ['구매 증빙 사본;', '고객센터 상담 기록 사본.'], label: '첨부서류:' },
       stdSign('{{applicant_name}}'),

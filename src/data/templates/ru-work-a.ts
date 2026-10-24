@@ -15,8 +15,8 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
     titleEn: 'Maternity leave application',
     descRu: 'Отпуск по беременности и родам предоставляется суммарно: 70 календарных дней до родов и 70 после (всего 140); при осложнённых родах — 156, при многоплодной беременности — 194 календарных дня. Заявление подаётся работодателю вместе с листком нетрудоспособности. Пособие по беременности и родам назначает и выплачивает СФР напрямую.',
     descEn: 'Maternity leave is granted in total: 70 calendar days before childbirth and 70 after (140 in total); 156 days for complicated childbirth and 194 days for multiple pregnancy. The application is submitted to the employer together with the maternity sick-leave certificate. The maternity benefit is assigned and paid directly by the Social Fund of Russia (SFR).',
-    refRu: 'ст. 255 ТК РФ; ст. 10 Федерального закона от 19.05.1995 № 81-ФЗ',
-    refEn: 'Article 255 of the Russian Labour Code; Article 10 of Federal Law No. 81-FZ of 19.05.1995',
+    refRu: 'ст. 255 ТК РФ; ст. 10 Федерального закона от 29.12.2006 № 255-ФЗ',
+    refEn: 'Article 255 of the Russian Labour Code; Article 10 of Federal Law No. 255-FZ of 29.12.2006',
     fields: [
       F('head_position', 'Должность руководителя', 'Head position', 'text',
         { half: true, placeholderRu: 'Генеральному директору', hintRu: 'в дательном падеже' }),

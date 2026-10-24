@@ -20,7 +20,7 @@
 // (loi du 21 juin 1985) — пенсии. Loi du 22 août 2002 relative aux droits du patient:
 // ст. 9 — доступ к dossier médical (30 дней), ст. 11 — функция жалоб, médiation patient.
 // Loi du 29 mai 1959 (Pacte scolaire); Décret du 30 avril 2009 (FWB) — allocations d’études;
-// Décret « Paysage » du 7 août 2014 — высшее образование. Loi du 21 mars 1991 и почтовое
+// Décret « Paysage » du 7 novembre 2013 — высшее образование. Loi du 21 mars 1991 и почтовое
 // законодательство — bpost, универсальная почтовая служба, Arbitre de poste.
 // Loi du 20 février 1991 relative au bail résidentiel: ст. 3 — обязанности bailleur;
 // ст. 1753 Code civil — grosses réparations. Code civil, livre 5: ст. 5.126 — nuisances
@@ -895,10 +895,10 @@ export const TEMPLATES_BE: TplDef[] = [
     slug: 'be-uni-demande', kind: 'STANDARD', categorySlug: 'uni-common',
     titleRu: 'Обращение в университет (аттестаты, перенос, эквивалентность)',
     titleDoc: 'Demande adressée à l’université', titleEn: 'Request to the university',
-    descRu: 'Универсальное обращение к университету или haute école: аттестат зачисления, перенос регистрации на следующий год, эквивалентность кредитов, полученных за границей, дубликат диплома (décret « Paysage » du 7 août 2014).',
+    descRu: 'Универсальное обращение к университету или haute école: аттестат зачисления, перенос регистрации на следующий год, эквивалентность кредитов, полученных за границей, дубликат диплома (décret « Paysage » du 7 novembre 2013).',
     descEn: 'General request to a university or college: enrolment certificate, deferral of registration, equivalence of foreign credits, diploma duplicate (Landscape decree of 7 August 2014).',
-    descDoc: 'Demande adressée à l’université (décret « Paysage » du 7 août 2014 — enseignement supérieur).',
-    refRu: 'Décret du 7 août 2014 («décret Paysage», FWB) — организация высшего образования',
+    descDoc: 'Demande adressée à l’université (décret « Paysage » du 7 novembre 2013 — enseignement supérieur).',
+    refRu: 'Décret du 7 novembre 2013 («décret Paysage», FWB) — организация высшего образования',
     refEn: 'Decree of 7 August 2014 (“Landscape decree”, French Community) — higher education framework',
     fields: [
       ...admFields([
@@ -919,7 +919,7 @@ export const TEMPLATES_BE: TplDef[] = [
       ...obj('demande pour l’année académique {{annee_academique}}'),
       ...salut(),
       ...P('Par la présente, je sollicite : {{objet_demande}}, pour l’année académique {{annee_academique}}.'),
-      ...P('Conformément au décret du 7 août 2014 définissant le paysage de l’enseignement supérieur et l’organisation académique des études, je vous remercie de me répondre par écrit dans un délai raisonnable et de m’indiquer, en cas de refus, les motifs ainsi que les voies de recours.'),
+      ...P('Conformément au décret du 7 novembre 2013 définissant le paysage de l’enseignement supérieur et l’organisation académique des études, je vous remercie de me répondre par écrit dans un délai raisonnable et de m’indiquer, en cas de refus, les motifs ainsi que les voies de recours.'),
       ...pj(['Copie de ma carte d’étudiant ou d’identité', 'Documents justificatifs (le cas échéant).']),
       ...courtoisie(),
       stdSign('{{applicant_name}}'),

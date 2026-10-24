@@ -1,7 +1,7 @@
 // Шаблоны для Дании (язык документов — датский).
 // Правовые основания (Дания):
-// Ferieloven (lov nr. 226 af 24.03.2005): § 4 — 5 ugers ferie (25 arbejdsdage) pr. ferieår.
-// Funktionærloven: § 2 — opsigelsesvarsel (fra funktionær: 1 måned); § 3 — ret til arbejdsbevis
+// Ferieloven (lov nr. 910 af 27.08.2019, i kraft 01.09.2020): § 4 — 5 ugers ferie (25 arbejdsdage) pr. ferieår.
+// Funktionærloven: § 2 — opsigelsesvarsel (fra funktionær: 1 måned); § 2a — ret til arbejdsbevis
 // ved ansættelsesforholdets ophør; § 5 — ret til løn under sygdom (op til 120 dage over 12 måneder).
 // Barselsloven (2021): orlov i forbindelse med fødsel og adoption; kap. 19 — orlov af særlige
 // familiefaktorer (fx pasning af alvorligt sygt barn eller pårørende).
@@ -255,11 +255,11 @@ export const TEMPLATES_DK: TplDef[] = [
     slug: 'dk-work-arbejdsbevis', kind: 'STANDARD', categorySlug: 'work-docs',
     titleRu: 'Запрос справки с места работы (arbejdsbevis)',
     titleDoc: 'Anmodning om arbejdsbevis', titleEn: 'Request for a statement of employment',
-    descRu: 'Запрос на arbejdsbevis — справку с периодом работы, должностью и описанием задач. Работодатель обязан выдать её по окончании работы (Funktionærloven § 3).',
-    descEn: 'Request for an arbejdsbevis — a statement with the employment period, position and duties. The employer must issue one when the employment ends (§ 3 of the Salaried Employees Act).',
-    descDoc: 'Anmodning om arbejdsbevis (erhvervsreference) efter funktionærloven § 3.',
-    refRu: 'Funktionærloven § 3 — ret til arbejdsbevis ved ansættelsesforholdets ophør',
-    refEn: 'Salaried Employees Act § 3 — right to a statement of employment upon termination',
+    descRu: 'Запрос на arbejdsbevis — справку с периодом работы, должностью и описанием задач. Работодатель обязан выдать её по окончании работы (Funktionærloven § 2a).',
+    descEn: 'Request for an arbejdsbevis — a statement with the employment period, position and duties. The employer must issue one when the employment ends (§ 2a of the Salaried Employees Act).',
+    descDoc: 'Anmodning om arbejdsbevis (erhvervsreference) efter funktionærloven § 2a.',
+    refRu: 'Funktionærloven § 2a — ret til arbejdsbevis ved ansættelsesforholdets ophør',
+    refEn: 'Salaried Employees Act § 2a — right to a statement of employment upon termination',
     fields: [
       ...workFields([
         F('date_from', 'Период работы с', 'Employment from', 'date', { half: true }),
@@ -272,7 +272,7 @@ export const TEMPLATES_DK: TplDef[] = [
       { type: 'paragraph', text: 'Emne: Anmodning om arbejdsbevis', noIndent: true },
       { type: 'paragraph', text: 'Kære {{head_name}},', noIndent: true },
       { type: 'paragraph', text: 'Jeg anmoder herved om et arbejdsbevis for min ansættelse i {{org_name}} i perioden fra {{date_from}} til og med {{date_to}}.', justify: true },
-      { type: 'paragraph', text: 'Beviset bedes oplyse ansættelsesperioden, min stilling og en kortfattet beskrivelse af mine arbejdsopgaver. Efter funktionærloven § 3 har jeg ret til et sådant bevis ved ansættelsesforholdets ophør.', justify: true },
+      { type: 'paragraph', text: 'Beviset bedes oplyse ansættelsesperioden, min stilling og en kortfattet beskrivelse af mine arbejdsopgaver. Efter funktionærloven § 2a har jeg ret til et sådant bevis ved ansættelsesforholdets ophør.', justify: true },
       { type: 'paragraph', text: 'Beviset bedes udstedt på dansk, eventuelt tillige på engelsk, og kan sendes digitalt til mine kontaktoplysninger ovenfor.', justify: true },
       dkSign(),
     ],

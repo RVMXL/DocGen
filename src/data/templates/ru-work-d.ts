@@ -219,8 +219,8 @@ export const TEMPLATES_RU_WORK_D: TplDef[] = [
     titleEn: 'Request for a two-year earnings certificate',
     descRu: 'Заявление о выдаче справки о сумме заработка за два календарных года, предшествующие году обращения. Справка нужна новому работодателю для расчёта пособий по временной нетрудоспособности, по беременности и родам и по уходу за ребёнком. Выдаётся в день подачи заявления, а при прекращении работы — в день увольнения.',
     descEn: 'Application for a certificate of earnings for the two calendar years preceding the year of application. The new employer needs it to calculate sickness, maternity and childcare benefits. Issued on the day of application, or on the day of dismissal.',
-    refRu: 'ч. 4.1 ст. 4.1 Федерального закона от 29.12.2006 № 255-ФЗ',
-    refEn: 'Part 4.1 of Art. 4.1 of Federal Law No. 255-FZ of 29.12.2006',
+    refRu: 'ч. 1 ст. 14 Федерального закона от 29.12.2006 № 255-ФЗ (замена лет расчётного периода)',
+    refEn: 'Part 1 of Art. 14 of Federal Law No. 255-FZ of 29.12.2006 (replacement of calculation years)',
     fields: [
       F('head_position', 'Должность руководителя', 'Head position', 'text',
         { half: true, placeholderRu: 'Генеральному директору', hintRu: 'в дательном падеже' }),
