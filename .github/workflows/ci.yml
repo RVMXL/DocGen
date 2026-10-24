@@ -48,6 +48,9 @@ jobs:
           python3 -m pip install --quiet fonttools
           python3 tools/rename-font-names.py --check public/fonts/DocGen*.ttf
 
+      - name: "INFRA-2 (аудит): строгий type-check (tsc --noEmit)"
+        run: bunx tsc --noEmit
+
       - name: Целостность каталога (22 страны, уникальные slug, плейсхолдеры)
         run: bun tools/check-data.ts
 

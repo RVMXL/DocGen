@@ -1,0 +1,6 @@
+# CODEOWNERS — ревью обязательны для всех веток
+# Данные каталога и правовые тексты — только владелец репозитория.
+*                       @RVMXL
+/src/data/              @RVMXL
+/docs/                  @RVMXL
+/.github/workflows/     @RVMXL
