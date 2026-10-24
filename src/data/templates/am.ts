@@ -28,6 +28,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Դիմում ամենամյա վարձատրվող արձակուրդի տրամադրման մասին',
     descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. Минимальная продолжительность по ТК РА — 20 рабочих дней при пятидневной рабочей неделе (24 — при шестидневной).',
     descEn: 'Application for annual paid leave. Minimum under the Armenian Labour Code is 20 working days (5-day week) or 24 (6-day week).',
+    descDoc: 'Դիմում գործատուին՝ ամենամյա վարձատրվող արձակուրդ տրամադրելու վերաբերյալ։',
     refRu: 'ст. 159 Трудового кодекса Республики Армения',
     refEn: 'Article 159 of the Labour Code of the Republic of Armenia',
     fields: [
@@ -49,6 +50,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Դիմում վարձատրություն չպահող արձակուրդի տրամադրման մասին',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Դիմում՝ առանց վարձատրությունը պահելու արձակուրդ տրամադրելու վերաբերյալ՝ ընտանեկան և այլ հարգելի պատճառներով։',
     refRu: 'Трудовой кодекс Республики Армения',
     refEn: 'Labour Code of the Republic of Armenia',
     fields: [
@@ -73,6 +75,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Դիմում աշխատանքային պայմանագիրը սեփական ցանկությամբ դադարեցնելու վերաբերյալ',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Срок предупреждения работодателя — по ТК РА; уточните его перед подачей.',
     descEn: 'Voluntary resignation application. Check the notice period under the Armenian Labour Code before filing.',
+    descDoc: 'Դիմում գործատուին՝ աշխատանքային պայմանագիրը սեփական ցանկությամբ դադարեցնելու վերաբերյալ։',
     refRu: 'Трудовой кодекс Республики Армения',
     refEn: 'Labour Code of the Republic of Armenia',
     fields: [
@@ -93,6 +96,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Դիմում աշխատանքի հետ կապված փաստաթղթերի տրամադրման մասին',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, сведения о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Դիմում աշխատանքի հետ կապված փաստաթղթերի (աշխատավարձի տեղեկանքի, հրամանների պատճենների) տրամադրման մասին։',
     refRu: 'Трудовой кодекс Республики Армения',
     refEn: 'Labour Code of the Republic of Armenia',
     fields: [
@@ -113,6 +117,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Հավակնություն ոչ պատշաճ որակի ապրանքը վերադարձնելու վերաբերյալ',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в драмах. При отказе — суд или Комитет по защите прав потребителей (Минэкономики РА).',
     descEn: 'Pre-court claim to a seller over defective goods under Armenian consumer protection law.',
+    descDoc: 'Նախադատական հավակնություն վաճառողին՝ ոչ պատշաճ որակի ապրանքի համար վճարված գումարը վերադարձնելու վերաբերյալ։',
     refRu: 'Закон Республики Армения «О защите прав потребителей»',
     refEn: 'Law of the Republic of Armenia «On Consumer Protection»',
     fields: [
@@ -146,6 +151,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Հայցադրում փոխառության պարտքը գանձելու վերաբերյալ',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд первой инстанции по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the court of first instance.',
+    descDoc: 'Հայցադրում ստացագրով հաստատված փոխառության պարտքը գանձելու վերաբերյալ։',
     refRu: 'Гражданский кодекс РА; Гражданский процессуальный кодекс РА',
     refEn: 'Civil Code of Armenia; Civil Procedure Code of Armenia',
     fields: [
@@ -181,6 +187,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Ապառիկ (փոխառություն ֆիզիկական անձանց միջև)',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Ստացագիր՝ ֆիզիկական անձանց միջև փոխառությամբ գումար ստանալու մասին; հաստատում է փոխառության պայմանագիրը։',
     refRu: 'Гражданский кодекс Республики Армения',
     refEn: 'Civil Code of the Republic of Armenia',
     fields: [
@@ -206,6 +213,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Վստահագրություն (ընդհանուր քաղաքացիական)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок, требующих нотариального удостоверения (недвижимость), — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions.',
+    descDoc: 'Վստահագրություն փաստաթղթեր, նամակներ և տեղեկանքեր ստանալու համար; անշարժ գույքի գործարքների համար պահանջվում է նոտարական ձև։',
     refRu: 'Гражданский кодекс Республики Армения (доверенность)',
     refEn: 'Civil Code of the Republic of Armenia (power of attorney)',
     fields: [
@@ -230,6 +238,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Դիմում դպրոց՝ երեխայի պարապմունքներից բացակայության մասին',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Դիմում դպրոցի տնօրենին՝ երեխայի պարապմունքներից բացակայության պատճառների վերաբերյալ։',
     refRu: 'законодательство Республики Армения в сфере образования',
     refEn: 'Education legislation of the Republic of Armenia',
     fields: [
@@ -256,6 +265,7 @@ export const TEMPLATES_AM: TplDef[] = [
     titleDoc: 'Բողոք բժշկական օգնության որակի վերաբերյալ',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения РА; жалобы также принимает Комиссия по правам пациентов.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Բողոք բժշկական հաստատության ղեկավարին՝ ցուցաբերված բժշկական օգնության որակի վերաբերյալ։',
     refRu: 'законодательство Республики Армения в сфере здравоохранения',
     refEn: 'Healthcare legislation of the Republic of Armenia',
     fields: [

@@ -29,6 +29,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לחופשה שנתית בתשלום', titleEn: 'Annual paid leave application',
     descRu: 'Заявление на ежегодный оплачиваемый отпуск. По Закону о ежегодном отпуске (תשי"א-1951) продолжительность — от 12 до 24 дней в зависимости от стажа.',
     descEn: 'Annual paid leave application. Under the Annual Leave Law (1951), duration ranges from 12 to 24 days by seniority.',
+    descDoc: 'בקשה לחופשה שנתית בתשלום. על פי חוק חופשה שנתית, תשי"א-1951, תקופת החופשה נעה בין 12 ל-24 ימים בהתאם לוותק.',
     refRu: 'חוק חופשה שנתית, תשי"א-1951',
     refEn: 'Annual Leave Law, 5711-1951',
     fields: [
@@ -52,6 +53,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לחופשה ללא תשלום', titleEn: 'Unpaid leave application',
     descRu: 'Заявление на неоплачиваемый отпуск (חופשה ללא תשלום) по личным причинам — по соглашению с работодателем.',
     descEn: 'Unpaid leave application for personal reasons, by agreement with the employer.',
+    descDoc: 'בקשה לחופשה ללא תשלום מטעמים אישיים, בהסכמת המעביד.',
     refRu: 'חוק שכר עבודה מינימלי (התאמה לזמן עבודה); הסכמת המעביד',
     refEn: 'Minimum Wage Law (pro rata); employer agreement',
     fields: [
@@ -75,6 +77,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'מכתב התפטרות', titleEn: 'Resignation letter (התפטרות)',
     descRu: 'Заявление об увольнении по собственному желанию. По Закону об уведомлении работника и работодателя (תשס"ב-2001) работник обязан известить заранее; срок зависит от стажа (до 30 дней).',
     descEn: 'Resignation letter. Under the Advance Notice Law (2001), the employee must give advance notice; the period depends on seniority (up to 30 days).',
+    descDoc: 'מכתב התפטרות. על פי חוק הודעה לעובד ולמעביד, תשס"ב-2001, חייב העובד לתת הודעה מוקדמת; תקופת ההודעה נקבעת לפי הוותק (עד 30 יום).',
     refRu: 'חוק הודעה לעובד ולמעביד, תשס"ב-2001',
     refEn: 'Advance Notice for Dismissal and Resignation Law, 5762-2001',
     fields: [
@@ -96,6 +99,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לאישור תעסוקה ושכר', titleEn: 'Employment and salary certificate request',
     descRu: 'Запрос справки о трудоустройстве и заработке (для банка, визы, аренды). Работодатель обязан выдать по окончании работы טופס 161 и справку о стаже.',
     descEn: 'Request for employment and salary certificates (bank, visa, rental). Upon termination the employer must issue Form 161 and a seniority certificate.',
+    descDoc: 'בקשה לאישור תעסוקה ושכר (לבנק, לויזה, לשכירות דירה). עם סיום העבודה מחויב המעביד להנפיק טופס 161 ואישור ותק.',
     refRu: 'חוק הודעה לעובד ולמעביד; תקנות ביטוח לאומי (טופס 161)',
     refEn: 'Advance Notice Law; National Insurance Institute regulations (Form 161)',
     fields: [
@@ -117,6 +121,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'תלונת צרכן על מוצר פגום', titleEn: 'Consumer claim (תלונת צרכן)',
     descRu: 'Претензия продавцу. По Закону о защите потребителя (תשמ"א-1981) при дистанционной сделке можно отменить её в течение 14 дней (ст. 14ג); при дефекте — ремонт/замена/возврат.',
     descEn: 'Consumer claim. Under the Consumer Protection Law (1981), a distance transaction may be cancelled within 14 days (s. 14C); defects allow repair/replacement/refund.',
+    descDoc: 'תלונת צרכן. על פי חוק הגנת הצרכן, תשמ"א-1981, ניתן לבטל עסקה מרחוק בתוך 14 יום (סעיף 14ג); במקרה של פגם — תיקון, החלפה או החזר כספי.',
     refRu: 'חוק הגנת הצרכן, תשמ"א-1981 (סעיף 14ג; סעיפים 6–8)',
     refEn: 'Consumer Protection Law, 5741-1981 (s. 14C; ss. 6-8)',
     fields: [
@@ -149,6 +154,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'דרישה מקדימה', titleEn: 'Pre-litigation demand (דרישה מקדימה)',
     descRu: 'Досудебное письменное требование (об оплате, возврате имущества). В Израиле перед подачей иска рекомендуется направить письменную דרישה; суды малых требований (תביעות קטנות) — до 38,000 шекелей.',
     descEn: 'Pre-litigation written demand. Before filing, a written demand is recommended; small claims court (תביעות קטנות) handles claims up to 38,000 ILS.',
+    descDoc: 'דרישה מקדימה בכתב. לפני הגשת תביעה מומלץ לשלוח דרישה בכתב; בית המשפט לתביעות קטנות דן בתביעות עד 38,000 ש"ח.',
     refRu: 'חוק בתי המשפט [נוסח משולב], תשמ"ד-1984 (תביעות קטנות)',
     refEn: 'Courts Law [Consolidated Version], 5744-1984 (small claims)',
     fields: [
@@ -175,6 +181,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'התחייבות להלוואה (שטר הלוואה)', titleEn: 'Loan note (שטר הלוואה)',
     descRu: 'Расписка/соглашение о займе между частными лицами: сумма, срок, проценты, порядок возврата. Подписывается обеими сторонами в двух экземплярах; рекомендуется передача денег банковским переводом.',
     descEn: 'Loan note between individuals: amount, term, interest, repayment. Sign two copies; transfer funds via bank for a paper trail.',
+    descDoc: 'שטר הלוואה בין אנשים פרטיים: סכום, תקופה, ריבית ואופן ההחזר. נחתם בשני עותקים; מומלץ להעביר את הכספים בהעברה בנקאית לצורך תיעוד.',
     refRu: 'חוק חוזים (חלק כללי), תשל"ג-1973',
     refEn: 'Contracts (General Part) Law, 5733-1973',
     fields: [
@@ -202,6 +209,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'ייפוי כוח כללי', titleEn: 'Power of attorney (ייפוי כוח)',
     descRu: 'Общая доверенность на бытовые действия. ВНИМАНИЕ: для сделок с недвижимостью требуется зарегистрированный ייפוי כוח (Табу/РМУ); банки и госорганы часто требуют подпись заверенную (על פני פקיד) или нотариуса.',
     descEn: 'General power of attorney. NOTE: real estate requires a registered POA (Tabu/Rami); banks and authorities often require a certified or notarized signature.',
+    descDoc: 'ייפוי כוח כללי. שימו לב: לעסקאות מקרקעין נדרש ייפוי כוח רשום (טאבו/רמ"י); בנקים וגופים רשמיים דורשים לעיתים חתימה מאומתת או נוטריונית.',
     refRu: 'חוק המקרקעין, תשכ"ט-1969 (לעניין מקרקעין); חוק החוזים',
     refEn: 'Land Law, 5729-1969 (for real estate); Contracts Law',
     warningRu: 'Внимание: йофей коах для сделок с недвижимостью должен быть зарегистрирован в Управлении земельных ресурсов (טאבו/רמ״י); банки часто требуют заверенную подпись',
@@ -228,6 +236,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'הודעת היעדרות מבית הספר', titleEn: 'School absence notice',
     descRu: 'Уведомление школы об отсутствии ребёнка и его причине. Правила учебного заведения обычно требуют уведомления в день отсутствия.',
     descEn: 'Notice to the school about a child’s absence and its reason, per school rules.',
+    descDoc: 'הודעה לבית הספר על היעדרות הילד ועל סיבתה, בהתאם לכללי המוסד החינוכי.',
     refRu: 'כללי מוסד החינוך (חוזר מנכ"ל)',
     refEn: 'School rules (Ministry of Education circulars)',
     fields: [
@@ -253,6 +262,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'תלונה על שירות רפואי', titleEn: 'Healthcare complaint (תלונה)',
     descRu: 'Жалоба на медицинское обслуживание: сначала в учреждение (уполномоченный по жалобам); далее — נציבות קבילות הציבור в Министерстве здравоохранения.',
     descEn: 'Complaint to the medical institution (ombudsman), then to the Public Complaints Commissioner at the Ministry of Health.',
+    descDoc: 'תלונה על שירות רפואי: תחילה למוסד הרפואי (הממונה על תלונות הציבור), ולאחר מכן לנציבות קבילות הציבור במשרד הבריאות.',
     refRu: 'חוק זכויות החולה, תשנ"ו-1996; נציבות קבילות הציבור במשרד הבריאות',
     refEn: 'Patients’ Rights Law, 5756-1996; Ministry of Health complaints commissioner',
     fields: [
@@ -295,6 +305,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'פנייה רשמית לרשות', titleEn: 'Petition to a government authority',
     descRu: 'Письменная пения (обращение) в госорган: описание проблемы, требования; срок ответа — 45 дней (חוק הגנת הפרטיות? — нет: חוק חופש המידע / סדרי עדיפויות; standard practice).',
     descEn: 'Written petition to a government authority; standard response within 45 days under Israeli administrative practice.',
+    descDoc: 'פנייה בכתב לרשות ממשלתית; על פי הנוהג המינהלי בישראל המענה ניתן תוך 45 יום.',
     refRu: 'חוק חופש המידע, התשנ״ח-1998; נוהג מנהלי',
     refEn: 'Israeli Freedom of Information Law 5758-1998; administrative practice',
     fields: [
@@ -322,6 +333,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'כתב תביעה - תביעה קטנה', titleEn: 'Small claims statement (tik katana)',
     descRu: 'כתב תביעה לבית משפט לתביעות קטנות עד 33,700 ₪ (חוק המקרקעין? — חוק בתי המשפט [נוסח ממוזג], סעיף 65): פירוט העילה, הסכום והראיות.',
     descEn: 'Statement of claim for the small claims court (up to NIS 33,700) — Courts Consolidated Law, § 65.',
+    descDoc: 'כתב תביעה לבית המשפט לתביעות קטנות (עד 33,700 ש"ח) — חוק בתי המשפט [נוסח ממוזג], סעיף 65.',
     refRu: 'חוק בתי המשפט [נוסח ממוזג], התשמ״ד-1984, סעיף 65; תקנות התביעות הקטנות',
     refEn: 'Courts Consolidated Law 5744-1984, § 65; Small Claims Regulations',
     fields: [
@@ -349,6 +361,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לעיון ברשומה רפואית', titleEn: 'Medical records access request',
     descRu: 'בקשה לעיון ולקבלת העתק של רשומה רפואית (חוק זכויות החולה, תשנ״ו-1996, סעיף 20; חוק חופש המידע).',
     descEn: 'Request for access to and copies of medical records (Patients Rights Law 5756-1996, § 20).',
+    descDoc: 'בקשה לעיון ברשומה רפואית ולקבלת העתקים ממנה (סעיף 20 לחוק זכויות החולה, תשנ"ו-1996).',
     refRu: 'חוק זכויות החולה, תשנ״ו-1996, סעיף 20',
     refEn: 'Patients Rights Law 5756-1996, § 20',
     fields: [
@@ -374,6 +387,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'כתב תביעה כספית', titleEn: 'Civil money claim (debt recovery)',
     descRu: 'Исковое заявление о взыскании денежного долга в суд общей юрисдикции (בית משפט השלום) по общему порядку — когда малый суд (תביעות קטנות) не подходит: сумма выше порога или нужен полный процесс с доказательствами. Форма — по כלל 5 חסה"א.',
     descEn: 'Statement of claim for money owed, filed in the Magistrate’s Court under the ordinary track (when small claims is not suitable). Form per Civil Procedure Regulations Rule 5.',
+    descDoc: 'כתב תביעה כספית המוגש לבית משפט השלום בהליך הרגיל (כאשר ההליך של תביעות קטנות אינו מתאים). הצורה — על פי כלל 5 לחסה"א.',
     refRu: 'כלל 5 חסה"א תשמ"ד-1984; חוק החוזים (תרופות בשל הפרת חוזה), תשל"א-1970; פקודת הריבית וההצמדה',
     refEn: 'Rule 5 of the Civil Procedure Regulations, 5744-1984; Contracts (Remedies) Law, 5731-1970; Interest and Linkage Basic Law',
     fields: [
@@ -409,6 +423,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'כתב תביעה לפיצוי בגין נזק לרכוש', titleEn: 'Claim for compensation of property damage',
     descRu: 'Исковое заявление о возмещении ущерба имуществу (залив от соседей, повреждение машины, поломка по вине ответчика и т.п.) — по правилам о неосторожности (רשלנות) из פקודת הנזיקין; проценты и индексация — по פקודת הריבית וההצמדה.',
     descEn: 'Claim for property damage compensation (water leak, damaged vehicle, negligent damage) based on the negligence provisions of the Civil Torts Ordinance; interest and indexation per the Interest and Linkage Law.',
+    descDoc: 'כתב תביעה לפיצוי בגין נזק לרכוש (נזקי רטיבות, נזק לרכב, נזק ברשלנות) על פי הוראות הרשלנות של פקודת הנזיקין; ריבית והצמדה על פי פקודת הריבית וההצמדה.',
     refRu: 'סעיפים 1, 35 פקודת הנזיקין [נוסח חדש], תשכ"ח-1968; פקודת הריבית וההצמדה, תשמ"א-1981',
     refEn: 'Sections 1, 35 of the Civil Wrongs Ordinance [New Version], 5728-1968; Interest and Linkage Basic Law, 5741-1981',
     fields: [
@@ -447,6 +462,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'ערעור על החלטת קופת חולים', titleEn: 'Appeal against a health fund decision',
     descRu: 'Апелляция в окружную апелляционную комиссию (ועדת ערער) при Минздраве на решение больничной кассы: отказ в услуге корзины здоровья, длительное ожидание направления, размер соучастия в расходах. Сначала попробуйте внутренний апелляционный канал кассы, затем — ועדת ערער.',
     descEn: 'Appeal to the regional appeals committee (ועדת ערער) at the Ministry of Health against a health fund decision (service refusal, long wait, co-payment). Try the fund\'s internal appeals channel first, then the committee.',
+    descDoc: 'ערעור לועדת הערר המחוזית במשרד הבריאות על החלטת קופת חולים (סירוב לשירות, המתנה ממושכת, השתתפות עצמית). מומלץ קודם לנצל את ערוץ הערעור הפנימי של הקופה, ולאחר מכן לפנות לועדת הערר.',
     refRu: 'חוק ביטוח בריאות ממלכתי, תשנ"ד-1994, סעיף 56 (ועדת ערר)',
     refEn: 'National Health Insurance Law, 5754-1994, s. 56 (appeals committee)',
     fields: [
@@ -478,6 +494,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לרישום ילד לבית ספר', titleEn: 'School enrollment request',
     descRu: 'Заявление директору школы о зачислении ребёнка на новый учебный год (после садика, при переезде или смене школы). Обязательное образование регулируется חוק לימוד חובה, תש"ט-1949; порядок приёма — по инструкциям отдела образования местного совета.',
     descEn: 'Request to the school principal to enroll a child for the new school year (after kindergarten, moving or changing schools). Mandatory education is governed by the Compulsory Education Law, 5709-1949.',
+    descDoc: 'בקשה ממנהל בית הספר לרישום ילד לשנת הלימוד החדשה (אחרי הגן, בעקבות מעבר דירה או מעבר בית ספר). חינוך חובה מוסדר בחוק לימוד חובה, תש"ט-1949.',
     refRu: 'חוק לימוד חובה, תש"ט-1949; הנחיות רשות החינוך המקומית',
     refEn: 'Compulsory Education Law, 5709-1949; local education authority guidelines',
     fields: [
@@ -507,6 +524,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה מהמשכיר לתיקון בדירה', titleEn: 'Request to the landlord for repairs',
     descRu: 'Письменная просьба к арендодателю устранить неисправности в снимаемой квартире. По ст. 29 חוק השכירות והשאילה (תשל"א-1971) арендодатель отвечает за ремонт электропроводки и водопровода, повреждений от нормального износа и общедомовых систем; мелкий текущий ремонт — обязанность арендатора (ст. 30).',
     descEn: 'Written request to the landlord to fix defects in a rented flat. Under s. 29 of the Rental and Loan for Use Law (1971), the landlord repairs electrical/water installations, normal-wear damage and shared building systems; minor upkeep is the tenant\'s duty (s. 30).',
+    descDoc: 'בקשה בכתב מהמשכיר לתקן ליקויים בדירה המושכרת. על פי סעיף 29 לחוק השכירות והשאילה, תשל"א-1971, המשכיר אחראי לתיקון מערכות החשמל והמים, נזקי בלאי רגיל ומערכות משותפות של הבניין; תיקונים קטנים — באחריות השוכר (סעיף 30).',
     refRu: 'חוק השכירות והשאילה, תשל"א-1971, סעיפים 29–30',
     refEn: 'Rental and Loan for Use Law, 5731-1971, ss. 29-30',
     fields: [
@@ -534,6 +552,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'פנייה לועד הבית לתיקון ברכוש המשותף', titleEn: 'Request to the building committee for repairs',
     descRu: 'Обращение к ועד הבית (комитет дома) или управляющей компании об устранении неисправности в общем имуществе дома: лифт, освещение, водостоки, ворота. Если ремонт не выполняется — жалоба в отдел надзора местного совета.',
     descEn: 'Request to the building committee (ועד בית) or management company to fix a defect in common property: elevator, lighting, drains, gates; if ignored — complain to the municipal supervision department.',
+    descDoc: 'פנייה לועד הבית או לחברת הניהול לתקן ליקוי ברכוש המשותף: מעלית, תאורה, מרזבים, שערים; אם הליקוי אינו מטופל — ניתן לפנות למחלקת הפיקוח של הרשות המקומית.',
     refRu: 'חוק המקרקעין, תשכ"ט-1969 (רכוש משותף בבית משותף); תקנון הבית',
     refEn: 'Land Law, 5729-1969 (common property); house regulations',
     fields: [
@@ -574,6 +593,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'פנייה לבנק בנושא חיוב שלא אושר', titleEn: 'Bank complaint about an unauthorized charge',
     descRu: 'Письменная претензия банку или компании-эмитенту карты о несанкционированном или спорном списании (двойное списание, подписка после отмены, операция, которой не было). Подаётся התנגדות לחיוב в порядке חוק כרטיסי חיוב (תשמ"ו-1986); при отказе — жалоба общественному омбудсману банка и затем в נציבות קבילות הציבור לשכת הפיקוח על הבנקים (Банк Израиля) и в суд малых требований.',
     descEn: 'Written complaint to the bank/card issuer about an unauthorized or disputed charge (double charge, subscription after cancellation, transaction you did not make). File an objection to the charge under the Credit Cards Law (1986); if rejected — escalate to the bank\'s complaints officer, then the Public Complaints Commissioner of the Banking Supervision Department (Bank of Israel) and the small claims court.',
+    descDoc: 'פנייה בכתב לבנק או לחברת האשראי בגין חיוב שלא אושר או חיוב שנוי במחלוקת (חיוב כפול, מנוי לאחר ביטול, עסקה שלא בוצעה). מגישים התנגדות לחיוב על פי חוק כרטיסי חיוב, תשמ"ו-1986; במקרה של דחייה — פנייה לממונה על פניות הציבור בבנק, ולאחר מכן לנציבות קבילות הציבור בלשכת הפיקוח על הבנקים (בנק ישראל) ולבית המשפט לתביעות קטנות.',
     refRu: 'חוק כרטיסי חיוב, תשמ"ו-1986; הוראות יישוב סכסוכים בנקאיים — לשכת הפיקוח על הבנקים',
     refEn: 'Credit Cards Law, 5746-1986; banking dispute resolution rules of the Banking Supervision Department',
     fields: [
@@ -602,6 +622,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה להבטחת הכנסה', titleEn: 'Income support application (הבטחת הכנסה)',
     descRu: 'Заявление о пособии по гарантии дохода (הבטחת הכנסה) или о доплате к низкому заработку (מענק השלמת הכנסה) — подаётся в центр לשלמות (מרכז לשלמות) или отделение ביטוח לאומי. По חוק הבטחת הכנסה (תשמ"א-1980) право зависит от проверки нуждаемости, статуса занятости и собеседования; безработным требуется регистрация в службе занятости (רשות התעסוקה).',
     descEn: 'Application for the income support benefit or the in-work supplement for low wages (השלמת הכנסה), filed at the local income support center (מרכז לשלמות) or a National Insurance branch. Under the Income Support Law (1980), entitlement depends on a means test, employment status and an interview; unemployed applicants must register with the Employment Service.',
+    descDoc: 'בקשה לקצבת הבטחת הכנסה או למענק השלמת הכנסה לעובדים בשכר נמוך, המוגשת במרכז לשלמות או בסניף המוסד לביטוח לאומי. על פי חוק הבטחת הכנסה, תשמ"א-1980, הזכאות נקבעת בעקבות בדיקת מצב כלכלי, מעמד תעסוקתי וראיון; מבקשים שאינם עובדים חייבים ברישום ברשות התעסוקה.',
     refRu: 'חוק הבטחת הכנסה, תשמ"א-1980',
     refEn: 'Income Support Law, 5740-1980',
     fields: [
@@ -648,6 +669,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'קריאה על מפגע רעש משכנים', titleEn: 'Noise nuisance complaint about neighbors (קריאה על מפגע רעש)',
     descRu: 'Жалоба на шум от соседей (музыка, хлопанье дверей, ремонт, животные) — в полицию (телефон 100) или в диспетчерскую местного совета (106). В документе фиксируются источник, время и описание помехи, а также предыдущие обращения. По Закону о предупреждении помех от шума и загрязнения воздуха шумом (תשכ"ה-1965) полицейский и муниципальный инспектор вправе требовать снижения шума и применять меры принуждения.',
     descEn: 'Complaint about noise from neighbors (music, slamming doors, renovation, animals) to the police (100) or the local authority dispatch center (106). The letter records the source, the times and a description of the disturbance, plus previous calls. Under the Prevention of Nuisance from Noise and Air Pollution from Noise Law, 5725-1965, a police officer and a municipal inspector may demand noise reduction and take enforcement measures.',
+    descDoc: 'קריאה על מפגע רעש משכנים (מוזיקה, טריקת דלתות, שיפוצים, בעלי חיים) למשטרה (100) או למרכז השליטה של הרשות המקומית (106). המסמך מתעד את מקור הרעש, את זמני המפגע ואת הפניות הקודמות. על פי חוק למניעת מפגעי רעש וזיהום אוויר מרעש, תשכ"ה-1965, שוטר ופקח עירוני רשאים לדרוש הפחתת הרעש ולנקוט אמצעי אכיפה.',
     refRu: 'חוק למניעת מפגעי רעש וזיהום אוויר מרעש, תשכ"ה-1965 (אכיפה — משטרת ישראל והרשות המקומית)',
     refEn: 'Prevention of Nuisance from Noise and Air Pollution from Noise Law, 5725-1965 (enforced by the police and local authorities)',
     fields: [
@@ -677,6 +699,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'דרישת פיצוי בגין נזקי רטיבות', titleEn: 'Demand for compensation for water damage (דרישת פיצוי בגין נזקי רטיבות)',
     descRu: 'Требование о возмещении ущерба от протечки: адресуется соседу сверху, страховой компании или комитету дома (ועד הבית). Описываются дата, источник и перечень повреждений, прикладываются фото и счёт за ремонт. Основание — ст. 33 (частный торт, מטרד פרטי) и ст. 35 (небрежность) Ордонанса о деликтах [новая редакция] תשכ"ח-1968; при отсутствии ответа в течение 14 дней — иск в суд мелких тяжб.',
     descEn: 'Demand for compensation for water damage: addressed to the upstairs neighbor, the insurance company or the building committee (ועד הבית). The date, the source and the itemized damage are described, with photos and a repair invoice attached. Grounds are ss. 33 (private nuisance) and 35 (negligence) of the Civil Wrongs Ordinance [New Version], 5728-1968; with no reply within 14 days, a small-claims action follows.',
+    descDoc: 'דרישת פיצוי בגין נזקי רטיבות: מיועדת לשכן מלמעלה, לחברת הביטוח או לועד הבית. נקבעים תאריך הנזילה, מקורה ורשימת הנזקים, ומצורפים תמונות וחשבונית תיקון. העילה — סעיפים 33 (מטרד פרטי) ו-35 (התרשלות) לפקודת הנזיקין [נוסח חדש], תשכ"ח-1968; אם אין תשובה תוך 14 יום — נשקלת תביעה בבית המשפט לתביעות קטנות.',
     refRu: 'פקודת הנזיקין [נוסח חדש], תשכ"ח-1968, סעיפים 33, 35',
     refEn: 'Civil Wrongs Ordinance [New Version], 5728-1968, ss. 33, 35',
     fields: [
@@ -706,6 +729,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'פנייה בעניין היגיינה בחלקים המשותפים ועישון בחדר המדרגות', titleEn: 'Complaint about hygiene in common parts & stairwell smoking',
     descRu: 'Обращение к комитету дома (ועד הבית) или в отдел санитарного надзора местного совета по поводу курения, мусора и антисанитарии в подъезде. Лестничная клетка общего жилого дома считается общественным местом, где курение запрещено по Закону об ограничении курения в общественных местах и от воздействия курения (תשמ"ג-1983); содержание общих частей возложено на комитет дома и муниципалитет. Просьба: уборка, таблички, обработка от вредителей и меры к нарушителям.',
     descEn: 'Request to the building committee (ועד הבית) or the local authority sanitation department about smoking, litter and poor hygiene in the entrance hall and stairwell. A stairwell in a shared residential building is a public place where smoking is banned under the Restriction of Smoking in Public Places and Exposure to Smoking Law, 5743-1983; upkeep of the common parts rests with the building committee and the municipality. The letter asks for cleaning, signage, pest control and enforcement.',
+    descDoc: 'פנייה לועד הבית או למחלקת הסניטציה של הרשות המקומית בעניין עישון, אשפה והיגיינה לקויה בכניסה ובחדר המדרגות. חדר מדרגות בבניין מגורים משותף נחשב מקום ציבורי שבו אסור לעשן על פי חוק לצמצום העישון במקומות ציבוריים ובחשיפה לעישון, תשמ"ג-1983; אחזקת החלקים המשותפים מוטלת על ועד הבית ועל הרשות המקומית. הפנייה מבקשת ניקיון, שילוט, הדברת מזיקים ואכיפה.',
     refRu: 'חוק לצמצום העישון במקומות ציבוריים ובחשיפה לעישון, תשמ"ג-1983 (חדר מדרגות בבניין משותף); חוק המקרקעין, תשכ"ט-1969, סעיף 43 (ועד הבית)',
     refEn: 'Restriction of Smoking in Public Places and Exposure to Smoking Law, 5743-1983 (stairwells in shared buildings); Land Law, 5729-1969, s. 43 (building committee)',
     fields: [
@@ -734,6 +758,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשה לתיקון תקלה ברכוש המשותף', titleEn: 'Request to fix a fault in common property (בקשה לתיקון תקלה)',
     descRu: 'Заявка комитету дома (ועד הבית) или управляющему зданием на устранение неисправности общего имущества: лифт, водопровод, общее освещение, ворота. Указываются объект, описание поломки, дата обнаружения и срочность; при опасности — просьба отключить устройство и принять временные меры. Общее имущество удерживается владельцами квартир и содержится ими под управлением комитета по Закону о содержании общих домов (תשי"ח-1958).',
     descEn: 'Request to the building committee (ועד הבית) or the building manager to fix a fault in common property: elevator, plumbing, shared lighting, gates. It states the facility, the fault, the discovery date and its urgency; safety hazards call for shutting the device down temporarily. Common property is held by the apartment owners and maintained by them under the committee’s management per the Building Maintenance Law, 5718-1958.',
+    descDoc: 'בקשה לועד הבית או למנהל הבניין לתקן תקלה ברכוש המשותף: מעלית, צנרת, תאורה משותפת, שערים. הבקשה מציינת את המתקן, את התקלה, את מועד גילויה ואת דחיפותה; במקרה של סיכון בטיחותי מבקשים להשבית את המתקן זמנית. הרכוש המשותף מוחזק בידי בעלי הדירות ומתוחזק תחת ניהול ועד הבית על פי חוק החזקה על בתים משותפים, תשי"ח-1958.',
     refRu: 'חוק החזקה על בתים משותפים, תשי"ח-1958, סעיפים 49–50 (רכוש משותף ואחזקתו)',
     refEn: 'Building Maintenance Law, 5718-1958, ss. 49-50 (common property and its upkeep)',
     fields: [
@@ -762,6 +787,7 @@ export const TEMPLATES_IL: TplDef[] = [
     titleDoc: 'בקשת פירוט וערעור על דמי ועד בית', titleEn: 'Itemization & appeal on building-committee fees (דמי ועד בית)',
     descRu: 'Возражение и запрос о детализации счетов комитета дома (דמי ועד בית): просьба расписать платежи по статьям (уборка, лифт, садоводство, электричество), приложить квитанции и пересмотреть необоснованные начисления. Закон о честном договоре на жильё в общем здании (תשע"ח-2018) обязывает управляющего зданием (дома от 12 квартир) детализировать платежи и выдавать квитанции. При отсутствии письменного ответа — обращение в суд мелких тяжб.',
     descEn: 'An appeal and itemization request for building-committee fees (דמי ועד בית): asks to break the charges down by line items (cleaning, elevator, gardening, electricity), attach receipts and revise unexplained charges. The Fair Housing Contract (Shared Building) Law, 5778-2018, requires the building manager (12+ unit buildings) to itemize fees and issue receipts. With no written reply, a small-claims action is considered.',
+    descDoc: 'בקשת פירוט וערעור על דמי ועד בית: נדרש לפרט את החיובים לפי סעיפים (ניקיון, מעלית, גינון, חשמל), לצרף קבלות ולתקן חיובים שאין להם הסבר. חוק חוזה הדיור ההוגן לגבי בניין משותף, תשע"ח-2018, מחייב את מנהל הבניין (בבניינים של 12 דירות ומעלה) לפרט את דמי הניהול ולמסור קבלות. בהיעדר תשובה בכתב — נשקלת פנייה לבית המשפט לתביעות קטנות.',
     refRu: 'חוק חוזה הדיור ההוגן לגבי בניין משותף, תשע"ח-2018 (פירוט דמי הניהול וקבלות)',
     refEn: 'Fair Housing Contract (Shared Building) Law, 5778-2018 (itemized fees and receipts)',
     fields: [

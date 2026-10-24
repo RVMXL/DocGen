@@ -78,6 +78,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de marcação de férias', titleEn: 'Annual leave booking request',
     descRu: 'Заявление о предоставлении ежегодного оплачиваемого отпуска. По ст. 238 Código do Trabalho отпуск составляет 22 рабочих дня (dias úteis) в год; период маркируется по соглашению с работодателем.',
     descEn: 'Request to book annual paid leave. Under art. 238 of the Portuguese Labour Code the leave period is 22 working days per year, to be set by agreement with the employer.',
+    descDoc: 'Pedido ao empregador de marcação do período de férias anuais retribuídas, com indicação das datas pretendidas e do número de dias úteis; nos termos do artigo 238.º do Código do Trabalho, as férias têm a duração de 22 dias úteis por ano e marcam-se por acordo.',
     refRu: 'ст. 238.º Código do Trabalho (Lei 7/2009) — отпуск 22 рабочих дня в год',
     refEn: 'Article 238 of the Labour Code (Lei 7/2009) — 22 working days of annual leave',
     fields: [
@@ -103,6 +104,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de licença sem retribuição', titleEn: 'Unpaid leave request',
     descRu: 'Заявление о неоплачиваемом отпуске по личным делам или для ухода за семьёй; для ухода за детьми/внуками применим DL 261/93. Требуется согласие работодателя (poder diretivo).',
     descEn: 'Unpaid leave request for personal matters or family care; for care of children and grandchildren the DL 261/93 regime applies. Requires the employer’s consent.',
+    descDoc: 'Pedido de licença sem retribuição para assuntos particulares ou para assistência à família; quando se destina a assistência a filhos e netos, aplica-se o regime do DL 261/93. Carece de autorização do empregador.',
     refRu: 'DL 261/93, de 24 de julho — licença sem retribuição para assistência a filhos e netos; ст. 129.º CT (poder diretivo)',
     refEn: 'DL 261/93, of 24 July — unpaid leave to care for children and grandchildren; art. 129 of the Labour Code (management powers)',
     fields: [
@@ -129,6 +131,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de adaptação do horário de trabalho', titleEn: 'Working-time adaptation request',
     descRu: 'Заявление об изменении индивидуального рабочего графика (гибкий вход, непрерывный режим, частичный удалённый формат, сокращение дня). График индивидуального труда определяется по ст. 204.º CT.',
     descEn: 'Request to adapt the individual working schedule (flexible start, continuous shift, partial remote work, shorter day). The individual schedule is governed by art. 204 of the Labour Code.',
+    descDoc: 'Pedido de adaptação do horário individual de trabalho (entrada flexível, horário contínuo, teletrabalho parcial ou redução do período normal); o horário individual é fixado nos termos do artigo 204.º do Código do Trabalho.',
     refRu: 'ст. 204.º Código do Trabalho (Lei 7/2009) — horário individual de trabalho; ajuste por acordo',
     refEn: 'Article 204 of the Labour Code (Lei 7/2009) — individual working schedule, adjusted by agreement',
     fields: [
@@ -153,6 +156,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Comunicação de ausência por doença', titleEn: 'Sick leave notification',
     descRu: 'Уведомление работодателя об отсутствии по болезни. По ст. 249.º CT болезнь — оправданное отсутствие; справка CIT (Decreto Regulamentar 9/98) передаётся в установленный срок.',
     descEn: 'Notification to the employer of absence due to illness. Under art. 249 of the Labour Code sickness is a justified absence; the CIT sick note (Decreto Regulamentar 9/98) must be delivered on time.',
+    descDoc: 'Comunicação ao empregador da ausência por doença; nos termos do artigo 249.º do Código do Trabalho, trata-se de falta justificada, devendo a CIT (Decreto Regulamentar 9/98) ser entregue no prazo devido.',
     refRu: 'ст. 249.º Código do Trabalho — falta justificada por doença; Decreto Regulamentar 9/98 (CIT)',
     refEn: 'Article 249 of the Labour Code — justified absence due to illness; Decreto Regulamentar 9/98 (sick note, CIT)',
     fields: [
@@ -179,6 +183,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Comunicação de licença parental inicial', titleEn: 'Initial parental leave notice',
     descRu: 'Уведомление работодателя о начале родительского отпуска (licença parental inicial) по Código do Trabalho (Lei 7/2009), art. 33.º–47.º: 120, 150 или 180 дней; пособие оформляется в Segurança Social.',
     descEn: 'Notice to the employer of initial parental leave under the Labour Code (Lei 7/2009), arts. 33–47: 120, 150 or 180 days; the corresponding benefit is claimed from Social Security.',
+    descDoc: 'Comunicação ao empregador do gozo da licença parental inicial, nos termos dos artigos 33.º a 47.º do Código do Trabalho (Lei 7/2009): 120, 150 ou 180 dias; o respetivo subsídio é requerido junto da Segurança Social.',
     refRu: 'Código do Trabalho (Lei 7/2009), art. 33.º–47.º — licença parental inicial (120/150/180 dias)',
     refEn: 'Labour Code (Lei 7/2009), arts. 33–47 — initial parental leave (120/150/180 days)',
     fields: [
@@ -205,6 +210,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de falta para assistência à família', titleEn: 'Family care absence request',
     descRu: 'Заявление на неоплачиваемый отгул для срочной помощи родственнику при болезни или несчастном случае: до 15 дней в год по ст. 218.º Código do Trabalho.',
     descEn: 'Request for unpaid absence to give urgent assistance to a relative in case of illness or accident: up to 15 days per year under art. 218 of the Labour Code.',
+    descDoc: 'Pedido de falta para assistência inadiável a familiar em caso de doença ou acidente, sem retribuição: até 15 dias por ano, nos termos do artigo 218.º do Código do Trabalho.',
     refRu: 'ст. 218.º Código do Trabalho (Lei 7/2009) — assistência inadiável à família, 15 dias por ano',
     refEn: 'Article 218 of the Labour Code (Lei 7/2009) — urgent family assistance, 15 days per year',
     fields: [
@@ -232,6 +238,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Comunicação de resolução do contrato de trabalho', titleEn: 'Resignation letter with notice',
     descRu: 'Письменное уведомление о расторжении трудового договора работником. По ст. 366.º CT предупреждение (pré-aviso): 30 дней при договоре ≥ 2 лет, 15 дней — менее 2 лет.',
     descEn: 'Written notice of contract termination by the worker. Under art. 366 of the Labour Code the notice period is 30 days for contracts of two years or more, 15 days for shorter contracts.',
+    descDoc: 'Comunicação escrita da resolução do contrato de trabalho por iniciativa do trabalhador; nos termos do artigo 366.º do Código do Trabalho, o pré-aviso é de 30 dias nos contratos com duração igual ou superior a dois anos e de 15 dias nos restantes.',
     refRu: 'ст. 366.º Código do Trabalho (Lei 7/2009) — pré-aviso de 30 dias (contrato ≥ 2 anos) ou 15 dias',
     refEn: 'Article 366 of the Labour Code (Lei 7/2009) — 30 days’ notice (contracts of two years or more) or 15 days',
     fields: [
@@ -256,6 +263,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Aviso prévio de impugnação do despedimento', titleEn: 'Notice of intent to challenge dismissal',
     descRu: 'Письмо работодателю с уведомлением о несогласии с увольнением и намерении оспорить его в суде. По ст. 389.º CT оспаривание возможно в течение 60 дней с момента уведомления.',
     descEn: 'Letter to the employer declaring disagreement with the dismissal and the intention to challenge it in court. Under art. 389 of the Labour Code the challenge must be brought within 60 days of notice.',
+    descDoc: 'Carta ao empregador a declarar discordância do despedimento e a intenção de o impugnar judicialmente; nos termos do artigo 389.º do Código do Trabalho, a impugnação deve ser intentada no prazo de 60 dias.',
     refRu: 'ст. 389.º e ss. Código do Trabalho — impugnação judicial da cessação (prazo de 60 dias)',
     refEn: 'Articles 389 et seq. of the Labour Code — judicial challenge of dismissal (60-day deadline)',
     fields: [
@@ -280,6 +288,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de certificado de trabalho', titleEn: 'Certificate of employment request',
     descRu: 'Запрос справки о работе: даты приёма и прекращения договора, должности, место работы и характер выполняемых задач; по желанию — размер последней зарплаты (ст. 345.º CT).',
     descEn: 'Request for a certificate of employment stating admission and termination dates, positions held, workplace and tasks performed; optionally the last monthly pay (art. 345 of the Labour Code).',
+    descDoc: 'Pedido de certificado de trabalho com indicação das datas de admissão e de cessação do contrato, das funções desempenhadas, do local de trabalho e das tarefas realizadas; opcionalmente, da última retribuição mensal (artigo 345.º do Código do Trabalho).',
     refRu: 'ст. 345.º Código do Trabalho (Lei 7/2009) — certificado de trabalho',
     refEn: 'Article 345 of the Labour Code (Lei 7/2009) — certificate of employment',
     fields: [
@@ -305,6 +314,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação por produto com defeito', titleEn: 'Claim to the seller for a defective product',
     descRu: 'Претензия продавцу по товару с недостатком: гарантия соответствия 2 года (DL 67/2003) и права потребителя по Lei 24/96; далее — Livro de Reclamações, ASAE, арбитраж или суд.',
     descEn: 'Claim to the seller over a non-conforming product: two-year conformity guarantee (DL 67/2003) and consumer rights under Lei 24/96; failing settlement — complaints book, ASAE, arbitration or court.',
+    descDoc: 'Reclamação ao vendedor por falta de conformidade do bem: garantia de dois anos (DL 67/2003) e direitos do consumidor ao abrigo da Lei 24/96; não resolvida a questão, Livro de Reclamações, ASAE, arbitragem ou tribunal.',
     refRu: 'DL 67/2003, de 8 de abril — garantia de conformidade (2 anos); Lei 24/96, de 31 de julho (defesa do consumidor)',
     refEn: 'DL 67/2003, of 8 April — conformity guarantee (two years); Lei 24/96, of 31 July (consumer protection)',
     fields: [
@@ -332,6 +342,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Interpelação para pagamento (mútuo)', titleEn: 'Formal demand for repayment of a loan',
     descRu: 'Формальное требование возврата беспроцентного/договорного займа: по ст. 804-805 Código Civil должник в просрочке (mora), ст. 808 — interpelação; далее — судебное взыскание.',
     descEn: 'Formal demand for repayment of a loan: under arts. 804-805 of the Civil Code the debtor is in default (mora); art. 808 provides for interpelação; failing payment — court recovery.',
+    descDoc: 'Requerimento formal de devolução de quantia mutuada: nos termos dos artigos 804.º e 805.º do Código Civil o devedor se constitui em mora, sendo a interpelação regida pelo artigo 808.º; não havendo pagamento, segue-se a cobrança judicial.',
     refRu: 'ст. 804-805 e 1026.º Código Civil — mora do mutuário; ст. 808.º — interpelação',
     refEn: 'Arts. 804-805 and 1026 of the Civil Code — debtor’s default on a loan; art. 808 — formal notice (interpelação)',
     fields: [
@@ -359,6 +370,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Declaração de reconhecimento de dívida', titleEn: 'Debt acknowledgement declaration',
     descRu: 'Письменное признание долга (займа) должником в пользу кредитора. По ст. 510.º Código Civil такое заявление является достаточным началом доказательства долга.',
     descEn: 'Written acknowledgement by the debtor of a debt owed to the creditor. Under art. 510 of the Civil Code such a declaration is sufficient prima facie evidence of the debt.',
+    descDoc: 'Declaração escrita em que o devedor reconhece dever ao credor determinada quantia; nos termos do artigo 510.º do Código Civil, tal declaração constitui início de prova suficiente do mútuo.',
     refRu: 'ст. 510.º Código Civil — reconhecimento de dívida; ст. 1026.º e ss. — mútuo',
     refEn: 'Article 510 of the Civil Code — acknowledgement of debt; arts. 1026 et seq. — loan (mútuo)',
     fields: [
@@ -387,6 +399,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação administrativa (CPA)', titleEn: 'Administrative complaint (CPA)',
     descRu: 'Жалоба на акт или бездействие госоргана в порядке ст. 173.º CPA (DL 4/2020); ответ обязателен в течение 15 дней (ст. 181.º), далее — административный суд или Provedor de Justiça.',
     descEn: 'Complaint about a public body’s act or omission under art. 173 of the Administrative Procedure Code (DL 4/2020); a decision is due within 15 days (art. 181), failing which administrative court or the Ombudsman.',
+    descDoc: 'Reclamação sobre ato ou omissão de órgão da administração pública, nos termos do artigo 173.º do CPA (DL 4/2020); a decisão é devida no prazo de 15 dias (artigo 181.º), seguindo-se, caso não haja resposta, o tribunal administrativo ou o Provedor de Justiça.',
     refRu: 'ст. 173.º e 181.º CPA (DL 4/2020, de 6 de janeiro) — reclamação; decisão em 15 dias',
     refEn: 'Arts. 173 and 181 of the Administrative Procedure Code (DL 4/2020) — complaint; decision within 15 days',
     fields: [
@@ -413,6 +426,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação à CNPD', titleEn: 'Complaint to the CNPD (data protection)',
     descRu: 'Жалоба в Comissão Nacional de Proteção de Dados на организацию, нарушающую права на защиту персональных данных (ст. 77.º RGPD, Lei 58/2019).',
     descEn: 'Complaint to the National Data Protection Commission against an organisation breaching personal data rights (art. 77 of the GDPR, Lei 58/2019).',
+    descDoc: 'Queixa à Comissão Nacional de Proteção de Dados contra entidade que viole os direitos de proteção de dados pessoais, ao abrigo do artigo 77.º do RGPD e da Lei 58/2019.',
     refRu: 'ст. 77.º RGPD; Lei 58/2019, de 8 de agosto — reclamação à Comissão Nacional de Proteção de Dados',
     refEn: 'Article 77 of the GDPR; Lei 58/2019, of 8 August — complaint to the National Data Protection Commission',
     fields: [
@@ -439,6 +453,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Queixa ao Provedor de Justiça', titleEn: 'Complaint to the Ombudsman',
     descRu: 'Жалоба Provedor de Justiça на действия или бездействие органов публичной администрации по Lei 9/91; жалоба подаётся после неудачной попытки решить вопрос напрямую с органом.',
     descEn: 'Complaint to the Ombudsman (Provedor de Justiça) over acts or omissions of public administration bodies under Lei 9/91, filed after an unsuccessful direct approach to the body.',
+    descDoc: 'Queixa ao Provedor de Justiça sobre atos ou omissões dos órgãos da administração pública, ao abrigo da Lei 9/91; apresenta-se após tentativa frustrada de resolução direta do problema junto do órgão.',
     refRu: 'Lei 9/91, de 9 de abril — Provedor de Justiça (queixa contra ações e omissões das entidades públicas)',
     refEn: 'Lei 9/91, of 9 April — the Ombudsman (complaints against acts and omissions of public bodies)',
     fields: [
@@ -464,6 +479,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Petição inicial — ação declarativa (Julgado de Paz)', titleEn: 'Statement of claim before the Peace Court',
     descRu: 'Исковое заявление (petição inicial) в Julgado de Paz по Lei 78/2001: упрощённое производство по делам до установленного порога; требование о взыскании суммы с ответчика.',
     descEn: 'Statement of claim before the Peace Court (Julgado de Paz) under Lei 78/2001: simplified civil procedure for smaller-value claims seeking payment from the defendant.',
+    descDoc: 'Petição inicial junto do Julgado de Paz, ao abrigo da Lei 78/2001: processo civil simplificado para ações de valor reduzido, em que se pede a condenação do réu no pagamento da quantia.',
     refRu: 'Lei 78/2001, de 13 de julho — julgados de paz; ст. 462.º e ss. Código de Processo Civil',
     refEn: 'Lei 78/2001, of 13 July — peace courts; arts. 462 et seq. of the Civil Procedure Code',
     fields: [
@@ -492,6 +508,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação graciosa (Autoridade Tributária)', titleEn: 'Tax friendly complaint (Autoridade Tributária)',
     descRu: 'Reclamação graciosa в Autoridade Tributária по ст. 160.º e ss. LGT (Lei 39/88) — обжалование налогового акта (ликвидации IRS и др.); срок подачи — один год.',
     descEn: 'Friendly complaint (reclamação graciosa) to the Tax Authority under arts. 160 et seq. of the LGT (Lei 39/88), challenging a tax act such as an IRS assessment; filed within one year.',
+    descDoc: 'Reclamação graciosa dirigida à Autoridade Tributária, ao abrigo do artigo 160.º e seguintes da LGT (Lei 39/88), para impugnar ato tributário, como a liquidação de IRS; apresentada no prazo de um ano.',
     refRu: 'ст. 160.º e ss. LGT (Lei 39/88, de 8 de agosto) — reclamação graciosa (prazo de 1 ano)',
     refEn: 'Arts. 160 et seq. of the LGT (Lei 39/88) — friendly complaint (one-year deadline)',
     fields: [
@@ -519,6 +536,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação ao banco', titleEn: 'Bank complaint',
     descRu: 'Жалоба банку по ненадлежащей услуге (незаконные комиссии, списания и т. п.) по DL 84/2021; письменный ответ — 15 рабочих дней, далее — SysReclama / Banco de Portugal.',
     descEn: 'Complaint to the bank over a poor financial service (uncontracted fees, charges, etc.) under DL 84/2021; a written reply is due within 15 business days, failing which SysReclama / Banco de Portugal.',
+    descDoc: 'Reclamação ao banco por serviço financeiro prestado de forma deficiente (comissões e encargos não contratados, entre outros), ao abrigo do DL 84/2021; a resposta escrita é devida em 15 dias úteis, seguindo-se, caso não haja solução, o SysReclama / Banco de Portugal.',
     refRu: 'DL 84/2021, de 18 de outubro — reclamações em serviços financeiros; Banco de Portugal (SysReclama), 15 dias úteis',
     refEn: 'DL 84/2021, of 18 October — complaints in financial services; Banco de Portugal (SysReclama), 15 business days',
     fields: [
@@ -545,6 +563,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação à Segurança Social', titleEn: 'Complaint to Social Security',
     descRu: 'Жалоба на решение или бездействие Института соцстрахования по пособиям: порядок ст. 173.º CPA (DL 4/2020), ответ в течение 15 дней; далее — административный суд.',
     descEn: 'Complaint against a Social Security decision or omission regarding benefits: art. 173 of the CPA (DL 4/2020) procedure, a reply within 15 days, failing which the administrative court.',
+    descDoc: 'Reclamação contra decisão ou omissão do Instituto da Segurança Social em matéria de prestações: procedimento do artigo 173.º do CPA (DL 4/2020), resposta no prazo de 15 dias; não obtida resposta, tribunais administrativos.',
     refRu: 'ст. 173.º CPA (DL 4/2020); Lei 4/2007 — regimes de segurança social',
     refEn: 'Art. 173 of the CPA (DL 4/2020); Lei 4/2007 — social security schemes',
     fields: [
@@ -571,6 +590,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de pensão de velhice', titleEn: 'Old-age pension application',
     descRu: 'Заявление о назначении пенсии по старости в Segurança Social по DL 329/93: возраст и карьера взносов по закону, выплата на IBAN, приложение документов.',
     descEn: 'Application for an old-age pension from Social Security under DL 329/93: statutory age and contribution record, payment to an IBAN account, supporting documents attached.',
+    descDoc: 'Pedido de pensão de velhice à Segurança Social, nos termos do DL 329/93: idade e carreira contributiva legalmente exigidas, pagamento para o IBAN indicado e documentos comprovativos anexos.',
     refRu: 'DL 329/93, de 23 de setembro — regime da pensão de velhice e invalidez',
     refEn: 'DL 329/93, of 23 September — old-age and invalidity pension regime',
     fields: [
@@ -597,6 +617,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação na unidade de saúde', titleEn: 'Healthcare unit complaint',
     descRu: 'Жалоба на обслуживание в единице здравоохранения: права пациента по Lei 46/2004, процедура жалобы CPA (15 дней); далее — ARS, регулятор ERS, Livro de Reclamações.',
     descEn: 'Complaint about care received at a healthcare unit: patient rights under Lei 46/2004, CPA complaint procedure (15 days); failing settlement — regional health administration, the ERS regulator, complaints book.',
+    descDoc: 'Reclamação sobre o atendimento recebido numa unidade de saúde: direitos dos utentes ao abrigo da Lei 46/2004 e procedimento do CPA (15 dias); não resolvida, ARS, entidade reguladora ERS ou Livro de Reclamações.',
     refRu: 'Lei 46/2004, de 19 de agosto — direitos dos utentes; ст. 173.º CPA (DL 4/2020)',
     refEn: 'Lei 46/2004, of 19 August — patients’ rights; art. 173 of the CPA (DL 4/2020)',
     fields: [
@@ -623,6 +644,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de acesso ao processo clínico', titleEn: 'Clinical records access request',
     descRu: 'Запрос на доступ/копию медицинской карты: ст. 9.º Lei 62/2005 — право пациента на ознакомление с процессом; выдача в срок до 10 рабочих дней.',
     descEn: 'Request for access to or a copy of clinical records: art. 9 of Lei 62/2005 grants the patient the right to consult the process; delivery within 10 working days.',
+    descDoc: 'Pedido de acesso ou de cópia do processo clínico: o artigo 9.º da Lei 62/2005 garante ao doente o direito de o consultar; a entrega é feita no prazo de até 10 dias úteis.',
     refRu: 'Lei 62/2005, de 11 de outubro, ст. 9.º — acesso ao processo clínico (10 dias úteis); Lei 46/2004',
     refEn: 'Lei 62/2005, of 11 October, art. 9 — access to clinical records (10 working days); Lei 46/2004',
     fields: [
@@ -648,6 +670,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de matrícula e transferência escolar', titleEn: 'School enrolment and transfer request',
     descRu: 'Заявление о зачислении ребёнка и переводе из другой школы по Despacho 6477/2017 (matrícula): указание класса, учебного года, причины перевода и приложений.',
     descEn: 'Request to enrol a child and transfer from another school under Despacho 6477/2017: grade, school year, reason for transfer and attachments stated.',
+    descDoc: 'Pedido de matrícula de menor e de transferência de outro estabelecimento de ensino, ao abrigo do Despacho 6477/2017: indicação do ano de escolaridade, do ano letivo, do motivo da transferência e dos elementos anexos.',
     refRu: 'Despacho 6477/2017, de 26 de julho — matrícula e escolaridade obrigatória',
     refEn: 'Despacho 6477/2017, of 26 July — school enrolment and compulsory schooling',
     fields: [
@@ -676,6 +699,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação por extravio de objeto postal', titleEn: 'Lost mail item complaint',
     descRu: 'Претензия почтовому оператору за не доставленное отправление с номером трекинга: DL 373/2014 (универсальная почтовая служба, надзор ANACOM) и Lei 24/96.',
     descEn: 'Complaint to the postal operator over an undelivered tracked item: DL 373/2014 (universal postal service, ANACOM supervision) and Lei 24/96.',
+    descDoc: 'Reclamação ao operador postal por objeto não entregue, com número de registo: DL 373/2014 (serviço postal universal, sob fiscalização da ANACOM) e Lei 24/96.',
     refRu: 'DL 373/2014, de 30 de junho — serviço postal universal (ANACOM); Lei 24/96 — defesa do consumidor',
     refEn: 'DL 373/2014, of 30 June — universal postal service (ANACOM); Lei 24/96 — consumer protection',
     fields: [
@@ -702,6 +726,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Interpelação do senhorio para realização de obras', titleEn: 'Landlord demand for conservation works',
     descRu: 'Официальное требование арендодателю выполнить работы по консервации жилья: ст. 51-52 NRAU (Lei 6/2006), interpelação по ст. 808.º Código Civil, с указанием срока.',
     descEn: 'Formal demand for the landlord to carry out conservation works on the rented dwelling: arts. 51-52 of the NRAU (Lei 6/2006), interpelação under art. 808 of the Civil Code, with a set deadline.',
+    descDoc: 'Requerimento formal ao senhorio para a realização de obras de conservação no imóvel arrendado: artigos 51.º e 52.º do NRAU (Lei 6/2006), interpelação ao abrigo do artigo 808.º do Código Civil, com prazo fixado.',
     refRu: 'ст. 51-52 NRAU (Lei 6/2006) — obras de conservação; ст. 808.º Código Civil — interpelação',
     refEn: 'Arts. 51-52 of the NRAU (Lei 6/2006) — conservation works; art. 808 of the Civil Code — formal notice',
     fields: [
@@ -730,6 +755,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Reclamação por perturbação sonora (vizinhos)', titleEn: 'Neighbour noise complaint',
     descRu: 'Вежливая жалоба соседу на шум: ст. 27.º DL 9/2007 запрещает звуковое беспокойство, ст. 1445.º Código Civil — пределы прав собственника; далее — полиция, муниципалитет, суд.',
     descEn: 'Polite complaint to a neighbour over noise: art. 27 of DL 9/2007 prohibits sound nuisance and art. 1445 of the Civil Code limits property rights; failing settlement — police, municipality, court.',
+    descDoc: 'Carta educada ao vizinho sobre perturbação sonora: o artigo 27.º do DL 9/2007 proíbe a produção de ruído e o artigo 1445.º do Código Civil limita o exercício do direito de propriedade; não resolvida a questão, polícia, câmara municipal ou tribunal.',
     refRu: 'ст. 27.º DL 9/2007, de 19 de janeiro — perturbação sonora; ст. 1445.º Código Civil (vizinhança)',
     refEn: 'Art. 27 of DL 9/2007, of 19 January — noise nuisance; art. 1445 of the Civil Code (neighbour law)',
     fields: [
@@ -757,6 +783,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de bolsa de estudo', titleEn: 'Study grant (bolsa) application',
     descRu: 'Заявление на стипендию/социальную поддержку в вузе по DL 70/2010 (bolsas de estudo no ensino superior) и правилам Serviços de Ação Social; согласие на проверку доходов.',
     descEn: 'Application for a study grant at university under DL 70/2010 (higher education grants) and the Social Services rules; consent to income verification included.',
+    descDoc: 'Candidatura a bolsa de estudo no ensino superior, ao abrigo do DL 70/2010 e dos regulamentos dos Serviços de Ação Social; inclui consentimento para a verificação das condições económicas.',
     refRu: 'DL 70/2010, de 21 de junho — bolsas de estudo no ensino superior; Lei 62/2007 (RJIES)',
     refEn: 'DL 70/2010, of 21 June — higher education study grants; Lei 62/2007 (RJIES)',
     fields: [
@@ -783,6 +810,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Pedido de interrupção de estudos', titleEn: 'Study interruption request',
     descRu: 'Заявление о прерывании обучения на семестр или год: по Lei 62/2007 (RJIES) и уставу вуза; обязательство вернуться к учёбе в согласованный период.',
     descEn: 'Request to interrupt studies for a semester or a year: under Lei 62/2007 (RJIES) and the institution’s statutes; commitment to resume studies in the agreed period.',
+    descDoc: 'Pedido de interrupção de estudos por um semestre ou um ano letivo, nos termos da Lei 62/2007 (RJIES) e dos estatutos da instituição; assume-se o compromisso de retomar os estudos no período acordado.',
     refRu: 'Lei 62/2007, de 10 de setembro (RJIES) e estatutos da instituição — interrupção de estudos',
     refEn: 'Lei 62/2007, of 10 September (RJIES) and the institution’s statutes — study interruption',
     fields: [
@@ -809,6 +837,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Comunicação de atualização de morada', titleEn: 'Address update notification',
     descRu: 'Уведомление организации (финансы, соцстрах, банк и др.) о смене адреса: регистрация места жительства по DL 222/99 (Código do Registo Civil) и перенос переписки.',
     descEn: 'Notification to an organisation (tax office, social security, bank, etc.) of an address change: residence registration under DL 222/99 (Civil Registration Code) and mail redirection.',
+    descDoc: 'Comunicação à entidade (finanças, Segurança Social, banco, entre outras) da mudança de morada: registo da residência ao abrigo do DL 222/99 (Código do Registo Civil) e reencaminhamento da correspondência.',
     refRu: 'DL 222/99, de 6 de agosto — Código do Registo Civil (atualização de morada)',
     refEn: 'DL 222/99, of 6 August — Civil Registration Code (address update)',
     fields: [
@@ -833,6 +862,7 @@ export const TEMPLATES_PT: TplDef[] = [
     titleDoc: 'Procuração', titleEn: 'Power of attorney',
     descRu: 'Простая письменная доверенность на имя поверенного: мандат по ст. 260.º e ss. Código Civil, перечень полномочий, срок действия и возможность отзыва.',
     descEn: 'Simple written power of attorney in favour of an attorney-in-fact: mandate under arts. 260 et seq. of the Civil Code, list of powers, validity period and revocation option.',
+    descDoc: 'Procuração simples, por escrito, em favor de mandatário: mandato ao abrigo do artigo 260.º e seguintes do Código Civil, com enumeração dos poderes, prazo de validade e possibilidade de revogação.',
     refRu: 'ст. 260.º e ss. Código Civil — mandato (procuração); ст. 262.º — forma do documento particular',
     refEn: 'Arts. 260 et seq. of the Civil Code — mandate (power of attorney); art. 262 — form of a private document',
     fields: [

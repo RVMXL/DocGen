@@ -33,6 +33,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '연차유급휴가 신청서', titleEn: 'Annual paid leave application (연차휴가 신청서)',
     descRu: 'Заявление на годовой оплачиваемый отпуск. 근로기준법 제60조: 1년 미만 개근 시 1일, 1년 이상 80% 출근 시 15일, 그 이후 가산 (최대 25일).',
     descEn: 'Annual leave application. Under the Labour Standards Act art. 60: 1 day per full month (first year), 15 days from year one, additional days thereafter (up to 25).',
+    descDoc: '연차유급휴가 사용을 신청하는 서식. 근로기준법 제60조에 따라 1년 미만 근속 시 월 개근 1일, 1년 이상 80% 출근 시 15일이 부여되며 이후 가산된다(최대 25일).',
     refRu: 'ст. 60 Закона о трудовых стандартах Республики Корея (근로기준법)',
     refEn: 'Article 60 of the Korean Labour Standards Act',
     fields: [
@@ -59,6 +60,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '사직서', titleEn: 'Resignation letter (사직서)',
     descRu: 'Заявление об уходе. Точный срок уведомления определяется трудовым договором и правилами компании; обычно подаётся за 30 дней.',
     descEn: 'Resignation letter. The notice period follows the contract and company rules; commonly filed 30 days in advance.',
+    descDoc: '회사에 퇴사 의사를 통지하는 사직서. 통지 기간은 근로계약과 취업규칙에 따르며, 통상 퇴사 30일 전에 제출한다.',
     refRu: 'трудовой договор, правила компании (취업규칙)',
     refEn: 'Employment contract and company rules (취업규칙)',
     fields: [
@@ -81,6 +83,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '재직증명서 발급 신청서', titleEn: 'Employment certificate request (재직증명서)',
     descRu: 'Запрос справки о трудоустройстве (재직증명서) и иных документов. Обычно выдаётся в течение нескольких рабочих дней.',
     descEn: 'Request for an employment certificate and related documents. Usually issued within a few working days.',
+    descDoc: '재직증명서 및 관련 서류의 발급을 회사에 신청하는 서식. 통상 영업일 기준 며칠 이내에 발급된다.',
     refRu: 'общепринятая кадровая практика Республики Корея',
     refEn: 'Common Korean HR practice',
     fields: [
@@ -107,6 +110,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '소비자 피해 보상 청구서', titleEn: 'Consumer claim letter',
     descRu: 'Претензия продавцу по ущербу потребителя. Критерии разрешения споров установлены 소비자분쟁해결기준 (소비자기본법 제16조). Ведомые комиссии — 한국소비자원.',
     descEn: 'Claim to a seller. The dispute resolution standards are set by the Consumer Dispute Resolution Standards (Framework Act on Consumers art. 17); Korea Consumer Agency assists.',
+    descDoc: '판매자에게 소비자 피해 보상을 청구하는 서면. 분쟁 해결 기준은 소비자기본법 제16조의 소비자분쟁해결기준에 따르며, 합의되지 않으면 한국소비자원 분쟁조정을 이용할 수 있다.',
     refRu: 'ст. 17 Закона об основах защиты потребителей РК (소비자기본법)',
     refEn: 'Article 17 of the Korean Framework Act on Consumers',
     fields: [
@@ -139,6 +143,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '소장（민사·기본형）', titleEn: 'Civil complaint (소장, base form)',
     descRu: 'Базовая форма искового заявления (소장): стороны, суть требований, основания. Составляется по ст. 249 ГПК РК; по займам — ссылка на ст. 597 ГК РК.',
     descEn: 'Base civil complaint: parties, claims, causes — per the Civil Procedure Act art. 249. Loan cases cite the Civil Act art. 597.',
+    descDoc: '민사소송의 기본이 되는 소장. 당사자, 청구취지, 청구원인을 기재하며 민사소송법 제249조에 따라 작성한다. 금전대여 관련 사건은 민법 제597조를 인용한다.',
     refRu: 'ст. 249 Кодекса гражданского судопроизводства РК (민사소송법); 민법 제597조',
     refEn: 'Article 249 of the Korean Civil Procedure Act; Civil Act art. 597',
     fields: [
@@ -170,6 +175,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '차용증', titleEn: 'Loan note (차용증)',
     descRu: 'Расписка о заёме между физическими лицами (차용증): сумма, срок, проценты. Договор заёма — ст. 597 ГК РК.',
     descEn: 'Loan note between individuals. A loan contract arises under the Civil Act art. 597.',
+    descDoc: '개인 간 금전대여에 작성하는 차용증. 금액, 상환 기한, 이자를 명기한다. 소비대차 계약은 민법 제597조에 따른다.',
     refRu: 'ст. 597 Гражданского кодекса РК (민법)',
     refEn: 'Article 597 of the Korean Civil Act',
     fields: [
@@ -195,6 +201,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '위임장', titleEn: 'Power of attorney (위임장)',
     descRu: 'Доверенность для бытовых действий: получение документов, подача заявлений. Для регистрации недвижимости и банковских операций — формы учреждения или нотариальное заверение.',
     descEn: 'General power of attorney. Real-estate registration and banking may require institution-specific forms or notarization.',
+    descDoc: '서류 수령, 업무 신청 등 일상적인 절차를 위임하는 위임장. 부동산 등기 및 은행 거래는 기관 소정의 양식이나 공증이 요구될 수 있다.',
     refRu: 'общепринятая практика доверенности по Гражданскому кодексу РК (민법)',
     refEn: 'Common practice under the Korean Civil Act',
     fields: [
@@ -221,6 +228,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '결석계', titleEn: 'School absence form (결석계)',
     descRu: 'Уведомление школы об отсутствии ребёнка (결석계): даты и причина по правилам школы.',
     descEn: 'Parent’s absence form to the school: dates and reason, per school rules.',
+    descDoc: '자녀의 결석을 학교에 알리는 결석계. 학교 규정에 따라 결석 기간과 사유를 기재한다.',
     refRu: 'правила школы (학교규정)',
     refEn: 'School rules',
     fields: [
@@ -246,6 +254,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '의료기관 불만 접수서', titleEn: 'Complaint to a medical institution',
     descRu: 'Жалоба в медицинское учреждение: подаётся письменно во внутреннюю комиссию по жалобам или окно приёма жалоб в соответствии с законодательством о правах пациентов.',
     descEn: 'Complaint to a medical institution; file in writing at the in-house dispute committee or complaint desk under patient-rights guidance.',
+    descDoc: '의료기관에 제출하는 불만 접수서. 환자 권리 관련 지침에 따라 기관 내 불만처리 위원회 또는 민원 접수 창구에 서면으로 제출한다.',
     refRu: '의료법 및 환자 권리 관련 지침',
     refEn: 'Medical Service Act and patient-rights guidance',
     fields: [
@@ -274,6 +283,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '수리 요청서（임대주택）', titleEn: 'Repair request to the landlord (수리 요청서)',
     descRu: 'Письменный запрос арендодателю о ремонте. По Закону о защите прав арендаторов жилья арендодатель обязан поддерживать помещение в исправности; при серьёзных недостатках возможно расторжение договора.',
     descEn: 'Written repair request. Under the Housing Lease Protection Act the lessor must maintain the premises; serious defects allow termination.',
+    descDoc: '임대인에게 임대주택 수리를 서면으로 요청하는 수리 요청서. 주택임대차보호법에 따라 임대인은 임대물을 수리·유지할 의무가 있으며, 중대한 하자가 있는 경우 계약 해지도 가능하다.',
     refRu: 'Закон РК о защите прав арендаторов жилья (주택임대차보호법)',
     refEn: 'Korean Housing Lease Protection Act',
     fields: [
@@ -313,6 +323,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '행정심판 청구서', titleEn: 'Administrative appeal (haengsim simpan)',
     descRu: '행정심판: обжалование административного решения в административную комиссию в течение 90 дней (행정심판법 제26조).',
     descEn: 'Administrative appeal within 90 days under the Korean Administrative Appeals Act (Art. 26).',
+    descDoc: '행정청의 처분에 대한 행정심판 청구서. 처분을 안 날부터 90일 이내에 행정심판위원회에 제출한다(행정심판법 제26조).',
     refRu: '행정심판법 제26조 (기간), 제19조 (적법요건)',
     refEn: 'Administrative Appeals Act of Korea, Arts. 19, 26',
     fields: [
@@ -339,6 +350,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '지급명령 신청서', titleEn: 'Payment order application (jigeum myeongnyeong)',
     descRu: '지급명령: ускоренное приказное производство по денежным требованиям (민사소송법 제462조); подача в суд по месту ответчика.',
     descEn: 'Payment order procedure for monetary claims (Art. 462 of the Korean Civil Procedure Act).',
+    descDoc: '금전 청구에 대한 지급명령 신청서. 민사소송법 제462조에 따른 지급명령 절차는 소송보다 신속하며, 채무자의 관할 법원에 제출한다.',
     refRu: '민사소송법 제462조 (지급명령)',
     refEn: 'Korean Civil Procedure Act, Art. 462',
     fields: [
@@ -365,6 +377,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '소장（금전대여금 반환 청구）', titleEn: 'Civil complaint — loan repayment (금전대여금 반환 청구)',
     descRu: '소장 о возврате займа: 청구취지 и 청구원인 по ст. 249 ГПК РК (민사소송법); основание — ст. 597 ГК РК (소비대차), просрочные проценты — ст. 397 ГК РК (законная ставка 5% годовых).',
     descEn: '소장 for repayment of a loan: claims (청구취지) and causes (청구원인) per the Civil Procedure Act art. 249; basis — Civil Act art. 597 (loan), delay interest at the statutory 5% p.a. per Civil Act art. 397.',
+    descDoc: '금전대여금 반환을 구하는 소장. 청구취지와 청구원인은 민사소송법 제249조에 따라 기재하고, 청구원인은 민법 제597조(소비대차), 지연이자는 제397조(연 5%)에 근거한다.',
     refRu: 'ст. 249 Кодекса гражданского судопроизводства РК (민사소송법)；ст. 597, 397 Гражданского кодекса РК (민법)',
     refEn: 'Korean Civil Procedure Act art. 249; Civil Act arts. 597, 397',
     fields: [
@@ -402,6 +415,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '소장（임대보증금 반환 청구）', titleEn: 'Civil complaint — lease deposit return (임대보증금 반환 청구)',
     descRu: '소장 о возврате 보증금 (депозита) после окончания срока аренды жилья: право требования — ст. 6 Закона РК о защите арендаторов жилья (주택임대차보호법), обязанность вернуть жилое помещение — ст. 615 ГК РК; просрочные проценты — ст. 397 ГК РК.',
     descEn: '소장 demanding the lease deposit (보증금) back after the housing lease term: claim per the Housing Lease Protection Act art. 6; duty to hand back the premises — Civil Act art. 615; delay interest — Civil Act art. 397.',
+    descDoc: '임대차 기간이 끝난 후 임대보증금 반환을 구하는 소장. 청구권은 주택임대차보호법 제6조에, 주택 반환 의무는 민법 제615조에, 지연이자는 제397조에 근거한다.',
     refRu: 'ст. 249 Кодекса гражданского судопроизводства РК (민사소송법)；ст. 6 Закона РК о защите арендаторов жилья (주택임대차보호법)；ст. 397, 615 Гражданского кодекса РК (민법)',
     refEn: 'Korean Civil Procedure Act art. 249; Housing Lease Protection Act art. 6; Civil Act arts. 397, 615',
     fields: [
@@ -437,6 +451,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '내용증명（채무 상환 독촉）', titleEn: 'Certified letter (내용증명) — debt repayment demand',
     descRu: '내용증명 (письмо с удостоверением содержания, отправляется заказной почтой через почту Кореи) с требованием вернуть долг: фиксирует содержание и факт отправки; применяется до 지급명령 или иска. Основание — ст. 597, 389, 397 ГК РК.',
     descEn: '내용증명 (content-certified mail via Korea Post) demanding repayment of a debt: proves the contents and the fact of sending; used before a payment order or lawsuit. Basis — Civil Act arts. 597, 389, 397.',
+    descDoc: '채무 상환을 독촉하는 내용증명(우체국 등기우편 발송). 서면 내용과 발송 사실을 공적으로 증명하며, 지급명령이나 소 제기 전에 활용한다. 근거는 민법 제597조, 제389조, 제397조이다.',
     refRu: 'ст. 597, 389, 397 Гражданского кодекса РК (민법)；правила 내용증명 почтовой службы Кореи',
     refEn: 'Korean Civil Act arts. 597, 389, 397; Korea Post 내용증명 rules',
     fields: [
@@ -472,6 +487,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '진단서 및 의무기록 사본 발급 신청서', titleEn: 'Medical certificate & records copy request (진단서·의무기록 사본)',
     descRu: 'Заявление в больницу о выдаче 진단서 (медицинского заключения) и копий 의무기록 (истории болезни) — для страховой, суда, работодателя. По ст. 23 Закона о медицинской службе (의료법) учреждение обязано выдать их, если нет законных оснований для отказа.',
     descEn: 'Request to a hospital for a medical certificate (진단서) and copies of medical records (의무기록) — for insurance, court or employer. Under the Medical Service Act art. 23 the institution must issue them absent legitimate refusal grounds.',
+    descDoc: '진단서 및 의무기록 사본의 발급을 병원에 신청하는 서식(보험, 소송, 고용주 제출용). 의료법 제23조에 따라 정당한 거절 사유가 없는 한 의료기관은 이를 발급해야 한다.',
     refRu: 'ст. 23 Закона РК о медицинской службе (의료법) — 진단서 및 의무기록 열람·사본 교부',
     refEn: 'Medical Service Act of Korea, Art. 23 (certificates and records copy)',
     fields: [
@@ -502,6 +518,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '요양급여 이의신청서', titleEn: 'Health insurance benefits appeal (요양급여 이의신청서)',
     descRu: '이의신청 в Национальную службу медицинского страхования (국민건강보험공단), если лечение признали нестраховым (비급여) или отказали в возмещении. Срок — 90 дней с даты, когда узнали о решении (предельный — 180 дней).',
     descEn: 'Appeal to the National Health Insurance Service when a treatment is treated as non-covered (비급여) or reimbursement is refused. File within 90 days of learning of the decision (absolute limit 180 days).',
+    descDoc: '비급여 처리나 급여 지급 거부에 이의를 제기하는 국민건강보험공단 요양급여 이의신청서. 처분을 안 날부터 90일(최장 180일) 이내에 신청한다.',
     refRu: 'ст. 87 Закона РК о национальном медицинском страховании (국민건강보험법) — 이의신청, сроки 90/180 дней',
     refEn: 'National Health Insurance Act of Korea, Art. 87 (appeal; 90/180-day terms)',
     fields: [
@@ -532,6 +549,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '재학증명서 발급 신청서', titleEn: 'Certificate of enrollment request (재학증명서)',
     descRu: 'Заявление в школу о выдаче справки об обучении (재학증명서) — для визовых и иммиграционных процедур, страхования, банковских операций. Учёт обучающихся и выдача справок — обязанность директора школы.',
     descEn: 'Request to the school for a certificate of enrollment (재학증명서) — for visa/immigration procedures, insurance or banking. The principal keeps student records and issues such certificates.',
+    descDoc: '재학증명서 발급을 학교에 신청하는 서식(비자·이민 절차, 보험, 은행 거래 등에 필요). 학생 학적 관리 및 증명서 발급은 학교장의 의무이다.',
     refRu: 'ст. 39 Закона РК о начальном и среднем образовании (초·중등교육법) — 학적 등의 관리',
     refEn: 'Elementary and Secondary Education Act of Korea, Art. 39 (student records)',
     fields: [
@@ -560,6 +578,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '차임 조정 협의 요청서', titleEn: 'Rent adjustment request to the landlord (차임 조정 협의 요청서)',
     descRu: 'Письменное предложение арендодателю пересмотреть арендную плату (차임): снижение при падении дохода или рыночных ставок; повышение ограничено 5% в год (ст. 6-3 Закона о защите прав арендаторов жилья).',
     descEn: 'Written proposal to the landlord to adjust the rent (차임): reduction on income loss or lower market rates; increases are capped at 5% per year (Housing Lease Protection Act art. 6-3).',
+    descDoc: '임대인에게 차임 조정을 서면으로 제안하는 요청서. 소득 감소나 시세 하락 시 차임 인하를 협의할 수 있으며, 인상은 연 5% 이내로 제한된다(주택임대차보호법 제6조의3).',
     refRu: 'ст. 6-3 Закона РК о защите прав арендаторов жилья (주택임대차보호법) — 임대료 증액 제한',
     refEn: 'Housing Lease Protection Act of Korea, Art. 6-3 (rent-increase cap)',
     fields: [
@@ -607,6 +626,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '금융분쟁 조정 신청서', titleEn: 'Financial dispute mediation application (금융분쟁 조정 신청서)',
     descRu: 'Заявление об урегулировании финансового спора в 금융분쟁조정원 (комиссия по разрешению споров при 금융감독원 — FSS): подаётся, если банк не ответил на жалобу или отказал. Порядок — Закон о защите финансовых потребителей (분쟁조정); если 조정 не приведёт к согласию, остаётся суд. Сначала жалоба подаётся самому банку, её ответ прилагается.',
     descEn: 'Application for financial dispute mediation with the Financial Dispute Resolution Committee (금융분쟁조정원, operated by the Financial Supervisory Service): file it when the bank has not answered a complaint or has refused it. Procedure under the Financial Consumer Protection Act; if mediation fails, court action remains. A prior complaint to the bank is expected and its reply is attached.',
+    descDoc: '금융분쟁조정원(금융감독원 산하)에 금융분쟁 조정을 신청하는 서식. 은행 민원에 회신이 없거나 거부된 경우 금융소비자 보호에 관한 법률에 따라 신청하며, 조정이 이루어지지 않으면 소송으로 진행된다. 먼저 은행에 민원을 제기하고 그 회신을 첨부한다.',
     refRu: 'Закон РК о защите финансовых потребителей (금융소비자 보호에 관한 법률) — 분쟁조정; 금융감독원 — 금융분쟁조정원',
     refEn: 'Financial Consumer Protection Act of Korea (dispute mediation); Financial Dispute Resolution Committee at the FSS',
     fields: [
@@ -639,6 +659,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '노령연금 청구서', titleEn: 'Old-age pension claim (노령연금 청구서)',
     descRu: 'Заявление на пенсию по возрасту (노령연금) в Национальную пенсионную службу (국민연금공단): право — с 65 лет при участии в системе не менее 10 лет; 조기노령연금 (досрочная) — с 60 лет с уменьшением размера, отложенная — с увеличением. Подаётся в 지사 공단 (국민연금공단) или онлайн (정부24, 마이홈).',
     descEn: 'Old-age pension claim with the National Pension Service (국민연금공단): entitlement from age 65 with at least 10 years of coverage; the early pension (조기노령연금) from 60 with a reduced amount, the deferred pension with an increment. File at an NPS branch or online (정부24, 마이홈).',
+    descDoc: '국민연금공단에 제출하는 노령연금 청구서. 65세에 가입 기간 10년 이상일 때 수급권이 발생하며, 조기노령연금(60세, 감액)과 연금 지연 신청(증액)도 선택할 수 있다. 공단 지사 방문 또는 정부24·마이홈 온라인으로 신청한다.',
     refRu: '국민연금법 — 노령연금 (지급개시연령 65세, 10년 이상 가입; 조기노령연금 60세)',
     refEn: 'National Pension Act of Korea (old-age pension: age 65, 10+ years of coverage; early pension from 60)',
     fields: [
@@ -669,6 +690,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '기초생활보장 급여 신청서', titleEn: 'Basic living security benefits application (기초생활보장 급여 신청서)',
     descRu: 'Заявление на базовое жизнеобеспечение (기초생활보장: 생계·의료·주거·교육급여) в 읍·면·동 주민센터 (행정복지센터) по месту жительства. Решение принимается после проверки дохода и имущества семьи (확인조사). Онлайн-подача — через 복지로 (bokjiro.go.kr) и 정부24; при визите нужны документы о доходах и расходах на жильё.',
     descEn: 'Application for the Basic Living Security benefits (livelihood·medical·housing·education) at the community service center (행정복지센터) of your place of residence; the decision follows a household means test (확인조사). Online filing via bokjiro.go.kr and 정부24; bring income and housing-expense documents when visiting.',
+    descDoc: '생계·의료·주거·교육급여 등 기초생활보장 급여를 신청하는 서식. 거주지 읍·면·동 주민센터(행정복지센터)에 제출하며, 가구의 소득·재산 확인조사 후 급여가 결정된다. 복지로 및 정부24 온라인 신청도 가능하다.',
     refRu: 'Закон РК о национальной базовой системе жизнеобеспечения (국민기초생활보장법) — виды и порядок подачи 급여',
     refEn: 'National Basic Living Security Act of Korea (benefit types and application)',
     fields: [
@@ -699,6 +721,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '소음 민원 신고서', titleEn: 'Noise nuisance complaint (소음 민원 신고서)',
     descRu: 'Жалоба на бытовой шум от соседей (шаги, музыка, ремонт, бытовые приборы) в участок полиции (112) или районную управу (구청): указываются источник, время и содержание мешающего шума, а также предпринятые ранее меры. При неурегулировании конфликт передаётся на 생활소음 분쟁조정 — примирительную процедуру по Закону об урегулировании экологических споров (환경분쟁조정법) при Корейском агентстве окружающей среды (한국환경공단), а вред возмещается по ст. 750 ГК РК.',
     descEn: 'Complaint about household noise from a neighboring unit (footsteps, music, renovation, appliances) to the police (112) or the district office (구청): the letter records the source, times and impact of the disturbance and any prior attempts to settle. If unresolved, the case moves to living-noise dispute mediation (생활소음 분쟁조정) under the Environmental Dispute Mediation Act via the Korea Environment Corporation, with civil damages under Art. 750 of the Civil Code.',
+    descDoc: '이웃집 생활 소음(발소리, 음악, 공사, 가전제품 등)에 대한 경찰(112) 또는 구청 민원 신고서. 소음의 발생 원인, 시간, 내용과 사전 조치 사항을 기재한다. 해결되지 않으면 환경분쟁조정법에 따른 생활소음 분쟁조정(한국환경공단)과 민법 제750조에 따른 손해배상을 검토한다.',
     refRu: '소음·진동 규제에 관한 법률; 환경분쟁조정법 (생활소음 분쟁조정); 민법 제750조 (불법행위)',
     refEn: 'Noise and Vibration Control Act of Korea; Environmental Dispute Mediation Act (living-noise mediation); Civil Code Art. 750 (torts)',
     fields: [
@@ -729,6 +752,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '누수 피해 배상 청구서', titleEn: 'Water-leak damage claim (누수 피해 배상 청구서)',
     descRu: 'Претензия о возмещении ущерба от протечки с верхнего этажа: адресату (соседу сверху или управляющей конторе 관리사무소) сообщаются дата, предполагаемая причина и перечень повреждений, прикладываются смета и фото. Основание — ст. 750 ГК РК (деликт, 불법행위) и ст. 758 (ответственность собственника сооружения). Устанавливается срок ответа; при молчании — фиксация фактов через 관리사무소 и гражданский иск.',
     descEn: 'Compensation claim for a leak from the flat above: the addressee (the upstairs resident/owner or the management office, 관리사무소) is informed of the date, presumed cause and itemized damage, with a repair estimate and photos attached. Grounds are Art. 750 (torts) and Art. 758 (owner’s liability for structures) of the Korean Civil Code. A reply deadline is set; silence leads to a management-office verification and a civil action.',
+    descDoc: '윗집 누수로 인한 피해 배상을 청구하는 서면. 수신인(윗집 세입자·소유자 또는 관리사무소)에게 발생 일시, 추정 원인, 피해 내역을 알리고 수리 견적서와 사진을 첨부한다. 근거는 민법 제750조(불법행위)와 제758조(공작물 소유자의 책임)이며, 회신 기한을 정하고 무응답 시 관리사무소 확인 및 민사소송으로 진행한다.',
     refRu: '민법 제750조 (불법행위), 제758조 (공작물 등의 소유자의 책임)',
     refEn: 'Korean Civil Code, Arts. 750 (torts) and 758 (liability of owners of structures)',
     fields: [
@@ -757,6 +781,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '공용계단·쓰레기 위생 민원', titleEn: 'Hygiene complaint about common areas (공용계단·쓰레기 위생 민원)',
     descRu: 'Жалоба на курение, мусор и антисанитарию в местах общего пользования (лестницы, лифтовые холлы) в управляющую контору (관리사무소) с копией в районную управу (구청). Коридоры и лестницы многоквартирных домов входят в запретные для курения зоны по ст. 9 Закона о национальном укреплении здоровья (국민건강증진법), а вывоз бытовых отходов регулируется Законом об управлении отходами (폐기물관리법). Просьба: осмотр, информационные объявления и меры к нарушителям.',
     descEn: 'Complaint about smoking, litter and poor hygiene in common areas (stairwells, elevator halls) to the management office (관리사무소), with a copy to the district office (구청). Corridors and stairwells of multiunit housing are non-smoking zones under Art. 9 of the National Health Promotion Act, and household waste discharge is governed by the Waste Control Act. The letter asks for an inspection, notices and action against repeat offenders.',
+    descDoc: '계단, 엘리베이터 홀 등 공용부위의 흡연·쓰레기·위생 문제를 관리사무소에 신고하고 사본을 구청에 보내는 민원서. 공동주택 복도·계단은 국민건강증진법 제9조에 따른 금연구역이며, 생활폐기물 배출은 폐기물관리법의 규율을 받는다. 현장 확인, 안내 게시 및 위반자 조치를 요구한다.',
     refRu: '국민건강증진법 제9조 (금연구역); 폐기물관리법 (생활폐기물 배출); 공동주택관리령 (관리주체의 의무)',
     refEn: 'National Health Promotion Act, Art. 9 (non-smoking areas); Waste Control Act; Multiunit Housing Management Decree',
     fields: [
@@ -785,6 +810,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '시설 보수·수리 신청서', titleEn: 'Facility repair request (시설 보수·수리 신청서)',
     descRu: 'Заявление в управляющую контору (관리사무소) об устранении неисправности общего имущества дома: лифт, освещение в подъезде, водостоки, домофон. Указываются место, дата обнаружения и характер поломки, выбирается обычная или срочная подача. Поддержание общего имущества — обязанность управляющего по Закону РК об управлении многоквартирными домами (공동주택관리령).',
     descEn: 'Application to the management office (관리사무소) to fix a fault in common property: elevator, stairwell lighting, drains, intercom. It states the location, discovery date and nature of the fault, with a routine or urgent priority. Maintaining common property is the manager’s duty under the Korean Multiunit Housing Management Decree (공동주택관리령).',
+    descDoc: '엘리베이터, 복도 조명, 배수, 인터폰 등 공용시설 고장의 보수·수리를 관리사무소에 신청하는 서식. 고장 위치, 발견 일시, 내용을 기재하고 일반 또는 긴급 처리를 선택한다. 공용시설의 유지·보수는 공동주택관리령에 따른 관리자의 의무이다.',
     refRu: '공동주택관리령 (관리주체의 공용시설 유지·보수 업무)',
     refEn: 'Multiunit Housing Management Decree of Korea (upkeep of common facilities)',
     fields: [
@@ -813,6 +839,7 @@ export const TEMPLATES_KR: TplDef[] = [
     titleDoc: '관리비 정정·항목별 내역 요청서', titleEn: 'Maintenance-fee correction & itemization request (관리비 정정·항목별 내역 요청서)',
     descRu: 'Запрос в управляющую контору об исправлении счёта за содержание (관리비) и выдаче детализации по статьям расходов (лифт, уборка, отопление). Закон РК об управлении многоквартирными домами (공동주택관리령) требует составлять и раскрывать сметы расходов на содержание. После проверки переплата возвращается или зачитывается в следующем счёте.',
     descEn: 'Request to the management office to correct the maintenance-fee bill (관리비) and provide an itemized breakdown (elevator, cleaning, heating). The Korean Multiunit Housing Management Decree (공동주택관리령) requires expense statements to be prepared and disclosed. Any overcharge found is refunded or credited to the next bill.',
+    descDoc: '관리비 청구액의 정정과 엘리베이터, 청소, 난방 등 항목별 내역 제공을 관리사무소에 요청하는 서식. 공동주택관리령에 따라 관리비 내역의 작성과 공개가 의무화되어 있다. 확인된 과오급은 환불되거나 다음 달 청구액에서 차감된다.',
     refRu: '공동주택관리령 (관리비 등의 내역 작성·비치·공개 및 정산)',
     refEn: 'Multiunit Housing Management Decree of Korea (preparation and disclosure of maintenance-fee statements)',
     fields: [

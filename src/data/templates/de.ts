@@ -29,6 +29,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf bezahlten Jahresurlaub', titleEn: 'Annual leave application (Urlaubsantrag)',
     descRu: 'Заявление работодателю о предоставлении оплачиваемого отпуска. По Bundesurlaubsgesetz минимальный отпуск — 24 рабочих дня (при 6-дневной неделе), т.е. 4 недели; заявление подаётся заранее.',
     descEn: 'Leave application. Under the Bundesurlaubsgesetz the minimum is 24 working days (4 weeks); apply in advance.',
+    descDoc: 'Antrag an den Arbeitgeber auf bezahlten Jahresurlaub. Nach dem Bundesurlaubsgesetz beträgt der Mindesturlaub 24 Werktage (4 Wochen); der Antrag ist frühzeitig zu stellen.',
     refRu: '§§ 3, 7 Bundesurlaubsgesetz (BUrlG)',
     refEn: 'Sections 3, 7 of the Federal Leave Act (BUrlG)',
     fields: [
@@ -52,6 +53,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf unbezahlten Urlaub (Freistellung)', titleEn: 'Unpaid leave application (Freistellung)',
     descRu: 'Заявление о неоплачиваемом освобождении от работы (unbezahlte Freistellung) по личным причинам. Предоставляется по соглашению с работодателем; о продолжении выплаты зарплаты см. § 616 BGB.',
     descEn: 'Application for unpaid leave (Freistellung) for personal reasons, by agreement with the employer; continued pay may be governed by § 616 BGB.',
+    descDoc: 'Antrag auf unbezahlte Freistellung aus persönlichen Gründen im Einvernehmen mit dem Arbeitgeber; ob die Vergütung fortgezahlt wird, richtet sich gegebenenfalls nach § 616 BGB.',
     refRu: '§ 616 Гражданского уложения ФРГ (BGB); соглашение с работодателем',
     refEn: 'Section 616 of the German Civil Code (BGB); employer agreement',
     fields: [
@@ -76,6 +78,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Eigenkündigung (Kündigungsschreiben)', titleEn: 'Resignation letter (Kündigung)',
     descRu: 'Заявление о расторжении трудового договора работником. Обязательна ПИСЬМЕННАЯ форма с собственноручной подписью (§ 623 BGB); общий срок предупреждения — 4 недели к 15-му числу или к концу месяца (§ 622 BGB), если договором не установлено иное.',
     descEn: 'Resignation notice. WRITTEN form with wet signature is mandatory (§ 623 BGB); general notice period is 4 weeks to the 15th or end of month (§ 622 BGB).',
+    descDoc: 'Eigenkündigung des Arbeitnehmers. Die Schriftform mit eigenhändiger Unterschrift ist zwingend (§ 623 BGB); die allgemeine Kündigungsfrist beträgt 4 Wochen zum 15. oder zum Monatsende (§ 622 BGB).',
     refRu: '§§ 622, 623 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 622, 623 of the German Civil Code (BGB)',
     warningRu: 'Внимание: по § 623 BGB увольнение действует только в письменной форме на бумаге с собственноручной подписью — факс, email и скан не подходят',
@@ -100,6 +103,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Arbeitszeugnis', titleEn: 'Employment reference request (Arbeitszeugnis)',
     descRu: 'Запрос квалифицированного рабочего свидетельства (qualifiziertes Arbeitszeugnis) или простого (einfaches Arbeitszeugnis). Работодатель обязан выдать свидетельство по окончании трудовых отношений (§ 109 GewO).',
     descEn: 'Request for a qualified or simple employment reference. The employer must issue it upon termination (§ 109 GewO).',
+    descDoc: 'Antrag auf ein qualifiziertes oder einfaches Arbeitszeugnis. Der Arbeitgeber ist verpflichtet, es bei Beendigung des Arbeitsverhältnisses auszustellen (§ 109 GewO).',
     refRu: '§ 109 Промыслового уложения ФРГ (GewO)',
     refEn: 'Section 109 of the German Industrial Code (GewO)',
     fields: [
@@ -122,6 +126,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Mängelrüge an den Verkäufer', titleEn: 'Notice of defects to seller (Mängelrüge)',
     descRu: 'Претензия продавцу о недостатках товара: право на последующее исполнение (Nacherfüllung), снижение цены, расторжение или возмещение расходов. Гарантийные права потребителя действуют 2 года с передачи товара.',
     descEn: 'Notice of defects to a seller: right to cure, price reduction, rescission or reimbursement. Consumer warranty rights last 2 years from delivery.',
+    descDoc: 'Mängelrüge an den Verkäufer: Anspruch auf Nacherfüllung, Minderung, Rücktritt oder Aufwendungsersatz. Gewährleistungsrechte von Verbrauchern bestehen 2 Jahre ab Übergabe der Sache.',
     refRu: '§§ 437, 439 Гражданского уложения ФРГ (BGB); europäische Verbraucherrechte-Richtlinie',
     refEn: 'Sections 437, 439 of the German Civil Code (BGB); EU consumer rights rules',
     fields: [
@@ -153,6 +158,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Widerrufserklärung (14 Tage)', titleEn: 'Withdrawal notice (Widerruf) — 14 days',
     descRu: 'Заявление об использовании права отмены (Widerruf) при дистанционных и офлайн-покупках: 14 дней без объяснения причин; для дистанционных сделок срок — 14 дней с получения товара.',
     descEn: 'Withdrawal (Widerruf) notice for distance and off-premises purchases: 14 days without giving a reason.',
+    descDoc: 'Widerruf eines Vertrags, der im Fernabsatz oder außerhalb von Geschäftsräumen geschlossen wurde: Widerruf innerhalb von 14 Tagen ohne Angabe von Gründen möglich.',
     refRu: '§§ 355, 356 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 355, 356 of the German Civil Code (BGB)',
     fields: [
@@ -176,6 +182,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Zahlungserinnerung (Mahnung)', titleEn: 'Payment reminder (Mahnung)',
     descRu: 'Письменное напоминание должнику об оплате с установлением срока. После истечения срока должник находится в просрочке (Verzug, § 286 BGB) — начисляются проценты и возможно обращение в суд.',
     descEn: 'Written payment reminder setting a deadline. After the deadline the debtor is in default (Verzug, § 286 BGB).',
+    descDoc: 'Schriftliche Zahlungserinnerung mit Fristsetzung. Nach fruchtlosem Fristablauf befindet sich der Schuldner in Verzug (§ 286 BGB); Verzugszinsen und gerichtliche Schritte werden möglich.',
     refRu: '§ 286 Гражданского уложения ФРГ (BGB)',
     refEn: 'Section 286 of the German Civil Code (BGB)',
     fields: [
@@ -202,6 +209,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Schuldschein (Darlehen unter Privatpersonen)', titleEn: 'Loan note (Schuldschein)',
     descRu: 'Простая расписка о займе между частными лицами. Договор займа свыше 500 евро требует письменной формы (§ 126 BGB); расписка подтверждает получение суммы.',
     descEn: 'Simple loan note between individuals. Loan contracts above 500 EUR require written form (§ 126 BGB).',
+    descDoc: 'Einfacher Schuldschein über ein Darlehen zwischen Privatpersonen. Darlehensverträge über mehr als 500 Euro bedürfen der Schriftform (§ 126 BGB); der Schuldschein bestätigt den Empfang des Betrags.',
     refRu: '§§ 488, 126 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 488, 126 of the German Civil Code (BGB)',
     fields: [
@@ -228,6 +236,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Vollmacht', titleEn: 'Power of attorney (Vollmacht)',
     descRu: 'Общая доверенность на бытовые действия: получение документов, писем, посылок. Для сделок с недвижимостью и операций, требующих нотариальной формы, нужна нотариально заверенная Vollmacht.',
     descEn: 'General power of attorney for everyday matters. A notarized Vollmacht is required for real estate and notarially form-bound transactions.',
+    descDoc: 'Allgemeine Vollmacht für alltägliche Angelegenheiten: Abholen von Dokumenten, Post und Paketen. Für Grundstücksgeschäfte und notariell formbedürftige Rechtsgeschäfte ist eine notariell beurkundete Vollmacht erforderlich.',
     refRu: '§§ 164–172 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 164-172 of the German Civil Code (BGB)',
     fields: [
@@ -251,6 +260,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Entschuldigung für das Fehlen in der Schule', titleEn: 'School absence note (Entschuldigung)',
     descRu: 'Извинение родителя о пропуске занятий ребёнком. Школьные правила (Schulordnung) земли обычно требуют письменного извещения в течение 2–3 дней.',
     descEn: 'Parent’s note explaining a child’s school absence. State school rules usually require a written notice within 2-3 days.',
+    descDoc: 'Entschuldigung der Eltern für das Fehlen des Kindes im Unterricht. Die Schulordnung des Landes verlangt in der Regel eine schriftliche Mitteilung innerhalb von 2–3 Tagen.',
     refRu: 'правила посещаемости школ земель ФРГ',
     refEn: 'State school attendance rules',
     fields: [
@@ -276,6 +286,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Beschwerde über die medizinische Versorgung', titleEn: 'Healthcare complaint (Beschwerde)',
     descRu: 'Жалоба на медицинское обслуживание руководству клиники/практики. Права пациентов закреплены в §§ 630a ff BGB; далее — complaint management клиники, страховая или пациентская инстанция земли.',
     descEn: 'Complaint about healthcare services addressed to the clinic management. Patient rights are codified in §§ 630a ff BGB.',
+    descDoc: 'Beschwerde über die medizinische Behandlung an die Klinik- oder Praxisleitung. Die Patientenrechte sind in §§ 630a ff. BGB geregelt; anschließend kommen Beschwerdemanagement, Krankenkasse oder Patientenstelle des Landes in Betracht.',
     refRu: '§§ 630a и сл. Гражданского уложения ФРГ (Patientenrechtegesetz)',
     refEn: 'Sections 630a et seq. of the German Civil Code (Patient Rights Act)',
     fields: [
@@ -304,6 +315,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Mängelanzeige an den Vermieter', titleEn: 'Defect notice to landlord (Mängelanzeige)',
     descRu: 'Уведомление арендодателя о дефекте жилья с требованием устранить. При неустранении возможны снижение аренды (Mietminderung) и самостоятельное устранение с возмещением (§ 536a BGB).',
     descEn: 'Defect notice to the landlord. If not cured, rent reduction (Mietminderung) and self-help with reimbursement (§ 536a BGB) may apply.',
+    descDoc: 'Mängelanzeige an den Vermieter mit Aufforderung zur Beseitigung. Bleibt dies aus, kommen Mietminderung sowie Ersatzvornahme mit Ersatz der Kosten (§ 536a BGB) in Betracht.',
     refRu: '§§ 536a, 535 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 536a, 535 of the German Civil Code (BGB)',
     fields: [
@@ -342,6 +354,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Widerspruch gegen einen Bescheid', titleEn: 'Objection to an administrative decision (Widerspruch)',
     descRu: 'Возражение (Widerspruch) против административного акта: срок — 1 месяц с момента вручения (§ 70 VwGO); изложение решения, grounds и запрос отмены.',
     descEn: 'Objection to an administrative act within one month of service (§ 70 VwGO).',
+    descDoc: 'Widerspruch gegen einen Verwaltungsakt: Frist ein Monat ab Zustellung (§ 70 VwGO); der Bescheid wird geschildert, der Widerspruch begründet und dessen Aufhebung beantragt.',
     refRu: '§ 70 VwGO; § 357 AO (для налоговых актов — Einspruch)',
     refEn: 'Section 70 VwGO (German administrative procedure)',
     fields: [
@@ -369,6 +382,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Klageschrift (Amtsgericht)', titleEn: 'Civil complaint to the local court (Klage)',
     descRu: 'Основание иска в Amtsgericht (до 5 000 € или по предмету): Klage с Klagegründen и Beweismitteln; процессуально подаётся через адвоката или лично.',
     descEn: 'Basis statement of claim for the Amtsgericht (up to EUR 5,000 or by subject matter).',
+    descDoc: 'Klageschrift für das Amtsgericht (bis 5 000 Euro oder nach Streitgegenstand): Klage mit Klagegründen und Beweismitteln; die Einreichung erfolgt durch einen Rechtsanwalt oder persönlich.',
     refRu: '§ 253 ZPO; ГПК Германии (ZPO)',
     refEn: 'Section 253 ZPO (German Civil Procedure Code)',
     fields: [
@@ -396,6 +410,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Kostenübernahme (Krankenkasse)', titleEn: 'Application to the health insurer for treatment coverage',
     descRu: 'Заявление в больничную кассу (Krankenkasse) о покрытии дорогостоящего/нового лечения: обоснование мед. необходимости; при отказе — Widerspruch (§ 13 SGB V; § 104 SGB V для G-BA).',
     descEn: 'Application to the statutory health insurer to cover a costly or novel treatment (§ 13 SGB V); rejection can be challenged.',
+    descDoc: 'Antrag an die Krankenkasse auf Übernahme einer aufwendigen oder neuartigen Behandlung: Begründung der medizinischen Notwendigkeit; bei Ablehnung steht der Widerspruch offen (§ 13 SGB V; § 104 SGB V zum G-BA).',
     refRu: '§ 13 SGB V; § 2 Abs. 1a SGB V (Wahlleistung — частично)',
     refEn: 'Section 13 SGB V (Social Code Book V)',
     fields: [
@@ -422,6 +437,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Einspruch gegen den Steuerbescheid', titleEn: 'Objection against a tax assessment (Einspruch)',
     descRu: 'Возражение против налогового решения: месячный срок (§ 348 AO), обоснование, документы.',
     descEn: 'Objection against a tax assessment within one month (§ 348 AO), with grounds and documents.',
+    descDoc: 'Einspruch gegen den Steuerbescheid innerhalb eines Monats (§ 348 AO) mit Begründung und Unterlagen.',
     refRu: '§ 348, 357 AO (Abgabenordnung)',
     refEn: 'Sections 348, 357 AO (German Fiscal Code)',
     fields: [
@@ -447,6 +463,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Stundung von Steuern', titleEn: 'Application for tax deferral (Stundung)',
     descRu: 'Заявление в Finanzamt об отсрочке уплаты (Stundung) или рассрочке, если единовременная уплата налога — непосильная тяжесть (unbillige Härte). За отсрочку начисляются Stundungszinsen — 0,5 % за полный месяц (§ 234 AO); возможен Aufschub с эффектом Stundung (§ 223 AO).',
     descEn: 'Application to the tax office for deferral (Stundung) or instalments where immediate payment would cause undue hardship. Deferral interest accrues at 0.5% per full month (§ 234 AO); deferral with suspension effect is governed by § 223 AO.',
+    descDoc: 'Antrag an das Finanzamt auf Stundung oder Ratenzahlung, wenn die sofortige Zahlung eine unbillige Härte bedeutete. Für die Stundung fallen Stundungszinsen von 0,5 % je vollem Monat an (§ 234 AO); der Aufschub mit Stundungswirkung richtet sich nach § 223 AO.',
     refRu: '§§ 222, 223, 234 AO (Abgabenordnung)',
     refEn: 'Sections 222, 223, 234 AO (German Fiscal Code)',
     fields: [
@@ -476,6 +493,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Rückgabe einer SEPA-Lastschrift', titleEn: 'Return of a SEPA direct debit (Lastschrift)',
     descRu: 'Заявление в свой банк о возврате (Rückgabe) списания по SEPA-Lastschrift: разрешённое списание возвращается в течение 8 недель с даты списания (§ 675j BGB); неавторизованное — в течение 13 месяцев (§ 675x BGB). Письмо направляется своему банку (Zahlungsdienstleister), а не получателю платежа.',
     descEn: 'Return (Rückgabe) of a SEPA direct debit via your own bank: authorised debits may be returned within 8 weeks of the charge date (§ 675j BGB); unauthorised ones within 13 months (§ 675x BGB). The letter goes to your bank, not to the payee.',
+    descDoc: 'Antrag an die eigene Bank auf Rückgabe einer SEPA-Lastschrift: autorisierte Abbuchungen können innerhalb von 8 Wochen ab Belastung zurückgegeben werden (§ 675j BGB), nicht autorisierte innerhalb von 13 Monaten (§ 675x BGB). Der Brief geht an die eigene Bank (Zahlungsdienstleister), nicht an den Zahlungsempfänger.',
     refRu: '§ 675j, 675x Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 675j, 675x of the German Civil Code (BGB)',
     warningRu: 'Внимание: для разрешённого списания срок — 8 недель с даты Belastung; 13-месячный срок (§ 675x BGB) действует только для неавторизованных списаний',
@@ -506,6 +524,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Klage auf Rückzahlung eines Darlehens', titleEn: 'Lawsuit for repayment of a loan (Darlehen)',
     descRu: 'Klageschrift о взыскании невозвращённого частного займа: выданная сумма подлежит возврату при наступлении срока (§ 488 BGB); после напоминания (Mahnung) должник находится в просрочке (Verzug, § 286 BGB) и обязан платить Verzugszinsen — 5 процентных пунктов над базовой ставкой (§ 288 Abs. 1 BGB). При сумме до 5 000 € — Amtsgericht (§ 23 GVG).',
     descEn: 'Statement of claim for repayment of a private loan with default interest (§§ 488, 286, 288 BGB); up to EUR 5,000 the Amtsgericht is competent (§ 23 GVG).',
+    descDoc: 'Klageschrift auf Rückzahlung eines nicht zurückgezahlten Privatdarlehens: Der empfangene Betrag ist bei Fälligkeit zurückzuzahlen (§ 488 BGB); nach Mahnung befindet sich der Schuldner in Verzug (§ 286 BGB) und schuldet Verzugszinsen von 5 Prozentpunkten über dem Basiszinssatz (§ 288 Abs. 1 BGB). Bis 5 000 Euro ist das Amtsgericht zuständig (§ 23 GVG).',
     refRu: '§ 253 ZPO; §§ 488, 286, 288 Гражданского уложения ФРГ (BGB)',
     refEn: 'Section 253 ZPO; Sections 488, 286, 288 of the German Civil Code (BGB)',
     fields: [
@@ -540,6 +559,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Klage auf Schadensersatz wegen eines Wasserschadens', titleEn: 'Lawsuit for compensation of water damage',
     descRu: 'Klageschrift о возмещении ущерба от залива/протечки, причинённого по вине ответчика (сосед, владелец помещения): деликтная ответственность — § 823 BGB, возмещение — путём восстановления положения или деньгами (§ 249 BGB). Если аварию вызвало устройство (например, стиральная машина), к производителю возможен иск по Produkthaftungsgesetz.',
     descEn: 'Statement of claim for compensation of water damage caused by the defendant (§§ 823, 249 BGB); if a defective appliance caused the leak, the producer may be liable under the Product Liability Act.',
+    descDoc: 'Klageschrift auf Schadensersatz wegen eines vom Beklagten verursachten Wasserschadens (Nachbar, Räumungsinhaber): deliktische Haftung nach § 823 BGB, Ersatz durch Herstellung oder Geldzahlung (§ 249 BGB). Hat ein Gerät (etwa eine Waschmaschine) die Störung verursacht, kommt ein Anspruch gegen den Hersteller nach dem Produkthaftungsgesetz in Betracht.',
     refRu: '§ 253 ZPO; §§ 823, 249 Гражданского уложения ФРГ (BGB)',
     refEn: 'Section 253 ZPO; Sections 823, 249 of the German Civil Code (BGB)',
     fields: [
@@ -573,6 +593,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Klage auf Rückzahlung des Kaufpreises nach Rücktritt vom Kaufvertrag', titleEn: 'Lawsuit for a refund after withdrawal from a sales contract',
     descRu: 'Klageschrift о возврате цены после отказа от договора купли-продажи из-за недостатка товара: права покупателя — §§ 437, 440, 323 BGB (отказ после безрезультатной отсрочки для устранения недостатка — Nacherfüllung), возврат полученного — § 346 BGB; гарантия на подвижные вещи — 2 года с передачи (§ 438 Abs. 1 Nr. 3 BGB). До 5 000 € — Amtsgericht (§ 23 GVG).',
     descEn: 'Statement of claim for a refund after withdrawal from the sales contract due to a defect (§§ 437, 440, 323, 346 BGB); the statutory warranty for movable goods lasts two years from delivery (§ 438 BGB).',
+    descDoc: 'Klageschrift auf Rückabwicklung des Kaufpreises nach dem Rücktritt vom Kaufvertrag wegen eines Sachmangels: Käuferrechte aus §§ 437, 440, 323 BGB (Rücktritt nach fruchtloser Fristsetzung zur Nacherfüllung), Rückgewähr des Empfangenen nach § 346 BGB; die Gewährleistung für bewegliche Sachen beträgt 2 Jahre ab Übergabe (§ 438 Abs. 1 Nr. 3 BGB). Bis 5 000 Euro ist das Amtsgericht zuständig (§ 23 GVG).',
     refRu: '§ 253 ZPO; §§ 437, 438, 440, 323, 346 Гражданского уложения ФРГ (BGB)',
     refEn: 'Section 253 ZPO; Sections 437, 438, 440, 323, 346 of the German Civil Code (BGB)',
     fields: [
@@ -606,6 +627,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Widerspruch gegen den Leistungsbescheid der Krankenkasse', titleEn: 'Objection to a health insurer rejection (Widerspruch)',
     descRu: 'Возражение (Widerspruch) против отказа больничной кассы покрыть лечение, средство или услугу: срок — 1 месяц с момента получения решения (§ 66 SGB X); касса сама проверяет решение (§ 86a SGB X); далее — суд по социальным делам (Sozialgericht). По § 13 Abs. 3 SGB V касса обязана решить заявление в 3 недели (5 недель — при заключении Медицинской службы).',
     descEn: 'Objection to a Krankenkasse decision refusing coverage: file within one month of receipt (§ 66 SGB X); the fund reviews its own decision (§ 86a SGB X); next step is the Sozialgericht. The fund must decide applications within 3 weeks (5 weeks with a medical-service opinion) under § 13(3) SGB V.',
+    descDoc: 'Widerspruch gegen die Ablehnung einer Leistung, eines Hilfsmittels oder einer Behandlung durch die Krankenkasse: Frist ein Monat ab Bekanntgabe (§ 66 SGB X); die Kasse überprüft ihre Entscheidung selbst (§ 86a SGB X); anschließend ist das Sozialgericht zuständig. Nach § 13 Abs. 3 SGB V muss die Kasse über Anträge innerhalb von 3 Wochen entscheiden (5 Wochen bei Einholung einer Stellungnahme des Medizinischen Dienstes).',
     refRu: '§ 13 SGB V; §§ 66, 82, 86a Кодекса социального обеспечения X (SGB X)',
     refEn: 'Section 13 SGB V; Sections 66, 82, 86a SGB X (German Social Code Book X)',
     fields: [
@@ -634,6 +656,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Einsicht in die Patientenakte', titleEn: 'Request for access to patient records (Patientenakte)',
     descRu: 'Запрос в клинику/практику на ознакомление с полной пациентской картой и/или выдачу копий: право пациента по § 630g BGB; осмотр на месте бесплатный, копии — с возмещением расходов; карта хранится не менее 10 лет (§ 630f BGB).',
     descEn: 'Request to a clinic or practice for access to the complete patient file and/or copies (§ 630g BGB); on-site inspection is free, copies are charged at cost; records are kept for at least 10 years (§ 630f BGB).',
+    descDoc: 'Antrag an Klinik oder Praxis auf Einsicht in die vollständige Patientenakte und/oder Herausgabe von Kopien: Anspruch des Patienten aus § 630g BGB; die Einsichtnahme vor Ort ist kostenfrei, Kopien werden gegen Erstattung der Kosten bereitgestellt; die Akte wird mindestens 10 Jahre aufbewahrt (§ 630f BGB).',
     refRu: '§ 630g, 630f Гражданского уложения ФРГ (BGB, Patientenrechtegesetz)',
     refEn: 'Sections 630g, 630f of the German Civil Code (BGB, Patient Rights Act)',
     fields: [
@@ -661,6 +684,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Anmeldung eines Kindes an der Grundschule', titleEn: 'Enrolment of a child in primary school (Schulanmeldung)',
     descRu: 'Заявление о приёме ребёнка в Grundschule: подаётся родителями, как правило, весной года перед приёмом (даты устанавливает земля); прилагаются свидетельство о рождении, подтверждение места жительства и справка о прививке от кори (§ 20 Abs. 8a IfSG).',
     descEn: 'Application to enrol a child in a Grundschule, usually filed in spring before the school year (dates set by the Bundesland); birth certificate, residence proof and measles vaccination proof (§ 20 para. 8a IfSG) are attached.',
+    descDoc: 'Antrag auf Aufnahme des Kindes in die Grundschule: Eingabe in der Regel im Frühjahr vor dem Schuljahr durch die Eltern (Fristen legt das Land fest); beizufügen sind Geburtsurkunde, Nachweis des Wohnsitzes und Nachweis der Masernimpfung (§ 20 Abs. 8a IfSG).',
     refRu: 'Школьный закон соответствующей земли (Schulpflicht, Aufnahme); § 20 Abs. 8a IfSG (Masernimpfnachweis)',
     refEn: 'School law (Schulgesetz) of the respective Bundesland; Section 20(8a) IfSG (measles vaccination proof)',
     fields: [
@@ -690,6 +714,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Widerspruch gegen die Betriebskostenabrechnung', titleEn: 'Objection to the utility cost statement (Betriebskostenabrechnung)',
     descRu: 'Возражение против годового расчёта коммунальных расходов: доплаты арендодатель вправе требовать только в течение 12 месяцев после окончания расчётного периода (§ 556 Abs. 3 BGB); арендатор вправе знакомиться с первичными документами (§ 259 BGB); неоспариваемую часть платите, спорную — только под оговоркой (unter Vorbehalt).',
     descEn: 'Objection to the annual utility statement: additional claims are barred 12 months after the end of the settlement period (§ 556(3) BGB); the tenant may inspect the receipts (§ 259 BGB); pay the undisputed part, dispute the rest under reservation.',
+    descDoc: 'Widerspruch gegen die Jahresabrechnung der Betriebskosten: Nachforderungen sind nur innerhalb von 12 Monaten nach Ablauf der Abrechnungsperiode zulässig (§ 556 Abs. 3 BGB); der Mieter kann Einsicht in die Belege verlangen (§ 259 BGB); den unbestrittenen Teil zahlen, den strittigen nur unter Vorbehalt.',
     refRu: '§ 556 Abs. 3, § 259 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 556(3), 259 of the German Civil Code (BGB)',
     fields: [
@@ -718,6 +743,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Wohngeld', titleEn: 'Housing benefit application (Wohngeld)',
     descRu: 'Заявление в Wohngeldstelle района/города на Wohngeld — Mietzuschuss для съёмщиков или Lastenzuschuss для собственников (§ 1 WoGG). Wohngeld назначается с месяца подачи заявления; если жильё уже оплачивается через Bürgergeld/Grundsicherung (Kosten der Unterkunft), Wohngeld не предоставляется.',
     descEn: 'Application to the local Wohngeldstelle for housing benefit — rent subsidy for tenants or burden subsidy for owners (§ 1 WoGG). It is granted from the month of application; it is not available where housing costs are already covered by Bürgergeld/Grundsicherung.',
+    descDoc: 'Antrag an die Wohngeldstelle des Kreises oder der Stadt auf Wohngeld — Mietzuschuss für Mieter oder Lastenzuschuss für Eigentümer (§ 1 WoGG). Bewilligt wird es ab dem Monat der Antragstellung; wo die Kosten der Unterkunft bereits durch Bürgergeld oder Grundsicherung gedeckt sind, ist Wohngeld ausgeschlossen.',
     refRu: '§ 1 Закона о жилищном пособии ФРГ (Wohngeldgesetz, WoGG)',
     refEn: 'Section 1 of the German Housing Benefit Act (WoGG)',
     fields: [
@@ -746,6 +772,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Antrag auf Altersrente', titleEn: 'Old-age pension application (Altersrente)',
     descRu: 'Письменное заявление в Deutsche Rentenversicherung: пенсия назначается только по заявлению (§ 94 SGB VI). Письмо запускает процедуру — DRV высылает официальные формы (V0800) и приглашение на приём; заявление действует с месяца его получения. Регельная возрастная пенсия — с 67 лет (§ 35 SGB VI); досрочные варианты — с Abschlägen.',
     descEn: 'Written application to the Deutsche Rentenversicherung: the pension is granted only upon application (§ 94 SGB VI). The letter starts the procedure — DRV sends the official forms (V0800) and an appointment invitation; it is effective from the month of receipt.',
+    descDoc: 'Schriftlicher Antrag an die Deutsche Rentenversicherung: die Rente wird nur auf Antrag geleistet (§ 94 SGB VI). Das Schreiben löst das Verfahren aus — die DRV übersendet die amtlichen Formulare (V0800) und lädt zum Termin ein; der Antrag wirkt ab dem Monat seines Zugangs. Die Regelaltersrente beginnt mit 67 Jahren (§ 35 SGB VI); frühere Termine sind mit Abschlägen möglich.',
     refRu: '§§ 35, 38, 94 Кодекса социального обеспечения VI (SGB VI)',
     refEn: 'Sections 35, 38, 94 SGB VI (German Social Code Book VI)',
     fields: [
@@ -774,6 +801,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Beschwerde wegen Lärmbelästigung durch den Nachbarn', titleEn: 'Complaint about a noisy neighbor (Ordnungsamt)',
     descRu: 'Жалоба в Ordnungsamt на систематический шум от соседа (Ruhestörung, Lärmbelästigung). Перед обращением направьте соседу письменное Aufforderung и фиксируйте даты, время и характер нарушений: ведомство пресекает нарушение Nachtruhe (по земельному праву, как правило 22:00–06:00) и может вынести распоряжение к нарушителю. Шум, превышающий ortsübliche Immissionen, терпеть не требуется (§ 906 BGB); ориентир по допустимым уровням — TA Lärm.',
     descEn: 'Complaint to the Ordnungsamt about recurring noise from a neighbor (Ruhestörung). Send the neighbor a written warning (Aufforderung) first and log dates, times and nature of the noise: the office enforces the night rest (usually 22:00–06:00 under state law) and may issue an order. Immissions beyond the customary local level need not be tolerated (§ 906 BGB); TA Lärm provides the reference levels.',
+    descDoc: 'Beschwerde an das Ordnungsamt über wiederkehrenden Lärm eines Nachbarn (Ruhestörung). Vorher den Nachbarn schriftlich auffordern und Datum, Uhrzeit und Art der Störungen dokumentieren: Die Behörde setzt die Nachtruhe durch (nach Landesrecht in der Regel 22:00–06:00 Uhr) und kann eine Verfügung erlassen. Über ortsübliche Immissionen hinausgehenden Lärm muss nicht geduldet werden (§ 906 BGB); Orientierungswerte liefert die TA Lärm.',
     refRu: '§ 906 Гражданского уложения ФРГ (BGB); TA Lärm (AVV zum Schutz gegen Lärm); landesrechtliche Nachtruhe',
     refEn: 'Section 906 of the German Civil Code (BGB); TA Lärm (anti-noise administrative regulation); night rest under state law',
     fields: [
@@ -804,6 +832,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Schadensanzeige — Wasserschaden', titleEn: 'Water damage report (Wasserschaden)',
     descRu: 'Уведомление о заливе квартиры по вине соседа: страховщику (Hausratversicherung — ваше движимое имущество, Wohngebäudeversicherung — конструктив) и Hausverwaltung — для устранения течи и фиксации ущерба. Требования к соседу основаны на §§ 823, 1004 BGB; его Private Haftpflichtversicherung покрывает ущерб. Сообщите страховщику безотлагательно, задокументируйте повреждения фото и сохраняйте чеки.',
     descEn: 'Report of water damage caused by a neighbor: to your insurer (household contents insurance for your belongings, building insurance for the structure) and to the property management, to stop the leak and document the damage. Claims against the neighbor rest on §§ 823, 1004 BGB; his private liability insurance typically covers the loss. Notify the insurer immediately, photograph the damage and keep receipts.',
+    descDoc: 'Meldung eines Wasserschadens durch einen Nachbarn: an den Versicherer (Hausratversicherung für das Inventar, Wohngebäudeversicherung für das Gebäude) und an die Hausverwaltung, um die Ursache zu beheben und den Schaden zu dokumentieren. Ansprüche gegen den Nachbarn stützen sich auf §§ 823, 1004 BGB; seine Privat-Haftpflichtversicherung deckt den Schaden in der Regel. Den Versicherer unverzüglich benachrichtigen, Schäden fotografieren und Belege aufbewahren.',
     refRu: '§§ 823, 1004 Гражданского уложения ФРГ (BGB); условия страхования домашнего имущества (Hausrat)',
     refEn: 'Sections 823, 1004 of the German Civil Code (BGB); household contents insurance terms',
     fields: [
@@ -834,6 +863,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Beschwerde wegen unhygienischer Zustände im Treppenhaus', titleEn: 'Complaint to the property management: hygiene in common areas',
     descRu: 'Жалоба управляющей компании (Hausverwaltung) на грязное Treppenhaus, мусор у контейнеров, вредителей или курение в подъезде. Содержание общего имущества — обязанность арендодателя (§ 535 BGB), жильцы обязаны к взаимной Rücksichtnahme (§ 241 Abs. 2 BGB) и соблюдению Hausordnung. Укажите продолжительность проблемы и просите конкретные меры.',
     descEn: 'Complaint to the property management about a dirty stairwell, waste by the bins, pests or smoking in the entrance. Maintaining the premises is the landlord’s duty (§ 535 BGB); residents owe mutual consideration (§ 241(2) BGB) and the Hausordnung applies. State how long the problem persists and ask for concrete measures.',
+    descDoc: 'Beschwerde an die Hausverwaltung über ein schmutziges Treppenhaus, Abfall neben den Containern, Schädlinge oder Rauchen im Hausflur. Die Instandhaltung des Gemeinschaftseigentums obliegt dem Vermieter (§ 535 BGB); die Bewohner schulden einander Rücksichtnahme (§ 241 Abs. 2 BGB) und unterliegen der Hausordnung. Dauer des Mangels angeben und konkrete Maßnahmen verlangen.',
     refRu: '§§ 241 Abs. 2, 535 Гражданского уложения ФРГ (BGB); Hausordnung (приложение к договору найма)',
     refEn: 'Sections 241(2), 535 of the German Civil Code (BGB); Hausordnung (annex to the tenancy agreement)',
     fields: [
@@ -861,6 +891,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Mängelanzeige und Aufforderung zur Beseitigung des Mangels', titleEn: 'Repair request (Mietmangel — defect notice)',
     descRu: 'Заявление в Hausverwaltung/арендодателю о неисправности в квартире с просьбой организовать ремонт. Дефект, ограничивающий договорное использование жилья, — Mietmangel (§ 536 BGB); обязанность поддерживать жильё в исправном состоянии лежит на арендодателе (§ 535 Abs. 1 S. 2 BGB). Укажите дату обнаружения, влияние на проживание и удобное время доступа для мастера.',
     descEn: 'Notice to the property management/landlord about a defect with a request to arrange the repair. A defect limiting the contractual use of the dwelling is a Mietmangel (§ 536 BGB); the landlord must maintain the premises (§ 535(1) s. 2 BGB). State the date you noticed it, the impact and your availability for the technician.',
+    descDoc: 'Anzeige eines Mangels an die Hausverwaltung oder den Vermieter mit Bitte um Organisation der Reparatur. Ein Mangel, der den vertragsgemäßen Gebrauch der Wohnung einschränkt, ist ein Mietmangel (§ 536 BGB); die Instandhaltungspflicht liegt beim Vermieter (§ 535 Abs. 1 S. 2 BGB). Datum der Feststellung, Auswirkungen auf das Wohnen und Terminvorschläge für den Handwerker angeben.',
     refRu: '§§ 535 Abs. 1 S. 2, 536 Гражданского уложения ФРГ (BGB)',
     refEn: 'Sections 535(1) s. 2, 536 of the German Civil Code (BGB)',
     fields: [
@@ -889,6 +920,7 @@ export const TEMPLATES_DE: TplDef[] = [
     titleDoc: 'Einwendungen gegen die Betriebskostenabrechnung', titleEn: 'Objections to the utility cost statement (Nebenkosten)',
     descRu: 'Возражения (Einwendungen) против годовой Betriebskostenabrechnung и запрос проверки: расчёт должен быть единым и обозримым (§ 556 Abs. 2 BGB), перечень позиций — по Betriebskostenverordnung; арендатор вправе требовать доступ к первичным документам (§ 259 BGB). Доплаты арендодатель вправе требовать лишь в течение 12 месяцев после окончания расчётного периода (§ 556 Abs. 3 BGB).',
     descEn: 'Objections to the annual utility cost statement with a request for review: the statement must be uniform and transparent (§ 556(2) BGB) and its items follow the Operating Costs Ordinance; the tenant may demand access to the original receipts (§ 259 BGB). Additional payments can be claimed only within 12 months after the period ends (§ 556(3) BGB).',
+    descDoc: 'Einwendungen gegen die Jahresbetriebskostenabrechnung mit Bitte um Prüfung: Die Abrechnung muss in sich geschlossen und übersichtlich sein (§ 556 Abs. 2 BGB), die Positionen richten sich nach der Betriebskostenverordnung; der Mieter kann Einsicht in die Originalbelege verlangen (§ 259 BGB). Nachforderungen sind nur innerhalb von 12 Monaten nach Ablauf der Abrechnungsperiode zulässig (§ 556 Abs. 3 BGB).',
     refRu: '§§ 556 Abs. 2, 3, 259 Гражданского уложения ФРГ (BGB); Betriebskostenverordnung (BetrKV)',
     refEn: 'Sections 556(2)–(3), 259 of the German Civil Code (BGB); Operating Costs Ordinance (BetrKV)',
     fields: [

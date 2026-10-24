@@ -26,6 +26,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Заява аб прадастаўленні працоўнага адпачынку',
     descRu: 'Заявление нанимателю о предоставлении трудового отпуска. Продолжительность основного отпуска в Беларуси — не менее 24 календарных дней за рабочий год (ст. 155 ТК РБ).',
     descEn: 'Application for annual labor leave. Minimum duration in Belarus is 24 calendar days per working year.',
+    descDoc: 'Заява нанімальніку аб прадастаўленні працоўнага адпачынку.',
     refRu: 'ст. 150, 155 Трудового кодекса Республики Беларусь',
     refEn: 'Articles 150, 155 of the Labour Code of the Republic of Belarus',
     fields: [
@@ -47,6 +48,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Заява аб прадастаўленні сацыяльнага адпачынку без захавання заробку',
     descRu: 'Заявление о социальном отпуске без сохранения заработной платы по семейным и иным уважительным причинам — по договорённости с нанимателем, до 30 календарных дней в году.',
     descEn: 'Application for unpaid social leave for family or other valid reasons, up to 30 calendar days per year by agreement.',
+    descDoc: 'Заява нанімальніку аб прадастаўленні адпачынку без захавання заробнай платы па паважлівых прычынах.',
     refRu: 'ст. 190 Трудового кодекса Республики Беларусь',
     refEn: 'Article 190 of the Labour Code of the Republic of Belarus',
     fields: [
@@ -71,6 +73,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Заява аб звальненні па ўласным жаданні',
     descRu: 'Заявление о расторжении трудового договора по собственному желанию. Работник обязан письменно предупредить нанимателя об увольнении за один месяц (ст. 40 ТК РБ).',
     descEn: 'Voluntary resignation application. The employee must notify the employer one month in advance (Art. 40 of the Labour Code of Belarus).',
+    descDoc: 'Заява нанімальніку аб звальненні па ўласным жаданні з папярэджаннем за адзін месяц да звальнення.',
     refRu: 'ст. 40 Трудового кодекса Республики Беларусь',
     refEn: 'Article 40 of the Labour Code of the Republic of Belarus',
     fields: [
@@ -92,6 +95,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Заява аб выдачы дакументаў, звязаных з працай',
     descRu: 'Заявление о выдаче документов, связанных с работой: справки о зарплате и занимаемой должности, копий приказов, выписок из трудовой книжки.',
     descEn: 'Request for work-related documents: salary certificate, position certificate, order copies.',
+    descDoc: 'Заява аб выдачы дакументаў аб працы: даведак аб заработнай плаце і пасадзе, копій загадаў, выпісак з працоўнай кніжкі.',
     refRu: 'Трудовой кодекс Республики Беларусь (права работника на документы, связанные с работой)',
     refEn: 'Labour Code of the Republic of Belarus (employee right to work-related documents)',
     fields: [
@@ -112,6 +116,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Прэтэнзія аб вяртанні тавару неналежнай якасці',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в белорусских рублях. При отказе — суд или обращение в местный исполнительный комитет.',
     descEn: 'Pre-court claim to a seller over defective goods under the Belarusian Consumer Protection Law.',
+    descDoc: 'Дасудовая прэтэнзія прадаўцу аб вяртанні тавару неналежнай якасці.',
     refRu: 'ст. 20 Закона Республики Беларусь от 09.01.2002 № 90-З «О защите прав потребителей»',
     refEn: 'Article 20 of the Belarusian Law No. 90-Z on Consumer Protection',
     fields: [
@@ -145,6 +150,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Пазоўная заява аб спаганні доўгу па пазыцы',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Пазоўная заява ў суд аб спаганні доўгу па пазыцы, пацверджанай распіскай.',
     refRu: 'ст. 771, 772 Гражданского кодекса РБ; Гражданский процессуальный кодекс РБ',
     refEn: 'Articles 771-772 of the Civil Code of Belarus; Civil Procedure Code of Belarus',
     fields: [
@@ -180,6 +186,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Распіска аб атрыманні грашовых сродкаў у пазыку',
     descRu: 'Расписка о получении денег в заём между физическими лицами. Сделка свыше 10 базовых величин — в письменной форме; расписка подтверждает договор займа.',
     descEn: 'Loan receipt between individuals; written form for loans above 10 base units under the Belarusian Civil Code.',
+    descDoc: 'Распіска аб атрыманні грашовых сродкаў у пазыку паміж фізічнымі асобамі; пацвярджае дагавор пазыкі.',
     refRu: 'ст. 771, 772 Гражданского кодекса Республики Беларусь',
     refEn: 'Articles 771-772 of the Civil Code of the Republic of Belarus',
     fields: [
@@ -206,6 +213,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Даверанасць (агульная грамадзянская)',
     descRu: 'Доверенность на получение документов, писем, справок и другие бытовые действия. Для сделок с недвижимостью и подлежащих нотариальному удостоверению — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions.',
+    descDoc: 'Даверанасць на атрыманне дакументаў, пісьмовай карэспандэнцыі і даведак; для здзелак з нерухомасцю патрабуецца натарыяльная форма.',
     refRu: 'ст. 186–189 Гражданского кодекса Республики Беларусь',
     refEn: 'Articles 186-189 of the Civil Code of the Republic of Belarus',
     fields: [
@@ -231,6 +239,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Заява аб адсутнасці дзіцяці на занятках',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору учреждения образования.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Паведамленне кіраўніку ўстановы адукацыі аб прычынах адсутнасці дзіцяці на занятках.',
     refRu: 'Кодекс Республики Беларусь об образовании',
     refEn: 'Education Code of the Republic of Belarus',
     fields: [
@@ -257,6 +266,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Скарга на якасць медыцынскай дапамогі',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в областное управление здравоохранения или Минздрав; ответ даётся в течение 15 дней (обращения граждан).',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Скарга кіраўніку арганізацыі аховы здароўя на якасць аказанай медыцынскай дапамогі.',
     refRu: 'Закон Республики Беларусь «О здравоохранении»; Закон РБ «Об обращениях граждан и юридических лиц»',
     refEn: 'Belarusian Law on Healthcare; Law on citizens’ appeals',
     fields: [
@@ -671,6 +681,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Пазоўная заява аб спыненні дагавора куплі-продажу і вяртанні грашовых сродкаў за тавар неналежнай якасці',
     descRu: 'Иск к продавцу о расторжении договора розничной купли-продажи и возврате уплаченной за товар ненадлежащего качества суммы. Перед обращением в суд направьте продавцу письменную претензию. Подаётся в суд по месту жительства ответчика или месту нахождения продавца.',
     descEn: 'Lawsuit against a seller to terminate the retail sale contract and refund money paid for defective goods; a written pre-court claim is required first.',
+    descDoc: 'Пазоўная заява ў суд аб спыненні дагавора куплі-продажу і вяртанні грашовых сродкаў за тавар неналежнай якасці.',
     refRu: 'ст. 20 Закона Республики Беларусь от 09.01.2002 № 90-З «О защите прав потребителей»; ст. 243 Гражданского процессуального кодекса Республики Беларусь',
     refEn: 'Art. 20 of Belarusian Law No. 90-Z on Consumer Protection; Art. 243 of the Civil Procedure Code of Belarus',
     fields: [
@@ -709,6 +720,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Пазоўная заява аб пакрыцці шкоды, нанесенай заліваннем кватэры',
     descRu: 'Иск к владельцу квартиры, из которой произошёл залив, о возмещении материального и морального вреда. Ключевые доказательства — акт о заливе, составленный организацией, обслуживающей жилой фонд (ЖЭС/РСЦ), и оценка ущерба. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Lawsuit against the owner of the flooding apartment for material and moral damages; key evidence is the flooding report and damage assessment.',
+    descDoc: 'Пазоўная заява ў суд аб пакрыцці маёмаснай і маральнай шкоды, нанесенай заліваннем кватэры.',
     refRu: 'ст. 933, 948 Гражданского кодекса Республики Беларусь; ст. 243 Гражданского процессуального кодекса Республики Беларусь',
     refEn: 'Articles 933, 948 of the Civil Code of Belarus; Art. 243 of the Civil Procedure Code of Belarus',
     fields: [
@@ -748,6 +760,7 @@ export const TEMPLATES_BY: TplDef[] = [
     titleDoc: 'Пазоўная заява аб спаганні заробнай платы пры звальненні і сярэдняга зарабку за час затрымкі разліку',
     descRu: 'Иск нанимателю о взыскании зарплаты, не выплаченной при увольнении, и среднего заработка за каждый день задержки расчёта. При увольнении все причитающиеся суммы выдаются в день увольнения (ст. 77 ТК РБ); при задержке по вине нанимателя выплачивается средний заработок за каждый день задержки (ст. 78 ТК РБ). Истцы по искам о взыскании заработной платы освобождены от судебных расходов.',
     descEn: 'Lawsuit against the employer for wages unpaid upon dismissal and average earnings for each day of the delayed settlement.',
+    descDoc: 'Пазоўная заява ў суд аб спаганні заробнай платы, не выплачанай пры звальненні, і сярэдняга зарабку за час затрымкі разліку.',
     refRu: 'ст. 77, 78 Трудового кодекса Республики Беларусь; Гражданский процессуальный кодекс Республики Беларусь',
     refEn: 'Articles 77-78 of the Labour Code of the Republic of Belarus; Civil Procedure Code of Belarus',
     fields: [

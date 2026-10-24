@@ -30,6 +30,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '年休假申请书', titleEn: 'Annual paid leave application',
     descRu: 'Заявление на ежегодный оплачиваемый отпуск. По 《职工带薪年休假条例》 при стаже 1–10 лет — 5 дней, 10–20 лет — 10 дней, свыше 20 лет — 15 дней.',
     descEn: 'Annual paid leave application. Under the PRC paid annual leave regulation: 5 days (1–10 years of service), 10 days (10–20), 15 days (over 20).',
+    descDoc: '职工年休假申请书。依据《职工带薪年休假条例》，累计工作满1年不满10年的，年休假5天；满10年不满20年的，年休假10天；已满20年的，年休假15天。',
     refRu: '《职工带薪年休假条例》(2007)；《劳动法》第45条',
     refEn: 'Regulation on Paid Annual Leave for Employees (2007); Labour Law art. 45',
     fields: [
@@ -53,6 +54,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '辞职信（解除劳动合同通知书）', titleEn: 'Resignation letter',
     descRu: '辞职信。按《劳动合同法》第37条，劳动者应提前30日以书面形式通知用人单位（试用期内提前3日）。保留递交凭证。',
     descEn: 'Resignation letter. Under the PRC Labour Contract Law art. 37, an employee gives 30 days’ written notice (3 days during probation). Keep proof of delivery.',
+    descDoc: '辞职信。依据《劳动合同法》第三十七条，劳动者应提前三十日以书面形式通知用人单位（试用期内提前三日），请保留递交凭证。',
     refRu: '《中华人民共和国劳动合同法》第37条',
     refEn: 'PRC Labour Contract Law, Article 37',
     fields: [
@@ -76,6 +78,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '申请开具离职证明、收入证明', titleEn: 'Employment separation / income certificate request',
     descRu: '申请公司开具离职证明、收入证明等文件。按《劳动合同法》第50条，用人单位应当在解除劳动合同时出具解除劳动合同证明。',
     descEn: 'Request for separation certificate or income certificate. Under the Labour Contract Law art. 50, the employer must issue a separation certificate upon termination.',
+    descDoc: '申请公司开具离职证明、收入证明等文件的申请书。依据《劳动合同法》第五十条，用人单位应当在解除劳动合同时出具解除劳动合同证明。',
     refRu: '《中华人民共和国劳动合同法》第50条',
     refEn: 'PRC Labour Contract Law, Article 50',
     fields: [
@@ -98,6 +101,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '消费者投诉书（退货索赔）', titleEn: 'Consumer complaint / return claim letter',
     descRu: '向经营者发出的书面投诉与索赔函。网购商品享有7日无理由退货权（《消法》第25条）；商品不符合质量要求的可依法退货、更换、修理（第24条）。金额、日期以人民币计。',
     descEn: 'Written complaint and claim to the seller. Online purchases have a 7-day no-reason return right (Consumer Protection Law art. 25); quality defects allow return/replace/repair (art. 24).',
+    descDoc: '向经营者发出的书面投诉与索赔函。网购商品享有七日无理由退货权利（《消费者权益保护法》第二十五条）；商品不符合质量要求的，可依法退货、更换、修理（第二十四条）。',
     refRu: '《中华人民共和国消费者权益保护法》第24、25条',
     refEn: 'PRC Consumer Rights Protection Law, Articles 24, 25',
     fields: [
@@ -130,6 +134,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '民事起诉状（基础模板）', titleEn: 'Civil complaint (base template)',
     descRu: '向人民法院提起民事诉讼的基础起诉状：当事人信息、诉讼请求、事实与理由。借款类纠纷可引用《民法典》第667条。管辖法院按《民事诉讼法》确定。',
     descEn: 'Base civil complaint for the PRC courts: parties, claims, facts and reasons. Loan disputes cite the Civil Code art. 667.',
+    descDoc: '向人民法院提起民事诉讼的基础起诉状，载明当事人信息、诉讼请求、事实与理由。借款类纠纷可援引《民法典》第六百六十七条，管辖法院依照《民事诉讼法》确定。',
     refRu: '《中华人民共和国民事诉讼法》（起诉状内容）；《民法典》第667条',
     refEn: 'PRC Civil Procedure Law (complaint contents); PRC Civil Code art. 667',
     fields: [
@@ -162,6 +167,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '借条（借款凭据）', titleEn: 'IOU / loan note (借条)',
     descRu: '个人之间借款的借条：写明出借人与借款人、金额、用途、还款期限、利息约定。借条是《民法典》第667条借款合同的重要书面凭证；建议同时保留转账记录。',
     descEn: 'Loan note (借条) between individuals: parties, amount, purpose, repayment date, interest. It is key written evidence of the loan contract (Civil Code art. 667); keep transfer records.',
+    descDoc: '个人之间借款使用的借条，写明出借人与借款人、金额、用途、还款期限及利息约定。借条是《民法典》第六百六十七条借款合同的重要书面凭证，建议同时保留转账记录。',
     refRu: '《中华人民共和国民法典》第667、668条',
     refEn: 'PRC Civil Code, Articles 667, 668',
     fields: [
@@ -189,6 +195,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '授权委托书', titleEn: 'Power of attorney (授权委托书)',
     descRu: '个人授权委托书：委托他人代为办理事务（领取文件、办理业务等）。按《民法典》第165条，书面授权应载明代理人、代理事项、权限和期限。不动产等重大事务一般需公证。',
     descEn: 'Personal power of attorney. Under the Civil Code art. 165, a written authorization states the agent, matters, scope and term. Notarization is common for major transactions.',
+    descDoc: '个人授权委托书，委托他人代为办理领取文件、办理业务等事务。依据《民法典》第一百六十五条，书面授权应载明代理人、代理事项、权限和期限；不动产等重大事务一般需办理公证。',
     refRu: '《中华人民共和国民法典》第165条',
     refEn: 'PRC Civil Code, Article 165',
     fields: [
@@ -213,6 +220,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '学生请假条（家长联）', titleEn: 'Student leave note (parent)',
     descRu: '家长向学校/班主任提交的学生请假条：说明请假事由和时间。',
     descEn: 'Parent note to the school/class teacher requesting a leave of absence for the child.',
+    descDoc: '家长向学校或班主任提交的学生请假条，说明请假事由和时间。',
     refRu: '学校的考勤管理规定',
     refEn: 'School attendance rules',
     fields: [
@@ -237,6 +245,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '医疗投诉书', titleEn: 'Healthcare complaint letter',
     descRu: '向医疗机构投诉医疗服务质量；可同时向卫生健康行政部门反映。依据《医疗纠纷预防和处理条例》，投诉应书面提出并保留材料。',
     descEn: 'Complaint to the medical institution; may also be filed with the health administration. Under the PRC medical dispute regulation, file in writing and keep evidence.',
+    descDoc: '向医疗机构投诉医疗服务质量的投诉书，也可同时向卫生健康行政部门反映。依据《医疗纠纷预防和处理条例》，投诉应书面提出并保留相关材料。',
     refRu: '《医疗纠纷预防和处理条例》(2018)',
     refEn: 'Regulation on the Prevention and Settlement of Medical Disputes (2018)',
     fields: [
@@ -266,6 +275,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '物业维修申请', titleEn: 'Property maintenance request',
     descRu: '向物业服务企业/业主委员会提交的维修申请：公共部位或专有部位报修。按《民法典》物业服务合同章，物业服务人应当及时维修养护共用部位。',
     descEn: 'Maintenance request to the property service company / owners’ committee. Under the PRC Civil Code property service provisions, common areas must be maintained timely.',
+    descDoc: '向物业服务企业或业主委员会提交的维修申请，适用于公共部位或专有部位报修。依据《民法典》物业服务合同章的规定，物业服务人应当及时维修养护共用部位。',
     refRu: '《中华人民共和国民法典》（物业服务合同章）',
     refEn: 'PRC Civil Code (property services contracts)',
     fields: [
@@ -315,6 +325,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '投诉信（信访/12345）', titleEn: 'Complaint letter to a government agency',
     descRu: 'Письменная жалоба госоргану/через платформу 12345: описание проблемы, нарушенных прав, требований; ответ обязаны дать в установленный срок (Шифан — Regulations on letters and visits).',
     descEn: 'Written complaint to a government agency (letters-and-visits / 12345 platform) with facts and demands.',
+    descDoc: '向国家机关或通过12345平台提交的书面投诉信，写明问题经过、被侵害的合法权益及具体诉求，有关机关应当在规定期限内书面答复。',
     refRu: '«信访工作条例» (2022); Правила работы платформы 12345',
     refEn: 'Regulations on Letters and Visits (2022); 12345 hotline rules',
     fields: [
@@ -341,6 +352,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '支付令申请书', titleEn: 'Application for payment order (zhifu ling)',
     descRu: 'Заявление в суд о выдаче платежного приказа (支付令) по денежному требованию — быстрее иска (民诉法 第221条).',
     descEn: 'Application for a payment order for a monetary claim — faster than an ordinary lawsuit (Art. 221 of the PRC Civil Procedure Law).',
+    descDoc: '就金钱给付请求向人民法院申请发出支付令的申请书，较普通诉讼程序更为快捷。依据《民事诉讼法》第二百二十一条，请求给付金钱或有价证券的，可以申请支付令。',
     refRu: '《中华人民共和国民事诉讼法》第221-222条',
     refEn: 'Articles 221-222 of the PRC Civil Procedure Law',
     fields: [
@@ -367,6 +379,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '病历复印申请书', titleEn: 'Request to copy medical records',
     descRu: 'Запрос копий медицинских записей (病历): право пациента/агента на копии по «医疗机构病历管理规定»; клиника выдаёт заверенные копии.',
     descEn: 'Request for certified copies of medical records under the PRC medical records administration rules.',
+    descDoc: '申请复印病历资料的申请书。依据《医疗机构病历管理规定》，患者本人或其委托代理人有权申请复制病历，医院应出具加盖病案管理专用章的复印件。',
     refRu: '《医疗机构病历管理规定》(2013); 《基本医疗卫生与健康促进法》第54条',
     refEn: 'PRC Medical Records Administration Rules (2013); Basic Healthcare and Health Promotion Law Art. 54',
     fields: [
@@ -394,6 +407,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '银行卡盗刷异议申请书', titleEn: 'Unauthorized card transaction dispute',
     descRu: 'Письмо банку об оспаривании несанкционированной операции по карте (盗刷): заморозка, заявление о возврате, жалоба в народный банк при отказе.',
     descEn: 'Letter to the bank disputing an unauthorized card transaction, requesting investigation and refund.',
+    descDoc: '就银行卡非本人操作的交易（盗刷）向银行提出异议并申请退款的申请书，请求冻结争议交易、调查核实并退还款项；银行不予处理的，可向中国人民银行投诉。',
     refRu: '《银行卡业务管理办法》；中国银联争议处理规则',
     refEn: 'PRC bank card business rules; UnionPay dispute procedures',
     fields: [
@@ -420,6 +434,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '民事起诉状（民间借贷纠纷）', titleEn: 'Civil complaint — private loan repayment (民间借贷纠纷)',
     descRu: 'Иск о возврате частного займа. Содержание иска — ст. 124 ГПК КНР; основание — ст. 667, 675, 676 ГК КНР (договор займа, возврат в срок, проценты за просрочку). Договорная ставка выше 4-кратной годовой LPR на дату договора судебной защитой не пользуется.',
     descEn: 'Lawsuit to recover a private loan. Complaint contents per the Civil Procedure Law art. 124; basis — Civil Code arts. 667, 675, 676 (loan contract, repayment on due date, overdue interest). Rates above 4x the one-year LPR are unenforceable.',
+    descDoc: '请求返还民间借贷本金及利息的民事起诉状。起诉状内容依照《民事诉讼法》第一百二十四条，请求权基础为《民法典》第六百六十七条、第六百七十五条、第六百七十六条（借款合同、按期返还借款、逾期利息）；约定利率超过合同成立时一年期贷款市场报价利率四倍的部分，不受法律保护。',
     refRu: '《中华人民共和国民事诉讼法》第124条；《民法典》第667、675、676条',
     refEn: 'PRC Civil Procedure Law art. 124; PRC Civil Code arts. 667, 675, 676',
     fields: [
@@ -456,6 +471,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '民事起诉状（房屋租赁纠纷）', titleEn: 'Civil complaint — rental deposit return (房屋租赁纠纷)',
     descRu: 'Иск к арендодателю о возврате залога (押金) после истечения срока аренды. Содержание иска — ст. 124 ГПК КНР; основание — ст. 703 (договор аренды), 733 (возврат вещи по окончании аренды), 577 ГК КНР (ответственность за нарушение обязательства).',
     descEn: 'Lawsuit against the landlord for the return of the security deposit (押金) after the lease term. Complaint contents per the Civil Procedure Law art. 124; basis — Civil Code arts. 703, 733, 577.',
+    descDoc: '请求出租人在租赁期满后返还房屋押金的民事起诉状。起诉状内容依照《民事诉讼法》第一百二十四条，请求权基础为《民法典》第七百零三条（租赁合同）、第七百三十三条（租赁期满返还租赁物）及第五百七十七条（违约责任）。',
     refRu: '《中华人民共和国民事诉讼法》第124条；《民法典》第703、733、577条',
     refEn: 'PRC Civil Procedure Law art. 124; PRC Civil Code arts. 703, 733, 577',
     fields: [
@@ -490,6 +506,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '民事起诉状（买卖合同纠纷）', titleEn: 'Civil complaint — sales contract quality refund (买卖合同纠纷)',
     descRu: 'Иск к продавцу о расторжении договора и возврате денег за товар с недостатками. Содержание иска — ст. 124 ГПК КНР; основание — ст. 615 (качество товара), 617 и 582 (последствия недостатков), 577 ГК КНР, а также ст. 24 Закона о защите прав потребителей.',
     descEn: 'Lawsuit against the seller for rescission and refund for defective goods. Complaint contents per the Civil Procedure Law art. 124; basis — Civil Code arts. 615, 617, 582, 577 and the Consumer Rights Protection Law art. 24.',
+    descDoc: '请求解除买卖合同并返还缺陷商品价款的民事起诉状。起诉状内容依照《民事诉讼法》第一百二十四条，请求权基础为《民法典》第六百一十五条（标的物质量）、第六百一十七条、第五百八十二条（质量不符合约定的责任）、第五百七十七条，以及《消费者权益保护法》第二十四条。',
     refRu: '《中华人民共和国民事诉讼法》第124条；《民法典》第615、617、582、577条；《消费者权益保护法》第24条',
     refEn: 'PRC Civil Procedure Law art. 124; PRC Civil Code arts. 615, 617, 582, 577; Consumer Rights Protection Law art. 24',
     fields: [
@@ -528,6 +545,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '家庭医生签约服务申请书', titleEn: 'Family doctor contract service application',
     descRu: 'Заявление в центр общественного здравоохранения (社区卫生服务中心) на подписание договора с семейным врачом: ведение медархива, наблюдение при хронических заболеваниях, диспансеризация, приоритетная запись и направление (转诊) к специалистам в вышестоящие больницы.',
     descEn: 'Application to the community health service center to sign a family doctor contract: health record management, chronic disease follow-up, annual check-ups and referral channel to higher-level hospitals.',
+    descDoc: '向社区卫生服务中心申请签订家庭医生签约服务协议的申请书，服务内容包括建立健康档案、慢性病随访、年度健康体检以及向上级医院优先转诊等。',
     refRu: '《关于推进家庭医生签约服务的指导意见》（国医改办发〔2016〕1号）；《国家基本公共卫生服务规范（第三版）》',
     refEn: 'Guiding Opinions on Promoting Family Doctor Contract Services (2016); National Basic Public Health Service Standards (3rd ed.)',
     fields: [
@@ -555,6 +573,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '义务教育入学申请书', titleEn: 'Compulsory education enrollment application',
     descRu: 'Заявление родителя (законного представителя) о зачислении ребёнка в школу по месту жительства (就近划片). По ст. 12 Закона КНР об обязательном образовании дети школьного возраста зачисляются без экзаменов в школу рядом с местом жительства.',
     descEn: 'Parent application to enroll a child in the neighborhood school. Under art. 12 of the PRC Compulsory Education Law, school-age children are enrolled exam-free at a school near their residence.',
+    descDoc: '家长（法定监护人）为适龄儿童申请就近划片入学的申请书。依据《中华人民共和国义务教育法》第十二条，适龄儿童、少年免试入学，在户籍所在地学校就近入学。',
     refRu: '《中华人民共和国义务教育法》第12条（免试就近入学）',
     refEn: 'PRC Compulsory Education Law art. 12 (exam-free nearby enrollment)',
     fields: [
@@ -583,6 +602,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '转学申请书', titleEn: 'School transfer application',
     descRu: 'Заявление родителя о переводе ученика в другую школу с передачей школьного регистра (学籍). По «Мерам управления школьными регистрами учащихся» (2013) действует принцип «学籍随人走» (регистр следует за учеником); заявления подаются в обе школы.',
     descEn: 'Parent application to transfer a student to another school with the student register (学籍) transfer. Under the 2013 register measures the register follows the student; applications go to both schools.',
+    descDoc: '家长为学生申请转学并随转学籍的申请书。依据《中小学生学籍管理办法》，学籍管理实行“籍随人走”，须同时向转入、转出学校提出申请。',
     refRu: '《中小学生学籍管理办法》（教基一〔2013〕7号）；《中华人民共和国义务教育法》',
     refEn: 'Measures for the Administration of Student Registers of Primary and Secondary School Students (2013); Compulsory Education Law',
     fields: [
@@ -611,6 +631,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '物业费异议书', titleEn: 'Objection to property management fee',
     descRu: 'Возражение собственника по счёту управляющей компании: запрос расшифровки тарифа и начислений (ст. 943 ГК КНР обязывает раскрывать перечень и ставки), перерасчёт; отключение воды/электричества как мера давления запрещено ст. 944 ГК КНР.',
     descEn: 'Owner objection to the property management fee: request for itemized tariff breakdown (Civil Code art. 943 disclosure duty) and recalculation; cutting water/power to pressure payment is banned by art. 944.',
+    descDoc: '业主对物业公司物业费账单提出异议的异议书，请求公开收费项目、收费标准及计算明细并予以复核重算；《民法典》第九百四十三条规定了物业服务的公开义务，第九百四十四条禁止以停止供水、供电等方式催交物业费。',
     refRu: '《中华人民共和国民法典》第943、944条；《物业管理条例》',
     refEn: 'PRC Civil Code arts. 943, 944; Property Administration Regulation',
     fields: [
@@ -658,6 +679,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '个人征信异议申请书', titleEn: 'Credit report dispute application (征信异议)',
     descRu: 'Заявление в банк или в Центр кредитной отчётности Народного банка Китая (中国人民银行征信中心) об исправлении ошибочных записей личного кредитного отчёта (个人信用报告): чужие кредиты, ложные просрочки, неверные суммы, незакрытые счета. По ст. 25 «Регламента о кредитной отчётности» орган обязан в течение 20 дней провести проверку и письменно ответить; при несогласии с результатом — жалоба в НБК (ст. 26).',
     descEn: 'Dispute of erroneous personal credit report entries (someone else’s loans, false overdue marks, wrong balances). Under the Credit Reporting Regulation art. 25 the agency must investigate and reply in writing within 20 days; dissatisfaction is appealed to the PBoC under art. 26.',
+    descDoc: '向银行或中国人民银行征信中心申请更正个人信用报告错误记录的异议申请书，适用于冒名贷款、虚假逾期、金额有误、账户未销户等情形。依据《征信业管理条例》第二十五条，征信机构或信息提供者应当自收到异议之日起20日内核查处理并书面答复；对处理结果不服的，可依照第二十六条向中国人民银行投诉。',
     refRu: '《征信业管理条例》第25条（异议和更正）、第26条（投诉）',
     refEn: 'PRC Credit Reporting Regulation arts. 25 (dispute and correction), 26 (complaint)',
     fields: [
@@ -686,6 +708,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '最低生活保障申请书', titleEn: 'Minimum living guarantee (dibao) application',
     descRu: 'Заявление семьи о назначении минимального прожиточного обеспечения (低保): по ст. 9 «Временных мер по социальному содействию» право имеют семьи, чей среднедушевой доход ниже местного стандарта 低保 при соответствии имущественным критериям. По ст. 11 письменное заявление подают члены семьи в народное правительство посёлка/волости или управление подрайона (街道办事处) по месту прописки; далее — проверка доходов, опрос соседей, домашнее обследование и решение органа соцзащиты.',
     descEn: 'Household application for the minimum living guarantee (dibao): under the Interim Measures for Social Assistance arts. 9 and 11, a written application is filed with the township government or sub-district office at the place of household registration, followed by income verification and a decision by the civil affairs authorities.',
+    descDoc: '家庭申请最低生活保障（低保）的申请书。依据《社会救助暂行办法》第九条、第十一条，由共同生活的家庭成员向户籍所在地乡镇人民政府、街道办事处提出书面申请，经家庭经济状况调查和邻里访问等程序后审核确认。',
     refRu: '《社会救助暂行办法》第9、11条；《最低生活保障审核确认办法》（民发〔2021〕57号）',
     refEn: 'Interim Measures for Social Assistance arts. 9, 11; Measures for Review and Confirmation of the Minimum Living Guarantee (2021)',
     fields: [
@@ -716,6 +739,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '基本养老金领取申请书', titleEn: 'Basic old-age pension application',
     descRu: 'Заявление в орган социального страхования (社保经办机构) о назначении и ежемесячной выплате базовой пенсии по старости: по ст. 16 Закона о социальном страховании право на пенсию имеют лица, достигшие установленного пенсионного возраста с накопленным страховым стажем не менее 15 лет. Заявление подаётся при достижении возраста; онлайн — через 国家社会保险公共服务平台 (si.12333.gov.cn), приложение 掌上12333 или электронную соцкарту (电子社保卡).',
     descEn: 'Application to the social insurance agency for the basic old-age pension: under the Social Insurance Law art. 16, persons reaching the statutory retirement age with at least 15 years of contributions receive it monthly; available online via the national social insurance platform (si.12333.gov.cn).',
+    descDoc: '向社保经办机构申请按月领取基本养老金的申请书。依据《社会保险法》第十六条，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金；也可通过国家社会保险公共服务平台等线上渠道办理。',
     refRu: '《中华人民共和国社会保险法》第16条',
     refEn: 'PRC Social Insurance Law art. 16',
     fields: [
@@ -745,6 +769,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '邻里噪音扰民投诉书', titleEn: 'Neighbor noise complaint',
     descRu: 'Письменная жалоба жильца на систематический шум от соседей в управляющую компанию, комитет жителей (居民委员会) или районный пункт полиции (派出所). Фиксирует источник, период и последствия шума, требует проверки, мер пресечения и письменного ответа. При продолжении нарушений предусматривает обращение в полицию (ст. 58 Закона о наказаниях за нарушения общественной безопасности) и защиту соседских прав через ГК КНР.',
     descEn: 'Written complaint about persistent neighbour noise to the property management company, the residents committee (居委会) or the local police station (派出所). Records the source, timing and impact, demands verification and a written reply; if the noise continues, escalation to the police under art. 58 of the Public Security Administration Punishments Law and neighbour-rights remedies under the PRC Civil Code.',
+    descDoc: '住户就邻居持续噪音扰民向物业公司、居民委员会或派出所提交的书面投诉书，写明噪音来源、发生时段及影响，要求核实、劝阻调解并书面答复；噪声持续的可依法向公安机关报案，并主张相邻权。',
     refRu: '《中华人民共和国民法典》第288、294、942条；《治安管理处罚法》第58条',
     refEn: 'PRC Civil Code arts. 288, 294, 942; Public Security Administration Punishments Law art. 58',
     fields: [
@@ -780,6 +805,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '房屋漏水损害赔偿通知书', titleEn: 'Water leak damage claim notice',
     descRu: 'Письменное уведомление и претензия соседу сверху (ответственной стороне) о заливе квартиры: фиксирует дату, причину и перечень повреждений, требует устранить протечку, восстановить повреждённые части и возместить ущерб в установленный срок. Основано на ст. 296 и 1165 ГК КНР; при отказе — фиксация в управляющей компании, народное посредничество или суд.',
     descEn: 'Damage notice and claim to the upstairs neighbour (responsible party) for a water leak: records the date, presumed cause and itemised damage, and demands repair of the leak, restoration and compensation within a set deadline. Based on PRC Civil Code arts. 296 and 1165; otherwise — property-management record, people’s mediation or court.',
+    descDoc: '因房屋漏水向楼上住户（责任方）发出的损害赔偿通知书，写明漏水时间、原因及受损情况，要求限期修复漏水点、恢复原状并赔偿损失；依据《民法典》相邻关系及侵权责任的规定，逾期不处理的，可通过物业记录、人民调解或诉讼解决。',
     refRu: '《中华人民共和国民法典》第296、1165、237、238条',
     refEn: 'PRC Civil Code arts. 296, 1165, 237, 238',
     fields: [
@@ -816,6 +842,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '公共区域卫生及吸烟问题投诉书', titleEn: 'Common-area sanitation and smoking complaint',
     descRu: 'Жалоба в управляющую компанию или комитет жителей на захламление, курение и антисанитарию в местах общего пользования жилого дома. Ссылается на обязанность УК пресекать нарушения (ст. 942 ГК КНР) и запрет занимать либо блокировать эвакуационные пути (ст. 28 Закона о пожарной безопасности), требует наведения порядка и письменного отчёта.',
     descEn: 'Complaint to the property management company or residents committee about junk, smoking and poor sanitation in the common areas of the building. Invokes the management duty to stop violations (Civil Code art. 942) and the ban on blocking escape routes (Fire Protection Law art. 28), demanding clean-up and a written report.',
+    descDoc: '就楼道堆放杂物、吸烟及卫生问题向物业公司或居民委员会提交的投诉书，援引物业服务人的制止义务（《民法典》第九百四十二条）及占用、堵塞疏散通道的禁令（《消防法》第二十八条），要求清理整治并书面反馈。',
     refRu: '《中华人民共和国民法典》第942条；《消防法》第28条',
     refEn: 'PRC Civil Code art. 942; Fire Protection Law art. 28',
     fields: [
@@ -851,6 +878,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '物业报修申请函', titleEn: 'Maintenance request to property management',
     descRu: 'Заявление собственника в управляющую компанию о неисправности общедомового имущества (освещение, лифт, водоснабжение,门禁 и т.п.) с требованием осмотра, составления акта проверки и ремонта в срок. Основано на обязанности УК содержать и ремонтировать общие части и обеспечивать безопасность жильцов (ст. 942 ГК КНР).',
     descEn: 'Owner’s request to the property management company about a defect in common building facilities (lighting, lift, water supply, access control, etc.), demanding an inspection with a written check record and timely repair. Based on the management duty to maintain common parts and protect residents’ safety (Civil Code art. 942).',
+    descDoc: '业主就楼道照明、电梯、供水、门禁等共用设施故障向物业公司提交的报修申请函，要求派员现场检查并出具检查记录、限期完成维修。依据《民法典》第九百四十二条，物业服务人负有维修养护共有部分、保护业主人身财产安全的义务。',
     refRu: '《中华人民共和国民法典》第942条',
     refEn: 'PRC Civil Code art. 942',
     fields: [
@@ -886,6 +914,7 @@ export const TEMPLATES_CN: TplDef[] = [
     titleDoc: '物业费及水电费异议复核申请书', titleEn: 'Fee dispute and recalculation request',
     descRu: 'Заявление собственника об оспаривании начисленной платы за управление и коммунальные услуги: требует раскрыть расчёт и тарифы, провести перерасчёт излишне начисленных сумм и опубликовать доходы/расходы по общему имуществу. Основано на обязанности УК раскрывать платные услуги и публичные доходы (ст. 943 ГК КНР), ст. 13 Закона о ценах (明码标价) и «Правилах взимания платы за управление недвижимостью» (2003).',
     descEn: 'Owner’s objection to property-management and utility charges: demands disclosure of the tariff basis and itemisation, recalculation of overcharged amounts and publication of common-property income and expenses. Based on the disclosure duty of Civil Code art. 943, the Price Law art. 13 (marked prices) and the Property Service Fee Measures (2003).',
+    descDoc: '业主对物业管理费及水电费计收提出异议并申请复核的申请书，要求公开收费依据与分摊计算明细、退还多收费用并公示公共收益收支。依据《民法典》第九百四十三条的公开义务、《价格法》第十三条明码标价规定及《物业服务收费管理办法》。',
     refRu: '《中华人民共和国民法典》第943条；《价格法》第13条；《物业服务收费管理办法》（发改价格〔2003〕1864号）',
     refEn: 'PRC Civil Code art. 943; Price Law art. 13; Property Service Fee Measures (2003)',
     fields: [

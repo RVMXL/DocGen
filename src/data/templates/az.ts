@@ -28,6 +28,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Ərizə illik ödənişli əmək məzuniyyətinin verilməsi haqqında',
     descRu: 'Заявление работодателю о предоставлении оплачиваемой трудовой отпуска. Минимум по Əmək Məcəlləsi — 21 календарный день за рабочий год (maddə 114.2).',
     descEn: 'Application for annual paid leave. Minimum under the Azerbaijani Labour Code is 21 calendar days per working year (Art. 114.2).',
+    descDoc: 'Ərizə işəgötürənə illik ödənişli əmək məzuniyyətinin verilməsi haqqında.',
     refRu: 'ст. 114.2 Трудового кодекса Азербайджанской Республики (Əmək Məcəlləsi)',
     refEn: 'Article 114.2 of the Labour Code of the Republic of Azerbaijan',
     fields: [
@@ -49,6 +50,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Ərizə ödənişsiz məzuniyyətin verilməsi haqqında',
     descRu: 'Заявление об отпуске без сохранения заработной платы (ödənişsiz məzuniyyət) по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Ərizə ailə və digər hörmətli səbəblərə görə ödənişsiz məzuniyyətin verilməsi haqqında.',
     refRu: 'Трудовой кодекс Азербайджанской Республики (Əmək Məcəlləsi)',
     refEn: 'Labour Code of the Republic of Azerbaijan',
     fields: [
@@ -73,6 +75,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Ərizə əmək müqaviləsinin öz təşəbbüsü ilə ləğv edilməsi haqqında',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Работник предупреждает работодателя письменно не позднее чем за один месяц (maddə 70).',
     descEn: 'Voluntary resignation application. The employee notifies the employer in writing at least one month in advance (Art. 70).',
+    descDoc: 'Ərizə əmək müqaviləsinin öz təşəbbüsü ilə ləğv edilməsi haqqında — bir ay əvvəlcədən yazılı xəbərdarlıq edilməklə.',
     refRu: 'ст. 70 Трудового кодекса Азербайджанской Республики (Əmək Məcəlləsi)',
     refEn: 'Article 70 of the Labour Code of the Republic of Azerbaijan',
     fields: [
@@ -93,6 +96,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Ərizə əmək fəaliyyəti ilə bağlı sənədlərin verilməsi haqqında',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, сведения о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Ərizə əmək fəaliyyəti ilə bağlı sənədlərin (əmək haqqı arayışı, əmrlərin surətləri) verilməsi haqqında.',
     refRu: 'Трудовой кодекс Азербайджанской Республики (Əmək Məcəlləsi)',
     refEn: 'Labour Code of the Republic of Azerbaijan',
     fields: [
@@ -113,6 +117,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Keyfiyyətsiz malın qaytarılması haqqında iddia',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в манатах. При отказе — суд или Центр по работе с потребителями (İstehlakçılarla İş üzrə Mərkəz).',
     descEn: 'Pre-court claim to a seller over defective goods under Azerbaijani consumer protection law.',
+    descDoc: 'Keyfiyyətsiz mal üçün ödənilmiş məbləğin qaytarılması haqqında satıcıya iddia.',
     refRu: 'Закон Азербайджанской Республики «О защите прав потребителей»',
     refEn: 'Law of the Republic of Azerbaijan «On Consumer Protection»',
     fields: [
@@ -146,6 +151,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Borc qəbzi əsasında borcun tutulması haqqında iddia ərizəsi',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Borc qəbzi ilə təsdiqlənmiş borc müqaviləsi əsasında borcun tutulması haqqında iddia ərizəsi.',
     refRu: 'Гражданский кодекс Азербайджанской Республики (Mülki Məcəllə); Гражданский процессуальный кодекс АР (Mülki Prosessual Məcəllə)',
     refEn: 'Civil Code of Azerbaijan; Civil Procedure Code of Azerbaijan',
     fields: [
@@ -181,6 +187,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Borc üzrə qəbz',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Fiziki şəxslər arasında borc pulunun alınması haqqında qəbz; borc müqaviləsini təsdiqləyir.',
     refRu: 'Гражданский кодекс Азербайджанской Республики (Mülki Məcəllə)',
     refEn: 'Civil Code of the Republic of Azerbaijan',
     fields: [
@@ -206,6 +213,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Vəkilnamə (ümumi vətəndaş)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок с недвижимостью и подлежащих нотариальному удостоверению — только нотариальная доверенность (notariatus vəkilnamə).',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions.',
+    descDoc: 'Sənədlərin, məktubların və arayışların alınması üçün vəkilnamə; əmlak əməliyyatları üçün notarial forma tələb olunur.',
     refRu: 'Гражданский кодекс Азербайджанской Республики (Mülki Məcəllə)',
     refEn: 'Civil Code of the Republic of Azerbaijan',
     fields: [
@@ -230,6 +238,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Uşağın dərslərə qatılmaması haqqında ərizə',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Uşağın dərslərə qatılmamasının səbəbləri haqqında məktəb direktoruna ərizə.',
     refRu: 'законодательство Азербайджанской Республики в сфере образования',
     refEn: 'Education legislation of the Republic of Azerbaijan',
     fields: [
@@ -256,6 +265,7 @@ export const TEMPLATES_AZ: TplDef[] = [
     titleDoc: 'Tibbi xidmətin keyfiyyətinə görə şikayət',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения АР (Səhiyyə Nazirliyi) или отделение по жалобам населения.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Tibbi müəssisənin rəhbərinə göstərilən tibbi yardımın keyfiyyəti haqqında şikayət.',
     refRu: 'законодательство Азербайджанской Республики в сфере охраны здоровья',
     refEn: 'Healthcare legislation of the Republic of Azerbaijan',
     fields: [

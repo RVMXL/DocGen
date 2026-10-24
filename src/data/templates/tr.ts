@@ -29,6 +29,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Yıllık ücretli izin başvurusu', titleEn: 'Annual paid leave application (yıllık izin talebi)',
     descRu: 'Заявление на ежегодный оплачиваемый отпуск. По İş Kanunu md. 53: минимум 14 дней (стаж 1–5 лет), 20 дней (5–15 лет), 26 дней (более 15 лет).',
     descEn: 'Annual paid leave application. Under the Labour Act art. 53: minimum 14 days (1–5 years of service), 20 days (5–15), 26 days (over 15).',
+    descDoc: 'Yıllık ücretli izin başvurusu. İş Kanunu’nun 53 üncü maddesine göre asgari izin süresi: 14 gün (1–5 yıl kıdem), 20 gün (5–15 yıl), 26 gün (15 yıldan fazla).',
     refRu: 'ст. 53 Закона о труде Турции № 4857 (İş Kanunu)',
     refEn: 'Article 53 of the Turkish Labour Act No. 4857',
     fields: [
@@ -52,6 +53,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Ücretsiz izin başvurusu', titleEn: 'Unpaid leave application (ücretsiz izin)',
     descRu: 'Заявление на неоплачиваемый отпуск по личным причинам. Предоставляется по соглашению сторон (по İş Kanunu и коллективному договору).',
     descEn: 'Unpaid leave application for personal reasons, granted by agreement of the parties.',
+    descDoc: 'Ücretsiz izin başvurusu; kişisel gerekçelerle, tarafların anlaşmasına göre verilmek üzere işverene yapılır.',
     refRu: 'Закон о труде Турции № 4857; соглашение сторон',
     refEn: 'Turkish Labour Act No. 4857; agreement of the parties',
     fields: [
@@ -75,6 +77,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'İstifa dilekçesi', titleEn: 'Resignation letter (istifa)',
     descRu: 'Заявление об увольнении по инициативе работника. Сроки уведомления (bildirim süreleri) по İş Kanunu md. 17: 2 недели (до 6 месяцев стажа), 4 недели (6 мес.–1,5 года), 6 недель (1,5–3 года), 8 недель (более 3 лет).',
     descEn: 'Resignation letter. Notice periods under the Labour Act art. 17: 2 weeks (under 6 months), 4 weeks (6 mo–1.5 yr), 6 weeks (1.5–3 yr), 8 weeks (over 3 yr).',
+    descDoc: 'İstifa dilekçesi. İş Kanunu’nun 17 nci maddesindeki bildirim süreleri: 2 hafta (6 aydan az kıdem), 4 hafta (6 ay–1,5 yıl), 6 hafta (1,5–3 yıl), 8 hafta (3 yıldan fazla).',
     refRu: 'ст. 17 Закона о труде Турции № 4857 (İş Kanunu)',
     refEn: 'Article 17 of the Turkish Labour Act No. 4857',
     fields: [
@@ -96,6 +99,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Çalışma belgesi talebi', titleEn: 'Employment certificate request (çalışma belgesi)',
     descRu: 'Запрос свидетельства о работе и справки о заработке. По İş Kanunu md. 28 работодатель обязан выдать работнику свидетельство, содержащее род работы и срок работы.',
     descEn: 'Request for the employment certificate. Under the Labour Act art. 28, the employer must issue a certificate stating the kind and duration of work.',
+    descDoc: 'Çalışma belgesi talebi. İş Kanunu’nun 28 inci maddesine göre işveren, işin türünü ve süresini gösteren belgeyi düzenlemekle yükümlüdür.',
     refRu: 'ст. 28 Закона о труде Турции № 4857 (İş Kanunu)',
     refEn: 'Article 28 of the Turkish Labour Act No. 4857',
     fields: [
@@ -117,6 +121,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Cayma hakkı bildirimi', titleEn: 'Consumer claim / withdrawal notice (cayma hakkı)',
     descRu: 'Претензия продавцу и/или уведомление об использовании права отмены (cayma hakkı). При дистанционных продажах — 14 дней без объяснения причин (6502 s. TKHK md. 14).',
     descEn: 'Claim to the seller and/or withdrawal (cayma hakkı) notice. For distance sales — 14 days without a reason (Consumer Protection Law No. 6502 art. 14).',
+    descDoc: 'Satıcıya talep ve/veya cayma hakkı bildirimi. Mesafeli satışlarda gerekçe göstermeksizin 14 gün içinde cayma hakkı kullanılabilir (6502 sayılı TKHK m. 14).',
     refRu: 'ст. 14, 51 Закона Турции № 6502 «О защите прав потребителей»',
     refEn: 'Articles 14, 51 of the Turkish Consumer Protection Law No. 6502',
     fields: [
@@ -148,6 +153,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'İhtarname (borç ödeme talebi)', titleEn: 'Notice of demand (ihtarname)',
     descRu: 'Официальное требование об исполнении обязательства (оплата долга, возврат). В Турции итарнаме направляется через нотариуса (noter kanalıyla); в приложении — подготовленный текст для нотариуса.',
     descEn: 'Formal notice of demand. In Turkey an ihtarname is sent through a notary; this letter is the draft text for the notary.',
+    descDoc: 'Resmî ihtarname. Türkiye’de ihtarname noter kanalıyla gönderilir; bu metin notere verilmek üzere hazırlanan taslaktır.',
     refRu: 'Türk Borçlar Kanunu (temerrüt); HMK — процессуальные последствия',
     refEn: 'Turkish Code of Obligations (default); CPC consequences',
     fields: [
@@ -173,6 +179,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Dava dilekçesi (temel form)', titleEn: 'Statement of claim (dava dilekçesi)',
     descRu: 'Базовая форма искового заявления: суд, стороны, истец-ответчик, предмет спора, доказательства, результаты. Составляется по HMK md. 118–119.',
     descEn: 'Base statement of claim: court, parties, subject matter, evidence and conclusions, per the Turkish CPC arts. 118-119.',
+    descDoc: 'Temel dava dilekçesi: mahkeme, taraflar, dava konusu, deliller ve sonuç-istem; HMK m. 118–119 uyarınca düzenlenir.',
     refRu: 'ст. 118–119 ГПК Турции (Hukuk Muhakemeleri Kanunu)',
     refEn: 'Articles 118-119 of the Turkish Code of Civil Procedure (HMK)',
     fields: [
@@ -204,6 +211,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Okula özür dilekçesi', titleEn: 'School absence letter (özür dilekçesi)',
     descRu: 'Извинение родителя о пропуске занятий ребёнком. Правила школы (yönerge) обычно требуют подачи в короткий срок.',
     descEn: 'Parent’s letter explaining a child’s absence, per the school rules.',
+    descDoc: 'Velinin, öğrencinin devamsızlığını açıklayan özür dilekçesi; okul yönergesine göre kısa sürede sunulması beklenir.',
     refRu: 'правила школ Турции (yönerge)',
     refEn: 'Turkish school rules',
     fields: [
@@ -229,6 +237,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Hasta hakları şikâyet dilekçesi', titleEn: 'Patient rights complaint',
     descRu: 'Жалоба на медицинское обслуживание: сначала в приёмную жалоб учреждения (hasta hakları birimi); далее — провинциальное управление здравоохранения или Министерство здравоохранения.',
     descEn: 'Complaint to the hospital patient-rights unit; then the provincial health directorate or the Ministry of Health.',
+    descDoc: 'Hasta hakları şikâyeti: önce kurumun hasta hakları birimine, ardından il sağlık müdürlüğüne veya Sağlık Bakanlığı’na yapılır.',
     refRu: 'Закон Турции № 663; Hasta Hakları Yönetmeliği (2014)',
     refEn: 'Turkish Law No. 663; Patient Rights Regulation (2014)',
     fields: [
@@ -257,6 +266,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Ev sahibine onarım talebi', titleEn: 'Repair demand to the landlord',
     descRu: 'Требование арендодателю устранить неисправность жилья. По Türk Borçlar Kanunu арендодатель обязан поддерживать пригодность арендованного имущества для использования; при бездействии — снижение аренды, самостоятельный ремонт с возмещением.',
     descEn: 'Repair demand to the landlord. Under the Turkish Code of Obligations the lessor must keep the property fit for use; inaction allows rent reduction and self-repair with reimbursement.',
+    descDoc: 'Ev sahibine onarım talebi. Türk Borçlar Kanunu’na göre kiraya veren, kiralananı kullanımına elverişli durumda tutmakla yükümlüdür; gecikme halinde kira bedelinin indirilmesi ve gerekli onarımın kiracı tarafından yaptırılarak giderinin tahsili gündeme gelir.',
     refRu: 'ст. 299 и сл. Обязательственного кодекса Турции (Türk Borçlar Kanunu)',
     refEn: 'Articles 299 et seq. of the Turkish Code of Obligations',
     fields: [
@@ -295,6 +305,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Kamu kurumuna başvuru (CİMER)', titleEn: 'Application to a public authority (CİMER)',
     descRu: 'Письменное обращение в государственный орган (формат для CİMER/напрямую): описание нарушения, требования; ответ — в течение 30 дней (4982 s.k. m. 13).',
     descEn: 'Written application to a public authority under the Turkish Right to Information / petitions law; response within 30 days.',
+    descDoc: 'Kamu kurumuna yazılı başvuru (CİMER/dilekçe): 4982 sayılı Kanun uyarınca 30 gün içinde gerekçeli yanıt beklenir.',
     refRu: '4982 sayılı Bilgi Edinme Hakkı Kanunu m. 13; İdari Usul Hakkında Kanun',
     refEn: 'Turkish Right of Petition / Information laws',
     fields: [
@@ -321,6 +332,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Tıbbi kayıt talebi', titleEn: 'Medical records request',
     descRu: 'Запрос копий медзаписей и результатов (663 sayılı KHK, Hasta Hakları Yönetmeliği m. 19-20): клиника обязана выдать копии.',
     descEn: 'Request for copies of medical records under the Turkish Patient Rights Regulation (Arts. 19-20).',
+    descDoc: 'Hasta Hakları Yönetmeliği’nin 19 ve 20 nci maddeleri uyarınca tıbbi kayıtların kopyalarının istenmesi; kurum kopyaları vermekle yükümlüdür.',
     refRu: 'Hasta Hakları Yönetmeliği m. 19-20; Kişisel Verilerin Korunması Kanunu',
     refEn: 'Turkish Patient Rights Regulation (Arts. 19-20); KVKK',
     fields: [
@@ -346,6 +358,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Banka şikâyet dilekçesi', titleEn: 'Bank complaint letter',
     descRu: 'Жалоба банку на спорную операцию: ответ — 10 рабочих дней (Bankacılık Düzenleme... m. 51); при отказе — BDDK/банковский арбитр.',
     descEn: 'Bank complaint about a disputed transaction; response within 10 business days (Law 5411 Art. 51); escalation to BDDK/Financial Ombudsman.',
+    descDoc: 'İtiraz edilen işlem hakkında bankaya şikâyet; 5411 sayılı Kanunun 51 inci maddesi uyarınca 10 iş günü içinde yanıt verilir; ret halinde BDDK ve Bankacılar Tahkim Komisyonuna başvurulabilir.',
     refRu: '5411 sayılı Bankacılık Kanunu m. 51; BDDK Tebliği',
     refEn: 'Turkish Banking Law No. 5411, Art. 51; BDDK regulation',
     fields: [
@@ -371,6 +384,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Kira Bedelinin Tahsili ve Tahliye Davası Dilekçesi', titleEn: 'Rent arrears recovery and eviction lawsuit',
     descRu: 'Иск к арендатору: взыскание просроченной арендной платы с процентами и выселение из помещения. Споры из аренды рассматривает Sulh Hukuk Mahkemesi (HMK md. 4); после письменного уведомления (ihtarname) и 30-дневной просрочки — TBK md. 316.',
     descEn: 'Lawsuit against the tenant: recovery of unpaid rent with interest and eviction. Tenancy disputes are heard by the Sulh Hukuk Mahkemesi (HMK art. 4); after a written demand and 30-day default — TBK art. 316.',
+    descDoc: 'Kiracıya karşı dava dilekçesi: ödenmeyen kira bedellerinin faiziyle tahsili ve tahliye talebi. Kira uyuşmazlıklarına Sulh Hukuk Mahkemesi bakar (HMK m. 4); yazılı ihtar ve 30 günlük temerrüt sonrasında tahliye TBK m. 316’ya dayanır.',
     refRu: 'ст. 315–316 Türk Borçlar Kanunu; ст. 4, 119 HMK (6100)',
     refEn: 'Arts. 315-316 Turkish Code of Obligations; arts. 4, 119 of the CPC (HMK)',
     fields: [
@@ -407,6 +421,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Tüketici Mahkemesine Dava Dilekçesi (Ayıplı Mal)', titleEn: 'Consumer court lawsuit (defective goods)',
     descRu: 'Иск в Tüketici Mahkemesi по товару с недостатками (ayıplı mal): по выбору потребителя — отмена договора с возвратом денег, снижение цены, бесплатный ремонт или замена (6502 TKHK md. 11). Условие подачи — протокол медиации (arabuluculuk, md. 73/A).',
     descEn: 'Lawsuit before the Consumer Court over defective goods: rescission with refund, price reduction, free repair or replacement at the consumer’s choice (Law 6502 art. 11); a mediation (arabuluculuk) no-agreement record is a condition for filing (art. 73/A).',
+    descDoc: 'Ayıplı mal nedeniyle Tüketici Mahkemesinde dava: tüketicinin seçimine göre sözleşmeden dönme ve iade, indirim, ücretsiz onarım veya ayıpsız misliyle değiştirme (6502 sayılı TKHK m. 11); dava şartı olarak arabuluculuk sonunda anlaşamamaya dair belge gerekir (m. 73/A).',
     refRu: 'ст. 11, 68, 73/A Закона Турции № 6502 «О защите прав потребителей»; ст. 119 HMK',
     refEn: 'Arts. 11, 68, 73/A of the Turkish Consumer Protection Law No. 6502; art. 119 HMK',
     fields: [
@@ -455,6 +470,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Öğrenci Belgesi Talep Dilekçesi', titleEn: 'Student certificate request (öğrenci belgesi)',
     descRu: 'Заявление в школу или вуз о выдаче öğrenci belgesi (справки об обучении) — нужна для вида на жительство (ikamet izni), скидок, банковских и семейных процедур. Выдаётся дирекцией школы или студенческим офисом.',
     descEn: 'Request to a school or university for a student certificate (öğrenci belgesi), e.g. for a residence permit (ikamet izni), discounts or banking. Issued by the school directorate or the student affairs office.',
+    descDoc: 'Okuldan veya üniversiteden öğrenci belgesi talebi; ikamet izni, indirimler ve banka işlemleri için gerekir. Belge okul müdürlüğünce veya öğrenci işleri birimince düzenlenir.',
     refRu: '1739 sayılı Millî Eğitim Temel Kanunu; порядок учебного заведения',
     refEn: 'Basic Law of National Education No. 1739; institution rules',
     fields: [
@@ -496,6 +512,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Kira Artışına İtiraz ve Anlaşma Teklifi', titleEn: 'Objection to a rent increase (kira artışına itiraz)',
     descRu: 'Письменное возражение на предложенное арендодателем повышение аренды: если стороны не договорились, повышение в новом периоде не может превышать среднего роста ИПЦ за 12 месяцев (TBK md. 344). Содержит встречное предложение.',
     descEn: 'Written objection to a proposed rent increase: unless the parties agree otherwise, the renewal-period increase cannot exceed the 12-month average CPI rate (Turkish Code of Obligations art. 344). Includes a counter-proposal.',
+    descDoc: 'Kira artışına yazılı itiraz: taraflarca anlaşma sağlanamazsa yenilenen dönemdeki artış, 12 aylık ortalama TÜFE oranını aşamaz (Türk Borçlar Kanunu m. 344). Dilekçede karşı teklif de yer alır.',
     refRu: 'ст. 344 Обязательственного кодекса Турции (Türk Borçlar Kanunu)',
     refEn: 'Article 344 of the Turkish Code of Obligations',
     fields: [
@@ -527,6 +544,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Vergi Hatasının Düzeltilmesi Talebi (Düzeltme Dilekçesi)', titleEn: 'Tax error correction request (düzeltme dilekçesi)',
     descRu: 'Заявление в vergi dairesi об исправлении налоговой ошибки (vergi hatası): расчётная (maddî) или правовая (hukukî) — по Vergi Usul Kanunu № 213 m. 116–122. Подаётся в течение 1 года с даты вручения уведомления (tebliğ); при отсутствии уведомления — с момента обнаружения ошибки. По результатам — возврат/зачет переплаты; при отказе остаётся обращение в vergi mahkemesi.',
     descEn: 'Request to the tax office to correct a tax error (vergi hatası): computational (maddî) or legal (hukukî) under Tax Procedure Law No. 213 arts. 116–122. File within 1 year of service of the assessment notice (tebliğ), or from discovery of the error where no notice exists. Outcome: refund or offset; if refused, an action before the tax court remains.',
+    descDoc: 'Vergi dairesine vergi hatasının düzeltilmesi talebi: maddî veya hukukî hata — 213 sayılı Vergi Usul Kanunu m. 116–122. Talep, ihbarnamenin tebliğinden itibaren 1 yıl içinde; tebliğ yapılmamışsa hatanın öğrenilmesinden itibaren yapılır. Sonuç: iade veya mahsup; ret halinde vergi mahkemesinde dava yolu saklıdır.',
     refRu: 'ст. 116–122 Закона о налоговой процедуре Турции № 213 (Vergi Usul Kanunu) — vergi hatası, düzeltme talebi (1 год с tebliğ)',
     refEn: 'Tax Procedure Law No. 213 arts. 116–122 (tax error; correction request — 1 year from tebliğ)',
     fields: [
@@ -558,6 +576,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Kredi Borcunun Yeniden Yapılandırılması Talebi', titleEn: 'Loan restructuring request (yapılandırma talebi)',
     descRu: 'Заявление в банк о реструктуризации задолженности по кредиту/кредитной карте при временной неплатёжеспособности: удлинение срока, снижение платежа, отсрочка первых платежей. Реструктуризация предоставляется по соглашению сторон (6098 sayılı TBK) и только с согласия банка; обращение до эскалации просрочки снижает риск судебного взыскания. При согласии подписывается дополнительное соглашение (ek sözleşme) и новый график.',
     descEn: 'Request to the bank to restructure loan/credit-card debt during temporary hardship: longer term, lower instalments, a payment holiday. Restructuring is granted by agreement of the parties (Turkish Code of Obligations No. 6098) and only with the bank’s consent; applying before the arrears escalate lowers litigation risk. If agreed, an addendum (ek sözleşme) and a new schedule are signed.',
+    descDoc: 'Geçici ödeme güçlüğünde kredi/kredi kartı borcunun yeniden yapılandırılması talebi: vadenin uzatılması, taksitlerin düşürülmesi, ödemesiz dönem. Yapılandırma tarafların anlaşmasıyla (6098 sayılı TBK) ve yalnızca bankanın onayıyla sağlanır; borcun icraya dönüşmesinden önce başvurmak dava riskini azaltır. Onay halinde ek sözleşme ve yeni ödeme planı imzalanır.',
     refRu: '6098 sayılı Türk Borçlar Kanunu (borç ilişkileri, соглашение сторон); банковская процедура yeniden yapılandırma',
     refEn: 'Turkish Code of Obligations No. 6098 (obligations; agreement of the parties); bank restructuring procedure',
     fields: [
@@ -603,6 +622,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Sosyal Yardım Başvurusu', titleEn: 'Social assistance application (SYDV)',
     descRu: 'Заявление в фонд взаимопомощи и солидарности (Sosyal Yardımlaşma ve Dayanışma Vakfı — SYDV при каймакамстве): разовые и регулярные виды помощи (продукты/аэви, топливо, денежная поддержка, образование, здоровье). Подача — через мухтара или напрямую в фонд; фонд проводит обследование семьи (sosyo-ekonomik durum tespiti) и принимает решение по 3294 sayılı Kanun. Статус заявлений — e-Devlet («sosyal yardım başvuru sorgulama»).',
     descEn: 'Application to the Social Assistance and Solidarity Foundation (SYDV at the district governorate): one-off and recurring aid (food/aşevi, fuel, cash support, education, health). Filed via the neighbourhood headman (muhtar) or directly at the foundation; the foundation assesses the household and decides under Law No. 3294. Track applications on e-Devlet (“sosyal yardım başvuru sorgulama”).',
+    descDoc: 'Sosyal Yardımlaşma ve Dayanışma Vakfına (SYDV) başvuru: aşevi/gıda, yakacak, nakdi destek, eğitim ve sağlık yardımları. Başvuru muhtar aracılığıyla veya doğrudan vakfa yapılır; vakıf hane ziyaretiyle sosyo-ekonomik durum tespiti yapar ve 3294 sayılı Kanuna göre karar verir. Başvuru durumu e-Devletten sorgulanabilir.',
     refRu: 'Закон Турции № 3294 о поощрении социальной взаимопомощи и солидарности (Sosyal Yardımlaşma ve Dayanışmayı Teşvik Kanunu)',
     refEn: 'Social Assistance and Solidarity Encouragement Law No. 3294',
     fields: [
@@ -636,6 +656,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Gürültü Şikâyeti (Polise/Kaymakamlığa)', titleEn: 'Noise complaint about a neighbour (gürültü şikâyeti)',
     descRu: 'Жалоба (şikâyet dilekçesi) в полицию, каймакамство (kaymakamlık) или муниципальную zabıta на соседа, систематически нарушающего покой шумом, особенно в ночные часы. Основание — ст. 36 Закона о проступках № 5326 (Kabahatler Kanunu: gürültü — нарушение покоя окружающих влечёт административное взыскание); поддержание общественного порядка входит в задачи полиции и zabıta. Форма фиксирует источник шума, время, доказательства и требования.',
     descEn: 'A complaint (şikâyet dilekçesi) to the police, district governorate (kaymakamlık) or municipal zabıta about a neighbour who systematically disturbs the peace with noise, especially at night. Basis: art. 36 of the Misdemeanours Law No. 5326 (noise disturbing the peace of the surroundings — an administrative sanction); maintaining public order is among the duties of the police and zabıta. The form records the noise source, times, evidence and demands.',
+    descDoc: 'Gürültüyle huzuru sürekli bozan komşuya karşı polise, kaymakamlığa veya belediye zabıtasına şikâyet dilekçesi (özellikle gece saatlerinde). Dayanak: 5326 sayılı Kabahatler Kanunu m. 36 (gürültü — idari yaptırım); kamu düzeninin korunması polisin ve zabıtanın görevleri arasındadır. Form, gürültünün kaynağını, saatlerini, delilleri ve talepleri kaydeder.',
     refRu: 'ст. 36 Закона Турции о проступках № 5326 (Kabahatler Kanunu — gürültü); ст. 4 Закона о полномочиях полиции № 3201 (PVSK); ст. 15 Закона о муниципалитетах № 5393 (zabıta)',
     refEn: 'Article 36 of the Turkish Misdemeanours Law No. 5326 (noise); art. 4 of the Police Duties and Powers Law No. 3201; art. 15 of the Municipal Law No. 5393 (municipal police / zabıta)',
     fields: [
@@ -666,6 +687,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Su Kaçağı Hasar Bildirimi ve Tazminat Talebi', titleEn: 'Water leak damage notice and compensation claim',
     descRu: 'Уведомление соседу (или управляющему) о заливе квартиры с требованием возместить ущерб в установленный срок: фиксация причины (отчёт сантехника/экспертизы), перечень повреждений, сумма, реквизиты для оплаты. Основание — виновная ответственность за неисправности по ст. 32–33 Закона о поэтажной собственности № 634 и деликтная ответственность по ст. 49 Обязательственного кодекса № 6098. При отказе — обращение в sulh hukuk mahkemesi.',
     descEn: 'A notice to the neighbour (or the manager) about apartment flooding demanding compensation within a set deadline: documented cause (plumber/expert report), list of damage, amount and payment details. Basis: fault-based liability for defects under arts. 32–33 of the Condominium Law No. 634 and tort liability under art. 49 of the Code of Obligations No. 6098. If refused, a civil action (sulh hukuk mahkemesi) follows.',
+    descDoc: 'Su kaçağından etkilenen daire için komşuya (veya yöneticiye) hasar bildirimi ve belirlenen süre içinde tazminat talebi: belgelenmiş neden (tesisatçı/uzman raporu), hasar listesi, tutar ve ödeme bilgileri. Dayanak: 634 sayılı Kat Mülkiyeti Kanunu m. 32–33 (kusurlu sorumluluk) ve 6098 sayılı TBK m. 49 (haksız fiil). Ret halinde sulh hukuk mahkemesinde dava açılır.',
     warningRu: 'Зафиксируйте ущерб фото и отчётом до ремонта; при серьёзном ущербе уведомите страховую компанию (DASK покрывает только землетрясение — ущерб от воды возмещает страховка жилья)',
     warningEn: 'Document the damage with photos and a report before repairs; for significant damage notify your insurer (DASK covers only earthquake — water damage is covered by home insurance)',
     refRu: 'ст. 32, 33 Закона Турции о поэтажной собственности № 634 (Kat Mülkiyeti Kanunu — ответственность за неисправности); ст. 49 Обязательственного кодекса № 6098 (haksız fiil)',
@@ -699,6 +721,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Ortak Alanlarda Hijyen ve Sigara Şikâyeti', titleEn: 'Complaint about hygiene and smoking in common areas',
     descRu: 'Жалоба управляющему (yönetici) на захламление, грязь и курение в общих помещениях здания (лестницы, мусоропровод, подвал). Основание — обязанности управляющего по надзору за чистотой и упорядоченным использованием общих мест (ст. 36 Закона № 634) и обязанность дольщиков (kat maliki) соблюдать соседское право и план управления (ст. 18). При бездействии — обращение в муниципальную zabıta и каймакамство.',
     descEn: 'A complaint to the building manager about litter, dirt and smoking in the common areas (staircases, refuse chute, basement). Basis: the manager’s duty to supervise the cleanliness and orderly use of common areas (art. 36 of Law No. 634) and the unit owners’ duty to respect neighbourhood law and the management plan (art. 18). If ignored, escalate to the municipal zabıta and the district governorate.',
+    descDoc: 'Yöneticiye, ortak alanlardaki (merdivenler, çöp boşaltma, bodrum) kirlilik ve sigara içme hakkında şikâyet. Dayanak: yöneticinin ortak yerlerin temizliğine ve düzenli kullanımına nezaret görevi (634 sayılı KMK m. 36) ile kat maliklerinin komşuluk hukukuna ve yönetim planına uyma yükümlülüğü (m. 18). İşlem yapılmazsa belediye zabıtasına ve kaymakamlığa bildirilir.',
     refRu: 'ст. 18, 36 Закона Турции о поэтажной собственности № 634 (Kat Mülkiyeti Kanunu — соседское право; надзор управляющего за чистотой общих мест); yönetim planı',
     refEn: 'Articles 18, 36 of the Turkish Condominium Law No. 634 (neighbourhood law; manager’s supervision of cleanliness of common areas); the management plan',
     fields: [
@@ -727,6 +750,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Kusur Giderim ve Onarım Talebi', titleEn: 'Defect removal and repair request',
     descRu: 'Заявление управляющему (yönetici) об устранении неисправностей общей инфраструктуры здания: лифт, водяной насос/бак, крыша, освещение лестниц. Основание — Закон № 634 о поэтажной собственности: управляющий обязан принимать необходимые и неотложные меры для сохранности здания (ст. 36) и отвечает за виновные и запоздалые действия (ст. 37). Указывается характер неисправности, срок устранения и последующее вынесение вопроса на собрание владельцев и в каймакамство.',
     descEn: 'A request to the building manager to remove defects in the building’s common facilities: lift, water pump/tank, roof, staircase lighting. Basis: the Condominium Law No. 634 — the manager must take the necessary and urgent measures to preserve the building (art. 36) and is liable for faulty and delayed conduct (art. 37). Sets the urgency, a removal deadline and escalation to the owners’ assembly and the district governorate.',
+    descDoc: 'Yöneticiye, binanın ortak tesislerindeki kusurların (asansör, su pompası/deposu, çatı, merdiven aydınlatması) giderilmesi talebi. Dayanak: 634 sayılı Kat Mülkiyeti Kanunu — yönetici binanın korunması için zorunlu ve ertelenemez tedbirleri almakla yükümlüdür (m. 36) ve kusurlu ya da gecikmeli davranışından sorumludur (m. 37). Aciliyet, giderim süresi ve kat malikleri kurulu ile kaymakamlığa bildirim öngörülür.',
     refRu: 'ст. 32, 36, 37 Закона Турции о поэтажной собственности № 634 (Kat Mülkiyeti Kanunu — общая инфраструктура; обязанности и ответственность управляющего)',
     refEn: 'Articles 32, 36, 37 of the Turkish Condominium Law No. 634 (common facilities; manager’s duties and liability)',
     fields: [
@@ -756,6 +780,7 @@ export const TEMPLATES_TR: TplDef[] = [
     titleDoc: 'Ortak Gider (Aidat) Hesabına İtiraz', titleEn: 'Objection to the common expense (aidat) account',
     descRu: 'Возражение управляющему на расчёт общих расходов (aidat): сумма распределена с отступлением от долей arsa payı, расчёты не представлены, есть начисления за неоказанные услуги. Основание — ст. 20 Закона № 634 (расходы распределяются по долям arsa payı, если план управления или единогласное решение не предусматривают иное) и ст. 28 (обязанность управляющего ежегодно представлять документы и отчитываться). Требуются перерасчёт, предоставление документов, возврат переплаты или зачёт.',
     descEn: 'An objection to the manager over the common expense (aidat) account: amounts allocated inconsistently with the land-share (arsa payı) ratios, accounts not presented, charges for services not provided. Basis: art. 20 of Law No. 634 (expenses are shared per land shares unless the management plan or a unanimous decision provides otherwise) and art. 28 (the manager must present the accounts each year). Demands recalculation, presentation of documents and refund or offset of any overpayment.',
+    descDoc: 'Yöneticiye ortak gider (aidat) hesabına itiraz: tutarların arsa payı oranlarına aykırı dağıtılması, hesap ve belgelerin sunulmaması, yapılmayan hizmetler için ücretlendirme. Dayanak: 634 sayılı KMK m. 20 (giderler, yönetim planında veya oybirliğiyle alınmış kararda aksi öngörülmedikçe arsa payına göre paylaşılır) ve m. 28 (yöneticinin her yıl hesap verme yükümlülüğü). Yeniden hesaplama, belgelerin sunulması ve fazla tahsilatın iadesi veya mahsubu talep edilir.',
     refRu: 'ст. 20, 28, 44 Закона Турции о поэтажной собственности № 634 (доли в расходах; отчёт управляющего; подсудность sulh hukuk mahkemesi)',
     refEn: 'Articles 20, 28, 44 of the Turkish Condominium Law No. 634 (expense shares; manager’s accounting; jurisdiction of the civil court of peace)',
     fields: [

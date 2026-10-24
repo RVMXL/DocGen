@@ -30,6 +30,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Жылдык акылуу эс алуу берилүүсү тууралуу арыз',
     descRu: 'Заявление работодателю о предоставлении ежегодного основного оплачиваемого отпуска. Продолжительность в Кыргызстане — 28 календарных дней.',
     descEn: 'Application for annual paid leave. Duration in Kyrgyzstan is 28 calendar days.',
+    descDoc: 'Иш берүүчүгө жылдык акылуу эс алууну берүү тууралуу арыз.',
     refRu: 'Трудовой кодекс Кыргызской Республики (ежегодный основной оплачиваемый отпуск)',
     refEn: 'Labour Code of the Kyrgyz Republic (annual basic paid leave)',
     fields: [
@@ -51,6 +52,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Эмгек акы сакталбаган эс алуу берилүүсү тууралуу арыз',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Үй-бүлөлүк жана башка себептер боюнча эмгек акы сакталбаган эс алууну берүү тууралуу арыз.',
     refRu: 'Трудовой кодекс Кыргызской Республики',
     refEn: 'Labour Code of the Kyrgyz Republic',
     fields: [
@@ -75,6 +77,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Эмгек келишимин өз каалосум боюнча бузуу тууралуу арыз',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Срок предупреждения работодателя — по Трудовому кодексу КР; уточните его перед подачей.',
     descEn: 'Voluntary resignation application. Check the notice period under the Kyrgyz Labour Code before filing.',
+    descDoc: 'Эмгек келишимин өз каалосум боюнча бузуу тууралуу иш берүүчүгө арыз.',
     refRu: 'Трудовой кодекс Кыргызской Республики',
     refEn: 'Labour Code of the Kyrgyz Republic',
     fields: [
@@ -95,6 +98,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Ишке байланышкан документтерди берүү тууралуу арыз',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, сведения о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Эмгек иши менен байланышкан документтерди (эмгек акы жөнүндө маалымдама, буйрук көчүрмөлөрүн) берүү тууралуу арыз.',
     refRu: 'Трудовой кодекс Кыргызской Республики',
     refEn: 'Labour Code of the Kyrgyz Republic',
     fields: [
@@ -115,6 +119,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Сапатыз товарды кайтаруу тууралуу дава арызы',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в сомах. При отказе — суд или Государственная инспекция по защите прав потребителей.',
     descEn: 'Pre-court claim to a seller over defective goods under Kyrgyz consumer protection law.',
+    descDoc: 'Сапатыз товар үчүн акыны кайтаруу талабы менен сатуучуга жазылган доо кат.',
     refRu: 'законодательство Кыргызской Республики о защите прав потребителей',
     refEn: 'Consumer protection legislation of the Kyrgyz Republic',
     fields: [
@@ -148,6 +153,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Карыз кыязы боюнча карызды өндүрүп алуу тууралуу дава арызы',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Карыз кыязы менен расталган карыз келишими боюнча карызды өндүрүп алуу тууралуу сотко доо арызы.',
     refRu: 'Гражданский кодекс КР; Гражданский процессуальный кодекс КР',
     refEn: 'Civil Code of the Kyrgyz Republic; Civil Procedure Code of the Kyrgyz Republic',
     fields: [
@@ -183,6 +189,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Карыз кыязы',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Жеке адамдардын ортосунда карыз акча алынгандыгы тууралуу карыз кыязы; карыз келишимин растайт.',
     refRu: 'Гражданский кодекс Кыргызской Республики',
     refEn: 'Civil Code of the Kyrgyz Republic',
     fields: [
@@ -208,6 +215,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Ишенчик кат (жалпы жарандык)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок, требующих нотариальной формы, — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for transactions subject to notarization.',
+    descDoc: 'Документтерди, каттарды жана маалымдамаларды алуу үчүн ишенчик кат; нотариалдык форма талап кылынган сделкалар үчүн нотариалдык ишенчик кат гана берилет.',
     refRu: 'Гражданский кодекс Кыргызской Республики (доверенность)',
     refEn: 'Civil Code of the Kyrgyz Republic (power of attorney)',
     fields: [
@@ -232,6 +240,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Баланын сабактарга катышпаганы тууралуу арыз',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Баланын сабактарга катышпаган себептери тууралуу мектеп директоруна арыз.',
     refRu: 'законодательство Кыргызской Республики в сфере образования',
     refEn: 'Education legislation of the Kyrgyz Republic',
     fields: [
@@ -258,6 +267,7 @@ export const TEMPLATES_KG: TplDef[] = [
     titleDoc: 'Медициналык жардамдын сапаты боюнча даттануу',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения КР; обращения рассматриваются по закону «Об обращениях граждан».',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Медициналык уюмдун жетекчисине көрсөтүлгөн медициналык жардамдын сапаты тууралуу даттануу.',
     refRu: 'законодательство Кыргызской Республики в сфере охраны здоровья',
     refEn: 'Healthcare legislation of the Kyrgyz Republic',
     fields: [

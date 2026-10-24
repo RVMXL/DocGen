@@ -30,6 +30,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o urlop wypoczynkowy', titleEn: 'Annual leave application (wniosek o urlop)',
     descRu: 'Заявление работодателю о предоставлении ежегодного отпуска (urlop wypoczynkowy). Продолжительность — 20 дней (стаж до 10 лет) или 26 дней (стаж от 10 лет).',
     descEn: 'Annual leave application. Duration is 20 days (tenure under 10 years) or 26 days (from 10 years).',
+    descDoc: 'Wniosek do pracodawcy o udzielenie płatnego urlopu wypoczynkowego za wskazany okres; wymiar to 20 dni (staż do 10 lat) lub 26 dni (od 10 lat).',
     refRu: 'ст. 152, 154¹ Трудового кодекса Польши (Kodeks pracy)',
     refEn: 'Articles 152, 154(1) of the Polish Labour Code (Kodeks pracy)',
     fields: [
@@ -53,6 +54,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o urlop bezpłatny', titleEn: 'Unpaid leave application (urlop bezpłatny)',
     descRu: 'Заявление о неоплачиваемом отпуске по личным причинам. Предоставляется по письменному заявлению; продолжительность устанавливается соглашением (art. 174 KP).',
     descEn: 'Unpaid leave application for personal reasons, granted upon written request (art. 174 of the Labour Code).',
+    descDoc: 'Wniosek o bezpłatny urlop z przyczyn osobistych, udzielany na pisemny wniosek pracownika (art. 174 Kodeksu pracy); wskazany okres i powód.',
     refRu: 'ст. 174 Трудового кодекса Польши (Kodeks pracy)',
     refEn: 'Article 174 of the Polish Labour Code (Kodeks pracy)',
     fields: [
@@ -76,6 +78,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wypowiedzenie umowy o pracę', titleEn: 'Resignation notice (wypowiedzenie)',
     descRu: 'Заявление о расторжении трудового договора по соглашению или с уведомлением. Сроки wypowiedzenia: 2 недели (до 6 месяцев стажа), 1 месяц (до 3 лет), 3 месяца (от 3 лет) — art. 36 КП.',
     descEn: 'Termination notice. Notice periods: 2 weeks (tenure under 6 months), 1 month (under 3 years), 3 months (over 3 years) — art. 36 KP.',
+    descDoc: 'Oświadczenie o wypowiedzeniu umowy o pracę z zachowaniem okresu wypowiedzenia: 2 tygodnie (staż do 6 miesięcy), 1 miesiąc (do 3 lat) lub 3 miesiące (powyżej 3 lat) — art. 36 KP.',
     refRu: 'ст. 30 § 1, ст. 36 Трудового кодекса Польши (Kodeks pracy)',
     refEn: 'Articles 30(1), 36 of the Polish Labour Code (Kodeks pracy)',
     fields: [
@@ -97,6 +100,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o świadectwo pracy', titleEn: 'Employment certificate request (świadectwo pracy)',
     descRu: 'Запрос свидетельства о работе и его дубликата. Работодатель обязан выдать świadectwo pracy в день прекращения договора (art. 97¹ КП); дубликат — по письменному заявлению.',
     descEn: 'Request for the employment certificate or a duplicate. The employer must issue it on the termination day (art. 97(1) KP); duplicate upon written request.',
+    descDoc: 'Wniosek o świadectwo pracy lub jego duplikat: pracodawca wydaje je w dniu rozwiązania umowy (art. 97 § 1 KP), duplikat — na pisemny wniosek.',
     refRu: 'ст. 97¹ Трудового кодекса Польши (Kodeks pracy)',
     refEn: 'Article 97(1) of the Polish Labour Code (Kodeks pracy)',
     fields: [
@@ -119,6 +123,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Reklamacja towaru u sprzedawcy', titleEn: 'Consumer complaint (reklamacja)',
     descRu: 'Рекламация товара с недостатками. Права потребителя по ручному гарантии (rękojmia) действуют 2 года с передачи товара; продавец отвечает за несоответствие, проявившееся в течение 2 лет.',
     descEn: 'Complaint about defective goods. Consumer statutory warranty (rękojmia) lasts 2 years from delivery.',
+    descDoc: 'Reklamacja towaru niezgodnego z umową: rękojmia konsumencka trwa 2 lata od wydania rzeczy; opis wady, dowód zakupu i żądanie naprawy, wymiany, obniżenia ceny lub odstąpienia od umowy.',
     refRu: 'ст. 43a и сл. Закона Польши о правах потребителя; ст. 556¹ ГК Польши',
     refEn: 'Articles 43a et seq. of the Polish Consumer Rights Act; art. 556(1) of the Civil Code',
     fields: [
@@ -150,6 +155,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wezwanie do zapłaty', titleEn: 'Payment demand (wezwanie do zapłaty)',
     descRu: 'Письменное требование оплаты долга с установлением срока. После wezwanie начисляются проценты за просрочку (odsetki ustawowe za opóźnienie) и возможно обращение в суд (nakaz zapłaty).',
     descEn: 'Written payment demand with a deadline; thereafter statutory late interest and court proceedings (nakaz zapłaty) may follow.',
+    descDoc: 'Przedsądowe wezwanie do zapłaty z wyznaczonym terminem; po jego upływie odsetki ustawowe za opóźnienie i pozew o nakaz zapłaty.',
     refRu: 'ст. 481 ГК Польши (odsetki za opóźnienie); кодекс гражданского процесса',
     refEn: 'Article 481 of the Polish Civil Code (default interest); Civil Procedure Code',
     fields: [
@@ -176,6 +182,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Umowa pożyczki (kwit)', titleEn: 'Loan note (kwit pożyczki)',
     descRu: 'Расписка о получении займа между частными лицами. Договор займа свыше 1000 злотых требует письменной формы (art. 720¹ КГ); расписка подтверждает передачу суммы.',
     descEn: 'Loan note between individuals. Loan agreements above 1,000 PLN require written form (art. 720(1) KC).',
+    descDoc: 'Umowa pożyczki między osobami prywatnymi: kwota, termin zwrotu i sposób przekazania; powyżej 1 000 zł wymagana forma pisemna (art. 720 § 1 KC).',
     refRu: 'ст. 720, 720¹ Гражданского кодекса Польши (Kodeks cywilny)',
     refEn: 'Articles 720, 720(1) of the Polish Civil Code (Kodeks cywilny)',
     fields: [
@@ -202,6 +209,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Pełnomocnictwo', titleEn: 'Power of attorney (pełnomocnictwo)',
     descRu: 'Доверенность на бытовые действия: получение документов, представление в учреждениях. Для сделок с недвижимостью — только нотариальная форма (art. 99¹ КГ).',
     descEn: 'Power of attorney for everyday matters. For real estate transactions the notarial form is required (art. 99(1) KC).',
+    descDoc: 'Pełnomocnictwo do załatwiania spraw codziennych w imieniu udzielającego; dla czynności związanych z nieruchomościami wymagana forma aktu notarialnego (art. 99 § 1 KC).',
     refRu: 'ст. 98, 99 Гражданского кодекса Польши (Kodeks cywilny)',
     refEn: 'Articles 98, 99 of the Polish Civil Code (Kodeks cywilny)',
     fields: [
@@ -226,6 +234,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Usprawiedliwienie nieobecności dziecka w szkole', titleEn: 'School absence note (usprawiedliwienie)',
     descRu: 'Уведомление классного руководителя об отсутствии ребёнка. Правила конкретной школы обычно требуют уведомления в течение 7 дней.',
     descEn: 'Absence note to the class teacher. School rules usually require notification within 7 days.',
+    descDoc: 'Usprawiedliwienie nieobecności dziecka w szkole skierowane do wychowawcy: data, powód i czas trwania nieobecności; regulaminy zwykle wymagają zgłoszenia w ciągu 7 dni.',
     refRu: 'правила школ Польши (statut szkoły)',
     refEn: 'Polish school statutes',
     fields: [
@@ -251,6 +260,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Skarga na świadczenia medyczne', titleEn: 'Healthcare complaint (skarga)',
     descRu: 'Жалоба на медицинские услуги руководству учреждения; далее — Rzecznik Praw Pacjenta (Уполномоченный по правам пациентов) или отделение NFZ по качеству услуг.',
     descEn: 'Complaint addressed to the healthcare provider; next steps are the Patient Rights Ombudsman (Rzecznik Praw Pacjenta) or the NFZ branch.',
+    descDoc: 'Skarga na jakość świadczeń opieki zdrowotnej skierowana do podmiotu leczniczego; dalsze kroki to Rzecznik Praw Pacjenta lub oddział NFZ.',
     refRu: 'Закон Польши о правах пациентов и Уполномоченном по правам пациентов',
     refEn: 'Polish Act on Patients’ Rights and the Patient Rights Ombudsman',
     fields: [
@@ -279,6 +289,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o naprawę do zarządcy budynku', titleEn: 'Repair request to the property manager',
     descRu: 'Заявление управляющей компании/сполдьельне об устранении неисправности общего имущества или в квартире; при бездействии — претензия и жалобе в надзорные органы.',
     descEn: 'Request to the property manager/housing cooperative to repair a defect; in case of inaction — formal claim and supervisory complaint.',
+    descDoc: 'Wniosek do zarządcy/spółdzielni o usunięcie usterki; w razie bezczynności — wezwanie przedsądowe i skarga do organu nadzoru.',
     refRu: 'закон Польши о собственности помещений; правила управляющей организации',
     refEn: 'Polish Act on Ownership of Premises; management company rules',
     fields: [
@@ -318,6 +329,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Odwołanie od decyzji administracyjnej', titleEn: 'Objection to an administrative decision (KPA)',
     descRu: 'Odwołanie od decyzji administracyjnej w terminie 14 dni (art. 129 KPA): oznaczenie decyzji, zarzuty, wniosek o zmianę lub uchylenie.',
     descEn: 'Objection to an administrative decision within 14 days (Art. 129 of the Polish Code of Administrative Procedure).',
+    descDoc: 'Odwolanie od decyzji administracyjnej wniesione w terminie 14 dni od jej doręczenia (art. 129 Kodeksu postępowania administracyjnego): zarzuty oraz wniosek o zmianę lub uchylenie decyzji.',
     refRu: 'art. 129 Kodeksu postępowania administracyjnego',
     refEn: 'Article 129 of the Code of Administrative Procedure (Poland)',
     fields: [
@@ -345,6 +357,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Pozew o zapłatę', titleEn: 'Payment claim lawsuit (basic pozew)',
     descRu: 'Позов о взыскании долга до 100 000 zł (rejonowy — art. 17 pkt 4 KPC): pozew z oznaczeniem stron, żądania, faktów i dowodów (art. 187 KPC).',
     descEn: 'Payment lawsuit up to PLN 100,000 before the district court (Art. 187 of the Polish Civil Procedure Code).',
+    descDoc: 'Pozew o zapłatę kwoty do 100 000 zł przed sądem rejonowym: oznaczenie stron, dokładne żądanie, fakty i dowody (art. 187 KPC).',
     refRu: 'art. 187 Kodeksu postępowania cywilnego; właściwość — art. 17-21 KPC',
     refEn: 'Articles 187, 17-21 of the Polish Civil Procedure Code',
     fields: [
@@ -373,6 +386,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o dokumentację medyczną', titleEn: 'Request for medical records',
     descRu: 'Wniosek o dostęp do dokumentacji medycznej i jej kopie (ustawa o prawach pacjenta, art. 23-30; pierwsza kopia bezpłatna).',
     descEn: 'Request for access to medical records and copies (Polish Patients Rights Act, Arts. 23-30; first copy free).',
+    descDoc: 'Wniosek o dostęp do dokumentacji medycznej i jej kopie (art. 23–30 ustawy o prawach pacjenta): pierwsza kopia bezpłatna.',
     refRu: 'art. 23-30 ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta',
     refEn: 'Articles 23-30 of the Polish Act on Patients Rights',
     fields: [
@@ -399,6 +413,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Reklamacja do banku', titleEn: 'Complaint to the bank',
     descRu: 'Reklamacja bankowa na operację/błąd: odpowiedź banku — 30 dni (ustawa o rozpatrywaniu reklamacji); dalej — Rzecznik Finansowy.',
     descEn: 'Bank complaint about a transaction/error; the bank must respond within 30 days (Polish complaints act); escalation to the Financial Ombudsman.',
+    descDoc: 'Reklamacja do banku w sprawie transakcji lub błędu: bank ma 30 dni na odpowiedź (ustawa o rozpatrywaniu reklamacji); w razie odmowy — Rzecznik Finansowy.',
     refRu: 'ustawa z 5.08.2015 r. o rozpatrywaniu reklamacji przez podmioty rynku finansowego',
     refEn: 'Polish Act of 5 August 2015 on handling financial complaints',
     fields: [
@@ -426,6 +441,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Pozew o zapłatę czynszu najmu', titleEn: 'Lawsuit for unpaid rent (czynsz najmu)',
     descRu: 'Pozew о взыскании невыплаченной арендной платы: обязанность нанимателя платить czynsz — ст. 659 ГК Польши; ответственность за просрочку и проценты — ст. 471, 481 ГК; содержание иска — ст. 187 КПК Польши; допустима подача также по месту нахождения недвижимости (ст. 38 КПК). В иск включите wniosek о рассмотрении в postępowanie upominawcze (ускоренное приказное производство).',
     descEn: 'Lawsuit for unpaid rent: duty to pay rent (art. 659 KC), default interest (art. 471, 481 KC), statement of claim content (art. 187 CPC); may also be filed where the premises are located (art. 38 CPC).',
+    descDoc: 'Pozew o zapłatę zaległego czynszu: obowiązek płacenia czynszu (art. 659 KC), odsetki za opóźnienie (art. 471 i 481 KC), treść pozwu (art. 187 KPC); właściwość sądu według miejsca położenia lokalu (art. 38 KPC).',
     refRu: 'ст. 187, 38 Кодекса гражданского процесса Польши; ст. 659, 471 ГК Польши (Kodeks cywilny)',
     refEn: 'Articles 187, 38 of the Polish Civil Procedure Code; Articles 659, 471 of the Polish Civil Code',
     fields: [
@@ -459,6 +475,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Pozew o odszkodowanie za zalanie mieszkania', titleEn: 'Lawsuit for compensation of apartment flooding damage',
     descRu: 'Pozew о возмещении ущерба, причинённого заливом квартиры (awaria pionu, nieszczelność у соседа): деликтная ответственность — ст. 415 ГК Польши; объём возмещения — ст. 361, 363 ГК (восстановление прежнего состояния либо денежная выплата); содержание иска — ст. 187 КПК. Приложите protokół zalania, фото, kosztorys naprawy или opinię rzeczoznawcy.',
     descEn: 'Lawsuit for compensation of damage caused by flooding: tort liability (art. 415 KC), extent of compensation (art. 361, 363 KC), statement of claim content (art. 187 CPC).',
+    descDoc: 'Pozew o odszkodowanie za zalanie mieszkania: odpowiedzialność deliktowa (art. 415 KC), szkoda i jej naprawienie (art. 361 i 363 KC), treść pozwu (art. 187 KPC).',
     refRu: 'ст. 187 Кодекса гражданского процесса Польши; ст. 415, 361, 363 ГК Польши (Kodeks cywilny)',
     refEn: 'Article 187 of the Polish Civil Procedure Code; Articles 415, 361, 363 of the Polish Civil Code',
     fields: [
@@ -493,6 +510,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Pozew o ochronę dóbr osobistych', titleEn: 'Lawsuit for protection of personal rights (dobra osobiste)',
     descRu: 'Pozew о защите личных неимущественных прав (честь, достоинство, доброе имя, изображение): перечень — ст. 23 ГК; требования — прекращение нарушений, устранение последствий и заявление с извинениями (ст. 24 ГК), zadośćuczynienie — ст. 448 ГК. Возможна подача по месту нарушения (ст. 45 КПК); фиксированная пошлина — 600 злотых (art. 29 закона о судебных расходах).',
     descEn: 'Lawsuit for protection of personal rights: cessation and removal of consequences, apology (art. 24 KC), damages for non-pecuniary harm (art. 448 KC); fixed court fee of PLN 600.',
+    descDoc: 'Pozew o ochronę dóbr osobistych: zaniechanie naruszeń, usunięcie ich skutków i przeprosiny (art. 24 KC), zadośćuczynienie (art. 448 KC); stała opłata sądowa 600 zł.',
     refRu: 'ст. 23, 24, 448 ГК Польши (Kodeks cywilny); ст. 45, 187 КПК Польши',
     refEn: 'Articles 23, 24, 448 of the Polish Civil Code; Articles 45, 187 of the Polish Civil Procedure Code',
     fields: [
@@ -528,6 +546,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Deklaracja wyboru lekarza POZ', titleEn: 'Declaration of choice of a primary care (POZ) physician',
     descRu: 'Декларация выбора врача первичной медпомощи (POZ) — подаётся в выбранную клинику, которая регистрирует пациента у терапевта по программе NFZ. Сменить врача можно в любое время; две смены в год — бесплатно и без объяснения причин.',
     descEn: 'Declaration of choice of a primary care (POZ) physician — filed at the chosen clinic, which registers you under the NFZ programme. You may change the doctor at any time; two changes per year are free without giving reasons.',
+    descDoc: 'Deklaracja wyboru lekarza podstawowej opieki zdrowotnej (POZ): składana w wybranej przychodni, która rejestruje ją w NFZ; zmiana lekarza jest możliwa w każdej chwili, dwie zmiany w roku są bezpłatne i nie wymagają podania przyczyny.',
     refRu: 'ст. 30 закона Польши от 27.08.2004 о медпомощи, финансируемой из публичных средств',
     refEn: 'Art. 30 of the Polish Act of 27 August 2004 on healthcare services financed from public funds',
     fields: [
@@ -555,6 +574,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Podanie o przyjęcie dziecka do szkoły', titleEn: 'Application to enrol a child in school',
     descRu: 'Заявление директору школы о приёме ребёнка: в порядке рекрутации (первый класс) или в течение учебного года (например, при переезде). Основание — ст. 149 и ст. 158-159 Prawo oświatowe.',
     descEn: 'Application to the school principal to enrol a child: in the recruitment procedure (first grade) or during the school year (e.g. after moving).',
+    descDoc: 'Wniosek do dyrektora szkoły o przyjęcie dziecka: w postępowaniu rekrutacyjnym (pierwsza klasa) albo w trakcie roku szkolnego (np. po przeprowadzce).',
     refRu: 'ст. 149, 158-159 закона Польши «Право об образовании» (Prawo oświatowe)',
     refEn: 'Articles 149, 158-159 of the Polish Education Law (Prawo oświatowe)',
     fields: [
@@ -584,6 +604,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o zwolnienie dziecka z zajęć wychowania fizycznego / religii', titleEn: 'Request to exempt a child from PE / religion classes',
     descRu: 'Заявление директору об освобождении ребёнка от занятий: WF — на основании врачебного заключения (ст. 42 Prawo oświatowe), от религии/этики — на основании письменного заявления родителей (§ 14 распоряжения MEN от 14.04.1992).',
     descEn: 'Request to the principal to exempt a child from classes: PE — based on a medical opinion (Art. 42 of the Education Law), religion/ethics — based on a written parental statement.',
+    descDoc: 'Wniosek do dyrektora o zwolnienie dziecka z zajęć: WF — na podstawie opinii lekarskiej (art. 42 Prawa oświatowego), religia/etyka — na podstawie pisemnego oświadczenia rodziców.',
     refRu: 'ст. 42 закона «Право об образовании»; § 14 распоряжения MEN от 14.04.1992 о религиозном и этическом воспитании',
     refEn: 'Art. 42 of the Education Law; § 14 of the MEN regulation of 14 April 1992 on religious and ethical education',
     fields: [
@@ -613,6 +634,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o przeliczenie opłat za media', titleEn: 'Utility charges recalculation request',
     descRu: 'Заявление в управляющую организацию/жилищный кооператив о перерасчёте платежей за воду/отопление по показаниям счётчиков вместо нормативов, исправлении ошибочного расчёта или возврате переплаты.',
     descEn: 'Request to the property manager/housing cooperative to recalculate utility charges per meter readings instead of norms, correct a settlement or refund an overpayment.',
+    descDoc: 'Wniosek do zarządcy/spółdzielni o przeliczenie opłat za media według wskazań liczników zamiast norm, korektę rozliczenia lub zwrot nadpłaty.',
     refRu: 'ст. 27-29 закона Польши о праве собственности на помещения; закон о жилищных кооперативах; правила расчётов управляющей организации',
     refEn: 'Articles 27-29 of the Polish Act on Ownership of Premises; Act on Housing Cooperatives; settlement rules of the manager',
     fields: [
@@ -640,6 +662,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o zwrot nadpłaty podatku', titleEn: 'Request for a tax overpayment refund (nadpłata)',
     descRu: 'Заявление в налоговую инспекцию о возврате переплаты (nadpłata) по подоходному налогу, в том числе после подачи корректировки декларации (art. 79a). Срок возврата — 30 дней со дня подачи заявления о возврате (art. 243).',
     descEn: 'Request to the tax office for a refund of an overpayment (nadpłata), including after filing a corrected return (art. 79a). The refund is due within 30 days of the refund request (art. 243).',
+    descDoc: 'Wniosek do urzędu skarbowego o zwrot nadpłaty, także po złożeniu korekty zeznania (art. 79a Ordynacji podatkowej); zwrot przysługuje w terminie 30 dni od zgłoszenia (art. 243).',
     refRu: 'ст. 72 § 1 п. 2, ст. 79a § 1, ст. 243 § 1 Ordynacji podatkowej (Закона о налоговом производстве Польши)',
     refEn: 'Articles 72(1)(2), 79a(1), 243(1) of the Polish Tax Ordinance (Ordynacja podatkowa)',
     fields: [
@@ -670,6 +693,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o zwrot kwoty nieautoryzowanej transakcji płatniczej', titleEn: 'Request for a refund of an unauthorized payment transaction',
     descRu: 'Заявление банку о возврате средств, списанных неавторизованной (мошеннической) операцией. Банк обязан вернуть сумму немедленно — не позднее конца следующего рабочего дня после уведомления (art. 43 закона о платёжных услугах). Сначала заблокируйте карту (zastrzeżenie).',
     descEn: 'Request to the bank for a refund of funds taken by an unauthorized (fraudulent) transaction. The bank must refund immediately, no later than the end of the next business day after notification (art. 43 of the Payment Services Act). Block the card first.',
+    descDoc: 'Wniosek do banku o zwrot środków pobranych w transakcji nieautoryzowanej (oszustwo): bank zwraca środki niezwłocznie, najpóźniej do końca następnego dnia roboczego po zgłoszeniu (art. 43 ustawy o usługach płatniczych); najpierw zablokuj kartę.',
     warningRu: 'Сначала заблокируйте карту по телефону банка (zastrzeżenie); при мошенничестве подайте заявление в полицию и приложите его копию',
     warningEn: 'Block the card by phone (zastrzeżenie) first; for fraud, file a police report and attach a copy',
     refRu: 'ст. 43 Закона Польши о платёжных услугах от 19.08.2011 г. (ustawa o usługach płatniczych)',
@@ -702,6 +726,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o emeryturę', titleEn: 'Old-age pension application (ZUS)',
     descRu: 'Заявление в ZUS о назначении пенсии по возрасту (emerytura): возраст 60 лет (женщины) / 65 лет (мужчины). Право на пенсию возникает с первого дня месяца, в котором подано заявление, — не затягивайте с подачей. Подаётся письменно в отделении ZUS или онлайн (PUE ZUS).',
     descEn: 'Old-age pension application to ZUS: retirement age is 60 (women) / 65 (men). The pension right starts on the first day of the month the application is filed — file in time. Filed on paper at a ZUS office or online (PUE ZUS).',
+    descDoc: 'Wniosek do ZUS o emeryturę: wiek emerytalny 60 lat (kobiety) / 65 lat (mężczyźni); prawo do emerytury powstaje pierwszego dnia miesiąca złożenia wniosku — warto złożyć go w odpowiednim terminie; papierowo w ZUS lub online przez PUE ZUS.',
     refRu: 'ст. 32, ст. 129 Закона Польши от 17.12.1998 о пенсиях и пособиях из Фонда социального страхования (FUS)',
     refEn: 'Articles 32, 129 of the Polish Act of 17 December 1998 on Pensions from the Social Insurance Fund (FUS)',
     fields: [
@@ -744,6 +769,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Zawiadomienie o zakłócaniu spokoju (art. 51 k.w.)', titleEn: 'Noise complaint about a neighbour (zawiadomienie)',
     descRu: 'Zawiadomienie в полицию или городскую стражу (straż miejska) на соседа, систематически нарушающего покой — особенно в ночное время (22:00–6:00). Основание — ст. 51 Кодекса о мелких правонарушениях (zakłócanie spokoju lub porządku publicznego, spoczynek nocny); совершение проступка ночью — отягчающее обстоятельство (art. 51 § 4). Форма фиксирует нарушения, доказательства и просьбу о наказании виновного.',
     descEn: 'A notification to the police or municipal guard (straż miejska) about a neighbour who systematically disturbs the peace, especially at night (22:00–6:00). Basis: art. 51 of the Petty Offences Code (disturbing peace and public order, night rest); committing the act at night is an aggravating circumstance (art. 51 § 4). The form records the disturbances, evidence and a request to penalise the perpetrator.',
+    descDoc: 'Zawiadomienie na policję lub straż miejską dotyczące sąsiada systematycznie zakłócającego spokój, szczególnie w porze nocnej (22:00–6:00). Podstawa: art. 51 Kodeksu wykroczeń (zakłócanie spokoju i porządku publicznego); popełnienie wykroczenia w nocy jest okolicznością obciążającą (art. 51 § 4). Pismo obejmuje rejestr zakłóceń, dowody i wniosek o ukaranie sprawcy.',
     warningRu: 'Во время нарушения вызывайте наряд (112/997) — протокол интервенции станет главным доказательством; zawiadomienie эффективнее после серии нарушений',
     warningEn: 'Call the patrol (112/997) during the disturbance — the intervention report is the key evidence; a series of incidents strengthens the notification',
     refRu: 'ст. 51 § 1, § 4 Кодекса о мелких правонарушениях Польши (Kodeks wykroczeń); ст. 144 ГК Польши (запрет иммиссий)',
@@ -776,6 +802,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Zawiadomienie o zalaniu mieszkania i wezwanie do zapłaty', titleEn: 'Apartment flooding notice and payment demand',
     descRu: 'Досудебное заявление соседу (или управляющему) о заливе квартиры: фиксация факта protokołem zalania, описание ущерба, требование выплатить возмещение в установленный срок. Основание — деликтная ответственность по ст. 415 ГК Польши; если причина в общих частях здания, отвечает управление/сообщество владельцев (art. 12 ustawy o własności lokali). При отказе следующим шагом будет иск о взыскании (в каталоге есть pozew o odszkodowanie).',
     descEn: 'A pre-court notice to the neighbour (or the manager) about apartment flooding: the incident is documented by a flooding protocol, the damage is described and compensation is demanded within a set deadline. Basis: tort liability under art. 415 of the Civil Code; common-parts causes engage the manager/housing community (art. 12 of the Act on Ownership of Premises). If refused, a payment lawsuit (separate template in the catalogue) is the next step.',
+    descDoc: 'Przedsądowe zawiadomienie sąsiada (lub zarządcy) o zalaniu mieszkania: protokół zalania, opis szkody i żądanie odszkodowania w wyznaczonym terminie. Podstawa: odpowiedzialność deliktowa (art. 415 KC); przyczyny w częściach wspólnych obciążają zarządcę/wspólnotę (art. 12 ustawy o własności lokali). W razie odmowy następnym krokiem jest pozew o zapłatę.',
     warningRu: 'Не начинайте ремонт до составления protokół zalania и фотофиксации; при серьёзном ущербе уведомите страховую компанию',
     warningEn: 'Do not start repairs before the flooding protocol (protokół zalania) and photo documentation; notify your insurer in case of significant damage',
     refRu: 'ст. 415, 361, 363 ГК Польши (Kodeks cywilny); ст. 12 закона о праве собственности на помещения (обязанности управления)',
@@ -809,6 +836,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Skarga na zanieczyszczenie części wspólnych', titleEn: 'Complaint about dirt and smoking in common areas',
     descRu: 'Жалоба в управление/сообщество владельцев или кооператив на захламление и грязь в общих частях (klatka schodowa, pralnia, лифт) и на курение на лестничной клетке. Основание — обязанность управления поддерживать общие части в надлежащем состоянии и чистоте (art. 12 ustawy o własności lokali) и regulamin porządku domowego; гмина может ввести дополнительные места запрета курения (art. 5 ust. 2 ustawy antynikotynowej). Установлен срок устранения с последующим уведомлением надзорных органов и straży miejskiej.',
     descEn: 'A complaint to the manager/housing community or cooperative about litter and dirt in the common parts (staircase, laundry, lift) and smoking on the staircase. Basis: the manager’s duty to keep common parts in proper condition and clean (art. 12 of the Act on Ownership of Premises) and the house rules; a commune may introduce additional smoking-ban places (art. 5(2) of the Tobacco Control Act). Sets a removal deadline with further escalation to supervisory bodies and the municipal guard.',
+    descDoc: 'Skarga do zarządcy/wspólnoty lub spółdzielni dotycząca zaśmiecenia i brudu w częściach wspólnych (klatka schodowa, pralnia, winda) oraz palenia na klatce. Podstawa: obowiązek utrzymywania części wspólnych w należytym stanie i czystości (art. 12 ustawy o własności lokali) oraz regulamin porządku domowego; gmina może wprowadzić dodatkowe miejsca zakazu palenia (art. 5 ust. 2 ustawy antynikotynowej). Pismo wyznacza termin usunięcia nieprawidłowości i wskazuje eskalację do organów nadzoru oraz straży miejskiej.',
     refRu: 'ст. 12, 16 закона Польши о праве собственности на помещения (обязанности управления — состояние и чистота общих частей); ст. 5 закона от 09.11.1995 об охране здоровья от последствий употребления табака (дополнительные запреты курения по решению гмины)',
     refEn: 'Articles 12, 16 of the Polish Act on Ownership of Premises (management duties — condition and cleanliness of common parts); art. 5 of the Tobacco Control Act of 9 November 1995 (additional smoking bans set by a commune)',
     fields: [
@@ -837,6 +865,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Zgłoszenie usterki i wezwanie do usunięcia', titleEn: 'Defect report and repair request',
     descRu: 'Заявление управляющему/сообществу владельцев/кооперативу об устранении неисправности общих частей здания: протечка крыши, авария стояка, освещение лестницы, подъезд. Основание — обязанности управления по содержанию общего имущества (art. 12 ustawy o własności lokali) и содержание объекта в надлежащем состоянии по ст. 61 Prawa budowlanego. Указывается характер неисправности, срок устранения и последующее уведомление powiatowy inspektor nadzoru budowlanego.',
     descEn: 'A request to the manager/housing community/cooperative to remove a defect in the common parts: roof leak, riser failure, staircase lighting, entrance. Basis: management duties over the common property (art. 12 of the Act on Ownership of Premises) and building maintenance duties under art. 61 of the Building Law. Sets the urgency, a removal deadline and escalation to the district construction supervision inspector.',
+    descDoc: 'Wniosek do zarządcy/wspólnoty/spółdzielni o usunięcie usterki części wspólnych: przeciek dachu, awaria pionu, oświetlenie klatki schodowej, wejście. Podstawa: obowiązki zarządu nad częściami wspólnymi (art. 12 ustawy o własności lokali) oraz obowiązki utrzymania budynku (art. 61 Prawa budowlanego). Pismo wskazuje pilność, termin usunięcia i eskalację do powiatowego inspektora nadzoru budowlanego.',
     refRu: 'ст. 12 закона Польши о праве собственности на помещения; ст. 61 закона — Prawo budowlane (содержание объекта в надлежащем состоянии)',
     refEn: 'Art. 12 of the Polish Act on Ownership of Premises; art. 61 of the Building Law (maintaining the building in proper condition)',
     fields: [
@@ -866,6 +895,7 @@ export const TEMPLATES_PL: TplDef[] = [
     titleDoc: 'Wniosek o rozliczenie zaliczek na media', titleEn: 'Utility advance payments settlement and reduction request',
     descRu: 'Заявление управляющему/кооперативу о предоставлении детального расчёта авансовых платежей (zaliczki na media) и расходов управления за период, корректировке ошибочных начислений, снижении авансов от следующего периода и возврате переплаты. Основание — распределение расходов управления пропорционально долям (art. 29 ustawy o własności lokali); в кооперативах расходы управления распределяются в отдельных периодах (art. 7 ustawy o spółdzielniach mieszkaniowych).',
     descEn: 'A request to the manager/cooperative for a detailed settlement of utility advance payments (zaliczki) and management costs, correction of erroneous charges, lower advances from the next period and a refund of any overpayment. Basis: management costs are borne proportionally to ownership shares (art. 29 of the Act on Ownership of Premises); in cooperatives management costs are settled per period (art. 7 of the Act on Housing Cooperatives).',
+    descDoc: 'Wniosek do zarządcy/spółdzielni o szczegółowe rozliczenie zaliczek na media i kosztów zarządu, korektę błędnych obciążeń, niższe zaliczki od kolejnego okresu i zwrot nadpłaty. Podstawa: koszty zarządu ponoszone proporcjonalnie do udziałów (art. 29 ustawy o własności lokali); w spółdzielniach koszty zarządu rozlicza się za okresy (art. 7 ustawy o spółdzielniach mieszkaniowych).',
     refRu: 'ст. 29 закона Польши о праве собственности на помещения (распределение расходов управления); ст. 7 закона о жилищных кооперативах (расчёт расходов управления)',
     refEn: 'Art. 29 of the Polish Act on Ownership of Premises (allocation of management costs); art. 7 of the Act on Housing Cooperatives (settlement of management costs)',
     fields: [

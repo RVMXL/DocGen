@@ -33,6 +33,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de vacaciones anuales pagas', titleEn: 'Annual paid leave application',
     descRu: 'Заявление на ежегодный отпуск. По Ley de Contrato de Trabajo 20.744 (art. 150): от 14 до 35 дней в зависимости от стажа; работодатель уведомляет за 45 дней (art. 154).',
     descEn: 'Annual leave application. Under the Argentine LCT 20.744 (art. 150): 14 to 35 days by seniority; employer must give 45 days notice (art. 154).',
+    descDoc: 'Solicitud al empleador del disfrute de las vacaciones anuales para el período indicado, conforme a los arts. 150 y 154 de la Ley de Contrato de Trabajo 20.744: entre catorce y treinta y cinco días según la antigüedad, con notificación previa del empleador con cuarenta y cinco días de anticipación.',
     refRu: 'ст. 150–157 Закона о трудовом договоре Аргентины (Ley 20.744)',
     refEn: 'Articles 150-157 of the Argentine Labour Contract Law (Ley 20.744)',
     fields: [
@@ -56,6 +57,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de licencia sin goce de sueldo', titleEn: 'Unpaid leave application',
     descRu: 'Заявление на отпуск без сохранения заработной платы по личным причинам — предоставляется по соглашению с работодателем.',
     descEn: 'Unpaid leave application for personal reasons, by agreement with the employer.',
+    descDoc: 'Solicitud de licencia sin goce de sueldo por motivos personales, con las fechas de inicio y fin. Se concede por acuerdo con el empleador, ya que la ley no la establece como un derecho del trabajador.',
     refRu: 'Ley 20.744; соглашение с работодателем',
     refEn: 'Argentine LCT 20.744; employer agreement',
     fields: [
@@ -79,6 +81,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Carta de renuncia', titleEn: 'Resignation letter (renuncia)',
     descRu: 'Заявление об увольнении по собственному желанию. По LCT (art. 240–242) preaviso: 1 месяц (до 5 лет стажа) или 2 месяца (более 5 лет).',
     descEn: 'Resignation letter. Notice under LCT arts. 240-242: 1 month (tenure under 5 years) or 2 months (over 5). Recommended form: telegrama or carta documento.',
+    descDoc: 'Comunicación escrita de la renuncia al puesto con el preaviso de los arts. 240 a 242 de la LCT: un mes de antigüedad menor a cinco años o dos meses si es mayor. Se recomienda enviarla por telegrama o carta documento para dejar constancia fehaciente.',
     refRu: 'ст. 240–242 Ley 20.744; форма — телеграмма или carta documento (Correo Argentino)',
     refEn: 'Articles 240-242 of Ley 20.744; form — telegram or carta documento',
     warningRu: 'Внимание: renuncia по LCT подаётся telegrama de renuncia или carta documento (Correo Argentino) — это защищает работника от споров о дате и волеизъявлении',
@@ -102,6 +105,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de certificados de trabajo (art. 80 LCT)', titleEn: 'Work certificates request (LCT art. 80)',
     descRu: 'Запрос сертификатов о работе. По LCT art. 80 работодатель обязан выдать сертификат о работе, сертификат о платежах в фонды соцстрахования и сертификат о службе (para jubilación) в течение 30 дней с требования.',
     descEn: 'Request for work certificates. Under LCT art. 80, the employer must issue the certificates within 30 days of the request.',
+    descDoc: 'Solicitud al empleador de los certificados previstos en el art. 80 de la Ley de Contrato de Trabajo (certificado de trabajo, de aportes a la seguridad social y para el servicio de jubilación), que deben entregarse dentro de los treinta días de requeridos.',
     refRu: 'ст. 80 Ley de Contrato de Trabajo 20.744',
     refEn: 'Article 80 of the Argentine Labour Contract Law (Ley 20.744)',
     fields: [
@@ -123,6 +127,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Reclamo al proveedor (Ley 24.240)', titleEn: 'Claim to supplier (Ley 24.240)',
     descRu: 'Претензия поставщику при дефекте товара/услуги. По Ley 24.240 (art. 11, 18–20) гарантия на новые товары — 6 месяцев (может быть расширена); при отказе — reclamo в Defensa del Consumidor и суд.',
     descEn: 'Claim to the supplier over defects. Under Ley 24.240 (arts. 11, 18-20) the legal warranty for new goods is 6 months; next: consumer authority complaint and court.',
+    descDoc: 'Reclamación al proveedor por defectos del producto o del servicio, conforme a los arts. 11 y 18 a 20 de la Ley 24.240: descripción del defecto, garantía legal de seis meses para los bienes nuevos y petición concreta en el plazo de treinta días corridos; en caso de rechazo, reclamo ante Defensa del Consumidor y acción judicial.',
     refRu: 'ст. 11, 18–20 Ley de Defensa del Consumidor 24.240',
     refEn: 'Articles 11, 18-20 of the Argentine Consumer Defense Law 24.240',
     fields: [
@@ -155,6 +160,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Carta documento de intimación de pago', titleEn: 'Payment demand (carta documento)',
     descRu: 'Требование об исполнении обязательства. В Аргентине стандартно отправляется как Carta Documento / Telegrama colacionado через Correo Argentino — подтверждённое доказательство.',
     descEn: 'Demand to perform an obligation. In Argentina it is sent as Carta Documento / Telegrama colacionado via Correo Argentino — certified evidence.',
+    descDoc: 'Intimación fehaciente al cumplimiento de una obligación (pago o prestación) con plazo determinado y apercibimiento de iniciar acciones judiciales. Se envía como Carta Documento o telegrama colacionado por Correo Argentino, que acredita de modo certificado su contenido y su recepción.',
     refRu: 'Carta Documento (Correo Argentino); Código Civil y Comercial (mora, art. 523)',
     refEn: 'Carta Documento (Argentine post); Civil and Commercial Code (default, art. 523)',
     fields: [
@@ -180,6 +186,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Demanda judicial (forma básica)', titleEn: 'Statement of claim (demanda, base form)',
     descRu: 'Базовая форма искового заявления: суд, стороны, hechos, derecho, petitorio, prueba. Требования формы — по процессуальному кодексу юрисдикции (CPCCN/Nación или провинции).',
     descEn: 'Base statement of claim: court, parties, facts, law, petition, evidence — per the applicable procedural code (federal or provincial).',
+    descDoc: 'Demanda judicial básica con la estructura que exige el código procesal aplicable (CPCCN o provincial): juzgado, partes, hechos, derecho, petitorio y prueba. Se presenta como base para reclamos de cobro de sumas de dinero y otras acciones ordinarias.',
     refRu: 'Código Procesal Civil y Comercial de la Nación (art. 330 y ss.)',
     refEn: 'Argentine Federal Civil and Commercial Procedure Code (art. 330 et seq.)',
     fields: [
@@ -212,6 +219,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Recibo por préstamo de dinero', titleEn: 'Loan receipt (recibo por préstamo)',
     descRu: 'Расписка о получении займа между частными лицами; подтверждает договор займа (CCyC art. 1316 и сл.). Подписывается заёмщиком; рекомендуемая передача денег — банковский перевод.',
     descEn: 'Loan receipt between individuals confirming the loan (Civil and Commercial Code arts. 1316 et seq.); bank transfer recommended.',
+    descDoc: 'Recibo de dinero que acredita el préstamo entre particulares (mutuo, arts. 1316 y siguientes del Código Civil y Comercial): partes, suma recibida, fecha, vencimiento y condiciones de devolución. Lo firma el prestatario; se recomienda entregar el dinero mediante transferencia bancaria.',
     refRu: 'ст. 1316 и сл. Código Civil y Comercial de la Nación',
     refEn: 'Articles 1316 et seq. of the Argentine Civil and Commercial Code',
     fields: [
@@ -237,6 +245,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Poder general', titleEn: 'Power of attorney (poder general)',
     descRu: 'Общая доверенность на бытовые действия. Для сделок с недвижимостью — poder por escritura pública у нотариуса; многие учреждения требуют подпись заверенную (certificación de firma).',
     descEn: 'General power of attorney. Real estate requires a notarial poder (escritura pública); many institutions require certified signatures.',
+    descDoc: 'Poder general entre particulares para gestiones cotidianas y administrativas: datos del poderdante y del apoderado y facultades conferidas. Los actos sobre bienes inmuebles requieren poder por escritura pública y muchas instituciones exigen la certificación de firmas.',
     refRu: 'ст. 325 и сл. Código Civil y Comercial de la Nación',
     refEn: 'Articles 325 et seq. of the Argentine Civil and Commercial Code',
     fields: [
@@ -261,6 +270,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Justificativo de inasistencia escolar', titleEn: 'School absence justification',
     descRu: 'Объяснительная родителя о причинах отсутствия ребёнка. По правилам школы (reglamento) возможно требование медицинского сертификата при более 3 дней.',
     descEn: 'Parent’s justification for a child’s absence; schools may require a medical certificate for longer absences.',
+    descDoc: 'Justificativo del padre, la madre o el tutor por la inasistencia escolar del hijo entre las fechas indicadas, con el motivo y el compromiso de acompañar la puesta al día académica. El reglamento escolar puede exigir certificado médico en las ausencias prolongadas.',
     refRu: 'правила школ Аргентины (reglamento institucional)',
     refEn: 'Argentine school regulations',
     fields: [
@@ -286,6 +296,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de inscripción y pase escolar', titleEn: 'School enrollment and transfer (pase) application',
     descRu: 'Заявление на зачисление ребёнка в школу или перевод (pase). Начальное и среднее образование обязательно (Ley 26.206, art. 16); школа обязана принять документы, выдать constancia и указать недостающее для legajo.',
     descEn: 'Application to enroll a child in a school or to transfer (pase). Primary and secondary education is compulsory (Law 26.206, art. 16); the school must accept the documents and issue a receipt.',
+    descDoc: 'Solicitud de inscripción de un hijo en una escuela o de pase desde otra institución: datos del alumno, grado o curso y documentación del legajo. La educación primaria y secundaria son obligatorias (art. 16 de la Ley 26.206) y la escuela debe recibir la documentación y entregar constancia, indicando lo pendiente.',
     refRu: 'ст. 16 Ley de Educación Nacional 26.206 (obligatoriedad); normativa del Consejo Federal de Educación; reglamento institucional',
     refEn: 'Art. 16 of the National Education Law 26.206 (compulsory education); Council of Federal Education rules; school regulations',
     fields: [
@@ -314,6 +325,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de certificado de alumno regular', titleEn: 'Request for a certificate of regular enrollment',
     descRu: 'Запрос в школу о выдаче certificado de alumno regular / constancia de inscripción / certificado analítico — нужен для оформления в obra social, пособий, перевода и других trámites.',
     descEn: 'Request to the school for a certificate of regular enrollment / registration / partial transcript — needed for health insurance, family benefits, transfers and other procedures.',
+    descDoc: 'Solicitud a la escuela de la emisión de certificado de alumno regular, constancia de inscripción o certificado analítico, con indicación del uso previsto (obra social, asignaciones, traspaso u otro trámite). Se adjunta fotocopia del DNI del alumno.',
     refRu: 'Ley de Educación Nacional 26.206; reglamento institucional',
     refEn: 'National Education Law 26.206; school regulations',
     fields: [
@@ -340,6 +352,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Nota al administrador del consorcio', titleEn: 'Note to the building administrator',
     descRu: 'Нота управляющему (encargado/administrador) о ремонте общего имущества здания. По Código Civil y Comercial administrator обязан поддерживать консервацию здания.',
     descEn: 'Note to the building administrator to repair common areas; the administrator must keep the building conserved under the Civil and Commercial Code.',
+    descDoc: 'Nota al encargado o administrador del edificio comunicando el problema detectado en las partes comunes y solicitando la programación de las reparaciones e informe de la fecha de realización, conforme a la obligación de conservación del Código Civil y Comercial.',
     refRu: 'Código Civil y Comercial (conservación de cosas comunes, art. 2023 y ss.)',
     refEn: 'Argentine Civil and Commercial Code (common property conservation)',
     fields: [
@@ -364,6 +377,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Pedido de reparaciones al locador', titleEn: 'Repair demand to the landlord',
     descRu: 'Требование к арендодателю (locador) отремонтировать жильё. По CCyC (art. 1199) арендодатель обязан поддерживать вещь в надлежащем состоянии и ремонтировать за свой счёт; при срочной опасности арендатор может сделать ремонт с правом возмещения (art. 1205).',
     descEn: 'Demand to the landlord (locador) to repair the dwelling. Under CCyC art. 1199 the landlord must conserve the property and repair at his own expense; urgent repairs may be made by the tenant with reimbursement (art. 1205).',
+    descDoc: 'Intimación al locador para que repare la vivienda locada, conforme al art. 1199 del Código Civil y Comercial: debe conservar la cosa en condiciones aptas para el uso y efectuar a su costa las reparaciones necesarias. Ante el incumplimiento, reparación urgente por el locatario con derecho a reembolso (art. 1205) y/o acción judicial.',
     warningRu: 'Рекомендуется отправить carta documento (Correo Argentino) — создаёт доказательство уведомления; сохраните копию и авизо',
     warningEn: 'Send as carta documento (Correo Argentino) to prove notice; keep the copy and the receipt',
     refRu: 'ст. 1199, 1205 Código Civil y Comercial de la Nación',
@@ -420,6 +434,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Reclamo administrativo', titleEn: 'Claim before a public agency',
     descRu: 'Reclamo ante un organismo estatal: descripción, antecedentes, peticiones; respuesta en 30 días (práctica administrativa; Ley 27.275 — acceso a la información pública).',
     descEn: 'Claim before a public agency under the Argentine administrative practice and access-to-information law 27.275.',
+    descDoc: 'Reclamo ante un organismo estatal con la descripción de los hechos, los antecedentes y las peticiones concretas. Se solicita respuesta escrita en el plazo de treinta días, con fundamento en la práctica administrativa y en la Ley 27.275 de acceso a la información pública.',
     refRu: 'Ley 27.275 (derecho de acceso a la información pública); Ley 19.549',
     refEn: 'Argentine Law 27.275; Law 19.549 (administrative procedures)',
     fields: [
@@ -447,6 +462,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de historia clínica', titleEn: 'Medical history request',
     descRu: 'Solicitud de acceso/copia de la historia clínica (Ley 26.529, art. 8; acceso del paciente o su representante).',
     descEn: 'Request for access to and copies of the medical history (Law 26.529, Art. 8).',
+    descDoc: 'Solicitud de acceso a la historia clínica y de copias de la misma ante la institución de salud, conforme al art. 8 de la Ley 26.529, en ejercicio del derecho del paciente o de su representante legal. Se indica el período solicitado y el formato, adjuntando copia del DNI.',
     refRu: 'Ley 26.529 (derechos del paciente), art. 8; Ley 26.657 donde aplique',
     refEn: 'Argentine Law 26.529 (patient rights), Art. 8',
     fields: [
@@ -473,6 +489,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Reclamo ante la obra social por negativa de cobertura', titleEn: 'Claim to the obra social over denied medical coverage',
     descRu: 'Претензия в obra social (или prepaga) при отказе, задержке или частичном покрытии лечения. PMO гарантирует обязательный минимум prestaciones; далее — reclamo в Superintendencia de Servicios de Salud и acción de amparo.',
     descEn: 'Claim to an obra social (or prepaga) over denial, delay or partial coverage of treatment. The PMO guarantees a mandatory minimum of benefits; next: the Superintendencia de Servicios de Salud and amparo action.',
+    descDoc: 'Reclamo a la obra social o prepaga por la denegación, demora o cobertura parcial de prestaciones médicas, con referencia al Plan Médico Obligatorio y a la autorización previa. En caso de rechazo, reclamo ante la Superintendencia de Servicios de Salud y acción de amparo.',
     refRu: 'Ley 23.660 (art. 10); PMO — Decreto 1993/2011; Ley 22.431 (текст по Ley 26.378) — discapacidad; Ley 24.240, art. 25; Ley 16.986 (amparo)',
     refEn: 'Law 23.660 (art. 10); PMO — Decree 1993/2011; Law 22.431 (as amended by Law 26.378) — disability; Law 24.240, art. 25; Law 16.986 (amparo)',
     fields: [
@@ -514,6 +531,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Demanda por daños y perjuicios', titleEn: 'Damages lawsuit (daños y perjuicios)',
     descRu: 'Исковое заявление о возмещении ущерба (повреждение имущества, залив, иные убытки). Форма — ст. 330 CPCCN; обязанность возместить неправомерный ущерб — ст. 1716, 1737 КГиКН; проценты — ст. 768.',
     descEn: 'Statement of claim for damages (property damage, leaks, other losses). Form per CPCCN art. 330; duty to repair wrongful harm — CCyC arts. 1716, 1737; interest — art. 768.',
+    descDoc: 'Demanda por daños y perjuicios por daño a la propiedad, inundación u otros perjuicios: hechos, prueba del daño y su monto, con fundamento en el deber de reparar el daño injusto (arts. 1716 y 1737 del CCyC) y en los intereses del art. 768; forma y contenido conforme al art. 330 del CPCCN.',
     warningRu: 'В общегосударственном процессе ведение дела требует адвоката (CPCCN art. 56); в провинциях могут быть свои процессуальные кодексы',
     warningEn: 'Federal proceedings require a lawyer (CPCCN art. 56); provinces may have their own procedural codes',
     refRu: 'ст. 1716, 1737, 768 Código Civil y Comercial; ст. 330 КГПС Нации (CPCCN)',
@@ -554,6 +572,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Demanda de desalojo por falta de pago', titleEn: 'Eviction lawsuit for unpaid rent (desalojo)',
     descRu: 'Иск собственника (арендодателя) о выселении арендатора за просрочку арендной платы. Обязательное условие — предварительное письменное требование об оплате (art. 683 CPCCN; art. 1204 CCyC — срок не менее 10 дней). Процесс — наиболее краткий (art. 676, 681 CPCCN).',
     descEn: 'Landlord’s eviction lawsuit for unpaid rent. A prior written payment demand is required (CPCCN art. 683; CCyC art. 1204 — minimum 10 days). Fast-track procedure (CPCCN arts. 676, 681).',
+    descDoc: 'Demanda de desalojo del locatario por falta de pago de la renta, precedida del requerimiento escrito de pago exigido por el art. 683 del CPCCN y el art. 1204 del CCyC (plazo mínimo de diez días). Se tramita por la vía procesal más breve (arts. 676 y 681 del CPCCN).',
     warningRu: 'В общегосударственном процессе ведение дела требует адвоката (CPCCN art. 56); провинции могут иметь свои процессуальные кодексы',
     warningEn: 'Federal proceedings require a lawyer (CPCCN art. 56); provinces may have their own procedural codes',
     refRu: 'ст. 676, 681, 683 CPCCN; ст. 1197, 1204 Código Civil y Comercial',
@@ -593,6 +612,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Reclamo ante la entidad financiera', titleEn: 'Claim to the bank (financial services user)',
     descRu: 'Претензия банку по спорной операции, комиссии или услуге: подаётся в Servicio de Atención al Usuario банка; ответ — до 10 рабочих дней. При отказе или молчании — жалоба в BCRA (Defensa de las Personas), не ранее чем через 10 рабочих дней после подачи претензии банку.',
     descEn: 'Claim to the bank over a disputed transaction, fee or service: filed with the bank’s Servicio de Atención al Usuario; the bank must answer within 10 business days. If rejected or ignored, escalate to the BCRA (Defensa de las Personas) — at least 10 business days after filing.',
+    descDoc: 'Reclamo al banco por una operación, cargo o servicio cuestionado, presentado ante su Servicio de Atención al Usuario, con detalle de los hechos y petición concreta; respuesta dentro de los diez días hábiles. Ante el rechazo o el silencio, reclamo ante el BCRA (Defensa de las Personas) transcurridos diez días hábiles de la presentación.',
     warningRu: 'Сохраните копию претензии с входящим номером (comprobante de presentación) — BCRA принимает жалобу только после первой стадии; проверьте также раздел «Reclamos» в интернет-банке',
     warningEn: 'Keep the stamped copy / claim number — the BCRA requires proof of the first-stage claim; also check the “Reclamos” section of online banking',
     refRu: 'Régimen de reclamos de usuarios de servicios financieros (BCRA); Ley 24.240 de Defensa del Consumidor',
@@ -649,6 +669,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Solicitud de Asignación Universal por Hijo (AUH)', titleEn: 'Universal Child Allowance (AUH) application',
     descRu: 'Заявление в ANSES о назначении AUH — пособия для безработных, работников неформального сектора, домработниц и социальных monotributistas с детьми до 18 лет. Выплачивается 80% суммы, 20% накапливается в libreta (вакцинация, осмотры, образование). Основание — ст. 14 ter Ley 24.714 (введено Decreto 1602/2009).',
     descEn: 'Application to ANSES for the AUH — the allowance for unemployed and informal workers, domestic workers and social-category monotributistas with children under 18. 80% is paid monthly; 20% accrues in the libreta (vaccination, check-ups, schooling). Basis: art. 14 ter of Law 24.714 (introduced by Decree 1602/2009).',
+    descDoc: 'Solicitud ante ANSES del alta de la Asignación Universal por Hijo para personas desocupadas, trabajadores no registrados, de casas particulares y monotributistas sociales con hijos menores de dieciocho años (art. 14 ter de la Ley 24.714, Decreto 1602/2009). Se abona el ochenta por ciento y el veinte por ciento se acredita con la libreta de salud y educación.',
     refRu: 'ст. 14 ter Закона 24.714 о семейных пособиях (введено Decreto 1602/2009); порядок ANSES',
     refEn: 'Art. 14 ter of the Family Allowances Law 24.714 (introduced by Decree 1602/2009); ANSES procedure',
     fields: [
@@ -679,6 +700,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Nota de reclamo por ruidos molestos', titleEn: 'Noise complaint note (noisy neighbour)',
     descRu: 'Письменная нота-претензия соседу по поводу систематических шумов, превышающих нормальную терпимость (музыка, ремонт, застолья). Перечисляются даты и характер нарушений, излагаются требования прекратить шум и предупреждение об эскалации: администратор консорциума, полиция и местный кодекс о contravenciones. Прилагаются записи и constancias звонков 911 (при наличии).',
     descEn: 'A written complaint note to the neighbour about systematic noise exceeding normal tolerance (music, repairs, gatherings). Dates and the nature of the disturbances are listed, with a request to stop the noise and a warning about escalation to the building administrator, the police and the local contraventions code. Audio/video records and 911 call records (if any) are attached.',
+    descDoc: 'Nota escrita de reclamo al vecino por ruidos sistemáticos que exceden la tolerancia normal (música, reparaciones, reuniones): fechas y naturaleza de las molestias, pedido de cese y advertencia de escalada al administrador del edificio, a la policía y al código local de contravenciones. Se adjuntan registros de audio o video y constancias de llamadas al 911, de existir.',
     warningRu: 'Сохраняйте копию ноты и доказательства (записи, constancias 911): они понадобятся администратору, полиции и, при необходимости, суду; ноту можно отправить carta documento с авизо',
     warningEn: 'Keep a copy of the note and the evidence (recordings, 911 records): the administrator, the police and, if needed, the court will require them; the note can be sent as a carta documento',
     refRu: 'Código Civil y Comercial: art. 2047 inc. b) (запрет perturbar la tranquilidad de los demás сверх нормальной терпимости) и art. 14 (derechos de incidencia colectiva); código contravencional o de faltas местной юрисдикции (ruidos molestos)',
@@ -709,6 +731,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Nota de reclamo por filtración de agua desde la unidad superior', titleEn: 'Water leak claim letter (leak from the flat above)',
     descRu: 'Досудебная нота-претензия соседу сверху, из чьего помещения произошла протечка (залив): указываются дата, причина и перечень повреждений, сумма ущерба и срок добровольного возмещения. Основание — общие нормы деликтной ответственности CCyCN (arts. 1716 y 1717): тот, кто причинил ущерб действием или бездействием, обязан его возместить. Рекомендуется зафиксировать факт у администратора консорциума, приложить фотографии и смету.',
     descEn: 'A pre-court complaint note to the upstairs neighbour whose unit leaked into yours: date, cause and list of the damage, the claimed amount and a deadline for voluntary payment. Basis: the general tort rules of the Argentine Civil and Commercial Code (arts. 1716-1717) — whoever causes damage by action or omission must repair it. The incident should be recorded with the building administrator; photos and a repair quote are attached.',
+    descDoc: 'Nota de reclamo extrajudicial al vecino del piso superior por la filtración proveniente de su unidad: fecha, causa y detalle de los daños, monto reclamado y plazo para el pago voluntario, con fundamento en las normas generales de responsabilidad civil del CCyC (arts. 1716 y 1717). Conviene dejar constancia ante el administrador y adjuntar fotografías y presupuesto.',
     warningRu: 'Зафиксируйте залив у администратора консорциума (acta) и сфотографируйте повреждения до начала ремонта; сумму ущерба подтверждайте сметой или чеками',
     warningEn: 'Have the administrator record the incident (acta) and photograph the damage before repairs; support the amount with a quote or receipts',
     refRu: 'Código Civil y Comercial: arts. 1716 y 1717 (deber de reparar el daño causado; antijuridicidad de la acción u omisión que causa un daño); constancia del hecho ante el administrador del consorcio',
@@ -741,6 +764,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Reclamo por falta de higiene en sectores comunes y humo de cigarrillo en palieres', titleEn: 'Complaint to the administrator: unclean common areas and smoke in stairwells',
     descRu: 'Жалоба администратору/консорциуму собственников на курение в palieres (лестничных площадках) и антисанитарию в местах общего пользования: мусор, запахи, отсутствие регулярной уборки. Просите провести уборку и дезинфекцию, наладить периодическую уборку, вывесить таблички «prohibido fumar» и применить reglamento к нарушителям. При бездействии — вынос вопроса на ближайшую asamblea и обращение в местный орган контроля.',
     descEn: 'A complaint to the building administrator/owners association about smoking in the stairwells (palieres) and poor sanitation of the common areas: litter, odours and no regular cleaning. Asks for cleaning and disinfection, a periodic cleaning schedule, no-smoking signage and enforcement of the internal regulations. If ignored — raise the matter at the next owners’ meeting and complain to the local control authority.',
+    descDoc: 'Reclamo al encargado o al consorcio de propietarios por tabaquismo en los palieres y falta de higiene en las zonas comunes: residuos, olores y ausencia de limpieza periódica. Se pide limpieza y desinfección, un plan de limpieza periódica, cartelería de «prohibido fumar» y aplicación del reglamento; en caso de inacción, tratamiento en la próxima asamblea y denuncia al órgano local de control.',
     refRu: 'Código Civil y Comercial: art. 2047 (prohibiciones a propietarios y ocupantes) y art. 2067 inc. c) (обязанность администратора заботиться о консервации вещей и частей общего пользования); reglamento de propiedad horizontal; местные нормы об ambientes libres de humo',
     refEn: 'Argentine Civil and Commercial Code: art. 2047 (prohibitions on owners and occupants) and art. 2067(c) (the administrator’s duty to maintain the common areas); horizontal property regulations; local smoke-free rules',
     fields: [
@@ -770,6 +794,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Pedido de reparación — avería en la unidad o el edificio', titleEn: 'Repair request (to administrator/landlord)',
     descRu: 'Повседневное заявление об устранении неисправности: протечка, электрика, лифт, отопление. Адресуется администратору консорциума (общее имущество) либо собственнику/арендодателю (арендованное жильё): Ley 13.512 и CCyCN возлагают обязанность консервации, на арендодателя — art. 1201 CCyCN (текст по Ley 27.551). Просите осмотреть место неисправности, составить акт и отремонтировать в срок, согласовать доступ.',
     descEn: 'Everyday repair request for a defect: leak, wiring, lift, heating. Addressed to the building administrator (common areas) or to the owner/landlord (rented housing): Law 13.512 and the Civil and Commercial Code impose the duty of conservation, and on the landlord — art. 1201 (as amended by Law 27.551). Asks to inspect the site, draw up a report, repair within the set time and arrange access.',
+    descDoc: 'Solicitud de reparación de una falla cotidiana (filtración, instalación eléctrica, ascensor, calefacción), dirigida al administrador del edificio en las partes comunes o al propietario locador en la vivienda alquilada, conforme a la Ley 13.512 y al art. 1201 del CCyC. Se pide la inspección, la confección de un acta y la reparación dentro del plazo fijado, coordinando el acceso.',
     refRu: 'Código Civil y Comercial: art. 2046 inc. b) (обязанность собственника сохранять свою unidad en buen estado), art. 2054 (reparaciones urgentes в общих частях) и art. 1201 (обязанность locador сохранять вещь — текст según Ley 27.551); Ley 13.512 de Propiedad Horizontal',
     refEn: 'Argentine Civil and Commercial Code: art. 2046(b) (owner’s duty to keep the unit in good condition), art. 2054 (urgent repairs of common areas) and art. 1201 (landlord’s duty to conserve the property, as amended by Law 27.551); Horizontal Property Law 13.512',
     fields: [
@@ -799,6 +824,7 @@ export const TEMPLATES_AR: TplDef[] = [
     titleDoc: 'Impugnación de la liquidación de expensas comunes', titleEn: 'Dispute of the common-expenses (expensas) statement',
     descRu: 'Возражение собственника против расчёта expensas: просьба пересмотреть liquidación, выдать документированную rendición de cuentas и произвести recálculo при выявленных ошибках (рубрики без решения asamblea, неверный prorrateo, дублирование расходов). По CCyCN администратор обязан practicar la cuenta de expensas и отчитываться документированно (art. 2067); обязательство оплаты не допускает освобождения отказом от пользования (art. 2049), поэтому неоспариваемая часть оплачивается.',
     descEn: 'An owner’s objection to the expensas statement: asks the administrator to review the bill, hand over a documented account of the exercise and recalculate the amount where errors are found (items without a general-meeting resolution, wrong prorating, duplicated expenses). Under the Civil and Commercial Code the administrator must prepare the expense account and render a documented account (art. 2067); the payment obligation cannot be avoided by renouncing the use of common areas (art. 2049), so the undisputed part is paid.',
+    descDoc: 'Disconformidad del propietario con la liquidación de expensas: se pide la revisión del importe, la rendición de cuentas documentada y el recálculo de las partidas erróneas (rubros sin resolución asamblearia, prorrateo incorrecto, gastos duplicados), conforme al art. 2067 del CCyC. La parte no cuestionada se abona, ya que la obligación no se exime por el no uso de las cosas comunes (art. 2049).',
     refRu: 'Código Civil y Comercial: arts. 2048-2049 (expensas comunes; pago no liberado por renuncia al uso) y art. 2067 incs. c)-e) (обязанность администратора practicar la cuenta de expensas y rendir cuenta documentada); Ley 13.512 de Propiedad Horizontal (art. 17)',
     refEn: 'Argentine Civil and Commercial Code: arts. 2048-2049 (common expenses; payment cannot be avoided by renouncing use) and art. 2067(c)-(e) (the administrator’s duty to prepare the expense account and render a documented account); Horizontal Property Law 13.512 (art. 17)',
     fields: [

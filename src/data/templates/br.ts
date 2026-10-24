@@ -25,6 +25,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento de férias anuais remuneradas', titleEn: 'Annual paid leave application (férias)',
     descRu: 'Заявление на ежегодный отпуск (férias). По CLT (art. 129–134) — 30 календарных дней после 12 месяцев работы; период устанавливается работодателем с учётом вашего пожелания.',
     descEn: 'Annual leave application. Under the CLT (arts. 129-134): 30 calendar days after 12 months of work.',
+    descDoc: 'Requerimento ao empregador para concessão das férias anuais remuneradas no período indicado; pela CLT (arts. 129 a 134), são 30 dias corridos após 12 meses de trabalho, com o período definido pela empresa levando em conta a preferência do empregado.',
     refRu: 'ст. 129–134 CLT (Decreto-Lei nº 5.452/1943)',
     refEn: 'Articles 129-134 of the Brazilian CLT (Decree-Law No. 5.452/1943)',
     fields: [
@@ -47,6 +48,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Pedido de demissão', titleEn: 'Resignation letter (pedido de demissão)',
     descRu: 'Заявление об увольнении по собственному желанию. Aviso prévio: 30 дней (+ 3 дня за каждый год работы, до 90 дней — Lei 12.506/2011, art. 487 CLT); возможно освобождение от отработки.',
     descEn: 'Resignation letter. Advance notice (aviso prévio): 30 days plus 3 per year of service, up to 90 (Lei 12.506/2011; CLT art. 487).',
+    descDoc: 'Carta de pedido de demissão, com a comunicação do último dia de trabalho e da opção quanto ao cumprimento do aviso prévio: 30 dias, mais 3 por ano de serviço, até o limite de 90 (Lei 12.506/2011; art. 487 da CLT).',
     refRu: 'ст. 487 CLT; Lei nº 12.506/2011',
     refEn: 'Article 487 of the CLT; Law No. 12.506/2011',
     fields: [
@@ -69,6 +71,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Solicitação de declaração de vínculo e salários', titleEn: 'Employment certificate request',
     descRu: 'Запрос документов у работодателя: справка о трудоустройстве и зарплате (для банка/визы), копии документов. Работодатель обязан вести CTPS-записи и выдавать документы.',
     descEn: 'Request for employer documents: employment and salary certificate (bank/visa), document copies.',
+    descDoc: 'Solicitação ao empregador de emissão de documentos: declaração de vínculo empregatício e de salários (para banco, visto e outros fins) e cópias de documentos do contrato de trabalho.',
     refRu: 'CLT (ст. 29 — CTPS); общая практика',
     refEn: 'CLT art. 29 (CTPS); common practice',
     fields: [
@@ -90,6 +93,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação ao fornecedor (CDC)', titleEn: 'Claim to supplier (CDC)',
     descRu: 'Претензия поставщику при наличии дефектов товара/услуги. По CDC (art. 18–20): товары длительного пользования — 90 дней, недлительного — 30 дней на проявление дефекта; отказ — consumidor.gov.br, PROCON или малые суды (JEC).',
     descEn: 'Claim to the supplier over defects. Under the CDC (arts. 18-20): 90 days for durable goods, 30 for non-durable; next steps: consumidor.gov.br, PROCON, small claims court.',
+    descDoc: 'Reclamação ao fornecedor por vício de produto ou serviço; pelo CDC (arts. 18 a 20), o prazo é de 90 dias para bens duráveis e de 30 para não duráveis. Sem atendimento, cabe reclamação no consumidor.gov.br, no PROCON e no Juizado Especial Cível.',
     refRu: 'ст. 18–20 Кодекса защиты потребителей Бразилии (CDC, Lei nº 8.078/1990)',
     refEn: 'Articles 18-20 of the Brazilian Consumer Defense Code (CDC, Law No. 8.078/1990)',
     fields: [
@@ -122,6 +126,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Notificação extrajudicial', titleEn: 'Extrajudicial notice (notificação extrajudicial)',
     descRu: 'Внесудебное уведомление должнику об исполнении обязательства. Рекомендуется отправка с подтверждением получения (AR, cartório de títulos e documentos).',
     descEn: 'Extrajudicial notice to the debtor. Send with proof of delivery (AR or cartório de títulos e documentos).',
+    descDoc: 'Notificação extrajudicial para exigir do devedor o pagamento da quantia devida no prazo indicado, sob pena de cobrança judicial com juros e correção monetária; recomenda-se o envio com comprovação de recebimento (AR ou cartório de títulos e documentos).',
     refRu: 'Código Civil (mora); CPC — tutela do cumprimento',
     refEn: 'Brazilian Civil Code (mora); CPC enforcement provisions',
     fields: [
@@ -147,6 +152,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Petição inicial (Juizado Especial Cível)', titleEn: 'Small claims petition (JEC)',
     descRu: 'Петиция в Juizado Especial Cível (иски до 40 минимальных зарплат без адвоката до 20 МЗ). Составляется просто: суд, стороны, факты, доказательства, требования (Lei 9.099/1995, art. 14).',
     descEn: 'Petition for the Juizado Especial Cível (small claims; lawyer-free up to 20 minimum wages), per Law 9.099/1995 art. 14.',
+    descDoc: 'Petição inicial para o Juizado Especial Cível, nos termos do art. 14 da Lei 9.099/1995: identificação das partes, dos fatos, das provas e dos pedidos; causa de até 40 salários mínimos, sem advogado até 20.',
     refRu: 'ст. 14 Закона № 9.099/1995 (Juizados Especiais Cíveis)',
     refEn: 'Article 14 of Law No. 9.099/1995 (Special Civil Courts)',
     fields: [
@@ -179,6 +185,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Recibo de empréstimo entre particulares', titleEn: 'Loan receipt (recibo de empréstimo)',
     descRu: 'Расписка о получении займа между частными лицами; подтверждает договор займа (Código Civil art. 572 и сл.). Подписывается заёмщиком; рекомендуются свидетели.',
     descEn: 'Loan receipt between individuals confirming the loan (Civil Code arts. 572 et seq.). Signed by the borrower; witnesses recommended.',
+    descDoc: 'Recibo que confirma o recebimento de empréstimo entre particulares e serve como prova do mútuo (arts. 572 e seguintes do Código Civil); assinado pelo devedor, recomenda-se a presença de testemunhas.',
     refRu: 'ст. 572 и сл. Гражданского кодекса Бразилии',
     refEn: 'Articles 572 et seq. of the Brazilian Civil Code',
     fields: [
@@ -205,6 +212,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Procuração particular', titleEn: 'Power of attorney (procuração)',
     descRu: 'Доверенность на бытовые действия. Для сделок с недвижимостью — публичный акт у нотариуса (escritura pública); для судебных дел — особые требования. Подпись может требовать recognizing firma.',
     descEn: 'Power of attorney for everyday matters. Real estate requires a notarial deed (escritura pública); signatures may need recognition (reconhecimento de firma).',
+    descDoc: 'Procuração particular para representação em assuntos cotidianos, com relação dos poderes outorgados e prazo de validade; atos com imóveis exigem escritura pública, e a assinatura pode depender de reconhecimento de firma.',
     refRu: 'ст. 654 и сл. Гражданского кодекса Бразилии',
     refEn: 'Articles 654 et seq. of the Brazilian Civil Code',
     fields: [
@@ -229,6 +237,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Justificativa de falta escolar', titleEn: 'School absence justification',
     descRu: 'Объяснительная родителя о причинах отсутствия ребёнка в школе. По правилам школы до 25% пропусков требуют обоснования.',
     descEn: 'Parent’s justification for a child’s school absence, per school rules.',
+    descDoc: 'Justificativa do responsável pela falta do filho à escola, com indicação do motivo e do período de ausência, conforme as regras da instituição.',
     refRu: 'правила школ Бразилии (regimento escolar)',
     refEn: 'Brazilian school regulations',
     fields: [
@@ -254,6 +263,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento ao síndico do condomínio', titleEn: 'Request to the condominium manager',
     descRu: 'Требование к síndico/управляющей компании о ремонте общего имущества. По Código Civil art. 1.347 síndico отвечает за вызов исполнителей и содержание кондоминиума.',
     descEn: 'Request to the síndico/manager to repair common areas. Under the Civil Code art. 1.347, the síndico must maintain the condominium.',
+    descDoc: 'Requerimento ao síndico ou à administradora para providenciar o reparo de área comum; pelo art. 1.347 do Código Civil, cabe ao síndico diligencar a conservação do condomínio e convocar os responsáveis pela execução dos serviços.',
     refRu: 'ст. 1.347 Гражданского кодекса Бразилии',
     refEn: 'Article 1.347 of the Brazilian Civil Code',
     fields: [
@@ -303,6 +313,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação à ouvidoria', titleEn: 'Complaint to a government ombudsman',
     descRu: 'Reclamação a um órgão público (ouvidoria): descrição do problema, serviços afetados e providências; resposta no prazo da Lei de Acesso à Informação (30 dias).',
     descEn: 'Complaint to a public agency ombudsman; response within 30 days (Access to Information Law).',
+    descDoc: 'Reclamação à ouvidoria de órgão público, com descrição do problema, dos serviços afetados e das providências requeridas; a resposta deve ser dada no prazo da Lei de Acesso à Informação (30 dias).',
     refRu: 'Lei nº 12.527/2011 (LAI); Lei nº 13.460/2017 (participação dos usuários)',
     refEn: 'Brazilian Access to Information Law 12.527/2011; Law 13.460/2017',
     fields: [
@@ -328,6 +339,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Ação de alimentos', titleEn: 'Child support action (alimentos)',
     descRu: 'Ação de alimentos: pedido de pensão alimentícia (Lei 5.478/1968; CPC arts. 528 e segs.; percentuais sobre os rendimentos do devedor).',
     descEn: 'Child support action under Brazilian Law 5.478/1968 and CPC arts. 528 et seq.',
+    descDoc: 'Ação de alimentos para pedir pensão alimentícia, com fixação de percentual sobre os rendimentos do devedor, nos termos da Lei 5.478/1968 e dos arts. 528 e seguintes do CPC.',
     refRu: 'Lei nº 5.478/1968; CPC, arts. 528-533; Código Civil, art. 1.694',
     refEn: 'Brazilian Law 5.478/1968; CPC arts. 528-533; Civil Code Art. 1.694',
     fields: [
@@ -355,6 +367,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Solicitação de prontuário médico', titleEn: 'Medical records request (prontuário)',
     descRu: 'Pedido de acesso/cópia do prontuário (Resolução CFM 1.821/2007; LGPD): entrega no prazo de 24 horas após a solicitação.',
     descEn: 'Request for access to the medical chart (CFM Resolution 1.821/2007; LGPD); delivery within 24 hours.',
+    descDoc: 'Pedido de acesso ou de cópia do prontuário médico, com fundamento na Resolução CFM 1.821/2007 e na LGPD; a entrega deve ocorrer em até 24 horas após a solicitação.',
     refRu: 'Resolução CFM nº 1.821/2007; Lei nº 13.787/2018; LGPD (Lei 13.709/2018)',
     refEn: 'CFM Resolution 1.821/2007; Law 13.787/2018; LGPD',
     fields: [
@@ -381,6 +394,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Petição inicial de ação de cobrança', titleEn: 'Debt collection lawsuit (ação de cobrança)',
     descRu: 'Петиция в суд первой инстанции о взыскании денежного долга по обычному порядку (когда Juizado Especial Cível не подходит — сумма выше порога или сложные доказательства). Форма — ст. 319 ГПК Бразилии; ответственность должника — ст. 389, 394, 397 Código Civil.',
     descEn: 'First-instance petition for debt collection under the ordinary procedure (when the Juizado Especial Cível is not suitable). Form per CPC art. 319; debtor’s liability — Civil Code arts. 389, 394, 397.',
+    descDoc: 'Petição inicial de cobrança judicial de dívida pelo procedimento comum, cabível quando o Juizado Especial Cível não é adequado (valor acima do teto ou prova mais complexa); pedido formulado nos termos do art. 319 do CPC, com fundamento nos arts. 389, 394 e 397 do Código Civil quanto à mora do devedor.',
     warningRu: 'В обычном процессе ведение дела требует адвоката (CPC art. 103); в Juizado Especial Cível адвокат обязателен при сумме свыше 20 минимальных зарплат',
     warningEn: 'The ordinary procedure requires a lawyer (CPC art. 103); in the JEC a lawyer is mandatory above 20 minimum wages',
     refRu: 'ст. 319 ГПК Бразилии (CPC/2015); ст. 389, 394, 397 Código Civil',
@@ -419,6 +433,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Petição inicial de ação de indenização por danos materiais', titleEn: 'Lawsuit for material damages compensation',
     descRu: 'Иск о возмещении материального ущерба имуществу (залив от соседа, поломка по вине ответчика, ущерб от товара/услуги). Основание — ст. 186, 927, 944 Código Civil; для отношений потребителя — также ст. 18 CDC (Lei 8.078/90). Форма — ст. 319 ГПК.',
     descEn: 'Lawsuit for compensation of material damage to property (water leak, negligent damage, faulty goods/services). Basis — Civil Code arts. 186, 927, 944; for consumer relations also CDC art. 18. Form per CPC art. 319.',
+    descDoc: 'Ação de indenização por danos materiais ao patrimônio (infiltração causada por vizinho, dano por negligência, defeito de produto ou serviço); fundamento nos arts. 186, 927 e 944 do Código Civil e, nas relações de consumo, também no art. 18 do CDC. Pedido elaborado conforme o art. 319 do CPC.',
     warningRu: 'В обычном процессе ведение дела требует адвоката (CPC art. 103)',
     warningEn: 'The ordinary procedure requires a lawyer (CPC art. 103)',
     refRu: 'ст. 186, 927, 944 Código Civil; ст. 18 CDC (Lei 8.078/90); ст. 319 ГПК Бразилии',
@@ -458,6 +473,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento de matrícula escolar', titleEn: 'School enrollment request (matrícula)',
     descRu: 'Заявление директору школы о зачислении ребёнка (matrícula) на учебный год. Право на образование закреплено в ECA (ст. 54) и LDB (Lei nº 9.394/1996); сроки и документы — по календарю школьной сети.',
     descEn: 'Request to the school director to enroll a child (matrícula) for the school year. The right to education is guaranteed by ECA art. 54 and the LDB (Law 9.394/1996); deadlines follow the school network calendar.',
+    descDoc: 'Requerimento ao diretor da escola para a matrícula do filho no ano letivo; o direito à educação é garantido pelo art. 54 do ECA e pela LDB (Lei 9.394/1996), e os prazos seguem o calendário da rede de ensino.',
     refRu: 'LDB (Lei nº 9.394/1996); ECA (Lei nº 8.069/1990), art. 54',
     refEn: 'Education Guidelines and Bases Law (LDB) 9.394/1996; Child and Adolescent Statute (ECA) art. 54',
     fields: [
@@ -488,6 +504,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento de exame/consulta pelo SUS', titleEn: 'Request for SUS exam / consultation',
     descRu: 'Заявление в поликлинику (UBS) или департамент здравоохранения о направлении и проведении обследования/консультации по линии SUS. Право на здоровье — ст. 196 Конституции; организация SUS — Lei nº 8.080/1990; законом установлены предельные сроки ожидания для ряда экзаменов и консультаций.',
     descEn: 'Request to the health unit (UBS) or municipal health department for referral and performance of an exam/consultation through SUS. Health is a constitutional right (art. 196); SUS is organized by Law 8.080/1990, with statutory maximum waiting times.',
+    descDoc: 'Requerimento à unidade básica de saúde (UBS) ou à secretaria municipal de saúde pedindo o encaminhamento e a realização de exame ou consulta pelo SUS; o direito à saúde é garantido pelo art. 196 da Constituição e o SUS é organizado pela Lei 8.080/1990, com prazos máximos de espera fixados em lei.',
     refRu: 'Constituição Federal, art. 196; Lei nº 8.080/1990 (SUS)',
     refEn: 'Brazilian Constitution art. 196; Law 8.080/1990 (SUS)',
     fields: [
@@ -515,6 +532,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Solicitação de reparos ao locador', titleEn: 'Repair request to the landlord (locador)',
     descRu: 'Требование собственнику/управляющей компании отремонтировать дефекты жилья (протечка, электрика, сантехника). По Lei do Inquilinato (Lei nº 8.245/1991, ст. 22) собственник обязан передать жильё пригодным для использования и отвечает за дефекты, существовавшие до аренды; повреждения от неправильного использования устраняет арендатор.',
     descEn: 'Request to the owner/agency to repair housing defects (leak, wiring, plumbing). Under the Tenancy Law (Lei nº 8.245/1991) art. 22 the landlord must deliver the property fit for use and answers for pre-existing defects; damage caused by misuse is repaired by the tenant.',
+    descDoc: 'Notificação ao proprietário ou à imobiliária pedindo o reparo de defeitos do imóvel (vazamento, fiação, encanamento); pelo art. 22 da Lei do Inquilinato (Lei 8.245/1991), o locador deve entregar o imóvel em condições de uso e responde por defeitos anteriores à locação, ficando o reparo de danos do mau uso a cargo do locatário.',
     refRu: 'Lei do Inquilinato (Lei nº 8.245/1991), art. 22',
     refEn: 'Tenancy Law (Lei nº 8.245/1991), art. 22',
     fields: [
@@ -542,6 +560,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação por cobrança indevida — água/energia', titleEn: 'Overbilling complaint — water/electricity utility',
     descRu: 'Жалоба в компанию воды/электроэнергии о неверном начислении (счёт резко выше среднего, начисление за пустое жильё, двойное списание). Основание — CDC (Lei nº 8.078/1990): ст. 6 — права потребителя, ст. 22 — надлежащие услуги concessionárias, ст. 42 § único — возврат в двойном размере излишка. Шаг перед PROCON и регулятором.',
     descEn: 'Complaint to the water/electricity concessionaire over incorrect billing (bill far above average, charging an empty property, double charge). Basis — CDC (Law 8.078/1990): art. 6 consumer rights, art. 22 adequate service by concessionaires, art. 42 sole paragraph — refund of double the excess. Step before PROCON and the regulator.',
+    descDoc: 'Reclamação à concessionária de água ou de energia elétrica por cobrança indevida (fatura muito acima da média, cobrança de imóvel vazio ou lançamento em dobro); fundamento no CDC (Lei 8.078/1990): art. 6 (direitos do consumidor), art. 22 (serviço adequado) e art. 42, parágrafo único (devolução em dobro do excesso). Etapa anterior ao PROCON e ao órgão regulador.',
     refRu: 'CDC (Lei nº 8.078/1990), arts. 6º, 22 e 42, parágrafo único',
     refEn: 'Consumer Defense Code (CDC, Law 8.078/1990), arts. 6, 22 and 42, sole paragraph',
     fields: [
@@ -571,6 +590,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento de retificação de declaração (malha fina)', titleEn: 'Rectification request to Receita Federal (malha fina)',
     descRu: 'Заявление в Receita Federal об исправлении налоговой декларации (IRPF), задержавшейся в malha fina: уточнение сведений, приложение подтверждающих документов, запрос обработки. Исправление декларации — право налогоплательщика; при споре с авто инфракшн применяется административный налоговый процесс (Decreto nº 70.235/1972) с апелляцией в Delegacia de Julgamento (DRJ).',
     descEn: 'Request to Receita Federal to rectify an IRPF declaration held in the malha fina: clarifications, supporting documents and processing request. Rectification is the taxpayer\'s right; disputes over an assessment follow the administrative tax procedure (Decreto 70.235/1972) with appeal to the Delegacia de Julgamento (DRJ).',
+    descDoc: 'Requerimento à Receita Federal para retificar a declaração do IRPF retida em malha fina, com esclarecimentos, documentos comprobatórios anexos e pedido de processamento; a retificação é direito do contribuinte e a impugnação de auto de infração segue o processo administrativo fiscal (Decreto 70.235/1972), com recurso à DRJ.',
     refRu: 'Decreto nº 70.235/1972 (processo administrativo fiscal); правила декларирования IRPF (нормативные инструкции RFB)',
     refEn: 'Decree 70.235/1972 (administrative tax procedure); IRPF filing rules (RFB Normative Instructions)',
     fields: [
@@ -600,6 +620,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação ao banco', titleEn: 'Bank complaint (escalation to Banco Central)',
     descRu: 'Жалоба банку на спорную операцию или неверное списание: Regulamento CMN (Resolução nº 4.949/2021) обязывает банк зарегистрировать жалобу и дать окончательный ответ в течение 10 дней; при неразрешении — обращение в Банко Сентрал (Meu BC) и в consumidor.gov.br. Также применим CDC (ст. 42 § único) — возврат в двойном размере при необоснованном списании.',
     descEn: 'Complaint to the bank over a disputed transaction or improper charge: the CMN Regulation (Resolution 4.949/2021) requires the bank to register the complaint and give a final answer within 10 days; if unresolved, escalate to Banco Central (Meu BC) and consumidor.gov.br. CDC art. 42 sole paragraph (double refund for unjustified charges) also applies.',
+    descDoc: 'Reclamação ao banco por operação contestada ou lançamento indevido: o regulamento do CMN (Resolução 4.949/2021) obriga a instituição a registrar a reclamação e dar resposta conclusiva em 10 dias; não resolvida, cabe recurso ao Banco Central (Meu BC) e ao consumidor.gov.br. Aplica-se também o art. 42, parágrafo único, do CDC (devolução em dobro de valores cobrados sem justificativa).',
     refRu: 'Resolução CMN nº 4.949/2021; CDC (Lei nº 8.078/1990), art. 42, parágrafo único',
     refEn: 'CMN Resolution 4.949/2021; Consumer Defense Code (Law 8.078/1990) art. 42, sole paragraph',
     fields: [
@@ -658,6 +679,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação por perturbação do sossego', titleEn: 'Noise complaint (condominium / police report)',
     descRu: 'Формальная жалоба síndico/кондоминиуму на систематический шум от соседа: указываются источник, время и нарушенные правила кондоминиума, отмечается статус Boletim de Ocorrência. Поведение, нарушающее покой, квалифицируется как contravenção penal (ст. 42 Lei das Contravenções Penais); при бездействии — регистрация нового B.O. и обращение к полиции.',
     descEn: 'A formal complaint to the síndico/condominium about a neighbor’s systematic noise, listing the source, times and violated condominium rules and noting the status of the police report (Boletim de Ocorrência). Disturbing the peace is a criminal contravention under art. 42 of the Penal Contraventions Law; if nothing is done, file a new B.O. with the police.',
+    descDoc: 'Representação formal ao síndico e ao condomínio contra barulho sistemático de vizinho, com indicação da fonte do ruído, dos horários e das regras violadas, além da situação do Boletim de Ocorrência; perturbar o sossego alheio é contravenção penal (art. 42 da Lei das Contravenções Penais) e, sem providências, cabe registrar novo B.O. e acionar a polícia.',
     refRu: 'ст. 42 Lei das Contravenções Penais (Decreto-Lei nº 3.688/1941); ст. 1.336, 1.347–1.348 Código Civil; convenção e regimento interno do condomínio',
     refEn: 'Art. 42 of the Penal Contraventions Law (Decree-Law 3.688/1941); Civil Code arts. 1.336 and 1.347-1.348; condominium convenção and regimento interno',
     fields: [
@@ -686,6 +708,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Notificação extrajudicial — infiltração/vazamento', titleEn: 'Extrajudicial notice — water leak / infiltration',
     descRu: 'Внесудебное уведомление соседа (например, из квартиры сверху) и/или síndico о протечке или инфильтрации с требованием устранить источник и возместить ущерб. Правовое основание — ст. 186 и 927 Гражданского кодекса (ответственность за вред); уведомление рекомендуется отправить с доказательством получения (картория, AR) — оно фиксирует просрочку (mora) и служит доказательством.',
     descEn: 'Extrajudicial notice to the neighbor (for example, the unit above) and/or the síndico about a leak or infiltration, demanding that the source be fixed and the damage compensated. Grounded in Civil Code arts. 186 and 927 (civil liability); send it with proof of delivery (cartório, AR) — the notice establishes default (mora) and serves as evidence.',
+    descDoc: 'Notificação extrajudicial ao vizinho (por exemplo, da unidade de cima) e/ou ao síndico sobre vazamento ou infiltração, exigindo o conserto da origem e a reparação dos danos; fundada nos arts. 186 e 927 do Código Civil (responsabilidade civil), deve ser enviada com comprovação de recebimento (cartório, AR), constituindo o devedor em mora e servindo como prova.',
     refRu: 'Código Civil (Lei nº 10.406/2002), ст. 186, 927 и 397 (mora); Lei nº 13.160/2015 (внесудебное уведомление через публичного служащего); ст. 1.336–1.348 CC (кондоминиум)',
     refEn: 'Civil Code (Law 10.406/2002) arts. 186, 927 and 397 (mora); Law 13.160/2015 (extrajudicial notification by a public servant); Civil Code arts. 1.336-1.348 (condominium)',
     fields: [
@@ -715,6 +738,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Reclamação — limpeza das áreas comuns e fumo', titleEn: 'Complaint about common-area cleanliness and smoking',
     descRu: 'Жалоба síndico/кондоминиуму на грязь, скопление мусора и курение в местах общего пользования. Ссылается на обязанности condôminos и функции síndico (ст. 1.336–1.348 Código Civil), предусматривает уборку/дезинфекцию, advertência и штраф по ст. 1.337 в установленный срок.',
     descEn: 'A complaint to the síndico/condominium about dirt, accumulated trash, and smoking in the common areas. It cites the duties of condominium owners and the síndico’s functions (Civil Code arts. 1.336-1.348) and provides for cleaning/disinfection, a warning and a fine under art. 1.337 within the stated deadline.',
+    descDoc: 'Reclamação ao síndico e ao condomínio por sujeira, acúmulo de lixo e fumo nas áreas comuns; invoca os deveres dos condôminos e as atribuições do síndico (arts. 1.336 a 1.348 do Código Civil) e prevê limpeza e desinfecção, advertência e multa do art. 1.337 no prazo estabelecido.',
     refRu: 'Código Civil (Lei nº 10.406/2002), ст. 1.336–1.338 (обязанности condômino и санкции), ст. 1.348 (функции síndico)',
     refEn: 'Civil Code (Law 10.406/2002) arts. 1.336-1.338 (duties of condominium owners and sanctions) and 1.348 (síndico’s functions)',
     fields: [
@@ -743,6 +767,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Requerimento de reparo e notificação', titleEn: 'Repair request and notice (síndico/manager)',
     descRu: 'Требование administradora/síndico произвести ремонт: неисправность в юните или общей части, которая угрожает безопасности здания или соседям. Для арендаторов применим art. 22 Lei do Inquilinato (обязанности locador), для condôminos — ст. 1.336 и 1.347–1.348 Código Civil; запрос устанавливает срок и требует письменного ответа.',
     descEn: 'A demand that the administradora/síndico carry out a repair: a defect in a unit or common area that endangers the building or neighbors. For tenants, art. 22 of the Tenancy Law (landlord duties) applies; for condominium owners, Civil Code arts. 1.336 and 1.347-1.348; the request sets a deadline and requires a written response.',
+    descDoc: 'Requerimento à administradora ou ao síndico para execução de reparo: defeito em unidade ou área comum que ponha em risco o edifício ou os vizinhos; para locatários aplica-se o art. 22 da Lei do Inquilinato e, para condôminos, os arts. 1.336 e 1.347 a 1.348 do Código Civil. O pedido fixa prazo e exige resposta por escrito.',
     refRu: 'Código Civil (Lei nº 10.406/2002), ст. 1.336 и 1.347–1.348; Lei do Inquilinato (Lei nº 8.245/1991), art. 22',
     refEn: 'Civil Code (Law 10.406/2002) arts. 1.336 and 1.347-1.348; Tenancy Law (Lei 8.245/1991) art. 22',
     fields: [
@@ -771,6 +796,7 @@ export const TEMPLATES_BR: TplDef[] = [
     titleDoc: 'Impugnação de cobrança — pedido de revisão', titleEn: 'Condominium fee / utility bill dispute',
     descRu: 'Импугнация завышенной фатуры кондоминиума (cota, rateio) или счёта коммунальной службы: описание расхождения, запрос детализированной расчётной выписки и пересмотра начисления. Основание — ст. 6º и 46 CDC (право на информацию и пересчёт); при бездействии — PROCON и consumidor.gov.br, а внесение имени в реестры неплательщиков без предварительного уведомления не допускается (Súmula 359 STJ).',
     descEn: 'A dispute of an inflated condominium fee or utility bill: description of the discrepancy, request for a detailed calculation and revision of the charge. Grounded in CDC arts. 6 and 46 (right to information and revision); if unanswered, escalate to PROCON and consumidor.gov.br, and the consumer cannot be listed in default registries without prior notice (STJ Súmula 359).',
+    descDoc: 'Impugnação de taxa de condomínio ou fatura de serviços cobrada a maior: descrição da divergência, pedido de demonstrativo detalhado e de revisão do lançamento; fundamento nos arts. 6 e 46 do CDC (direito à informação e à revisão). Sem resposta, cabe reclamação ao PROCON e ao consumidor.gov.br, e não se admite inscrição do consumidor em cadastro de inadimplentes sem notificação prévia (Súmula 359 do STJ).',
     refRu: 'Código de Defesa do Consumidor (Lei nº 8.078/1990), ст. 6º, III и V, ст. 46; Súmula nº 359 do STJ',
     refEn: 'Consumer Defense Code (Law 8.078/1990) arts. 6, III and V, and 46; STJ Súmula 359',
     fields: [

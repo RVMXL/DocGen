@@ -34,6 +34,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Antrag auf Jahresurlaub', titleEn: 'Annual leave application (Urlaubsantrag)',
     descRu: 'Заявление работодателю (Dienstgeber) о предоставлении ежегодного оплачиваемого отпуска. Минимальный отпуск в Австрии — 5 недель в году (при 6-дневной неделе — 30 рабочих дней); пожелания работника учитываются, насколько позволяет режим предприятия (§ 9 UrlG).',
     descEn: 'Leave application to the employer. The Austrian minimum is 5 weeks per year (30 working days on a 6-day week); the employee\'s wishes are considered as far as operations allow (§ 9 UrlG).',
+    descDoc: 'Antrag an den Dienstgeber auf den jährlichen Erholungsurlaub. Das gesetzliche Minimum beträgt in Österreich 5 Wochen pro Jahr (bei einer 6-Tage-Woche 30 Werktage); die Wünsche des Arbeitnehmers werden berücksichtigt, soweit der Betriebsablauf es zulässt (§ 9 UrlG).',
     refRu: '§§ 2, 9 Urlaubsgesetz (UrlG)',
     refEn: 'Sections 2, 9 of the Austrian Annual Leave Act (Urlaubsgesetz, UrlG)',
     fields: [
@@ -57,6 +58,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Anspruch auf Resturlaub bzw. Urlaubsablöse', titleEn: 'Request for remaining leave upon termination (Resturlaub)',
     descRu: 'Требование предоставить неиспользованный отпуск до окончания трудовых отношений или выплатить компенсацию (Urlablöse). Неиспользованный отпуск сохраняется и при увольнении; денежная компенсация возможна, если отпуск уже не может быть предоставлен.',
     descEn: 'Demand to grant unused leave before the employment ends or to pay a leave allowance (Urlablöse); unused leave survives termination.',
+    descDoc: 'Aufforderung, nicht verbrauchten Urlaub vor Beendigung des Arbeitsverhältnisses zu gewähren oder eine Urlablöse zu zahlen; der Resturlaub besteht auch bei der Kündigung fort.',
     refRu: '§ 9 Urlaubsgesetz (UrlG)',
     refEn: 'Section 9 of the Austrian Annual Leave Act (UrlG)',
     fields: [
@@ -83,6 +85,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Ablehnung der Zustimmung zu Mehrarbeit', titleEn: 'Refusal of consent to overtime (Mehrarbeit)',
     descRu: 'Письменный отказ от согласия на сверхурочную работу или отзыв ранее данного согласия, а также запрос данных об отработанных сверхурочных. Сверхурочные допускаются только с согласия работника (§ 8 AZG).',
     descEn: 'Written refusal of consent to overtime, withdrawal of a previous consent or request for overtime records; overtime requires the employee\'s consent (§ 8 AZG).',
+    descDoc: 'Schriftliche Verweigerung der Zustimmung zu Überstunden, Widerruf einer zuvor erteilten Zustimmung oder Aufforderung zur Vorlage der Überstundennachweise; Überstunden bedürfen der Zustimmung des Arbeitnehmers (§ 8 AZG).',
     refRu: '§ 8 Arbeitszeitgesetz (AZG)',
     refEn: 'Section 8 of the Austrian Working Time Act (Arbeitszeitgesetz, AZG)',
     fields: [
@@ -107,6 +110,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Bekanntgabe der Elternkarenz', titleEn: 'Notification of parental leave (Elternkarenz)',
     descRu: 'Уведомление работодателя о планируемом родительском отпуске (Elternkarenz), его начале и объёме (полная Karenz или Teilzeit). Начало и объём объявляются не позднее чем за 3 месяца (§§ 15 ff. MSchG).',
     descEn: 'Notification to the employer of intended parental leave (Elternkarenz), its start and extent (full leave or part-time); start and extent must be notified at least 3 months in advance (§§ 15 et seq. MSchG).',
+    descDoc: 'Mitteilung an den Arbeitgeber über die beabsichtigte Elternkarenz, deren Beginn und Ausmaß (ganze Karenz oder Teilzeit); Beginn und Ausmaß sind spätestens 3 Monate im Voraus mitzuteilen (§§ 15 ff. MSchG).',
     refRu: '§§ 15 ff. Mutterschutzgesetz (MSchG)',
     refEn: 'Sections 15 et seq. of the Austrian Maternity Protection Act (MSchG)',
     warningRu: 'Внимание: начало и объём Elternkarenz объявляются работодателю не позднее чем за 3 месяца до планируемого начала (MSchG)',
@@ -135,6 +139,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Bekanntgabe der Väterkarenz (Pflegekarenz)', titleEn: 'Notification of father\'s/care leave (VKG)',
     descRu: 'Уведомление работодателя об отцовском отпуске (Väterkarenz), отпуске по уходу (Pflegekarenz) или Elternteilzeit согласно Väter-Karenzgesetz; объявляется заблаговременно, как правило за 3 месяца.',
     descEn: 'Notification of father\'s leave (Väterkarenz), care leave (Pflegekarenz) or part-time parental work under the Väter-Karenzgesetz (VKG); notify in advance, as a rule 3 months.',
+    descDoc: 'Mitteilung an den Arbeitgeber über Väterkarenz, Pflegekarenz oder Elternteilzeit nach dem Väter-Karenzgesetz (VKG); die Ankündigung hat rechtzeitig, in der Regel 3 Monate im Voraus, zu erfolgen.',
     refRu: 'Väter-Karenzgesetz (VKG)',
     refEn: 'Austrian Fathers\'/Care Leave Act (Väter-Karenzgesetz, VKG)',
     warningRu: 'Внимание: Väterkarenz/Elternteilzeit объявляются работодателю не позднее чем за 3 месяца до планируемого начала (VKG)',
@@ -163,6 +168,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Kündigung des Dienstverhältnisses durch den Angestellten', titleEn: 'Resignation letter (Kündigung by the employee)',
     descRu: 'Заявление о расторжении трудового договора работником (Angestellte): срок предупреждения — 1 месяц к концу календарного месяца (§ 19 AngG), если договором или Kollektivvertrag не установлено иное.',
     descEn: 'Resignation by the employee: one month\'s notice to the end of a calendar month (§ 19 AngG) unless the contract or collective agreement provides otherwise.',
+    descDoc: 'Eigenkündigung des Angestellten: Kündigungsfrist ein Monat zum Ende eines Kalendermonats (§ 19 AngG), sofern Vertrag oder Kollektivvertrag nichts anderes vorsehen.',
     refRu: '§ 19 Angestelltengesetz (AngG)',
     refEn: 'Section 19 of the Austrian Salaried Employees Act (AngG)',
     warningRu: 'Внимание: по § 19 AngG — 1 месяц к последнему дню календарного месяца; подавайте заявление письменно и сохраняйте подтверждение вручения',
@@ -187,6 +193,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Aufforderung zur Ausstellung eines Dienstzeugnisses', titleEn: 'Demand for an employment reference (Dienstzeugnis)',
     descRu: 'Требование к работодателю выдать свидетельство о работе (Dienstzeugnis) — простое или квалифицированное (с оценкой деятельности и поведения). Право существует и после окончания трудовых отношений (§ 10 AngG).',
     descEn: 'Demand that the employer issue a Dienstzeugnis — simple or qualified (with performance and conduct assessment); the right exists also after the employment has ended (§ 10 AngG).',
+    descDoc: 'Aufforderung an den Dienstgeber, ein einfaches oder qualifiziertes Dienstzeugnis (mit Beurteilung von Leistung und Verhalten) auszustellen; der Anspruch besteht auch nach Ende des Arbeitsverhältnisses (§ 10 AngG).',
     refRu: '§ 10 Angestelltengesetz (AngG)',
     refEn: 'Section 10 of the Austrian Salaried Employees Act (AngG)',
     fields: [
@@ -209,6 +216,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Berichtigung der Entgeltabrechnung', titleEn: 'Request to correct the payslip (Entgeltabrechnung)',
     descRu: 'Требование устранить ошибку в расчёте заработной платы: недостающие часы, надбавки, невыплаченное отпускное или больничное. Работник вправе требовать выплаты причитающегося вознаграждения.',
     descEn: 'Demand to correct a payslip error: missing hours, allowances, unpaid leave or sick pay; the employee is entitled to the agreed remuneration.',
+    descDoc: 'Aufforderung zur Korrektur eines Fehlers in der Gehaltsabrechnung: fehlende Stunden, Zulagen, nicht ausbezahltes Urlaubs- oder Krankengeld; der Arbeitnehmer hat Anspruch auf die vereinbarte Vergütung.',
     refRu: '§§ 1152 ff. ABGB (Dienstvertrag); AngG',
     refEn: 'Sections 1152 et seq. of the Austrian Civil Code (ABGB, service contract); AngG',
     fields: [
@@ -235,6 +243,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Meldung des Krankenstandes und Wiederaufnahme der Arbeit', titleEn: 'Notification of sick leave and return to work',
     descRu: 'Уведомление работодателя о заболевании (Krankenstand) и о дате возобновления работы; прикладывается врачебное подтверждение. За время болезни действует Entgeltfortzahlung (EFAG).',
     descEn: 'Notification to the employer of illness (Krankenstand) and of the return date; attach the medical certificate. Continued pay applies during sickness (EFAG).',
+    descDoc: 'Mitteilung an den Arbeitgeber über den Krankenstand und das Datum der Wiederaufnahme der Arbeit; ärztliche Bestätigung beilegen. Während der Krankheit gilt die Entgeltfortzahlung (EFAG).',
     refRu: 'Entgeltfortzahlungsgesetz (EFAG)',
     refEn: 'Austrian Continued Pay Act (Entgeltfortzahlungsgesetz, EFAG)',
     fields: [
@@ -260,6 +269,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Mahnschreiben / Zahlungsaufforderung', titleEn: 'Payment reminder (Mahnschreiben)',
     descRu: 'Письменное напоминание должнику с установлением срока. По истечении срока должник считается просрочившим (Verzug, §§ 1333–1334 ABGB) — начисляются проценты и возможны судебные шаги.',
     descEn: 'Written payment reminder setting a deadline; after expiry the debtor is in default (Verzug, §§ 1333–1334 ABGB) and interest accrues.',
+    descDoc: 'Schriftliche Zahlungserinnerung mit Fristsetzung; nach fruchtlosem Ablauf befindet sich der Schuldner in Verzug (§§ 1333–1334 ABGB), und es fallen Verzugszinsen an.',
     refRu: '§§ 1333, 1334 ABGB (Allgemeines Bürgerliches Gesetzbuch)',
     refEn: 'Sections 1333, 1334 of the Austrian Civil Code (ABGB)',
     fields: [
@@ -287,6 +297,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Mängelrüge und Geltendmachung der Gewährleistung', titleEn: 'Notice of defects / warranty claim (Gewährleistung)',
     descRu: 'Претензия продавцу: устранение недостатка, замена, снижение цены или расторжение договора (Wandlung). Права потребителя по Gewährleistung действуют 2 года с передачи вещи; при проявлении недостатка в первые 6 месяцев он считается существовавшим при передаче.',
     descEn: 'Notice of defects to the seller: cure, replacement, price reduction or rescission (Wandlung); consumer warranty lasts two years from delivery, and defects within the first six months are presumed to have existed at delivery.',
+    descDoc: 'Mängelrüge an den Verkäufer: Verbesserung, Austausch, Preisminderung oder Wandlung (Rücktritt vom Vertrag). Das Verbrauchergewährleistungsrecht besteht 2 Jahre ab Übergabe der Sache; Mängel in den ersten 6 Monaten gelten als bereits bei der Übergabe vorhanden.',
     refRu: '§§ 922 ff. ABGB (Gewährleistung); Konsumentenschutzgesetz (KSchG)',
     refEn: 'Sections 922 et seq. of the Austrian Civil Code (ABGB, warranty); Consumer Protection Act (KSchG)',
     fields: [
@@ -318,6 +329,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Widerruf eines Fernabsatzvertrags (14 Tage)', titleEn: 'Withdrawal from a distance contract (14 days)',
     descRu: 'Заявление об отказе от договора, заключённого дистанционно (интернет, телефон): 14 календарных дней без объяснения причин (§ 5f KSchG); возврат средств в течение 14 дней.',
     descEn: 'Withdrawal from a distance contract (online/phone): 14 calendar days without giving reasons (§ 5f KSchG); refund within 14 days.',
+    descDoc: 'Rücktritt vom Fernabsatzvertrag (Internet, Telefon): 14 Kalendertage ohne Angabe von Gründen (§ 5f KSchG); Rückzahlung des Betrags innerhalb von 14 Tagen.',
     refRu: '§ 5f Konsumentenschutzgesetz (KSchG)',
     refEn: 'Section 5f of the Austrian Consumer Protection Act (KSchG)',
     warningRu: 'Внимание: срок Widerruf — 14 календарных дней с момента получения товара (§ 5f KSchG); подавайте заявление письменно и с доказательством отправки',
@@ -345,6 +357,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Beschwerde an die Datenschutzbehörde', titleEn: 'Complaint to the Data Protection Authority',
     descRu: 'Жалоба в Datenschutzbehörde на нарушение DSGVO (нет ответа на Auskunftsersuchen, неправомерная обработка данных). Предварительно обратитесь к организации-контролёру и сохраните переписку.',
     descEn: 'Complaint to the Austrian Data Protection Authority (Datenschutzbehörde) about a DSGVO violation (no response to an access request, unlawful processing); first contact the controller and keep the correspondence.',
+    descDoc: 'Beschwerde an die Datenschutzbehörde wegen eines Verstoßes gegen die DSGVO (keine Antwort auf das Auskunftsersuchen, rechtswidrige Datenverarbeitung). Zuvor an den Verantwortlichen wenden und die Korrespondenz aufbewahren.',
     refRu: '§ 24 Datenschutzgesetz (DSG); Art. 77 DSGVO',
     refEn: 'Section 24 of the Austrian Data Protection Act (DSG); Art. 77 GDPR',
     fields: [
@@ -374,6 +387,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Anfrage an die Arbeiterkammer (Lohnanspruch)', titleEn: 'Request to the Chamber of Labour (Arbeiterkammer)',
     descRu: 'Обращение в Arbeiterkammer за бесплатной правовой помощью по трудовому спору (невыплаченная зарплата, сверхурочные, увольнение). Палата проверяет расчёты, пишет Dienstgeber и при необходимости представляет работника.',
     descEn: 'Request to the Arbeiterkammer (AK) for free legal advice in an employment dispute (unpaid wages, overtime, dismissal); the AK reviews calculations, contacts the employer and may represent the employee.',
+    descDoc: 'Ansuchen an die Arbeiterkammer um kostenlose Rechtsberatung bei einem Arbeitsrechtsstreit (unbezahlte Löhne, Überstunden, Kündigung). Die Kammer prüft die Berechnungen, kontaktiert den Arbeitgeber und kann den Arbeitnehmer vertreten.',
     refRu: 'Arbeiterkammergesetz (AKG)',
     refEn: 'Austrian Chamber of Labour Act (Arbeiterkammergesetz, AKG)',
     fields: [
@@ -402,6 +416,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Antrag auf Zahlungserleichterung (Stundung/Ratenzahlung)', titleEn: 'Application for tax payment relief (deferral/instalments)',
     descRu: 'Заявление в Finanzamt об отсрочке (Stundung) или рассрочке (Ratenzahlung), если единовременная уплата привела бы к существенным затруднениям (§ 212 BAO). За отсрочку начисляются Stundungszinsen.',
     descEn: 'Application to the Finanzamt for deferral (Stundung) or instalments where immediate payment would cause substantial hardship (§ 212 BAO); deferral interest accrues.',
+    descDoc: 'Antrag an das Finanzamt auf Stundung oder Ratenzahlung, wenn die sofortige Zahlung wesentliche Erschwernisse bedeuten würde (§ 212 BAO); für die Stundung fallen Stundungszinsen an.',
     refRu: '§ 212 Bundesabgabenordnung (BAO)',
     refEn: 'Section 212 of the Austrian Fiscal Code (BAO)',
     fields: [
@@ -431,6 +446,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Beschwerde gegen den Bescheid', titleEn: 'Complaint against a tax assessment (Beschwerde)',
     descRu: 'Жалоба (Beschwerde) против Bescheid: срок — 1 месяц с момента вручения (§ 251 BAO). Жалоба подаётся письменно в Finanzamt; при отклонении возможно дальнейшее обжалование.',
     descEn: 'Complaint (Beschwerde) against a Bescheid within one month of service (§ 251 BAO); filed in writing with the Finanzamt, further remedies follow.',
+    descDoc: 'Beschwerde gegen einen Bescheid innerhalb eines Monats ab Zustellung (§ 251 BAO); einzubringen schriftlich beim Finanzamt; bei Abweisung ist ein weiteres Verfahren möglich.',
     refRu: '§ 251 Bundesabgabenordnung (BAO)',
     refEn: 'Section 251 of the Austrian Fiscal Code (BAO)',
     warningRu: 'Внимание: срок подачи Beschwerde — 1 месяц с момента вручения Bescheid (§ 251 BAO)',
@@ -461,6 +477,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Reklamation eines unberechtigten Zahlungsvorgangs', titleEn: 'Dispute of an unauthorised payment (PSG)',
     descRu: 'Заявление в свой банк о несанкционированном или ошибочном списании с требованием возмещения. Несанкционированные операции можно оспорить, как правило, в течение 13 месяцев (Zahlungsdienstegesetz, PSG).',
     descEn: 'Notice to your bank about an unauthorised or erroneous debit with a demand for reimbursement; unauthorised payments can generally be disputed within 13 months (Payment Services Act, PSG).',
+    descDoc: 'Anzeige an die eigene Bank über eine unberechtigte oder fehlerhafte Belastung mit Aufforderung zur Erstattung; unberechtigte Zahlungen sind in der Regel innerhalb von 13 Monaten anfechtbar (Zahlungsdienstegesetz, PSG).',
     refRu: 'Zahlungsdienstegesetz (PSG)',
     refEn: 'Austrian Payment Services Act (Zahlungsdienstegesetz, PSG)',
     warningRu: 'Внимание: о несанкционированных операциях сообщайте банку незамедлительно; при подозрении на мошенничество заблокируйте карту',
@@ -490,6 +507,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Antrag auf Arbeitslosengeld (AMS)', titleEn: 'Unemployment benefit application (AMS)',
     descRu: 'Заявление в AMS (Arbeitsmarkt Service Austria) на Arbeitslosengeld: письмо запускает процедуру — AMS высылает формуляры и приглашает на консультацию. Пособие начисляется, как правило, со дня, следующего за подачей заявления.',
     descEn: 'Application to the AMS (Public Employment Service Austria) for Arbeitslosengeld; the letter starts the procedure — forms and a counselling appointment follow. Benefit generally starts the day after application.',
+    descDoc: 'Antrag an das AMS (Arbeitsmarktservice Österreich) auf Arbeitslosengeld; das Schreiben löst das Verfahren aus — Formulare und ein Beratungstermin folgen. Das Geld wird in der Regel ab dem Tag nach der Antragstellung gewährt.',
     refRu: 'Arbeitslosenversicherungsgesetz (AlVG)',
     refEn: 'Austrian Unemployment Insurance Act (AlVG)',
     warningRu: 'Внимание: Arbeitslosengeld выплачивается, как правило, начиная со дня, следующего за днём подачи заявления (AlVG) — подавайте заявление сразу после окончания трудовых отношений',
@@ -520,6 +538,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Pensionsantrag bei der Pensionsversicherungsanstalt', titleEn: 'Pension application to the PVA',
     descRu: 'Заявление в Pensionsversicherungsanstalt (PVA): пенсия назначается только по заявлению — письмо запускает процедуру, PVA высылает формуляры и приглашает на консультацию; пенсия, как правило, начинается с месяца подачи заявления.',
     descEn: 'Application to the Pensionsversicherungsanstalt (PVA); the pension is granted only upon application and, as a rule, starts from the month of application.',
+    descDoc: 'Antrag an die Pensionsversicherungsanstalt (PVA): die Pension wird nur auf Antrag geleistet und beginnt in der Regel mit dem Monat der Antragstellung.',
     refRu: 'Allgemeines Sozialversicherungsgesetz (ASVG)',
     refEn: 'Austrian General Social Insurance Act (ASVG)',
     fields: [
@@ -547,6 +566,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Beschwerde an die Patientenvertretung', titleEn: 'Complaint to the Patientenvertretung (patients\' ombudsman)',
     descRu: 'Жалоба в Patientenvertretung на лечение или обслуживание в больнице/у врача: бесплатное и конфиденциальное рассмотрение; инстанция проверяет дело и содействует урегулированию.',
     descEn: 'Complaint to the Patientenvertretung about treatment in a hospital or practice: free and confidential review; the ombudsman examines the case and supports settlement.',
+    descDoc: 'Beschwerde an die Patientenvertretung über die Behandlung im Krankenhaus oder bei der Ärztin/dem Arzt: kostenlose und vertrauliche Prüfung; die Einrichtung untersucht den Fall und unterstützt bei einer Einigung.',
     refRu: 'Patienten-Vertretungsgesetz (PVG)',
     refEn: 'Austrian Patient Representation Act (Patienten-Vertretungsgesetz, PVG)',
     fields: [
@@ -576,6 +596,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Vorbringen wegen eines Behandlungsfehlers', titleEn: 'Claim regarding a medical error (Behandlungsfehler)',
     descRu: 'Письменное обращение к врачу/клинике о возможной врачебной ошибке: изложение фактов, требование пояснений и медицинской документации; при ущербе — претензия о возмещении (§§ 1295 ff. ABGB). Далее — Patientenvertretung или Ärztekammer.',
     descEn: 'Written submission to the physician/clinic about a possible treatment error: facts, request for explanation and records; damages claims rest on §§ 1295 et seq. ABGB; next steps are the Patientenvertretung or the Ärztekammer.',
+    descDoc: 'Schriftliche Anfrage an Ärztin/Arzt oder Klinik wegen eines möglichen Behandlungsfehlers: Darlegung des Sachverhalts, Bitte um Stellungnahme und um die Krankengeschichte; Schadenersatzansprüche stützen sich auf §§ 1295 ff. ABGB; nächste Schritte sind die Patientenvertretung oder die Ärztekammer.',
     refRu: '§§ 1295 ff. ABGB (Schadenersatz)',
     refEn: 'Sections 1295 et seq. of the Austrian Civil Code (ABGB, damages)',
     fields: [
@@ -605,6 +626,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Antrag auf Einsichtnahme in die Krankengeschichte', titleEn: 'Request for access to medical records (Krankengeschichte)',
     descRu: 'Запрос в больницу/клинику на ознакомление с историей болезни и/или выдачу копий. Право пациента на доступ к данным (KAKuG; Art. 15 DSGVO); ответ, как правило, в течение месяца.',
     descEn: 'Request to a hospital/clinic for access to the medical records and/or copies (KAKuG; Art. 15 GDPR); response as a rule within one month.',
+    descDoc: 'Antrag an das Krankenhaus bzw. die Klinik auf Einsicht in die Krankengeschichte und/oder Erteilung von Kopien (KAKuG; Art. 15 DSGVO); Antwort in der Regel binnen eines Monats.',
     refRu: 'Krankenanstalten- und Kuranstaltengesetz (KAKuG); Art. 15 DSGVO',
     refEn: 'Austrian Hospital Act (KAKuG); Art. 15 GDPR',
     fields: [
@@ -633,6 +655,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Gesuch um Dispensation vom Schulbesuch', titleEn: 'Request for exemption from school attendance (Dispensation)',
     descRu: 'Ходатайство к директору школы об освобождении ребёнка от школьного посещения на определённый срок (поездка, соревнования, обстоятельства семьи) — SchUG § 45.',
     descEn: 'Request to the school head for exemption from school attendance for a defined period (trip, competition, family circumstances) — SchUG § 45.',
+    descDoc: 'Ansuchen an den Schuldirektor um Befreiung des Kindes vom Schulbesuch für einen bestimmten Zeitraum (Reise, Wettkampf, familiäre Umstände) — SchUG § 45.',
     refRu: '§ 45 Schulunterrichtsgesetz (SchUG)',
     refEn: 'Section 45 of the Austrian School Education Act (SchUG)',
     fields: [
@@ -661,6 +684,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Ersatzanspruch bei Verlust einer Sendung', titleEn: 'Claim to Österreichische Post for a lost item',
     descRu: 'Претензия к Österreichische Post AG при утрате или ненадлежащей доставке отправления: номер отправления, содержимое и стоимость; требование возмещения по Postgesetz 2009. Сохраняйте Einlieferungsbeleg.',
     descEn: 'Claim to Österreichische Post AG for a lost or misdelivered item: tracking number, contents and value; compensation claim under the Postgesetz 2009. Keep the posting receipt.',
+    descDoc: 'Reklamation bei der Österreichischen Post AG bei Verlust oder fehlerhafter Zustellung einer Sendung: Sendungsnummer, Inhalt und Wert; Schadenersatzanspruch nach dem Postgesetz 2009. Einlieferungsbeleg aufbewahren.',
     refRu: 'Postgesetz 2009',
     refEn: 'Austrian Postal Act (Postgesetz 2009)',
     fields: [
@@ -690,6 +714,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Mängelrüge an den Vermieter', titleEn: 'Notice of defects to the landlord (MRG)',
     descRu: 'Уведомление арендодателя о недостатках квартиры (Mängel) с установлением срока устранения: обязанность содержания лежит на Vermieter (§ 3 MRG); при бездействии возможны снижение арендной платы (Mietzinsminderung), Ersatzvornahme и др.',
     descEn: 'Notice of defects to the landlord with a cure deadline; the maintenance duty lies with the landlord (§ 3 MRG); failing cure, rent reduction and self-help remedies may follow.',
+    descDoc: 'Mängelrüge an den Vermieter mit Frist zur Behebung: die Erhaltungspflicht liegt beim Vermieter (§ 3 MRG); bei Untätigkeit sind Mietzinsminderung, Ersatzvornahme und weitere Rechte möglich.',
     refRu: '§ 3 Mietrechtsgesetz (MRG)',
     refEn: 'Section 3 of the Austrian Tenancy Act (Mietrechtsgesetz, MRG)',
     fields: [
@@ -718,6 +743,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Kündigung des Mietverhältnisses durch den Mieter', titleEn: 'Tenant\'s termination of the tenancy (Kündigung)',
     descRu: 'Заявление о расторжении договора найма арендатором: срок и дата — по договору; при аренде под MRG ориентир — §§ 29–30 MRG (квартальные сроки). Подавайте письменно с подтверждением вручения.',
     descEn: 'Tenant\'s termination notice: observe the contractual notice period and date (under the MRG see §§ 29–30 MRG, quarterly periods); serve in writing with proof of delivery.',
+    descDoc: 'Kündigung des Mietvertrags durch den Mieter: vertragliche Kündigungsfrist und Termin einhalten (beim Mietrechtsgesetz siehe §§ 29–30 MRG, quartalsweise Fristen); schriftlich mit Nachweis der Zustellung übermitteln.',
     refRu: '§§ 29, 30 Mietrechtsgesetz (MRG)',
     refEn: 'Sections 29, 30 of the Austrian Tenancy Act (MRG)',
     warningRu: 'Внимание: соблюдайте договорную/законную Kündigungsfrist и срок; подавайте Кündigung письменно и сохраняйте подтверждение вручения',
@@ -745,6 +771,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Aufforderung zur Rückzahlung der Kaution', titleEn: 'Demand for return of the deposit (Kaution)',
     descRu: 'Требование к арендодателю вернуть залог (Sicherstellung) после окончания аренды и передачи квартиры. Залог подлежит возврату с учётом обоснованных удержаний; проценты принадлежат арендатору (MRG).',
     descEn: 'Demand that the landlord return the deposit after the tenancy ended and the flat was handed over; the deposit is due back less justified deductions, with interest for the tenant (MRG).',
+    descDoc: 'Aufforderung an den Vermieter, die Sicherstellung nach Beendigung der Miete und Übergabe der Wohnung zurückzugeben; die Kaution ist abzüglich begründeter Abzüge mit Zinsen für den Mieter zurückzuzahlen (MRG).',
     refRu: 'Mietrechtsgesetz (MRG)',
     refEn: 'Austrian Tenancy Act (Mietrechtsgesetz, MRG)',
     fields: [
@@ -773,6 +800,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Beschwerde wegen unzulässiger Immissionen (Lärm)', titleEn: 'Noise complaint (immissions, § 364a ABGB)',
     descRu: 'Жалоба на шум от соседа: сначала письменное предложение прекратить нарушения и ведите журнал (дата/время); при продолжении — Hausverwaltung или общинные власти. Превышающие обычный уровень имиссии терпеть не обязательно (§ 364a ABGB).',
     descEn: 'Complaint about a neighbor\'s noise: send a written demand to stop first and log incidents (date/time); then the property management or municipal authority. Immissions beyond the customary local level need not be tolerated (§ 364a ABGB).',
+    descDoc: 'Beschwerde über den Lärm eines Nachbarn: zuerst schriftlich die Einstellung fordern und die Vorfälle protokollieren (Datum/Uhrzeit); anschließend an die Hausverwaltung oder die Gemeindebehörde. Über das ortsübliche Maß hinausgehende Immissionen müssen nicht geduldet werden (§ 364a ABGB).',
     refRu: '§ 364a ABGB (Zulässige Immissionen)',
     refEn: 'Section 364a of the Austrian Civil Code (ABGB, permissible immissions)',
     fields: [
@@ -801,6 +829,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Unterhaltsbegehren (Bezirksgericht)', titleEn: 'Maintenance claim (Unterhaltsbegehren)',
     descRu: 'Обращение в районный суд (Bezirksgericht) по делу о содержании: требование установить/взыскать содержание на ребёнка или нуждающегося родственника (§§ 139 ff. ABGB). Размер зависит от доходов обязанного и возраста получателя.',
     descEn: 'Application to the district court (Bezirksgericht) for maintenance for a child or a relative in need (§§ 139 et seq. ABGB); the amount depends on the obligor\'s income and the recipient\'s age.',
+    descDoc: 'Ansuchen an das Bezirksgericht in einer Unterhaltssache: Festsetzung bzw. Eintreibung des Unterhalts für ein Kind oder einen bedürftigen Verwandten (§§ 139 ff. ABGB); die Höhe hängt vom Einkommen des Pflichtigen und vom Alter des Berechtigten ab.',
     refRu: '§§ 139 ff. ABGB (Unterhalt)',
     refEn: 'Sections 139 et seq. of the Austrian Civil Code (ABGB, maintenance)',
     fields: [
@@ -833,6 +862,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Darlehensvertrag unter Privatpersonen', titleEn: 'Private loan agreement (Darlehen)',
     descRu: 'Простой договор займа между частными лицами: сумма, срок, проценты/беспроцентность, последствия просрочки. Займ регулируется § 983 ABGB; письменная форма фиксирует условия.',
     descEn: 'Simple private loan agreement: amount, term, interest/interest-free, consequences of delay; governed by § 983 ABGB, written form evidences the terms.',
+    descDoc: 'Einfacher Darlehensvertrag zwischen Privatpersonen: Betrag, Laufzeit, Verzinsung bzw. Zinslosigkeit, Folgen des Verzugs; geregelt nach § 983 ABGB, die Schriftform hält die Vereinbarungen fest.',
     refRu: '§ 983 ABGB (Darlehen)',
     refEn: 'Section 983 of the Austrian Civil Code (ABGB, loan)',
     fields: [
@@ -862,6 +892,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Vollmacht', titleEn: 'Power of attorney (Vollmacht)',
     descRu: 'Общая доверенность на бытовые действия: получение документов, писем, посылок, подача заявлений. Для сделок с недвижимостью и нотариальных актов нужна нотариально заверенная Vollmacht.',
     descEn: 'General power of attorney for everyday matters (collecting documents, mail, parcels, filing requests). A notarised Vollmacht is required for real-estate and notarial transactions.',
+    descDoc: 'Allgemeine Vollmacht für Alltagsangelegenheiten: Abholen von Dokumenten, Post und Paketen sowie Einbringung von Ansuchen. Für Liegenschaftsgeschäfte und notarielle Akte ist eine notariell beurkundete Vollmacht erforderlich.',
     refRu: '§§ 48 ff. ABGB (Vertretung und Vollmacht)',
     refEn: 'Sections 48 et seq. of the Austrian Civil Code (ABGB, representation and power of attorney)',
     fields: [
@@ -885,6 +916,7 @@ export const TEMPLATES_AT: TplDef[] = [
     titleDoc: 'Ansuchen um Ausstellung einer Meldebestätigung', titleEn: 'Application for a registration confirmation (Meldebestätigung)',
     descRu: 'Заявление в Meldeamt (Gemeinde/Magistrat) о выдаче подтверждения регистрации (Meldebestätigung) — для работодателя, страховки, AMS, школы и др. Приложите удостоверение личности; выдаётся, как правило, сразу.',
     descEn: 'Application to the Meldeamt (municipal office) for a Meldebestätigung (registration confirmation) — for employer, insurer, AMS, school etc.; attach an ID; usually issued on the spot.',
+    descDoc: 'Antrag an die Meldebehörde (Gemeinde/Magistrat) um Ausstellung einer Meldebestätigung — für Arbeitgeber, Versicherung, AMS, Schule usw.; einen Lichtbildausweis beilegen; wird in der Regel sofort ausgefertigt.',
     refRu: 'Meldegesetz 1991 (MeldeG)',
     refEn: 'Austrian Registration Act 1991 (Meldegesetz, MeldeG)',
     fields: [

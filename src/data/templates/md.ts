@@ -26,6 +26,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere pentru concediul de odihnă anual plătit',
     descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. Продолжительность базового отпуска в Молдове — 28 календарных дней за рабочий год (art. 112 Codul muncii).',
     descEn: 'Application for annual paid leave. Base leave duration in Moldova is 28 calendar days per working year (art. 112 of the Labour Code).',
+    descDoc: 'Cerere adresată angajatorului pentru acordarea concediului de odihnă anual plătit. Durata de bază a concediului în Moldova este de 28 de zile calendaristice pe an de lucru (art. 112 Codul muncii).',
     refRu: 'ст. 112 Трудового кодекса Республики Молдова (Legea nr. 154/2003)',
     refEn: 'Article 112 of the Labour Code of the Republic of Moldova (Legea nr. 154/2003)',
     fields: [
@@ -47,6 +48,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere pentru concediul fără plată',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Cerere pentru concediul fără plată din motive familiale sau alte motive temeinice, de comun acord cu angajatorul.',
     refRu: 'Трудовой кодекс Республики Молдова',
     refEn: 'Labour Code of the Republic of Moldova',
     fields: [
@@ -71,6 +73,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind demisia (denunțarea contractului individual de muncă)',
     descRu: 'Заявление о прекращении индивидуального трудового договора по инициативе работника (demisie). Работник предупреждает работодателя за 14 календарных дней (art. 85 Codul muncii); в течение 7 дней заявление можно отозвать.',
     descEn: 'Voluntary resignation application. 14 calendar days notice (art. 85 of the Labour Code); the notice can be withdrawn within 7 days.',
+    descDoc: 'Cerere de demisie — denunțarea contractului individual de muncă la inițiativa salariatului. Preaviz de 14 zile calendaristice (art. 85 Codul muncii); cererea poate fi retrasă în termen de 7 zile.',
     refRu: 'ст. 85 Трудового кодекса Республики Молдова',
     refEn: 'Article 85 of the Labour Code of the Republic of Moldova',
     fields: [
@@ -92,6 +95,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind eliberarea documentelor legate de munca prestată',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, записи о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Cerere privind eliberarea documentelor legate de munca prestată: adeverințe despre salariu, copii ale ordinelor, mențiuni despre stagiu.',
     refRu: 'Трудовой кодекс Республики Молдова',
     refEn: 'Labour Code of the Republic of Moldova',
     fields: [
@@ -112,6 +116,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Reclamație privind returnarea produsului de calitate necorespunzătoare',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в леях. При отказе — суд или ANPC (Agenția Națională pentru Protecția Consumatorilor).',
     descEn: 'Pre-court claim to a seller over defective goods under Moldovan consumer protection law.',
+    descDoc: 'Reclamație prealabilă vânzătorului privind produsul de calitate necorespunzătoare, în conformitate cu legislația Republicii Moldova privind protecția consumatorilor.',
     refRu: 'Закон Республики Молдова «О защите прав потребителей» (Legea nr. 105/2003)',
     refEn: 'Law of the Republic of Moldova on Consumer Protection (Legea nr. 105/2003)',
     fields: [
@@ -145,6 +150,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Acțiune în instanță privind recuperarea datoriei conform chitanței',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд (judecătoria) по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the court (judecătoria) of the defendant’s residence.',
+    descDoc: 'Acțiune în instanță privind recuperarea datoriei confirmate prin chitanță. Se depune la judecătoria de la domiciliul pârâtului.',
     refRu: 'Гражданский кодекс РМ; Гражданский процессуальный кодекс РМ (Codul de procedură civilă)',
     refEn: 'Civil Code of Moldova; Civil Procedure Code of Moldova',
     fields: [
@@ -180,6 +186,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Chitanță de împrumut între persoane fizice',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Chitanță de împrumut între persoane fizice care confirmă contractul de împrumut.',
     refRu: 'Гражданский кодекс Республики Молдова',
     refEn: 'Civil Code of the Republic of Moldova',
     fields: [
@@ -205,6 +212,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Procură (generală civilă)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок с недвижимостью — только нотариальная доверенность (autentificată notarial).',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions.',
+    descDoc: 'Procură generală pentru acțiuni curente. Pentru tranzacțiile cu imobile este necesară forma autentică notarial.',
     refRu: 'Гражданский кодекс Республики Молдова (procura)',
     refEn: 'Civil Code of the Republic of Moldova (procura)',
     fields: [
@@ -229,6 +237,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere către școală privind absența copilului de la lecții',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Cerere adresată școlii privind absența copilului de la lecții și motivul acesteia.',
     refRu: 'законодательство Республики Молдова в сфере образования',
     refEn: 'Education legislation of the Republic of Moldova',
     fields: [
@@ -255,6 +264,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Plângere privind calitatea asistenței medicale',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения РМ; жалобы также принимает офис уполномоченного по правам пациентов.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Plângere privind calitatea asistenței medicale, adresată conducerii organizației medicale; ulterior se poate adresa Ministerului Sănătății.',
     refRu: 'законодательство Республики Молдова в сфере здравоохранения',
     refEn: 'Healthcare legislation of the Republic of Moldova',
     fields: [
@@ -298,6 +308,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleEn: 'Consumer protection lawsuit (defective product)',
     descRu: 'Иск к продавцу после неудовлетворённой досудебной претензии (reclamație): замена/возврат товара ненадлежащего качества. Основание — Закон РМ № 105/2003 о защите прав потребителей, ст. 1405 ГК РМ; форма иска — ст. 159 ГПК РМ. Подаётся в judecătoria по месту жительства ответчика.',
     descEn: 'Lawsuit against the seller after an unsatisfied pre-court claim: replacement or refund of a defective product. Basis — Law No. 105/2003 on Consumer Protection, art. 1405 of the Civil Code; form per art. 159 of the CPC of Moldova.',
+    descDoc: 'Cerere de chemare în judecată împotriva vânzătorului după o reclamație prealabilă nesatisfăcută: substituirea sau returnarea produsului de calitate necorespunzătoare. Temei: Legea nr. 105/2003 privind protecția consumatorilor, art. 1405 Codul civil; forma — art. 159 Codul de procedură civilă.',
     refRu: 'Закон РМ № 105/2003 «О защите прав потребителей»; ст. 1405 ГК РМ; ст. 159 ГПК РМ',
     refEn: 'Law of Moldova No. 105/2003 on Consumer Protection; art. 1405 of the Civil Code; art. 159 of the CPC',
     fields: [
@@ -338,6 +349,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleEn: 'Divorce petition (desfacerea căsătoriei)',
     descRu: 'Иск одного из супругов о расторжении брака в суде (при наличии общих несовершеннолетних детей, споров или отсутствии согласия второго супруга; по взаимному согласию без детей развод оформляется в органах ЗАГС). Основание — ст. 41–42 Codul familiei; форма иска — ст. 159 ГПК РМ.',
     descEn: 'Petition of one spouse for divorce in court (with minor children, disputes, or without the other spouse’s consent; by mutual consent without children divorce is handled by civil registry offices). Basis — arts. 41-42 of the Family Code; form per art. 159 of the CPC.',
+    descDoc: 'Cerere de chemare în judecată privind desfacerea căsătoriei la cererea unuia dintre soți (cu copii minori, în caz de neînțelegeri sau fără consimțământul celuilalt soț; de comun acord, fără copii minori, căsătoria se desface la starea civilă). Temei: art. 41–42 Codul familiei; forma — art. 159 Codul de procedură civilă.',
     refRu: 'ст. 41–42 Codul familiei (Кодекс о семье); ст. 159–160 ГПК РМ',
     refEn: 'Arts. 41-42 of the Family Code; arts. 159-160 of the CPC of Moldova',
     fields: [
@@ -375,6 +387,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere de alegere a medicului de familie',
     descRu: 'Заявление в центр здоровья семьи о прикреплении к выбранному семейному врачу в рамках национальной программы семейной медицины (CNAM). Право выбрать врача закреплено законом о правах пациента.',
     descEn: 'Application to a family doctor centre to register with a chosen family doctor under the national family medicine programme (CNAM).',
+    descDoc: 'Cerere către centrul de sănătate privind înscrierea la medicul de familie ales, în cadrul programului național de medicină de familie (CNAM).',
     refRu: 'Закон РМ № 263/2005 о правах пациента; национальная программа семейной медицины (CNAM)',
     refEn: 'Law of Moldova No. 263/2005 on patients rights; national family medicine programme (CNAM)',
     fields: [
@@ -401,6 +414,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere de eliberare a copiei fișei medicale',
     descRu: 'Запрос в медицинскую организацию о доступе к своей медицинской документации (fișa medicală) и выдаче её копий. Право доступа к информации о собственном здоровье закреплено ст. 13 Закона № 263/2005.',
     descEn: 'Request for access to your medical documentation (fișa medicală) and its copies — a patients right under Art. 13 of Law No. 263/2005.',
+    descDoc: 'Cerere privind accesul la documentația medicală personală (fișa medicală) și eliberarea copiilor acesteia — dreptul pacientului conform art. 13 din Legea nr. 263/2005.',
     refRu: 'Закон РМ № 263/2005 о правах пациента, ст. 13',
     refEn: 'Law of Moldova No. 263/2005 on patients rights, Art. 13',
     fields: [
@@ -428,6 +442,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere de înscriere a copilului la școală',
     descRu: 'Заявление директору школы о зачислении ребёнка: в первый класс или переводом из другой школы в течение учебного года. Общее обязательное образование регулируется Кодексом об образовании РМ.',
     descEn: 'Application to the school principal to enrol a child: first grade or transfer from another school mid-year. Basic general education is governed by the Education Code of Moldova.',
+    descDoc: 'Cerere adresată directorului școlii privind înscrierea copilului: în clasa I sau prin transfer de la o altă instituție în cursul anului școlar. Învățământul general obligatoriu este reglementat de Codul educației al Republicii Moldova.',
     refRu: 'Кодекс об образовании РМ (Legea nr. 152/2014)',
     refEn: 'Education Code of Moldova (Law No. 152/2014)',
     fields: [
@@ -457,6 +472,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Reclamație privind serviciile comunale',
     descRu: 'Жалоба поставщику коммунальных услуг (Apă-Canal, Termoelectrica и т.п.) о перебоях в подаче воды, её качестве, авариях или ошибках в счетах; при бездействии — примэрия или ANRSC.',
     descEn: 'Complaint to the communal service provider (water, sewage, heating) about outages, water quality, failures or billing errors; next steps — the mayoralty or ANRSC.',
+    descDoc: 'Reclamație la furnizorul serviciilor comunale (apă/canal, încălzire) privind întreruperile, calitatea apei, avariile sau erorile de facturare; în caz de inacțiune — primăria sau ANRSC.',
     refRu: 'Закон РМ № 435/2006 о коммунальных услугах',
     refEn: 'Law of Moldova No. 435/2006 on communal services',
     fields: [
@@ -484,6 +500,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere către primărie privind reparațiile',
     descRu: 'Обращение в примэрию о ремонте дороги, тротуара, уличного освещения или детской площадки во дворе. Рассматривается как петиция — ответ в срок по Закону о петициях.',
     descEn: 'Petition to the mayoralty to repair a road, sidewalk, street lighting or a courtyard playground; handled under the Petitions Law.',
+    descDoc: 'Cerere/petiție către primărie privind repararea drumului, trotuarului, iluminatului public sau a locului de joacă; se examinează conform Legii privind petiționarea.',
     refRu: 'Закон РМ № 436/2006 об административном управлении местным публичным; Закон РМ № 190/1994 о петициях',
     refEn: 'Law of Moldova No. 436/2006 on local public administration; Law No. 190/1994 on petitions',
     fields: [
@@ -515,6 +532,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind restituirea impozitului pe venit',
     descRu: 'Заявление в налоговый орган о возврате подоходного налога (IP) в связи с расходами на обучение и на лечение/медикаменты — вычетами при зарплатных доходах (art. 33 Codul fiscal). Варианты: заявление работодателю в течение года либо заявка на возврат в налоговый орган по правилам SFS (как правило, до 25 декабря следующего года) с подтверждающими документами.',
     descEn: 'Application to the tax authority for an income tax refund related to education and medical/medicine expenses (salary income exemptions under Art. 33 of the Fiscal Code): a claim to the employer during the year or a refund request to the tax office under SFS rules with supporting documents.',
+    descDoc: 'Cerere privind restituirea impozitului pe venit pentru cheltuielile cu studiile și cu tratamentul medical (scutiri la veniturile salariale, art. 33 Codul fiscal): fie cerere către angajator în cursul anului, fie cerere de restituire la organul fiscal conform procedurii SFS, cu documente justificative anexate.',
     refRu: 'ст. 33 Налогового кодекса Республики Молдова (Codul fiscal); правила налогового органа о порядке возврата',
     refEn: 'Art. 33 of the Fiscal Code of Moldova; tax authority refund procedure rules',
     fields: [
@@ -546,6 +564,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Contestație la actul administrativ fiscal',
     descRu: 'Возражение в налоговый орган, вынесший акт, с которым вы не согласны: решение об определении налогового обязательства, приказ об удержании, решение о способах обеспечения взыскания и т.п. Срок обжалования — 60 дней со дня акта; обжалование в порядке подчинённости обязательно перед обращением в суд (ст. 302 Codul fiscal, Legea nr. 235/2007).',
     descEn: 'Contestation addressed to the tax body that issued the act you disagree with (tax liability decision, seizure order, etc.). 60-day term; the administrative appeal is mandatory before going to court (Art. 302 of the Fiscal Code, Law No. 235/2007).',
+    descDoc: 'Contestație la actul administrativ fiscal emis de organul fiscal (decizie de stabilire a obligației fiscale, ordonanță de impunere etc.). Termen de 60 de zile; contestarea în ordinea subordonării este obligatorie înainte de adresarea la instanță (art. 302 Codul fiscal, Legea nr. 235/2007).',
     refRu: 'ст. 302 Налогового кодекса РМ; Legea nr. 235/2007 privind activitatea cu acte administrativ-fiscale',
     refEn: 'Art. 302 of the Fiscal Code of Moldova; Law No. 235/2007 on fiscal administrative acts',
     fields: [
@@ -583,6 +602,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind restituirea comisioanelor percepute',
     descRu: 'Обращение в банк при комиссиях, с которыми вы не согласны: комиссии без ясного договорного основания, удержанные после полного погашения кредита, за выдачу справок и т.п. При отказе — обращение в Банк Молдовы (защита потребителей финансовых услуг) и в суд.',
     descEn: 'Request to the bank to refund commissions you disagree with: charges without a clear contractual basis, fees kept after full loan repayment, statement fees, etc. If refused — complaint to the National Bank of Moldova (financial consumer protection) and court.',
+    descDoc: 'Cerere adresată băncii privind restituirea comisioanelor contestate: comisioane fără temei contractual clar, percepute și după rambursarea integrală a creditului etc. În caz de refuz — plângere la Banca Națională a Moldovei (protecția consumatorilor de servicii financiare) și la instanță.',
     refRu: 'Legea nr. 202/2017 privind contractele de credit pentru consumatori; Legea nr. 105/2003 privind protecția consumatorilor',
     refEn: 'Law No. 202/2017 on consumer credit agreements; Law No. 105/2003 on consumer protection',
     fields: [
@@ -615,6 +635,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere de instituire a pensiei',
     descRu: 'Заявление в территориальное подразделение CNAS о назначении пенсии: по возрасту (pensia pentru limită de vârstă), по инвалидности или по случаю потери кормильца. Пенсия устанавливается по заявлению с прилагаемыми документами о стаже и заработке (Legea nr. 156/1998 о государственных пенсиях).',
     descEn: 'Application to the territorial CNAS office for establishing a pension (old-age, invalidity or survivor). Pensions are established upon application with documents on contributions and earnings (Law No. 156/1998).',
+    descDoc: 'Cerere adresată biroului teritorial CNAS privind instituirea pensiei (pentru limită de vârstă, de invaliditate sau de urmaș). Pensia se stabilește la cerere, pe baza documentelor despre stagiu și venituri (Legea nr. 156/1998).',
     refRu: 'Закон РМ № 156/1998 о системе публичных пенсий и иного государственного социального страхования (Legea nr. 156/1998 privind sistemul public de pensii și alte asigurări sociale de stat)',
     refEn: 'Law of Moldova No. 156/1998 on the public pension system and other state social insurance',
     fields: [
@@ -653,6 +674,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere pentru acordarea ajutorului social',
     descRu: 'Заявление о назначении ежемесячной социальной помощи малообеспеченной семье (ajutor social). Подаётся в примэрию по месту жительства, которая направляет дело в CNAS; учитываются доходы, имущество и условия проживания семьи (оценка нуждаемости) — Legea nr. 263/2005.',
     descEn: 'Application for monthly social aid for a low-income household (ajutor social). Filed with the local mayoralty, which forwards the file to CNAS; household income, assets and living conditions are assessed (Law No. 263/2005).',
+    descDoc: 'Cerere privind acordarea ajutorului social lunar pentru gospodăria cu venituri mici. Se depune la primărie, care transmite dosarul către CNAS; se evaluează veniturile, bunurile și condițiile de locuit ale gospodăriei.',
     refRu: 'Закон РМ № 258-XVI от 15.07.2004 о систематизации социальных пособий (Legea nr. 258-XVI/2004 privind sistemizarea ajutoarelor sociale)',
     refEn: 'Law of Moldova No. 258-XVI/2004 on the systematization of social aid',
     fields: [
@@ -685,6 +707,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Sesizare privind încălcarea liniștii publice de către vecini',
     descRu: 'Обращение (sesizare) в полицию или примэрию на соседа, который систематически нарушает тишину в ночное время (музыка, застолья, ремонт). Перечисляются даты и характер нарушений, прикладываются доказательства; подать можно и через servicii.gov.md. По Закону о петициях обращение обязаны рассмотреть и дать письменный ответ в течение 30 дней.',
     descEn: 'Sesizare to the police or the mayoralty about a neighbor who systematically breaks night-time quiet (music, gatherings, repairs). Dates and the nature of the disturbances are listed and evidence is attached; it can also be filed via servicii.gov.md. Under the Law on petitions the authority must respond in writing within 30 days.',
+    descDoc: 'Sesizare către poliție sau primărie privind vecinul care încalcă sistematic liniștea publică în timpul nopții (muzică, petreceri, reparații). Se indică datele și natura încălcărilor și se anexează probe; sesizarea poate fi depusă și prin servicii.gov.md. Conform Legii privind petițiile, răspunsul scris se dă în termen de 30 de zile.',
     refRu: 'Контравенционный кодекс РМ (Legea nr. 218/2008) — ответственность за нарушение общественного порядка и тишины; Закон РМ № 190/1994 «О петициях» (Legea privind petițiile)',
     refEn: 'Contraventional Code of Moldova (Law No. 218/2008) — liability for breaching public order and quiet; Law of Moldova No. 190/1994 on petitions',
     fields: [
@@ -718,6 +741,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Pretenție privind despăgubirea prejudiciului cauzat prin inundarea apartamentului',
     descRu: 'Досудебная претензия соседу сверху, чья вина в заливе подтверждена актом, составленным управителем дома или асоционией собственников: требуется добровольно возместить ущерб (ремонт, повреждённое имущество). Прикладываются акт о заливе, фото повреждений и расчёт стоимости ремонта. При отказе следующим шагом будет иск в суд.',
     descEn: 'Pre-court claim against the upstairs neighbor whose fault is confirmed by the report drawn by the building administrator or the owners’ association: damages (repairs, ruined property) are claimed on a voluntary basis. The flood report, photos and a repair cost estimate are attached. If refused, the next step is a court claim.',
+    descDoc: 'Pretenție prealabilă vecinului de la etajul superior, a cărui vinovăție este confirmată de actul de constatare întocmit de administratorul imobilului sau de asociația de proprietari: se solicită despăgubirea voluntară a prejudiciului (reparații, bunuri avariate). Se anexează actul de constatare a inundației, fotografiile și calculul costului reparațiilor. În caz de refuz, următorul pas este acțiunea în instanță.',
     refRu: 'Гражданский кодекс РМ (Codul civil) — обязательство полного возмещения вреда; акт о заливе составляет управитель дома/асоциония собственников',
     refEn: 'Civil Code of Moldova (Codul civil) — obligation to compensate damage in full; the flood report is drawn by the building administrator / owners’ association',
     fields: [
@@ -748,6 +772,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Sesizare privind fumatul și starea sanitară nesatisfăcătoare în spațiile comune ale imobilului',
     descRu: 'Обращение (sesizare) управителю дома, асоционии собственников или в примэрию: курение на лестничных клетках, мусор и антисанитария в общих помещениях. Просите провести проверку, убрать помещения, обеспечить регулярную уборку и принять меры к нарушителям. По Закону о петициях письменный ответ обязаны дать в течение 30 дней.',
     descEn: 'Sesizare to the building administrator, the owners’ association or the mayoralty: smoking in stairwells, litter and poor sanitation in common areas. Asks for an inspection, cleaning, regular upkeep and action against violators. Under the Law on petitions a written answer is due within 30 days.',
+    descDoc: 'Sesizare către administratorul imobilului, asociația de proprietari sau primărie: fumat în scări, gunoaie și stare sanitară nesatisfăcătoare în spațiile comune. Se solicită verificarea, curățarea, întreținerea regulată și măsuri față de cei care încalcă regulile. Conform Legii privind petițiile, răspunsul scris se dă în termen de 30 de zile.',
     refRu: 'Жилищный кодекс РМ (Codul locativ) — правила пользования общими помещениями; законодательство РМ о контроле над табачными изделиями (запрет курения в общественных местах); Закон РМ № 190/1994 «О петициях»',
     refEn: 'Housing Code of Moldova (Codul locativ) — rules for using common areas; Moldovan tobacco control legislation (smoking ban in public places); Law of Moldova No. 190/1994 on petitions',
     fields: [
@@ -781,6 +806,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind eliminarea defecțiunii depistate în imobil',
     descRu: 'Заявление в асоционию собственников или управителю дома об устранении неисправности: протечка кровли или стояка, неисправный лифт, слабое отопление. Просите осмотреть место неисправности, составить акт и устранить её в установленный срок, письменно сообщив о результатах. В документе можно указать удобное время визита специалиста.',
     descEn: 'Application to the owners’ association or the building administrator to fix a defect: roof or riser leak, broken elevator, weak heating. Asks to inspect the site, draw up a report, repair the problem within the set time and report the results in writing. You can specify a preferred time for the specialist’s visit.',
+    descDoc: 'Cerere adresată asociației de proprietari sau administratorului imobilului privind eliminarea defecțiunii: scurgere pe acoperiș sau pe coloană, ascensor nefuncțional, încălzire insuficientă. Se solicită examinarea locului, întocmirea actului de constatare, eliminarea defecțiunii în termenul stabilit și comunicarea scrisă a rezultatelor; poate fi indicat timpul convenabil pentru venirea specialistului.',
     refRu: 'законодательство РМ об асоциониях собственников (asociații de proprietari); Жилищный кодекс РМ (Codul locativ)',
     refEn: 'Moldovan legislation on owners’ associations (asociații de proprietari); Housing Code of Moldova (Codul locativ)',
     fields: [
@@ -814,6 +840,7 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere privind recalcularea plății pentru serviciile comunale',
     descRu: 'Заявление поставщику коммунальных услуг (APA CANAL, термофикационная компания, салубризация, асоциония собственников) о перерасчёте платы за период, когда услуга не предоставлялась (авария, плановое прерывание), или за время длительного отсутствия жильцов. Прикладываются доказательства: подтверждение аварии, показания счётчиков, оплаченные счета. При отказе — обращение к регулятору ANRSC или в суд.',
     descEn: 'Application to the communal service provider (water company, heating operator, sanitation service, owners’ association) to recalculate charges for a period when the service was not provided (an outage or planned interruption) or the residents were absent for a long time. Evidence is attached: outage confirmation, meter readings, paid bills. If refused — the regulator ANRSC or court.',
+    descDoc: 'Cerere furnizorului serviciilor comunale (apă-canal, agenția termică, salubrizare, asociația de proprietari) privind recalcularea plății pentru perioada în care serviciul nu a fost prestat (avaria sau întreruperea planificată) sau locatarii au fost absenți o perioadă îndelungată. Se anexează dovezile: confirmarea avariei, indicațiile aparatelor de cont, facturile plătite. În caz de refuz — ANRSC sau instanța.',
     refRu: 'Закон РМ № 435/2006 о коммунальных услугах; Закон РМ № 105/2003 о защите потребителей (privind protecția consumatorilor)',
     refEn: 'Law of Moldova No. 435/2006 on communal services; Law of Moldova No. 105/2003 on consumer protection',
     fields: [

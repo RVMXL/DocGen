@@ -31,6 +31,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de congés payés annuels', titleEn: 'Paid leave application (congés payés)',
     descRu: 'Заявление работодателю о предоставлении оплачиваемого отпуска. По Code du travail — 2,5 рабочих дня за месяц работы (5 недель в год); заявление подаётся заранее в порядке, установленном в компании.',
     descEn: 'Paid leave application. The French Labour Code grants 2.5 working days per month (5 weeks per year); apply in advance per company procedure.',
+    descDoc: 'Demande adressée à l’employeur en vue d’obtenir des congés payés annuels pour la période indiquée ; le Code du travail ouvre droit à 2,5 jours ouvrables par mois de travail (cinq semaines par an), sous réserve de la procédure interne de l’entreprise.',
     refRu: 'ст. L.3141-1 и сл. Трудового кодекса Франции (Code du travail)',
     refEn: 'Articles L.3141-1 et seq. of the French Labour Code (Code du travail)',
     fields: [
@@ -54,6 +55,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de congé sans solde', titleEn: 'Unpaid leave application (congé sans solde)',
     descRu: 'Заявление о неоплачиваемом отпуске по личным причинам. Предоставляется по соглашению с работодателем — закон не обязывает его предоставлять.',
     descEn: 'Unpaid leave application for personal reasons, by agreement with the employer (not an automatic right).',
+    descDoc: 'Demande de congé sans solde pour raisons personnelles, accordée uniquement avec l’accord de l’employeur (ce n’est pas un droit automatique) : durée et dates souhaitées sont précisées.',
     refRu: 'Трудовой кодекс Франции; соглашение с работодателем',
     refEn: 'French Labour Code; employer agreement',
     fields: [
@@ -78,6 +80,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Lettre de démission', titleEn: 'Resignation letter (démission)',
     descRu: 'Заявление об увольнении по собственному желанию. Подаётся письменно (рекомендуется заказным письмом с уведомлением — LRAR); соблюдается предусмотрительный срок (préavis) по коллективному договору/договору.',
     descEn: 'Resignation letter. File in writing (registered letter with acknowledgment recommended); observe the préavis per collective agreement/contract.',
+    descDoc: 'Lettre de démission adressée à l’employeur, de préférence par lettre recommandée avec accusé de réception ; le préavis prévu par le contrat ou la convention collective est respecté.',
     refRu: 'ст. L.1237-1 Трудового кодекса Франции; длительность préavis — по колл. договору',
     refEn: 'Article L.1237-1 of the French Labour Code; préavis per collective agreement',
     fields: [
@@ -100,6 +103,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande d’attestations à l’employeur', titleEn: 'Employer certificates request',
     descRu: 'Запрос документов от работодателя: сертификат о работе (certificat de travail), attestation France Travail, справка о зарплате для банка/визы.',
     descEn: 'Request for employer documents: certificat de travail, France Travail attestation, salary certificate.',
+    descDoc: 'Demande à l’employeur de délivrer les documents de fin de contrat : certificat de travail, attestation destinée à France Travail et attestation de salaire.',
     refRu: 'ст. L.1234-19 (certificat de travail), L.5411-5 Трудового кодекса Франции',
     refEn: 'Articles L.1234-19 (certificat de travail), L.5411-5 of the French Labour Code',
     fields: [
@@ -122,6 +126,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Réclamation au vendeur (produit défectueux)', titleEn: 'Claim to seller (réclamation)',
     descRu: 'Претензия продавцу о недостатках товара. Гарантия юридического соответствия (garantie légale de conformité) — 2 года с передачи товара; при серьёзном дефекте — замена или возврат денег.',
     descEn: 'Claim to a seller over a defective product. The legal conformity guarantee lasts 2 years from delivery.',
+    descDoc: 'Réclamation adressée au vendeur au sujet d’un bien défectueux : la garantie légale de conformité court 2 ans à compter de la délivrance (art. L.217-3 et s. du Code de la consommation) ; réparation, remplacement, réduction du prix ou résolution peuvent être demandés.',
     refRu: 'ст. L.216-1, L.217-3 и сл. Кодекса потребления Франции',
     refEn: 'Articles L.216-1, L.217-3 et seq. of the French Consumer Code',
     fields: [
@@ -153,6 +158,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Mise en demeure de payer', titleEn: 'Formal notice (mise en demeure)',
     descRu: 'Официальное требование исполнить обязательство (оплатить долг, вернуть вещь) с установлением срока. После mise en demeure начисляются проценты и проценты за просрочку; письмо рекомендуется отправлять LRAR.',
     descEn: 'Formal notice to perform an obligation (pay a debt, return property) with a deadline; send by registered mail (LRAR).',
+    descDoc: 'Mise en demeure d’exécuter une obligation (payer une dette, restituer un bien) dans un délai fixé, avec rappel des intérêts de retard et des suites judiciaires possibles ; envoi par lettre recommandée avec accusé de réception.',
     refRu: 'ст. 1344 Гражданского кодекса Франции (mise en demeure)',
     refEn: 'Article 1344 of the French Civil Code (mise en demeure)',
     fields: [
@@ -179,6 +185,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Reconnaissance de dette', titleEn: 'Acknowledgment of debt (reconnaissance de dette)',
     descRu: 'Долговая расписка на сумму свыше 1500 евро оформляется письменно; с 2020 года используется официальный бланк Cerfa n° 15399. Бланк заполняется от руки и подаётся в налоговую службу (один экземпляр).',
     descEn: 'Debts above 1,500 EUR require a written acknowledgment; since 2020 the official Cerfa n° 15399 form is used, filled in by hand and filed with the tax office.',
+    descDoc: 'Reconnaissance de dette établie par le débiteur : au-delà de 1 500 €, l’écrit est obligatoire ; depuis 2020, le formulaire Cerfa n° 15399 est utilisé, rempli à la main et déposé au service des impôts.',
     refRu: 'ст. 1359 Гражданского кодекса Франции; артикул 242 бис Налогового кодекса (бланк Cerfa n° 15399)',
     refEn: 'Article 1359 of the French Civil Code; tax code art. 242 bis (Cerfa n° 15399)',
     warningRu: 'Внимание: данный документ по закону заполняется только от руки на официальном бланке Cerfa n° 15399',
@@ -196,6 +203,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Procuration', titleEn: 'Power of attorney (procuration)',
     descRu: 'Доверенность на бытовые действия: получение документов, представление интересов. Для сделок с недвижимостью и операций у нотариуса — только доверенность, удостоверенная нотариусом.',
     descEn: 'Power of attorney for everyday matters. For real estate and notarial transactions a notarized procuration is required.',
+    descDoc: 'Procuration donnant mandat à une personne de confiance d’accomplir les démarches indiquées pour le compte du mandant ; pour les actes immobiliers et notariés, la forme notariée est requise (art. 1984 du Code civil).',
     refRu: 'ст. 1984 Гражданского кодекса Франции (mandat)',
     refEn: 'Article 1984 of the French Civil Code (mandat)',
     fields: [
@@ -219,6 +227,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Justificatif d’absence scolaire', titleEn: 'School absence notice for a child',
     descRu: 'Уведомление школы об отсутствии ребёнка. Родители обязаны известить заведение в течение 2 дней (ст. L.131-8 Code de l’éducation).',
     descEn: 'School absence notice. Parents must notify the school within 2 days (art. L.131-8 of the Education Code).',
+    descDoc: 'Justification d’absence scolaire adressée à l’établissement : les parents informent l’école sous 2 jours (art. L.131-8 du Code de l’éducation) ; le motif et les dates sont indiqués.',
     refRu: 'ст. L.131-8 Кодекса образования Франции',
     refEn: 'Article L.131-8 of the French Education Code',
     fields: [
@@ -244,6 +253,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Réclamation sur la prise en charge médicale', titleEn: 'Healthcare complaint (réclamation)',
     descRu: 'Жалоба на медицинское обслуживание руководству учреждения; далее — комиссия по отношениям с пользователями (CDU) каждого учреждения и медицинский защитник (médiateur).',
     descEn: 'Healthcare complaint addressed to the institution; next step is the commission des usagers (CDU) and the médiateur médical.',
+    descDoc: 'Réclamation écrite adressée à l’établissement de santé : exposé des faits et demande de réponse ; à défaut, la commission des usagers (CDU) ou le médiateur médical peut être saisi.',
     refRu: 'ст. L.1112-3 и сл. Кодекса здравоохранения Франции',
     refEn: 'Articles L.1112-3 et seq. of the French Public Health Code',
     fields: [
@@ -271,6 +281,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de travaux au bailleur', titleEn: 'Repair request to landlord',
     descRu: 'Требование арендодателю устранить недостатки жилья (жильё должно быть приличным — décent). При неустранении — снижение аренды, привлечение комиссии департамента (CDAD) или суд.',
     descEn: 'Repair demand to the landlord (housing must be decent). If not fixed: rent reduction, departmental conciliation commission (CDAD) or court.',
+    descDoc: 'Mise en demeure adressée au bailleur de réaliser les travaux nécessaires : le logement doit être décent ; à défaut d’exécution, diminution du loyer, commission départementale de conciliation (CDAD) ou tribunal.',
     refRu: 'ст. 1719, 1721 Гражданского кодекса Франции; Code de la construction et de l’habitation',
     refEn: 'Articles 1719, 1721 of the French Civil Code; Construction and Housing Code',
     fields: [
@@ -310,6 +321,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Recours gracieux (administration)', titleEn: 'Recours gracieux (informal administrative appeal)',
     descRu: 'Вежливое возражение администрации на решение (без суда): изложение решения, grounds, запрос пересмотра; предпосылка для recours contentieux (двухмесячный срок, CJA).',
     descEn: 'Informal appeal to the administration against a decision; precondition before a court challenge (2-month delay, CJA).',
+    descDoc: 'Recours gracieux adressé à l’administration auteure de la décision contestée : motifs et demande de retrait ou d’abrogation ; il constitue un préalable utile avant un recours contentieux (délai de 2 mois, CJA).',
     refRu: 'Code de justice administrative, ст. R.421-1 и след.',
     refEn: 'French Code de justice administrative (Art. R.421-1 et seq.)',
     fields: [
@@ -337,6 +349,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande devant le juge de proximité', titleEn: 'Claim to the juge de proximité / tribunal de proximité',
     descRu: 'Основа иска на сумму до 5 000 € (juge de proximité / tribunal de proximité): факты, сумма, доказательства; подача через форму Cerfa.',
     descEn: 'Basis statement for claims up to EUR 5,000 (juge de proximité): facts, amount, evidence.',
+    descDoc: 'Requête au juge de proximité pour les demandes n’excédant pas 5 000 € : exposé des faits, montant réclamé et pièces justificatives ; dépôt au greffe.',
     refRu: 'Code de procédure civile, ст. 824-834 (compétence du juge de proximité)',
     refEn: 'French Code de procédure civile (Arts. 824-834)',
     fields: [
@@ -364,6 +377,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de prise en charge à 100% (ALD)', titleEn: 'Request to CPAM for 100% coverage (ALD)',
     descRu: 'Заявление в кассу медстрахования (CPAM) о признании долгосрочного заболевания (ALD) для 100% покрытия лечения: приложение медицинской справки (ст. L.324-1 CSS).',
     descEn: 'Application to the health insurance fund (CPAM) for recognition of a long-term condition (ALD) granting 100% coverage.',
+    descDoc: 'Demande à la caisse primaire d’assurance maladie (CPAM) de reconnaissance d’affection de longue durée (ALD), ouvrant droit à une prise en charge à 100 %.',
     refRu: 'Code de la sécurité sociale, ст. L.324-1, D.322-4; протокол ALD',
     refEn: 'French Social Security Code (Art. L.324-1, D.322-4)',
     fields: [
@@ -390,6 +404,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Réclamation fiscale', titleEn: 'Tax réclamation letter',
     descRu: 'Возражение на налоговое решение (réclamation): срок до 31 декабря 2-го года после уплаты; основание и документы (CGI, ст. R.196-1 LPF).',
     descEn: 'Objection to a tax assessment (réclamation), generally until 31 December of the second year (Livre des procédures fiscales).',
+    descDoc: 'Réclamation contentieuse auprès du service des impôts contre l’avis contesté : rappel des sommes et des motifs, avec demande de dégrèvement ; délai général jusqu’au 31 décembre de la deuxième année (Livre des procédures fiscales).',
     refRu: 'Livre des procédures fiscales, ст. R.196-1; CGI',
     refEn: 'Livre des procédures fiscales (Art. R.196-1); Code général des impôts',
     fields: [
@@ -416,6 +431,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de sursis de paiement', titleEn: 'Request for stay of payment (sursis de paiement)',
     descRu: 'Ходатайство о sursis de paiement — приостановлении взыскания оспариваемой суммы на время рассмотрения réclamation: по ст. L. 277 LPF налогоплательщик, выполнивший декларационные обязанности, по общему правилу освобождён от уплаты оспариваемой суммы; при угрозе взыскания могут потребовать гарантию.',
     descEn: 'Request for a stay of payment (sursis de paiement) while the réclamation is examined: under art. L. 277 LPF a taxpayer who has met the filing obligations is, as a rule, dispensed from paying the contested amount; a guarantee may be requested if recovery is threatened.',
+    descDoc: 'Demande de sursis de paiement pendant l’examen de la réclamation : en vertu de l’art. L. 277 du LPF, le contribuable ayant respecté ses obligations déclaratives est en principe dispensé de payer les sommes contestées ; une garantie peut être demandée si le recouvrement est menacé.',
     refRu: 'ст. L. 277 Книги налоговых процедур Франции (Livre des procédures fiscales)',
     refEn: 'Article L. 277 of the French Livre des procédures fiscales',
     fields: [
@@ -443,6 +459,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Réclamation bancaire — opération contestée', titleEn: 'Bank complaint — disputed card transaction',
     descRu: 'Претензия в банк по спорной операции (несанкционированное списание, двойное списание, списание после отмены): по ст. L. 133-19 CMF банк возмещает неавторизованную операцию. Ответ банка — до 2 месяцев; далее — банковский медиатор (ст. L. 316-1 CMF), для карт CB — Médiateur de la fédération bancaire française.',
     descEn: 'Complaint to the bank about a disputed transaction (unauthorised, duplicated, charged after cancellation): under art. L. 133-19 CMF the bank must refund an unauthorised transaction. The bank has up to 2 months to answer; then the banking ombudsman (art. L. 316-1 CMF) — for CB cards, the Médiateur de la fédération bancaire française.',
+    descDoc: 'Réclamation adressée à la banque au sujet d’une opération contestée (non autorisée, dupliquée, facturée après résiliation) : l’art. L. 133-19 du CMF impose le remboursement des opérations non autorisées ; à défaut de réponse sous 2 mois, le médiateur bancaire peut être saisi (art. L. 316-1 du CMF).',
     refRu: 'ст. L. 133-19, L. 316-1 Кодекса денежного обращения и финансов Франции (Code monétaire et financier)',
     refEn: 'Articles L. 133-19, L. 316-1 of the French Code monétaire et financier',
     fields: [
@@ -473,6 +490,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Assignation en paiement d’une dette', titleEn: 'Claim for payment of a debt (reconnaissance de dette)',
     descRu: 'Assignation о взыскании долга по долговой расписке: содержание по ст. 56 КГС (juridiction, стороны, objet de la demande, motifs, pièces), упоминание попыток мирного урегулирования (ст. 750-1 КГС); ответственность за неисполнение — ст. 1231-1 ФГК, давность — 5 лет (ст. 2224 ФГК). Документ вручается ответчику комиссаром юстиции (commissaire de justice, ст. 648 КГС).',
     descEn: 'Statement of claim for payment of a debt evidenced by a written acknowledgment (art. 56, 750-1 CPC); served on the defendant by a commissaire de justice (art. 648 CPC).',
+    descDoc: 'Assignation en paiement d’une dette constatée par écrit (reconnaissance de dette) : mentions et pièces exigées (art. 56 et 750-1 du CPC) ; signification au défendeur par commissaire de justice (art. 648 du CPC).',
     refRu: 'ст. 56, 648 Кодекса гражданского процесса Франции; ст. 1231-1, 2224 ФГК',
     refEn: 'Articles 56, 648 of the French Code de procédure civile; Articles 1231-1, 2224 of the French Civil Code',
     fields: [
@@ -510,6 +528,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Assignation en résolution de la vente pour défaut de conformité', titleEn: 'Claim for resolution of the sale for lack of conformity',
     descRu: 'Assignation о расторжении продажи и возврате цены за товар с недостатком (гарантия соответствия): товар должен быть исправен в течение двух лет с передачи (ст. L.217-3 и сл. Кодекса потребления); при безрезультатности приведения в соответствие — расторжение продажи (ст. L.217-14). Сначала письменная претензия и медиатор потребления (ст. L.611-1, L.612-1).',
     descEn: 'Statement of claim to resolve the sale and refund the price for a non-conforming good (art. L.217-3 et seq., L.217-14 of the French Consumer Code); a prior written complaint and consumer mediation are expected.',
+    descDoc: 'Assignation en résolution de la vente et restitution du prix d’un bien non conforme (art. L.217-3 et s., L.217-14 du Code de la consommation) : une réclamation écrite préalable et la médiation de la consommation sont attendues.',
     refRu: 'ст. L.217-3, L.217-14 Кодекса потребления Франции; ст. 56 КГС',
     refEn: 'Articles L.217-3, L.217-14 of the French Consumer Code; Article 56 CPC',
     fields: [
@@ -549,6 +568,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Assignation en recouvrement de loyers impayés', titleEn: 'Claim for recovery of unpaid rent',
     descRu: 'Assignation о взыскании невыплаченной арендной платы перед судьёй по защите прав (juge des contentieux de la protection при tribunal judiciaire): обязанность жильца платить аренду и charges — ст. 7 Закона № 89-462 от 06.07.1989; перед иском жильцу направляется commandement de payer (ст. 24); ответственность за просрочку — ст. 1231-1 ФГК.',
     descEn: 'Statement of claim for unpaid rent before the juge des contentieux de la protection; a prior commandement de payer is required (art. 24 of Act No. 89-462 of 6 July 1989).',
+    descDoc: 'Assignation aux fins de recouvrement des loyers impayés devant le juge des contentieux de la protection : un commandement de payer préalable est requis (art. 24 de la loi n° 89-462 du 6 juillet 1989).',
     refRu: 'ст. 7, 24 Закона № 89-462 от 06.07.1989; ст. 1231-1 ФГК; ст. 56 КГС',
     refEn: 'Articles 7, 24 of French Act No. 89-462 of 6 July 1989; Article 1231-1 of the Civil Code; Article 56 CPC',
     fields: [
@@ -585,6 +605,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande d’accès au dossier médical', titleEn: 'Request for access to medical records (dossier médical)',
     descRu: 'Запрос врачу или медучреждению о доступе к информации из медицинской карты (dossier médical): консультация на месте — бесплатно; копии — по стоимости репродукции и отправки; доступ — прямой, без ограничений по времени (ст. L.1111-7 Code de la santé publique).',
     descEn: 'Request to a physician or health institution for access to the medical record: on-site consultation is free; copies are charged at reproduction and postage cost (art. L.1111-7 of the Public Health Code).',
+    descDoc: 'Demande au médecin ou à l’établissement de santé d’accéder au dossier médical : la consultation sur place est gratuite ; les copies sont facturées au coût de reproduction et d’envoi (art. L.1111-7 du Code de la santé publique).',
     refRu: 'ст. L.1111-7 Кодекса здравоохранения Франции (Code de la santé publique)',
     refEn: 'Article L.1111-7 of the French Public Health Code',
     fields: [
@@ -612,6 +633,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande d’inscription scolaire en mairie', titleEn: 'School enrolment application to the mairie',
     descRu: 'Заявление в мэрию коммуны о регистрации ребёнка для поступления в школу: мэр выдаёт сертификат зачисления, после чего директор школы оформляет запись (ст. L.212-1, L.131-5, L.131-6 Code de l’éducation). Прилагаются livret de famille, подтверждение проживания и прививочный сертификат (11 обязательных прививок).',
     descEn: 'Application to the mairie for school registration: the mayor issues a registration certificate, then the school head completes the enrolment (art. L.212-1, L.131-5, L.131-6 of the Education Code).',
+    descDoc: 'Demande d’inscription scolaire adressée à la mairie : le maire délivre un certificat d’inscription, puis le chef d’établissement procède à l’inscription définitive (art. L.212-1, L.131-5 et L.131-6 du Code de l’éducation).',
     refRu: 'ст. L.212-1, L.131-5, L.131-6 Кодекса образования Франции',
     refEn: 'Articles L.212-1, L.131-5, L.131-6 of the French Education Code',
     fields: [
@@ -642,6 +664,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Contestation des charges locatives', titleEn: 'Dispute of rental building charges (charges locatives)',
     descRu: 'Возражение на годовую регуляризацию арендных сборов (charges récupérables): арендодатель обязан предоставить сводку (récapitulatif), а по запросу — оправдательные документы (ст. 23 loi n° 89-462); перечень сборов — décret n° 87-713; взыскание ограничено 3 годами (ст. 7-1 loi n° 89-462).',
     descEn: 'Objection to the annual regularization of recoverable charges: the landlord must provide the statement and, on request, supporting documents (art. 23 of law 89-462); the list of recoverable charges is set by decree 87-713; recovery is time-barred after 3 years (art. 7-1).',
+    descDoc: 'Contestation de la régularisation annuelle des charges récupérables : le bailleur doit fournir le décompte et, sur demande, les pièces justificatives (art. 23 de la loi n° 89-462) ; la liste des charges est fixée par le décret n° 87-713 et la récupération se prescrit par 3 ans (art. 7-1).',
     refRu: 'ст. 23, 7-1 Закона № 89-462 от 06.07.1989; décret n° 87-713 du 26.08.1987',
     refEn: 'Articles 23, 7-1 of Law No. 89-462 of 6 July 1989; Decree No. 87-713',
     fields: [
@@ -695,6 +718,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de liquidation de la retraite', titleEn: 'Pension liquidation request (retraite)',
     descRu: 'Заявление в Carsat (Assurance retraite) о liquidation — назначении и выплате пенсии по старости: подаётся с бланком «Demande de retraite personnelle» (Cerfa n° 14079), обычно за 4–6 месяцев до желаемой даты. При правах в нескольких режимах (AGIRC-ARRCO) проще единое онлайн-заявление на info-retraite.fr.',
     descEn: 'Request to the Carsat (Assurance retraite) for the liquidation — award and payment of the old-age pension, filed with the “Demande de retraite personnelle” form (Cerfa n° 14079), usually 4–6 months before the intended date. With rights in several schemes (AGIRC-ARRCO), the single online request at info-retraite.fr is simpler.',
+    descDoc: 'Demande adressée à la Carsat (Assurance retraite) aux fins de liquidation de la pension de vieillesse, avec le formulaire « Demande de retraite personnelle » (Cerfa n° 14079), généralement 4 à 6 mois avant la date souhaitée ; en cas de droits dans plusieurs régimes (AGIRC-ARRCO), la demande unique en ligne sur info-retraite.fr est plus simple.',
     refRu: 'ст. L. 351-1 Кодекса социального страхования Франции; бланк Cerfa n° 14079',
     refEn: 'Article L. 351-1 of the French Social Security Code; form Cerfa n° 14079',
     fields: [
@@ -723,6 +747,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Plainte pour bruits de voisinage', titleEn: 'Complaint about neighbor noise (syndic / mairie)',
     descRu: 'Жалоба в syndic (обеспечивает соблюдение règlement de copropriété) или в mairie/police municipale (местные предписания о тишине) на систематический шум соседа. Перед обращением направьте соседу courrier de mise en demeure и ведите список нарушений (даты, часы). Основания: loi n° 85-673 du 11.07.1985, décret n° 2006-1099 (bruits de voisinage), ст. R.1336-5 и сл. Code de la santé publique.',
     descEn: 'Complaint to the syndic (which enforces the règlement de copropriété) or the mairie/municipal police (local noise ordinances) about recurring neighbor noise. Send the neighbor a mise en demeure first and keep a log of the disturbances. Based on law n° 85-673, decree n° 2006-1099 and art. R.1336-5 et seq. of the Public Health Code.',
+    descDoc: 'Plainte écrite au syndic (garant du règlement de copropriété) ou à la mairie / à la police municipale (règlement local) contre des nuisances sonores répétées de voisinage : il est conseillé de mettre d’abord le voisin en demeure et de consigner les troubles dans un journal ; fondée sur la loi n° 85-673, le décret n° 2006-1099 et les art. R.1336-5 et s. du Code de la santé publique.',
     refRu: 'закон № 85-673 от 11.07.1985; décret n° 2006-1099 du 31.08.2006; ст. R.1336-5 и сл. Кодекса здравоохранения Франции; ст. 544 Гражданского кодекса (trouble anormal de voisinage)',
     refEn: 'Law No. 85-673 of 11 July 1985; Decree No. 2006-1099; art. R.1336-5 et seq. of the French Public Health Code; art. 544 Civil Code (abnormal neighborhood nuisance)',
     fields: [
@@ -752,6 +777,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Déclaration de dégât des eaux', titleEn: 'Water damage declaration (dégât des eaux)',
     descRu: 'Декларация страховщику о заливе квартиры (dégât des eaux) с приложением constat amiable dégât des eaux, заполненного с соседом. Уведомьте страховщика безотлагательно — как правило, в течение 5 рабочих дней (ст. L.113-2 Code des assurances); порядок экспертизы и возмещения между страховщиками определяет конвенция IRSI. Опишите повреждения, приложите фото и счета.',
     descEn: 'Declaration of water damage (dégât des eaux) to your insurer with the joint report (constat amiable dégât des eaux) filled in with the neighbor. Notify the insurer promptly — usually within 5 working days (art. L.113-2 of the Insurance Code); the IRSI convention governs expertise and compensation between insurers.',
+    descDoc: 'Déclaration de dégât des eaux adressée à l’assureur avec le constat amiable rempli avec le voisin : déclarer sans délai, en principe sous 5 jours ouvrés (art. L.113-2 du Code des assurances) ; la convention IRSI encadre l’expertise et l’indemnisation entre assureurs.',
     refRu: 'ст. L.113-2 Кодекса страхования Франции (Code des assurances); конвенция IRSI (constat amiable dégât des eaux)',
     refEn: 'Article L.113-2 of the French Insurance Code; IRSI convention (joint water damage report)',
     fields: [
@@ -783,6 +809,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Plainte au syndic — propreté des parties communes et tabagisme', titleEn: 'Complaint to the syndic: cleanliness of common areas and smoking',
     descRu: 'Жалоба syndic de copropriété на грязь, мусор, вредителей или курение в местах общего пользования дома. Исполнение règlement de copropriété обеспечивает синдик (ст. 8 закона № 65-557 от 10.07.1965); курение в закрытых местах коллективного пользования, включая подъезды жилых домов, запрещено décret n° 2006-1386. Укажите длительность проблемы и просите конкретные меры, вплоть до рассмотрения на ближайшем assemblée générale.',
     descEn: 'Complaint to the syndic about dirt, waste, pests or smoking in the common areas. The syndic enforces the règlement de copropriété (art. 8 of law No. 65-557 of 10 July 1965); smoking in enclosed collective areas, including residential entrances, is banned by decree No. 2006-1386. State how long the problem persists and ask for concrete measures.',
+    descDoc: 'Réclamation au syndic concernant la saleté, les déchets, les nuisibles ou le tabagisme dans les parties communes : le syndic veille au respect du règlement de copropriété (art. 8 de la loi n° 65-557 du 10 juillet 1965) ; l’interdiction de fumer dans les espaces collectifs fermés résulte du décret n° 2006-1386 ; la durée du problème est indiquée et des mesures concrètes sont demandées.',
     refRu: 'ст. 8 Закона № 65-557 от 10.07.1965 (règlement de copropriété); décret n° 2006-1386 du 15.11.2006 (запрет курения в местах коллективного пользования)',
     refEn: 'Article 8 of Law No. 65-557 of 10 July 1965 (règlement de copropriété); Decree No. 2006-1386 (smoking ban in collective areas)',
     fields: [
@@ -810,6 +837,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de réparation (article 6 de la loi n° 89-462)', titleEn: 'Repair request to the landlord or syndic (art. 6 of law 89-462)',
     descRu: 'Просьба к bailleur или syndic устранить неисправность в квартире или в доме. По ст. 6 закона № 89-462 от 06.07.1989 арендодатель обязан поддерживать жильё в состоянии, пригодном для использования, и производить все ремонты, кроме текущего (réparations locatives). Опишите неисправность, дату обнаружения и удобное время доступа; при бездействии — комиссия CDAD или суд.',
     descEn: 'Request to the landlord or syndic to repair a defect in the dwelling or building. Under art. 6 of law No. 89-462 of 6 July 1989, the landlord must keep the dwelling fit for its intended use and carry out all repairs other than the tenant’s routine upkeep. If the landlord remains inactive, the CDAD conciliation commission or the court is next.',
+    descDoc: 'Demande au bailleur ou au syndic de réparer un défaut du logement ou de l’immeuble : en vertu de l’art. 6 de la loi n° 89-462 du 6 juillet 1989, le bailleur doit maintenir le logement en état d’être utilisé conformément à sa destination et effectuer les réparations autres que l’entretien courant du locataire ; en cas d’inertie, commission de conciliation (CDAD) ou tribunal.',
     refRu: 'ст. 6 Закона № 89-462 от 06.07.1989 (обязанности арендодателя)',
     refEn: 'Article 6 of Law No. 89-462 of 6 July 1989 (landlord obligations)',
     fields: [
@@ -837,6 +865,7 @@ export const TEMPLATES_FR: TplDef[] = [
     titleDoc: 'Demande de régularisation des charges et communication du relevé', titleEn: 'Charges regularization request and statement review',
     descRu: 'Письмо арендодателю по итогам годовой регуляризации charges: запрос детального relevé des charges и оправдательных документов, требование произвести регуляризацию. Перечень перераспределяемых сборов (charges récupérables) ограничен décret n° 87-713; переплата возвращается в течение месяца после регуляризации (ст. 23 закона № 89-462), а доплату арендатора можно рассрочить на 12 месяцев (ст. 23-1).',
     descEn: 'Letter to the landlord following the annual charges regularization: request for the detailed charges statement and supporting documents, and demand to carry out the regularization. Recoverable charges are limited by decree No. 87-713; overcharges are refunded within one month (art. 23 of law No. 89-462), and the tenant’s additional payment can be spread over 12 months (art. 23-1).',
+    descDoc: 'Lettre au bailleur à la suite de la régularisation annuelle des charges : demande du décompte détaillé et des pièces justificatives, et exigence de régularisation ; les charges récupérables sont limitées par le décret n° 87-713, le trop-perçu est remboursé sous 1 mois (art. 23 de la loi n° 89-462) et le complément du locataire peut être étalé sur 12 mois (art. 23-1).',
     refRu: 'ст. 23, 23-1 Закона № 89-462 от 06.07.1989; décret n° 87-713 du 26.08.1987',
     refEn: 'Articles 23, 23-1 of Law No. 89-462 of 6 July 1989; Decree No. 87-713 of 26 August 1987',
     fields: [

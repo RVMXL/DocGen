@@ -40,6 +40,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Жыл сайынғы ақы төленетін еңбек демалысына өтініш', titleEn: 'Annual paid leave application',
     descRu: 'Заявление работодателю о предоставлении оплачиваемого ежегодного трудового отпуска. Минимальная продолжительность по ТК РК — 24 календарных дня за рабочий год; график отпусков утверждается работодателем.',
     descEn: 'Application for annual paid leave. Minimum duration under the Kazakhstan Labour Code is 24 calendar days per working year.',
+    descDoc: 'Жыл сайынғы ақы төленетін еңбек демалысын беру туралы жұмыс берушіге өтініш.',
     refRu: 'ст. 88 Трудового кодекса Республики Казахстан от 23.11.2015 № 414-V',
     refEn: 'Article 88 of the Labour Code of the Republic of Kazakhstan No. 414-V',
     fields: [
@@ -61,6 +62,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Еңбек ақысы сақталмайтын демалысқа өтініш', titleEn: 'Unpaid leave application',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и иным уважительным причинам. Предоставляется по соглашению с работодателем на срок до 30 календарных дней в году (если иное не предусмотрено договором).',
     descEn: 'Unpaid leave application for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Отбасы жағдайына және өзге де себептерге байланысты еңбек ақысы сақталмайтын демалыс беру туралы өтініш.',
     refRu: 'ст. 97 Трудового кодекса Республики Казахстан',
     refEn: 'Article 97 of the Labour Code of the Republic of Kazakhstan',
     fields: [
@@ -84,6 +86,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Өз еркімен жұмыстан босату туралы өтініш', titleEn: 'Voluntary resignation application',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Работник обязан письменно предупредить работодателя не менее чем за один месяц до увольнения (ст. 53 ТК РК).',
     descEn: 'Voluntary resignation application. The employee must notify the employer in writing at least one month in advance (Art. 53 of the Labour Code of Kazakhstan).',
+    descDoc: 'Еңбек шартын өз еркімен бұзу туралы, жұмыс берушіге бір ай бұрын жазбаша ескертілген өтініш.',
     refRu: 'ст. 53 Трудового кодекса Республики Казахстан',
     refEn: 'Article 53 of the Labour Code of the Republic of Kazakhstan',
     fields: [
@@ -105,6 +108,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Жұмыс орнынан құжаттар беруді сұрау өтініші', titleEn: 'Workplace documents request',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о заработной плате, занимаемой должности, копий приказов. Выдаются не позднее пяти рабочих дней со дня подачи заявления.',
     descEn: 'Request for work-related documents (salary certificate, position confirmation, order copies). To be issued within five working days.',
+    descDoc: 'Еңбек қызметіне байланысты құжаттарды (жалақы туралы анықтама, бұйрық көшірмелері) беруді сұрау өтініші.',
     refRu: 'ст. 61 Трудового кодекса Республики Казахстан',
     refEn: 'Article 61 of the Labour Code of the Republic of Kazakhstan',
     fields: [
@@ -126,6 +130,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Сатушыға тауар сапасы туралы шағым', titleEn: 'Claim to seller: defective goods',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в тенге. При отказе — обращение в суд или в уполномоченный орган по защите прав потребителей.',
     descEn: 'Pre-court claim to a seller over defective goods under the Kazakhstan Consumer Protection Law.',
+    descDoc: 'Сапасыз тауар үшін төленген ақшаны қайтару туралы сатушыға сотқа дейінгі шағым (претензия).',
     refRu: 'Закон Республики Казахстан от 04.05.2010 № 274-IV «О защите прав потребителей»',
     refEn: 'Consumer Protection Law of the Republic of Kazakhstan No. 274-IV',
     fields: [
@@ -159,6 +164,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Қарызды өндіріп алу туралы арыз', titleEn: 'Lawsuit: debt recovery by IOU',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика; госпошлина рассчитывается от цены иска.',
     descEn: 'Basic claim for debt recovery under a written loan note (IOU). Filed at the defendant’s place of residence.',
+    descDoc: 'Қолхатпен расталған қарыз шарты бойынша қарызды өндіріп алу туралы сотқа арыз.',
     refRu: 'ст. 715, 718 Гражданского кодекса РК; Гражданский процессуальный кодекс РК',
     refEn: 'Articles 715, 718 of the Civil Code of Kazakhstan; Civil Procedure Code of Kazakhstan',
     fields: [
@@ -194,6 +200,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Қолхат', titleEn: 'IOU / loan receipt',
     descRu: 'Расписка о получении денег в заём между физическими лицами. В Казахстане договор займа свыше 100 МРП заключается в письменной форме; расписка подтверждает договор.',
     descEn: 'Loan receipt between individuals. Written form is required for loans above 100 MRP under the Kazakh Civil Code.',
+    descDoc: 'Жеке тұлғалар арасында қарыз ақша алынғаны туралы қолхат; қарыз шартын растайды.',
     refRu: 'ст. 715, 718 Гражданского кодекса Республики Казахстан',
     refEn: 'Articles 715, 718 of the Civil Code of the Republic of Kazakhstan',
     fields: [
@@ -220,6 +227,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Сенатнама', titleEn: 'General civil power of attorney',
     descRu: 'Доверенность на совершение бытовых действий: получение документов, писем, справок. Для сделок с недвижимостью и требований нотариальной формы — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions (receiving documents, mail). Notarial form is required for real estate transactions.',
+    descDoc: 'Құжаттарды, хаттарды және анықтамаларды алуға арналған сенатнама; жылжымайтын мүлік мәмілелері үшін нотариат растауы талап етіледі.',
     refRu: 'ст. 151–155 Гражданского кодекса Республики Казахстан',
     refEn: 'Articles 151-155 of the Civil Code of the Republic of Kazakhstan',
     fields: [
@@ -245,6 +253,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Мектепке баланың сабаққа қатыспауы туралы өтініш', titleEn: 'School absence notice for a child',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях (по семейным обстоятельствам, болезни без больничного и т.п.). Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes for family reasons.',
+    descDoc: 'Баланың сабаққа қатыспау себептері туралы мектеп директорына өтініш.',
     refRu: 'законодательство Республики Казахстан в сфере образования',
     refEn: 'Education legislation of the Republic of Kazakhstan',
     fields: [
@@ -271,6 +280,7 @@ export const TEMPLATES_KZ: TplDef[] = [
     titleDoc: 'Дәрігерге шағым', titleEn: 'Medical care quality complaint',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Управление общественного здоровья или Минздрав РК; обращения рассматриваются по законодательству о порядке рассмотрения обращений.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Медициналық ұйым басшысына көрсетілген медициналық көмек сапасы туралы шағым.',
     refRu: 'Кодекс РК «О здоровье народа и системе здравоохранения»; Закон РК «О порядке рассмотрения обращений физических и юридических лиц»',
     refEn: 'Health Code of Kazakhstan; Law on the procedure for consideration of applications',
     fields: [

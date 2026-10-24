@@ -27,6 +27,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Заява про надання щорічної оплачуваної відпустки',
     descRu: 'Заявление работодателю о предоставлении ежегодного основного отпуска. Продолжительность — не менее 24 календарных дней за отработанный рабочий год (ст. 6 Закона «Про відпустки»).',
     descEn: 'Application for annual basic leave. Minimum duration is 24 calendar days per working year (Art. 6 of the Ukrainian Vacation Law).',
+    descDoc: 'Заява роботодавцю про надання щорічної основної оплачуваної відпустки.',
     refRu: 'ст. 6 Закона Украины «Про відпустки» № 504/96-ВР',
     refEn: 'Article 6 of the Ukrainian Law No. 504/96-VR «On Vacations»',
     fields: [
@@ -48,6 +49,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Заява про надання відпустки без збереження заробітної плати',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным обстоятельствам и другим уважительным причинам — по соглашению сторон (ст. 8 Закона «Про відпустки»).',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement (Art. 8 of the Vacation Law).',
+    descDoc: 'Заява про надання відпустки без збереження заробітної плати з поважних причин.',
     refRu: 'ст. 8 Закона Украины «Про відпустки» № 504/96-ВР',
     refEn: 'Article 8 of the Ukrainian Law No. 504/96-VR «On Vacations»',
     fields: [
@@ -72,6 +74,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Заява про звільнення за власним бажанням',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Работник обязан предупредить работодателя за две недели (ст. 38 КЗпП). По уважительным причинам — в срок, который просит работник.',
     descEn: 'Voluntary resignation application. Two weeks notice under Art. 38 of the Ukrainian Labour Code (КЗпП).',
+    descDoc: 'Заява роботодавцю про звільнення за власним бажанням із попередженням за два тижні.',
     refRu: 'ст. 38 Кодекса законов о труде Украины',
     refEn: 'Article 38 of the Labour Code of Ukraine (КЗпП)',
     fields: [
@@ -94,6 +97,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Заява про видачу документів, пов’язаних з роботою',
     descRu: 'Заявление о выдаче копий документов, связанных с работой: справки о зарплате, копий приказов, выписок из трудовой книжки.',
     descEn: 'Request for copies of work-related documents: salary certificates, order copies, employment record extracts.',
+    descDoc: 'Заява про видачу документів, пов’язаних з роботою: довідки про зарплату, копій наказів, витягів з трудової книжки.',
     refRu: 'Кодекс законов о труде Украины',
     refEn: 'Labour Code of Ukraine (КЗпП)',
     fields: [
@@ -114,6 +118,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Претензія про повернення товару неналежної якості',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Гарантия на товар — 2 года; суммы в гривнах. При отказе — обращение в суд или Госпотребслужбу.',
     descEn: 'Pre-court claim to a seller over defective goods under Ukrainian consumer protection law.',
+    descDoc: 'Досудова претензія продавцеві про повернення коштів за товар неналежної якості.',
     refRu: 'Закон Украины «Про захист прав споживачів»',
     refEn: 'Law of Ukraine «On Consumer Protection»',
     fields: [
@@ -147,6 +152,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Позовна заява про стягнення боргу за договором позики',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика; судебный сбор рассчитывается от цены иска.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Позовна заява до суду про стягнення боргу за договором позики, підтвердженим розпискою.',
     refRu: 'ст. 1046, 1047 Гражданского кодекса Украины; ст. 175 Гражданского процессуального кодекса Украины',
     refEn: 'Articles 1046-1047 of the Civil Code of Ukraine; Art. 175 of the Civil Procedure Code of Ukraine',
     fields: [
@@ -182,6 +188,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Розписка про отримання грошових коштів у позику',
     descRu: 'Расписка о получении денег в заём между физическими лицами. Договор займа на сумму свыше 170 грн (10 необлагаемых минимумов) — в письменной форме.',
     descEn: 'Loan receipt between individuals; written form required for loans above 10 non-taxable minimums.',
+    descDoc: 'Розписка про отримання грошових коштів у позику між фізичними особами; підтверджує договір позики.',
     refRu: 'ст. 1046, 1047 Гражданского кодекса Украины',
     refEn: 'Articles 1046-1047 of the Civil Code of Ukraine',
     fields: [
@@ -208,6 +215,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Довіреність (загальна цивільна)',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок с недвижимостью и подлежащих нотариальному удостоверению — только нотариальная доверенность (ст. 245 ЦК Украины).',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for real estate transactions (Art. 245 of the Civil Code).',
+    descDoc: 'Довіреність на отримання документів, листів і довідок; для правочинів з нерухомістю потрібна нотаріальна форма.',
     refRu: 'ст. 244–246 Гражданского кодекса Украины',
     refEn: 'Articles 244-246 of the Civil Code of Ukraine',
     fields: [
@@ -233,6 +241,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Заява про відсутність дитини на заняттях',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Заява директору школи про причини відсутності дитини на заняттях.',
     refRu: 'Закон Украины «Про повну загальну середню освіту»',
     refEn: 'Ukrainian Law on Complete General Secondary Education',
     fields: [
@@ -259,6 +268,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Скарга на якість медичної допомоги',
     descRu: 'Первый этап обжалования — жалоба руководителю учреждения здравоохранения. Далее — в департамент здравоохранения или Минздрав; также жалобы принимает НСЗУ и уполномоченный по правам пациентов.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the healthcare institution.',
+    descDoc: 'Скарга керівнику закладу охорони здоров’я на якість наданої медичної допомоги.',
     refRu: 'Основы законодательства Украины про охорону здоровья',
     refEn: 'Fundamentals of Ukrainian Legislation on Healthcare',
     fields: [
@@ -672,6 +682,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Позовна заява про розірвання договору купівлі-продажу та повернення коштів за товар неналежної якості',
     descRu: 'Иск к продавцу о расторжении договора купли-продажи и возврате уплаченной за товар ненадлежащего качества суммы. Перед обращением в суд направьте продавцу письменную претензию — сведения о досудебном урегулировании обязательны по ст. 175 ЦПК Украины. Подаётся в суд по месту жительства (наххождения) ответчика; судебный сбор рассчитывается от цены иска.',
     descEn: 'Lawsuit against a seller to terminate the sale contract and refund money paid for defective goods; a written pre-court claim is required first.',
+    descDoc: 'Позовна заява до суду про розірвання договору купівлі-продажу та повернення коштів за товар неналежної якості.',
     refRu: 'ст. 686, 687 Гражданского кодекса Украины; Закон Украины «О защите прав потребителей» № 1023-XII; ст. 175 Гражданского процессуального кодекса Украины',
     refEn: 'Articles 686-687 of the Civil Code of Ukraine; Law of Ukraine No. 1023-XII on Consumer Protection; Art. 175 of the Civil Procedure Code of Ukraine',
     fields: [
@@ -710,6 +721,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Позовна заява про відшкодування шкоди, завданої залиттям житла',
     descRu: 'Иск к владельцу квартиры, из которой произошло затопление, о возмещении материального ущерба и морального вреда. Ключевые доказательства — акт о залитии, составленный управляющей организацией или ОСББ, и оценка ущерба. Подаётся в суд по месту жительства ответчика; судебный сбор рассчитывается от цены иска.',
     descEn: 'Lawsuit against the owner of the flooding apartment for material and moral damages; key evidence is the flooding report and property valuation.',
+    descDoc: 'Позовна заява до суду про відшкодування матеріальної та моральної шкоди, завданої залиттям житла.',
     refRu: 'ст. 1166, 1167 Гражданского кодекса Украины; ст. 175 Гражданского процессуального кодекса Украины',
     refEn: 'Articles 1166-1167 of the Civil Code of Ukraine; Art. 175 of the Civil Procedure Code of Ukraine',
     fields: [
@@ -749,6 +761,7 @@ export const TEMPLATES_UA: TplDef[] = [
     titleDoc: 'Позовна заява про стягнення заробітної плати та середнього заробітку за час затримки розрахунку',
     descRu: 'Иск работодателю о взыскании невыплаченной при увольнении заработной платы и среднего заработка за время задержки расчёта. При увольнении все причитающиеся суммы выплачиваются в день увольнения (ст. 116 КЗпП); при задержке по вине работодателя выплачивается средний заработок за всё время задержки (ст. 117 КЗпП). Срок обращения в суд по спорам об оплате труда не ограничен (ст. 233 КЗпП); истцы по искам о взыскании зарплаты освобождены от судебного сбора.',
     descEn: 'Lawsuit against the employer for wages unpaid upon dismissal and average earnings for the delayed final settlement; no time limit applies to wage claims.',
+    descDoc: 'Позовна заява до суду про стягнення заробітної плати, не виплаченої при звільненні, та середнього заробітку за час затримки розрахунку.',
     refRu: 'ст. 116, 117, 233 Кодекса законов о труде Украины; Гражданский процессуальный кодекс Украины',
     refEn: 'Articles 116, 117, 233 of the Labour Code of Ukraine (КЗпП); Civil Procedure Code of Ukraine',
     fields: [

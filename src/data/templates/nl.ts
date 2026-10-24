@@ -86,6 +86,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Aanvraag vakantiedagen', titleEn: 'Annual leave application',
     descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. По BW 7:611a отпуск составляет 4× недельную рабочую нагрузку (минимум 20 дней при полной рабочей неделе); работодатель учитывает пожелания работника, если это возможно.',
     descEn: 'Annual leave application. Under BW 7:611a the statutory holiday amounts to 4× the weekly working hours (at least 20 days for a full working week); the employer takes the employee’s wishes into account where possible.',
+    descDoc: 'Verzoek aan de werkgever om het jaarlijkse vakantieverlof op te nemen in de aangegeven periode; wettelijk geldt viermaal de wekelijkse arbeidsduur (ten minste 20 dagen bij een volledige werkweek, art. 7:611a BW).',
     refRu: 'BW 7:611a (Burgerlijk Wetboek) — отпуск: 4× недельная рабочая нагрузка, минимум 20 дней',
     refEn: 'Article 7:611a of the Dutch Civil Code (BW) — statutory leave of 4× the weekly working hours, at least 20 days',
     fields: [
@@ -111,6 +112,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek wijziging arbeidsduur', titleEn: 'Request to change working hours (Wet flexibel werken)',
     descRu: 'Заявление об изменении рабочей недели по Wet flexibel werken (BW 7:609–610b): работник вправе просить изменить продолжительность рабочего времени; отказ возможен только по веским производственным причинам и должен быть мотивирован.',
     descEn: 'Request to change the weekly working hours under the Wet flexibel werken (BW 7:609–610b): the employer may only refuse for compelling business reasons, with written motivation.',
+    descDoc: 'Verzoek om wijziging van de arbeidsduur op grond van de Wet flexibel werken (art. 7:609–610b BW): gewenste uren en spreiding; de werkgever kan slechts om zwaarwegende bedrijfsredenen weigeren en motiveert dit schriftelijk.',
     refRu: 'Wet flexibel werken (BW 7:609–7:610b) — изменение рабочей нагрузки; отказ только по веским производственным причинам',
     refEn: 'Wet flexibel werken (BW 7:609–7:610b) — change of working hours; refusal only for compelling business reasons',
     fields: [
@@ -146,6 +148,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Melding zwangerschapsverlof', titleEn: 'Notification of maternity leave (WAZO)',
     descRu: 'Уведомление работодателя о беременности и начале декретного отпуска (zwangerschaps- en bevallingsverlof) по Wet arbeid en zorg (WAZO): в общей сложности 16 недель (4–6 недель до предположительной даты родов, 10–12 после). Работодатель выдаёт справку для пособия UWV.',
     descEn: 'Notification of pregnancy and maternity leave (zwangerschaps- en bevallingsverlof) under the Wet arbeid en zorg (WAZO): 16 weeks in total, starting 4–6 weeks before the expected delivery date. The employer provides a statement for the UWV benefit.',
+    descDoc: 'Kennisgeving aan de werkgever van de zwangerschap en het zwangerschaps- en bevallingsverlof (WAZO): in totaal 16 weken, waarvan 4 tot 6 vóór de vermoedelijke bevallingsdatum; de werkgever verstrekt een verklaring voor de UWV-uitkering.',
     refRu: 'Wet arbeid en zorg (WAZO) — декретный отпуск и пособие по беременности',
     refEn: 'Wet arbeid en zorg (WAZO) — maternity leave and pregnancy benefit',
     fields: [
@@ -170,6 +173,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek calamiteitenverlof', titleEn: 'Request for calamity leave',
     descRu: 'Заявление на краткосрочный оплачиваемый отпуск-отгул по семейным обстоятельствам (calamiteitenverlof, BW 7:620): внезапная болезнь близких, смерть родственника, аварийные ситуации; оплачивается за часы необходимого отсутствия.',
     descEn: 'Request for short paid leave for urgent family circumstances (calamiteitenverlof, BW 7:620): sudden illness of relatives, bereavement, emergencies; paid for the hours of necessary absence.',
+    descDoc: 'Verzoek om kort betaald calamiteitenverlof voor dringende familieomstandigheden (art. 7:620 BW): plotselinge ziekte van naasten, overlijden of noodsituaties; betaald over de uren van de noodzakelijke afwezigheid.',
     refRu: 'BW 7:620 (Burgerlijk Wetboek) — calamiteitenverlof (краткосрочный отпуск по семейным обстоятельствам)',
     refEn: 'Article 7:620 of the Dutch Civil Code (BW) — calamity leave (short-term absence for family circumstances)',
     fields: [
@@ -203,6 +207,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Opzegbrief werknemer', titleEn: 'Resignation letter (one-month notice)',
     descRu: 'Заявление об увольнении по инициативе работника с соблюдением срока уведомления: по BW 7:676 работник соблюдает срок в один месяц. Письмо также просит справку (getuigschrift, BW 7:656) и окончательный расчёт.',
     descEn: 'Resignation letter observing the notice period: under BW 7:676 the employee observes a one-month notice period. The letter also requests a certificate of employment (BW 7:656) and the final settlement.',
+    descDoc: 'Opzegbrief van de werknemer met inachtneming van de opzegtermijn van één maand (art. 7:676 BW); tevens worden een getuigschrift (art. 7:656 BW) en de eindafrekening gevraagd.',
     refRu: 'BW 7:676 (Burgerlijk Wetboek) — срок уведомления работника: один месяц',
     refEn: 'Article 7:676 of the Dutch Civil Code (BW) — employee’s notice period of one month',
     fields: [
@@ -226,6 +231,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Zienswijze bij het UWV tegen ontslag', titleEn: 'Statement of views to the UWV against dismissal',
     descRu: 'Возражения работника в UWV по ходатайству работодателя о разрешении на увольнение (dossiernummer UWV): отсутствие разумного основания (BW 7:669), не исследовано перетрудоустройство (herplaatsing).',
     descEn: 'The employee’s statement of views to the UWV regarding the employer’s request for permission to dismiss (UWV dossier number): no reasonable ground under BW 7:669, redeployment not (sufficiently) explored.',
+    descDoc: 'Schriftelijke reactie van de werknemer op het verzoek van de werkgever om toestemming voor ontslag bij het UWV (UWV-dossiernummer): geen redelijke grond (art. 7:669 BW) en herplaatsing niet (voldoende) onderzocht.',
     refRu: 'BW 7:669 (Burgerlijk Wetboek) — разумное основание для увольнения и перетрудоустройство; zienswijze при процедуре UWV',
     refEn: 'Article 7:669 of the Dutch Civil Code (BW) — reasonable ground for dismissal and redeployment; statement of views in the UWV procedure',
     fields: [
@@ -251,6 +257,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Ziekmelding', titleEn: 'Sickness notification',
     descRu: 'Уведомление работодателя о временной нетрудоспособности. По BW 7:629 работодатель продолжает выплачивать зарплату (первый год — 100%, второй — 70%) в течение максимум 104 недель; сотрудник сотрудничает с корпоративным врачом.',
     descEn: 'Notification of temporary incapacity for work. Under BW 7:629 the employer continues to pay wages (100% in the first year, 70% in the second) for up to 104 weeks; the employee cooperates with the occupational physician.',
+    descDoc: 'Ziekmelding bij de werkgever wegens tijdelijke arbeidsongeschiktheid: bij ziekte betaalt de werkgever tot 104 weken door (eerste jaar 100%, tweede jaar 70%, art. 7:629 BW); de werknemer werkt mee aan de begeleiding door de bedrijfsarts.',
     refRu: 'BW 7:629 (Burgerlijk Wetboek) — сохранение зарплаты при болезни (до 104 недель)',
     refEn: 'Article 7:629 of the Dutch Civil Code (BW) — continued payment of wages during sickness (up to 104 weeks)',
     fields: [
@@ -276,6 +283,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek getuigschrift', titleEn: 'Request for a certificate of employment',
     descRu: 'Запрос справки от работодателя о характере и сроке работы. По BW 7:656 работодатель обязан по первому требованию выдать справку (getuigschrift) о выполнявшихся обязанностях и периоде занятости.',
     descEn: 'Request for a certificate from the employer about the nature and duration of the work. Under BW 7:656 the employer must, upon first request, issue a certificate of employment (getuigschrift).',
+    descDoc: 'Verzoek aan de werkgever om een getuigschrift over de aard en duur van de werkzaamheden; de werkgever moet dit op eerste verzoek afgeven (art. 7:656 BW).',
     refRu: 'BW 7:656 (Burgerlijk Wetboek) — обязанность работодателя выдать справку (getuigschrift)',
     refEn: 'Article 7:656 of the Dutch Civil Code (BW) — employer’s obligation to issue a certificate of employment',
     fields: [
@@ -301,6 +309,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek salarisstrook', titleEn: 'Request for a (duplicate) payslip',
     descRu: 'Запрос дубликата расчётного листа за указанный месяц. Право следует из BW 7:611 и Wet op de loonbelasting 1964 (art. 32): работник вправе получить детализированную информацию о зарплате и удержаниях.',
     descEn: 'Request for a duplicate payslip for a specified month. The right follows from BW 7:611 and the Wet op de loonbelasting 1964 (art. 32): the employee is entitled to a specified statement of wages and deductions.',
+    descDoc: 'Verzoek om een duplicaat van de salarisstrook van de aangegeven maand: recht op een gespecificeerde opgave van loon en inhoudingen (art. 7:611 BW en art. 32 Wet op de loonbelasting 1964).',
     refRu: 'BW 7:611 jo. Wet op de loonbelasting 1964, art. 32 — расчётный лист (loonstrook)',
     refEn: 'Article 7:611 BW in conjunction with the Wet op de loonbelasting 1964, art. 32 — payslip (loonstrook)',
     fields: [
@@ -324,6 +333,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht bij verkoper', titleEn: 'Complaint to the seller (consumer sale)',
     descRu: 'Досудебная претензия продавцу по товару с дефектом: по BW 7:17 вещь должна соответствовать договору; потребитель вправе требовать ремонт, замену, снижение цены или расторжение. Упоминается возможность жалобы в Geschillencommissie или к kantonrechter.',
     descEn: 'Pre-court complaint to the seller about a defective product: under BW 7:17 the item must conform to the contract; the consumer may demand repair, replacement, price reduction or termination. Mentions a dispute committee or the district court as next steps.',
+    descDoc: 'Buitengerechtelijke klacht aan de verkoper over een niet-conforme zaak: de zaak moet aan het contract beantwoorden (art. 7:17 BW); herstel, vervanging, prijsvermindering of ontbinding kan worden gevorderd, met de Geschillencommissie of de kantonrechter als volgende stap.',
     refRu: 'BW 7:17 (conformiteit bij koop) jo. BW 6:74 — consumentenkoop',
     refEn: 'Article 7:17 BW (conformity in sale) in conjunction with BW 6:74 — consumer sale',
     fields: [
@@ -361,6 +371,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Ingebrekestelling verhuurder', titleEn: 'Formal notice of default to the landlord',
     descRu: 'Письменное напоминание (ingebrekestelling) арендодателю, не устранившему дефект жилья: по BW 7:206 арендодатель отвечает за поддержание жилья; по BW 6:82 должник считается в просрочке после письменного напоминания. Далее — ремонт за счёт арендодателя или kantonrechter.',
     descEn: 'Written notice of default to a landlord who has not repaired a defect: under BW 7:206 the landlord is responsible for maintaining the dwelling; under BW 6:82 the debtor is in default after a written notice. Repair costs or the district court may follow.',
+    descDoc: 'Schriftelijke ingebrekestelling van de verhuurder die een gebrek niet heeft hersteld: de verhuurder is voor het onderhoud van de woning verantwoordelijk (art. 7:206 BW) en komt in verzuim na een schriftelijke ingebrekestelling (art. 6:82 BW); herstel op kosten van de verhuurder of de kantonrechter kan volgen.',
     refRu: 'BW 6:82 (ingebrekestelling) jo. BW 7:206 (обязанность арендодателя по поддержанию жилья)',
     refEn: 'Article 6:82 BW (notice of default) in conjunction with BW 7:206 (landlord’s maintenance duty)',
     fields: [
@@ -390,6 +401,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoekschrift aan de kantonrechter', titleEn: 'Petition to the district court (kantonrechter)',
     descRu: 'Письменное обращение в кантональный суд с требованием о возмещении ущерба. По art. 93 Rv кантонный суд рассматривает иски до € 25 000; просится назначить заседание с вызовом обеих сторон, доказательства прилагаются.',
     descEn: 'Written petition to the district court (kantonrechter) claiming damages. Under art. 93 Rv the kantonrechter hears claims up to € 25,000; a hearing with both parties is requested and evidence is attached.',
+    descDoc: 'Schriftelijke vordering aan de kantonrechter tot schadevergoeding: de kantonrechter is bevoegd voor vorderingen tot € 25.000 (art. 93 Rv); een zitting waarbij beide partijen worden opgeroepen wordt gevraagd en bewijsstukken worden bijgevoegd.',
     refRu: 'Rv art. 93 — компетенция kantonrechter по искам до € 25.000',
     refEn: 'Article 93 of the Code of Civil Procedure (Rv) — jurisdiction of the kantonrechter for claims up to € 25,000',
     fields: [
@@ -418,6 +430,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht bij de Autoriteit Persoonsgegevens', titleEn: 'Complaint to the Dutch Data Protection Authority (GDPR)',
     descRu: 'Жалоба в надзорный орган по защите данных (Autoriteit Persoonsgegevens) на организацию, нарушившую AVG/GDPR: по ст. 77 AVG заявитель вправе подать жалобу в надзорный орган страны проживания; сначала организациям даётся шанс отреагировать.',
     descEn: 'Complaint to the data protection authority (Autoriteit Persoonsgegevens) about an organisation violating the GDPR: under art. 77 GDPR the complainant may lodge a complaint with the supervisory authority of their residence; organisations are first given a chance to respond.',
+    descDoc: 'Klacht bij de Autoriteit Persoonsgegevens over een organisatie die de AVG schendt: op grond van art. 77 AVG kan bij de toezichthouder van woonplaats worden geklaagd; de organisatie krijgt eerst de kans te reageren.',
     refRu: 'AVG (Verordening (EU) 2016/679), art. 77 — жалоба в надзорный орган (Autoriteit Persoonsgegevens)',
     refEn: 'GDPR (Regulation (EU) 2016/679), art. 77 — right to lodge a complaint with a supervisory authority',
     fields: [
@@ -443,6 +456,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht bij de Nationale ombudsman', titleEn: 'Complaint to the National Ombudsman',
     descRu: 'Жалоба Национальному омбудсмену на ненадлежащую работу государственного органа: сначала жалоба подаётся самому органу; если она не обработана или ответ неудовлетворителен, дело передаётся омбудсмену (Wet Nationale ombudsman).',
     descEn: 'Complaint to the National Ombudsman about improper conduct of a public body: the complaint is first filed with the body itself; if it is not handled or the answer is unsatisfactory, the matter goes to the ombudsman (Wet Nationale ombudsman).',
+    descDoc: 'Klacht bij de Nationale ombudsman over het handelen van een bestuursorgaan: eerst wordt bij het orgaan zelf geklaagd; als de klacht niet wordt behandeld of het antwoord onbevredigend is, komt de ombudsman in beeld (Wet Nationale ombudsman).',
     refRu: 'Wet Nationale ombudsman — жалоба на действия государственного органа',
     refEn: 'Wet Nationale ombudsman — complaint about the conduct of a public authority',
     fields: [
@@ -468,6 +482,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht bij de gemeente', titleEn: 'Complaint to the municipality (Awb ch. 9)',
     descRu: 'Жалоба муниципалитету на действия его сотрудника или подразделения: по главе 9 Awb (art. 9:1) заявитель имеет право на тщательное рассмотрение жалобы, подтверждение получения и письменный ответ; далее — National ombudsman.',
     descEn: 'Complaint to the municipality about the conduct of an official or department: under chapter 9 of the Awb (art. 9:1) the complainant is entitled to careful handling, an acknowledgement of receipt and a written reply; the National Ombudsman is a next step.',
+    descDoc: 'Klacht bij de gemeente over het gedrag van een ambtenaar of afdeling: op grond van hoofdstuk 9 Awb (art. 9:1) bestaat recht op zorgvuldige behandeling, een ontvangstbevestiging en een schriftelijke beantwoording; de Nationale ombudsman is een volgende stap.',
     refRu: 'Awb hoofdstuk 9, art. 9:1 — право на жалобу в административный орган (gemeente)',
     refEn: 'Awb chapter 9, art. 9:1 — right to lodge a complaint with an administrative body (municipality)',
     fields: [
@@ -492,6 +507,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Bezwaarschrift Belastingdienst', titleEn: 'Objection letter to the Tax Administration',
     descRu: 'Возражение (bezwaarschrift) на налоговое решение Belastingdienst: по art. 6:7 Awb возражение подаётся в течение 6 недель после отправки решения; просится подтверждение получения, возможность быть выслушанным и отсрочка платежа на время процедуры.',
     descEn: 'Objection (bezwaarschrift) against a tax decision of the Belastingdienst: under art. 6:7 Awb the objection must be filed within six weeks after the decision is sent; acknowledgement of receipt, a hearing and suspension of payment are requested.',
+    descDoc: 'Bezwaarschrift tegen een belastingbesluit van de Belastingdienst: het bezwaar moet binnen zes weken na verzending van het besluit worden ingediend (art. 6:7 Awb); ontvangstbevestiging, hoormogelijkheid en opschorting van betaling worden gevraagd.',
     refRu: 'Awb art. 6:7 — возражение в течение 6 недель (bezwaarschrift Belastingdienst)',
     refEn: 'Awb art. 6:7 — objection within six weeks (bezwaarschrift to the Tax Administration)',
     fields: [
@@ -528,6 +544,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht bij de bank', titleEn: 'Complaint to the bank (Kifid)',
     descRu: 'Письменная жалоба банку по счёту/операции с требованием повторного рассмотрения и мотивированного ответа в срок по правилам банка; при неудовлетворительном ответе — спор в Kifid (Институт финансовых споров).',
     descEn: 'Written complaint to the bank about an account or transaction requesting re-examination and a reasoned reply within the bank’s rules; if unsatisfied, the dispute can be submitted to Kifid (the Financial Services Complaints Institute).',
+    descDoc: 'Schriftelijke klacht aan de bank over een rekening of transactie met verzoek om heroverweging en een gemotiveerde reactie binnen de termijn van de bank; bij een onbevredigend antwoord kan het geschil bij Kifid worden aanhangig gemaakt.',
     refRu: 'Klachten- en geschillenregeling Kifid — рассмотрение споров с финансовыми организациями',
     refEn: 'Kifid Complaints and Disputes Scheme — handling disputes with financial institutions',
     fields: [
@@ -554,6 +571,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Bezwaar UWV-uitkering', titleEn: 'Objection to a UWV benefit decision',
     descRu: 'Возражение на решение UWV по пособию (WW, Zw, WAZO и др.): по art. 6:7 Awb возражение подаётся в течение 6 недель; просится пересмотр решения и возможность быть выслушанным.',
     descEn: 'Objection to a UWV benefit decision (WW, Zw, WAZO etc.): under art. 6:7 Awb the objection must be filed within six weeks; re-examination and a hearing are requested.',
+    descDoc: 'Bezwaarschrift tegen een beslissing van het UWV over een uitkering (WW, Zw, WAZO e.d.): binnen zes weken na toezending (art. 6:7 Awb); heroverweging en een hoorgelegenheid worden gevraagd.',
     refRu: 'Awb art. 6:7 — возражение в течение 6 недель на решение UWV',
     refEn: 'Awb art. 6:7 — objection within six weeks against a UWV decision',
     fields: [
@@ -588,6 +606,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Aanvraag AOW (SVB)', titleEn: 'AOW pension application (SVB)',
     descRu: 'Заявление в Sociale Verzekeringsbank (SVB): запрос на AOW-пенсию, пенсионную выписку или информацию о накоплении. Указываются bsn и дата рождения; просится информация о размере, дате начала и последствиях проживания/работы за границей.',
     descEn: 'Application to the Sociale Verzekeringsbank (SVB): request for the AOW pension, a pension statement or information about accrual. BSN and date of birth are stated; details about the amount, start date and consequences of living/working abroad are requested.',
+    descDoc: 'Aanvraag bij de Sociale Verzekeringsbank (SVB) voor de AOW-uitkering, een pensioenuittreksel of inlichtingen over de opbouw; BSN en geboortedatum worden vermeld en naar het bedrag, de ingangsdatum en de gevolgen van wonen/werken in het buitenland wordt gevraagd.',
     refRu: 'Algemene ouderdomswet (AOW) — пенсионное страхование; исполнение — Sociale Verzekeringsbank (SVB)',
     refEn: 'Algemene ouderdomswet (AOW) — state pension insurance; administered by the Sociale Verzekeringsbank (SVB)',
     fields: [
@@ -620,6 +639,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht zorginstelling', titleEn: 'Complaint to a care provider (Wkkgz)',
     descRu: 'Жалоба в медицинское/социальное учреждение по качеству оказанной помощи: по Wkkgz у учреждения есть klachtenfunctionaris; жалоба рассматривается в срок 6 недель с возможным продлением на 4 недели, просится встреча и письменный мотивированный ответ.',
     descEn: 'Complaint to a care provider about the quality of care: under the Wkkgz the institution has a complaints officer; the complaint must be handled within six weeks (extendable by four weeks). A meeting and a written reasoned reply are requested.',
+    descDoc: 'Klacht bij de zorgaanbieder over de kwaliteit van de zorg: onder de Wkkgz heeft de instelling een klachtenfunctionaris en moet de klacht binnen zes weken (met verlenging van vier weken) worden afgehandeld; een gesprek en een schriftelijk gemotiveerde reactie worden gevraagd.',
     refRu: 'Wkkgz (Wet kwaliteit, klachten en geschillen zorg) — право на жалобу и klachtenfunctionaris',
     refEn: 'Wkkgz (Care Quality, Complaints and Disputes Act) — right to complain and the complaints officer',
     fields: [
@@ -644,6 +664,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek inzage medisch dossier', titleEn: 'Request for access to the medical record (WGBO)',
     descRu: 'Запрос на ознакомление и получение копии медицинской карты: по BW 7:456 (WGBO) пациент вправе ознакомиться с картой и получить копию за разумную плату; указываются bsn и дата рождения.',
     descEn: 'Request to inspect and receive a copy of the medical record: under BW 7:456 (WGBO) the patient may inspect the record and obtain a copy for a reasonable fee; bsn and date of birth are stated.',
+    descDoc: 'Verzoek om inzage in en een kopie van het medisch dossier: de patiënt heeft recht op inzage en tegen redelijke kosten op een afschrift (art. 7:456 BW, WGBO); BSN en geboortedatum worden vermeld.',
     refRu: 'BW 7:456 (WGBO, Wet geneeskundige behandelingsovereenkomst) — доступ к медицинской карте',
     refEn: 'Article 7:456 BW (Medical Treatment Contracts Act, WGBO) — access to the medical record',
     fields: [
@@ -668,6 +689,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Aanmelding leerling', titleEn: 'Pupil enrolment application (WPO)',
     descRu: 'Заявление о зачислении ребёнка в начальную школу: по Wet primair onderwijs (WPO) родители вправе выбирать школу; просится подтверждение приёма, школьный справочник (schoolgids) и информация о правилах приёма.',
     descEn: 'Application to enrol a child in primary school: under the Wet primair onderwijs (WPO) parents are free to choose a school; confirmation of enrolment, the school guide and admission criteria are requested.',
+    descDoc: 'Aanvraag om een kind op de basisschool in te schrijven: ouders zijn vrij in de keuze van de school (Wet primair onderwijs); bevestiging van inschrijving, de schoolgids en toelatingseisen worden gevraagd.',
     refRu: 'Wet primair onderwijs (WPO) — право родителей на выбор школы и порядок приёма',
     refEn: 'Wet primair onderwijs (WPO) — parents’ free choice of school and admission procedure',
     fields: [
@@ -694,6 +716,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht PostNL (verloren zending)', titleEn: 'Claim to PostNL (lost shipment)',
     descRu: 'Претензия в PostNL по утраченному отправлению с указанием track-and-trace номера: просится расследование и возмещение стоимости отправления согласно правилам рассмотрения жалоб, вытекающим из Postwet; доказательства прилагаются.',
     descEn: 'Claim to PostNL about a lost shipment with the track-and-trace number: an investigation and reimbursement of the shipment value are requested under the complaint-handling rules following from the Postwet; evidence is attached.',
+    descDoc: 'Claim bij PostNL over een verloren zending met het track-and-trace-nummer: onderzoek en vergoeding van de verzendwaarde worden gevraagd conform de klachtafhandeling uit de Postwet; bewijsstukken worden bijgevoegd.',
     refRu: 'Postwet (Stb. 2009, 237) — право на жалобу и порядок рассмотрения жалоб у почтового оператора',
     refEn: 'Postwet (Stb. 2009, 237) — right to complain and complaint handling by the postal operator',
     fields: [
@@ -721,6 +744,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek verhuurder tot onderhoud', titleEn: 'Maintenance request to the landlord',
     descRu: 'Заявление арендодателю о проведении ремонта/поддержания жилья: по BW 7:206 арендодатель обязан поддерживать жильё в хорошем состоянии и устранять мелкие дефекты; просится запись на ремонт в разумный срок.',
     descEn: 'Maintenance request to the landlord: under BW 7:206 the landlord must keep the dwelling in good condition and repair minor defects; an appointment within a reasonable period is requested.',
+    descDoc: 'Onderhoudsverzoek aan de verhuurder: de verhuurder moet de woning in goede staat houden (art. 7:206 BW); herstel van gebreken en een afspraak binnen een redelijke termijn worden gevraagd.',
     refRu: 'BW 7:206 (Burgerlijk Wetboek) — обязанность арендодателя поддерживать жильё',
     refEn: 'Article 7:206 of the Dutch Civil Code (BW) — the landlord’s duty to maintain the dwelling',
     fields: [
@@ -747,6 +771,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Klacht geluidsoverlast buren', titleEn: 'Noise nuisance complaint about neighbours',
     descRu: 'Жалоба муниципалитету на постоянный шум от соседей: описываются моменты и характер шума; просится вмешательство по APV (общие полицейские правила) и при необходимости шумовое исследование; упоминается ст. 6:162 BW (неправомерное деяние) как следующий шаг.',
     descEn: 'Complaint to the municipality about recurring noise from neighbours: the moments and nature of the noise are described; action under the local APV ordinance and, if needed, a noise survey are requested; art. 6:162 BW (tort) is mentioned as a next step.',
+    descDoc: 'Klacht bij de gemeente over terugkerende geluidsoverlast van buren: momenten en aard van de overlast worden beschreven; handhaving op grond van de APV en zo nodig een geluidsonderzoek worden gevraagd, met art. 6:162 BW (onrechtmatige daad) als volgende stap.',
     refRu: 'APV (overlast) и Wet milieubeheer (шум); BW 6:162 — неправомерное деяние',
     refEn: 'APV (nuisance) and Wet milieubeheer (noise); BW 6:162 — tort (unlawful act)',
     fields: [
@@ -772,6 +797,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Melding verhuizing (BRP)', titleEn: 'Change of address notification (BRP)',
     descRu: 'Уведомление муниципалитета о переезде для обновления данных в реестре населения (Basisregistratie Personen, BRP): указываются дата переезда и новый адрес; просится подтверждение обработки и возможность идентификации в стационарной стойке.',
     descEn: 'Notification to the municipality of a change of address for the municipal personal records database (BRP): the moving date and new address are stated; confirmation of processing and identification at the counter are requested.',
+    descDoc: 'Melding van verhuizing aan de gemeente voor de Basisregistratie Personen (BRP): verhuisdatum en het nieuwe adres worden vermeld; bevestiging van verwerking en identificatie aan het loket worden gevraagd.',
     refRu: 'Wet BRP (Basisregistratie Personen) — обязанность сообщить о переезде в муниципалитет',
     refEn: 'Wet BRP (Municipal Personal Records Database Act) — duty to report a change of address to the municipality',
     fields: [
@@ -796,6 +822,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Volmacht', titleEn: 'Power of attorney (BW 3:60)',
     descRu: 'Доверенность (volmacht) на совершение определённых действий от имени доверителя: по BW 3:60 доверенное лицо действует от имени доверителя; указываются срок действия и перечень действий, доверенность может быть отозвана письменно.',
     descEn: 'Power of attorney (volmacht) authorising a representative to perform specified acts on behalf of the principal: under BW 3:60 the representative acts in the principal’s name; the term and scope are stated and the authorisation may be withdrawn in writing.',
+    descDoc: 'Volmacht waarmee de gevolmachtigde bepaalde rechtshandelingen namens de machtiger verricht (art. 3:60 BW): duur en reikwijdte worden vermeld; de volmacht kan schriftelijk worden ingetrokken.',
     refRu: 'BW 3:60 (Burgerlijk Wetboek) — volmacht (доверенность)',
     refEn: 'Article 3:60 of the Dutch Civil Code (BW) — power of attorney (volmacht)',
     fields: [
@@ -824,6 +851,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Schuldbekentenis (lening)', titleEn: 'Loan agreement / acknowledgement of debt (BW 7A:1978)',
     descRu: 'Расписка-договор займа между частными лицами: сумма, срок и реквизиты перевода, признание долга заемщиком и порядок возврата; по BW 7A:1978 расписка подтверждает долг, при просрочке возможно письменное напоминание (BW 6:82).',
     descEn: 'Loan agreement and acknowledgement of debt between private persons: amount, term and transfer details, the borrower’s acknowledgement and repayment schedule; under BW 7A:1978 the document evidences the debt, and a written default notice (BW 6:82) may follow.',
+    descDoc: 'Leningsovereenkomst en schulderkenning tussen particulieren: bedrag, looptijd en overboekingsgegevens, erkenning door de lener en aflossingsschema; het document onderbouwt de vordering (art. 7A:1978 BW) en een schriftelijke ingebrekestelling (art. 6:82 BW) kan volgen.',
     refRu: 'BW 7A:1978 (schuldbekentenis) jo. BW 6:82 (ingebrekestelling) — заём между частными лицами',
     refEn: 'BW 7A:1978 (acknowledgement of debt) in conjunction with BW 6:82 (notice of default) — private loan',
     fields: [
@@ -857,6 +885,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek studieverlof', titleEn: 'Request for study leave (WHW)',
     descRu: 'Заявление студенческой канцелярии университета о предоставлении академического отпуска (studieverlof) на указанный период с основанием (болезнь, беременность, спорт, правление ассоциации); просится решение с последствиями для регистрации и стоимости обучения.',
     descEn: 'Request to the university’s student desk for study leave for a stated period with a ground (illness, pregnancy, top sport, board membership); a written decision with the consequences for enrolment and tuition fees is requested.',
+    descDoc: 'Verzoek aan de studentendienst van de universiteit om studieverlof voor een aangegeven periode met grondslag (ziekte, zwangerschap, topsport, bestuurswerk); een schriftelijk besluit over de gevolgen voor inschrijving en collegegeld wordt gevraagd.',
     refRu: 'Wet op het hoger onderwijs en wetenschappelijk onderzoek (WHW) — регистрация и отпуск по правилам учебного заведения',
     refEn: 'Wet op het hoger onderwijs en wetenschappelijk onderzoek (WHW) — enrolment and leave under the institution’s rules',
     fields: [
@@ -894,6 +923,7 @@ export const TEMPLATES_NL: TplDef[] = [
     titleDoc: 'Verzoek teruggave collegegeld', titleEn: 'Request for tuition fee refund (WHW)',
     descRu: 'Заявление о возврате (части) платы за обучение при отчислении/окончании учёбы: по правилам университета и разделу 7.5 WHW возможна реституция за период после выписки из реестра; просится возврат на указанный IBAN.',
     descEn: 'Request for a refund of (part of) the tuition fee after deregistration or graduation: under the university’s rules and WHW part 7.5 a refund over the period after deregistration is possible; repayment to the stated IBAN is requested.',
+    descDoc: 'Verzoek om (gedeeltelijke) teruggave van het collegegeld na uitschrijving of afstuderen: conform de regels van de universiteit en deel 7.5 van de WHW is teruggave over de periode na uitschrijving mogelijk; terugbetaling naar het opgegeven IBAN wordt gevraagd.',
     refRu: 'WHW, afdeling 7.5 (collegegeld) — реституция платы за обучение по правилам учебного заведения',
     refEn: 'WHW, part 7.5 (tuition fees) — tuition fee refund under the institution’s rules',
     fields: [

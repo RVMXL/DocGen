@@ -33,6 +33,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Аризаи татули солонаи пардохтшаванда', titleEn: 'Annual paid leave application',
     descRu: 'Заявление работодателю о предоставлении ежегодного основного оплачиваемого отпуска. По общему правилу ТК РТ — не менее 24 календарных дней; уточните продолжительность по вашему договору.',
     descEn: 'Application for annual paid leave. Under the Tajik Labour Code the general minimum is 24 calendar days.',
+    descDoc: 'Ариза ба корфаро дар бораи додани татули солонаи пардохтшавандаи меҳнат.',
     refRu: 'Трудовой кодекс Республики Таджикистан (ежегодный основной отпуск)',
     refEn: 'Labour Code of the Republic of Tajikistan (annual basic leave)',
     fields: [
@@ -54,6 +55,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Аризаи татул бе нигоҳдории маош', titleEn: 'Unpaid leave application',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Ариза дар бораи додани татули бе нигоҳдории музди меҳнат бо сабабҳои оилавӣ ва дигар эҳтиромнок.',
     refRu: 'Трудовой кодекс Республики Таджикистан',
     refEn: 'Labour Code of the Republic of Tajikistan',
     fields: [
@@ -78,6 +80,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Аризаи аз кор баромадан бо хоҳиши шахсӣ', titleEn: 'Voluntary resignation application',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Работник письменно предупреждает работодателя за две недели до увольнения.',
     descEn: 'Voluntary resignation application. The employee notifies the employer in writing two weeks in advance.',
+    descDoc: 'Ариза дар бораи қатъ намудани шартномаи меҳнатӣ бо хоҳиши шахсӣ.',
     refRu: 'Трудовой кодекс Республики Таджикистан',
     refEn: 'Labour Code of the Republic of Tajikistan',
     fields: [
@@ -98,6 +101,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Аризаи додани ҳуҷҷатҳои марбут ба кор', titleEn: 'Workplace documents request',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, сведения о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Ариза дар бораи додани ҳуҷҷатҳои марбут ба фаъолияти меҳнатӣ: маълумотномаи музди меҳнат, нусхаи фармонҳо.',
     refRu: 'Трудовой кодекс Республики Таджикистан',
     refEn: 'Labour Code of the Republic of Tajikistan',
     fields: [
@@ -118,6 +122,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Претензия ба фурӯшанда дар бораи баргардонидани мол', titleEn: 'Claim to seller: defective goods',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в сомони. При отказе — суд или обращение в уполномоченный орган.',
     descEn: 'Pre-court claim to a seller over defective goods under Tajik consumer protection law.',
+    descDoc: 'Даъвия ба фурӯшанда дар бораи баргардонидани маблағи пардохтшуда барои моли сифати паст.',
     refRu: 'законодательство Республики Таджикистан о защите прав потребителей',
     refEn: 'Consumer protection legislation of the Republic of Tajikistan',
     fields: [
@@ -151,6 +156,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Давонома дар бораи ҷамъоварии қарз мувофиқи қарзнома', titleEn: 'Lawsuit: debt recovery by IOU',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Даъвонома ба суд дар бораи ҷамъоварии қарзе, ки бо қарзнома тасдиқ шудааст.',
     refRu: 'Гражданский кодекс РТ; Гражданский процессуальный кодекс РТ',
     refEn: 'Civil Code of Tajikistan; Civil Procedure Code of Tajikistan',
     fields: [
@@ -186,6 +192,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Қарзномаи гирифтани маблағ дар қарз', titleEn: 'IOU / loan receipt',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Қарзнома дар бораи гирифтани маблағ дар қарз байни ашхоси воқеӣ; шартномаи қарзро тасдиқ мекунад.',
     refRu: 'Гражданский кодекс Республики Таджикистан',
     refEn: 'Civil Code of the Republic of Tajikistan',
     fields: [
@@ -211,6 +218,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Ваколатнома', titleEn: 'General civil power of attorney',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок, требующих нотариальной формы, — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for transactions subject to notarization.',
+    descDoc: 'Ваколатнома барои гирифтани ҳуҷҷатҳо, мактубҳо ва маълумотномаҳо.',
     refRu: 'Гражданский кодекс Республики Таджикистан (доверенность)',
     refEn: 'Civil Code of the Republic of Tajikistan (power of attorney)',
     fields: [
@@ -235,6 +243,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Аризаи мактаб дар бораи ғойибии кӯдак', titleEn: 'School absence notice for a child',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Ариза ба роҳбари мактаб дар бораи сабабҳои ғойибии кӯдак аз дарсҳо.',
     refRu: 'законодательство Республики Таджикистан в сфере образования',
     refEn: 'Education legislation of the Republic of Tajikistan',
     fields: [
@@ -261,6 +270,7 @@ export const TEMPLATES_TJ: TplDef[] = [
     titleDoc: 'Шикоят ба сифати ёрии тиббӣ', titleEn: 'Medical care quality complaint',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Министерство здравоохранения и социальной защиты населения РТ.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Шикоят ба роҳбари муассисаи тиббӣ дар бораи сифати ёрии тиббии расонидашуда.',
     refRu: 'законодательство Республики Таджикистан в сфере охраны здоровья граждан',
     refEn: 'Healthcare legislation of the Republic of Tajikistan',
     fields: [

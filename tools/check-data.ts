@@ -28,6 +28,11 @@ for (const t of tpl) {
   if (t.kind !== 'GOV_PORTAL_ONLY' && dl && dl !== 'ru' && dl !== 'en' && !t.titleDoc) {
     errors.push(`${t.slug}: нет titleDoc (язык документа ${dl})`);
   }
+  // i18n-полнота (аудит, волна 2): описание на языке документа — иначе в интерфейсах
+  // ≠ ru/en каталог показывает английский текст там, где ожидается язык документа
+  if (t.kind !== 'GOV_PORTAL_ONLY' && dl && dl !== 'ru' && dl !== 'en' && !t.descDoc) {
+    errors.push(`${t.slug}: нет descDoc (язык документа ${dl})`);
+  }
   if (!['STANDARD', 'HANDWRITTEN_REQUIRED', 'GOV_PORTAL_ONLY'].includes(t.kind)) {
     errors.push(`${t.slug}: некорректный kind ${t.kind}`);
   }

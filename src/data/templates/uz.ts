@@ -35,6 +35,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Yillik pullik mehnat ta‘tiliga ariza', titleEn: 'Annual paid leave application',
     descRu: 'Заявление работодателю о предоставлении ежегодного основного оплачиваемого отпуска. Минимальная продолжительность по новому ТК РУз — 21 календарный день (ст. 217).',
     descEn: 'Application for annual paid leave. Minimum duration under the 2023 Uzbek Labour Code is 21 calendar days (Art. 217).',
+    descDoc: 'Yillik asosiy haq to‘lanadigan mehnat ta’tilini berish to‘g‘risida ish beruvchiga ariza.',
     refRu: 'ст. 217 Трудового кодекса Республики Узбекистан, утв. Законом № ЗРУ-798 от 28.10.2022',
     refEn: 'Article 217 of the Labour Code of the Republic of Uzbekistan (approved by Law No. ZRU-798 of 28.10.2022)',
     fields: [
@@ -56,6 +57,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Ish haqi saqlanmagan ta‘tilga ariza', titleEn: 'Unpaid leave application',
     descRu: 'Заявление об отпуске без сохранения заработной платы по семейным и другим уважительным причинам — по соглашению с работодателем.',
     descEn: 'Application for unpaid leave for family or other valid reasons, by agreement with the employer.',
+    descDoc: 'Oilaviy va boshqa hurmatli sabablarga ko‘ra ish haqi saqlanmagan ta’til berish to‘g‘risida ariza.',
     refRu: 'Трудовой кодекс Республики Узбекистан',
     refEn: 'Labour Code of the Republic of Uzbekistan',
     fields: [
@@ -80,6 +82,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'O‘z xohishi bilan ishdan bo‘shatilish haqida ariza', titleEn: 'Voluntary resignation application',
     descRu: 'Заявление о расторжении трудового договора по инициативе работника. Срок предупреждения работодателя — по Трудовому кодексу РУз; уточните его перед подачей.',
     descEn: 'Voluntary resignation application. Check the notice period under the Uzbek Labour Code before filing.',
+    descDoc: 'Mehnat shartnomasini o‘z xohishi bilan bekor qilish to‘g‘risida ish beruvchiga ariza.',
     refRu: 'Трудовой кодекс Республики Узбекистан',
     refEn: 'Labour Code of the Republic of Uzbekistan',
     fields: [
@@ -100,6 +103,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Ish joyidan hujjatlar berishni so‘rash haqida ariza', titleEn: 'Workplace documents request',
     descRu: 'Заявление о выдаче документов, связанных с трудовой деятельностью: справки о зарплате, копии приказов, записи о стаже.',
     descEn: 'Request for work-related documents: salary certificates, order copies, employment records.',
+    descDoc: 'Mehnat faoliyati bilan bog‘liq hujjatlarni (ish haqi ma’lumotnomasi, buyruq nusxalari) berishni so‘rash to‘g‘risida ariza.',
     refRu: 'Трудовой кодекс Республики Узбекистан',
     refEn: 'Labour Code of the Republic of Uzbekistan',
     fields: [
@@ -120,6 +124,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Sotuvchiga tovar sifati bo‘yicha shikoyat', titleEn: 'Claim to seller: defective goods',
     descRu: 'Досудебная претензия продавцу при обнаружении недостатков товара. Суммы — в сумах. При отказе — суд или Комитет по защите прав потребителей.',
     descEn: 'Pre-court claim to a seller over defective goods under the Uzbek Consumer Protection Law.',
+    descDoc: 'Sifatsiz tovar uchun pulni qaytarish to‘g‘risida sotuvchiga sudgacha shikoyat xati.',
     refRu: 'Закон Республики Узбекистан «О защите прав потребителей» (№ ЗРУ-473)',
     refEn: 'Law of the Republic of Uzbekistan «On Consumer Protection» (No. ZRU-473)',
     fields: [
@@ -153,6 +158,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Qarzni undirish haqida da‘vo arizasi', titleEn: 'Lawsuit: debt recovery by IOU',
     descRu: 'Базовая форма иска о взыскании долга по договору займа, подтверждённого распиской. Подаётся в суд по месту жительства ответчика.',
     descEn: 'Basic claim for debt recovery under a written loan note. Filed at the defendant’s place of residence.',
+    descDoc: 'Qo‘lxat bilan tasdiqlangan qarz shartnomasi bo‘yicha qarzni undirish to‘g‘risida sudga da‘vo arizasi.',
     refRu: 'Гражданский кодекс РУз; Гражданский процессуальный кодекс РУз',
     refEn: 'Civil Code of Uzbekistan; Civil Procedure Code of Uzbekistan',
     fields: [
@@ -188,6 +194,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Qarz olish qarznomasi (qo‘lxat)', titleEn: 'IOU / loan receipt',
     descRu: 'Расписка о получении денег в заём между физическими лицами; подтверждает договор займа.',
     descEn: 'Loan receipt between individuals confirming the loan agreement.',
+    descDoc: 'Jismoniy shaxslar o‘rtasida qarz puli olinganligi to‘g‘risidagi qo‘lxat; qarz shartnomasini tasdiqlaydi.',
     refRu: 'Гражданский кодекс Республики Узбекистан',
     refEn: 'Civil Code of the Republic of Uzbekistan',
     fields: [
@@ -213,6 +220,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Ishonchnoma', titleEn: 'General civil power of attorney',
     descRu: 'Доверенность на получение документов, писем, справок. Для сделок, требующих нотариальной формы (недвижимость, автотранспорт) — только нотариальная доверенность.',
     descEn: 'General power of attorney for everyday actions. Notarial form is required for transactions subject to notarization.',
+    descDoc: 'Hujjatlar, xatlar va ma’lumotnomalarni olish uchun ishonchnoma.',
     refRu: 'Гражданский кодекс Республики Узбекистан (доверенность)',
     refEn: 'Civil Code of the Republic of Uzbekistan (power of attorney)',
     fields: [
@@ -237,6 +245,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Maktabga bola sababsiz qatnashmasligi haqida ariza', titleEn: 'School absence notice for a child',
     descRu: 'Уведомление школы о причинах отсутствия ребёнка на занятиях. Подаётся директору школы.',
     descEn: 'Notice to the school about a child’s absence from classes.',
+    descDoc: 'Bolaning darslarga qatnashmaslik sabablari to‘g‘risida maktab direktoriga ariza.',
     refRu: 'Закон Республики Узбекистан «Об образовании»',
     refEn: 'Law of the Republic of Uzbekistan «On Education»',
     fields: [
@@ -263,6 +272,7 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Shifokorga shikoyat', titleEn: 'Medical care quality complaint',
     descRu: 'Первый этап обжалования — жалоба руководителю медицинской организации. Далее — в Агентство здравоохранения при Минздраве РУз.',
     descEn: 'First-step complaint about medical care quality addressed to the head of the medical organization.',
+    descDoc: 'Tibbiyot muassasasi rahbariga ko‘rsatilgan tibbiy yordam sifati to‘g‘risida shikoyat.',
     refRu: 'Закон Республики Узбекистан «О защите здоровья граждан»',
     refEn: 'Law of the Republic of Uzbekistan «On Protection of Citizens’ Health»',
     fields: [

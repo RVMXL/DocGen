@@ -37,6 +37,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um Ferien', titleEn: 'Annual leave request (Ferienantrag)',
     descRu: 'Заявление работодателю о предоставлении ежегодного отпуска. По Обязательственному праву (OR) минимальный отпуск — 4 недели в году (для работников до 20 лет — 5 недель); план отпусков составляется с учётом пожеланий работника.',
     descEn: 'Leave request to the employer. The statutory minimum holiday is 4 weeks per year (5 weeks for workers up to 20); the holiday plan takes account of employee wishes.',
+    descDoc: 'Gesuch an den Arbeitgeber um den jährlichen Ferienbezug. Das gesetzliche Minimum beträgt 4 Wochen pro Jahr (5 Wochen für Arbeitnehmende bis zum 20. Altersjahr); der Ferienplan berücksichtigt die Wünsche der Arbeitnehmer.',
     refRu: 'Ст. 329a, 329b Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 329a, 329b of the Swiss Code of Obligations (OR)',
     fields: [
@@ -62,6 +63,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Vergütung von Überzeit/Mehrarbeit', titleEn: 'Overtime compensation claim (Überzeit)',
     descRu: 'Требование к работодателю об оплате или компенсации отгулом часов, отработанных сверх нормы. Überzeit (сверх согласованных часов) по закону компенсируется с надбавкой минимум 25% или равным отгулом; Mehrarbeit — по договору.',
     descEn: 'Claim for compensation of hours worked beyond the agreed schedule: Überzeit must be compensated with at least a 25% premium or equivalent time off (Art. 321c OR).',
+    descDoc: 'Anspruch auf Ersatz der über die vereinbarte Arbeitszeit hinaus geleisteten Stunden: Die Überzeit ist mit einem Zuschlag von mindestens 25 % oder durch gleichwertige Freizeit zu kompensieren (Art. 321c OR).',
     refRu: 'Ст. 321c, 321d Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 321c, 321d of the Swiss Code of Obligations (OR)',
     fields: [
@@ -88,6 +90,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Meldung des Mutterschaftsurlaubs', titleEn: 'Notification of maternity leave (Mutterschaftsurlaub)',
     descRu: 'Уведомление работодателя о начале отпуска по материнству. Материнский отпуск составляет 98 дней (14 недель) с компенсацией дохода 80% (максимум 196 швейцарских франков в день) из Erwerbsersatz (EO).',
     descEn: 'Notification to the employer of maternity leave: 98 days (14 weeks) with income compensation at 80% (max. CHF 196 per day) under the EO scheme.',
+    descDoc: 'Mitteilung an den Arbeitgeber über den Mutterschaftsurlaub: 98 Tage (14 Wochen) mit Erwerbsersatz von 80 Prozent (höchstens CHF 196 pro Tag) über die EO.',
     refRu: 'Ст. 16a и сл. Закона о компенсации утраченного заработка (EOG)',
     refEn: 'Article 16a et seq. of the Federal Act on Income Compensation (EOG)',
     fields: [
@@ -112,6 +115,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Kündigung des Arbeitsverhältnisses durch den Arbeitnehmer', titleEn: 'Resignation letter (Kündigung)',
     descRu: 'Заявление работника об увольнении. Общие сроки предупреждения (ст. 335c OR): 1 месяц в первый год службы, 2 месяца со второго по девятый, 3 месяца после девятого — на конец месяца, если договором не установлено иное.',
     descEn: 'Resignation notice by the employee. Statutory notice periods (Art. 335c OR): 1 month in the first year of service, 2 months from the 2nd to 9th year, 3 months thereafter, to the end of a month.',
+    descDoc: 'Kündigung des Arbeitsverhältnisses durch den Arbeitnehmer. Gesetzliche Kündigungsfristen (Art. 335c OR): 1 Monat im ersten Dienstjahr, 2 Monate vom zweiten bis zum neunten Jahr, danach 3 Monate — jeweils auf das Monatsende.',
     refRu: 'Ст. 335c, 320a Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 335c, 320a of the Swiss Code of Obligations (OR)',
     warningRu: 'Внимание: вручите уведомление в письменной форме с собственноручной подписью и сохраните доказательство вручения (заказное письмо либо подписанная копия).',
@@ -136,6 +140,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Antrag auf Ausstellung eines Arbeitszeugnisses', titleEn: 'Employment reference request (Arbeitszeugnis)',
     descRu: 'Запрос свидетельства о работе: по окончании трудовых отношений работник вправе требовать свидетельство о характере и продолжительности работы, по желанию — квалифицированное (с оценкой производительности и поведения).',
     descEn: 'Request for an employment certificate: at the end of employment the employee may demand a reference on nature and duration, and on request a qualified one (performance and conduct).',
+    descDoc: 'Gesuch um ein Arbeitszeugnis: Bei Beendigung des Arbeitsverhältnisses kann der Arbeitnehmer ein Zeugnis über Art und Dauer der Arbeit verlangen; auf Verlangen auch ein qualifiziertes (Leistung und Verhalten).',
     refRu: 'Ст. 320a Обязательственного права Швейцарии (OR)',
     refEn: 'Article 320a of the Swiss Code of Obligations (OR)',
     fields: [
@@ -158,6 +163,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Verlangen der schriftlichen Angabe des Kündigungsgrundes', titleEn: 'Request for written reasons for dismissal (Motivangabe)',
     descRu: 'Требование к работодателю сообщить письменно причины увольнения. По ст. 335a OR работодатель обязан по запросу работника указать мотивы; обоснование важно для оспаривания злоупотребительного увольнения (ст. 336 OR).',
     descEn: 'Demand that the employer state the reasons for dismissal in writing. Under Art. 335a OR the employer must give reasons on request; relevant to contesting abusive dismissal (Art. 336 OR).',
+    descDoc: 'Aufforderung an den Arbeitgeber, die Kündigungsgründe schriftlich anzugeben. Nach Art. 335a OR hat der Arbeitgeber die Motive auf Verlangen anzugeben; wichtig für die Anfechtung einer missbräuchlichen Kündigung (Art. 336 OR).',
     refRu: 'Ст. 335a, 336 Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 335a, 336 of the Swiss Code of Obligations (OR)',
     fields: [
@@ -180,6 +186,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Antrag auf ein Zwischenzeugnis', titleEn: 'Interim employment reference request (Zwischenzeugnis)',
     descRu: 'Запрос промежуточного свидетельства при продолжающихся трудовых отношениях — например, при смене руководства, реорганизации или перед длительным отсутствием. Швейцарская практика признаёт право на Zwischenzeugnis при наличии оправданного интереса.',
     descEn: 'Request for an interim reference while employment continues, e.g. before a change of management or reorganisation; Swiss practice recognises a right to an interim reference where a legitimate interest exists.',
+    descDoc: 'Gesuch um ein Zwischenzeugnis bei fortbestehendem Arbeitsverhältnis — etwa vor einem Leiterwechsel oder einer Reorganisation. Die Schweizer Praxis anerkennt das Recht auf ein Zwischenzeugnis bei berechtigtem Interesse.',
     refRu: 'Ст. 320a OR (sinngemäss); швейцарская судебная практика',
     refEn: 'Art. 320a Swiss Code of Obligations (OR) by analogy; Swiss case law',
     fields: [
@@ -202,6 +209,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Mahnung / Zahlungsaufforderung', titleEn: 'Payment reminder (Mahnung)',
     descRu: 'Письменное напоминание должнику с установлением срока. После безрезультатного истечения срока наступает просрочка (Verzug) — проценты по ст. 104 OR; далее возможно взыскание через Betreibungsamt (Zahlungsbefehl).',
     descEn: 'Written payment reminder setting a deadline. After fruitless expiry the debtor is in default (Verzug); interest under Art. 104 OR and debt enforcement (Zahlungsbefehl) may follow.',
+    descDoc: 'Schriftliche Mahnung mit Fristsetzung. Nach fruchtlosem Fristablauf befindet sich der Schuldner in Verzug; Verzugszinsen nach Art. 104 OR und die Betreibung am Betreibungsamt (Zahlungsbefehl) werden möglich.',
     refRu: 'Ст. 102, 104 OR; Schuldbetreibungs- und Konkursgesetz (SchKG)',
     refEn: 'Articles 102, 104 of the Swiss Code of Obligations (OR); Debt Enforcement and Bankruptcy Act (SchKG)',
     fields: [
@@ -229,6 +237,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Mängelrüge und Aufforderung zur Abhilfe', titleEn: 'Notice of defects to the seller (Mängelrüge)',
     descRu: 'Претензия по договору купли-продажи: уведомление о недостатках без промедления (ст. 205 OR) и требование устранения, замены, снижения цены или расторжения договора. Гарантийные права потребителя действуют 2 года с передачи товара.',
     descEn: 'Notice of defects under a sales contract: immediate notification (Art. 205 OR) and demand for cure, replacement, price reduction or rescission. Consumer warranty lasts 2 years from delivery.',
+    descDoc: 'Reklamation beim Kaufvertrag: unverzügliche Mängelrüge (Art. 205 OR) mit Behebung, Ersatzlieferung, Herabsetzung des Preises oder Rücktritt vom Vertrag. Die Gewährleistung für Verbraucher beträgt 2 Jahre ab Übergabe der Sache.',
     refRu: 'Ст. 201 ff., 205, 210 Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 201 et seq., 205, 210 of the Swiss Code of Obligations (OR)',
     fields: [
@@ -260,6 +269,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Widerruf des Haustürgeschäfts (7 Tage)', titleEn: 'Withdrawal from a doorstep contract (7 days)',
     descRu: 'Заявление об отмене договора, заключённого, когда продавец явился к клиенту без приглашения (Haustürgeschäft): договор можно отменить в течение 7 дней, если продавец вправе обращаться к клиенту в силу официальной рекомендации или разрешения (например, страховые брокеры).',
     descEn: 'Withdrawal from a contract concluded during an unsolicited visit by the seller (Haustürgeschäft): cancellable within 7 days where the seller is entitled to approach the client by official recommendation or authorisation (e.g. insurance brokers).',
+    descDoc: 'Rücktritt vom Vertrag, der bei einem unbestellten Besuch des Verkäufers (Haustürgeschäft) abgeschlossen wurde: Kündigung innert 7 Tagen möglich, wenn der Verkäufer kraft amtlicher Empfehlung oder Bewilligung auf den Kunden zugehen darf (z. B. Versicherungsberater).',
     refRu: 'Ст. 40a–40c Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 40a–40c of the Swiss Code of Obligations (OR)',
     warningRu: 'Внимание: срок отмены — 7 дней с момента заключения договора; отправляйте письмо немедленно (желательно заказным) и сохраните доказательство отправки.',
@@ -287,6 +297,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Auskunftsbegehren nach Art. 25 revDSG', titleEn: 'Data access request under Art. 25 revDSG',
     descRu: 'Запрос к организации о сведениях об обработке ваших персональных данных: какие данные, откуда, зачем и кому передаются. По ст. 26 revDSG ответ, как правило, предоставляется в течение 30 дней.',
     descEn: 'Request to an organisation for information on the processing of your personal data: what data, from which sources, for what purpose and to whom disclosed; response is generally due within 30 days (Art. 26 revDSG).',
+    descDoc: 'Anfrage an eine Organisation zu den Angaben über die Verarbeitung Ihrer Personendaten: welche Daten, aus welchen Quellen, zu welchem Zweck und an wen weitergegeben. Nach Art. 26 revDSG wird die Antwort in der Regel innert 30 Tagen erteilt.',
     refRu: 'Ст. 25, 26 пересмотренного Закона о защите данных (revDSG)',
     refEn: 'Articles 25, 26 of the revised Swiss Federal Act on Data Protection (revDSG)',
     fields: [
@@ -314,6 +325,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Beschwerde an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB)', titleEn: 'Complaint to the Federal Data Protection and Information Commissioner (FDPIC)',
     descRu: 'Жалоба в EDÖB на обработку персональных данных организацией — после безрезультатного обращения в саму организацию. Рассмотрение бесплатно; EDÖB может давать рекомендации по устранению нарушений и передавать дела в суд.',
     descEn: 'Complaint to the FDPIC about an organisation’s data processing after unsuccessful direct contact. The procedure is free; the FDPIC may issue recommendations and take cases to court.',
+    descDoc: 'Beschwerde an den EDÖB gegen die Verarbeitung von Personendaten durch eine Organisation — nach fruchtlosem Kontakt mit dieser selbst. Das Verfahren ist kostenlos; der EDÖB kann Empfehlungen abgeben und Fälle vor Gericht bringen.',
     refRu: 'Ст. 49 revDSG; EDÖB (Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter)',
     refEn: 'Article 49 of the revised Swiss Federal Act on Data Protection (revDSG); Federal Data Protection and Information Commissioner (FDPIC)',
     fields: [
@@ -341,6 +353,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Rechtsvorschlag gegen den Zahlungsbefehl', titleEn: 'Objection to a payment order (Rechtsvorschlag) — 10 days',
     descRu: 'Возражение против взыскания: в течение 10 дней с вручения приказа о платеже (Zahlungsbefehl) должник подаёт в Betreibungsamt письменное возражение (Rechtsvorschlag), которое блокирует продолжение взыскания без иска.',
     descEn: 'Objection to debt enforcement: within 10 days of service of the payment order (Zahlungsbefehl) the debtor files a written objection (Rechtsvorschlag) with the debt enforcement office, blocking continuation without a court action.',
+    descDoc: 'Rechtsvorschlag gegen die Betreibung: innert 10 Tagen nach Zustellung des Zahlungsbefehls reicht der Schuldner beim Betreibungsamt schriftlich Einsprache ein, was die Fortsetzung der Betreibung ohne Gerichtsverfahren blockiert.',
     refRu: 'Ст. 81 Schuldbetreibungs- und Konkursgesetz (SchKG)',
     refEn: 'Article 81 of the Swiss Debt Enforcement and Bankruptcy Act (SchKG)',
     warningRu: 'Внимание: срок — строго 10 дней с момента вручения Zahlungsbefehl. Возражение подаётся письменно в Betreibungsamt; при пропуске срока взыскание продолжается.',
@@ -373,6 +386,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um Fristverlängerung für die Steuererklärung', titleEn: 'Request for extension of the tax return deadline',
     descRu: 'Заявление в кантональную налоговую службу о продлении срока подачи декларации. Сроки и порядок — по кантональному налоговому праву; продление, как правило, предоставляется по мотивированному запросу до истечения первоначального срока.',
     descEn: 'Request to the cantonal tax authority to extend the tax return deadline; governed by cantonal tax law, generally granted on a reasoned request before the original deadline expires.',
+    descDoc: 'Gesuch an die kantonale Steuerverwaltung um Fristverlängerung für die Steuererklärung; geregelt nach kantonalem Steuerrecht, in der Regel bei begründetem Gesuch vor Ablauf der ursprünglichen Frist gewährt.',
     refRu: 'Кантональное налоговое право; Steuerharmonisierungsgesetz (StHG, Verfahren)',
     refEn: 'Cantonal tax law; Federal Tax Harmonisation Act (StHG, procedure)',
     fields: [
@@ -402,6 +416,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Rekurs gegen die Steuerverfügung', titleEn: 'Appeal against the tax assessment (Steuerverfügung)',
     descRu: 'Рекурс против Steuerverfügung в кантональную апелляционную инстанцию. Порядок, инстанции и сроки — по кантональному налоговому и административно-процессуальному праву; строго соблюдайте срок рекурса (обычно 30 дней).',
     descEn: 'Appeal against the tax assessment to the cantonal appellate body; governed by cantonal tax and administrative procedure law. Watch the appeal deadline (usually 30 days).',
+    descDoc: 'Rekurs gegen die Steuerverfügung an die kantonale Rekursinstanz; geregelt nach kantonalem Steuer- und Verwaltungsprozessrecht. Die Rekursfrist streng einhalten (in der Regel 30 Tage).',
     refRu: 'Кантональное налоговое право (Verfahrensrecht); Steuerharmonisierungsgesetz (StHG)',
     refEn: 'Cantonal tax procedure law; Federal Tax Harmonisation Act (StHG)',
     warningRu: 'Внимание: сроки рекурса определяются кантональным процессуальным правом (часто 30 дней со вручения решения) — уточните их в вашем кантоне и подавайте заблаговременно.',
@@ -432,6 +447,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Reklamation einer unberechtigten Abbuchung', titleEn: 'Complaint about an unauthorised debit',
     descRu: 'Рекламация в банк по поводу списания без правового основания (например, прямое списание LSV/Debit Direct). Требование возврата; необоснованно полученное подлежит возврату по ст. 62 OR.',
     descEn: 'Complaint to the bank about a debit without legal basis (e.g. LSV/direct debit); unjustified payments must be refunded (Art. 62 OR).',
+    descDoc: 'Reklamation bei der Bank wegen einer Abbuchung ohne Rechtsgrund (etwa LSV/Direct Debit); ungerechtfertigt empfangene Beträge sind zurückzuerstatten (Art. 62 OR).',
     refRu: 'Ст. 62 Обязательственного права Швейцарии (OR)',
     refEn: 'Article 62 of the Swiss Code of Obligations (OR)',
     fields: [
@@ -462,6 +478,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um Ergänzungsleistungen (EL)', titleEn: 'Application for supplementary benefits (EL)',
     descRu: 'Заявление о дополнительных пособиях (EL) к пенсиям AHV/IV: они покрывают прожиточный минимум, если рент и доходов недостаточно. EL не предоставляются задним числом — подавайте до конца месяца, в котором право наступило.',
     descEn: 'Application for supplementary benefits (EL) to AHV/IV pensions: they cover the cost of living where pensions and income fall short. EL are not granted retroactively — apply promptly.',
+    descDoc: 'Gesuch um Ergänzungsleistungen (EL) zu den Renten von AHV/IV: sie decken das Existenzminimum, wenn Rente und Einkommen nicht ausreichen. EL werden nicht rückwirkend gewährt — zeitnah beantragen.',
     refRu: 'Закон о дополнительных пособиях к AHV/IV (BPG)',
     refEn: 'Federal Act on Supplementary Benefits to Old-Age, Survivors’ and Invalidity Insurance (BPG)',
     fields: [
@@ -491,6 +508,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um Prämienverbilligung (PV)', titleEn: 'Application for premium reductions (PV)',
     descRu: 'Заявление в кантон о снижении страховой премии по обязательной медицинской страховке для домохозяйств с низкими и средними доходами. Критерии дохода и имущества устанавливают кантоны.',
     descEn: 'Cantonal application for reduction of the compulsory health insurance premium for low- and middle-income households; criteria are set by the cantons.',
+    descDoc: 'Kantonales Gesuch um Prämienverbilligung der obligatorischen Krankenversicherung für Haushalte mit tiefen und mittleren Einkommen; die Kriterien legen die Kantone fest.',
     refRu: 'Ст. 65 f. Закона о медицинском страховании (KVG); кантональное право',
     refEn: 'Articles 65–66 of the Federal Health Insurance Act (KVG); cantonal law',
     fields: [
@@ -523,6 +541,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Antrag auf eine AHV-Rente', titleEn: 'Application for an AHV old-age pension',
     descRu: 'Заявление на пенсию по старости AHV подаётся заблаговременно (за 3–4 месяца) в компенсационную кассу (Ausgleichskasse). Рента выплачивается с месяца после достижения референсного возраста; возможен ранний (Vorbezug) или отложенный (Aufschub) выпуск.',
     descEn: 'Application for the AHV old-age pension, filed 3–4 months in advance with the compensation office (Ausgleichskasse). The pension starts the month after reference age; early draw (Vorbezug) or deferral (Aufschub) is possible.',
+    descDoc: 'Antrag auf die AHV-Altersrente, 3–4 Monate im Voraus bei der Ausgleichskasse einzureichen. Die Rente beginnt im Monat nach dem Referenzalter; früher Bezug (Vorbezug) oder Aufschub ist möglich.',
     refRu: 'Закон об AHV (AHVG), в частности ст. 44 (условия права), 40 (возраст, ранний/отложенный выпуск)',
     refEn: 'Federal Act on Old-Age and Survivors’ Insurance (AHVG), in particular Art. 44 (claim conditions) and Art. 40 (pension age, early draw/deferral)',
     fields: [
@@ -552,6 +571,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Antrag auf eine IV-Rente', titleEn: 'Application for an IV disability pension',
     descRu: 'Заявление в IV-службу на пенсию по инвалидности. Сначала оценивается трудоспособность и, как правило, назначаются меры по включению (Eingliederungsmassnahmen); рента — если после их завершения остаётся потеря трудоспособности.',
     descEn: 'Application to the IV office for a disability pension. Work capacity is assessed first, with integration measures generally preceding; a pension follows if incapacity persists.',
+    descDoc: 'Antrag bei der IV-Stelle auf eine Invalidenrente. Zuerst wird die Erwerbsfähigkeit beurteilt, in der Regel gehen Eingliederungsmassnahmen voraus; eine Rente folgt, wenn die Beeinträchtigung bestehen bleibt.',
     refRu: 'Закон об инвалидности (IVG)',
     refEn: 'Federal Act on Invalidity Insurance (IVG)',
     fields: [
@@ -581,6 +601,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Beschwerde wegen möglichem Behandlungsfehler', titleEn: 'Complaint about a possible treatment error',
     descRu: 'Жалоба руководству клиники/практики на возможную врачебную ошибку с требованием объяснений и доступа к досье. Медицинское лечение считается поручением (Auftrag) по ст. 394 и сл. OR; ответственность — по общему гражданскому и кантональному праву.',
     descEn: 'Complaint to the clinic/practice management about a possible treatment error, seeking explanations and access to the dossier. Treatment is a mandate under Art. 394 et seq. OR; liability follows general civil and cantonal law.',
+    descDoc: 'Beschwerde an die Leitung der Klinik oder Praxis wegen eines möglichen Behandlungsfehlers mit Bitte um Erklärungen und Einsicht in das Dossier. Die medizinische Behandlung gilt als Auftrag nach Art. 394 ff. OR; die Haftung richtet sich nach allgemeinem Zivil- und kantonalem Recht.',
     refRu: 'Ст. 394 и сл. OR (Auftrag); кантональное право здравоохранения',
     refEn: 'Art. 394 et seq. Swiss Code of Obligations (OR, mandate); cantonal healthcare law',
     fields: [
@@ -611,6 +632,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Einsichtsbegehren Patientendossier', titleEn: 'Request for access to the patient dossier',
     descRu: 'Запрос в клинику/практику на ознакомление с полным пациентским досье и/или получение копий. Досье ведётся по кантональному праву; кроме того действует право на информацию по ст. 25 revDSG.',
     descEn: 'Request to a clinic/practice for access to the complete patient dossier and/or copies; the dossier is governed by cantonal law, with data access rights under Art. 25 revDSG.',
+    descDoc: 'Antrag an Klinik oder Praxis auf Einsicht in das vollständige Patientendossier und/oder Erteilung von Kopien; das Dossier richtet sich nach kantonalem Recht, daneben gilt das Auskunftsrecht nach Art. 25 revDSG.',
     refRu: 'Ст. 25 revDSG; кантональное право здравоохранения (Patientendossier)',
     refEn: 'Art. 25 revDSG; cantonal healthcare law (patient dossier)',
     fields: [
@@ -639,6 +661,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um Dispensation vom Unterricht', titleEn: 'Request for exemption from school lessons',
     descRu: 'Ходатайство родителей об освобождении ребёнка от занятий — например, для участия в соревнованиях, религиозного праздника или по семейным обстоятельствам. Предоставляется руководством школы по кантональному школьному закону.',
     descEn: 'Parents’ request to exempt a child from lessons, e.g. for competitions, a religious holiday or family circumstances; granted by the school management under the cantonal school act.',
+    descDoc: 'Gesuch der Eltern um Dispensation des Kindes vom Unterricht — etwa für Wettkämpfe, einen religiösen Feiertag oder familiäre Umstände; bewilligt von der Schulleitung nach kantonalem Schulgesetz.',
     refRu: 'Кантональный закон о народной школе (Volksschulgesetz)',
     refEn: 'Cantonal primary school act (Volksschulgesetz)',
     fields: [
@@ -666,6 +689,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Reklamation bei Sendungsverlust (Schweizerische Post)', titleEn: 'Claim to Swiss Post for a lost consignment',
     descRu: 'Претензия в Swiss Post об утере или повреждении отправления с требованием возмещения. Условия и пределы возмещения определяются законом о почте (PUG) и почтовым уставом (PVO); приложите квитанцию об отправке.',
     descEn: 'Claim to Swiss Post for a lost or damaged consignment with a demand for compensation; conditions and limits follow the Postal Act (PUG) and Postal Ordinance (PVO). Attach the posting receipt.',
+    descDoc: 'Reklamation bei der Schweizerischen Post wegen Verlusts oder Beschädigung einer Sendung mit Schadenersatzforderung; Bedingungen und Grenzen richten sich nach dem Postgesetz (PUG) und der Postverordnung (PVO). Einlieferungsbeleg beilegen.',
     refRu: 'Закон о почте (PUG); Постановление о почте (PVO)',
     refEn: 'Postal Act (PUG); Postal Ordinance (PVO)',
     fields: [
@@ -697,6 +721,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Mängelanzeige an den Vermieter', titleEn: 'Defect notice to the landlord (Mängelanzeige)',
     descRu: 'Уведомление о недостатках квартиры с требованием устранить. Арендатор обязан сообщать о недостатках без промедления (ст. 259a OR); при неустранении возможны снижение аренды (ст. 259d OR) или самостоятельное устранение за счёт арендодателя.',
     descEn: 'Defect notice to the landlord with a demand to cure. Defects must be reported immediately (Art. 259a OR); otherwise rent reduction (Art. 259d OR) or self-help at the landlord’s cost may follow.',
+    descDoc: 'Mängelanzeige an den Vermieter mit Aufforderung zur Behebung. Mängel sind unverzüglich anzuzeigen (Art. 259a OR); andernfalls sind Mietzinsherabsetzung (Art. 259d OR) oder Behebung auf Kosten des Vermieters möglich.',
     refRu: 'Ст. 259a, 259d Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 259a, 259d of the Swiss Code of Obligations (OR)',
     fields: [
@@ -724,6 +749,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Kündigung des Mietvertrags durch den Mieter', titleEn: 'Lease termination by the tenant (Kündigung)',
     descRu: 'Расторжение договора аренды жилья арендатором. По закону для жилья срок предупреждения — 3 месяца на конец трёхмесячного срока (ст. 266c OR), если договором не установлено иное; рекомендована письменная форма.',
     descEn: 'Lease termination by the tenant. For dwellings the statutory notice is 3 months to the end of a three-month term (Art. 266c OR) unless the contract provides otherwise; written form is recommended.',
+    descDoc: 'Kündigung des Mietverhältnisses durch den Mieter. Für Wohnungen beträgt die gesetzliche Kündigungsfrist 3 Monate auf das Ende einer dreimonatigen Frist (Art. 266c OR), sofern der Vertrag nichts anderes vorsieht; schriftliche Form empfohlen.',
     refRu: 'Ст. 266c, 266d Обязательственного права Швейцарии (OR)',
     refEn: 'Articles 266c, 266d of the Swiss Code of Obligations (OR)',
     warningRu: 'Внимание: соблюдайте срок предупреждения из договора (по закону для жилья — 3 месяца на конец трёхмесячного срока); отправляйте заказным письмом и сохраняйте доказательство.',
@@ -752,6 +778,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Freigabe und Rückzahlung der Mietkaution', titleEn: 'Release and repayment of the rental deposit',
     descRu: 'Требование к банку о раскрытии залогового счёта (Sperrkonto) и возврате залога после окончания аренды. Арендатор вправе требовать возврата в течение года после окончания арендных отношений (ст. 257e OR).',
     descEn: 'Demand to the bank to release the blocked deposit account (Sperrkonto) after the lease ends; the tenant may claim repayment within one year after termination (Art. 257e OR).',
+    descDoc: 'Aufforderung an die Bank, das Sperrkonto nach Beendigung des Mietverhältnisses freizugeben; der Mieter kann die Rückzahlung innerhalb eines Jahres nach Beendigung verlangen (Art. 257e OR).',
     refRu: 'Ст. 257e Обязательственного права Швейцарии (OR)',
     refEn: 'Article 257e of the Swiss Code of Obligations (OR)',
     warningRu: 'Внимание: срок требования возврата залога — 1 год после окончания арендных отношений (ст. 257e OR).',
@@ -785,6 +812,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Beschwerde wegen Lärmbelästigung', titleEn: 'Noise nuisance complaint',
     descRu: 'Жалоба в общину/полицию на превышение шума. По ст. 684 ZGB владелец участка обязан воздерживаться от недопустимых воздействий на соседние участки; при нарушении возможны меры общины/полиции и гражданско-правовые требования.',
     descEn: 'Complaint to the municipality/police about excessive noise. Under Art. 684 ZGB landowners must refrain from excessive immissions; municipal and civil remedies may follow.',
+    descDoc: 'Beschwerde an die Gemeinde oder die Polizei wegen übermässigen Lärms. Nach Art. 684 ZGB muss der Grundeigentümer unzulässige Immissionen unterlassen; es kommen kommunale Massnahmen und zivilrechtliche Ansprüche in Betracht.',
     refRu: 'Ст. 684 Швейцарского гражданского кодекса (ZGB)',
     refEn: 'Article 684 of the Swiss Civil Code (ZGB)',
     fields: [
@@ -812,6 +840,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Schuldanerkenntnis', titleEn: 'Acknowledgement of debt (Schuldanerkenntnis)',
     descRu: 'Письменное признание долга (абстрактное Schuldanerkenntnis по ст. 82 OR): должник признаёт обязательство и обязуется уплатить сумму к сроку. Документ упрощает доказывание при взыскании.',
     descEn: 'Written acknowledgement of debt (abstract acknowledgement under Art. 82 OR): the debtor acknowledges the obligation and undertakes to pay by the due date; simplifies proof in enforcement.',
+    descDoc: 'Schriftliches Schuldanerkenntnis (abstraktes Anerkenntnis nach Art. 82 OR): der Schuldner erkennt die Verbindlichkeit an und verpflichtet sich zur Zahlung bis zum Fälligkeitstermin; vereinfacht den Beweis bei der Betreibung.',
     refRu: 'Ст. 82 Обязательственного права Швейцарии (OR)',
     refEn: 'Article 82 of the Swiss Code of Obligations (OR)',
     fields: [
@@ -839,6 +868,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Darlehensvertrag unter Privatpersonen', titleEn: 'Private loan agreement (Darlehensvertrag)',
     descRu: 'Простой договор займа между частными лицами: сумма, срок, проценты и порядок возврата. Займ — реальный договор по ст. 312 и сл. OR; письменная форма рекомендуется как доказательство.',
     descEn: 'Simple private loan agreement: amount, term, interest and repayment. The loan is a real contract under Art. 312 et seq. OR; written form is recommended as evidence.',
+    descDoc: 'Einfacher Darlehensvertrag zwischen Privatpersonen: Betrag, Laufzeit, Zins und Rückzahlung. Das Darlehen ist ein Realvertrag nach Art. 312 ff. OR; die Schriftform wird als Beweis empfohlen.',
     refRu: 'Ст. 312 ff. Обязательственного права Швейцарии (OR)',
     refEn: 'Article 312 et seq. of the Swiss Code of Obligations (OR)',
     fields: [
@@ -867,6 +897,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Vollmacht', titleEn: 'Power of attorney (Vollmacht)',
     descRu: 'Общая доверенность на бытовые дела: получение документов и посылок, запросы в ведомствах, у Swiss Post и в банке. Для сделок, требующих нотариальной формы (недвижимость), нужна нотариально заверенная доверенность.',
     descEn: 'General power of attorney for everyday matters (documents, parcels, enquiries with authorities, Swiss Post, banks). Notarised form is required where the transaction is notarially form-bound (e.g. real estate).',
+    descDoc: 'Allgemeine Vollmacht für Alltagsgeschäfte: Abholen von Dokumenten und Paketen, Anfragen bei Behörden, der Schweizerischen Post und Banken. Notarielle Beurkundung ist erforderlich, wo das Rechtsgeschäft notarieller Form bedarf (etwa Liegenschaften).',
     refRu: 'Ст. 32 Обязательственного права Швейцарии (OR)',
     refEn: 'Article 32 of the Swiss Code of Obligations (OR)',
     fields: [
@@ -890,6 +921,7 @@ export const TEMPLATES_CH: TplDef[] = [
     titleDoc: 'Gesuch um eine Wohnsitzbestätigung', titleEn: 'Request for a residence confirmation (Gemeinde)',
     descRu: 'Запрос в службу населения общины (Einwohnerdienste) о выдаче подтверждения места жительства — для банка, работодателя, консульства и других целей.',
     descEn: 'Request to the municipal residents’ office (Einwohnerdienste) for a residence certificate, e.g. for a bank, employer or consulate.',
+    descDoc: 'Anfrage an die Einwohnerdienste der Gemeinde um Ausstellung einer Wohnsitzbestätigung — etwa für die Bank, den Arbeitgeber oder das Konsulat.',
     refRu: 'Кантональное право о контроле населения (Einwohnerdienste Gemeinde)',
     refEn: 'Cantonal residents’ registration law (municipal Einwohnerdienste)',
     fields: [

@@ -31,6 +31,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '年次有給休暇取得申請', titleEn: 'Paid leave application (年休暇届)',
     descRu: 'Заявление на годовой оплачиваемый отпуск (年次有給休暇). По 労働基準法第39条: 10 рабочих дней при стаже от 6 месяцев, далее +1~2 в год до 20 дней.',
     descEn: 'Annual paid leave application. Under the Labour Standards Act art. 39: 10 working days after 6 months of service, up to 20 days.',
+    descDoc: '年次有給休暇の取得を申請する書類。労働基準法第39条により、入社から6か月で10労働日、勤続年数に応じて加算され、最高20日となる。',
     refRu: 'ст. 39 Закона о трудовых стандартах Японии (労働基準法)',
     refEn: 'Article 39 of the Japanese Labour Standards Act',
     fields: [
@@ -57,6 +58,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '退職願', titleEn: 'Resignation letter (退職願)',
     descRu: 'Заявление об уходе. По 民法第627条 при бессрочном найме можно уволиться с уведомлением за 2 недели; в компаниях обычно требуют 1–3 месяца по трудовым правилам (就業規則).',
     descEn: 'Resignation letter. Under the Civil Code art. 627, two weeks’ notice suffices for indefinite employment; companies usually require 1–3 months per internal rules.',
+    descDoc: '雇用主に退職を申し入れる書類。民法第627条により、期間の定めのない雇用は2週間前に退職の申し入れが可能であるが、就業規則上1〜3か月前に提出するのが一般的。',
     refRu: 'ст. 627 Гражданского кодекса Японии (民法); 就業規則',
     refEn: 'Article 627 of the Japanese Civil Code; internal employment rules',
     fields: [
@@ -78,6 +80,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '在職証明書発行依頼', titleEn: 'Employment certificate request (在職証明書)',
     descRu: 'Запрос справки с места работы (在職証明書) и иных документов (源泉徴収票、給与明細)。 Обычно выдаётся в течение 1–2 недель.',
     descEn: 'Request for an employment certificate (在職証明書) and related documents. Usually issued within 1-2 weeks.',
+    descDoc: '在職証明書や源泉徴収票、給与明細等の発行を会社に依頼する書類。通常1〜2週間で発行される。',
     refRu: 'общепринятая кадровая практика Японии',
     refEn: 'Common Japanese HR practice',
     fields: [
@@ -104,6 +107,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '内容証明郵便（クレーム）', titleEn: 'Claim letter (内容証明 recommended)',
     descRu: 'Письменная претензия продавцу/исполнителю. В Японии для фиксации претензии используется 内容証明郵便 (письмо с удостоверением содержания); сохраняйте копии и чеки.',
     descEn: 'Claim letter to a seller/provider. In Japan such claims are commonly sent as 内容証明郵便 (content-certified mail); keep copies and receipts.',
+    descDoc: '販売業者・サービス提供者への書面による苦情・請求書。日本では請求内容と送付事実を証明するため内容証明郵便で送付するのが一般的であり、控えと領収書を保管すること。',
     refRu: 'Закон о потребительских договорах Японии (消費者契約法); общая практика',
     refEn: 'Japanese Consumer Contract Act; common practice',
     fields: [
@@ -135,6 +139,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '訴状（民事・基本形）', titleEn: 'Civil complaint (訴状, base form)',
     descRu: 'Базовая форма искового заявления (訴状): стороны, требования, основания — по ст. 133 ГПК Японии; по займам — ссылка на ст. 587 ГК Японии.',
     descEn: 'Base 訴状 for the Japanese courts: parties, claims (請求の趣旨), causes (請求の原因), per the Code of Civil Procedure art. 133.',
+    descDoc: '民事訴訟の基本となる訴状。当事者、請求の趣旨、請求の原因を記載し、民事訴訟法第133条に基づいて作成する。金銭消費貸借に基づく請求は民法第587条を引用する。',
     refRu: 'ст. 133 Кодекса гражданского судопроизводства Японии (民事訴訟法); 民法',
     refEn: 'Article 133 of the Japanese Code of Civil Procedure; Civil Code',
     fields: [
@@ -166,6 +171,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '借用書（金銭消費貸借契約）', titleEn: 'Loan note (借用書)',
     descRu: 'Расписка о заёме между физическими лицами (借用書): сумма, срок, проценты. Договор заёма — ст. 587 ГК Японии.',
     descEn: 'Loan note between individuals: amount, repayment date, interest. A loan contract arises under the Civil Code art. 587.',
+    descDoc: '個人間の金銭消費貸借につき作成する借用書。金額、返済期日、利息を明記する。貸借契約は民法第587条に基づく。',
     refRu: 'ст. 587 Гражданского кодекса Японии (民法)',
     refEn: 'Article 587 of the Japanese Civil Code',
     fields: [
@@ -191,6 +197,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '委任状', titleEn: 'Power of attorney (委任状)',
     descRu: 'Доверенность (委任状) для бытовых действий. Для регистрации недвижимости и банковских операций — формы учреждения или нотариальное заверение.',
     descEn: 'General power of attorney. For real-estate registration and banking, institution-specific forms or notarization may be required.',
+    descDoc: '書類の受け取りや手続き等の日常的な事務を委任する委任状。不動産登記や銀行取引では、機関所定の様式又は公証人の認証が必要となる場合がある。',
     refRu: 'общая практика委托契約（民法第643条以下）',
     refEn: 'Common practice; mandate contracts under the Japanese Civil Code',
     fields: [
@@ -217,6 +224,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '欠席届（保護者記入）', titleEn: 'School absence notice (欠席届)',
     descRu: '保護者から学校への欠席届：欠席期間と理由を知らせる一般的な書式。',
     descEn: 'Parent’s absence notice to the school: period and reason.',
+    descDoc: '保護者から学校へ提出する欠席届。欠席期間と理由を知らせる一般的な書式。',
     refRu: '学校の就学規則・出席管理規定',
     refEn: 'School attendance rules',
     fields: [
@@ -242,6 +250,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '医療機関への苦情申立書', titleEn: 'Complaint to a medical institution',
     descRu: '医療機関への苦情申立書。医療法・医療安全に関する指針に基づき、院内の苦情受付（医療安全相談窓口）に書面で提出します。',
     descEn: 'Complaint to a medical institution under the Japanese Medical Service Act and patient-safety guidance; file in writing at the patient-safety window.',
+    descDoc: '医療機関への苦情申立書。医療法及び医療安全に関する指針に基づき、院内の苦情受付（医療安全相談窓口）に書面で提出する。',
     refRu: '医療法及び医療安全に関する指針（厚生労働省）',
     refEn: 'Medical Service Act and MHLW patient-safety guidance',
     fields: [
@@ -270,6 +279,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '賃貸住宅の修繕請求書', titleEn: 'Repair demand to the landlord (修繕請求書)',
     descRu: '賃貸住宅の不具合について大家（賃貸人）に修繕を求める書面。民法第606条により賃貸人には賃貸物の使用収益に必要な修繕義務があります。',
     descEn: 'Repair demand to the landlord. Under the Civil Code art. 606, the lessor must repair what is necessary for use of the property.',
+    descDoc: '賃貸住宅の不具合について大家（賃貸人）に修繕を求める請求書。民法第606条により、賃貸人には賃貸物の使用収益に必要な修繕義務がある。',
     refRu: 'ст. 606 Гражданского кодекса Японии (民法)',
     refEn: 'Article 606 of the Japanese Civil Code',
     fields: [
@@ -309,6 +319,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '行政不服申立書', titleEn: 'Administrative appeal (fukuzen moshitate)',
     descRu: '行政不服申立て: objection to an administrative disposition within 3 months (行政不服審査法); скопирайте реквизиты处分 и grounds.',
     descEn: 'Administrative appeal against a disposition within three months (Administrative Appeal Act).',
+    descDoc: '行政庁の処分に対する行政不服申立ての書類。処分があったことを知った日から3か月以内に、行政不服審査法に基づき提出する。',
     refRu: '行政不服審査法 (平成26年法律第68号) 第2条・第18条',
     refEn: 'Administrative Appeal Act (Act No. 68 of 2014), Arts. 2 and 18',
     fields: [
@@ -335,6 +346,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '支払督促申立書', titleEn: 'Application for payment order (shiharai tokusoku)',
     descRu: '支払督促 (payment order) — быстрая процедура взыскания денежного долга (民訴法 第382条); подача в简易法院 по сумме долга.',
     descEn: 'Payment order procedure for monetary claims (Art. 382 of the Japanese Civil Procedure Code), filed with the summary court.',
+    descDoc: '金銭債権に基づく支払督促の申立書。訴訟よりも迅速な債権回収手続きであり（民事訴訟法第382条）、債務額に応じて簡易裁判所に提出する。',
     refRu: '民事訴訟法 第382条以下',
     refEn: 'Japanese Civil Procedure Code, Art. 382 et seq.',
     fields: [
@@ -360,6 +372,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '診療情報開示請求書', titleEn: 'Request to disclose medical records',
     descRu: '診療情報開示請求書: право пациента (или наследника) на свои записи (医療法 第69条の2, 診療録等の閲覧等及び複写等の請求); с обоснованием и сроком ответа.',
     descEn: 'Request for disclosure of medical records under Art. 69-2 of the Medical Service Act.',
+    descDoc: '自身の診療録等の開示を医療機関に請求する書類（医療法第69条の2）。患者又はその相続人が請求でき、請求理由及び回答期限を記載する。',
     refRu: '医療法 第69条の2（診療録等の閲覧等及び複写等の請求）',
     refEn: 'Medical Service Act of Japan, Art. 69-2 (viewing and copying of medical records)',
     fields: [
@@ -385,6 +398,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '民事訴状（貸金返還請求）', titleEn: 'Civil complaint — loan repayment (貸金返還請求)',
     descRu: '訴状 о взыскании долга по займу: 請求の趣旨 и 請求の原因 по ст. 133 ГПК Японии; основание — ст. 587 ГК Японии (金銭消費貸借), просрочные проценты — ст. 419 и 404 ГК (законная ставка 3% годовых для договоров после 01.04.2020).',
     descEn: '訴状 demanding repayment of a loan: claims (請求の趣旨) and causes (請求の原因) per Code of Civil Procedure art. 133; basis — Civil Code art. 587 (money loan), delay interest per arts. 419 and 404 (statutory 3% p.a. for contracts after 1 Apr 2020).',
+    descDoc: '貸金返還を求める訴状。請求の趣旨及び請求の原因は民事訴訟法第133条に従って記載し、請求原因は民法第587条（金銭消費貸借）、遅延利息は民法第419条・第404条（2020年4月1日以降の契約の法定利率は年3%）に基づく。',
     refRu: 'ст. 133 Кодекса гражданского судопроизводства Японии (民事訴訟法)；ст. 587, 419, 404 Гражданского кодекса Японии (民法)',
     refEn: 'Japanese Code of Civil Procedure art. 133; Civil Code arts. 587, 419, 404',
     fields: [
@@ -422,6 +436,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '民事訴状（不法行為による損害賠償請求）', titleEn: 'Civil complaint — damages in tort (不法行為による損害賠償請求)',
     descRu: '訴状 о возмещении вреда из деликта: ст. 709 ГК Японии (общий состав), ст. 710 (неимущественный вред/慰謝料), проценты — по ст. 404 ГК (3% годовых). Давность: 3 года с момента, когда потерпевший узнал о вреде и причинителе, либо 20 лет со дня правонарушения (ст. 724).',
     descEn: '訴状 claiming tort damages: Civil Code art. 709 (general tort), art. 710 (non-pecuniary loss/consolation money), interest at the statutory 3% p.a. (art. 404). Limitation: 3 years from knowledge of the damage and tortfeasor, 20 years from the act (art. 724).',
+    descDoc: '不法行為に基づく損害賠償を求める訴状。民法第709条（不法行為）、第710条（慰謝料等の非財産的損害）により、利息は第404条の法定利率（年3%）による。損害及び加害者を知った時から3年、不法行為の時から20年で時効となる（第724条）。',
     refRu: 'ст. 133 Кодекса гражданского судопроизводства Японии (民事訴訟法)；ст. 709, 710, 404 Гражданского кодекса Японии (民法)',
     refEn: 'Japanese Code of Civil Procedure art. 133; Civil Code arts. 709, 710, 404',
     fields: [
@@ -458,6 +473,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '民事訴状（敷金返還請求）', titleEn: 'Civil complaint — security deposit return (敷金返還請求)',
     descRu: '訴状 о возврате 敷金 (залога) после выезда из арендного жилья. Обязанность возврата — ст. 622-2 ГК Японии (арендодатель возвращает залог после возврата помещения; зачёт своих требований допускается). Требования до 1,4 млн иен подсудны 簡易裁判所.',
     descEn: '訴状 demanding the return of the security deposit (敷金) after moving out. Duty to return — Civil Code art. 622-2 (the lessor must return the deposit when the premises are handed back; offsetting debts is allowed). Claims up to ¥1.4m belong to summary courts.',
+    descDoc: '賃貸住宅退去後の敷金返還を求める訴状。返還義務は民法第622条の2に基づき、賃貸人は建物返還時に敷金を返還し、自己の債権との相殺が認められる。140万円以下の請求は簡易裁判所の管轄である。',
     refRu: 'ст. 133 Кодекса гражданского судопроизводства Японии (民事訴訟法)；ст. 622-2 Гражданского кодекса Японии (民法・敷金)',
     refEn: 'Japanese Code of Civil Procedure art. 133; Civil Code art. 622-2 (security deposit)',
     fields: [
@@ -496,6 +512,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '診断書・証明書発行依頼書', titleEn: 'Medical certificate issuance request',
     descRu: 'Запрос в клинику на выдачу 診断書/証明書 (для работодателя, страховой, школы, 労災). Выдача и пошлина определяются правилами учреждения; отозвать уже выданную справку врач может только по законным основаниям (医師法第19条).',
     descEn: 'Request to the medical institution for a medical certificate (診断書) for an employer, insurer, school or workers’ compensation. Issuance and fees follow the institution rules; withdrawal of issued certificates is restricted by the Medical Practitioners Act art. 19.',
+    descDoc: '勤務先、保険者、学校、労災等のために診断書・証明書の発行を医療機関に依頼する書類。発行の可否及び手数料は各医療機関の規定による（医師法第19条）。',
     refRu: '医師法第19条（診断書の交付・取下げ）；各医療機関の診断書発行規程',
     refEn: 'Medical Practitioners Act art. 19; medical institution certificate rules',
     fields: [
@@ -525,6 +542,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '在学証明書等発行願', titleEn: 'Enrollment certificate / transcript request',
     descRu: 'Заявление в школу/вуз на выдачу 在学証明書, 成績証明書 и др. (на японском и/или английском). Выдаёт 学生課/教務課, нужны 学籍番号 и плата за бланк; требуется при留学, трудоустройстве, субсидиях.',
     descEn: 'Application to a school/university for a certificate of enrollment or transcript (Japanese and/or English), issued by the student/academic affairs office for a fee; needed for study abroad, employment and benefits.',
+    descDoc: '学校・大学に対し、在学証明書や成績証明書等（日本語・英語）の発行を求める願書。学生課・教務課に対し学籍番号を添えて申請し、発行手数料を納める。留学、就職、給付申請等に必要となる。',
     refRu: '学校教育法施行規則（学籍簿の管理）；各学校の証明書発行規程',
     refEn: 'School Education Act Enforcement Regulations (student register); school certificate issuance rules',
     fields: [
@@ -556,6 +574,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '休学願', titleEn: 'Leave of absence application (kyūgaku-gan)',
     descRu: 'Заявление студента/ученика о предоставлении академического отпуска (休学) на срок с указанием причины (болезнь, финансы, стажировка,留学) и даты возвращения; порядок определён уставом учебного заведения (学則), при болезни обычно требуется 診断書.',
     descEn: 'Application for a leave of absence (休学) with the reason (illness, finances, internship/study abroad), period and expected return; governed by the school rules (学則), a doctor’s certificate is usually required for illness.',
+    descDoc: '休学を申請する願書。理由（病気、経済的事情、インターンシップ・留学等）、休学期間及び復学予定日を記載する。手続きは学則に定められ、病気が事由の場合は診断書の提出が求められるのが一般的。',
     refRu: '各大学・学校の学則（休学・復学の規定）；学校教育法施行規則',
     refEn: 'University/school regulations (rules on leave of absence and return); School Education Act Enforcement Regulations',
     fields: [
@@ -585,6 +604,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '敷金精算に関する申し入れ書', titleEn: 'Deposit settlement demand (shikikin seisan)',
     descRu: 'Досудебное требование арендатора о возврате залога (敷金) с расчётом: по ст. 622-2 ГК залог возвращается после передачи помещения, а естественный износ и старение не входят в обязанность восстановления (ст. 621 ГК, методика 国土交通省).',
     descEn: 'Pre-court demand by the tenant for deposit settlement: under Civil Code art. 622-2 the deposit must be returned when the premises are handed back, and natural wear (art. 621, MLIT guideline) is not chargeable.',
+    descDoc: '賃貸人に対する敷金精算の申し入れ書。民法第622条の2により建物返還時に敷金は返還され、通常の使用による自然損耗及び経年変化は原状回復義務に含まれない（第621条、国土交通省「原状回復をめぐるトラブルとガイドライン」）。',
     refRu: '民法第621条（原状回復義務）、第622条の2（敷金）；国土交通省「原状回復をめぐるトラブルとガイドライン」',
     refEn: 'Civil Code arts. 621 (restoration duty) and 622-2 (deposit); MLIT “Guideline on restoration disputes”',
     fields: [
@@ -616,6 +636,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '所得税の還付請求書', titleEn: 'Income tax refund claim (還付請求/還付申告)',
     descRu: 'Заявление в налоговую инспекцию о возврате подоходного налога: (1) 還付申告 — вычеты, не заявленные при годовом расчёте на работе (медицинские расходы свыше 100 тыс. иен — 医療費控除 по ст. 73 Закона о подоходном налоге); право заявить — в течение 5 лет; (2) 更正の請求 — исправление уже поданной декларации (国税通則法第23条); (3) 還付請求 — возврат ошибочно уплаченного налога (国税通則法第56条). Онлайн — через 確定申告書等作成コーナー (keisan.nta.go.jp) или e-Tax.',
     descEn: 'Refund claim to the tax office: a final return (還付申告) for deductions missed in the year-end adjustment (medical expenses over ¥100,000, Income Tax Act art. 73, within 5 years), a correction request for a filed return (General Rules art. 23), or a refund claim for erroneous payment (art. 56).',
+    descDoc: '税務署に対する所得税の還付請求書。年末調整で控除を申告しなかった場合の還付申告（所得税法第73条の医療費控除等、医療費が10万円超）、申告済み税額の更正の請求（国税通則法第23条）、誤って納付した税額の還付請求（同法第56条）に用いる。',
     refRu: '国税通則法第23条（更正の請求）、第56条（還付請求権）；所得税法第73条（医療費控除）',
     refEn: 'National General Rules on National Taxes arts. 23 (correction request), 56 (refund claim); Income Tax Act art. 73 (medical expenses deduction)',
     fields: [
@@ -648,6 +669,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '不正出金に関する申し立て書', titleEn: 'Unauthorized withdrawal claim to the bank (不正出金)',
     descRu: 'Заявление в банк о несанкционированных операциях по счёту (кража карты, перехват данных, 振り込め詐欺): остановка операций, блокировка счёта, расследование и возврат средств. По 犯罪収益移転防止法第12条の2・第12条の3 банк, распознавший мошеннический перевод, обязан принять меры по восстановлению ущерба; при неразрешении — жалоба в ФСА и суд (民法第415、709条). Параллельно подайте заявление в полицию (被害届).',
     descEn: 'Claim to the bank over unauthorized account transactions (stolen card, phishing, transfer fraud): stop transactions, freeze the account, investigate and refund. Under the Act on Prevention of Transfer of Criminal Proceeds arts. 12-2/12-3 the bank must restore fraud losses; Civil Code arts. 415/709 apply otherwise. File a police report in parallel.',
+    descDoc: '預金口座の不正取引（カード盗難、フィッシング、振り込め詐欺等）について銀行に申し立てる書類。取引停止、口座凍結、調査及び返金を求める。犯罪収益移転防止法第12条の2・第12条の3により、金融機関は不正送金の被害回復措置を講ずる義務を負い、解決しない場合は民法第415条・第709条に基づく請求や警察への被害届を検討する。',
     refRu: '犯罪収益移転防止法第12条の2・第12条の3（被害回復義務・措置義務）；民法第415条（債務不履行）、第709条（不法行為）',
     refEn: 'Act on Prevention of Transfer of Criminal Proceeds arts. 12-2, 12-3; Civil Code arts. 415, 709',
     fields: [
@@ -677,6 +699,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '児童手当認定請求書', titleEn: 'Child allowance recognition claim (児童手当)',
     descRu: '認定請求 — заявление в муниципалитет (市区町村) на назначение детского пособия 児童手当: подаётся в течение 15 дней с рождения ребёнка или переезда; по ст. 6 Закона о детских пособиях выплаты начинаются с месяца, следующего за месяцем подачи. Размер зависит от возраста и очередности рождения детей (ст. 5: до 3 лет — 15 000 иен/мес., с 3 лет до средней школы — 10 000 иен/мес., третий и последующие дети — 15 000 иен/мес.).',
     descEn: 'Recognition claim for the child allowance filed with the municipality within 15 days of a birth or move; payments start the month after the claim (Child Allowance Act art. 6). Amounts depend on the child’s age and birth order (art. 5): ¥15,000/month under 3, ¥10,000 from 3 to junior high (¥15,000 for the third child and later).',
+    descDoc: '市区町村に提出する児童手当の認定請求書。出産又は転入から15日以内に申請し（児童手当法第6条）、手当は認定請求をした月の翌月分から支給される。手当額は子の年齢及び出生順位により異なる（同法第5条）。',
     refRu: '児童手当法第4条（支給要件）、第5条（手当の額）、第6条（認定請求）',
     refEn: 'Child Allowance Act arts. 4 (eligibility), 5 (amounts), 6 (recognition claim)',
     fields: [
@@ -707,6 +730,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '老齢給付裁定請求書', titleEn: 'Old-age pension claim (裁定請求)',
     descRu: '裁定請求 — заявление о назначении базовой и/или корпоративной пенсии по старости в офис Японского пенсионного управления (年金事務所): обычно в 65 лет; по желанию — досрочно (繰上げ, уменьшение) или позже, до 75 лет (繰下げ, увеличение). Записи и расчёт — на официальном портале ねんきんネット (nenkin.go.jp); подача по почте, в окне или онлайн через マイナポータル.',
     descEn: 'Pension claim (saitei seikyū) to the Japan Pension Service office for the basic and/or employees’ old-age pension, normally at 65; optional early (reduced) or deferred up to 75 (increased) payment. Records and simulations are on the official Nenkin Net portal; filing by mail, at a counter or online via Myna Portal.',
+    descDoc: '日本年金機構（年金事務所）に対する老齢給付金の裁定請求書。原則として65歳から受給を開始し、繰上げ請求（減額）又は75歳までの繰下げ請求（増額）を選択できる。記録の確認及び試算はねんきんネットで可能である。',
     refRu: '国民年金法第26条（支給要件）、第28条・第28条の2（繰上げ・繰下げ支給）；厚生年金保険法第43条（老齢厚生年金）',
     refEn: 'National Pension Act arts. 26, 28, 28-2; Employees’ Pension Insurance Act art. 43',
     fields: [
@@ -740,6 +764,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '近隣騒音に関する要望書', titleEn: 'Neighbor noise complaint letter',
     descRu: 'Жалоба-требование в управляющую компанию на шум от соседей: фиксирует источник, период, время суток и влияние на жизнь, просит провести разъяснительную работу и дать письменный ответ. Если шум продолжится — отправка соседу предупреждения через 内容証明郵便, консультация по телефону полиции #9110 и требование о возмещении ущерба по ст. 709 Гражданского кодекса (民法).',
     descEn: 'Noise complaint to the management company: records the source, period, hours and impact, and asks for warnings, guidance and a written reply. If the noise continues, a warning letter via content-certified mail (内容証明郵便), police consultation (#9110) and a tort claim under Civil Code art. 709 are considered.',
+    descDoc: '管理会社に対する近隣騒音の要望書。騒音の発生源、期間、時間帯及び生活への影響を記録し、注意指導と書面での回答を求める。改善しない場合は内容証明郵便による警告、警察相談専用電話（#9110）への相談、民法第709条に基づく損害賠償請求を検討する。',
     refRu: '民法第709条（不法行為）；建物の区分所有等に関する法律第6条；各自治体の騒音に関する条例',
     refEn: 'Civil Code art. 709 (tort); Act on Ownership of Condominiums etc. art. 6; local noise ordinances',
     fields: [
@@ -774,6 +799,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '水漏れ被害に関する賠償請求書', titleEn: 'Water leak damage claim letter',
     descRu: 'Уведомление и требование к жильцу/собственнику верхней квартиры о возмещении ущерба от протечки: фиксирует дату, предполагаемую причину и перечень повреждений, требует обследование, ремонт и выплату в срок. Основано на ст. 709 и 710 ГК (民法); копия направляется управляющей компании, при источнике в общих коммуникациях — требование к управляющей ассоциации (管理組合).',
     descEn: 'Notice and claim to the resident/owner of the upstairs unit for water-leak damage: records the date, presumed cause and itemised damage, demanding investigation, repair and payment within a deadline. Based on Civil Code arts. 709 and 710; a copy goes to the management company, and shared-piping causes are referred to the management association.',
+    descDoc: '上部階の居住者・所有者に対する水漏れ被害の通知及び賠償請求書。発生時期、推定原因、損害箇所を記録し、調査、修理及び期限内の支払いを求める（民法第709条・第710条）。写しを管理会社に送付し、共用配管に起因する場合は区分所有法及び管理規約に基づき管理組合に対応を求める。',
     refRu: '民法第709条（不法行為）、第710条（損害賠償の範囲）',
     refEn: 'Civil Code arts. 709 (tort), 710 (scope of damages)',
     fields: [
@@ -811,6 +837,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '共用部の衛生・喫煙に関する申し入れ書', titleEn: 'Common-area sanitation and smoking request',
     descRu: 'Письмо-требование управляющей компании о нарушениях в местах общего пользования (мусор, хранение вещей, курение, несоблюдение чистоты). Опирается на ст. 6 закона о разделённой собственности (запрет действий вопреки общим интересам) и устав управления (管理規約); требует разъяснительной работы, наведения порядка, уборки и письменного отчёта.',
     descEn: 'Request to the management company about common-area violations (garbage, stored belongings, smoking, poor cleaning). Based on the Condominium Act art. 6 (ban on acts against common interests) and the management rules; demands warnings, clean-up and a written report.',
+    descDoc: '共用部のごみ、物品放置、喫煙、清掃不備について管理会社に申し入れる書面。建物の区分所有等に関する法律第6条（区分所有者の共同の利益に反する行為の禁止）及び管理規約に基づき、注意指導、清掃、改善と書面での報告を求める。',
     refRu: '建物の区分所有等に関する法律第6条（区分所有者の遵守義務）、管理規約；民法第709条（不法行為）',
     refEn: 'Act on Ownership of Condominiums etc. art. 6 (owners’ duty), management rules; Civil Code art. 709',
     fields: [
@@ -846,6 +873,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '修繕請求書', titleEn: 'Repair demand letter (rented premises)',
     descRu: 'Требование арендатора к владельцу/управляющей компании о ремонте арендуемой квартиры (сантехника, электрика, двери и т.п.) на основании обязательства арендодателя по ремонту (ст. 606 ГК). Устанавливает срок ремонта, требует ответа в письменном виде; при бездействии — уведомление по ст. 541 ГК (расторжение), возмещение необходимых расходов по ст. 608 ГК.',
     descEn: 'Tenant’s demand to the landlord/management company for repair of the rented dwelling (plumbing, electrics, fittings, etc.) based on the landlord’s repair duty (Civil Code art. 606). Sets a repair deadline and requires a written reply; otherwise a notice under art. 541 (termination) and reimbursement of necessary expenses under art. 608.',
+    descDoc: '賃借人から賃貸人・管理会社に対する修繕請求書（給排水、電気、建具等）。民法第606条の賃貸人の修繕義務に基づき修理期限を定め、書面での回答を求める。期限内に対応がない場合は、第541条（催告による解除）及び第608条（必要費の償還）を検討する。',
     refRu: '民法第606条（賃貸人の修繕義務）、第541条（催告による解除）、第608条（必要費の償還）',
     refEn: 'Civil Code arts. 606 (landlord’s repair duty), 541 (termination after notice), 608 (reimbursement of necessary expenses)',
     fields: [
@@ -884,6 +912,7 @@ export const TEMPLATES_JP: TplDef[] = [
     titleDoc: '管理費・修繕積立金に関する説明請求書', titleEn: 'Explanation request on management fee and reserve fund',
     descRu: 'Требование собственника квартиры (区分所有者) к управляющей компании или ассоциации предоставить расшифровку взносов на управление и фонд капремонта, баланс, план капремонта и произвести перерасчёт общих счетчиков/сборов. Основано на ст. 29 закона о разделённой собственности (обязанность управляющего вести расчётные документы и давать пояснения).',
     descEn: 'Owner’s (区分所有者) demand to the management company or association for breakdowns of the management fee and reserve fund, balances, the long-term repair plan and recalculation of shared metering/charges. Based on the Condominium Act art. 29 (management’s duty to keep accounts and give explanations).',
+    descDoc: '区分所有者から管理会社・管理組合に対する説明請求書。管理費・修繕積立金の内訳及び収支報告書、修繕積立金の残高と長期修繕計画との対比、共益費等の検針・料金の再計算を求める。建物の区分所有等に関する法律第29条（管理者の説明等義務）に基づく。',
     refRu: '建物の区分所有等に関する法律第29条（管理者の説明等義務）',
     refEn: 'Act on Ownership of Condominiums etc. art. 29 (manager’s duty of explanation and account books)',
     fields: [
