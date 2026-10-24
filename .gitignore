@@ -85,3 +85,6 @@ keystore.properties
 # сгенерированный из корневого capacitor.config.ts
 /android/app/src/main/assets/capacitor.config.json
 tool-results
+
+# python-байткод
+__pycache__/

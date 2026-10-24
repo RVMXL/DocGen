@@ -27,7 +27,10 @@ const FONT_FILES: Partial<Record<DocLang, { regular: string; bold: string }>> = 
 };
 const DEFAULT_FONTS = { regular: 'LiberationSerif-Regular.ttf', bold: 'LiberationSerif-Bold.ttf' };
 
-const cache = new Map<DocLang, Fonts>();
+// Кэшируются ТОЛЬКО БАЙТЫ шрифтов (ENG-1): объекты PDFFont привязаны к своему
+// PDFDocument и не могут переиспользоваться между документами — второй PDF
+// получал ссылки на ресурсы чужого контекста и собирался битым.
+const fontBytesCache = new Map<DocLang, { regular: Uint8Array; bold: Uint8Array }>();
 
 /** URL шрифта: учитывает базовый путь сборки (хостинг в подкаталоге, Electron app://) */
 function fontUrl(file: string): string {
@@ -37,19 +40,22 @@ function fontUrl(file: string): string {
 }
 
 async function loadFonts(pdfDoc: PDFDocument, docLang: DocLang): Promise<Fonts> {
-  const hit = cache.get(docLang);
-  if (hit) return hit;
-  pdfDoc.registerFontkit(fontkit);
+  pdfDoc.registerFontkit(fontkit); // обязателен для КАЖДОГО нового документа
   const files = FONT_FILES[docLang] ?? DEFAULT_FONTS;
-  const [regular, bold] = await Promise.all([
-    fetch(fontUrl(files.regular)).then((r) => r.arrayBuffer()),
-    fetch(fontUrl(files.bold)).then((r) => r.arrayBuffer()),
-  ]);
-  const fonts = {
-    regular: await pdfDoc.embedFont(regular, { subset: true }),
-    bold: await pdfDoc.embedFont(bold, { subset: true }),
+  let bytes = fontBytesCache.get(docLang);
+  if (!bytes) {
+    const [regular, bold] = await Promise.all([
+      fetch(fontUrl(files.regular)).then((r) => r.arrayBuffer()),
+      fetch(fontUrl(files.bold)).then((r) => r.arrayBuffer()),
+    ]);
+    bytes = { regular: new Uint8Array(regular), bold: new Uint8Array(bold) };
+    fontBytesCache.set(docLang, bytes);
+  }
+  // embedFont вызывается для каждого нового PDFDocument (кэшировать объекты нельзя)
+  const fonts: Fonts = {
+    regular: await pdfDoc.embedFont(bytes.regular, { subset: true }),
+    bold: await pdfDoc.embedFont(bytes.bold, { subset: true }),
   };
-  cache.set(docLang, fonts);
   return fonts;
 }
 
@@ -198,7 +204,7 @@ export async function buildPdf(blocks: DocBlock[], docLang: DocLang = 'ru', std?
         break;
       case 'attachment': {
         y -= 12;
-        drawLine(b.label ?? 'Приложение:', fonts.regular, M.left, contentWidth, 'left');
+        drawLine(b.label, fonts.regular, M.left, contentWidth, 'left');
         b.items.forEach((item, i) => {
           drawLine(`${i + 1}. ${item}`, fonts.regular, M.left + INDENT, contentWidth - INDENT, 'left');
         });
