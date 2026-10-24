@@ -143,6 +143,17 @@ def main():
             size = os.path.getsize(out) // 1024
             print(f'✓ {name}-{weight}.ttf — {size} КБ')
 
+    # ── LEG-1: переименование RFN (SIL OFL 1.1 §3) ─────────────────────────
+    # Подмножество — Modified Version по OFL, поэтому nameID 1/3/4/6/16/17 не
+    # могут содержать RFN «Noto». Переименование обязательно после каждого
+    # сабсеттинга (проверка ниже — tools/rename-font-names.py --check).
+    subprocess.run(
+        [sys.executable, os.path.join(os.path.dirname(__file__), 'rename-font-names.py'),
+         '--apply', *[os.path.join(FONT_OUT, f'{name}-{w}.ttf')
+                      for name, _, _, _, _ in jobs for w in ('Regular', 'Bold')]],
+        check=True,
+    )
+
     # ── проверка покрытия шаблонных символов ──────────────────────────────
     from fontTools.ttLib import TTFont
     tpls = {'DocGenZh': chk_zh, 'DocGenJa': chk_ja, 'DocGenKo': chk_ko}

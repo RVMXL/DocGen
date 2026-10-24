@@ -43,6 +43,11 @@ jobs:
           node --check tools/prepare-desktop.mjs
           echo "✓ синтаксис ок"
 
+      - name: "LEG-1 (аудит): RFN «Noto» не встречается в CJK-подмножествах (SIL OFL 1.1 §3)"
+        run: |
+          python3 -m pip install --quiet fonttools
+          python3 tools/rename-font-names.py --check public/fonts/DocGen*.ttf
+
       - name: Целостность каталога (22 страны, уникальные slug, плейсхолдеры)
         run: bun tools/check-data.ts
 
