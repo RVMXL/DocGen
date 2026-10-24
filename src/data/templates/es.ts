@@ -281,7 +281,7 @@ export const TEMPLATES_ES: TplDef[] = [
       ...workHdr(),
       { type: 'title', text: 'SOLICITUD DE COMUNICACIÓN ESCRITA DEL DESPIDO' },
       { type: 'paragraph', text: 'Muy señores míos:', noIndent: true },
-      { type: 'paragraph', text: 'Hechos: {{hechos}}', justify: true },
+      { type: 'paragraph', text: 'Hechos (fecha de la comunicación / de los hechos: {{fecha_hechos}}): {{hechos}}', justify: true },
       { type: 'paragraph', text: 'Recuerdo que el artículo 55.1 del Estatuto de los Trabajadores exige que el despido se comunique por escrito, haciendo constar los hechos que lo motivan y la fecha en que tendrá efectos. La entrega de la carta es imprescindible para conocer las causas alegadas y valorar su posible impugnación.', justify: true },
       { type: 'paragraph', text: 'Por ello solicito: {{peticion}}', justify: true },
       { type: 'paragraph', text: 'Indico expresamente que no suscribo la extinción como «conforme»: cualquier firma que estampe en la documentación de la empresa tendrá únicamente el carácter de recibo.', justify: true },
@@ -870,7 +870,7 @@ export const TEMPLATES_ES: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['De: {{applicant_name}} (arrendatario/a)', 'DNI/NIE: {{applicant_dni}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['De: {{applicant_name}} (arrendatario/a)', 'DNI/NIE: {{applicant_dni}}', 'Dir.: {{applicant_address}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'SOLICITUD DE REPARACIONES (ART. 21 LAU)' },
       { type: 'paragraph', text: 'Muy señor mío:', noIndent: true },
       { type: 'paragraph', text: 'En mi condición de arrendatario/a de la vivienda {{vivienda}}, comunico la necesidad de las siguientes reparaciones: {{reparaciones}}. Carácter de las actuaciones: {{urgente}}.', justify: true },
@@ -903,7 +903,7 @@ export const TEMPLATES_ES: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['De: {{applicant_name}} (arrendatario/a)', 'DNI/NIE: {{applicant_dni}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['{{landlord_name}}', '{{landlord_address}}'], ['De: {{applicant_name}} (arrendatario/a)', 'DNI/NIE: {{applicant_dni}}', 'Dir.: {{applicant_address}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'RECLAMACIÓN DE DEVOLUCIÓN DE LA FIANZA' },
       { type: 'paragraph', text: 'Muy señora mía / Muy señor mío:', noIndent: true },
       { type: 'paragraph', text: 'El {{date_keys}} concluí el arrendamiento de la vivienda {{vivienda}} y le entregué las llaves. A la fecha de esta carta no he recibido la devolución de la fianza, cuya cantidad asciende a {{fianza}} €.', justify: true },
@@ -932,7 +932,7 @@ export const TEMPLATES_ES: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['{{neighbor_name}}', '{{neighbor_address}}'], ['{{date_today}}', 'Presenta: {{applicant_name}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['{{neighbor_name}}', '{{neighbor_address}}'], ['{{date_today}}', 'Presenta: {{applicant_name}}', 'DNI/NIE: {{applicant_dni}}', 'Dir.: {{applicant_address}}', 'Vivienda: {{vivienda}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'NOTA DE RECLAMACIÓN POR RUIDOS VECINALES' },
       { type: 'paragraph', text: 'Estimado/a vecino/a:', noIndent: true },
       { type: 'paragraph', text: 'Me dirijo a usted en mi condición de vecino/a de la vivienda {{vivienda}} para trasladarle una reclamación por los ruidos que se generan en su vivienda: {{noise_desc}}', justify: true },

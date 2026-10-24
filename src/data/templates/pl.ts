@@ -12,7 +12,7 @@ import type { TplDef } from '../types';
 import { F, hdr, courtHdr, stdSign } from './helpers';
 
 const workHdr = (): TplDef['body'] => [
-  { type: 'lines', align: 'right', items: ['{{org_name}}', '', '{{applicant_name}}', '{{applicant_address}}'] },
+  { type: 'lines', align: 'right', items: ['{{org_name}}', '{{head_name}}', '', '{{applicant_name}}', '{{applicant_address}}'] },
 ];
 
 const workFields = (extra: TplDef['fields'] = []): TplDef['fields'] => [
@@ -655,7 +655,7 @@ export const TEMPLATES_PL: TplDef[] = [
       F('reason', 'Причина переплаты', 'Reason of the overpayment', 'textarea', { placeholderRu: 'например: подали корректировку PIT с недоучтённым вычетом (на детей, термомодернизация)', placeholderDoc: 'złożyłam korektę deklaracji z uwzględnieniem ulgi na dzieci, o której pierwotnie zapomniałam' }),
     ],
     body: [
-      hdr(['{{us_name}}', '{{us_address}}'], ['{{taxpayer_name}}', 'PESEL: {{pesel}}', '{{taxpayer_address}}']),
+      hdr(['{{us_name}}', '{{us_address}}'], ['{{taxpayer_name}}', 'PESEL: {{pesel}}', '{{taxpayer_address}}', 'Rachunek: {{account_no}}']),
       { type: 'title', text: 'WNIOSEK O ZWROT NADPŁATY PODATKU' },
       { type: 'paragraph', text: 'Na podstawie art. 79a § 1 Ordynacji podatkowej dokonałem/dokonałam korekty złożonej deklaracji {{tax_form}} za rok podatkowy {{tax_year}}, w której wykazana została nadpłata podatku w kwocie {{amount}} zł.', justify: true },
       { type: 'paragraph', text: 'Przyczyna nadpłaty: {{reason}}.', justify: true },
@@ -879,7 +879,7 @@ export const TEMPLATES_PL: TplDef[] = [
       F('account_no', 'Номер счёта (IBAN)', 'Bank account (IBAN)', 'text', { required: false, half: true, placeholderDoc: 'PL61 1090 1014 0000 0712 1981 2874' }),
     ],
     body: [
-      hdr(['{{manager_name}}', '{{manager_address}}'], ['{{applicant_name}}', '{{applicant_address}}']),
+      hdr(['{{manager_name}}', '{{manager_address}}'], ['{{applicant_name}}', '{{applicant_address}}', 'Rachunek: {{account_no}}']),
       { type: 'title', text: 'WNIOSEK O ROZLICZENIE ZALICZEK NA MEDIA' },
       { type: 'paragraph', text: 'Dotyczy lokalu {{applicant_address}} (okres: {{period}}).', justify: true },
       { type: 'paragraph', text: 'Stan faktyczny: {{issue}}.', justify: true },

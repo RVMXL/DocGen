@@ -41,11 +41,12 @@ const workBase = (extra: TplDef['fields'] = []): TplDef['fields'] => [
   ...extra,
 ];
 
-// Шапка письма физлица организации/ведомству
-const personHdr = (toItem: string): DocBlock => ({
+// Шапка письма физлица организации/ведомству; contact — доп. строки отправителя
+// (Telefon/Fødselsnummer, TPL-1: поля не должны «исчезать» из документа)
+const personHdr = (toItem: string, contact: string[] = []): DocBlock => ({
   type: 'lines',
   align: 'right',
-  items: [toItem, '', '{{applicant_name}}', '{{applicant_address}}', 'Dato: {{date_today}}'],
+  items: [toItem, '', '{{applicant_name}}', '{{applicant_address}}', ...contact, 'Dato: {{date_today}}'],
 });
 
 const personBase = (extra: TplDef['fields'] = []): TplDef['fields'] => [
@@ -57,7 +58,7 @@ const personBase = (extra: TplDef['fields'] = []): TplDef['fields'] => [
 
 // Шапка обращения в ведомство: «Gjelder: …» — строка темы (возвращает МАССИВ — вставлять со spread)
 const agHdr = (): TplDef['body'] => [
-  personHdr('{{agency_name}}'),
+  personHdr('{{agency_name}}', ['Fødselsnummer: {{applicant_fodselnr}}', 'Telefon: {{applicant_phone}}']),
   { type: 'paragraph', text: 'Gjelder: {{emne}}', noIndent: true },
 ];
 
@@ -360,7 +361,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{butikk_navn}}'),
+      personHdr('{{butikk_navn}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: reklamasjon på kjøp av {{produkt}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående følgende reklamasjon. Den {{kjopsdato}} kjøpte jeg {{produkt}} hos dere for {{pris}}. Varen har følgende feil: {{defekt}}. Feilen har oppstått i normal bruk og skyldes ikke feilbruk fra min side.', justify: true },
       { type: 'paragraph', text: 'Etter forbrukerkjøpsloven §§ 13 og 27 gjør jeg hermed reklamasjon og krever {{krav_type}}. Jeg ber om svar innen rimelig tid, og senest 30 dager etter at denne reklamasjonen er mottatt. Ved manglende svar forbeholder jeg meg retten til å ta saken videre til Forbrukerrådet og forliksrådet.', justify: true },
@@ -387,7 +388,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{utleier_navn}}'),
+      personHdr('{{utleier_navn}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: vedlikeholdskrav for {{leilighet_adresse}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående følgende mangler i leiligheten som jeg leier: {{mangel}}. Mangelen ble meldt til dere {{meldt_dato}}, men den er ennå ikke utbedret.', justify: true },
       { type: 'paragraph', text: 'Etter husleieloven § 1-13 plikter utleier å holde leiligheten i forsvarlig stand, inkludert utbedring av skader som ikke skyldes leietaker. Jeg krever at mangelen utbedres innen {{frist_reparasjon}} dager etter mottak av dette brevet.', justify: true },
@@ -417,7 +418,7 @@ export const TEMPLATES_NO: TplDef[] = [
       {
         type: 'lines',
         align: 'right',
-        items: ['{{skyldner_navn}}', '{{skyldner_adresse}}', '', '{{applicant_name}}', '{{applicant_address}}', 'Dato: {{date_today}}'],
+        items: ['{{skyldner_navn}}', '{{skyldner_adresse}}', '', '{{applicant_name}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', 'Dato: {{date_today}}'],
       },
       gjelder('Gjelder: betalingsoppfordring for lån på {{lanebelop}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående lån på {{lanebelop}} som jeg utbetalte til deg den {{lane_dato}}. Lånet er forfallent til betaling, og beløpet er ikke oppfylt til tross for tidligere henvendelser.', justify: true },
@@ -445,7 +446,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{forliksrad}}'),
+      personHdr('{{forliksrad}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: krav mot {{motpart_navn}}'),
       { type: 'paragraph', text: 'Jeg har hermed lagt fram krav mot {{motpart_navn}} (adresse: {{motpart_adresse}}) for forliksrådsbehandling etter tvisteloven kapittel 31. Kravet lyder på {{krav_belop}} og gjelder {{krav_bakgrunn}}.', justify: true },
       { type: 'paragraph', text: 'Jeg har tidligere forsøkt å få kravet dekket gjennom henvendelser til motparten uten resultat, og partene har ikke inngått minnelig oppgjør. Jeg ber derfor om at forliksrådet iverksetter mekling.', justify: true },
@@ -784,7 +785,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{postleverandor}}'),
+      personHdr('{{postleverandor}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: tapt forsendelse {{forsendelse_nr}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående en forsendelse sendt {{forsendelse_dato}} med sporingsnummer {{forsendelse_nr}}. Sendingen er registrert som innlevert, men den er aldri levert, og sporingen er stanset opp.', justify: true },
       { type: 'paragraph', text: 'Innholdet var {{forsendelse_innhold}}. Etter postloven har jeg krav på erstatning for tapt forsendelse. Jeg ber om at saken blir undersøkt, og om erstatning for dokumentert verdi med tilskrivelse av portokostnaden.', justify: true },
@@ -810,7 +811,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{forvaltning_navn}}'),
+      personHdr('{{forvaltning_navn}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: vedlikehold i {{bolig_adresse}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående behovet for vedlikehold i boligen min: {{vedlikehold_sak}}. Forholdet ble første gang meldt {{vedlikehold_meldt}}, men det er ikke satt i verk tiltak så langt.', justify: true },
       { type: 'paragraph', text: 'Etter husleieloven § 1-13 plikter utleier å sørge for forsvarlig vedlikehold. Jeg ber om at reparasjonen planlegges og gjennomføres innen rimelig tid, og om skriftlig beskjed om når arbeidet vil bli utført.', justify: true },
@@ -843,7 +844,7 @@ export const TEMPLATES_NO: TplDef[] = [
       ]),
     ],
     body: [
-      personHdr('{{kommune_navn}}'),
+      personHdr('{{kommune_navn}}', ['Telefon: {{applicant_phone}}']),
       gjelder('Gjelder: klage på nabostøy fra {{nabo_adresse}}'),
       { type: 'paragraph', text: 'Jeg henvender meg angående gjentatt støy fra naboeiendommen {{nabo_adresse}}: {{stoy_type}}. Støyen foregår {{stoy_periode}} og forstyrrer nattesøvnen og dagliglivet i husholdningen min i betydelig grad.', justify: true },
       { type: 'paragraph', text: 'Jeg har forsøkt å ta opp forholdet direkte med naboen, uten at det har hatt noen varig effekt. Etter naboforholdloven skal naboer utvise hensyn til hverandre, og jeg ber kommunen om veiledning og, om nødvendig, tilsyn og pålegg.', justify: true },
@@ -880,7 +881,7 @@ export const TEMPLATES_NO: TplDef[] = [
       {
         type: 'lines',
         align: 'right',
-        items: ['{{applicant_name}}', '{{applicant_address}}', 'Dato: {{date_today}}'],
+        items: ['{{applicant_name}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', 'Dato: {{date_today}}'],
       },
       { type: 'title', text: 'FULLMAKT' },
       { type: 'paragraph', text: 'Jeg, {{applicant_name}} (fødselsnummer {{applicant_fodselnr}}), gir hermed {{fullmektig_navn}} (fødselsnummer {{fullmektig_fnr}}) fullmakt til å: {{fullmakt_omfang}}.', noIndent: true },
@@ -913,7 +914,7 @@ export const TEMPLATES_NO: TplDef[] = [
       {
         type: 'lines',
         align: 'right',
-        items: ['{{applicant_name}}', '{{applicant_address}}', 'Dato: {{date_today}}'],
+        items: ['{{applicant_name}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', 'Dato: {{date_today}}'],
       },
       { type: 'title', text: 'LÅNEAVTALE' },
       { type: 'paragraph', text: 'Mellom {{applicant_name}} (fødselsnummer {{applicant_fodselnr}}) og {{lane_taker}} (fødselsnummer {{lane_taker_fnr}}) er det den {{lane_dato_avtale}} inngått låneavtale etter avtaleloven og gjeldsbrevlova: Långiver utbetaler {{lane_sum}} til låntaker.', noIndent: true },

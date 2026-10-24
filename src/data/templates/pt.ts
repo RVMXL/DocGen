@@ -523,7 +523,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'DL 84/2021, of 18 October — complaints in financial services; Banco de Portugal (SysReclama), 15 business days',
     fields: [
       ...letterFields([
-        F('banco_name', 'Банк', 'Bank', 'text', { half: true, placeholderDoc: 'Banco Exemplo, S.A.' }),
         F('operacao', 'Операция', 'Operation', 'text', { half: true, placeholderDoc: 'cobrança de comissão não contratada' }),
         F('data_operacao', 'Дата операции', 'Operation date', 'date', { half: true }),
         F('materia', 'Описание ситуации', 'Description', 'text', { placeholderDoc: 'foi cobrada uma comissão de manutenção não prevista no contrato' }),
@@ -628,7 +627,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'Lei 62/2005, of 11 October, art. 9 — access to clinical records (10 working days); Lei 46/2004',
     fields: [
       ...letterFields([
-        F('unidade_name', 'Медучреждение', 'Health unit', 'text', { half: true, placeholderDoc: 'Hospital de Lisboa' }),
         F('periodo', 'Период/объём', 'Scope of access', 'text', { half: true, placeholderDoc: 'consultas e exames de 2024' }),
         F('formato', 'Формат выдачи', 'Delivery format', 'select', { options: ['cópia integral do processo clínico', 'cópia de partes específicas do processo clínico', 'consulta presencial do processo clínico', 'cópia dos exames e relatórios realizados'] }),
       ]),
@@ -654,7 +652,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'Despacho 6477/2017, of 26 July — school enrolment and compulsory schooling',
     fields: [
       ...letterFields([
-        F('escola_name', 'Школа', 'School', 'text', { half: true, placeholderDoc: 'Escola Básica de Lisboa' }),
         F('aluno_name', 'Имя ученика', 'Pupil’s name', 'text', { half: true, placeholderDoc: 'Pedro Ferreira Silva' }),
         F('data_nascimento', 'Дата рождения ученика', 'Pupil’s date of birth', 'date', { half: true }),
         F('ano_letivo', 'Учебный год', 'School year', 'text', { half: true, placeholderDoc: '2025/2026', placeholderRu: '2025/2026' }),
@@ -683,7 +680,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'DL 373/2014, of 30 June — universal postal service (ANACOM); Lei 24/96 — consumer protection',
     fields: [
       ...letterFields([
-        F('ctt_name', 'Почтовая служба', 'Postal operator', 'text', { half: true, placeholderDoc: 'CTT — Correios de Portugal, S.A.' }),
         F('num_objeto', 'Номер отправления', 'Tracking number', 'text', { half: true, placeholderDoc: 'RR123456789PT' }),
         F('data_envio', 'Дата отправки', 'Dispatch date', 'date', { half: true }),
         F('valor_objeto', 'Стоимость отправления', 'Declared value', 'text', { half: true, placeholderDoc: '150,00 €', placeholderRu: '150,00 €' }),
@@ -765,7 +761,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'DL 70/2010, of 21 June — higher education study grants; Lei 62/2007 (RJIES)',
     fields: [
       ...letterFields([
-        F('universidade_name', 'Университет', 'University', 'text', { half: true, placeholderDoc: 'Universidade de Lisboa' }),
         F('curso', 'Курс/программа', 'Programme', 'text', { half: true, placeholderDoc: 'Licenciatura em Engenharia Informática' }),
         F('num_estudante', 'Номер студента', 'Student number', 'text', { half: true, placeholderDoc: 'n.º 45678', placeholderRu: '№45678' }),
         F('ano_letivo', 'Учебный год', 'Academic year', 'text', { half: true, placeholderDoc: '2025/2026', placeholderRu: '2025/2026' }),
@@ -792,7 +787,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'Lei 62/2007, of 10 September (RJIES) and the institution’s statutes — study interruption',
     fields: [
       ...letterFields([
-        F('universidade_name', 'Университет', 'University', 'text', { half: true, placeholderDoc: 'Universidade do Porto' }),
         F('curso', 'Курс/программа', 'Programme', 'text', { half: true, placeholderDoc: 'Licenciatura em Economia' }),
         F('num_estudante', 'Номер студента', 'Student number', 'text', { half: true, placeholderDoc: 'n.º 45678', placeholderRu: '№45678' }),
         F('date_from', 'Дата начала перерыва', 'Interruption start', 'date', { half: true }),
@@ -819,7 +813,6 @@ export const TEMPLATES_PT: TplDef[] = [
     refEn: 'DL 222/99, of 6 August — Civil Registration Code (address update)',
     fields: [
       ...letterFields([
-        F('entidade_name', 'Куда сообщить (организация)', 'Organization to notify', 'text', { half: true, placeholderDoc: 'Serviço de Finanças de Lisboa' }),
         F('nova_morada', 'Новый адрес', 'New address', 'text', { placeholderDoc: 'Rua das Flores, 12, 1200-192 Lisboa' }),
         F('data_mudanca', 'Дата переезда', 'Move date', 'date', { half: true }),
       ]),

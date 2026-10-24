@@ -217,7 +217,7 @@ export const TEMPLATES_IL: TplDef[] = [
     ],
     body: [
       { type: 'title', text: 'ייפוי כוח' },
-      { type: 'paragraph', text: 'אני, החתום/ה מטה, {{principal_name}} (תעודת זהות: {{principal_id}}), מייפה/ת בזאת כוח את {{agent_name}} (תעודת זהות: {{agent_id}}) לפעול בשמי ולבצע את הפעולות הבאות: {{powers}}.', justify: true },
+      { type: 'paragraph', text: 'אני, החתום/ה מטה, {{principal_name}} (תעודת זהות: {{principal_id}}; כתובת: {{principal_address}}), מייפה/ת בזאת כוח את {{agent_name}} (תעודת זהות: {{agent_id}}) לפעול בשמי ולבצע את הפעולות הבאות: {{powers}}.', justify: true },
       { type: 'paragraph', text: 'ייפוי כוח זה בתוקף עד {{valid_until}}, וניתן לבטלו בכל עת בהודעה בכתב.', justify: true },
       { type: 'signature', leftText: 'תאריך: {{date_today}}', rightText: '_______________ / {{principal_name}} /' },
     ],

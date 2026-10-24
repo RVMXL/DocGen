@@ -389,7 +389,9 @@ export const TEMPLATES_KR: TplDef[] = [
       ] },
       { type: 'paragraph', text: '【청구원인】', noIndent: true },
       { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '금전 수령일: {{date_loan}}.', justify: true },
       { type: 'paragraph', text: '원고와 피고 사이에는 위와 같이 민법 제597조의 금전소비대차가 성립하였다. 변제기일이 지났음에도 피고가 원리금을 변제하지 않으므로, 민법 제397조에 따라 연 5퍼센트의 지연이자가 발생한다. 민사소송법 제249조에 따라 위와 같이 소장을 제출한다.', justify: true },
+      { type: 'paragraph', text: '증거방법: {{evidence}}.', justify: true },
       { type: 'attachment', items: ['증거서류(차용증, 계좌이체 내역 등) 사본;', '소장부본 1통(피고분).'], label: '첨부서류:' },
       stdSign('{{plaintiff_name}}'),
     ],
@@ -423,6 +425,7 @@ export const TEMPLATES_KR: TplDef[] = [
       ] },
       { type: 'paragraph', text: '【청구원인】', noIndent: true },
       { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '임대 주택 주소: {{property_address}}.', justify: true },
       { type: 'paragraph', text: '주택임대차보호법 제6조 제1항에 따라 임대차기간이 끝난 경우 임차인은 임대인에게 보증금의 반환을 청구할 수 있다. 원고는 임대 주택을 원상태로 반환하였으므로 피고는 보증금 전액을 반환하여야 하며, 지연이자는 민법 제397조의 법정이율(연 5%)에 따른다.', justify: true },
       { type: 'attachment', items: ['주택임대차계약서 사본;', '보증금 이체확인증 사본;', '퇴거 및 주택 인도 증빙 사진;', '소장부본 1통(피고분).'], label: '첨부서류:' },
       stdSign('{{plaintiff_name}}'),
@@ -452,6 +455,7 @@ export const TEMPLATES_KR: TplDef[] = [
       { type: 'title', text: '내용증명' },
       { type: 'subtitle', text: '제목: 채무 금 {{amount}}원 상환 독촉' },
       { type: 'paragraph', text: '{{facts}}', justify: true },
+      { type: 'paragraph', text: '거래(차용)일: {{date_loan}}.', justify: true },
       { type: 'paragraph', text: '상환기한인 {{date_due}}이 지났음에도 귀하는 지금까지 상환하지 않았다. 민법 제597조의 소비대차 및 제389조의 채무불이행에 따라 본인은 귀하에게 위 채무의 상환을 독촉한다.', justify: true },
       { type: 'paragraph', text: '본 내용증명은 발송인이 우체국 취급자에게 제출한 내용과 수신인에게 전달된 내용이 동일함을 증명하는 서식으로, 발송 사실과 내용을 공적으로 증명하는 증거가 된다.', noIndent: true },
       { type: 'list', numbered: true, items: [
@@ -619,7 +623,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('relief', 'Требование', 'Relief sought', 'select', { options: ['손해 배상', '이자·수수료 반환', '원상 회복', '서면 해명 및 재발 방지 대책'] }),
     ],
     body: [
-      hdr(['{{branch_name}}'], ['신청인: {{applicant_name}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
+      hdr(['{{branch_name}}'], ['신청인: {{applicant_name}}', '주민등록번호: {{applicant_id}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
       { type: 'title', text: '금융분쟁 조정 신청서' },
       { type: 'paragraph', text: '분쟁 상대 금융회사: {{bank_name}}. 해당 거래: {{product}}.', justify: true },
       { type: 'paragraph', text: '분쟁 유형: {{type}}. 경위: {{situation}}', justify: true },
@@ -650,7 +654,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('notes', 'Примечания (재취업, другие пенсии)', 'Notes (re-employment, other pensions)', 'textarea', { required: false, placeholderRu: 'работа по найму, другие государственные пенсии и т. п.', placeholderDoc: '재취업 계획 없음. 다른 공적연금은 수급하지 않는다.' }),
     ],
     body: [
-      hdr(['{{branch_name}}'], ['청구인: {{applicant_name}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
+      hdr(['{{branch_name}}'], ['청구인: {{applicant_name}}', '주민등록번호: {{applicant_id}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
       { type: 'title', text: '노령연금 청구서' },
       { type: 'paragraph', text: '국민연금법에 따라 노령연금 지급을 청구합니다. 청구 연금 종류: {{pension_kind}}. 가입 기간: {{joined_period}}.', justify: true },
       { type: 'paragraph', text: '지급 개시 희망월: {{start_month}}. 연금 수령 계좌: {{account}}. 특이 사항: {{notes}}', justify: true },
@@ -678,7 +682,7 @@ export const TEMPLATES_KR: TplDef[] = [
       F('income', 'Доходы и имущество', 'Income and assets', 'textarea', { placeholderRu: 'доходы, сбережения, жильё (собственность/전세), автомобиль', placeholderDoc: '근로소득 없음. 예금 300,000원, 자가주택 없음(전세 보증금 50,000,000원), 차량 없음.' }),
     ],
     body: [
-      hdr(['{{center_name}}'], ['신청인: {{applicant_name}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
+      hdr(['{{center_name}}'], ['신청인: {{applicant_name}}', '주민등록번호: {{applicant_id}}', '{{applicant_address}}', '연락처: {{applicant_phone}}']),
       { type: 'title', text: '기초생활보장 급여 신청서' },
       { type: 'paragraph', text: '국민기초생활보장법에 따라 {{benefit_kind}}을(를) 신청합니다. 가구원 구성 및 상황: {{household}}', justify: true },
       { type: 'paragraph', text: '소득 및 재산: {{income}}', justify: true },

@@ -347,7 +347,7 @@ export const TEMPLATES_AZ: TplDef[] = [
       F('reason', 'Причина расторжения брака', 'Reason for divorce', 'textarea', { placeholderRu: 'опишите причины: почему дальнейшая семейная жизнь невозможна', placeholderDoc: 'qarşılıqlı anlaşma yoxdur, ailə münasibətləri faktiki olaraq pozulub' }),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{court_name}}', '', 'İddiaçı: {{plaintiff_name}}', 'Ünvan: {{plaintiff_address}}', '', 'Cavabdeh: {{defendant_name}}', 'Ünvan: {{defendant_address}}'] },
+      { type: 'lines', align: 'right', items: ['{{court_name}}', '', 'İddiaçı: {{plaintiff_name}}', 'Ünvan: {{plaintiff_address}}', 'tel.: {{plaintiff_phone}}', '', 'Cavabdeh: {{defendant_name}}', 'Ünvan: {{defendant_address}}'] },
       { type: 'title', text: 'İDDİA ƏRİZASI' },
       { type: 'subtitle', text: 'ər-arvadın boşanması haqqında' },
       { type: 'paragraph', text: '{{marriage_date}} tarixində cavabdeh {{defendant_name}} ilə nikaha girdim.', justify: true },

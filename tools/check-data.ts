@@ -47,14 +47,26 @@ for (const t of tpl) {
     if (b.type === 'lines') texts.push(...b.items);
     else if (b.type === 'title' || b.type === 'subtitle' || b.type === 'paragraph') texts.push(b.text);
     else if (b.type === 'list') texts.push(...b.items);
-    else if (b.type === 'attachment') { texts.push(...b.items); if (b.label) texts.push(b.label); }
-    else if (b.type === 'signature') { if (b.leftText) texts.push(b.leftText); if (b.rightText) texts.push(b.rightText); }
+    else if (b.type === 'attachment') {
+      texts.push(...b.items);
+      if (b.label) texts.push(b.label);
+      // ENG-7 (аудит): у блока приложений обязателен локализованный заголовок —
+      // иначе генератор подставляет русский фолбэк в не-российские документы
+      else errors.push(`${t.slug}: attachment-блок без label («Приложение:» на языке документа)`);
+    } else if (b.type === 'signature') { if (b.leftText) texts.push(b.leftText); if (b.rightText) texts.push(b.rightText); }
   }
   for (const txt of texts) {
     for (const m of txt.matchAll(/\{\{(\w+)\}\}/g)) {
       const key = m[1];
       if (key !== 'date_today' && !fieldIds.has(key)) errors.push(`${t.slug}: плейсхолдер {{${key}}} не найден среди полей`);
     }
+  }
+  // TPL-1 (аудит): каждое поле должно попадать в документ — чей-то {{id}} обязан
+  // встретиться в теле, иначе пользователь заполняет значение, которое исчезает
+  const used = new Set<string>();
+  for (const txt of texts) for (const m of txt.matchAll(/\{\{(\w+)\}\}/g)) used.add(m[1]);
+  for (const f of t.fields) {
+    if (!used.has(f.id)) errors.push(`${t.slug}: поле «${f.id}» (${f.labelRu}) не используется в теле — добавьте {{${f.id}}} в body или удалите поле`);
   }
 }
 

@@ -195,7 +195,7 @@ export function interpolateBlocks(blocks: DocBlock[], data: Record<string, strin
       case 'attachment':
         return { ...b, items: b.items.map(f) };
       case 'signature':
-        return { ...b, leftText: f(b.leftText ?? '{{date_today}}'), rightText: f(b.rightText ?? 'Подпись: _______________') };
+        return { ...b, leftText: f(b.leftText ?? '{{date_today}}'), rightText: f(b.rightText) };
       default:
         return b;
     }

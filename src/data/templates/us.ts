@@ -45,7 +45,7 @@ export const TEMPLATES_US: TplDef[] = [
     body: [
       { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'To: {{manager_name}}', '{{org_name}}'] },
       { type: 'paragraph', text: 'Dear {{manager_name}},', noIndent: true },
-      { type: 'paragraph', text: 'I am writing to request leave from {{date_from}} through {{date_to}}. Reason: {{reason}}. I will ensure my current duties are covered and hand off any urgent tasks before my departure.', justify: true },
+      { type: 'paragraph', text: 'I, {{applicant_name}} ({{applicant_position}}), am writing to request leave from {{date_from}} through {{date_to}}. Reason: {{reason}}. I will ensure my current duties are covered and hand off any urgent tasks before my departure.', justify: true },
       { type: 'paragraph', text: 'Please let me know if any additional information or approval steps are needed.', justify: true },
       { type: 'signature', leftText: 'Sincerely,', rightText: '_______________ / {{applicant_name}} /' },
     ],
@@ -83,7 +83,7 @@ export const TEMPLATES_US: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'To: Human Resources', '{{org_name}}'] },
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'To: Human Resources (Attn: {{manager_name}})', '{{org_name}}'] },
       { type: 'paragraph', text: 'To Whom It May Concern,', noIndent: true },
       { type: 'paragraph', text: 'I, {{applicant_name}} ({{applicant_position}}), request the following records related to my employment: {{documents}}.', justify: true },
       { type: 'paragraph', text: 'Please provide the requested documents within the time frame required by applicable law. I can be reached at the contact information on file.', justify: true },
@@ -232,7 +232,7 @@ export const TEMPLATES_US: TplDef[] = [
     body: [
       hdr(['{{provider_name}}', '{{provider_address}}'], ['From: {{patient_name}}', 'Phone: {{patient_phone}}']),
       { type: 'title', text: 'REQUEST FOR ACCESS TO MEDICAL RECORDS' },
-      { type: 'paragraph', text: 'I request access to and a copy of my medical records as follows: {{records_scope}}.', justify: true },
+      { type: 'paragraph', text: 'I, {{patient_name}} (date of birth: {{patient_dob}}), request access to and a copy of my medical records as follows: {{records_scope}}.', justify: true },
       { type: 'paragraph', text: 'Preferred delivery: {{delivery}}. Under the HIPAA Privacy Rule (45 C.F.R. § 164.524), you must provide the requested records within 30 days of this request; any fee must be reasonable and cost-based.', justify: true },
       { type: 'paragraph', text: 'If any part of this request is denied, please provide a written denial with the basis and the review process.', justify: true },
       { type: 'attachment', items: ['Copy of a government-issued photo ID.'], label: 'Enclosures:' },
@@ -931,7 +931,7 @@ export const TEMPLATES_US: TplDef[] = [
       F('explanation', 'Что произошло (даты, обстоятельства)', 'What happened (dates, circumstances)', 'textarea', { placeholderRu: 'опишите инцидент: когда узнали, что произошло, номера уведомлений IRS, если есть', placeholderDoc: 'in February 2026 the IRS rejected my e-filed return because a return with my SSN had already been filed (notice CP2000). I filed only once; I believe my information was stolen and used to claim a fraudulent refund.' }),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['To: Internal Revenue Service', 'Identity Protection Specialized Unit', '(mailing address / fax — per the instructions on the form reverse)', '', 'From: {{victim_name}}', '{{victim_address}}', 'Phone: {{victim_phone}}'] },
+      { type: 'lines', align: 'right', items: ['To: Internal Revenue Service', 'Identity Protection Specialized Unit', '(mailing address / fax — per the instructions on the form reverse)', '', 'From: {{victim_name}}', '{{victim_address}}', 'SSN / ITIN: {{victim_tin}}', 'Phone: {{victim_phone}}'] },
       { type: 'title', text: 'IDENTITY THEFT AFFIDAVIT' },
       { type: 'subtitle', text: 'IRS Form 14039 · OMB No. 1545-2139' },
       { type: 'paragraph', text: '{{filing_reason}}.', justify: true },

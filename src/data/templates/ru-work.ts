@@ -47,6 +47,7 @@ export const TEMPLATES_RU_WORK_CORE: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -56,6 +57,7 @@ export const TEMPLATES_RU_WORK_CORE: TplDef[] = [
       { type: 'paragraph', text: '{{benefit_line}}', justify: true },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['копия свидетельства о рождении ребёнка'],
       },
       stdSign('{{applicant_name}}'),
@@ -93,6 +95,7 @@ export const TEMPLATES_RU_WORK_CORE: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -101,6 +104,7 @@ export const TEMPLATES_RU_WORK_CORE: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: [
           'копия справки об установлении инвалидности ребёнка (при первом обращении)',
           'справка с места работы другого родителя о том, что дополнительные выходные дни на запрашиваемые даты ему (ей) не предоставлялись (не требуется, если другого родителя нет или он не работает)',

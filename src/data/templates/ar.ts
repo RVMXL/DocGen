@@ -301,7 +301,7 @@ export const TEMPLATES_AR: TplDef[] = [
     body: [
       { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'A la Dirección', '{{school_name}}'] },
       { type: 'title', text: 'SOLICITUD DE INSCRIPCIÓN Y PASE' },
-      { type: 'paragraph', text: 'Me dirijo a ustedes a fin de solicitar la inscripción de mi hijo/a {{student_name}} (DNI: {{student_dni}}) en {{student_grade}}, con incorporación prevista a partir del {{date_start}}.', justify: true },
+      { type: 'paragraph', text: 'Me dirijo a ustedes a fin de solicitar, en mi carácter de padre/madre/tutor (DNI: {{parent_dni}}), la inscripción de mi hijo/a {{student_name}} (DNI: {{student_dni}}) en {{student_grade}}, con incorporación prevista a partir del {{date_start}}.', justify: true },
       { type: 'paragraph', text: 'Observaciones: {{notes}}', noIndent: true },
       { type: 'paragraph', text: 'Recuerdo que la educación primaria y secundaria son obligatorias conforme al art. 16 de la Ley de Educación Nacional N° 26.206. Solicito se me entregue constancia de la presente presentación y se indique la documentación pendiente para completar el legajo del alumno.', justify: true },
       { type: 'attachment', items: ['Fotocopia del DNI del alumno;', 'Certificado de vacunación (cartilla);', 'Certificado de alumno regular o de pase de la escuela de origen (si corresponde).'], label: 'Se adjunta:' },
@@ -437,7 +437,7 @@ export const TEMPLATES_AR: TplDef[] = [
       { type: 'paragraph', text: 'Hechos: {{claim_body}}', justify: true },
       { type: 'paragraph', text: 'Petitorios: {{petitions}}', justify: true },
       { type: 'paragraph', text: 'Fundamento: Ley 19.549 y Ley 27.275 de acceso a la información pública. Se solicita respuesta escrita en el plazo de 30 días.', justify: true },
-      { type: 'attachment', items: ['Antecedentes y constancias (copias);'] },
+      { type: 'attachment', items: ['Antecedentes y constancias (copias);'], label: 'Anexo:' },
       stdSign('{{claimant_name}}'),
     ],
   },
@@ -611,7 +611,7 @@ export const TEMPLATES_AR: TplDef[] = [
     body: [
       hdr(['{{bank_name}}', '{{bank_address}}'], ['Usuario: {{client_name}}', 'DNI/CUIL: {{client_dni}}', '{{client_address}}']),
       { type: 'title', text: 'RECLAMO ANTE LA ENTIDAD FINANCIERA' },
-      { type: 'paragraph', text: 'En mi carácter de usuario de servicios financieros, presento reclamo referido al producto {{product}}: {{hecho}}', justify: true },
+      { type: 'paragraph', text: 'En mi carácter de usuario de servicios financieros, presento reclamo referido al producto {{product}} (fecha del hecho: {{fecha_hecho}}): {{hecho}}', justify: true },
       { type: 'paragraph', text: 'Petición: {{peticion}}', noIndent: true },
       { type: 'paragraph', text: 'Solicito se me dé respuesta por escrito en el plazo máximo de diez (10) días hábiles, conforme al régimen de reclamos de usuarios de servicios financieros del BCRA, y se me entregue constancia de la presentación del presente reclamo.', justify: true },
       { type: 'paragraph', text: 'De no recibir una respuesta satisfactoria en dicho plazo, presentaré reclamo ante el Banco Central de la República Argentina (Defensa de las Personas), sin perjuicio de las acciones previstas en la Ley 24.240 de Defensa del Consumidor.', justify: true },

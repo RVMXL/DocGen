@@ -1,6 +1,6 @@
 // Шаблоны для Узбекистана (гос. язык документов — узбекский, латиница).
 // Основано на законодательстве Республики Узбекистан:
-// Трудовой кодекс РУз от 13.10.2023 № LRU-818 (ст. 217 — ежегодный основной
+// Трудовой кодекс РУз, утв. Законом ЗРУ-798 от 28.10.2022 (в силе с 30.04.2023) (ст. 217 — ежегодный основной
 // минимальный отпуск 21 календарный день), ГК РУз (займ, доверенность),
 // Закон РУз № ЗРУ-473 «О защите прав потребителей».
 // Исковые шаблоны (T-c1): Оила кодекси (развод с детьми), Закон «О защите прав
@@ -35,8 +35,8 @@ export const TEMPLATES_UZ: TplDef[] = [
     titleDoc: 'Yillik pullik mehnat ta‘tiliga ariza', titleEn: 'Annual paid leave application',
     descRu: 'Заявление работодателю о предоставлении ежегодного основного оплачиваемого отпуска. Минимальная продолжительность по новому ТК РУз — 21 календарный день (ст. 217).',
     descEn: 'Application for annual paid leave. Minimum duration under the 2023 Uzbek Labour Code is 21 calendar days (Art. 217).',
-    refRu: 'ст. 217 Трудового кодекса Республики Узбекистан (№ LRU-818 от 13.10.2023)',
-    refEn: 'Article 217 of the Labour Code of the Republic of Uzbekistan (No. LRU-818)',
+    refRu: 'ст. 217 Трудового кодекса Республики Узбекистан, утв. Законом № ЗРУ-798 от 28.10.2022',
+    refEn: 'Article 217 of the Labour Code of the Republic of Uzbekistan (approved by Law No. ZRU-798 of 28.10.2022)',
     fields: [
       ...workFields([
         F('days', 'Количество календарных дней', 'Days count', 'number', { half: true, placeholderRu: '21' }),
@@ -392,7 +392,7 @@ export const TEMPLATES_UZ: TplDef[] = [
         'Pullik xizmatlar ro\u2018yxati, narxlari (preyskurant) va litsenziya bilan tanishtirishni;',
         'Shifokorni tanlash huquqimni ta\u2019minlashni.',
       ] },
-      { type: 'attachment', items: ['Pasport nusxasi;'] },
+      { type: 'attachment', label: 'Ilova:', items: ['Pasport nusxasi;'] },
       stdSign('{{applicant_name}}'),
     ],
   },
@@ -493,7 +493,7 @@ export const TEMPLATES_UZ: TplDef[] = [
         'Yo\u2018qlik davri bo\u2018yicha hisob-fakturaga qayta hisoblash o\u2018tkazishni;',
         'Yangilangan hisob-fakturani taqdim etishni;',
       ] },
-      { type: 'attachment', items: ['Yo\u2018qlikni tasdiqlovchi hujjatlar nusxalari;'] },
+      { type: 'attachment', label: 'Ilova:', items: ['Yo\u2018qlikni tasdiqlovchi hujjatlar nusxalari;'] },
       stdSign('{{applicant_name}}'),
     ],
   },

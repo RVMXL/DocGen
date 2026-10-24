@@ -532,6 +532,7 @@ export const TEMPLATES_FR: TplDef[] = [
       { type: 'paragraph', text: 'FAITS : Le {{date_buy}}, le demandeur a acheté au défendeur le bien suivant : {{product_name}}, au prix de {{price}} euros. Le bien présente le défaut de conformité suivant : {{defect}}', justify: true },
       { type: 'paragraph', text: 'Démarches amiables (art. 56 et 750-1 du Code de procédure civile) : {{reclamation}}', justify: true },
       { type: 'paragraph', text: 'FOND : Le vendeur est tenu de livrer un bien conforme (art. L.217-3 du Code de la consommation) et répond des défauts de conformité qui apparaissent dans un délai de deux ans à compter de la remise du bien. La mise en conformité n’ayant pas été effectuée, le consommateur peut demander la résolution de la vente (art. L.217-14 du Code de la consommation).', justify: true },
+      { type: 'paragraph', text: 'PIÈCES PRODUITES À L’APPUI DES DEMANDES : {{evidence}}', justify: true },
       { type: 'paragraph', text: 'SUR CE, le demandeur conclut à ce qu’il plaise au tribunal :', justify: true },
       { type: 'list', numbered: true, items: [
         'constater la résolution de la vente du {{date_buy}} (art. L.217-14 du Code de la consommation) ;',
@@ -568,6 +569,7 @@ export const TEMPLATES_FR: TplDef[] = [
       { type: 'paragraph', text: 'FAITS : Le demandeur a consenti au défendeur un bail d’habitation sur le logement situé {{address_leased}}. Le défendeur n’a pas payé les loyers et charges correspondant à la période {{period}}, soit la somme de {{amount}} euros.', justify: true },
       { type: 'paragraph', text: 'Un commandement de payer a été signifié au défendeur le {{commandement_date}} (art. 24 de la loi n° 89-462 du 6 juillet 1989) et est resté sans effet.', justify: true },
       { type: 'paragraph', text: 'FOND : Le locataire est obligé de payer le loyer et les charges récupérables aux termes convenus (art. 7 de la loi n° 89-462 du 6 juillet 1989) ; l’inexécution engage sa responsabilité contractuelle (art. 1231-1 du Code civil). Le décompte des sommes dues sera communiqué à l’audience.', justify: true },
+      { type: 'paragraph', text: 'PIÈCES PRODUITES À L’APPUI DES DEMANDES : {{evidence}}', justify: true },
       { type: 'paragraph', text: 'SUR CE, le demandeur conclut à ce qu’il plaise au tribunal :', justify: true },
       { type: 'list', numbered: true, items: [
         'condamner le défendeur à payer au demandeur la somme de {{amount}} euros au titre des loyers et charges impayés, avec les intérêts au taux légal à compter de la mise en demeure ;',

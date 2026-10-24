@@ -138,7 +138,7 @@ export async function buildDocx(blocks: DocBlock[], docLang: DocLang = 'ru', std
           alignment: AlignmentType.LEFT,
           bidirectional: rtl,
           spacing: { before: 240, line: LINE },
-          children: runs(b.label ?? 'Приложение:', false, font),
+          children: runs(b.label, false, font),
         }));
         b.items.forEach((item, i) => {
           children.push(new Paragraph({

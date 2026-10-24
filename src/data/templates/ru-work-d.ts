@@ -426,6 +426,7 @@ export const TEMPLATES_RU_WORK_D: TplDef[] = [
       { type: 'paragraph', text: '{{confidentiality}}', justify: true },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['копии документов, подтверждающих нарушение (при наличии)'],
       },
       stdSign('{{applicant_name}}'),

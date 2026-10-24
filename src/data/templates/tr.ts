@@ -775,6 +775,7 @@ export const TEMPLATES_TR: TplDef[] = [
       { type: 'paragraph', text: '{{daire_no}} numaralı daireye ilişkin {{period}} dönemine ait ortak gider (aidat) hesaplarına itiraz ediyorum. İtirazın dayanağı: {{issue}}.', justify: true },
       { type: 'paragraph', text: '634 sayılı Kat Mülkiyeti Kanunu’nun 20 nci maddesine göre gider ve avans payı, arsa payı oranına göre hesaplanır; aksi, yönetim planında veya kat malikleri kurulunun oybirliğiyle aldığı kararda öngörülmedikçe farklı dağıtılamaz. Yönetici ayrıca 28 inci madde uyarınca her yıl sonunda yönetimi ilgilendiren belgeleri kat maliklerine sunmak ve hesap vermekle yükümlüdür.', justify: true },
       { type: 'paragraph', text: 'Bu itibarla {{request}} talep ederim. İtiraz ettiğim kalemlere ilişkin hesap, fatura ve yönetim planı karşılaştırmasını içeren yazılı yanıtın {{deadline}} gün içinde tarafıma verilmesini saygılarımla arz ederim.', justify: true },
+      { type: 'paragraph', text: 'Fazla tahsil edilen tutarın iadesi hâlinde ödemenin yapılacağı IBAN (varsa): {{account_no}}.', justify: true },
       { type: 'paragraph', text: 'Yanıt alınmaması hâlinde konu kat malikleri kuruluna taşınacak, gerektiğinde sulh hukuk mahkemesine başvurulacaktır.', justify: true },
       { type: 'attachment', items: ['Son ödeme makbuzları;', 'Fatura ve gider listeleri (elde edildiyse);', 'Yönetim planı örneği (varsa).'], label: 'Ekler:' },
       stdSign('{{applicant_name}}'),

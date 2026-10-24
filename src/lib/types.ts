@@ -38,9 +38,9 @@ export type DocBlock =
   // перечисление (пункты требований)
   | { type: 'list'; items: string[]; numbered?: boolean }
   // приложение (копии документов)
-  | { type: 'attachment'; items: string[]; label?: string } // label — «Приложение:» на языке документа
+  | { type: 'attachment'; items: string[]; label: string } // label — «Приложение:» на языке документа (гейт check-data)
   // стандартная подпись: дата слева, ФИО/подпись справа
-  | { type: 'signature'; leftText?: string; rightText?: string };
+  | { type: 'signature'; leftText?: string; rightText: string };
 
 /** Структура каталога для клиента */
 export interface TemplateDTO {

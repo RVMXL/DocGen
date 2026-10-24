@@ -471,7 +471,7 @@ export const TEMPLATES_IN: TplDef[] = [
       F('followups', 'Предпринятые шаги', 'Steps already taken', 'textarea', { placeholderRu: 'обращения в CPC, гревансы на портале, статус', placeholderDoc: 'the e-filing portal shows the refund as “processed”, but the amount has not been received; two grievances (refs. E-2026-1145, E-2026-2230) were closed without crediting the refund' }),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Date: {{date_today}}', '', 'To,', '{{office_address}}'] },
+      { type: 'lines', align: 'right', items: ['Date: {{date_today}}', '', 'To,', '{{office_address}}', '', 'From: {{applicant_name}}', '{{applicant_address}}'] },
       { type: 'title', text: 'REQUEST FOR EXPEDITION OF PENDING INCOME-TAX REFUND' },
       { type: 'paragraph', text: 'Sir/Madam,', noIndent: true },
       { type: 'paragraph', text: 'I, {{applicant_name}} (PAN: {{pan_no}}), filed my return of income for assessment year {{assessment_year}} on {{return_date}} (acknowledgement no. {{ack_no}}), claiming a refund of {{refund_amount}}.', justify: true },

@@ -36,7 +36,7 @@ const workHdr = (): TplDef['body'] => [
 
 // Шапка письма в учреждение (администрация, банк, судограничные службы)
 const admHdr = (): TplDef['body'] => [
-  { type: 'lines', align: 'right', items: ['{{org_name}}', 'À l’attention de : {{head_name}}', '', '{{applicant_name}}', '{{applicant_address}}', '{{date_today}}'] },
+  { type: 'lines', align: 'right', items: ['{{org_name}}', 'À l’attention de : {{head_name}}', '', '{{applicant_name}}', 'Téléphone : {{applicant_phone}}', '{{applicant_address}}', '{{date_today}}'] },
 ];
 
 const workFields = (extra: TplDef['fields'] = []): TplDef['fields'] => [

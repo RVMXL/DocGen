@@ -83,7 +83,7 @@ export const TEMPLATES_UA: TplDef[] = [
     body: [
       ...workHdr(),
       { type: 'title', text: 'ЗАЯВА' },
-      { type: 'paragraph', text: 'Прошу звільнити мене за власним бажанням {{date_to}} на підставі статті 38 Кодексу законів про працю України.', justify: true },
+      { type: 'paragraph', text: 'Прошу звільнити мене за власним бажанням {{date_to}} на підставі статті 38 Кодексу законів про працю України (причина: {{reason_note}}).', justify: true },
       { type: 'paragraph', text: 'Трудову книжку та остаточний розрахунок прошу видати мені у день звільнення.', justify: true },
       stdSign('{{applicant_name}}'),
     ],
@@ -581,8 +581,8 @@ export const TEMPLATES_UA: TplDef[] = [
     descRu: 'Досудебная претензия банку: спорные списания, навязанные услуги, ошибки при переводах, нарушение условий договора. При отказе — обращение в Национальный банк Украины (по вопросам банковских услуг) и в суд.',
     descEn: 'Pre-court claim to the bank over disputed charges or service failures; refusal may be followed by NBU or court.',
     descDoc: 'Претензія до банку щодо спірних списань та якості послуг.',
-    refRu: 'Цивільний кодекс України; Закон України «Про фінансові послуги та фінансові компанії» № 2664-III',
-    refEn: 'Civil Code of Ukraine; Law of Ukraine No. 2664-III on financial services',
+    refRu: 'Цивільний кодекс України; Закон України «Про фінансові послуги та фінансові компанії» № 1545-IX від 01.07.2021',
+    refEn: 'Civil Code of Ukraine; Law of Ukraine No. 1545-IX of 01.07.2021 on financial services and financial companies',
     fields: [
       F('bank_name', 'Наименование банка', 'Bank name', 'text', { placeholderDoc: 'АТ «Столичний банк»' }),
       F('bank_address', 'Адрес банка', 'Bank address', 'text', { placeholderDoc: 'м. Київ, вул. Хрещатик, 1' }),

@@ -30,8 +30,9 @@ const workHdr = (): TplDef['body'] => [
 ];
 
 // Шапка обращения в ведомство/организацию: Till: … / заявитель / Datum:
+// Personnummer/Telefon отправителя — TPL-1: поля не должны «исчезать» из документа
 const govHdr = (to: string[]): TplDef['body'] => [
-  { type: 'lines', align: 'right', items: [...to, '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+  { type: 'lines', align: 'right', items: [...to, '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
 ];
 
 const workFields = (extra: TplDef['fields'] = []): TplDef['fields'] => [
@@ -358,7 +359,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{lanetagare}}', '{{lanetagare_adress}}', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{lanetagare}}', '{{lanetagare_adress}}', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'BETALNINGSKRAV' },
       { type: 'paragraph', text: 'Ärende: Krav på återbetalning av lån', noIndent: true },
       { type: 'paragraph', text: 'Den {{datum_lan}} lämnade jag ut ett lån på {{belopp}} kr till dig. Lånet förföll till betalning den {{forfallodatum}} men är ännu inte återbetalat.', justify: true },
@@ -388,7 +389,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Kronofogdemyndigheten', 'Enheten för betalningsföreläggande', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Kronofogdemyndigheten', 'Enheten för betalningsföreläggande', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ANSÖKAN OM BETALNINGSFÖRELÄGGANDE' },
       { type: 'paragraph', text: 'Jag ansöker härmed om betalningsföreläggande mot {{galdenar}}, {{galdenar_adress}}, med stöd av lagen (1990:746) om betalningsföreläggande och handräckning.', justify: true },
       { type: 'paragraph', text: 'Fordringen uppgår till {{belopp}} kr och förföll till betalning den {{forfallodatum}}. Grund för fordringen är {{grund}}. Gäldenären har erinrats om betalning utan att betalning erhållits.', justify: true },
@@ -419,7 +420,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Allmänna reklamationsnämnden (ARN)', 'Box 174, 101 23 Stockholm', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Allmänna reklamationsnämnden (ARN)', 'Box 174, 101 23 Stockholm', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ANSÖKAN OM PRÖVNING' },
       { type: 'paragraph', text: 'Jag ansöker härmed om att Allmänna reklamationsnämnden (ARN) prövar tvist med {{foretag}} avseende {{produkt}} till ett värde av {{belopp}} kr, köpt den {{datum_kop}}.', justify: true },
       { type: 'paragraph', text: 'Förloppet är följande: {{beskrivning}}. Jag har reklamerat till företaget och begärt {{krav}}, men tvisten har inte kunnat lösas.', justify: true },
@@ -477,7 +478,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Justitieombudsmannen (JO)', 'Box 16327, 103 26 Stockholm', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Justitieombudsmannen (JO)', 'Box 16327, 103 26 Stockholm', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'KLAGOMÅL TILL JO' },
       { type: 'paragraph', text: 'Jag vänder mig härmed till Justitieombudsmannen med klagomål över {{myndighet}}. Klagomålet avser händelse den {{datum_handelse}} och gäller följande: {{beskrivning}}.', justify: true },
       { type: 'paragraph', text: 'Enligt min mening har myndigheten gjort fel eller åsidosatt sin skyldighet att bemöta mig objektivt och svara inom rimlig tid. Klagomål till JO kan lämnas utan kostnad och utan tidsgräns.', justify: true },
@@ -505,7 +506,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Skatteverket', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Skatteverket', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ÖVERKLAGANDE AV BESLUT' },
       { type: 'paragraph', text: 'Jag överklagar härmed Skatteverkets beslut av {{beslutsdatum}} avseende {{besluttyp}}, med stöd av 60 kap. skatteförfarandelagen (2011:1244).', justify: true },
       { type: 'paragraph', text: 'Jag bestrider beslutet av följande skäl: {{motivering}}. Jag anhåller om att beslutet ändras i enlighet med mina anföranden.', justify: true },
@@ -532,7 +533,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{bank}}', 'Kundtjänst/Klagomålsansvarig', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{bank}}', 'Kundtjänst/Klagomålsansvarig', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'KLAGOMÅL TILL BANKEN' },
       { type: 'paragraph', text: 'Ärende: Klagomål avseende banktjänster (referens: {{arenderef}})', noIndent: true },
       { type: 'paragraph', text: 'Jag är kund hos er bank och vill härmed klaga över följande: {{beskrivning}}.', justify: true },
@@ -561,7 +562,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{bank}}', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{bank}}', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'BEGÄRAN OM KONTOUTDRAG' },
       { type: 'paragraph', text: 'Jag begär härmed kontoutdrag för mitt konto hos er bank för perioden {{period_from}} – {{period_to}}. Önskad leveransform är {{leverans}}.', justify: true },
       { type: 'paragraph', text: 'Rätten att ta del av uppgifter om mig följer av artikel 15 i dataskyddsförordningen (EU) 2016/679 samt av gällande bankvillkor. Utdraget behövs för dokumentation och bokföring.', justify: true },
@@ -589,7 +590,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Försäkringskassan', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Försäkringskassan', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'OMPRÖVNING AV BESLUT' },
       { type: 'paragraph', text: 'Jag begär härmed omprövning av Försäkringskassans beslut den {{beslutsdatum}} avseende {{forman}} (ärendenummer {{arendenummer}}), med stöd av 100 kap. socialförsäkringsbalken (2010:110).', justify: true },
       { type: 'paragraph', text: 'Jag bestrider beslutet av följande skäl: {{motivering}}.', justify: true },
@@ -644,7 +645,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{vardgivare}}', 'Klagomålsansvarig', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{vardgivare}}', 'Klagomålsansvarig', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'KLAGOMÅL PÅ VÅRD' },
       { type: 'paragraph', text: 'Jag vill härmed framföra klagomål över den vård jag erhöll hos {{vardgivare}} den {{besokdatum}}. Händelseförloppet var följande: {{beskrivning}}.', justify: true },
       { type: 'paragraph', text: 'Enligt patientlagen (2014:821) har patienter rätt att lämna synpunkter och klagomål på vården, och vårdgivaren är skyldig att ta emot och besvara dem. Jag begär {{krav}}.', justify: true },
@@ -672,7 +673,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{vardgivare}}', 'Journalenheten', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{vardgivare}}', 'Journalenheten', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'BEGÄRAN OM UTDRAK UR JOURNALEN' },
       { type: 'paragraph', text: 'Jag begär härmed utdrag ur min patientjournal hos {{vardgivare}} för perioden {{period_from}} – {{period_to}}. Önskat format är {{format}}.', justify: true },
       { type: 'paragraph', text: 'Enligt patientdatalagen (2008:355) har jag rätt att ta del av journaluppgifter och att erhålla utdrag eller kopia av journalen. Uppgifterna behövs för min egen dokumentation och för vidare vård.', justify: true },
@@ -699,7 +700,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{kommun}}', 'Barn- och utbildningsförvaltningen', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{kommun}}', 'Barn- och utbildningsförvaltningen', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ANSÖKAN OM SKOLPLATS' },
       { type: 'paragraph', text: 'Jag ansöker härmed om skolplats för mitt barn {{barn_namn}}, fött {{barn_fodelsedatum}}, vid {{skola}} med start den {{date_from}}.', justify: true },
       { type: 'paragraph', text: 'Enligt skollagen (2010:800) har alla barn rätt till utbildning i den kommunala skolan, och kommunen är skyldig att erbjuda en skolplats i nära anslutning till hemmet. Familjen är folkbokförd på adressen ovan.', justify: true },
@@ -725,7 +726,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{universitet}}', 'Antagningsenheten', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{universitet}}', 'Antagningsenheten', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ANSÖKAN OM ANTAGNING' },
       { type: 'paragraph', text: 'Jag ansöker härmed om antagning till {{program}} vid {{universitet}} till {{termin}}.', justify: true },
       { type: 'paragraph', text: 'Min bakgrund och min motivation för utbildningen är följande: {{bakgrund}}. Betyg och övriga intyg bifogas ansökan.', justify: true },
@@ -752,7 +753,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['PostNord Sverige AB', 'Kundtjänst/Reklamation', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['PostNord Sverige AB', 'Kundtjänst/Reklamation', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'REKLAMATION AV FÖRLORAD FÖRSÄNDELSE' },
       { type: 'paragraph', text: 'Ärende: Förlorad försändelse (sändningsnummer {{sandningid}})', noIndent: true },
       { type: 'paragraph', text: 'Försändelsen med sändningsnummer {{sandningid}}, postad den {{datum}}, har inte anlänt till mottagaren. Innehållet var {{innehall}} med ett värde av {{belopp}} kr.', justify: true },
@@ -781,7 +782,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{hyresvard}}', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{hyresvard}}', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'KRAV PÅ ÅTERBETALNING AV DEPOSITION' },
       { type: 'paragraph', text: 'Ärende: Återbetalning av deposition', noIndent: true },
       { type: 'paragraph', text: 'Jag har hyrt lägenheten {{lagenhet}} av er och flyttade ut den {{datum_flytt}}. Lägenheten lämnades i gott skick efter besiktning, och ni har inte anfört några krav eller skador.', justify: true },
@@ -807,7 +808,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{kommun}}', 'Miljö- och byggnämnden', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['{{kommun}}', 'Miljö- och byggnämnden', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'KLAGOMÅL PÅ BULLER FRÅN GRANNAR' },
       { type: 'paragraph', text: 'Jag bor på adressen ovan och vill härmed klaga på buller från fastigheten {{granne_adress}}. Bullret är återkommande och kan beskrivas så här: {{beskrivning}}.', justify: true },
       { type: 'paragraph', text: 'Enligt 26 kap. miljöbalken (1998:808) får verksamheter eller åtgärder inte orsaka olägenhet för människors hälsa. Bullret från grannen utgör en sådan olägenhet och påverkar min möjlighet att sova och vistas i bostaden.', justify: true },
@@ -862,7 +863,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Skatteverket', 'Folkbokföringsenheten', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '', 'Datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Skatteverket', 'Folkbokföringsenheten', '', '{{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', '', 'Datum: {{date_today}}'] },
       { type: 'title', text: 'ANMÄLAN OM FLYTTNING' },
       { type: 'paragraph', text: 'Jag anmäler härmed min flyttning enligt folkbokföringslagen (1991:481). Ny adress är {{nyadress}} och inflyttningsdatum är {{datum_flytt}}.', justify: true },
       { type: 'paragraph', text: 'Följande personer flyttar tillsammans med mig: {{medfoljande}}. Uppgifter om tidigare adress finns hos Skatteverket.', justify: true },
@@ -896,7 +897,7 @@ export const TEMPLATES_SE: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['Fullmaktsgivare: {{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '', 'Ombud: {{ombud}}', 'Personnummer: {{ombud_personnr}}', '', 'Ort och datum: {{date_today}}'] },
+      { type: 'lines', align: 'right', items: ['Fullmaktsgivare: {{applicant_name}}', 'Personnummer: {{applicant_personnr}}', '{{applicant_address}}', 'Telefon: {{applicant_phone}}', '', 'Ombud: {{ombud}}', 'Personnummer: {{ombud_personnr}}', '', 'Ort och datum: {{date_today}}'] },
       { type: 'title', text: 'FULLMAKT' },
       { type: 'paragraph', text: 'Jag, {{applicant_name}} (personnummer {{applicant_personnr}}), ger härmed {{ombud}} (personnummer {{ombud_personnr}}) fullmakt att {{omfattning}} under perioden {{date_from}} – {{date_to}}.', justify: true },
       { type: 'paragraph', text: 'Fullmakten utfärdas i enlighet med gällande fullmaktsregler (2014:407) och kan återkallas skriftligen när som helst. Ombudet ska redovisa alla åtgärder som vidtagits i mitt ställe.', justify: true },

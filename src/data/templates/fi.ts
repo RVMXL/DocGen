@@ -45,7 +45,7 @@ const authHdr = (): DocBlock[] => [
   {
     type: 'lines',
     align: 'right',
-    items: ['Vastaanottaja: {{org_name}}', '', '{{applicant_name}}', '{{applicant_address}}', 'Henkilötunnus: {{applicant_id}}', '', 'Päivämäärä: {{date_today}}'],
+    items: ['Vastaanottaja: {{org_name}}', '', '{{applicant_name}}', '{{applicant_address}}', 'Henkilötunnus: {{applicant_id}}', 'Sähköposti: {{applicant_email}}', '', 'Päivämäärä: {{date_today}}'],
   },
 ];
 
@@ -54,7 +54,7 @@ const courtHdr = (): DocBlock[] => [
   {
     type: 'lines',
     align: 'right',
-    items: ['{{court_name}}', '', 'Kantaja: {{plaintiff_name}}', '{{plaintiff_address}}', 'Vastaaja: {{defendant_name}}', '', 'Päivämäärä: {{date_today}}'],
+    items: ['{{court_name}}', '', 'Kantaja: {{plaintiff_name}}', '{{plaintiff_address}}', 'Vastaaja: {{defendant_name}}, {{defendant_address}}', '', 'Päivämäärä: {{date_today}}'],
   },
 ];
 
@@ -365,19 +365,22 @@ export const TEMPLATES_FI: TplDef[] = [
     refRu: 'Velkakirjalaki (622/1947) — расписка; Korkolaki (633/1969) — пеня за просрочку',
     refEn: 'Promissory Notes Act (622/1947) — IOU; Interest Act (633/1969) — default interest',
     fields: [
-      ...personFields([
-        F('debtor_name', 'Заёмщик (адресат)', 'Debtor (recipient)', 'text', { half: true, placeholderDoc: 'Matti Meikäläinen' }),
-        F('debtor_address', 'Адрес заёмщика', 'Debtor’s address', 'text', { half: true, placeholderDoc: 'Esimerkkikatu 2 B 8, 33100 Tampere' }),
-        F('loan_date', 'Дата выдачи займа', 'Date of the loan', 'date', { half: true }),
-        F('loan_amount', 'Сумма основного долга', 'Principal amount', 'text', { half: true, placeholderDoc: '5 000,00 €' }),
-        F('due_date', 'Срок возврата (eräpäivä)', 'Due date', 'date', { half: true }),
-      ]),
+      // org_name удалён (TPL-1): адресат уже назван в шапке как {{debtor_name}}
+      F('applicant_name', 'Ваше имя', 'Your full name', 'text', { half: true, placeholderDoc: 'Aino Korhonen' }),
+      F('applicant_address', 'Ваш адрес в Финляндии', 'Your address in Finland', 'text', { half: true, placeholderDoc: 'Mannerheimintie 100 A 5, 00250 Helsinki' }),
+      F('applicant_id', 'Личный код (henkilötunnus)', 'Personal identity code', 'text', { half: true, placeholderDoc: '010180-998A' }),
+      F('applicant_email', 'Эл. почта', 'Email', 'text', { half: true, placeholderDoc: 'aino.korhonen@esimerkki.fi' }),
+      F('debtor_name', 'Заёмщик (адресат)', 'Debtor (recipient)', 'text', { half: true, placeholderDoc: 'Matti Meikäläinen' }),
+      F('debtor_address', 'Адрес заёмщика', 'Debtor’s address', 'text', { half: true, placeholderDoc: 'Esimerkkikatu 2 B 8, 33100 Tampere' }),
+      F('loan_date', 'Дата выдачи займа', 'Date of the loan', 'date', { half: true }),
+      F('loan_amount', 'Сумма основного долга', 'Principal amount', 'text', { half: true, placeholderDoc: '5 000,00 €' }),
+      F('due_date', 'Срок возврата (eräpäivä)', 'Due date', 'date', { half: true }),
     ],
     body: [
       {
         type: 'lines',
         align: 'right',
-        items: ['Vastaanottaja: {{debtor_name}}', '{{debtor_address}}', '', '{{applicant_name}}', '{{applicant_address}}', '', 'Päivämäärä: {{date_today}}'],
+        items: ['Vastaanottaja: {{debtor_name}}', '{{debtor_address}}', '', '{{applicant_name}}', '{{applicant_address}}', 'Henkilötunnus: {{applicant_id}}', 'Sähköposti: {{applicant_email}}', '', 'Päivämäärä: {{date_today}}'],
       },
       { type: 'title', text: 'Maksuvaatimus' },
       greet('Hyvä {{debtor_name}},'),
@@ -478,7 +481,7 @@ export const TEMPLATES_FI: TplDef[] = [
     descRu: 'Жалоба апулисойкеусасиамиеху (заместителю Эдускунта-омбудсмена) на действия или бездействие органа власти: недостаточная мотивировка решения, нарушение процедуры, затягивание сроков. Основание — Perustuslaki (731/1999), 109 §.',
     descEn: 'Complaint to the Deputy Parliamentary Ombudsman (apulaisoikeusasiamies) on the conduct of a public authority: poor reasoning of a decision, procedural violations or delays. Based on the Constitution Act (731/1999), section 109.',
     descDoc: 'Valitus apulaisoikeusasiamiehelle viranomaisen menettelystä perustuslain 109 §:n nojalla.',
-    refRu: 'Perustuslaki (731/1999), 109 § — ÑÐ´ÑÑÐºÑÐ½ÑÐ°-омбудсмен и его заместители контролируют законность',
+    refRu: 'Perustuslaki (731/1999), 109 § — эдускунта-омбудсмен и его заместители контролируют законность',
     refEn: 'Constitution Act (731/1999), section 109 — the Parliamentary Ombudsman and deputies oversee lawfulness',
     fields: [
       ...personFields([
@@ -800,19 +803,22 @@ export const TEMPLATES_FI: TplDef[] = [
     refRu: 'Laki asuinhuoneiston vuokrauksesta (481/1995), 5 luku 23 § — обязанность арендодателя по содержанию',
     refEn: 'Act on Residential Leases (481/1995), chapter 5 section 23 — landlord’s maintenance duty',
     fields: [
-      ...personFields([
-        F('landlord_name', 'Арендодатель', 'Landlord', 'text', { half: true, placeholderDoc: 'Kiinteistö Oy Asumistie' }),
-        F('contact_name', 'Управляющий / контактное лицо', 'Property manager / contact', 'text', { half: true, placeholderDoc: 'isännöitsija Pekka Niemi' }),
-        F('apartment_address', 'Адрес квартиры', 'Rental apartment address', 'text', { placeholderDoc: 'Asumistie 3 B 12, 00440 Helsinki' }),
-        F('repair_desc', 'Объект и описание ремонта', 'Repair target and description', 'text', { placeholderDoc: 'keittiön vesihana vuotaa lattiaan' }),
-        F('repair_deadline', 'Срок ремонта', 'Deadline for the repair', 'date', { half: true }),
-      ]),
+      // org_name и applicant_address удалены (TPL-1): адресат — {{landlord_name}}/{{contact_name}},
+      // адрес отправителя — {{apartment_address}} (арендатор живёт в арендуемой квартире)
+      F('applicant_name', 'Ваше имя', 'Your full name', 'text', { half: true, placeholderDoc: 'Aino Korhonen' }),
+      F('applicant_id', 'Личный код (henkilötunnus)', 'Personal identity code', 'text', { half: true, placeholderDoc: '010180-998A' }),
+      F('applicant_email', 'Эл. почта', 'Email', 'text', { half: true, placeholderDoc: 'aino.korhonen@esimerkki.fi' }),
+      F('landlord_name', 'Арендодатель', 'Landlord', 'text', { half: true, placeholderDoc: 'Kiinteistö Oy Asumistie' }),
+      F('contact_name', 'Управляющий / контактное лицо', 'Property manager / contact', 'text', { half: true, placeholderDoc: 'isännöitsija Pekka Niemi' }),
+      F('apartment_address', 'Адрес квартиры', 'Rental apartment address', 'text', { placeholderDoc: 'Asumistie 3 B 12, 00440 Helsinki' }),
+      F('repair_desc', 'Объект и описание ремонта', 'Repair target and description', 'text', { placeholderDoc: 'keittiön vesihana vuotaa lattiaan' }),
+      F('repair_deadline', 'Срок ремонта', 'Deadline for the repair', 'date', { half: true }),
     ],
     body: [
       {
         type: 'lines',
         align: 'right',
-        items: ['{{landlord_name}}', 'Vastaanottaja: {{contact_name}}', '', '{{applicant_name}}', '{{apartment_address}}', '', 'Päivämäärä: {{date_today}}'],
+        items: ['{{landlord_name}}', 'Vastaanottaja: {{contact_name}}', '', '{{applicant_name}}', '{{apartment_address}}', 'Henkilötunnus: {{applicant_id}}', 'Sähköposti: {{applicant_email}}', '', 'Päivämäärä: {{date_today}}'],
       },
       { type: 'title', text: 'Vaatimus vuokra-asunnon korjauksesta' },
       greet('Hyvä {{contact_name}},'),

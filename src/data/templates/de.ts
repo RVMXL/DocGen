@@ -139,7 +139,7 @@ export const TEMPLATES_DE: TplDef[] = [
     body: [
       hdr(['{{seller_name}}', '{{seller_address}}'], ['{{applicant_name}}', '{{applicant_address}}']),
       { type: 'title', text: 'Mängelrüge und Aufforderung zur Nacherfüllung' },
-      { type: 'paragraph', text: 'Am {{date_buy}} erwarb ich bei Ihnen das oben genannte Produkt zum Preis von {{price}} EUR. Nachweis: {{proof}}.', justify: true },
+      { type: 'paragraph', text: 'Am {{date_buy}} erwarb ich bei Ihnen das oben genannte Produkt (Produkt: {{product_name}}) zum Preis von {{price}} EUR. Nachweis: {{proof}}.', justify: true },
       { type: 'paragraph', text: 'Es liegt ein Sachmangel vor: {{defect}}.', justify: true },
       { type: 'paragraph', text: 'Nach § 437 BGB verlange ich: {{demand}}. Zur Nacherfüllung setze ich Ihnen eine Frist bis zum Ablauf von 14 Tagen ab Zugang dieses Schreibens.', justify: true },
       { type: 'paragraph', text: 'Nach fruchtlosem Fristablauf behalte ich mir weitere Rechte vor, insbesondere Rücktritt, Schadensersatz und die Einreichung der Sache beim zuständigen Gericht.', justify: true },

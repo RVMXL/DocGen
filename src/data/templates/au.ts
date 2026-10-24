@@ -106,9 +106,9 @@ export const TEMPLATES_AU: TplDef[] = [
       ]),
     ],
     body: [
-      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'To: Payroll / HR', '{{org_name}}'] },
+      { type: 'lines', align: 'right', items: ['{{date_today}}', '', 'To: Payroll / HR (Attention: {{manager_name}})', '{{org_name}}'] },
       { type: 'paragraph', text: 'To Whom It May Concern,', noIndent: true },
-      { type: 'paragraph', text: 'I request copies of the following records relating to my employment: {{documents}}.', justify: true },
+      { type: 'paragraph', text: 'I, {{applicant_name}} ({{applicant_position}}), request copies of the following records relating to my employment: {{documents}}.', justify: true },
       { type: 'paragraph', text: 'Under section 535 of the Fair Work Act 2009, you are required to keep these records for seven years and to make them available to me on request. Please provide the documents within 14 days.', justify: true },
       { type: 'signature', leftText: 'Kind regards,', rightText: '_______________ / {{applicant_name}} /' },
     ],
@@ -260,7 +260,7 @@ export const TEMPLATES_AU: TplDef[] = [
     body: [
       hdr(['{{provider_name}}', '{{provider_address}}'], ['From: {{patient_name}}']),
       { type: 'title', text: 'REQUEST FOR ACCESS TO HEALTH RECORDS' },
-      { type: 'paragraph', text: 'I request access to a copy of my health records as follows: {{records_scope}}. Preferred delivery: {{delivery}}.', justify: true },
+      { type: 'paragraph', text: 'I, {{patient_name}} (date of birth: {{patient_dob}}), request access to a copy of my health records as follows: {{records_scope}}. Preferred delivery: {{delivery}}.', justify: true },
       { type: 'paragraph', text: 'Under Australian Privacy Principle 12 of the Privacy Act 1988 and the applicable state health records legislation, I am entitled to access my health information. Please provide the records, or a written refusal with reasons and review options, within a reasonable period.', justify: true },
       { type: 'attachment', items: ['Copy of a government-issued photo ID.'], label: 'Enclosures:' },
       stdSign('{{patient_name}}'),

@@ -653,8 +653,8 @@ export const TEMPLATES_MD: TplDef[] = [
     titleDoc: 'Cerere pentru acordarea ajutorului social',
     descRu: 'Заявление о назначении ежемесячной социальной помощи малообеспеченной семье (ajutor social). Подаётся в примэрию по месту жительства, которая направляет дело в CNAS; учитываются доходы, имущество и условия проживания семьи (оценка нуждаемости) — Legea nr. 263/2005.',
     descEn: 'Application for monthly social aid for a low-income household (ajutor social). Filed with the local mayoralty, which forwards the file to CNAS; household income, assets and living conditions are assessed (Law No. 263/2005).',
-    refRu: 'Закон РМ № 263/2005 о систематизации социальных пособий (Legea nr. 263/2005 privind sistematizarea ajutoarelor sociale)',
-    refEn: 'Law of Moldova No. 263/2005 on the systematization of social aid',
+    refRu: 'Закон РМ № 258-XVI от 15.07.2004 о систематизации социальных пособий (Legea nr. 258-XVI/2004 privind sistemizarea ajutoarelor sociale)',
+    refEn: 'Law of Moldova No. 258-XVI/2004 on the systematization of social aid',
     fields: [
       F('primaria_name', 'Примэрия (куда)', 'Mayoralty', 'text', { placeholderDoc: 'Primăria mun. Chișinău' }),
       F('applicant_name', 'Ваши ФИО (заявитель от семьи)', 'Applicant full name', 'text', { half: true, placeholderDoc: 'Petrova Ana' }),
@@ -671,7 +671,7 @@ export const TEMPLATES_MD: TplDef[] = [
       { type: 'title', text: 'CERERE PENTRU ACORDAREA AJUTORULUI SOCIAL' },
       { type: 'paragraph', text: 'Eu, {{applicant_name}} (IDNP {{idnp}}), locuiesc la adresa indicată mai sus împreună cu familia: {{household_desc}}. Motivul solicitării: {{reason}}.', justify: true },
       { type: 'paragraph', text: 'Veniturile gospodăriei: {{income_desc}}. Bunurile gospodăriei: {{property_desc}}.', justify: true },
-      { type: 'paragraph', text: 'În conformitate cu Legea nr. 263/2005 privind sistematizarea ajutoarelor sociale, solicit acordarea ajutorului social pentru gospodăria mea și comunicarea deciziei în termenul stabilit.', justify: true },
+      { type: 'paragraph', text: 'În conformitate cu Legea nr. 258-XVI din 15 iulie 2004 privind sistemizarea ajutoarelor sociale, solicit acordarea ajutorului social pentru gospodăria mea și comunicarea deciziei în termenul stabilit.', justify: true },
       { type: 'paragraph', text: 'Sunt de acord cu verificarea condițiilor de locuit și cu prelucrarea datelor personale ale membrilor gospodăriei în scopul stabilirii dreptului la ajutorul social.', justify: true },
       { type: 'attachment', items: ['Copiile buletinelor de identitate ale membrilor gospodăriei;', 'Certificatele de naștere ale copiilor;', 'Adeverințele despre venituri (salariu, pensie, alocații);', 'Documentele privind proprietatea (dacă este cazul).'], label: 'Anexă:' },
       stdSign('{{applicant_name}}'),
@@ -833,7 +833,7 @@ export const TEMPLATES_MD: TplDef[] = [
     body: [
       hdr(['{{provider_name}}'], ['de la {{applicant_name}}', '{{applicant_address}}', 'Cont: {{account_number}}', 'tel.: {{applicant_phone}}']),
       { type: 'title', text: 'CERERE PRIVIND RECALCULAREA PLĂȚII PENTRU SERVICIILE COMUNALE' },
-      { type: 'paragraph', text: 'Sunt consumator(ă) al serviciilor dumneavoastră la adresa {{applicant_address}}. În perioada {{period_from}} – {{period_to}} {{reason}}.', justify: true },
+      { type: 'paragraph', text: 'Sunt consumator(ă) al serviciilor dumneavoastră la adresa {{applicant_address}} (Serviciul: {{service}}). În perioada {{period_from}} – {{period_to}} {{reason}}.', justify: true },
       { type: 'paragraph', text: 'Detalii și dovezi: {{reason_note}}. Suma plătită pentru perioada indicată: {{paid_amount}} lei.', justify: true },
       { type: 'paragraph', text: 'În conformitate cu Legea nr. 435/2006 privind serviciile comunale și cu legislația privind protecția consumatorilor, serviciile prestate trebuie să corespundă celor facturate. Vă rog să recalculați plata pentru perioada indicată și să-mi comunicați rezultatul în scris.', justify: true },
       { type: 'paragraph', noIndent: true, text: 'Dacă a rezultat o sumă achitată în plus, vă rog să o includeți în factura următoare sau să o transferați în contul: {{iban}}.' },

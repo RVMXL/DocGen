@@ -51,7 +51,7 @@ export const TEMPLATES_MX: TplDef[] = [
     titleDoc: 'Solicitud de vacaciones', titleEn: 'Annual paid leave application',
     descRu: 'Заявление работодателю на ежегодный отпуск. По Ley Federal del Trabajo (art. 76): 12 рабочих дней после первого года, 14 — со второго (после реформы 2023 г.) с ростом на 2 дня за каждый год службы; отпуск должен быть предоставлен в течение 6 месяцев (art. 81).',
     descEn: 'Leave application to the employer. Under the Federal Labour Act (art. 76): 12 working days after the first year, 14 from the second (2023 reform), increasing by 2 days per year of service; leave must be granted within 6 months (art. 81).',
-    refRu: 'ст. 76 y 81 Ley Federal del Trabajo — vacaciones (12 días el primer año, 14 desde el segundo) y obligación de concederlas dentro de los 6 meses',
+    refRu: 'ст. 76 y 81 Ley Federal del Trabajo (в ред. реформы, в силе с 01.01.2023) — vacaciones: 20 días el primer año, +2 por cada año posterior, hasta 32 días',
     refEn: 'Articles 76 and 81 of the Federal Labour Act — annual leave (12 days after year one, 14 from year two) and the duty to grant it within 6 months',
     fields: [
       ...workFields([
@@ -610,6 +610,7 @@ export const TEMPLATES_MX: TplDef[] = [
       { type: 'title', text: 'SOLICITUD DE PAGO DE SUBSIDIO POR INCAPACIDAD TEMPORAL' },
       { type: 'paragraph', text: 'A Usted, con el debido respeto:', noIndent: true },
       { type: 'paragraph', text: 'Por medio de la presente solicito el pago del subsidio correspondiente a la incapacidad temporal de tipo {{tipo}}, iniciada el {{fecha_inicio}} y terminando el {{fecha_fin}}, conforme al certificado número {{cert_num}} que se acompaña, en los términos de los artículos 53 a 56 de la Ley del Seguro Social.', justify: true },
+      { type: 'paragraph', text: 'Clínica de adscripción: {{clinic}}.', justify: true },
       { type: 'paragraph', text: 'Solicito que el subsidio se abone mediante transferencia electrónica a la cuenta CLABE {{clabe}}, titular {{applicant_name}}, o conforme al medio de pago que determine el Instituto.', justify: true },
       { type: 'paragraph', text: 'Asimismo, solicito constancia de la recepción y del trámite, y que cualquier observación se me comunique a los datos de contacto indicados.', justify: true },
       { type: 'attachment', items: ['Certificado de incapacidad temporal;', 'Identificación oficial;', 'Comprobante de CLABE (estado de cuenta).'], label: 'Adjunto:' },
@@ -762,7 +763,7 @@ export const TEMPLATES_MX: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['{{escuela}}', 'A la atención de: C. {{director}}'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['{{escuela}}', 'A la atención de: C. {{director}}'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'RFC: {{applicant_rfc}}', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'SOLICITUD DE INSCRIPCIÓN ESCOLAR' },
       { type: 'paragraph', text: 'A Usted, con el debido respeto:', noIndent: true },
       { type: 'paragraph', text: 'Por medio de la presente solicito la inscripción de {{alumno}}, nacido/a el {{alumno_nac}}, con CURP {{curp_alumno}}, al {{grado}} para el {{ciclo}}, en el plantel que Usted dirige, en ejercicio del derecho a la educación pública conforme a la Ley General de Educación.', justify: true },
@@ -792,7 +793,7 @@ export const TEMPLATES_MX: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['{{institucion}}', 'Comité de Becas / Convocatoria vigente'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['{{institucion}}', 'Comité de Becas / Convocatoria vigente'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'RFC: {{applicant_rfc}}', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'SOLICITUD DE BECA' },
       { type: 'paragraph', text: 'A Usted, con el debido respeto:', noIndent: true },
       { type: 'paragraph', text: 'Por medio de la presente solicito el otorgamiento de una beca para {{alumno}}, alumno/a de {{escuela}}, {{grado}}, con matrícula {{matricula}}, conforme a la convocatoria vigente y al derecho a apoyos educativos reconocido en la Ley General de Educación.', justify: true },
@@ -857,7 +858,7 @@ export const TEMPLATES_MX: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['C. {{arrendador}}', '{{arrendador_dir}}', 'Presente'], ['De: {{applicant_name}} (arrendatario/a)', 'RFC: {{applicant_rfc}}', 'Inmueble: {{inmueble}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['C. {{arrendador}}', '{{arrendador_dir}}', 'Presente'], ['De: {{applicant_name}} (arrendatario/a)', 'RFC: {{applicant_rfc}}', 'Domicilio: {{applicant_address}}', 'Inmueble: {{inmueble}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'REQUERIMIENTO DE REPARACIONES AL ARRENDADOR' },
       { type: 'paragraph', text: 'Estimado C. {{arrendador}}:', noIndent: true },
       { type: 'paragraph', text: 'Por medio de la presente, en mi carácter de arrendatario/a del inmueble {{inmueble}} bajo contrato de {{fecha_contrato}}, le requiero la realización de las reparaciones necesarias siguientes: {{defectos}}', justify: true },
@@ -889,7 +890,7 @@ export const TEMPLATES_MX: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['C. {{arrendador}}', '{{arrendador_dir}}', 'Presente'], ['De: {{applicant_name}} (arrendatario/a)', 'RFC: {{applicant_rfc}}', 'Inmueble: {{inmueble}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['C. {{arrendador}}', '{{arrendador_dir}}', 'Presente'], ['De: {{applicant_name}} (arrendatario/a)', 'RFC: {{applicant_rfc}}', 'Domicilio: {{applicant_address}}', 'Inmueble: {{inmueble}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'AVISO DE TERMINACIÓN DE ARRENDAMIENTO' },
       { type: 'paragraph', text: 'Estimado C. {{arrendador}}:', noIndent: true },
       { type: 'paragraph', text: 'Por medio de la presente le notifico, con el debido respeto, mi decisión de dar por terminado el contrato de arrendamiento del inmueble {{inmueble}}, celebrado el {{fecha_contrato}}, conforme a los artículos 2398 y siguientes del Código Civil Federal y a las cláusulas del propio contrato.', justify: true },
@@ -951,7 +952,7 @@ export const TEMPLATES_MX: TplDef[] = [
       ]),
     ],
     body: [
-      hdr(['C. {{obligado}}', '{{obligado_dir}}', 'Presente'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
+      hdr(['C. {{obligado}}', '{{obligado_dir}}', 'Presente'], ['De: {{applicant_name}} (madre/padre o tutor/a)', 'RFC: {{applicant_rfc}}', 'Domicilio: {{applicant_address}}', 'Tel.: {{applicant_phone}}']),
       { type: 'title', text: 'RECLAMACIÓN DE PENSIÓN ALIMENTICIA' },
       { type: 'paragraph', text: 'Estimado C. {{obligado}}:', noIndent: true },
       { type: 'paragraph', text: 'En representación del interés superior de {{menor}} (nacido/a el {{menor_nac}}), le reclamo el cumplimiento de la obligación alimentaria mediante una pensión alimenticia de ${{monto}} MXN mensuales, conforme a los artículos 410 y siguientes del Código Civil Federal.', justify: true },

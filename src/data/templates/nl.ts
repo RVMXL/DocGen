@@ -1,9 +1,9 @@
 // Шаблоны для Нидерландов (язык документов — нидерландский).
 // Основано на законодательстве Нидерландов:
-// Burgerlijk Wetboek (BW): art. 7:634 — wettelijke vakantiedagen (4× de wekelijkse
+// Burgerlijk Wetboek (BW): art. 7:611a — wettelijke vakantiedagen (4× de wekelijkse
 // arbeidsduur, min. 20 dagen bij volledige werkweek); art. 7:629 — loondoorbetaling
 // bij ziekte (tot 104 weken); art. 7:620 — calamiteitenverlof (kort verzuimverlof);
-// art. 7:655 — getuigschrift; art. 7:676 — opzegtermijn werknemer (één maand);
+// art. 7:656 — getuigschrift; art. 7:676 — opzegtermijn werknemer (één maand);
 // art. 7:609–7:610b — Wet flexibel werken (wijziging arbeidsduur, werkplek,
 // werkzaamheden); art. 7:611 — loon/loonstrook jo. Wet op de loonbelasting 1964
 // (art. 32); art. 7:669 — redelijke grond voor ontslag, herplaatsing.
@@ -84,10 +84,10 @@ export const TEMPLATES_NL: TplDef[] = [
     slug: 'nl-work-vakantie', kind: 'STANDARD', categorySlug: 'work-vacations',
     titleRu: 'Заявление на ежегодный оплачиваемый отпуск (vakantiedagen)',
     titleDoc: 'Aanvraag vakantiedagen', titleEn: 'Annual leave application',
-    descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. По BW 7:634 отпуск составляет 4× недельную рабочую нагрузку (минимум 20 дней при полной рабочей неделе); работодатель учитывает пожелания работника, если это возможно.',
-    descEn: 'Annual leave application. Under BW 7:634 the statutory holiday amounts to 4× the weekly working hours (at least 20 days for a full working week); the employer takes the employee’s wishes into account where possible.',
-    refRu: 'BW 7:634 (Burgerlijk Wetboek) — отпуск: 4× недельная рабочая нагрузка, минимум 20 дней',
-    refEn: 'Article 7:634 of the Dutch Civil Code (BW) — statutory leave of 4× the weekly working hours, at least 20 days',
+    descRu: 'Заявление работодателю о предоставлении ежегодного оплачиваемого отпуска. По BW 7:611a отпуск составляет 4× недельную рабочую нагрузку (минимум 20 дней при полной рабочей неделе); работодатель учитывает пожелания работника, если это возможно.',
+    descEn: 'Annual leave application. Under BW 7:611a the statutory holiday amounts to 4× the weekly working hours (at least 20 days for a full working week); the employer takes the employee’s wishes into account where possible.',
+    refRu: 'BW 7:611a (Burgerlijk Wetboek) — отпуск: 4× недельная рабочая нагрузка, минимум 20 дней',
+    refEn: 'Article 7:611a of the Dutch Civil Code (BW) — statutory leave of 4× the weekly working hours, at least 20 days',
     fields: [
       ...workFields([
         F('date_from', 'Дата начала', 'Start date', 'date', { half: true }),
@@ -100,7 +100,7 @@ export const TEMPLATES_NL: TplDef[] = [
       { type: 'title', text: 'AANVRAAG VAKANTIEDAGEN' },
       { type: 'paragraph', text: 'Betreft: aanvraag vakantiedagen van {{date_from}} tot en met {{date_to}}', noIndent: true },
       { type: 'paragraph', text: 'Geachte heer/mevrouw,', noIndent: true },
-      { type: 'paragraph', text: 'Hierbij verzoek ik u om mijn wettelijke vakantiedagen op te nemen van {{date_from}} tot en met {{date_to}}, zijnde {{days}} dagen. Op grond van artikel 7:634 van het Burgerlijk Wetboek heeft iemand met een volledige werkweek recht op ten minste twintig vakantiedagen per jaar.', justify: true },
+      { type: 'paragraph', text: 'Hierbij verzoek ik u om mijn wettelijke vakantiedagen op te nemen van {{date_from}} tot en met {{date_to}}, zijnde {{days}} dagen. Op grond van artikel 7:611a van het Burgerlijk Wetboek heeft iemand met een volledige werkweek recht op ten minste twintig vakantiedagen per jaar.', justify: true },
       { type: 'paragraph', text: 'Ik neem aan dat u deze dagen voor mij reserveert en zal mijn werkzaamheden tijdig overdragen, zodat mijn afwezigheid de lopende taken niet belemmert. Ik hoor graag binnen korte tijd of de aanvraag kan worden gehonoreerd.', justify: true },
       sig('{{applicant_name}}'),
     ],
@@ -201,8 +201,8 @@ export const TEMPLATES_NL: TplDef[] = [
     slug: 'nl-work-opzeg', kind: 'STANDARD', categorySlug: 'work-dismissal',
     titleRu: 'Заявление об увольнении по собственному желанию (opzegbrief)',
     titleDoc: 'Opzegbrief werknemer', titleEn: 'Resignation letter (one-month notice)',
-    descRu: 'Заявление об увольнении по инициативе работника с соблюдением срока уведомления: по BW 7:676 работник соблюдает срок в один месяц. Письмо также просит справку (getuigschrift, BW 7:655) и окончательный расчёт.',
-    descEn: 'Resignation letter observing the notice period: under BW 7:676 the employee observes a one-month notice period. The letter also requests a certificate of employment (BW 7:655) and the final settlement.',
+    descRu: 'Заявление об увольнении по инициативе работника с соблюдением срока уведомления: по BW 7:676 работник соблюдает срок в один месяц. Письмо также просит справку (getuigschrift, BW 7:656) и окончательный расчёт.',
+    descEn: 'Resignation letter observing the notice period: under BW 7:676 the employee observes a one-month notice period. The letter also requests a certificate of employment (BW 7:656) and the final settlement.',
     refRu: 'BW 7:676 (Burgerlijk Wetboek) — срок уведомления работника: один месяц',
     refEn: 'Article 7:676 of the Dutch Civil Code (BW) — employee’s notice period of one month',
     fields: [
@@ -216,7 +216,7 @@ export const TEMPLATES_NL: TplDef[] = [
       { type: 'paragraph', text: 'Betreft: opzegging van mijn arbeidsovereenkomst per {{date_from}}', noIndent: true },
       { type: 'paragraph', text: 'Geachte heer/mevrouw,', noIndent: true },
       { type: 'paragraph', text: 'Hierbij zeg ik mijn arbeidsovereenkomst op, met inachtneming van de opzegtermijn van één maand die in artikel 7:676 van het Burgerlijk Wetboek voor de werknemer geldt. Ik verzoek u om mijn dienstverband per {{date_from}} te beëindigen.', justify: true },
-      { type: 'paragraph', text: 'Ik draag zorg voor een zorgvuldige overdracht van mijn werkzaamheden. Na afloop van het dienstverband verzoek ik om een getuigschrift conform artikel 7:655 BW en om de eindafrekening van mijn salaris en vakantiedagen.', justify: true },
+      { type: 'paragraph', text: 'Ik draag zorg voor een zorgvuldige overdracht van mijn werkzaamheden. Na afloop van het dienstverband verzoek ik om een getuigschrift conform artikel 7:656 BW en om de eindafrekening van mijn salaris en vakantiedagen.', justify: true },
       sig('{{applicant_name}}'),
     ],
   },
@@ -274,10 +274,10 @@ export const TEMPLATES_NL: TplDef[] = [
     slug: 'nl-work-getuigschrift', kind: 'STANDARD', categorySlug: 'work-docs',
     titleRu: 'Запрос справки с места работы (getuigschrift)',
     titleDoc: 'Verzoek getuigschrift', titleEn: 'Request for a certificate of employment',
-    descRu: 'Запрос справки от работодателя о характере и сроке работы. По BW 7:655 работодатель обязан по первому требованию выдать справку (getuigschrift) о выполнявшихся обязанностях и периоде занятости.',
-    descEn: 'Request for a certificate from the employer about the nature and duration of the work. Under BW 7:655 the employer must, upon first request, issue a certificate of employment (getuigschrift).',
-    refRu: 'BW 7:655 (Burgerlijk Wetboek) — обязанность работодателя выдать справку (getuigschrift)',
-    refEn: 'Article 7:655 of the Dutch Civil Code (BW) — employer’s obligation to issue a certificate of employment',
+    descRu: 'Запрос справки от работодателя о характере и сроке работы. По BW 7:656 работодатель обязан по первому требованию выдать справку (getuigschrift) о выполнявшихся обязанностях и периоде занятости.',
+    descEn: 'Request for a certificate from the employer about the nature and duration of the work. Under BW 7:656 the employer must, upon first request, issue a certificate of employment (getuigschrift).',
+    refRu: 'BW 7:656 (Burgerlijk Wetboek) — обязанность работодателя выдать справку (getuigschrift)',
+    refEn: 'Article 7:656 of the Dutch Civil Code (BW) — employer’s obligation to issue a certificate of employment',
     fields: [
       ...workFields([
         F('date_from', 'Начало работы', 'Employment start', 'date', { half: true }),
@@ -288,10 +288,10 @@ export const TEMPLATES_NL: TplDef[] = [
     body: [
       ...workHdr(),
       { type: 'title', text: 'VERZOEK GETUIGSCHRIFT' },
-      { type: 'paragraph', text: 'Betreft: verzoek om een getuigschrift (artikel 7:655 BW)', noIndent: true },
+      { type: 'paragraph', text: 'Betreft: verzoek om een getuigschrift (artikel 7:656 BW)', noIndent: true },
       { type: 'paragraph', text: 'Geachte heer/mevrouw,', noIndent: true },
       { type: 'paragraph', text: 'Hierbij verzoek ik om een getuigschrift over mijn werkzaamheden in dienst van {{org_name}}. Ik heb daar van {{date_from}} tot en met {{date_to}} gewerkt als {{functie}}.', justify: true },
-      { type: 'paragraph', text: 'Op grond van artikel 7:655 van het Burgerlijk Wetboek is de werkgever verplicht om op eerste verzoek een getuigschrift af te geven over de aard en de duur van de werkzaamheden. Ik verzoek om toezending aan het bovengenoemde adres.', justify: true },
+      { type: 'paragraph', text: 'Op grond van artikel 7:656 van het Burgerlijk Wetboek is de werkgever verplicht om op eerste verzoek een getuigschrift af te geven over de aard en de duur van de werkzaamheden. Ik verzoek om toezending aan het bovengenoemde adres.', justify: true },
       sig('{{applicant_name}}'),
     ],
   },

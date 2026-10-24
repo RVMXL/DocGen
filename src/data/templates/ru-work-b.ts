@@ -161,6 +161,7 @@ export const TEMPLATES_RU_WORK_B: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -179,6 +180,7 @@ export const TEMPLATES_RU_WORK_B: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['копия медицинского заключения (при установлении неполного рабочего времени для ухода за больным членом семьи)'],
       },
       stdSign('{{applicant_name}}'),
@@ -217,6 +219,7 @@ export const TEMPLATES_RU_WORK_B: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -275,6 +278,7 @@ export const TEMPLATES_RU_WORK_B: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',

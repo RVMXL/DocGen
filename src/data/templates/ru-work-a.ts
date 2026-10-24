@@ -41,6 +41,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -49,6 +50,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['листок нетрудоспособности в связи с беременностью и родами'],
       },
       stdSign('{{applicant_name}}'),
@@ -86,6 +88,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -140,6 +143,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -148,6 +152,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['справка-вызов из образовательной организации'],
       },
       stdSign('{{applicant_name}}'),
@@ -235,6 +240,7 @@ export const TEMPLATES_RU_WORK_A: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',

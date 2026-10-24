@@ -418,7 +418,7 @@ export const TEMPLATES_AT: TplDef[] = [
       hdr(['{{finanzamt}}', '{{fa_address}}'], ['{{taxpayer_name}}', 'Steuernummer: {{steuernummer}}']),
       { type: 'title', text: 'ANTRAG AUF ZAHLUNGSERLEICHTERUNG' },
       { type: 'subtitle', text: 'Stundung bzw. Ratenzahlung gemäß § 212 BAO' },
-      { type: 'paragraph', text: 'Für den oben genannten Abgabenanspruch in Höhe von {{amount}} EUR bin ich derzeit nicht in der Lage, den Betrag in einer Summe zu entrichten. Grund: {{reason}}', justify: true },
+      { type: 'paragraph', text: 'Für den Abgabenanspruch {{tax_type}} in Höhe von {{amount}} EUR bin ich derzeit nicht in der Lage, den Betrag in einer Summe zu entrichten. Grund: {{reason}}', justify: true },
       { type: 'paragraph', text: 'Ich beantrage daher gemäß § 212 BAO eine Zahlungserleichterung: {{payment_offer}}. Die sofortige Einhebung würde für mich eine wesentliche Erschwernis bedeuten.', justify: true },
       { type: 'paragraph', text: 'Die anfallenden Stundungszinsen erkenne ich an. Nachweise über meine wirtschaftlichen Verhältnisse liegen bei; unstreitige Teilbeträge zahle ich sofort. Über die Entscheidung bitte ich um schriftlichen Bescheid.', justify: true },
       { type: 'attachment', items: ['Nachweise über die wirtschaftliche Situation;', 'Kopie des Bescheids bzw. der Zahllast.'], label: 'Anlagen:' },
@@ -505,7 +505,7 @@ export const TEMPLATES_AT: TplDef[] = [
       F('phone', 'Телефон для связи', 'Contact phone', 'text', { half: true, placeholderDoc: '01 2345678' }),
     ],
     body: [
-      hdr(['{{ams_name}}', '{{ams_address}}'], ['{{applicant_name}}', 'Sozialversicherungsnummer: {{svnr}}']),
+      hdr(['{{ams_name}}', '{{ams_address}}'], ['{{applicant_name}}', '{{applicant_address}}', 'Sozialversicherungsnummer: {{svnr}}']),
       { type: 'title', text: 'ANTRAG AUF ARBEITSLOSENGELD' },
       { type: 'paragraph', text: 'Hiermit beantrage ich Arbeitslosengeld gemäß Arbeitslosenversicherungsgesetz (AlVG). Mein Dienstverhältnis mit {{last_employer}} endete am {{date_end}}; ab diesem Zeitpunkt stehe ich dem Arbeitsmarkt zur Verfügung.', justify: true },
       { type: 'paragraph', text: 'Ich bitte um Zusendung der Antragsformulare sowie um einen Termin für das Beratungsgespräch; ich bin unter {{phone}} erreichbar. Die beizubringenden Nachweise reiche ich unverzüglich nach.', justify: true },

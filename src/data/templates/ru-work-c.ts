@@ -44,6 +44,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -52,6 +53,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: [
           'копия свидетельства о рождении ребёнка (детей)',
           'копия документа, подтверждающего основание (справка об инвалидности ребёнка; документ, подтверждающий статус одинокого родителя) — по выбранному основанию',
@@ -99,6 +101,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -117,6 +120,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: [
           'копия свидетельства о рождении ребёнка',
           'копия документа, подтверждающего инвалидность ребёнка (при уходе за ребёнком-инвалидом)',
@@ -162,6 +166,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -175,6 +180,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['копия свидетельства о рождении ребёнка'],
       },
       stdSign('{{applicant_name}}'),
@@ -217,6 +223,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -267,6 +274,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -309,6 +317,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -356,6 +365,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
@@ -364,6 +374,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
       },
       {
         type: 'attachment',
+        label: 'Приложение:',
         items: ['письменное приглашение нового работодателя (заявление о приёме в порядке перевода)'],
       },
       stdSign('{{applicant_name}}'),
@@ -397,6 +408,7 @@ export const TEMPLATES_RU_WORK_C: TplDef[] = [
     ],
     body: [
       wk(),
+      { type: 'lines', align: 'right', items: ['{{applicant_position}}'] },
       { type: 'title', text: 'ЗАЯВЛЕНИЕ' },
       {
         type: 'paragraph',
