@@ -1,6 +1,6 @@
 {
   "name": "docgen",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": true,
   "license": "UNLICENSED",
   "description": "DocGen — приложение для генерации официальных документов по шаблонам (38 стран, экспорт .docx/.pdf, работает полностью офлайн)",
